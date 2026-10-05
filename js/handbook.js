@@ -30,7 +30,7 @@
   };
   SAT.link = (id, text) => {
     const c = SAT.C[id];
-    return c ? `<a class="xref" href="#${c.section}/${id}">${text || esc(c.title)}</a>` : (text || id);
+    return c ? `<a class="xref" href="#${c.section}/${id}" title="${esc(c.short || '')}">${text || esc(c.title)}</a>` : (text || id);
   };
   SAT.href = (id) => { const c = SAT.C[id]; return c ? `#${c.section}/${id}` : '#'; };
 
@@ -68,7 +68,7 @@
       ${row('Example', ex)}
       ${row('Interpretation', c.interp)}
       ${row('Generally', better)}
-      ${row('Compare against', c.compare ? `<ul class="cmp">${c.compare.map((x) => `<li>${x}</li>`).join('')}</ul>` : '')}
+      ${row('Compare against', c.compare && c.compare.length ? `<ul class="cmp">${c.compare.map((x) => `<li>${x}</li>`).join('')}</ul>` : '')}
       ${row('Watch out', c.watch, 'watch')}
       ${row('Financial statement', st ? `<b>${st[0]}</b>${c.where ? ' — ' + c.where : ''}` : c.where)}
       ${c.body ? `<div class="cc-body">${c.body}</div>` : ''}

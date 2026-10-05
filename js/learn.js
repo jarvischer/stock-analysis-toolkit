@@ -66,7 +66,7 @@
     debtEbitda: {
       tip: 'Total Debt / EBITDA. Years of EBITDA needed to repay debt (rough leverage).',
       what: 'How leveraged the company is relative to its earnings power.',
-      compare: 'Industry norms; < 2x conservative, > 4x is heavy for most companies; debt covenants.',
+      compare: 'Industry peers, the company’s history and its debt covenants — there is no universal threshold.',
       misleading: 'EBITDA ignores CapEx, interest and taxes, so leverage can be worse than it looks. Cyclical EBITDA can collapse.',
     },
     nopat: {
