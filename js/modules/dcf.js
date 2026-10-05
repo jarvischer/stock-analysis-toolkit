@@ -51,7 +51,7 @@
       <div class="formula">PV of FCF in year t = FCFₜ / (1 + r)ᵗ        r = discount rate, t = number of years</div>
       <div class="fields" style="max-width:340px">${SAT.field({ k: 'name', label: 'Company / ticker (optional)', u: 'text' })}</div>
       ${SAT.dcfFields()}
-      <div class="btns"><button class="btn ghost" data-act="reset">Reset to example</button><a class="btn ghost" href="#sensitivity">Sensitivity table →</a><a class="btn ghost" href="#scenarios">Bear / Base / Bull →</a></div>
+      <div class="btns"><button class="btn ghost" data-act="reset">Reset to example</button><a class="btn ghost" href="#tool-sensitivity">Sensitivity table →</a><a class="btn ghost" href="#tool-scenarios">Bear / Base / Bull →</a></div>
       <div class="callout bad" data-invalid hidden><b>Discount rate must be greater than terminal growth.</b> When r ≤ g the perpetuity formula divides by zero or a negative number — the value is undefined.</div>
       <h4>§38 FCF forecast</h4>
       <p class="muted">FCFₜ = FCF₀ × (1 + growth)ᵗ — each year’s cash flow, its discount factor 1/(1+r)ᵗ, and its present value.</p>
@@ -77,7 +77,7 @@
       const a = d.valid && d.ev > 0 ? Math.max(0, d.pvF / d.ev) : 0;
       bar.innerHTML = d.valid ? `<div style="width:${a * 100}%;background:var(--actual)" title="PV forecast"></div><div style="width:${(1 - a) * 100}%;background:var(--est)" title="PV terminal"></div>` : '';
       tvw.hidden = !(d.valid && d.tvShare > 0.75);
-      tvw.innerHTML = `<b>${f.pct(d.tvShare, 0)} of the value comes from the terminal value</b> — i.e. from cash flows beyond year ${d.rows.length}. The result is very sensitive to r and g. Check the <a href="#sensitivity">sensitivity table</a>.`;
+      tvw.innerHTML = `<b>${f.pct(d.tvShare, 0)} of the value comes from the terminal value</b> — i.e. from cash flows beyond year ${d.rows.length}. The result is very sensitive to r and g. Check the <a href="#tool-sensitivity">sensitivity table</a>.`;
     });
     main.querySelector('[data-act="reset"]').addEventListener('click', () => form.reset());
 
@@ -115,7 +115,7 @@
     el.innerHTML = SAT.pageHead('Sensitivity Analysis', 'A DCF should produce a range of values, not a false sense of precision. (§43)');
     const card = SAT.el(`<section class="card">
       <header><h3>Fair Value per Share — Terminal Growth × Discount Rate</h3><span class="num">§43</span></header>
-      <p class="muted">Inputs are shared with the <a href="#dcf">DCF calculator</a>. The grid is centred on your base case (outlined).</p>
+      <p class="muted">Inputs are shared with the <a href="#tool-dcf">DCF calculator</a>. The grid is centred on your base case (outlined).</p>
       <details><summary class="muted" style="cursor:pointer">Edit DCF inputs</summary>${SAT.dcfFields()}</details>
       <div class="fields" data-steps style="margin-top:10px;max-width:420px">
         ${SAT.field({ k: 'rs', label: 'Discount-rate step', u: '%', kind: 'assume' })}
@@ -168,6 +168,6 @@
     void dcfForm;
   }
 
-  SAT.register({ id: 'dcf', group: 'value', title: 'DCF Calculator', render: renderDcf });
-  SAT.register({ id: 'sensitivity', group: 'decide', title: 'Sensitivity Analysis', render: renderSens });
+  SAT.register({ id: 'tool-dcf', group: 'tools', title: 'DCF Calculator', render: renderDcf });
+  SAT.register({ id: 'tool-sensitivity', group: 'tools', title: 'Sensitivity Table', render: renderSens });
 })();

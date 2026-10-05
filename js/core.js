@@ -9,11 +9,9 @@
      A module is { id, group, title, short?, render(el), planned? }.
      Adding a new topic = one new file in js/modules that calls SAT.register(). */
   SAT.groups = [
-    { id: 'start', title: 'Start Here' },
-    { id: 'quality', title: 'Is it a good business?' },
-    { id: 'value', title: 'What is it worth?' },
-    { id: 'decide', title: 'Is the price attractive?' },
-    { id: 'tools', title: 'Toolkit' },
+    { id: 'handbook', title: 'Handbook' },
+    { id: 'ref', title: 'Quick access' },
+    { id: 'tools', title: 'Tools (calculators)' },
     { id: 'roadmap', title: 'Coming later' },
   ];
   SAT.register = function (m) { SAT.modules.push(m); };
@@ -289,7 +287,8 @@
   };
 
   /* Page header for a module */
-  SAT.pageHead = (title, sub) => `<div class="page-head"><h2>${title}</h2>${sub ? `<p>${sub}</p>` : ''}</div>`;
+  SAT.pageHead = (title, sub) => `<div class="page-head"><div class="sec-num">Tool</div><h2>${title}</h2>${sub ? `<p>${sub}</p>` : ''}</div>
+    <div class="legend"><span><i class="l-actual"></i>Actual data</span><span><i class="l-assume"></i>Assumption</span><span><i class="l-calc"></i>Calculated</span><span><i class="l-est"></i>Estimated value</span><span class="muted">Inputs accept 10B · 500M · 25K. Saved in this browser.</span></div>`;
 
   /* Simple "on this page" jump list */
   SAT.toc = (items) => `<nav class="toc">${items.map(([id, t]) => `<a href="javascript:void 0" data-jump="c-${id}">${t}</a>`).join('')}</nav>`;

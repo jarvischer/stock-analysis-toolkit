@@ -1,41 +1,32 @@
-# Stock Analysis Reference & Valuation Toolkit
+# Stock Analysis Reference
 
-An interactive reference and dashboard for learning to analyse public companies the way an equity research analyst does. It covers concepts, formulas, calculators, a DCF with a sensitivity grid, Bear/Base/Bull scenarios, Sum-of-the-Parts, a thesis template with invalidation rules, a checklist, and a one-page company analyzer.
+A personal **stock analysis handbook, formula cheat sheet and financial glossary**. It's built so that, mid-analysis, you can search a metric and get the answer straight away.
 
 **Live:** https://jarvischer.github.io/stock-analysis-toolkit/
 
-## Features
-- **Learning Mode** toggle. Every major metric gets three prompts: *What does this tell me? / What should I compare it against? / What could make it misleading?*
-- **Formulas** toggle. Shows the formula under each calculated metric.
-- Colour coding for **actual data**, **assumptions**, **calculated metrics** and **estimated valuation**.
-- Inputs accept `10B`, `500M`, `25K`, `$1,200` and `(300)`.
-- All inputs are saved in your browser (localStorage). Use **Export / Import** to back them up or move them to another device.
-- One DCF engine (`SAT.fin.dcf`) drives the DCF page, the sensitivity grid, the scenarios and the analyzer, so all four always agree.
+## What's inside
+- **Search** (press `/`): type ROIC, FCF, Gross Margin, EV, CapEx… and jump to the concept.
+- **Handbook, 13 sections:** Framework · Business Analysis · Income Statement · Profitability & Margins · Cash Flow · Balance Sheet · Capital Efficiency · Per-Share Metrics · Valuation · DCF · Investment Thesis · Formula Cheat Sheet · Glossary.
+- **Standard concept card**, the same for every concept: What is it? · Formula · Example · Interpretation · Generally (higher/lower) · Compare against · Watch out · Financial statement. Optional extras on a card are “How do I interpret this?”, cross-links, and a small “Try it” calculator.
+- **Quick Reference:** one line per formula; click an entry to open the full card.
+- **Statement Map:** shows which numbers come straight from filings and which ones you calculate yourself.
+- **Important Principles** and **Favorites** (★ any card).
+- **Learning Mode:** expands every “How do I interpret this?” section.
+- **Tools (secondary, collapsed in the nav):** DCF calculator, sensitivity table, Bear/Base/Bull, SOTP, company analyzer, thesis worksheet, checklist.
 
-## Structure
+Favorites, notes and tool inputs are saved in your browser. Use Export / Import to back them up.
+
+## Adding a concept
+Add an object to the right file in `js/content/`:
+```js
+{ id: 'roe', title: 'ROE', abbr: 'Return on Equity', short: 'Net Income / Equity.', stmt: 'calc',
+  what: '…', formula: 'ROE = Net Income / Shareholders’ Equity',
+  example: [['Net Income', '$2B'], ['Equity', '$10B'], ['ROE', '20%', 'res']],
+  interp: '…', better: ['higher', '…'], compare: ['ROIC', 'Peers'], watch: '…',
+  q: { tells: '…', hl: '…', compare: '…', fool: '…' }, related: ['roic', 'equity'] }
 ```
-index.html          shell + script tags
-css/styles.css      design tokens (light/dark), layout
-js/core.js          storage, parsing, formatting, finance math, UI builders, module registry
-js/learn.js         Learning Mode content + tooltips per metric
-js/modules/*.js     one file per page; each calls SAT.register({...})
-js/app.js           nav built from the registry, hash routing, toggles
-tests/finance.test.js   node tests for the math (node tests/finance.test.js)
-```
+It then shows up automatically in the section page, search, Quick Reference and Glossary. To add a whole new section, call `SAT.section({...})` in a new `js/content/*.js` file and add a `<script>` tag for it in `index.html`.
 
-## Adding a new topic (e.g. PEG, ROE, SaaS metrics)
-1. Create `js/modules/<topic>.js`:
-   ```js
-   SAT.register({ id: 'peg', group: 'value', title: 'PEG Ratio', render(el) {
-     el.innerHTML = SAT.pageHead('PEG Ratio', '...');
-     el.appendChild(SAT.concept({ id: 'peg', title: 'PEG', formula: 'PEG = P/E / EPS growth (%)',
-       calc: { id: 'peg', fields: [{k:'pe',label:'P/E',u:'x'},{k:'g',label:'EPS growth',u:'%'}],
-               outputs: [{ id:'p', label:'PEG', fmt:'ratio', f: v => v.pe / (v.g*100) }] } }));
-   }});
-   ```
-2. Add `<script src="js/modules/<topic>.js"></script>` to `index.html`.
-3. Optionally add a `SAT.LEARN` entry in `js/learn.js` and remove its placeholder from `roadmap.js`.
+There's no build step: it's plain HTML, CSS and JS. Run the math tests with `node tests/finance.test.js`.
 
-There is no build step. It's plain HTML, CSS and JS, and it runs from GitHub Pages or straight from disk.
-
-*Educational tool. Not investment advice.*
+*Educational reference. Not investment advice.*

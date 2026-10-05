@@ -13,7 +13,7 @@
   SAT.CHECKLIST = GROUPS;
 
   SAT.register({
-    id: 'checklist', group: 'tools', title: 'Analysis Checklist',
+    id: 'tool-checklist', group: 'tools', title: 'Analysis Checklist',
     render(el) {
       el.innerHTML = SAT.pageHead('Stock Analysis Checklist', 'Reusable — tick items as you go; reset for the next company. (§48)');
       const st = SAT.store.get('checklist', {});

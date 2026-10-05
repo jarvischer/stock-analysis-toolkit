@@ -83,7 +83,7 @@
   ];
 
   SAT.register({
-    id: 'analyzer', group: 'tools', title: 'Analyze a Company',
+    id: 'tool-analyzer', group: 'tools', title: 'Analyze a Company',
     render(el) {
       el.innerHTML = SAT.pageHead('Analyze a Company', 'Enter the latest annual (or trailing-twelve-month) figures from the 10-K / 10-Q. Every metric and a DCF update instantly. Hover ⓘ for definitions; turn on Learning Mode for interpretation. (§50)');
       const node = SAT.el(`<div class="grid2 az-grid" style="grid-template-columns:minmax(0,5fr) minmax(0,7fr);align-items:start">
@@ -109,7 +109,7 @@
           ? `<div><div class="ml">DCF fair value / share</div><div class="big">${f.price(m.dcf.fv)}</div></div>
              <div><div class="ml">Price</div><div class="mv">${f.price(v.price)}</div></div>
              <div><div class="ml">Upside / Downside</div><div class="mv" style="color:var(--${m.dcf.up >= 0 ? 'pos' : 'neg'})">${f.spct(m.dcf.up)}</div></div>
-             <div class="muted" style="flex-basis:100%">${SAT.esc(name)}: base-case DCF with FCF growing ${f.pct(v.g)} for ${Math.round(v.years || 5)} years, r = ${f.pct(v.r)}, g = ${f.pct(v.tg)}. Terminal value is ${f.pct(m.dcf.tvShare, 0)} of EV. <a href="#sensitivity" data-send2>See the range →</a></div>`
+             <div class="muted" style="flex-basis:100%">${SAT.esc(name)}: base-case DCF with FCF growing ${f.pct(v.g)} for ${Math.round(v.years || 5)} years, r = ${f.pct(v.r)}, g = ${f.pct(v.tg)}. Terminal value is ${f.pct(m.dcf.tvShare, 0)} of EV. <a href="#tool-sensitivity" data-send2>See the range →</a></div>`
           : `<div class="muted">Enter FCF inputs, shares, and a discount rate greater than terminal growth to see a DCF value.</div>`;
         const w = [];
         if (isFinite(m.oiCheck) && isFinite(v.oi) && Math.abs(m.oiCheck - v.oi) > Math.abs(v.oi) * 0.02)
@@ -129,7 +129,7 @@
           g: raw.g, years: raw.years, r: raw.r, tg: raw.tg, debt: raw.debt, cash: raw.cash, shares: raw.shares, price: raw.price,
         }));
       };
-      node.querySelector('[data-send]').addEventListener('click', () => { send(); SAT.goto('dcf'); });
+      node.querySelector('[data-send]').addEventListener('click', () => { send(); SAT.goto('tool-dcf'); });
       verdict.addEventListener('click', (e) => { if (e.target.closest('[data-send2]')) send(); });
     },
   });

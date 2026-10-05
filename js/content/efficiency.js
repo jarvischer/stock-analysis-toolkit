@@ -1,0 +1,97 @@
+/* Section 6 — Capital Efficiency, Section 7 — Per-Share Metrics */
+(function () {
+  'use strict';
+  const F = SAT.fin;
+  SAT.section({
+    id: 'efficiency', num: 7, title: 'Capital Efficiency',
+    intro: 'Profitability alone is insufficient — what matters is how much capital was needed to earn that profit.',
+    he: 'לא רק כמה מרוויחים — אלא כמה הון היה צריך כדי להרוויח את זה.',
+    top: `<div class="card"><h4 style="margin-top:0">Why profit alone is not enough</h4>
+      <div class="tbl-wrap"><table class="t"><thead><tr><th>Company</th><th>Profit (NOPAT)</th><th>Capital used</th><th>Return on capital</th></tr></thead><tbody>
+      <tr><td class="lbl"><b>A</b></td><td>$3B</td><td>$15B</td><td class="pos-c">20%</td></tr>
+      <tr><td class="lbl"><b>B</b></td><td>$4B</td><td>$40B</td><td>10%</td></tr></tbody></table></div>
+      <p class="muted" style="margin:8px 0 0">B earns more dollars, but A is the far more efficient business: each $1 of capital produces twice as much profit. If both reinvest, A compounds value much faster.</p></div>`,
+  });
+  SAT.concepts('efficiency', [
+    { id: 'nopat', title: 'NOPAT', abbr: 'Net Operating Profit After Tax', short: 'Operating Income × (1 − Tax Rate).', stmt: 'calc', key: 1,
+      what: 'Operating profit after tax, calculated as if the company had no debt. It isolates the profit produced by the <b>operations</b>.',
+      he: 'רווח תפעולי אחרי מס — בלי השפעת המימון.',
+      formula: 'NOPAT = Operating Income × (1 − Tax Rate)',
+      example: [['Operating Income', '$4B'], ['Tax Rate', '25%'], ['NOPAT', '$3B', 'res']],
+      interp: '<b>Why NOPAT instead of Net Income for ROIC?</b> Net income is after interest, so it depends on how much debt the company has. ROIC measures return to <i>all</i> capital (debt + equity), so the numerator must be before interest — NOPAT.',
+      better: ['higher'], compare: ['Invested Capital (→ ROIC)', 'Growth over time'],
+      watch: 'Use a realistic (effective/cash) tax rate; one-off items in operating income distort it.', where: 'Calculated from the Income Statement.',
+      calc: { id: 'h-nopat', defaults: { oi: '4B', t: '25' }, fields: [{ k: 'oi', label: 'Operating Income' }, { k: 't', label: 'Tax Rate', u: '%', kind: 'assume' }], outputs: [{ id: 'n', label: 'NOPAT', f: (v) => F.nopat(v.oi, v.t) }] },
+      related: ['roic', 'operating-income', 'invested-capital'] },
+    { id: 'invested-capital', title: 'Invested Capital', short: 'Capital put into the operating business (Equity + Debt − Cash, simplified).', stmt: 'calc', key: 1,
+      what: 'The amount of capital invested in the operating business — the money shareholders and lenders have put in to buy the factories, equipment, inventory and acquisitions the business runs on.',
+      formula: 'Simple version:  Invested Capital = Shareholders’ Equity + Debt − Cash',
+      example: [['Equity', '$12B'], ['Debt', '$5B'], ['Cash', '$2B'], ['Invested Capital', '$15B', 'res']],
+      interp: 'There are several detailed ways analysts calculate it — e.g. the operating approach: Net PP&amp;E + Net Working Capital (+ Goodwill &amp; Intangibles). Different methods give different ROICs; be consistent.',
+      better: ['context', 'Less capital needed for the same profit is better.'], compare: ['NOPAT (→ ROIC)', 'Revenue growth vs capital growth'],
+      watch: 'Goodwill from acquisitions, buybacks (reduce equity), and negative working capital can make it tiny or distorted.', where: 'Calculated from the Balance Sheet.', related: ['roic', 'equity', 'debt'] },
+    { id: 'roic', title: 'ROIC', abbr: 'Return on Invested Capital', short: 'NOPAT / Invested Capital — operating return per $ of capital.', stmt: 'calc', key: 1,
+      what: 'Measures how efficiently the business converts invested capital into after-tax operating profit.',
+      he: 'תשואה על ההון המושקע — כמה רווח מייצר כל דולר שהושקע בעסק.',
+      formula: 'ROIC = NOPAT / Invested Capital',
+      example: [['NOPAT', '$3B'], ['Invested Capital', '$15B'], ['ROIC', '20%', 'res']],
+      interp: 'The business generates approximately <b>$0.20</b> of after-tax operating profit for every <b>$1</b> of invested capital. <b>Consistently</b> high ROIC (e.g. 15%+ for many years) is strong evidence of a moat and a high-quality business — competitors would normally compete those returns away.',
+      better: ['higher'], compare: ['Historical ROIC', 'Competitors', 'WACC (value creation)'],
+      watch: 'Accounting differences, acquisitions (goodwill), unusual capital structure, and one-time items can all distort ROIC. One great year proves nothing.',
+      where: 'Calculated from Income Statement + Balance Sheet.',
+      q: { tells: 'Capital efficiency.', hl: 'Generally higher is better.', compare: 'Historical ROIC, competitors, WACC.', fool: 'Accounting differences, acquisitions, unusual capital structure, one-time items.' },
+      calc: { id: 'h-roic', defaults: { n: '3B', ic: '15B', w: '9' }, fields: [{ k: 'n', label: 'NOPAT' }, { k: 'ic', label: 'Invested Capital' }, { k: 'w', label: 'WACC', u: '%', kind: 'assume' }],
+        outputs: [{ id: 'r', label: 'ROIC', fmt: 'pct', f: (v) => F.roic(v.n, v.ic) }, { id: 's', label: 'ROIC − WACC', fmt: 'spct', f: (v) => F.roic(v.n, v.ic) - v.w, tone: (x) => SAT.tone(x) }] },
+      related: ['nopat', 'invested-capital', 'wacc', 'moat'] },
+    { id: 'wacc', title: 'WACC', abbr: 'Weighted Average Cost of Capital', short: 'The return investors require — the hurdle ROIC must beat.', stmt: 'model', key: 1, tags: ['cost of capital', 'hurdle rate', 'value creation spread'],
+      what: 'The blended minimum return that the company’s capital providers (shareholders and lenders) require for the risk they take. Think of it as the company’s <b>cost of money</b> and its hurdle rate. It is also the usual discount rate in a DCF.',
+      he: 'WACC — התשואה המינימלית שהמשקיעים דורשים. ROIC גבוה ממנה = יצירת ערך.',
+      formula: 'Value Creation Spread = ROIC − WACC',
+      example: [['ROIC', '20%'], ['WACC', '9%'], ['Spread', '+11%', 'res']],
+      interp: '<b>ROIC &gt; WACC</b> → generally creates economic value: each reinvested dollar earns more than it costs. <b>ROIC &lt; WACC</b> → may destroy economic value: growth makes things worse. Typical WACC: large stable companies ~7–9%, riskier companies 10–15%.',
+      better: ['lower', 'For the company, a lower cost of capital is better; for analysis what matters is the spread.'], compare: ['ROIC'],
+      watch: 'The detailed formula (cost of equity via beta, cost of debt, weights) involves many estimates — small changes swing the result. <b>Growth ≠ Value Creation</b> unless ROIC &gt; WACC.',
+      where: 'Estimated by you (not reported).', related: ['roic', 'discount-rate'] },
+  ]);
+
+  SAT.section({
+    id: 'pershare', num: 8, title: 'Per-Share Metrics',
+    intro: 'You own shares, not the company. A company can grow while each existing share gets a smaller slice — always look at per-share economics.',
+    he: 'אתה מחזיק מניות, לא את החברה. תמיד לבדוק נתונים למניה.',
+  });
+  SAT.concepts('pershare', [
+    { id: 'shares-outstanding', title: 'Shares Outstanding', short: 'Number of shares currently held by investors.', stmt: 'is', key: 1,
+      what: 'The total number of shares currently issued and held by investors (excluding treasury shares the company bought back).',
+      interp: 'Used to convert company-level numbers into per-share numbers (EPS, value per share) and to calculate Market Cap.',
+      better: ['context', 'A falling share count (buybacks) increases each owner’s slice.'], compare: ['Share count trend over 5+ years'],
+      watch: 'Use <b>diluted</b> shares for valuation. The cover page of the 10-K/10-Q shows the latest count.',
+      where: 'Bottom of the Income Statement (weighted average) and 10-K cover page.', related: ['basic-shares', 'diluted-shares', 'dilution'] },
+    { id: 'basic-shares', title: 'Basic Shares', short: 'Shares actually outstanding today.', stmt: 'is',
+      what: 'The weighted-average number of shares actually outstanding during the period. Used for <b>Basic EPS</b>.',
+      better: ['na'], compare: ['Diluted shares (the gap shows potential dilution)'],
+      watch: 'Ignores options, RSUs and convertibles that will likely become shares.', where: 'Income Statement, below EPS.', related: ['diluted-shares', 'eps'] },
+    { id: 'diluted-shares', title: 'Diluted Shares', short: 'Basic shares + shares that could be created from options, RSUs, convertibles.', stmt: 'is', key: 1,
+      what: 'Basic shares plus all shares that could be created from stock options, restricted stock units (RSUs), warrants and convertible bonds. Used for <b>Diluted EPS</b> and fair value per share.',
+      example: [['Basic shares', '1,000M'], ['Options & RSUs', '+40M'], ['Diluted shares', '1,040M', 'res']],
+      interp: 'The more conservative and correct denominator for valuation.',
+      better: ['lower'], compare: ['Basic shares', 'Prior years'],
+      watch: 'Even “diluted” may understate future dilution if the company keeps granting large stock compensation.', where: 'Income Statement, below EPS.', related: ['dilution', 'fair-value-per-share'] },
+    { id: 'dilution', title: 'Dilution', short: 'Issuing new shares shrinks each existing shareholder’s slice.', stmt: 'calc', key: 1, tags: ['sbc', 'stock-based compensation'],
+      what: 'When a company issues new shares (to employees via stock compensation, to raise money, or for acquisitions), each existing share owns a smaller percentage of the company.',
+      formula: 'Annual dilution = (Shares this year − Shares last year) / Shares last year',
+      example: [['Net income growth', '+10%'], ['Share count growth', '+6%'], ['EPS growth', '≈ +3.8%', 'res']],
+      interp: 'A company can grow while existing shareholders are diluted: the company got bigger, but your slice grew much less.',
+      better: ['lower', 'Below ~1–2% per year is modest; buybacks reverse it.'], compare: ['Revenue/earnings growth', 'Buybacks'],
+      watch: 'Companies may offset dilution with buybacks — check how much cash buybacks really consume.', where: 'Share count history (Income Statement / 10-K).', related: ['diluted-shares', 'eps'] },
+    { id: 'eps', title: 'EPS', abbr: 'Earnings Per Share', short: 'Net Income / Shares Outstanding.', stmt: 'is', key: 1, tags: ['basic eps', 'diluted eps'],
+      what: 'Net income divided by the number of shares: the profit attributable to each share. Reported as Basic and Diluted EPS.',
+      formula: 'EPS = Net Income / Shares Outstanding',
+      example: [['Net Income', '$5B'], ['Diluted Shares', '2.5B'], ['EPS', '$2.00', 'res']],
+      interp: 'Per-share metrics matter because shareholders own shares, not the company. EPS growth is what ultimately drives share price over time.',
+      better: ['higher', 'Growing EPS is the goal.'], compare: ['EPS growth vs net income growth (dilution/buybacks)', 'History'],
+      watch: 'Buybacks raise EPS without business improvement; “adjusted EPS” often excludes real costs like SBC.', where: 'Bottom of the Income Statement.',
+      q: { tells: 'Profit per share you own.', hl: 'Higher (and growing) is better.', compare: 'Its own growth, net income growth.', fool: 'Buybacks, one-offs, “adjusted” EPS.' },
+      calc: { id: 'h-eps', defaults: { ni: '5B', s: '2.5B' }, fields: [{ k: 'ni', label: 'Net Income' }, { k: 's', label: 'Shares', u: '#' }], outputs: [{ id: 'e', label: 'EPS', fmt: 'price', f: (v) => SAT.div(v.ni, v.s) }] },
+      related: ['pe', 'net-income', 'dilution'] },
+  ]);
+})();

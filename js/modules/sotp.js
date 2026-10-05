@@ -23,7 +23,7 @@
   }
 
   SAT.register({
-    id: 'sotp', group: 'value', title: 'Sum of the Parts (SOTP)',
+    id: 'tool-sotp', group: 'tools', title: 'Sum of the Parts',
     render(el) {
       el.innerHTML = SAT.pageHead('Sum of the Parts (SOTP)', 'For companies with very different businesses: value each segment with the method that fits it, then add them up. (§45)');
       const st = SAT.store.get(KEY, null) || JSON.parse(JSON.stringify(DEFAULT));

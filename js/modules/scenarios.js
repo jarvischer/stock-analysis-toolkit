@@ -10,7 +10,7 @@
   const SHARED = { rev: '10B', m0: '10', years: '5', debt: '2B', cash: '1B', shares: '500M', price: '40' };
 
   SAT.register({
-    id: 'scenarios', group: 'decide', title: 'Bear / Base / Bull',
+    id: 'tool-scenarios', group: 'tools', title: 'Bear / Base / Bull',
     render(el) {
       el.innerHTML = SAT.pageHead('Bear / Base / Bull Scenarios', 'Value the company under three sets of assumptions. Revenue grows at the scenario rate; FCF margin moves linearly from today’s level to the scenario’s target by the final forecast year. (§44)');
       const shared = SAT.el(`<section class="card"><header><h3>Shared inputs</h3></header>

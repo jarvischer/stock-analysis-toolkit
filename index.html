@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Stock Analysis Toolkit</title>
-<meta name="description" content="Interactive reference and valuation toolkit for analysing public companies: concepts, formulas, calculators, DCF, sensitivity, scenarios, SOTP, thesis and checklist.">
+<title>Stock Analysis Reference</title>
+<meta name="description" content="Stock analysis handbook, formula cheat sheet and financial glossary: every core metric with formula, example, interpretation, comparisons and pitfalls.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f6e5c'/%3E%3Cpath d='M7 22l6-7 5 4 7-9' stroke='white' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,48 +15,46 @@
 <body>
 <header class="top">
   <button id="menuBtn" class="iconbtn" aria-label="Open navigation">☰</button>
-  <div class="brand"><div class="logo">SA</div><div>Stock Analysis Toolkit<small>Reference &amp; Valuation</small></div></div>
-  <div class="sp"></div>
+  <a class="brand" href="#framework"><div class="logo">SA</div><div>Stock Analysis Reference<small>Handbook · Cheat Sheet · Glossary</small></div></a>
+  <div class="search">
+    <input id="q" type="search" placeholder="Search concepts…  (ROIC, FCF, Gross Margin, EV)" autocomplete="off" spellcheck="false" aria-label="Search concepts">
+    <kbd>/</kbd>
+    <div id="qres" class="qres" hidden role="listbox"></div>
+  </div>
   <div class="toggles">
-    <button class="tog" id="tLearn" aria-pressed="false" title="Show ‘What does this tell me?’ explanations"><span class="dot"></span>Learning <span class="lbl-long">Mode</span></button>
-    <button class="tog" id="tForm" aria-pressed="false" title="Show formulas under calculated metrics"><span class="dot"></span>Formulas</button>
+    <button class="tog" id="tLearn" aria-pressed="false" title="Expand “How do I interpret this?” on every card"><span class="dot"></span>Learning <span class="lbl-long">Mode</span></button>
     <button class="iconbtn" id="bTheme" title="Toggle light / dark">◐</button>
-    <button class="iconbtn" id="bExport" title="Download all your saved data as JSON">Export</button>
-    <button class="iconbtn" id="bImport" title="Load data from a JSON export">Import</button>
+    <button class="iconbtn" id="bExport" title="Download favorites, notes and tool inputs as JSON">Export</button>
+    <button class="iconbtn" id="bImport" title="Load a JSON export">Import</button>
     <input type="file" id="fImport" accept="application/json" hidden>
   </div>
 </header>
 <div class="shell">
   <nav class="side" id="side" aria-label="Sections"></nav>
   <main id="main" tabindex="-1">
-    <div class="legend" aria-label="Colour legend">
-      <span><i class="l-actual"></i>Actual / historical data</span>
-      <span><i class="l-assume"></i>Analyst assumption</span>
-      <span><i class="l-calc"></i>Calculated metric</span>
-      <span><i class="l-est"></i>Estimated valuation</span>
-      <span class="muted">Inputs accept 10B · 500M · 25K. Everything you type is saved in this browser.</span>
-    </div>
     <div id="view"></div>
   </main>
 </div>
 
 <script src="js/core.js"></script>
 <script src="js/learn.js"></script>
-<!-- Modules: each file registers one or more pages. Add new topics by adding a file here. -->
-<script src="js/modules/overview.js"></script>
-<script src="js/modules/business.js"></script>
-<script src="js/modules/income.js"></script>
-<script src="js/modules/cashflow.js"></script>
-<script src="js/modules/balance.js"></script>
-<script src="js/modules/efficiency.js"></script>
-<script src="js/modules/valuation.js"></script>
+<script src="js/handbook.js"></script>
+<!-- Handbook content: each file adds sections + concept cards. Add new concepts here. -->
+<script src="js/content/framework.js"></script>
+<script src="js/content/income.js"></script>
+<script src="js/content/cashflow.js"></script>
+<script src="js/content/balance.js"></script>
+<script src="js/content/efficiency.js"></script>
+<script src="js/content/valuation.js"></script>
+<!-- Reference views (quick reference, cheat sheet, glossary, statement map, principles, favorites) -->
+<script src="js/pages.js"></script>
+<!-- Secondary tools (calculators) -->
 <script src="js/modules/dcf.js"></script>
 <script src="js/modules/scenarios.js"></script>
 <script src="js/modules/sotp.js"></script>
+<script src="js/modules/analyzer.js"></script>
 <script src="js/modules/thesis.js"></script>
 <script src="js/modules/checklist.js"></script>
-<script src="js/modules/cheatsheet.js"></script>
-<script src="js/modules/analyzer.js"></script>
 <script src="js/modules/roadmap.js"></script>
 <script src="js/app.js"></script>
 </body>

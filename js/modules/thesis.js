@@ -6,7 +6,7 @@
   const X = (k, label, ph) => SAT.field({ k, label, u: 'text', ph });
 
   SAT.register({
-    id: 'thesis', group: 'decide', title: 'Investment Thesis',
+    id: 'tool-thesis', group: 'tools', title: 'Thesis Worksheet',
     render(el) {
       el.innerHTML = SAT.pageHead('Investment Thesis', 'Write it down. A thesis you can’t write in a few sentences is not a thesis. (§46–47)') +
         SAT.toc([['inv', 'What would prove me wrong?'], ['tmpl', 'Thesis template']]);
@@ -31,6 +31,7 @@
       const list = inv.querySelector('[data-list]');
       const save = () => SAT.store.set('invalidation', rows);
       const build = () => {
+        rows.forEach((r) => { if (!['ok', 'watch', 'hit'].includes(r.st)) r.st = 'ok'; });
         list.innerHTML = rows.map((r, i) => `<div class="rowitem inv-row${r.st === 'hit' ? ' hit' : ''}" data-i="${i}">
           <span class="idx">${i + 1}</span>
           <label class="fld k-note"><span class="fl">Condition</span><input data-f="text" list="invSugg" value="${SAT.esc(r.text)}" placeholder="e.g. Revenue growth falls below 10%"></label>
@@ -78,7 +79,7 @@
           <div class="fields">${T('base', 'Base Case', 'Assumptions → value', 3)}</div>
           <div class="fields">${T('bull', 'Bull Case', 'Assumptions → value', 3)}</div>
         </div>
-        <div class="btns"><a class="btn ghost" href="#scenarios">Open scenario calculator →</a></div>
+        <div class="btns"><a class="btn ghost" href="#tool-scenarios">Open scenario calculator →</a></div>
       </section>`);
       el.appendChild(tm);
       const form = SAT.form(tm, 'thesis', {});

@@ -1,9 +1,8 @@
-/* Planned modules. To build one: create js/modules/<topic>.js that calls SAT.register({id, group, title, render}),
-   add its <script> tag in index.html, and remove the line below. */
+/* Planned modules (shown greyed out in the nav). To add one: put its concepts in a js/content file
+   (SAT.section + SAT.concepts) and remove its name here. */
 (function () {
   'use strict';
-  ['PEG', 'ROE / ROA', 'Working Capital', 'SBC & Dilution', 'Buybacks & Dividends', 'Cyclicals', 'Unit Economics',
-    'SaaS metrics & Rule of 40', 'Cohort analysis', 'Comparable Companies', 'Forward multiples', 'Earnings quality',
-    'Options', 'Risk-adjusted returns', 'Portfolio construction']
+  ['ROE / ROA', 'PEG & Forward P/E', 'Forward EV/EBITDA', 'SBC & Buybacks', 'Dividend Yield & Payout', 'Unit Economics',
+    'SaaS: ARR · NRR · CAC · LTV', 'Rule of 40', 'Comparable Companies', 'Earnings Quality', 'Cyclicals', 'Options', 'Portfolio Construction']
     .forEach((t) => SAT.register({ id: 'planned-' + t.toLowerCase().replace(/[^a-z0-9]+/g, '-'), group: 'roadmap', title: t, planned: true, render() {} }));
 })();
