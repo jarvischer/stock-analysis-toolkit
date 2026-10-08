@@ -130,7 +130,7 @@
       where: 'Multi-year financial history.', related: ['pe', 'risk-factors'] },
     { id: 'catalysts', title: 'Catalysts', short: 'Events that could make the market recognise the value.', stmt: 'qual',
       what: 'Specific, ideally dated, events that could change how the market sees the company: earnings, product launches, margin inflection, spin-offs, buybacks, regulatory decisions, index inclusion.',
-      interp: 'Without a catalyst, an undervalued stock can stay undervalued for a long time (“value trap”).',
+      interp: 'Without a catalyst, an undervalued stock can stay undervalued for a long time. That delay alone is not a value trap; investigate whether lasting economic damage undermines the valuation.',
       better: ['na'], compare: ['Timeline of expected events'],
       watch: 'Catalysts that everyone already knows about are usually priced in.',
       where: 'Earnings calls, company guidance, news.', related: ['thesis-def'] },

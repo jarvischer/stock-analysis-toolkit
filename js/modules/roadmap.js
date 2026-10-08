@@ -3,6 +3,6 @@
 (function () {
   'use strict';
   ['ROE / ROA', 'PEG & Forward P/E', 'Forward EV/EBITDA', 'SBC & Buybacks', 'Dividend Yield & Payout', 'Unit Economics',
-    'SaaS: ARR · NRR · CAC · LTV', 'Rule of 40', 'Comparable Companies', 'Earnings Quality', 'Cyclicals', 'Options', 'Portfolio Construction']
+    'SaaS: ARR · NRR · CAC · LTV', 'Rule of 40', 'Comparable Companies', 'Cyclicals', 'Options', 'Portfolio Construction']
     .forEach((t) => SAT.register({ id: 'planned-' + t.toLowerCase().replace(/[^a-z0-9]+/g, '-'), group: 'roadmap', title: t, planned: true, render() {} }));
 })();

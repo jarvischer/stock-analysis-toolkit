@@ -9,7 +9,7 @@ frame.addEventListener('load', async () => {
   const answer = (value) => { d.querySelector('.practice input[name="answer"]').value = value; d.querySelector('.practice').requestSubmit(); };
   try {
     w.SAT.store.clear();
-    await go('#learning'); assert(d.querySelectorAll('.learning-grid article').length === 3, 'Three learning paths');
+    await go('#learning'); assert(d.querySelectorAll('.learning-grid article').length === 4, 'Four learning paths');
     await go('#learn-statements'); assert(d.querySelector('[data-next]').disabled, 'Lesson starts locked');
     answer(''); assert(d.querySelector('.exercise-feedback').textContent.includes('Enter a number'), 'Blank answer rejected');
     answer('20'); assert(d.querySelector('[data-next]').disabled, 'Wrong answer does not unlock lesson');
@@ -22,6 +22,30 @@ frame.addEventListener('load', async () => {
     await go('#learn-valuation'); answer('15'); click('[data-next]'); answer('100'); click('[data-next]');
     click('input[value="1"]'); d.querySelector('.practice').requestSubmit(); assert(d.querySelector('[data-next]').disabled, 'Incorrect choice rejected');
     click('input[value="0"]'); d.querySelector('.practice').requestSubmit(); assert(!d.querySelector('[data-next]').disabled, 'Correct choice accepted');
+    await go('#learn-owner');
+    assert(d.querySelectorAll('[data-step]').length === 5, 'Owner path contains five lessons');
+    answer('42.9'); assert(d.querySelector('[data-next]').disabled, 'Upside is not accepted as margin of safety');
+    answer('30'); click('[data-next]'); answer('16'); click('[data-next]'); answer('25');
+    assert(d.querySelector('[data-next]').textContent === 'Next lesson', 'Five-lesson path does not finish at lesson three');
+    click('[data-next]'); click('input[value="0"]'); d.querySelector('.practice').requestSubmit();
+    assert(d.querySelector('[data-next]').disabled, 'EPS increase alone is not value creation');
+    click('input[value="1"]'); d.querySelector('.practice').requestSubmit(); click('[data-next]');
+    click('input[value="0"]'); d.querySelector('.practice').requestSubmit();
+    assert(d.querySelector('[data-next]').disabled, 'Missing catalyst alone is not a value trap');
+    click('input[value="2"]'); d.querySelector('.practice').requestSubmit();
+    assert(d.querySelector('[data-next]').textContent === 'Finish path', 'Final owner lesson finishes path');
+    click('[data-next]'); await new Promise(r => setTimeout(r, 30));
+    assert(d.querySelector('.learning-grid').textContent.includes('5 of 5'), 'Owner path completion shown');
+    await go('#value-investing');
+    assert(d.querySelectorAll('.cc').length === 20, 'Twenty value-investing cards render');
+    for (const c of Object.values(w.SAT.C).filter(c => c.section === 'value-investing')) {
+      assert(w.SAT.search(c.title).some(hit => hit.href === w.SAT.href(c.id)), 'Search finds ' + c.title);
+      assert(c.related.every(id => w.SAT.C[id]), 'Related concepts resolve for ' + c.title);
+    }
+    await go('#glossary');
+    assert([...d.querySelectorAll('.gl-i')].some(a => a.textContent.includes('Maintenance CapEx') && a.hash === '#value-investing/maintenance-capex'), 'Glossary points to maintenance card');
+    await go('#cheatsheet');
+    assert(d.querySelectorAll('[data-grp="Value Investing"] .sheet-i').length === 9, 'Value formulas included');
     await go('#statements');
     for (let i = 0; i < 3; i++) {
       click('[data-trace="' + i + '"]'); const required = [...d.querySelectorAll('.source-active input')].map(n => n.value);
@@ -45,6 +69,8 @@ frame.addEventListener('load', async () => {
     await go('#learning'); frame.width = '375'; await new Promise(r => setTimeout(r, 30));
     assert(d.documentElement.scrollWidth <= w.innerWidth, 'Mobile learning page fits viewport');
     await go('#statements'); assert(d.documentElement.scrollWidth <= w.innerWidth, 'Mobile statement map fits viewport');
+    await go('#learn-owner'); assert(d.documentElement.scrollWidth <= w.innerWidth, 'Mobile owner lesson fits viewport');
+    await go('#value-investing'); assert(d.documentElement.scrollWidth <= w.innerWidth, 'Mobile value reference fits viewport');
     lines.push('ALL PASSED');
   } catch (e) { lines.push('FAIL ' + e.stack); }
   finally { w.SAT.store.clear(); w.SAT.store.load(originalData); }
