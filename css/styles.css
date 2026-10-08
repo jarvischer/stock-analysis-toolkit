@@ -517,3 +517,32 @@ button.chip { font: inherit; font-size: 12.5px; }
 }
 a.btn, a.btn.ghost { text-decoration: none; display: inline-block; }
 @media (max-width: 860px) { .cc, .card, .gl-h { scroll-margin-top: 160px; } }
+
+/* Guided learning */
+.learning-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.learning-grid .btn { display: inline-block; margin-top: 12px; }
+.lesson-steps { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0; }
+.practice { background: var(--panel-2); border: 1px solid var(--line); border-radius: var(--r); padding: 18px; margin: 16px 0; }
+.cc > .practice { margin: 16px; }
+.practice h4 { margin-top: 0; }
+.practice fieldset, .statement-lab fieldset { border: 1px solid var(--line-2); border-radius: 6px; padding: 12px; min-width: 0; }
+.answer-label { display: grid; gap: 8px; margin: 12px 0; font-weight: 600; }
+.answer-label input, .answer-label textarea { width: 100%; border: 1px solid var(--line-2); border-radius: 6px; padding: 10px; background: var(--panel); color: var(--ink); font: inherit; }
+.answer-label input { max-width: 240px; }
+.answer-choice { display: block; padding: 8px 0; cursor: pointer; }
+.exercise-feedback { min-height: 24px; }
+.exercise-feedback.correct { color: var(--pos); }
+button:disabled { opacity: .5; cursor: not-allowed; }
+.source-row { display: flex; align-items: center; gap: 12px; padding: 10px; border: 1px solid transparent; border-radius: 5px; }
+.source-row > span:first-of-type { flex: 1; }
+.source-row small { display: block; color: var(--ink-2); }
+.source-active { background: var(--accent-soft); border-color: var(--accent); }
+.source-marker { min-width: 48px; font-size: 12px; color: var(--accent); }
+.trace-result { margin-top: 16px; }
+.case-discussion { padding: 12px 0; }
+.case-discussion summary { cursor: pointer; font-weight: 600; color: var(--accent); }
+.case-note { white-space: pre-wrap; }
+.lesson-content .fx, .trace-result .fx { white-space: normal; overflow-wrap: anywhere; }
+.practice :focus-visible, .lesson-steps :focus-visible, .statement-lab :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+@media (max-width: 800px) { .learning-grid { grid-template-columns: 1fr; } }
+@media (max-width: 480px) { .source-row { gap: 6px; padding: 8px 2px; } .source-marker { min-width: 0; } }

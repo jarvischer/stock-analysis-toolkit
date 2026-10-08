@@ -16,7 +16,7 @@
     id: 'framework', num: 1, title: 'Analysis Framework',
     intro: 'The whole process exists to answer three questions. Click any stage to open it.',
     he: 'תהליך הניתוח: מהעסק → למספרים → לשווי → להחלטה.',
-    top: `<div class="fw">
+    top: `<div class="card"><h3>Learn by doing</h3><p>Follow a short lesson, trace numbers through statements, or analyze a fictional company.</p><div class="btns"><a class="btn" href="#learning">Start a learning path</a><a class="btn ghost" href="#company-case">Try the company case</a></div></div><div class="fw">
       <div class="fw-map">${STAGES.map((s, i) => `${i ? '<div class="fw-arrow">↓</div>' : ''}<a class="fw-step" href="#${s[0]}"><span class="fw-i">${i + 1}</span><span><b>${s[1].toUpperCase()}</b><span class="fw-d">${s[2]}</span></span></a>`).join('')}</div>
       <div class="fw-side">
         <div class="bigq"><span>Q1</span><div><b>Is this a good business?</b><p>Stages 1–6: moat, growth, margins, cash, balance sheet, ROIC.</p></div></div>

@@ -9,6 +9,7 @@
      A module is { id, group, title, short?, render(el), planned? }.
      Adding a new topic = one new file in js/modules that calls SAT.register(). */
   SAT.groups = [
+    { id: 'learning', title: 'Learn by doing' },
     { id: 'handbook', title: 'Handbook' },
     { id: 'ref', title: 'Quick access' },
     { id: 'tools', title: 'Tools (calculators)' },

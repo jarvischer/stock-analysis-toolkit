@@ -1,0 +1,53 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Learning browser tests</title><body><pre id="results">RUNNING</pre><iframe src="../index.html" title="App under test" width="1200" height="900"></iframe><script>
+const frame = document.querySelector('iframe');
+frame.addEventListener('load', async () => {
+  const w = frame.contentWindow, d = w.document, lines = [];
+  const originalData = w.SAT.store.dump();
+  const assert = (ok, message) => { if (!ok) throw new Error(message); lines.push('PASS ' + message); };
+  const go = async (hash) => { w.location.hash = hash; await new Promise(r => setTimeout(r, 30)); assert(!d.querySelector('#view').textContent.includes('Error rendering'), 'Render ' + hash); };
+  const click = (sel) => { const el = d.querySelector(sel); if (!el) throw new Error('Missing ' + sel); el.click(); };
+  const answer = (value) => { d.querySelector('.practice input[name="answer"]').value = value; d.querySelector('.practice').requestSubmit(); };
+  try {
+    w.SAT.store.clear();
+    await go('#learning'); assert(d.querySelectorAll('.learning-grid article').length === 3, 'Three learning paths');
+    await go('#learn-statements'); assert(d.querySelector('[data-next]').disabled, 'Lesson starts locked');
+    answer(''); assert(d.querySelector('.exercise-feedback').textContent.includes('Enter a number'), 'Blank answer rejected');
+    answer('20'); assert(d.querySelector('[data-next]').disabled, 'Wrong answer does not unlock lesson');
+    click('[data-hint]'); assert(!d.querySelector('[data-hint-text]').hidden, 'Hint appears');
+    answer('25%'); assert(!d.querySelector('[data-next]').disabled, 'Correct answer unlocks lesson');
+    click('[data-next]'); answer('40'); click('[data-next]'); answer('15'); click('[data-next]');
+    await new Promise(r => setTimeout(r, 30)); assert(d.querySelector('.learning-grid').textContent.includes('3 of 3'), 'Path completion shown');
+    await go('#learn-statements'); assert(!d.querySelector('[data-next]').disabled, 'Saved completion restores');
+    await go('#learn-business'); answer('15'); click('[data-next]'); answer('15'); click('[data-next]'); answer('30');
+    await go('#learn-valuation'); answer('15'); click('[data-next]'); answer('100'); click('[data-next]');
+    click('input[value="1"]'); d.querySelector('.practice').requestSubmit(); assert(d.querySelector('[data-next]').disabled, 'Incorrect choice rejected');
+    click('input[value="0"]'); d.querySelector('.practice').requestSubmit(); assert(!d.querySelector('[data-next]').disabled, 'Correct choice accepted');
+    await go('#statements');
+    for (let i = 0; i < 3; i++) {
+      click('[data-trace="' + i + '"]'); const required = [...d.querySelectorAll('.source-active input')].map(n => n.value);
+      assert(required.length === 2, 'Metric ' + i + ' highlights two source figures');
+      click('[data-practice]'); click('[data-check]'); assert(d.querySelector('.source-feedback').textContent.includes('Not quite'), 'Empty source selection rejected');
+      required.forEach(id => click('.source-row input[value="' + id + '"]'));
+      click('.source-row input[value="net-income"]'); click('[data-check]'); assert(d.querySelector('.source-feedback').textContent.includes('Not quite'), 'Extra source rejected');
+      click('.source-row input[value="net-income"]'); click('[data-check]'); assert(d.querySelector('.source-feedback').textContent.includes('Correct'), 'Correct sources accepted');
+    }
+    for (const id of Object.keys(w.SAT.EXERCISES)) {
+      await go(w.SAT.href(id)); assert(!!d.querySelector('#k-' + id + ' .practice'), id + ' has concept exercise');
+    }
+    await go('#company-case'); assert(!d.querySelector('#view').textContent.includes('Market capitalization'), 'Later case figures hidden');
+    const note = d.querySelector('[data-reflection]'); note.value = '<img src=x onerror=alert(1)>'; note.dispatchEvent(new w.Event('input'));
+    answer('40'); click('[data-next]'); assert(d.querySelector('table').textContent.includes('Capital spending'), 'Second chapter reveals cash data');
+    answer('15'); click('[data-next]'); answer('15'); click('[data-next]');
+    assert(d.querySelector('h2').textContent === 'Case complete', 'Case completes');
+    assert(!d.querySelector('.case-note img'), 'Saved reflection is escaped');
+    assert(d.querySelector('.case-note').textContent.includes('<img'), 'Reflection text preserved');
+    assert(w.SAT.store.dump()['learning-results']['case:2'].passed, 'Learning results included in export');
+    await go('#learning'); frame.width = '375'; await new Promise(r => setTimeout(r, 30));
+    assert(d.documentElement.scrollWidth <= w.innerWidth, 'Mobile learning page fits viewport');
+    await go('#statements'); assert(d.documentElement.scrollWidth <= w.innerWidth, 'Mobile statement map fits viewport');
+    lines.push('ALL PASSED');
+  } catch (e) { lines.push('FAIL ' + e.stack); }
+  finally { w.SAT.store.clear(); w.SAT.store.load(originalData); }
+  document.querySelector('#results').textContent = lines.join('\n');
+});
+</script></body></html>

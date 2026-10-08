@@ -140,6 +140,7 @@
         ${SAT.he('אילו מספרים מופיעים בדוחות, ואילו מחשבים בעצמנו.')}</div>
         <div class="smap">${MAP.map(([t, cls, sub, ids]) => `<section class="smap-c ${cls}"><h4>${t}</h4><p class="muted">${sub}</p><ul>${ids.filter((id) => SAT.C[id]).map((id) => `<li>${L(id)}${SAT.C[id].formula && cls === 's-calc' ? `<small>${SAT.C[id].formula.split('\n')[0].replace(/^[^=]+=\s*/, '= ')}</small>` : ''}</li>`).join('')}</ul></section>`).join('')}</div>
         <div class="callout good" style="margin-top:14px"><b>Where to find filings:</b> SEC EDGAR (10-K annual, 10-Q quarterly), the company’s investor-relations site, earnings releases. Use “Diluted shares” from the income statement and the latest share count from the cover page.</div>`;
+      if (SAT.statementLab) el.querySelector('.page-head').after(SAT.statementLab());
     },
   });
 

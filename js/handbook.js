@@ -79,6 +79,16 @@
       ${c.related ? `<div class="rel">Related: ${c.related.filter((r) => SAT.C[r] || true).map((r) => SAT.link(r)).join(' · ')}</div>` : ''}
     </article>`);
     if (c.calc) node.querySelector('.try-slot').appendChild(SAT.calc(c.calc));
+    if (SAT.exercise && SAT.EXERCISES[c.id]) {
+      const practice = SAT.exercise(c.id, 'concept:' + c.id);
+      const example = Array.from(node.querySelectorAll('.cr')).find((r) => r.querySelector('.cl').textContent === 'Example');
+      if (example) {
+        const reveal = SAT.el('<details class="try"><summary>Reveal the worked example</summary></details>');
+        example.replaceWith(reveal);
+        reveal.appendChild(example);
+        reveal.before(practice);
+      } else node.querySelector('.cc-h').after(practice);
+    }
     if (document.body.classList.contains('learning')) node.querySelectorAll('details[data-learn]').forEach((d) => { d.open = true; });
     return node;
   };

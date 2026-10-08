@@ -12,9 +12,14 @@ A personal **stock analysis handbook, formula cheat sheet and financial glossary
 - **Statement Map:** shows which numbers come straight from filings and which ones you calculate yourself.
 - **Important Principles** and **Favorites** (★ any card).
 - **Learning Mode:** expands every “How do I interpret this?” section.
+- **Learning paths:** three guided paths covering financial statements, business quality, and valuation, with nine lessons, hints, answer feedback, and saved exercise completion.
+- **Concept exercises:** nine core concept cards include practice questions before a collapsible worked example.
+- **Interactive Statement Map:** trace gross margin, free cash flow, and net debt to sample statement figures, then select the required figures yourself.
+- **Company case:** analyze fictional manufacturer Cedar Works in three chapters. Calculate metrics, save your reasoning, and compare it with a suggested discussion.
 - **Tools (secondary, collapsed in the nav):** DCF calculator, sensitivity table, Bear/Base/Bull, SOTP, company analyzer, thesis worksheet, checklist.
 
 Favorites, notes and tool inputs are saved in your browser. Use Export / Import to back them up.
+Lesson completion and case reflections also use browser storage and are included in Export / Import. Written reflections are not automatically graded.
 
 ## Adding a concept
 Add an object to the right file in `js/content/`:
@@ -28,5 +33,7 @@ Add an object to the right file in `js/content/`:
 It then shows up automatically in the section page, search, Quick Reference and Glossary. To add a whole new section, call `SAT.section({...})` in a new `js/content/*.js` file and add a `<script>` tag for it in `index.html`.
 
 There's no build step: it's plain HTML, CSS and JS. Run the math tests with `node tests/finance.test.js`.
+
+For browser interaction checks, serve the repository locally and open `tests/learning.browser.html` in a dedicated test browser profile. The page reports pass/fail results for lessons, validation, saved completion, statement tracing, case progression, reflection escaping, and mobile overflow. It restores the original app storage after the checks.
 
 *Educational reference. Not investment advice.*
