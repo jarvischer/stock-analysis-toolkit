@@ -1023,5 +1023,10 @@
   "• {share}% of the DCF value comes from the terminal value — highly assumption-sensitive.": "• {share}% of the DCF value comes from the terminal value — highly assumption-sensitive.",
   "• Gross Profit − OpEx = {calculated} but Operating Income entered is {entered}. Check whether OpEx includes Cost of Revenue (don’t subtract it twice) or other operating items.": "• Gross Profit − OpEx = {calculated} but Operating Income entered is {entered}. Check whether OpEx includes Cost of Revenue (don’t subtract it twice) or other operating items.",
   "Financials": "Financials",
-  "Intrinsic Value": "Intrinsic Value"
+  "Intrinsic Value": "Intrinsic Value",
+  "Growth company checklist": "Growth company checklist",
+  "Reset growth checklist": "Reset growth checklist",
+  "EV from Share Price": "EV from Share Price",
+  "Net Cash (+) / Net Debt (−)": "Net Cash (+) / Net Debt (−)",
+  "Clear growth checklist ticks?": "Clear growth checklist ticks?"
 }

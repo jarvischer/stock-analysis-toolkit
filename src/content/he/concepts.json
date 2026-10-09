@@ -37,7 +37,8 @@
     "related": [
       "revenue-model",
       "segments",
-      "moat"
+      "moat",
+      "circle-of-competence"
     ],
     "section": "business"
   },
@@ -127,7 +128,8 @@
     "where": "דוחות החברה, דיווחי הנהלה ומחקר עסקי.",
     "related": [
       "segments",
-      "gross-margin"
+      "gross-margin",
+      "revenue-model"
     ],
     "section": "business"
   },
@@ -208,7 +210,10 @@
     "related": [
       "roic",
       "competition",
-      "market-share"
+      "market-share",
+      "business-model",
+      "competitive-advantage",
+      "ev-revenue"
     ],
     "section": "business"
   },
@@ -246,7 +251,10 @@
     "where": "חישוב על בסיס הדוחות הכספיים; בדקו הגדרות עקביות.",
     "related": [
       "tam",
-      "competition"
+      "competition",
+      "growth-drivers",
+      "moat",
+      "embedded-expectations"
     ],
     "section": "business"
   },
@@ -284,7 +292,9 @@
     "where": "דוחות החברה, דיווחי הנהלה ומחקר עסקי.",
     "related": [
       "growth-drivers",
-      "market-share"
+      "market-share",
+      "revenue",
+      "embedded-expectations"
     ],
     "section": "business"
   },
@@ -307,7 +317,8 @@
     "where": "דוחות החברה, דיווחי הנהלה ומחקר עסקי.",
     "related": [
       "moat",
-      "market-share"
+      "market-share",
+      "competitive-advantage"
     ],
     "section": "business"
   },
@@ -339,7 +350,8 @@
     "watch": "ריכוזיות יכולה לעלות גם בזמן שהחברה צומחת. בדקו גם תלות בערוצי הפצה.",
     "where": "דוחות החברה, דיווחי הנהלה ומחקר עסקי.",
     "related": [
-      "risk-factors"
+      "risk-factors",
+      "backlog-quality"
     ],
     "section": "business"
   },
@@ -362,7 +374,8 @@
     "where": "דוחות החברה, דיווחי הנהלה ומחקר עסקי.",
     "related": [
       "pe",
-      "risk-factors"
+      "risk-factors",
+      "normalized-earnings"
     ],
     "section": "business"
   },
@@ -384,7 +397,8 @@
     "watch": "זרז אינו מתקן עסק חלש מעצמו. יש לבדוק אם פגיעה כלכלית מתמשכת מערערת את הערכת השווי.",
     "where": "דוחות החברה, דיווחי הנהלה ומחקר עסקי.",
     "related": [
-      "thesis-def"
+      "thesis-def",
+      "value-trap"
     ],
     "section": "business"
   },
@@ -409,7 +423,10 @@
     "related": [
       "invalidation",
       "customer-concentration",
-      "debt"
+      "debt",
+      "cyclicality",
+      "thesis-def",
+      "circle-of-competence"
     ],
     "section": "business"
   },
@@ -467,7 +484,10 @@
     "related": [
       "cogs",
       "growth-drivers",
-      "tam"
+      "tam",
+      "profitable-growth",
+      "backlog",
+      "revenue-recognition"
     ],
     "section": "income"
   },
@@ -510,7 +530,8 @@
     "where": "דוח רווח והפסד והביאורים הרלוונטיים.",
     "related": [
       "gross-profit",
-      "opex"
+      "opex",
+      "revenue"
     ],
     "section": "income"
   },
@@ -659,7 +680,9 @@
     "related": [
       "operating-margin",
       "nopat",
-      "ebitda"
+      "ebitda",
+      "gross-profit",
+      "opex"
     ],
     "section": "income"
   },
@@ -709,7 +732,8 @@
     "related": [
       "net-margin",
       "eps",
-      "profit-vs-cash"
+      "profit-vs-cash",
+      "ocf"
     ],
     "section": "income"
   },
@@ -759,7 +783,11 @@
     },
     "related": [
       "gross-profit",
-      "operating-margin"
+      "operating-margin",
+      "revenue-mix",
+      "ev-revenue",
+      "profitable-growth",
+      "backlog-quality"
     ],
     "section": "margins"
   },
@@ -809,7 +837,12 @@
     "related": [
       "operating-income",
       "operating-leverage",
-      "gross-margin"
+      "gross-margin",
+      "net-margin",
+      "fcf-margin",
+      "ev-revenue",
+      "profitable-growth",
+      "operating-margin-trend"
     ],
     "section": "margins"
   },
@@ -834,7 +867,7 @@
         "res"
       ]
     ],
-    "interp": "בצמיחה, ההכנסות עשויות לעלות מהר מהעלויות ושיעור הרווח משתפר. בירידה, התהליך עלול להתהפך.",
+    "interp": "בצמיחה, ההכנסות עשויות לעלות מהר מהעלויות ושיעור הרווח משתפר. בירידה, התהליך עלול להתהפך. מינוף תפעולי שלילי מתרחש כשהוצאות תפעוליות צומחות מהר מההכנסות ולוחצות על הרווחיות, בהנחות אחרות קבועות. בדקו גם רווחיות גולמית: פער בקצבי הצמיחה לבדו אינו מבטיח שיפור.",
     "better": [
       "context"
     ],
@@ -846,9 +879,12 @@
     "where": "חישוב על בסיס הדוחות הכספיים; בדקו הגדרות עקביות.",
     "related": [
       "operating-margin",
-      "opex"
+      "opex",
+      "operating-margin-trend",
+      "capex-efficiency"
     ],
-    "section": "margins"
+    "section": "margins",
+    "body": " <ol class=\"concept-flow\"><li>הכנסות עולות</li><li>הוצאות תפעוליות עולות לאט יותר</li><li>רווחיות תפעולית עולה בהנחת רווחיות גולמית יציבה</li></ol><p>דוגמה במיליוני דולר, ברווחיות גולמית של 60%: הכנסות 100, 150, 200; עלות מכר 40, 60, 80; הוצאות תפעוליות 70, 80, 90. הרווח התפעולי עובר מהפסד 10 לרווח 10 ואז 30; הרווחיות היא מינוס 10%, 6.7%, 15%. ההוצאות ממשיכות לעלות לאורך כל התקופה.</p><div class=\"table-scroll\"><table class=\"exm\"><tr><th>מדד</th><th>שנה 1</th><th>שנה 2</th><th>שנה 3</th></tr><tr><td>הכנסות</td><td>100</td><td>150</td><td>200</td></tr><tr><td>עלות מכר</td><td>40</td><td>60</td><td>80</td></tr><tr><td>הוצאות תפעוליות</td><td>70</td><td>80</td><td>90</td></tr><tr><td>רווח תפעולי</td><td dir=\"ltr\">−10</td><td>10</td><td>30</td></tr><tr><td>רווחיות תפעולית</td><td dir=\"ltr\">−10%</td><td dir=\"ltr\">6.7%</td><td dir=\"ltr\">15%</td></tr></table></div>"
   },
   "net-margin": {
     "id": "net-margin",
@@ -928,7 +964,11 @@
     "related": [
       "working-capital",
       "ocf",
-      "fcf"
+      "fcf",
+      "net-income",
+      "receivables",
+      "payables",
+      "earnings-quality"
     ],
     "section": "cashflow"
   },
@@ -970,7 +1010,11 @@
     "where": "המאזן והביאורים הרלוונטיים.",
     "related": [
       "profit-vs-cash",
-      "current-ratio"
+      "current-ratio",
+      "receivables",
+      "inventory",
+      "payables",
+      "earnings-quality"
     ],
     "section": "cashflow"
   },
@@ -1053,7 +1097,9 @@
     "related": [
       "fcf",
       "net-income",
-      "profit-vs-cash"
+      "profit-vs-cash",
+      "cfs",
+      "deferred-revenue"
     ],
     "section": "cashflow"
   },
@@ -1108,7 +1154,10 @@
       "owner-earnings",
       "fcf",
       "roic",
-      "ebitda"
+      "ebitda",
+      "cfs",
+      "ppe",
+      "capex-efficiency"
     ],
     "section": "cashflow"
   },
@@ -1156,7 +1205,19 @@
     "related": [
       "fcf-margin",
       "fcf-yield",
-      "dcf-intro"
+      "dcf-intro",
+      "profit-vs-cash",
+      "cfs",
+      "ocf",
+      "capex",
+      "ebitda",
+      "price-fcf",
+      "owner-earnings",
+      "interest-coverage",
+      "ev-revenue",
+      "profitable-growth",
+      "backlog-quality",
+      "capex-efficiency"
     ],
     "section": "cashflow"
   },
@@ -1195,7 +1256,8 @@
     "where": "חישוב על בסיס הדוחות הכספיים; בדקו הגדרות עקביות.",
     "related": [
       "fcf",
-      "operating-margin"
+      "operating-margin",
+      "embedded-expectations"
     ],
     "section": "cashflow"
   },
@@ -1244,7 +1306,9 @@
       "current-ratio",
       "cash",
       "receivables",
-      "inventory"
+      "inventory",
+      "assets",
+      "ncav"
     ],
     "section": "balance",
     "interp": "השוו אותם להתחייבויות השוטפות כדי להעריך נזילות, תוך בחינת איכות כל רכיב."
@@ -1274,7 +1338,9 @@
     "related": [
       "net-cash",
       "enterprise-value",
-      "equity-value"
+      "equity-value",
+      "current-assets",
+      "contracted-sales"
     ],
     "section": "balance"
   },
@@ -1313,7 +1379,9 @@
     "where": "המאזן והביאורים הרלוונטיים.",
     "related": [
       "profit-vs-cash",
-      "working-capital"
+      "working-capital",
+      "current-assets",
+      "revenue-recognition"
     ],
     "section": "balance"
   },
@@ -1336,7 +1404,8 @@
     "where": "המאזן והביאורים הרלוונטיים.",
     "related": [
       "working-capital",
-      "current-ratio"
+      "current-ratio",
+      "current-assets"
     ],
     "section": "balance"
   },
@@ -1360,7 +1429,8 @@
     "where": "המאזן והביאורים הרלוונטיים.",
     "related": [
       "capex",
-      "invested-capital"
+      "invested-capital",
+      "assets"
     ],
     "section": "balance"
   },
@@ -1384,7 +1454,10 @@
     "related": [
       "current-liabilities",
       "debt",
-      "equity"
+      "equity",
+      "assets",
+      "ncav",
+      "deferred-revenue"
     ],
     "section": "balance",
     "interp": "הבחינו בין התחייבויות תפעוליות לחוב פיננסי ובין התחייבויות שוטפות לארוכות טווח."
@@ -1407,7 +1480,8 @@
     "where": "המאזן והביאורים הרלוונטיים.",
     "related": [
       "current-ratio",
-      "payables"
+      "payables",
+      "liabilities"
     ],
     "section": "balance",
     "interp": "השוו אותן לנכסים נזילים ולתזרים הצפוי, ולא רק לסך הנכסים השוטפים."
@@ -1432,7 +1506,8 @@
     "where": "המאזן והביאורים הרלוונטיים.",
     "related": [
       "working-capital",
-      "profit-vs-cash"
+      "profit-vs-cash",
+      "current-liabilities"
     ],
     "section": "balance"
   },
@@ -1468,7 +1543,11 @@
     "related": [
       "net-debt",
       "debt-ebitda",
-      "enterprise-value"
+      "enterprise-value",
+      "risk-factors",
+      "liabilities",
+      "net-cash",
+      "invested-capital"
     ],
     "section": "balance"
   },
@@ -1494,7 +1573,7 @@
         "res"
       ]
     ],
-    "interp": "עודף יכול לספק גמישות, אך יש לבדוק כמה ממנו פנוי לאחר צורכי התפעול.",
+    "interp": "עודף יכול לספק גמישות, אך יש לבדוק כמה ממנו פנוי לאחר צורכי התפעול. כאשר המזומן גדול מהחוב, שווי הפעילות הוא שווי השוק פחות המזומן נטו: שווי שוק של 20 מיליארד ומזומן נטו של 3 מיליארד משמעו שווי פעילות של 17 מיליארד.",
     "better": [
       "higher"
     ],
@@ -1535,7 +1614,7 @@
         "res"
       ]
     ],
-    "interp": "המדד מסייע להעריך את החוב לאחר התחשבות במזומן, אך אינו מחליף בדיקת מועדי פירעון.",
+    "interp": "המדד מסייע להעריך את החוב לאחר התחשבות במזומן, אך אינו מחליף בדיקת מועדי פירעון. כאשר החוב גדול מהמזומן, שווי הפעילות הוא שווי השוק בתוספת החוב נטו: שווי שוק של 20 מיליארד וחוב נטו של 8 מיליארד משמעו שווי פעילות של 28 מיליארד.",
     "better": [
       "lower"
     ],
@@ -1549,7 +1628,9 @@
     "related": [
       "net-cash",
       "debt-ebitda",
-      "enterprise-value"
+      "enterprise-value",
+      "debt",
+      "refinancing-risk"
     ],
     "section": "balance"
   },
@@ -1596,7 +1677,8 @@
     "related": [
       "current-assets",
       "current-liabilities",
-      "working-capital"
+      "working-capital",
+      "inventory"
     ],
     "section": "balance"
   },
@@ -1641,7 +1723,8 @@
     "where": "המאזן והביאורים הרלוונטיים.",
     "related": [
       "book-value",
-      "invested-capital"
+      "invested-capital",
+      "liabilities"
     ],
     "section": "balance"
   },
@@ -1668,7 +1751,8 @@
     "where": "המאזן והביאורים הרלוונטיים.",
     "related": [
       "equity",
-      "market-cap"
+      "market-cap",
+      "tangible-book-value"
     ],
     "section": "balance"
   },
@@ -1716,7 +1800,9 @@
     "related": [
       "debt-ebitda",
       "ev-ebitda",
-      "fcf"
+      "fcf",
+      "operating-income",
+      "capex"
     ],
     "section": "balance"
   },
@@ -1766,7 +1852,8 @@
     "related": [
       "debt",
       "ebitda",
-      "net-debt"
+      "net-debt",
+      "interest-coverage"
     ],
     "section": "balance"
   },
@@ -1808,7 +1895,8 @@
     "related": [
       "roic",
       "operating-income",
-      "invested-capital"
+      "invested-capital",
+      "fcff"
     ],
     "section": "efficiency"
   },
@@ -1852,7 +1940,9 @@
     "related": [
       "roic",
       "equity",
-      "debt"
+      "debt",
+      "ppe",
+      "nopat"
     ],
     "section": "efficiency"
   },
@@ -1901,7 +1991,13 @@
       "nopat",
       "invested-capital",
       "wacc",
-      "moat"
+      "moat",
+      "capex",
+      "incremental-roic",
+      "ev-revenue",
+      "profitable-growth",
+      "capex-efficiency",
+      "embedded-expectations"
     ],
     "section": "efficiency"
   },
@@ -1947,7 +2043,9 @@
     "where": "הנחות ואומדנים במודל שלכם, המבוססים על הדוחות והמחקר.",
     "related": [
       "roic",
-      "discount-rate"
+      "discount-rate",
+      "incremental-roic",
+      "profitable-growth"
     ],
     "section": "efficiency"
   },
@@ -1992,7 +2090,8 @@
     "where": "דוח רווח והפסד והביאורים הרלוונטיים.",
     "related": [
       "diluted-shares",
-      "eps"
+      "eps",
+      "shares-outstanding"
     ],
     "section": "pershare",
     "interp": "יש להבחין בין הממוצע התקופתי לבין מספר המניות במחזור בתאריך מסוים."
@@ -2031,7 +2130,9 @@
     "where": "דוח רווח והפסד והביאורים הרלוונטיים.",
     "related": [
       "dilution",
-      "fair-value-per-share"
+      "fair-value-per-share",
+      "shares-outstanding",
+      "basic-shares"
     ],
     "section": "pershare"
   },
@@ -2075,7 +2176,11 @@
     "where": "חישוב על בסיס הדוחות הכספיים; בדקו הגדרות עקביות.",
     "related": [
       "diluted-shares",
-      "eps"
+      "eps",
+      "shares-outstanding",
+      "owner-earnings",
+      "capital-allocation",
+      "management-incentives"
     ],
     "section": "pershare"
   },
@@ -2127,7 +2232,8 @@
     "related": [
       "pe",
       "net-income",
-      "dilution"
+      "dilution",
+      "basic-shares"
     ],
     "section": "pershare"
   },
@@ -2158,7 +2264,7 @@
         "res"
       ]
     ],
-    "interp": "אין לבלבל בין מחיר מניה נמוך לבין חברה זולה: גם מספר המניות קובע.",
+    "interp": "אין לבלבל בין מחיר מניה נמוך לבין חברה זולה: גם מספר המניות קובע. שווי שוק מודד את ההון ולא את הפעילות העסקית. הנפקות ורכישות עצמיות משנות את שווי השוק גם ללא שינוי במחיר המניה.",
     "better": [
       "na"
     ],
@@ -2167,12 +2273,15 @@
       "רווחים",
       "תזרים"
     ],
-    "watch": "שווי שוק אינו כולל את מלוא השפעת החוב והמזומן על שווי הפעילות.",
+    "watch": "לחישוב שווי שוק נוכחי השתמשו במניות הקיימות כעת ולא בממוצע המדולל לרווח למניה. עקבו בנפרד אחר הנפקות, רכישות עצמיות ודילול אפשרי. התאימו את תאריך המחיר והכמות.",
     "where": "נתוני שוק והדוחות הכספיים.",
     "related": [
       "enterprise-value",
       "pe",
-      "fcf-yield"
+      "fcf-yield",
+      "book-value",
+      "equity-value",
+      "price-sales"
     ],
     "section": "valuation"
   },
@@ -2224,7 +2333,9 @@
     "related": [
       "eps",
       "market-cap",
-      "growth-vs-valuation"
+      "growth-vs-valuation",
+      "cyclicality",
+      "normalized-earnings"
     ],
     "section": "valuation"
   },
@@ -2256,7 +2367,7 @@
         "res"
       ]
     ],
-    "interp": "המדד מאפשר להתחשב במבנה המימון כאשר משווים חברות.",
+    "interp": "המדד מאפשר להתחשב במבנה המימון כאשר משווים חברות. שווי פעילות מסייע להשוות מבני הון שונים. מזומן נטו יכול להוריד אותו מתחת לשווי השוק; חוב נטו גבוה יכול להעלות אותו משמעותית מעל שווי השוק.",
     "better": [
       "na"
     ],
@@ -2270,9 +2381,16 @@
     "related": [
       "market-cap",
       "ev-ebitda",
-      "dcf-ev"
+      "dcf-ev",
+      "cash",
+      "debt",
+      "net-debt",
+      "ev-revenue"
     ],
-    "section": "valuation"
+    "section": "valuation",
+    "calculators": [
+      "ev-from-shares"
+    ]
   },
   "ev-ebitda": {
     "id": "ev-ebitda",
@@ -2405,7 +2523,8 @@
     "related": [
       "price-fcf",
       "growth-vs-valuation",
-      "fcf"
+      "fcf",
+      "market-cap"
     ],
     "section": "valuation"
   },
@@ -2430,7 +2549,9 @@
     "where": "חישוב על בסיס הדוחות הכספיים; בדקו הגדרות עקביות.",
     "related": [
       "fcf-yield",
-      "dcf-intro"
+      "dcf-intro",
+      "pe",
+      "embedded-expectations"
     ],
     "section": "valuation"
   },
@@ -2463,7 +2584,9 @@
       "sensitivity",
       "fcff",
       "fcfe",
-      "reverse-dcf"
+      "reverse-dcf",
+      "fcf",
+      "growth-vs-valuation"
     ],
     "section": "dcf"
   },
@@ -2550,7 +2673,10 @@
     "related": [
       "wacc",
       "present-value",
-      "sensitivity"
+      "sensitivity",
+      "terminal-value",
+      "fcfe",
+      "opportunity-cost"
     ],
     "section": "dcf"
   },
@@ -2608,7 +2734,8 @@
     "related": [
       "dcf-ev",
       "sensitivity",
-      "discount-rate"
+      "discount-rate",
+      "dcf-intro"
     ],
     "section": "dcf"
   },
@@ -2648,7 +2775,8 @@
       "equity-value",
       "enterprise-value",
       "fcff",
-      "fcfe"
+      "fcfe",
+      "terminal-value"
     ],
     "section": "dcf"
   },
@@ -2691,7 +2819,9 @@
     "where": "הנחות ואומדנים במודל שלכם, המבוססים על הדוחות והמחקר.",
     "related": [
       "fair-value-per-share",
-      "market-cap"
+      "market-cap",
+      "cash",
+      "dcf-ev"
     ],
     "section": "dcf"
   },
@@ -2748,7 +2878,8 @@
     "where": "הנחות ואומדנים במודל שלכם, המבוססים על הדוחות והמחקר.",
     "related": [
       "sensitivity",
-      "diluted-shares"
+      "diluted-shares",
+      "equity-value"
     ],
     "section": "dcf"
   },
@@ -2782,7 +2913,12 @@
     "where": "הנחות ואומדנים במודל שלכם, המבוססים על הדוחות והמחקר.",
     "related": [
       "terminal-value",
-      "discount-rate"
+      "discount-rate",
+      "dcf-intro",
+      "fair-value-per-share",
+      "margin-of-safety",
+      "reverse-dcf",
+      "embedded-expectations"
     ],
     "section": "dcf"
   },
@@ -2853,7 +2989,10 @@
     "watch": "אל תשנו את התנאים רק כדי להצדיק החזקה. ירידת מחיר לבדה אינה תמיד הפרכת התזה העסקית.",
     "where": "דוחות החברה, דיווחי הנהלה ומחקר עסקי.",
     "related": [
-      "thesis-def"
+      "thesis-def",
+      "risk-factors",
+      "value-trap",
+      "circle-of-competence"
     ],
     "section": "thesis"
   },
@@ -2898,7 +3037,8 @@
     "related": [
       "value-trap",
       "sensitivity",
-      "permanent-capital-loss"
+      "permanent-capital-loss",
+      "opportunity-cost"
     ],
     "section": "value-investing"
   },
@@ -2948,7 +3088,8 @@
       "maintenance-capex",
       "normalized-earnings",
       "fcf",
-      "dilution"
+      "dilution",
+      "capex"
     ],
     "section": "value-investing"
   },
@@ -2994,7 +3135,8 @@
     "related": [
       "capex",
       "owner-earnings",
-      "value-trap"
+      "value-trap",
+      "capex-efficiency"
     ],
     "section": "value-investing"
   },
@@ -3043,7 +3185,10 @@
     "related": [
       "cyclicality",
       "earnings-quality",
-      "pe"
+      "pe",
+      "owner-earnings",
+      "value-trap",
+      "operating-margin-trend"
     ],
     "section": "value-investing"
   },
@@ -3087,7 +3232,9 @@
       "incremental-roic",
       "management-incentives",
       "opportunity-cost",
-      "dilution"
+      "dilution",
+      "fcfe",
+      "capex-efficiency"
     ],
     "section": "value-investing"
   },
@@ -3128,7 +3275,11 @@
       "catalysts",
       "normalized-earnings",
       "maintenance-capex",
-      "invalidation"
+      "invalidation",
+      "margin-of-safety",
+      "permanent-capital-loss",
+      "liquidation-value",
+      "ncav"
     ],
     "section": "value-investing"
   },
@@ -3172,7 +3323,9 @@
     "related": [
       "roic",
       "wacc",
-      "capital-allocation"
+      "capital-allocation",
+      "reverse-dcf",
+      "capex-efficiency"
     ],
     "section": "value-investing"
   },
@@ -3200,7 +3353,7 @@
         "7% מתאימים לצירוף המסוים הזה של יתר ההנחות"
       ]
     ],
-    "interp": "בדקו האם הצמיחה, הרווחיות וההשקעה הנדרשות סבירות. חזרו על החישוב עם שיעורי היוון והנחות סופיות שונים.",
+    "interp": "בדקו האם הצמיחה, הרווחיות וההשקעה הנדרשות סבירות. חזרו על החישוב עם שיעורי היוון והנחות סופיות שונים. בחנו צמיחת הכנסות, רווחיות תפעולית ותזרים חופשי נדרשים תוך קביעת הנחות מפורשות לצמיחה סופית, השקעה מחדש ותשואה על ההון. שנו הנחה אחת בכל פעם; צירופים רבים יכולים לתמוך באותו שווי.",
     "better": [
       "na"
     ],
@@ -3214,9 +3367,11 @@
     "related": [
       "dcf-intro",
       "sensitivity",
-      "incremental-roic"
+      "incremental-roic",
+      "embedded-expectations"
     ],
-    "section": "value-investing"
+    "section": "value-investing",
+    "body": " <div class=\"card\"><p><b>היוון רגיל:</b> הנחות ← שווי הוגן משוער</p><p><b>היוון הפוך:</b> שווי שוק נוכחי ← ביצועים עתידיים נדרשים</p></div><aside class=\"card reverse-reserved\"><b>מחשבון היוון הפוך אינטראקטיבי — מתוכנן</b><p>אזור שמור לפתרון עתידי של הנחה יחידה. כרגע לא מחושב כאן פתרון אוטומטי.</p><a href=\"#tool-dcf\">בחינת הנחות במחשבון ההיוון הקיים</a></aside>"
   },
   "interest-coverage": {
     "id": "interest-coverage",
@@ -3342,7 +3497,8 @@
     "related": [
       "normalized-earnings",
       "profit-vs-cash",
-      "working-capital"
+      "working-capital",
+      "management-incentives"
     ],
     "section": "value-investing"
   },
@@ -3383,7 +3539,8 @@
     "related": [
       "fcfe",
       "nopat",
-      "dcf-ev"
+      "dcf-ev",
+      "dcf-intro"
     ],
     "section": "value-investing"
   },
@@ -3428,7 +3585,9 @@
     "related": [
       "fcff",
       "discount-rate",
-      "capital-allocation"
+      "capital-allocation",
+      "dcf-intro",
+      "dcf-ev"
     ],
     "section": "value-investing"
   },
@@ -3709,8 +3868,281 @@
       "current-assets",
       "liabilities",
       "liquidation-value",
-      "value-trap"
+      "value-trap",
+      "tangible-book-value"
     ],
     "section": "value-investing"
+  },
+  "price-sales": {
+    "id": "price-sales",
+    "section": "valuation",
+    "title": "מכפיל מכירות",
+    "what": "שווי השוק של ההון לכל דולר הכנסות. שימושי כשהרווח שלילי או נמוך זמנית.",
+    "interp": "השוו תקופת הכנסות זהה ועסקים דומים. מכפיל זהה עשוי להסתיר פערים ברווחיות, בהשקעה ובסיכון.",
+    "watch": "המכפיל אינו מתחשב בחוב ואינו מראה אם המכירות רווחיות. מכפיל נמוך אינו הוכחה למחיר זול.",
+    "related": [
+      "market-cap",
+      "ev-revenue",
+      "embedded-expectations"
+    ],
+    "stmt": "calc",
+    "formula": "P/S = Market Cap / Revenue",
+    "example": [
+      [
+        "שווי שוק / הכנסות שנתיות",
+        "$2B / $1B = 2×"
+      ]
+    ],
+    "short": "שווי השוק של ההון לכל דולר הכנסות. שימושי כשהרווח שלילי או נמוך זמנית."
+  },
+  "ev-revenue": {
+    "id": "ev-revenue",
+    "section": "valuation",
+    "title": "מכפיל שווי פעילות להכנסות",
+    "what": "שווי הפעילות לכל דולר הכנסות. ההתאמה למזומן ולחוב מסייעת להשוות מבני הון שונים.",
+    "interp": "השוו תקופות זהות ובחנו צמיחת הכנסות, רווחיות גולמית ותפעולית, רווחיות עתידית, עצימות הון, פוטנציאל תזרים חופשי, תשואה על ההון המושקע, יתרון תחרותי וסיכון.",
+    "watch": "מכפיל אינו הערכת שווי בפני עצמו. מכפיל גבוה אינו בהכרח יקר ומכפיל נמוך אינו בהכרח זול.",
+    "related": [
+      "enterprise-value",
+      "price-sales",
+      "gross-margin",
+      "operating-margin",
+      "capex-efficiency",
+      "fcf",
+      "roic",
+      "moat",
+      "embedded-expectations"
+    ],
+    "stmt": "calc",
+    "formula": "EV / Revenue = Enterprise Value / Revenue",
+    "example": [
+      [
+        "שווי פעילות / הכנסות שנתיות",
+        "$1.5B / $1B = 1.5×"
+      ]
+    ],
+    "short": "שווי הפעילות לכל דולר הכנסות. ההתאמה למזומן ולחוב מסייעת להשוות מבני הון שונים.",
+    "body": "<aside class=\"card multiple-principle\"><b>מכפיל אינו הערכת שווי בפני עצמו.</b></aside>"
+  },
+  "profitable-growth": {
+    "id": "profitable-growth",
+    "section": "business",
+    "title": "צמיחה רווחית",
+    "what": "צמיחת הכנסות מודדת גידול במכירות; צמיחה רווחית בוחנת אם הגידול יוצר ערך כלכלי.",
+    "interp": "האם ההכנסות צומחות? האם הרווחיות הגולמית יציבה או משתפרת? האם הרווחיות התפעולית, התזרים החופשי והתשואה על ההון המושקע משתפרים?",
+    "watch": "צמיחה שמשמידה הון באופן קבוע אינה יוצרת ערך לבעלי המניות. שיפור בתשואה אינו מספיק אם היא נותרת מתחת לעלות ההון.",
+    "related": [
+      "revenue",
+      "gross-margin",
+      "operating-margin",
+      "fcf",
+      "roic",
+      "wacc"
+    ],
+    "stmt": "qual",
+    "example": [
+      [
+        "מכירות עולות ב־40%; תשואה על הון חדש 4%; עלות הון 10%",
+        "הצמיחה עלולה להשמיד ערך למרות הגידול בהכנסות."
+      ]
+    ],
+    "short": "צמיחת הכנסות מודדת גידול במכירות; צמיחה רווחית בוחנת אם הגידול יוצר ערך כלכלי."
+  },
+  "operating-margin-trend": {
+    "id": "operating-margin-trend",
+    "section": "margins",
+    "title": "מגמת הרווחיות התפעולית",
+    "what": "כיוון השינוי ועמידות הרווחיות התפעולית לאורך זמן, מעבר לשיעור הנוכחי.",
+    "interp": "השוו רבעון קודם, רבעון מקביל ומגמה רב־שנתית כדי להבין אם חברה צעירה או צומחת מתקרבת לרווחיות בת־קיימא.",
+    "watch": "התחשבו בעונתיות, רכישות, הוצאות חד־פעמיות ושינויי חשבונאות. הפסד קטן יותר אינו מבטיח רווח בעתיד.",
+    "related": [
+      "operating-margin",
+      "operating-leverage",
+      "normalized-earnings"
+    ],
+    "stmt": "calc",
+    "formula": "Operating Margin = Operating Income / Revenue",
+    "body": " <ol class=\"concept-flow\"><li>הפסד תפעולי</li><li>הפסד תפעולי קטן יותר</li><li>איזון תפעולי</li><li>רווחיות תפעולית חיובית</li><li>התרחבות הרווחיות התפעולית</li></ol>",
+    "short": "כיוון השינוי ועמידות הרווחיות התפעולית לאורך זמן, מעבר לשיעור הנוכחי.",
+    "example": [
+      [
+        "רווחיות תפעולית בשנים 1 עד 5",
+        "−20% → −8% → 0% → 5% → 12%"
+      ]
+    ]
+  },
+  "backlog": {
+    "id": "backlog",
+    "section": "business",
+    "title": "צבר הזמנות",
+    "what": "עסקאות עתידיות בחוזים שטרם הוכרו כהכנסות. הגדרת הצבר המדווח משתנה בין חברות.",
+    "interp": "בחנו צמיחת צבר, זמן צפוי להכרה, סיכון ביטול, ריכוז לקוחות, רווחיות חוזים והמרה להכנסות.",
+    "watch": "צבר אינו הכנסות, רווח או תזרים מזומנים. אופציות, תנאי מימון וביטולים עשויים לשנות את הסכום.",
+    "related": [
+      "backlog-quality",
+      "contracted-sales",
+      "revenue-recognition",
+      "revenue",
+      "deferred-revenue"
+    ],
+    "stmt": "qual",
+    "example": [
+      [
+        "חוזה חתום / ביצוע השנה",
+        "$100m / $20m"
+      ],
+      [
+        "צבר שנותר בהנחה שאין שינויים",
+        "$80m"
+      ]
+    ],
+    "short": "עסקאות עתידיות בחוזים שטרם הוכרו כהכנסות. הגדרת הצבר המדווח משתנה בין חברות."
+  },
+  "backlog-quality": {
+    "id": "backlog-quality",
+    "section": "business",
+    "title": "איכות צבר ההזמנות",
+    "what": "הסבירות שעסקאות בצבר יהפכו להכנסות רווחיות ולמזומן שניתן לגבות.",
+    "interp": "צבר גדול בעל ערך רק אם ניתן לבצעו ברווח. בחנו איכות לקוחות, מועדי אספקה מציאותיים ורווחיות חוזים.",
+    "watch": "גודל בלבד מסתיר זכויות ביטול, ריכוז לקוחות, חריגות עלות בחוזים במחיר קבוע ומגבלות ביצוע.",
+    "related": [
+      "backlog",
+      "customer-concentration",
+      "gross-margin",
+      "fcf"
+    ],
+    "stmt": "qual",
+    "example": [
+      [
+        "צבר מיליארד דולר; עלויות צפויות 1.1 מיליארד",
+        "נראות מכירות גבוהה, אך הפסד צפוי בחוזים."
+      ]
+    ],
+    "short": "הסבירות שעסקאות בצבר יהפכו להכנסות רווחיות ולמזומן שניתן לגבות."
+  },
+  "deferred-revenue": {
+    "id": "deferred-revenue",
+    "section": "balance",
+    "title": "הכנסות נדחות",
+    "what": "התחייבות חוזית שנוצרת בדרך כלל כאשר תשלום מתקבל או מגיע מועד פירעונו לפני העברת המוצר או השירות.",
+    "interp": "מקדמות לקוחות עשויות לממן פעילות. בניגוד לצבר, הכנסות נדחות משקפות תמורה מראש שהתקבלה או שמועד פירעונה הגיע עבור ביצוע שטרם הושלם. בדקו את ההגדרות והחפיפה בביאורים.",
+    "watch": "חיוב אינו בהכרח גביית מזומן. אין להוסיף הכנסות נדחות לצבר אם הן כבר כלולות בו.",
+    "related": [
+      "backlog",
+      "contracted-sales",
+      "revenue-recognition",
+      "liabilities",
+      "ocf"
+    ],
+    "stmt": "qual",
+    "example": [
+      [
+        "שירות שנתי ששולם מראש",
+        "$120"
+      ],
+      [
+        "לאחר חודש: הכנסה / התחייבות שנותרה",
+        "$10 / $110"
+      ]
+    ],
+    "body": " <p>דוגמה לשירות ששולם מראש:</p><ol class=\"concept-flow\"><li>הלקוח משלם</li><li>מזומן מתקבל</li><li>התחייבות בגין הכנסות נדחות</li><li>המוצר או השירות נמסרים</li><li>הכנסה מוכרת</li></ol>",
+    "short": "התחייבות חוזית שנוצרת בדרך כלל כאשר תשלום מתקבל או מגיע מועד פירעונו לפני העברת המוצר או השירות."
+  },
+  "contracted-sales": {
+    "id": "contracted-sales",
+    "section": "business",
+    "title": "מכירות בחוזים חתומים",
+    "what": "סכום מכירות שהוכרז במסגרת הסכמים חתומים, לעיתים למספר תקופות עתידיות. אינו תחליף אחיד להכנסות מוכרות.",
+    "interp": "בדקו משך חוזים, אכיפות, תנאי ביטול, התחייבויות אספקה ותנאי גבייה. הבחינו בין השלבים בטבלה.",
+    "watch": "הודעה על חוזים במיליארדים אינה הכנסות במיליארדים באותה תקופה. אין לחבר מדדים חוזיים חופפים.",
+    "related": [
+      "backlog",
+      "deferred-revenue",
+      "revenue-recognition",
+      "cash"
+    ],
+    "stmt": "qual",
+    "body": "<table class=\"exm\"><tr><th>מכירות בחוזים</th><td>סכום ההסכם החתום, לעיתים לשנים.</td></tr><tr><th>צבר</th><td>עסקאות בחוזים שטרם הוכרו כהכנסות.</td></tr><tr><th>הכנסות נדחות</th><td>תמורה שהתקבלה או שמועד פירעונה הגיע לפני הביצוע.</td></tr><tr><th>הכנסות מוכרות</th><td>מוצרים ושירותים שהועברו לפי כללי החשבונאות.</td></tr><tr><th>מזומן שהתקבל</th><td>גבייה בפועל, לפני ההכרה או אחריה.</td></tr></table>",
+    "short": "סכום מכירות שהוכרז במסגרת הסכמים חתומים, לעיתים למספר תקופות עתידיות. אינו תחליף אחיד להכנסות מוכרות."
+  },
+  "revenue-recognition": {
+    "id": "revenue-recognition",
+    "section": "income",
+    "title": "הכרה בהכנסה",
+    "what": "הכנסה נרשמת עם העברת המוצר או השירות שהובטח ללקוח, בנקודת זמן או לאורך זמן בהתאם לקיום מחויבויות הביצוע.",
+    "interp": "הזמנה מבטאת ביקוש, חוזה קובע התחייבויות וגבייה מתעדת תשלום. ההכרה תלויה בביצוע לפי כללי החשבונאות ולא רק בחתימה או בתשלום.",
+    "watch": "הזמנות עשויות להתבטל ומזומן עשוי להגיע לפני ההכנסה או אחריה. בדקו מדיניות חשבונאית וביאורי חוזים.",
+    "related": [
+      "revenue",
+      "contracted-sales",
+      "backlog",
+      "deferred-revenue",
+      "receivables"
+    ],
+    "stmt": "qual",
+    "example": [
+      [
+        "ציוד נמסר במרץ ומשולם באפריל",
+        "ייתכן שההכנסה תוכר במרץ והמזומן יגיע באפריל."
+      ]
+    ],
+    "short": "הכנסה נרשמת עם העברת המוצר או השירות שהובטח ללקוח, בנקודת זמן או לאורך זמן בהתאם לקיום מחויבויות הביצוע."
+  },
+  "capex-efficiency": {
+    "id": "capex-efficiency",
+    "section": "efficiency",
+    "title": "יעילות השקעות הוניות",
+    "what": "היעילות שבה השקעות הוניות מניבות תשואה כלכלית עתידית. ירידה בהשקעות אינה בהכרח טובה ועלייה אינה בהכרח רעה.",
+    "interp": "איזו תשואה כלכלית החברה מפיקה מהשקעת הון נוספת? חברו בין השקעות, כושר ייצור, הכנסות, מינוף תפעולי, תזרים חופשי ותשואה על ההון.",
+    "watch": "השוו מחזורי השקעה עם פיגור זמן מתאים. הדוגמאות הן סימנים לבדיקה ולא הוכחה סיבתית. ירידה בהשקעות עלולה לשקף השקעת חסר.",
+    "related": [
+      "capex",
+      "maintenance-capex",
+      "fcf",
+      "roic",
+      "incremental-roic",
+      "operating-leverage",
+      "capital-allocation",
+      "ev-revenue"
+    ],
+    "stmt": "qual",
+    "example": [
+      [
+        "תרחיש מעודד",
+        "השקעות עולות ב־50%; הכנסות ב־150%; רווחיות ותשואה עולות"
+      ],
+      [
+        "תרחיש מדאיג",
+        "השקעות עולות ב־150%; הכנסות ב־30%; רווחיות ותשואה יורדות"
+      ]
+    ],
+    "short": "היעילות שבה השקעות הוניות מניבות תשואה כלכלית עתידית. ירידה בהשקעות אינה בהכרח טובה ועלייה אינה בהכרח רעה."
+  },
+  "embedded-expectations": {
+    "id": "embedded-expectations",
+    "section": "valuation",
+    "title": "הציפיות הגלומות במחיר",
+    "what": "מחיר המניה כבר משקף ציפיות לגבי ביצועים עתידיים.",
+    "interp": "מה צריך לקרות כדי להצדיק את השווי הנוכחי? בדקו צמיחת הכנסות, רווחיות תפעולית עתידית, שיעור תזרים חופשי, תשואה על ההון, נתח שוק, שוק יעד ומשך הצמיחה הגבוהה.",
+    "watch": "חברה מצוינת עלולה להיות השקעה גרועה אם המחיר מניח עתיד מוצלח באופן לא מציאותי. המחיר לבדו אינו מזהה באופן יחיד את כל ההנחות.",
+    "related": [
+      "growth-vs-valuation",
+      "reverse-dcf",
+      "sensitivity",
+      "fcf-margin",
+      "roic",
+      "market-share",
+      "tam",
+      "price-sales",
+      "ev-revenue"
+    ],
+    "stmt": "qual",
+    "example": [
+      [
+        "המחיר דורש צמיחה של 30% במשך עשור",
+        "בדקו גודל שוק, תחרות וצורכי מימון לפני קבלת ההנחה."
+      ]
+    ],
+    "short": "מחיר המניה כבר משקף ציפיות לגבי ביצועים עתידיים."
   }
 }

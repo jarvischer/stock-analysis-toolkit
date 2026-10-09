@@ -5,7 +5,7 @@
     "title": "Analysis Framework",
     "intro": "The whole process exists to answer three questions. Click any stage to open it.",
     "he": "תהליך הניתוח: מהעסק → למספרים → לשווי → להחלטה.",
-    "top": "<div class=\"card\"><h3>Learn by doing</h3><p>Follow a short lesson, trace numbers through statements, or analyze a fictional company.</p><div class=\"btns\"><a class=\"btn\" href=\"#learning\">Start a learning path</a><a class=\"btn ghost\" href=\"#company-case\">Try the company case</a></div></div><div class=\"fw\">\n      <div class=\"fw-map\"><a class=\"fw-step\" href=\"#business\"><span class=\"fw-i\">1</span><span><b>BUSINESS</b><span class=\"fw-d\">What does it sell, to whom, how does it make money, and why does it win?</span></span></a><div class=\"fw-arrow\">↓</div><a class=\"fw-step\" href=\"#income\"><span class=\"fw-i\">2</span><span><b>REVENUE & GROWTH</b><span class=\"fw-d\">How big is it and how fast is demand growing?</span></span></a><div class=\"fw-arrow\">↓</div><a class=\"fw-step\" href=\"#margins\"><span class=\"fw-i\">3</span><span><b>PROFITABILITY</b><span class=\"fw-d\">How much of each revenue dollar becomes profit?</span></span></a><div class=\"fw-arrow\">↓</div><a class=\"fw-step\" href=\"#cashflow\"><span class=\"fw-i\">4</span><span><b>CASH FLOW</b><span class=\"fw-d\">Does accounting profit turn into real cash?</span></span></a><div class=\"fw-arrow\">↓</div><a class=\"fw-step\" href=\"#balance\"><span class=\"fw-i\">5</span><span><b>BALANCE SHEET</b><span class=\"fw-d\">Can it survive bad times? How much cash and debt?</span></span></a><div class=\"fw-arrow\">↓</div><a class=\"fw-step\" href=\"#efficiency\"><span class=\"fw-i\">6</span><span><b>CAPITAL EFFICIENCY</b><span class=\"fw-d\">How much profit per dollar of capital? ROIC vs WACC.</span></span></a><div class=\"fw-arrow\">↓</div><a class=\"fw-step\" href=\"#valuation\"><span class=\"fw-i\">7</span><span><b>VALUATION</b><span class=\"fw-d\">What is the market charging? Multiples: P/E, EV/EBITDA, FCF yield.</span></span></a><div class=\"fw-arrow\">↓</div><a class=\"fw-step\" href=\"#dcf\"><span class=\"fw-i\">8</span><span><b>INTRINSIC VALUE</b><span class=\"fw-d\">What is it worth based on future cash? DCF, scenarios, range.</span></span></a><div class=\"fw-arrow\">↓</div><a class=\"fw-step\" href=\"#thesis\"><span class=\"fw-i\">9</span><span><b>INVESTMENT THESIS</b><span class=\"fw-d\">Why is the market wrong, what’s the catalyst, what would prove me wrong?</span></span></a></div>\n      <div class=\"fw-side\">\n        <div class=\"bigq\"><span>Q1</span><div><b>Is this a good business?</b><p>Stages 1–6: moat, growth, margins, cash, balance sheet, ROIC.</p></div></div>\n        <div class=\"bigq\"><span>Q2</span><div><b>What is the business worth?</b><p>Stages 7–8: multiples and intrinsic value (DCF), as a range.</p></div></div>\n        <div class=\"bigq\"><span>Q3</span><div><b>Is the stock price attractive compared with that value?</b><p>Stage 9: upside vs downside, what the price implies, thesis &amp; invalidation.</p></div></div>\n        <div class=\"callout warn\"><b>Great company ≠ great investment.</b> Q1 and Q3 are different questions.</div>\n        <div class=\"btns\"><a class=\"btn\" href=\"#quickref\">Quick Reference</a><a class=\"btn ghost\" href=\"#cheatsheet\">Formula Cheat Sheet</a><a class=\"btn ghost\" href=\"#statements\">Statement Map</a><a class=\"btn ghost\" href=\"#principles\">Principles</a></div>\n      </div></div>"
+    "top": "<div class=\"card\"><h3>Learn by doing</h3><p>Follow a short lesson, trace numbers through statements, or analyze a fictional company.</p><div class=\"btns\"><a class=\"btn\" href=\"#learning\">Start a learning path</a><a class=\"btn ghost\" href=\"#company-case\">Try the company case</a></div></div><div class=\"fw\">\n      <div class=\"fw-map\"><a class=\"fw-step\" href=\"#business\"><span class=\"fw-i\">1</span><span><b>BUSINESS</b><span class=\"fw-d\">What does it sell, to whom, how does it make money, and why does it win?</span></span></a><div class=\"fw-arrow\">↓</div><a class=\"fw-step\" href=\"#income\"><span class=\"fw-i\">2</span><span><b>REVENUE & GROWTH</b><span class=\"fw-d\">How big is it and how fast is demand growing?</span></span></a><div class=\"fw-arrow\">↓</div><a class=\"fw-step\" href=\"#margins\"><span class=\"fw-i\">3</span><span><b>PROFITABILITY</b><span class=\"fw-d\">How much of each revenue dollar becomes profit?</span></span></a><div class=\"fw-arrow\">↓</div><a class=\"fw-step\" href=\"#cashflow\"><span class=\"fw-i\">4</span><span><b>CASH FLOW</b><span class=\"fw-d\">Does accounting profit turn into real cash?</span></span></a><div class=\"fw-arrow\">↓</div><a class=\"fw-step\" href=\"#balance\"><span class=\"fw-i\">5</span><span><b>BALANCE SHEET</b><span class=\"fw-d\">Can it survive bad times? How much cash and debt?</span></span></a><div class=\"fw-arrow\">↓</div><a class=\"fw-step\" href=\"#efficiency\"><span class=\"fw-i\">6</span><span><b>CAPITAL EFFICIENCY</b><span class=\"fw-d\">How much profit per dollar of capital? ROIC vs WACC.</span></span></a><div class=\"fw-arrow\">↓</div><a class=\"fw-step\" href=\"#valuation\"><span class=\"fw-i\">7</span><span><b>VALUATION</b><span class=\"fw-d\">What is the market charging? Multiples: P/E, EV/EBITDA, FCF yield.</span></span></a><div class=\"fw-arrow\">↓</div><a class=\"fw-step\" href=\"#dcf\"><span class=\"fw-i\">8</span><span><b>INTRINSIC VALUE</b><span class=\"fw-d\">What is it worth based on future cash? DCF, scenarios, range.</span></span></a><div class=\"fw-arrow\">↓</div><a class=\"fw-step\" href=\"#thesis\"><span class=\"fw-i\">9</span><span><b>INVESTMENT THESIS</b><span class=\"fw-d\">Why is the market wrong, what’s the catalyst, what would prove me wrong?</span></span></a></div>\n      <div class=\"fw-side\">\n        <div class=\"bigq\"><span>Q1</span><div><b>Is this a good business?</b><p>Stages 1–6: moat, growth, margins, cash, balance sheet, ROIC.</p></div></div>\n        <div class=\"bigq\"><span>Q2</span><div><b>What is the business worth?</b><p>Stages 7–8: multiples and intrinsic value (DCF), as a range.</p></div></div>\n        <div class=\"bigq\"><span>Q3</span><div><b>Is the stock price attractive compared with that value?</b><p>Stage 9: upside vs downside, what the price implies, thesis &amp; invalidation.</p></div></div>\n        <div class=\"callout warn\"><b>Great company ≠ great investment.</b> Q1 and Q3 are different questions.</div>\n        <div class=\"btns\"><a class=\"btn\" href=\"#quickref\">Quick Reference</a><a class=\"btn ghost\" href=\"#cheatsheet\">Formula Cheat Sheet</a><a class=\"btn ghost\" href=\"#statements\">Statement Map</a><a class=\"btn ghost\" href=\"#principles\">Principles</a></div>\n      </div></div><div class=\"card\"><a href=\"#growth-analysis\">Growth Company Analysis</a></div>"
   },
   {
     "id": "business",
@@ -88,5 +88,135 @@
     "intro": "Estimate lasting earning power, examine management decisions, and test what can go wrong. All examples are fictional.",
     "top": "<div class=\"btns\"><a class=\"btn\" href=\"#learn-owner\">Think like a business owner — guided path</a></div>",
     "bottom": "<div class=\"card\"><h3>Further reading</h3><p><a href=\"https://www.berkshirehathaway.com/letters/1986.html\">Berkshire Hathaway: owner earnings</a> · <a href=\"https://www.oaktreecapital.com/insights/memo/what-really-matters\">Oaktree: investment judgment and risk</a> · <a href=\"https://pages.stern.nyu.edu/~adamodar/New_Home_Page/lectures/val.html\">Aswath Damodaran: matching cash flows and discount rates</a> · <a href=\"https://www.cfainstitute.org/insights/professional-learning/refresher-readings/2026/financial-analysis-techniques\">CFA Institute: financial analysis techniques</a></p></div>"
+  },
+  {
+    "id": "growth-analysis",
+    "num": 15,
+    "title": "Growth Company Analysis",
+    "intro": "Move from “Is the company growing?” to “Is it creating economic value through that growth?” Open each stage to investigate.",
+    "top": "<div class=\"card\"><ol class=\"growth-flow\"><li><a href=\"#income/revenue\">Revenue Growth</a></li><li><a href=\"#margins/gross-margin\">Gross Margin</a></li><li><a href=\"#margins/operating-margin\">Operating Margin</a></li><li><a href=\"#margins/operating-leverage\">Operating Leverage</a></li><li><a href=\"#cashflow/capex\">CapEx</a></li><li><a href=\"#cashflow/fcf\">Free Cash Flow</a></li><li><a href=\"#efficiency/roic\">ROIC</a></li><li><a href=\"#valuation/growth-vs-valuation\">Valuation</a></li><li><a href=\"#valuation/embedded-expectations\">Embedded Expectations</a></li></ol></div><aside class=\"card multiple-principle\"><b>A multiple is not a valuation by itself.</b><p>A high multiple does not automatically mean expensive. A low multiple does not automatically mean cheap.</p><a href=\"#valuation/ev-revenue\">Interpret revenue multiples in context</a></aside>",
+    "checklist": [
+      {
+        "title": "Growth Quality",
+        "items": [
+          {
+            "id": "growth-0-0",
+            "concept": "revenue",
+            "label": "Is Revenue growing?"
+          },
+          {
+            "id": "growth-0-1",
+            "concept": "revenue",
+            "label": "Is growth accelerating or decelerating?"
+          },
+          {
+            "id": "growth-0-2",
+            "concept": "gross-margin",
+            "label": "Is Gross Margin stable or improving?"
+          },
+          {
+            "id": "growth-0-3",
+            "concept": "operating-margin-trend",
+            "label": "Is Operating Margin improving?"
+          },
+          {
+            "id": "growth-0-4",
+            "concept": "operating-leverage",
+            "label": "Is the company demonstrating Operating Leverage?"
+          }
+        ]
+      },
+      {
+        "title": "Capital Requirements",
+        "items": [
+          {
+            "id": "growth-1-0",
+            "concept": "capex",
+            "label": "How much CapEx is required?"
+          },
+          {
+            "id": "growth-1-1",
+            "concept": "capex-efficiency",
+            "label": "Is CapEx growing faster than Revenue?"
+          },
+          {
+            "id": "growth-1-2",
+            "concept": "fcf",
+            "label": "Is Free Cash Flow improving?"
+          },
+          {
+            "id": "growth-1-3",
+            "concept": "roic",
+            "label": "Is ROIC improving?"
+          }
+        ]
+      },
+      {
+        "title": "Future Visibility",
+        "items": [
+          {
+            "id": "growth-2-0",
+            "concept": "backlog",
+            "label": "Is Backlog growing?"
+          },
+          {
+            "id": "growth-2-1",
+            "concept": "backlog-quality",
+            "label": "How quickly does Backlog convert to Revenue?"
+          },
+          {
+            "id": "growth-2-2",
+            "concept": "deferred-revenue",
+            "label": "Is Deferred Revenue increasing?"
+          },
+          {
+            "id": "growth-2-3",
+            "concept": "contracted-sales",
+            "label": "Are major contracts cancellable?"
+          }
+        ]
+      },
+      {
+        "title": "Valuation",
+        "items": [
+          {
+            "id": "growth-3-0",
+            "concept": "market-cap",
+            "label": "What is Market Cap?"
+          },
+          {
+            "id": "growth-3-1",
+            "concept": "enterprise-value",
+            "label": "What is Enterprise Value?"
+          },
+          {
+            "id": "growth-3-2",
+            "concept": "ev-revenue",
+            "label": "What are P/S and EV/Revenue?"
+          },
+          {
+            "id": "growth-3-3",
+            "concept": "pe",
+            "label": "Are earnings-based multiples meaningful yet?"
+          },
+          {
+            "id": "growth-3-4",
+            "concept": "embedded-expectations",
+            "label": "What growth is already priced into the stock?"
+          },
+          {
+            "id": "growth-3-5",
+            "concept": "embedded-expectations",
+            "label": "What future margins are already priced into the stock?"
+          },
+          {
+            "id": "growth-3-6",
+            "concept": "reverse-dcf",
+            "label": "What assumptions would justify today’s valuation?"
+          }
+        ]
+      }
+    ],
+    "bottom": "<details class=\"card\"><summary>Accounting and valuation sources</summary><p><a href=\"https://www.ifrs.org/issued-standards/list-of-standards/ifrs-15-revenue-from-contracts-with-customers/\">IFRS 15 — Revenue from Contracts with Customers</a></p><p><a href=\"https://pages.stern.nyu.edu/~adamodar/pdfiles/papers/revmult.pdf\">Aswath Damodaran — Revenue Multiples</a></p></details>"
   }
 ]

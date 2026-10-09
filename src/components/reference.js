@@ -55,7 +55,7 @@
     ['Capital Efficiency', [['NOPAT', 'Operating Income × (1 − Tax Rate)', 'nopat'], ['ROIC', 'NOPAT / Invested Capital', 'roic'], ['Value Creation Spread', 'ROIC − WACC', 'wacc']]],
     ['Per Share', [['EPS', 'Net Income / Shares Outstanding', 'eps']]],
     ['Valuation', [['Market Cap', 'Share Price × Shares Outstanding', 'market-cap'], ['P/E', 'Market Cap / Net Income', 'pe'], ['Enterprise Value', 'Market Cap + Debt − Cash', 'enterprise-value'],
-      ['EV / EBITDA', 'Enterprise Value / EBITDA', 'ev-ebitda'], ['Price / FCF', 'Market Cap / FCF', 'price-fcf'], ['FCF Yield', 'FCF / Market Cap', 'fcf-yield']]],
+      ['P/S', 'Market Cap / Revenue', 'price-sales'], ['EV / Revenue', 'Enterprise Value / Revenue', 'ev-revenue'], ['EV / EBITDA', 'Enterprise Value / EBITDA', 'ev-ebitda'], ['Price / FCF', 'Market Cap / FCF', 'price-fcf'], ['FCF Yield', 'FCF / Market Cap', 'fcf-yield']]],
     ['Value Investing', [['Margin of Safety', '(Estimated Value − Price) / Estimated Value', 'margin-of-safety'],
       ['Owner Earnings (simplified)', 'Net Income + D&A − Maintenance CapEx − Required Increase in Operating Working Capital', 'owner-earnings'],
       ['Adjusted Earnings (before cycle analysis)', 'Reported Earnings − Unusual Gains + Unusual Costs (after tax)', 'normalized-earnings'],

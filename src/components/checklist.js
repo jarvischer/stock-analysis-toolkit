@@ -56,6 +56,7 @@
         paint();
       });
       paint();
+      el.appendChild(SAT.growthChecklist());
     },
   });
 })();

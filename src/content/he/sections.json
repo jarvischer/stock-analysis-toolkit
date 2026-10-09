@@ -4,7 +4,7 @@
     "num": 1,
     "title": "מסגרת ניתוח",
     "intro": "הניתוח מתחיל בהבנת העסק, ממשיך בבדיקת הנתונים ומסתיים בהשוואת מחיר לערך.",
-    "top": "<div class=\"card\"><h3>לומדים באמצעות תרגול</h3><p>עברו שיעור קצר, עקבו אחר נתונים בדוחות או נתחו חברה בדיונית.</p><div class=\"btns\"><a class=\"btn\" href=\"#learning\">התחלת מסלול לימוד</a><a class=\"btn ghost\" href=\"#company-case\">למקרה הבוחן</a></div></div><div class=\"fw\">\n      <div class=\"fw-map\"><a class=\"fw-step\" href=\"#business\"><span class=\"fw-i\">1</span><span><b>העסק</b><span class=\"fw-d\">מה החברה מוכרת, למי, איך היא מרוויחה ולמה בוחרים בה?</span></span></a><div class=\"fw-arrow\">↓</div><a class=\"fw-step\" href=\"#income\"><span class=\"fw-i\">2</span><span><b>הכנסות וצמיחה</b><span class=\"fw-d\">מה גודל העסק ובאיזו מהירות הביקוש גדל?</span></span></a><div class=\"fw-arrow\">↓</div><a class=\"fw-step\" href=\"#margins\"><span class=\"fw-i\">3</span><span><b>רווחיות</b><span class=\"fw-d\">כמה מכל שקל מכירות הופך לרווח?</span></span></a><div class=\"fw-arrow\">↓</div><a class=\"fw-step\" href=\"#cashflow\"><span class=\"fw-i\">4</span><span><b>תזרים מזומנים</b><span class=\"fw-d\">האם הרווח החשבונאי הופך למזומן?</span></span></a><div class=\"fw-arrow\">↓</div><a class=\"fw-step\" href=\"#balance\"><span class=\"fw-i\">5</span><span><b>מאזן</b><span class=\"fw-d\">האם העסק יכול לשרוד תקופה קשה? כמה מזומן וחוב יש לו?</span></span></a><div class=\"fw-arrow\">↓</div><a class=\"fw-step\" href=\"#efficiency\"><span class=\"fw-i\">6</span><span><b>יעילות ההון</b><span class=\"fw-d\">כמה רווח נוצר מכל יחידת הון? השוו תשואה לעלות הון.</span></span></a><div class=\"fw-arrow\">↓</div><a class=\"fw-step\" href=\"#valuation\"><span class=\"fw-i\">7</span><span><b>הערכת שווי</b><span class=\"fw-d\">מה המחיר שהשוק דורש ביחס לרווח ולתזרים?</span></span></a><div class=\"fw-arrow\">↓</div><a class=\"fw-step\" href=\"#dcf\"><span class=\"fw-i\">8</span><span><b>ערך פנימי</b><span class=\"fw-d\">מה השווי לפי מזומן עתידי? היוון, תרחישים וטווח.</span></span></a><div class=\"fw-arrow\">↓</div><a class=\"fw-step\" href=\"#thesis\"><span class=\"fw-i\">9</span><span><b>תזת השקעה</b><span class=\"fw-d\">מדוע השוק טועה, מה הזרז ומה יפריך את התזה?</span></span></a></div>\n      <div class=\"fw-side\">\n        <div class=\"bigq\"><span>Q1</span><div><b>האם זה עסק טוב?</b><p>שלבים 1–6: חפיר, צמיחה, רווחיות, מזומן, מאזן ותשואה על הון.</p></div></div>\n        <div class=\"bigq\"><span>Q2</span><div><b>מה שווי העסק?</b><p>שלבים 7–8: מכפילים וערך פנימי כטווח.</p></div></div>\n        <div class=\"bigq\"><span>Q3</span><div><b>האם מחיר המניה מושך ביחס לערך?</b><p>שלב 9: פוטנציאל עלייה וירידה, ציפיות במחיר, תזה והפרכתה.</p></div></div>\n        <div class=\"callout warn\"><b>חברה מצוינת אינה בהכרח השקעה מצוינת.</b>איכות העסק ואיכות ההשקעה במחיר הנוכחי הן שאלות שונות.</div>\n        <div class=\"btns\"><a class=\"btn\" href=\"#quickref\">עיון מהיר</a><a class=\"btn ghost\" href=\"#cheatsheet\">דף נוסחאות</a><a class=\"btn ghost\" href=\"#statements\">מפת הדוחות</a><a class=\"btn ghost\" href=\"#principles\">עקרונות</a></div>\n      </div></div>"
+    "top": "<div class=\"card\"><h3>לומדים באמצעות תרגול</h3><p>עברו שיעור קצר, עקבו אחר נתונים בדוחות או נתחו חברה בדיונית.</p><div class=\"btns\"><a class=\"btn\" href=\"#learning\">התחלת מסלול לימוד</a><a class=\"btn ghost\" href=\"#company-case\">למקרה הבוחן</a></div></div><div class=\"fw\">\n      <div class=\"fw-map\"><a class=\"fw-step\" href=\"#business\"><span class=\"fw-i\">1</span><span><b>העסק</b><span class=\"fw-d\">מה החברה מוכרת, למי, איך היא מרוויחה ולמה בוחרים בה?</span></span></a><div class=\"fw-arrow\">↓</div><a class=\"fw-step\" href=\"#income\"><span class=\"fw-i\">2</span><span><b>הכנסות וצמיחה</b><span class=\"fw-d\">מה גודל העסק ובאיזו מהירות הביקוש גדל?</span></span></a><div class=\"fw-arrow\">↓</div><a class=\"fw-step\" href=\"#margins\"><span class=\"fw-i\">3</span><span><b>רווחיות</b><span class=\"fw-d\">כמה מכל שקל מכירות הופך לרווח?</span></span></a><div class=\"fw-arrow\">↓</div><a class=\"fw-step\" href=\"#cashflow\"><span class=\"fw-i\">4</span><span><b>תזרים מזומנים</b><span class=\"fw-d\">האם הרווח החשבונאי הופך למזומן?</span></span></a><div class=\"fw-arrow\">↓</div><a class=\"fw-step\" href=\"#balance\"><span class=\"fw-i\">5</span><span><b>מאזן</b><span class=\"fw-d\">האם העסק יכול לשרוד תקופה קשה? כמה מזומן וחוב יש לו?</span></span></a><div class=\"fw-arrow\">↓</div><a class=\"fw-step\" href=\"#efficiency\"><span class=\"fw-i\">6</span><span><b>יעילות ההון</b><span class=\"fw-d\">כמה רווח נוצר מכל יחידת הון? השוו תשואה לעלות הון.</span></span></a><div class=\"fw-arrow\">↓</div><a class=\"fw-step\" href=\"#valuation\"><span class=\"fw-i\">7</span><span><b>הערכת שווי</b><span class=\"fw-d\">מה המחיר שהשוק דורש ביחס לרווח ולתזרים?</span></span></a><div class=\"fw-arrow\">↓</div><a class=\"fw-step\" href=\"#dcf\"><span class=\"fw-i\">8</span><span><b>ערך פנימי</b><span class=\"fw-d\">מה השווי לפי מזומן עתידי? היוון, תרחישים וטווח.</span></span></a><div class=\"fw-arrow\">↓</div><a class=\"fw-step\" href=\"#thesis\"><span class=\"fw-i\">9</span><span><b>תזת השקעה</b><span class=\"fw-d\">מדוע השוק טועה, מה הזרז ומה יפריך את התזה?</span></span></a></div>\n      <div class=\"fw-side\">\n        <div class=\"bigq\"><span>Q1</span><div><b>האם זה עסק טוב?</b><p>שלבים 1–6: חפיר, צמיחה, רווחיות, מזומן, מאזן ותשואה על הון.</p></div></div>\n        <div class=\"bigq\"><span>Q2</span><div><b>מה שווי העסק?</b><p>שלבים 7–8: מכפילים וערך פנימי כטווח.</p></div></div>\n        <div class=\"bigq\"><span>Q3</span><div><b>האם מחיר המניה מושך ביחס לערך?</b><p>שלב 9: פוטנציאל עלייה וירידה, ציפיות במחיר, תזה והפרכתה.</p></div></div>\n        <div class=\"callout warn\"><b>חברה מצוינת אינה בהכרח השקעה מצוינת.</b>איכות העסק ואיכות ההשקעה במחיר הנוכחי הן שאלות שונות.</div>\n        <div class=\"btns\"><a class=\"btn\" href=\"#quickref\">עיון מהיר</a><a class=\"btn ghost\" href=\"#cheatsheet\">דף נוסחאות</a><a class=\"btn ghost\" href=\"#statements\">מפת הדוחות</a><a class=\"btn ghost\" href=\"#principles\">עקרונות</a></div>\n      </div></div><div class=\"card\"><a href=\"#growth-analysis\">ניתוח חברות צמיחה</a></div>"
   },
   {
     "id": "business",
@@ -79,5 +79,135 @@
     "intro": "העריכו כוח רווח מתמשך, החלטות הנהלה וסיכונים. כל הדוגמאות בדיוניות.",
     "top": "<div class=\"btns\"><a class=\"btn\" href=\"#learn-owner\">לחשוב כמו בעלי עסק — מסלול מודרך</a></div>",
     "bottom": "<div class=\"card\"><h3>לקריאה נוספת</h3><p><a href=\"https://www.berkshirehathaway.com/letters/1986.html\">ברקשייר האת׳וויי: רווחי בעלים</a> · <a href=\"https://www.oaktreecapital.com/insights/memo/what-really-matters\">אוקטרי: שיקול דעת וסיכון בהשקעות</a> · <a href=\"https://pages.stern.nyu.edu/~adamodar/New_Home_Page/lectures/val.html\">אסוואת דמודרן: התאמת תזרימים ושיעורי היוון</a> · <a href=\"https://www.cfainstitute.org/insights/professional-learning/refresher-readings/2026/financial-analysis-techniques\">מכון CFA: שיטות לניתוח פיננסי</a></p></div>"
+  },
+  {
+    "id": "growth-analysis",
+    "num": 15,
+    "title": "ניתוח חברות צמיחה",
+    "intro": "האם החברה רק צומחת, או יוצרת ערך כלכלי באמצעות הצמיחה? עקבו אחר השלבים ופתחו כל מושג.",
+    "top": "<div class=\"card\"><ol class=\"growth-flow\"><li><a href=\"#income/revenue\">הכנסות</a></li><li><a href=\"#margins/gross-margin\">שיעור רווח גולמי</a></li><li><a href=\"#margins/operating-margin\">שיעור רווח תפעולי</a></li><li><a href=\"#margins/operating-leverage\">מינוף תפעולי</a></li><li><a href=\"#cashflow/capex\">השקעות הוניות</a></li><li><a href=\"#cashflow/fcf\">תזרים מזומנים חופשי</a></li><li><a href=\"#efficiency/roic\">תשואה על ההון המושקע</a></li><li><a href=\"#valuation/growth-vs-valuation\">צמיחה מול מחיר</a></li><li><a href=\"#valuation/embedded-expectations\">הציפיות הגלומות במחיר</a></li></ol></div><aside class=\"card multiple-principle\"><b>מכפיל אינו הערכת שווי בפני עצמו.</b><p>מכפיל גבוה אינו בהכרח יקר; מכפיל נמוך אינו בהכרח זול.</p><a href=\"#valuation/ev-revenue\">בחינת ההקשר של מכפילי הכנסות</a></aside>",
+    "checklist": [
+      {
+        "title": "איכות הצמיחה",
+        "items": [
+          {
+            "id": "growth-0-0",
+            "concept": "revenue",
+            "label": "האם ההכנסות צומחות?"
+          },
+          {
+            "id": "growth-0-1",
+            "concept": "revenue",
+            "label": "האם הצמיחה מאיצה או מאטה?"
+          },
+          {
+            "id": "growth-0-2",
+            "concept": "gross-margin",
+            "label": "האם הרווחיות הגולמית יציבה או משתפרת?"
+          },
+          {
+            "id": "growth-0-3",
+            "concept": "operating-margin-trend",
+            "label": "האם הרווחיות התפעולית משתפרת?"
+          },
+          {
+            "id": "growth-0-4",
+            "concept": "operating-leverage",
+            "label": "האם החברה מציגה מינוף תפעולי?"
+          }
+        ]
+      },
+      {
+        "title": "דרישות הון",
+        "items": [
+          {
+            "id": "growth-1-0",
+            "concept": "capex",
+            "label": "כמה השקעות הוניות נדרשות?"
+          },
+          {
+            "id": "growth-1-1",
+            "concept": "capex-efficiency",
+            "label": "האם השקעות הוניות גדלות מהר מההכנסות?"
+          },
+          {
+            "id": "growth-1-2",
+            "concept": "fcf",
+            "label": "האם התזרים החופשי משתפר?"
+          },
+          {
+            "id": "growth-1-3",
+            "concept": "roic",
+            "label": "האם התשואה על ההון המושקע משתפרת?"
+          }
+        ]
+      },
+      {
+        "title": "נראות עתידית",
+        "items": [
+          {
+            "id": "growth-2-0",
+            "concept": "backlog",
+            "label": "האם צבר ההזמנות גדל?"
+          },
+          {
+            "id": "growth-2-1",
+            "concept": "backlog-quality",
+            "label": "באיזו מהירות הצבר הופך להכנסות?"
+          },
+          {
+            "id": "growth-2-2",
+            "concept": "deferred-revenue",
+            "label": "האם ההכנסות הנדחות גדלות?"
+          },
+          {
+            "id": "growth-2-3",
+            "concept": "contracted-sales",
+            "label": "האם חוזים מרכזיים ניתנים לביטול?"
+          }
+        ]
+      },
+      {
+        "title": "הערכת שווי",
+        "items": [
+          {
+            "id": "growth-3-0",
+            "concept": "market-cap",
+            "label": "מה שווי השוק?"
+          },
+          {
+            "id": "growth-3-1",
+            "concept": "enterprise-value",
+            "label": "מה שווי הפעילות?"
+          },
+          {
+            "id": "growth-3-2",
+            "concept": "ev-revenue",
+            "label": "מהם מכפילי המכירות ושווי הפעילות להכנסות?"
+          },
+          {
+            "id": "growth-3-3",
+            "concept": "pe",
+            "label": "האם מכפילי רווח כבר משמעותיים?"
+          },
+          {
+            "id": "growth-3-4",
+            "concept": "embedded-expectations",
+            "label": "איזו צמיחה כבר מגולמת במחיר המניה?"
+          },
+          {
+            "id": "growth-3-5",
+            "concept": "embedded-expectations",
+            "label": "איזו רווחיות עתידית כבר מגולמת במחיר המניה?"
+          },
+          {
+            "id": "growth-3-6",
+            "concept": "reverse-dcf",
+            "label": "אילו הנחות יצדיקו את השווי הנוכחי?"
+          }
+        ]
+      }
+    ],
+    "bottom": "<details class=\"card\"><summary>מקורות לחשבונאות ולהערכת שווי</summary><p><a href=\"https://www.ifrs.org/issued-standards/list-of-standards/ifrs-15-revenue-from-contracts-with-customers/\">IFRS 15 — Revenue from Contracts with Customers</a></p><p><a href=\"https://pages.stern.nyu.edu/~adamodar/pdfiles/papers/revmult.pdf\">Aswath Damodaran — Revenue Multiples</a></p></details>"
   }
 ]

@@ -79,6 +79,12 @@
       ${c.related ? `<div class="rel">Related: ${c.related.filter((r) => SAT.C[r] || true).map((r) => SAT.link(r)).join(' · ')}</div>` : ''}
     </article>`);
     if (c.calc) node.querySelector('.try-slot').appendChild(SAT.calc(c.calc));
+    for (const id of c.calculators || []) {
+      const cfg = SAT.calculators[id];
+      const detail = SAT.el(`<details class="try" data-calculator="${id}"><summary>${SAT.esc(SAT.t(cfg.title))}</summary></details>`);
+      detail.appendChild(SAT.calc(cfg));
+      node.querySelector('.rel').before(detail);
+    }
     if (SAT.exercise && SAT.EXERCISES[c.id]) {
       const practice = SAT.exercise(c.id, 'concept:' + c.id);
       const example = Array.from(node.querySelectorAll('.cr')).find((r) => r.querySelector('.cl').textContent === 'Example');

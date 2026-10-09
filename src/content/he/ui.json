@@ -59,7 +59,7 @@
   "Return on Invested Capital": "תשואה על ההון המושקע",
   "WACC": "עלות הון ממוצעת משוקללת",
   "Weighted Average Cost of Capital": "עלות הון ממוצעת משוקללת",
-  "Shares Outstanding": "מניות במחזור",
+  "Shares Outstanding": "מניות קיימות",
   "Basic Shares": "מספר מניות בסיסי",
   "Diluted Shares": "מניות בדילול מלא",
   "Dilution": "דילול",
@@ -1023,5 +1023,10 @@
   "• {share}% of the DCF value comes from the terminal value — highly assumption-sensitive.": "• {share}% מהשווי נובעים מהערך הסופי — התוצאה רגישה מאוד להנחות.",
   "• Gross Profit − OpEx = {calculated} but Operating Income entered is {entered}. Check whether OpEx includes Cost of Revenue (don’t subtract it twice) or other operating items.": "• הרווח הגולמי פחות הוצאות התפעול נותן {calculated}, אך הרווח התפעולי שהוזן הוא {entered}. בדקו אם ההוצאות כוללות עלות מכר או סעיפים אחרים, והימנעו מהפחתה כפולה.",
   "Financials": "נתונים כספיים",
-  "Intrinsic Value": "ערך פנימי"
+  "Intrinsic Value": "ערך פנימי",
+  "Growth company checklist": "רשימת בדיקה לחברות צמיחה",
+  "Reset growth checklist": "איפוס בדיקת הצמיחה",
+  "EV from Share Price": "שווי פעילות ממחיר המניה",
+  "Net Cash (+) / Net Debt (−)": "מזומן נטו (+) / חוב נטו (−)",
+  "Clear growth checklist ticks?": "לנקות את סימוני בדיקת הצמיחה?"
 }

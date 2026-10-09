@@ -28,3 +28,11 @@ for(const [id,q] of Object.entries(catalogs.he.lessons.exercises)) {
   if(q.choices) for(const choice of q.choices) assert(/[א-ת]/.test(choice),`Missing Hebrew choice ${id}`);
 }
 console.log(`Validated ${Object.keys(catalogs.en.concepts).length} concepts and ${catalogs.en.lessons.paths.length} learning paths in both languages.`);
+for (const lang of ['en','he']) {
+  const groups = catalogs[lang].sections.find(s => s.id === 'growth-analysis').checklist;
+  const items = groups.flatMap(g => g.items);
+  assert.equal(items.length,20);
+  assert.equal(new Set(items.map(i => i.id)).size,20);
+  for (const item of items) assert(catalogs[lang].concepts[item.concept],`Missing checklist target: ${item.concept}`);
+}
+assert.deepEqual(catalogs.en.sections.find(s=>s.id==='growth-analysis').checklist.map(g=>g.items.map(i=>[i.id,i.concept])),catalogs.he.sections.find(s=>s.id==='growth-analysis').checklist.map(g=>g.items.map(i=>[i.id,i.concept])));

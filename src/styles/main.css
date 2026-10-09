@@ -570,3 +570,13 @@ input[data-u="text"], textarea { unicode-bidi: plaintext; }
 }
 /* Explicit component display rules must not override the HTML hidden state. */
 [hidden] { display: none !important; }
+
+/* Connected growth analysis: logical spacing supports both reading directions. */
+.growth-flow,.concept-flow{list-style:none;padding:0;display:flex;flex-direction:column;align-items:stretch;gap:6px;margin:12px 0}
+.growth-flow li,.concept-flow li{text-align:center;font-size:13px}
+.growth-flow li:not(:last-child)::after,.concept-flow li:not(:last-child)::after{content:'↓';display:block;opacity:.6;margin-top:6px}
+.growth-flow a{display:block;border:1px solid var(--line);border-radius:6px;padding:9px}
+.multiple-principle{border-inline-start:3px solid var(--accent)}
+.growth-item{display:flex;align-items:center;gap:8px}.growth-item label{flex:1}.growth-item>a{flex-shrink:0}
+.table-scroll{max-width:100%;overflow-x:auto}.table-scroll table{min-width:420px}
+.reverse-reserved{border-style:dashed}.exm th{text-align:start;padding:8px;font-weight:600}

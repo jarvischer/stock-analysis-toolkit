@@ -37,7 +37,8 @@
     "related": [
       "revenue-model",
       "segments",
-      "moat"
+      "moat",
+      "circle-of-competence"
     ],
     "section": "business"
   },
@@ -129,7 +130,8 @@
     "where": "10-K revenue disaggregation and segment notes.",
     "related": [
       "segments",
-      "gross-margin"
+      "gross-margin",
+      "revenue-model"
     ],
     "section": "business"
   },
@@ -211,7 +213,10 @@
     "related": [
       "roic",
       "competition",
-      "market-share"
+      "market-share",
+      "business-model",
+      "competitive-advantage",
+      "ev-revenue"
     ],
     "section": "business"
   },
@@ -250,7 +255,10 @@
     "where": "Industry reports, company presentations.",
     "related": [
       "tam",
-      "competition"
+      "competition",
+      "growth-drivers",
+      "moat",
+      "embedded-expectations"
     ],
     "section": "business"
   },
@@ -289,7 +297,9 @@
     "where": "Investor presentations, industry research.",
     "related": [
       "growth-drivers",
-      "market-share"
+      "market-share",
+      "revenue",
+      "embedded-expectations"
     ],
     "section": "business"
   },
@@ -312,7 +322,8 @@
     "where": "10-K Item 1 “Competition”; competitors’ filings.",
     "related": [
       "moat",
-      "market-share"
+      "market-share",
+      "competitive-advantage"
     ],
     "section": "business"
   },
@@ -343,7 +354,8 @@
     "watch": "Concentration can rise quietly as a big customer grows faster than others.",
     "where": "10-K segment / concentration note, Risk Factors.",
     "related": [
-      "risk-factors"
+      "risk-factors",
+      "backlog-quality"
     ],
     "section": "business"
   },
@@ -366,7 +378,8 @@
     "where": "Multi-year financial history.",
     "related": [
       "pe",
-      "risk-factors"
+      "risk-factors",
+      "normalized-earnings"
     ],
     "section": "business"
   },
@@ -386,7 +399,8 @@
     "watch": "Catalysts that everyone already knows about are usually priced in.",
     "where": "Earnings calls, company guidance, news.",
     "related": [
-      "thesis-def"
+      "thesis-def",
+      "value-trap"
     ],
     "section": "business"
   },
@@ -409,7 +423,10 @@
     "related": [
       "invalidation",
       "customer-concentration",
-      "debt"
+      "debt",
+      "cyclicality",
+      "thesis-def",
+      "circle-of-competence"
     ],
     "section": "business"
   },
@@ -469,7 +486,10 @@
     "related": [
       "cogs",
       "growth-drivers",
-      "tam"
+      "tam",
+      "profitable-growth",
+      "backlog",
+      "revenue-recognition"
     ],
     "section": "income"
   },
@@ -512,7 +532,8 @@
     "where": "Line directly below Revenue.",
     "related": [
       "gross-profit",
-      "opex"
+      "opex",
+      "revenue"
     ],
     "section": "income"
   },
@@ -662,7 +683,9 @@
     "related": [
       "operating-margin",
       "nopat",
-      "ebitda"
+      "ebitda",
+      "gross-profit",
+      "opex"
     ],
     "section": "income"
   },
@@ -712,7 +735,8 @@
     "related": [
       "net-margin",
       "eps",
-      "profit-vs-cash"
+      "profit-vs-cash",
+      "ocf"
     ],
     "section": "income"
   },
@@ -764,7 +788,11 @@
     },
     "related": [
       "gross-profit",
-      "operating-margin"
+      "operating-margin",
+      "revenue-mix",
+      "ev-revenue",
+      "profitable-growth",
+      "backlog-quality"
     ],
     "section": "margins"
   },
@@ -815,7 +843,12 @@
     "related": [
       "operating-income",
       "operating-leverage",
-      "gross-margin"
+      "gross-margin",
+      "net-margin",
+      "fcf-margin",
+      "ev-revenue",
+      "profitable-growth",
+      "operating-margin-trend"
     ],
     "section": "margins"
   },
@@ -840,7 +873,7 @@
         "res"
       ]
     ],
-    "interp": "Revenue grew 20% but operating income more than doubled. This is why investors tolerate low margins in scaling businesses.",
+    "interp": "Revenue grew 20% but operating income more than doubled. This is why investors tolerate low margins in scaling businesses. Negative operating leverage occurs when operating expenses grow faster than revenue and squeeze Operating Margin, other things equal. Check Gross Margin as well: revenue outgrowing operating expenses alone does not guarantee better margins.",
     "better": [
       "context",
       "Great on the way up, painful on the way down."
@@ -853,9 +886,12 @@
     "where": "Observed over several years of income statements.",
     "related": [
       "operating-margin",
-      "opex"
+      "opex",
+      "operating-margin-trend",
+      "capex-efficiency"
     ],
-    "section": "margins"
+    "section": "margins",
+    "body": " <ol class=\"concept-flow\"><li>Revenue ↑</li><li>Operating Expenses ↑ more slowly</li><li>Operating Margin ↑ (assuming stable Gross Margin)</li></ol><p>Illustrative path with 60% Gross Margin; amounts in $m. Expenses keep rising while losses turn into profits.</p><div class=\"table-scroll\"><table class=\"exm\"><tr><th>Metric</th><th>Year 1</th><th>Year 2</th><th>Year 3</th></tr><tr><td>Revenue</td><td>100</td><td>150</td><td>200</td></tr><tr><td>COGS</td><td>40</td><td>60</td><td>80</td></tr><tr><td>Operating Expenses</td><td>70</td><td>80</td><td>90</td></tr><tr><td>Operating Income</td><td>−10</td><td>10</td><td>30</td></tr><tr><td>Operating Margin</td><td>−10%</td><td>6.7%</td><td>15%</td></tr></table></div>"
   },
   "net-margin": {
     "id": "net-margin",
@@ -935,7 +971,11 @@
     "related": [
       "working-capital",
       "ocf",
-      "fcf"
+      "fcf",
+      "net-income",
+      "receivables",
+      "payables",
+      "earnings-quality"
     ],
     "section": "cashflow"
   },
@@ -977,7 +1017,11 @@
     "where": "Balance Sheet (levels); Cash Flow Statement (changes).",
     "related": [
       "profit-vs-cash",
-      "current-ratio"
+      "current-ratio",
+      "receivables",
+      "inventory",
+      "payables",
+      "earnings-quality"
     ],
     "section": "cashflow"
   },
@@ -1058,7 +1102,9 @@
     "related": [
       "fcf",
       "net-income",
-      "profit-vs-cash"
+      "profit-vs-cash",
+      "cfs",
+      "deferred-revenue"
     ],
     "section": "cashflow"
   },
@@ -1114,7 +1160,10 @@
       "owner-earnings",
       "fcf",
       "roic",
-      "ebitda"
+      "ebitda",
+      "cfs",
+      "ppe",
+      "capex-efficiency"
     ],
     "section": "cashflow"
   },
@@ -1164,7 +1213,19 @@
     "related": [
       "fcf-margin",
       "fcf-yield",
-      "dcf-intro"
+      "dcf-intro",
+      "profit-vs-cash",
+      "cfs",
+      "ocf",
+      "capex",
+      "ebitda",
+      "price-fcf",
+      "owner-earnings",
+      "interest-coverage",
+      "ev-revenue",
+      "profitable-growth",
+      "backlog-quality",
+      "capex-efficiency"
     ],
     "section": "cashflow"
   },
@@ -1203,7 +1264,8 @@
     "where": "Calculated: Cash Flow Statement + Income Statement.",
     "related": [
       "fcf",
-      "operating-margin"
+      "operating-margin",
+      "embedded-expectations"
     ],
     "section": "cashflow"
   },
@@ -1248,7 +1310,9 @@
       "current-ratio",
       "cash",
       "receivables",
-      "inventory"
+      "inventory",
+      "assets",
+      "ncav"
     ],
     "section": "balance"
   },
@@ -1277,7 +1341,9 @@
     "related": [
       "net-cash",
       "enterprise-value",
-      "equity-value"
+      "equity-value",
+      "current-assets",
+      "contracted-sales"
     ],
     "section": "balance"
   },
@@ -1316,7 +1382,9 @@
     "where": "Current assets.",
     "related": [
       "profit-vs-cash",
-      "working-capital"
+      "working-capital",
+      "current-assets",
+      "revenue-recognition"
     ],
     "section": "balance"
   },
@@ -1339,7 +1407,8 @@
     "where": "Current assets.",
     "related": [
       "working-capital",
-      "current-ratio"
+      "current-ratio",
+      "current-assets"
     ],
     "section": "balance"
   },
@@ -1362,7 +1431,8 @@
     "where": "Long-term assets.",
     "related": [
       "capex",
-      "invested-capital"
+      "invested-capital",
+      "assets"
     ],
     "section": "balance"
   },
@@ -1386,7 +1456,10 @@
     "related": [
       "current-liabilities",
       "debt",
-      "equity"
+      "equity",
+      "assets",
+      "ncav",
+      "deferred-revenue"
     ],
     "section": "balance"
   },
@@ -1406,7 +1479,8 @@
     "where": "Balance Sheet, “Total current liabilities”.",
     "related": [
       "current-ratio",
-      "payables"
+      "payables",
+      "liabilities"
     ],
     "section": "balance"
   },
@@ -1429,7 +1503,8 @@
     "where": "Current liabilities.",
     "related": [
       "working-capital",
-      "profit-vs-cash"
+      "profit-vs-cash",
+      "current-liabilities"
     ],
     "section": "balance"
   },
@@ -1466,7 +1541,11 @@
     "related": [
       "net-debt",
       "debt-ebitda",
-      "enterprise-value"
+      "enterprise-value",
+      "risk-factors",
+      "liabilities",
+      "net-cash",
+      "invested-capital"
     ],
     "section": "balance"
   },
@@ -1492,7 +1571,7 @@
         "res"
       ]
     ],
-    "interp": "Positive net cash means the company could repay all its debt today and still have cash left — financial flexibility for downturns, buybacks or acquisitions.",
+    "interp": "Positive net cash means the company could repay all its debt today and still have cash left — financial flexibility for downturns, buybacks or acquisitions. Cash > Debt means Net Cash. EV = Market Cap − Net Cash: $20B equity with $3B Net Cash implies $17B EV.",
     "better": [
       "higher"
     ],
@@ -1532,7 +1611,7 @@
         "res"
       ]
     ],
-    "interp": "Analysts care more about net debt than gross debt because cash could be used to repay debt. Two companies each with $10B of debt are very different if one has $9B of cash.",
+    "interp": "Analysts care more about net debt than gross debt because cash could be used to repay debt. Two companies each with $10B of debt are very different if one has $9B of cash. Debt > Cash means Net Debt. EV = Market Cap + Net Debt: $20B equity with $8B Net Debt implies $28B EV.",
     "better": [
       "lower"
     ],
@@ -1545,7 +1624,9 @@
     "related": [
       "net-cash",
       "debt-ebitda",
-      "enterprise-value"
+      "enterprise-value",
+      "debt",
+      "refinancing-risk"
     ],
     "section": "balance"
   },
@@ -1592,7 +1673,8 @@
     "related": [
       "current-assets",
       "current-liabilities",
-      "working-capital"
+      "working-capital",
+      "inventory"
     ],
     "section": "balance"
   },
@@ -1636,7 +1718,8 @@
     "where": "Bottom of the Balance Sheet.",
     "related": [
       "book-value",
-      "invested-capital"
+      "invested-capital",
+      "liabilities"
     ],
     "section": "balance"
   },
@@ -1662,7 +1745,8 @@
     "where": "Balance Sheet.",
     "related": [
       "equity",
-      "market-cap"
+      "market-cap",
+      "tangible-book-value"
     ],
     "section": "balance"
   },
@@ -1710,7 +1794,9 @@
     "related": [
       "debt-ebitda",
       "ev-ebitda",
-      "fcf"
+      "fcf",
+      "operating-income",
+      "capex"
     ],
     "section": "balance"
   },
@@ -1761,7 +1847,8 @@
     "related": [
       "debt",
       "ebitda",
-      "net-debt"
+      "net-debt",
+      "interest-coverage"
     ],
     "section": "balance"
   },
@@ -1803,7 +1890,8 @@
     "related": [
       "roic",
       "operating-income",
-      "invested-capital"
+      "invested-capital",
+      "fcff"
     ],
     "section": "efficiency"
   },
@@ -1848,7 +1936,9 @@
     "related": [
       "roic",
       "equity",
-      "debt"
+      "debt",
+      "ppe",
+      "nopat"
     ],
     "section": "efficiency"
   },
@@ -1898,7 +1988,13 @@
       "nopat",
       "invested-capital",
       "wacc",
-      "moat"
+      "moat",
+      "capex",
+      "incremental-roic",
+      "ev-revenue",
+      "profitable-growth",
+      "capex-efficiency",
+      "embedded-expectations"
     ],
     "section": "efficiency"
   },
@@ -1944,7 +2040,9 @@
     "where": "Estimated by you (not reported).",
     "related": [
       "roic",
-      "discount-rate"
+      "discount-rate",
+      "incremental-roic",
+      "profitable-growth"
     ],
     "section": "efficiency"
   },
@@ -1988,7 +2086,8 @@
     "where": "Income Statement, below EPS.",
     "related": [
       "diluted-shares",
-      "eps"
+      "eps",
+      "shares-outstanding"
     ],
     "section": "pershare"
   },
@@ -2026,7 +2125,9 @@
     "where": "Income Statement, below EPS.",
     "related": [
       "dilution",
-      "fair-value-per-share"
+      "fair-value-per-share",
+      "shares-outstanding",
+      "basic-shares"
     ],
     "section": "pershare"
   },
@@ -2070,7 +2171,11 @@
     "where": "Share count history (Income Statement / 10-K).",
     "related": [
       "diluted-shares",
-      "eps"
+      "eps",
+      "shares-outstanding",
+      "owner-earnings",
+      "capital-allocation",
+      "management-incentives"
     ],
     "section": "pershare"
   },
@@ -2122,7 +2227,8 @@
     "related": [
       "pe",
       "net-income",
-      "dilution"
+      "dilution",
+      "basic-shares"
     ],
     "section": "pershare"
   },
@@ -2153,7 +2259,7 @@
         "res"
       ]
     ],
-    "interp": "<b>Share price by itself tells almost nothing</b> about whether a stock is cheap. A $500 stock with 100M shares ($50B) is “smaller” than a $10 stock with 10B shares ($100B).",
+    "interp": "<b>Share price by itself tells almost nothing</b> about whether a stock is cheap. A $500 stock with 100M shares ($50B) is “smaller” than a $10 stock with 10B shares ($100B). Market Cap values equity, not the underlying operating business. Compare share counts over time: issuance and buybacks change Market Cap even with an unchanged Share Price.",
     "better": [
       "na"
     ],
@@ -2161,12 +2267,15 @@
       "Earnings (P/E), FCF (FCF yield), EBITDA (via EV)",
       "Your intrinsic value"
     ],
-    "watch": "<b>Share Price ≠ Valuation.</b> Use diluted shares.",
+    "watch": "Use current shares outstanding for current Market Cap, not weighted-average diluted EPS shares. Track issuance, buybacks and potential dilution separately. Compare the same date for price and shares.",
     "where": "Share price (market) × shares (10-K/10-Q cover).",
     "related": [
       "enterprise-value",
       "pe",
-      "fcf-yield"
+      "fcf-yield",
+      "book-value",
+      "equity-value",
+      "price-sales"
     ],
     "section": "valuation"
   },
@@ -2220,7 +2329,9 @@
     "related": [
       "eps",
       "market-cap",
-      "growth-vs-valuation"
+      "growth-vs-valuation",
+      "cyclicality",
+      "normalized-earnings"
     ],
     "section": "valuation"
   },
@@ -2253,7 +2364,7 @@
         "res"
       ]
     ],
-    "interp": "Imagine buying the whole company: you pay the market cap, but you also <b>take on its debt</b> (you must repay it → add) and you <b>get its cash</b> (it reduces your real cost → subtract). <b>Market Cap = Equity Value. Enterprise Value = approximate value of the operating enterprise.</b>",
+    "interp": "Imagine buying the whole company: you pay the market cap, but you also <b>take on its debt</b> (you must repay it → add) and you <b>get its cash</b> (it reduces your real cost → subtract). <b>Market Cap = Equity Value. Enterprise Value = approximate value of the operating enterprise.</b> EV approximates operating business value and helps compare different capital structures. Net Cash can put EV below Market Cap; high Net Debt can put it significantly above Market Cap.",
     "better": [
       "na"
     ],
@@ -2266,9 +2377,16 @@
     "related": [
       "market-cap",
       "ev-ebitda",
-      "dcf-ev"
+      "dcf-ev",
+      "cash",
+      "debt",
+      "net-debt",
+      "ev-revenue"
     ],
-    "section": "valuation"
+    "section": "valuation",
+    "calculators": [
+      "ev-from-shares"
+    ]
   },
   "ev-ebitda": {
     "id": "ev-ebitda",
@@ -2403,7 +2521,8 @@
     "related": [
       "price-fcf",
       "growth-vs-valuation",
-      "fcf"
+      "fcf",
+      "market-cap"
     ],
     "section": "valuation"
   },
@@ -2427,7 +2546,9 @@
     "where": "",
     "related": [
       "fcf-yield",
-      "dcf-intro"
+      "dcf-intro",
+      "pe",
+      "embedded-expectations"
     ],
     "section": "valuation"
   },
@@ -2460,7 +2581,9 @@
       "sensitivity",
       "fcff",
       "fcfe",
-      "reverse-dcf"
+      "reverse-dcf",
+      "fcf",
+      "growth-vs-valuation"
     ],
     "section": "dcf"
   },
@@ -2543,7 +2666,10 @@
     "related": [
       "wacc",
       "present-value",
-      "sensitivity"
+      "sensitivity",
+      "terminal-value",
+      "fcfe",
+      "opportunity-cost"
     ],
     "section": "dcf"
   },
@@ -2600,7 +2726,8 @@
     "related": [
       "dcf-ev",
       "sensitivity",
-      "discount-rate"
+      "discount-rate",
+      "dcf-intro"
     ],
     "section": "dcf"
   },
@@ -2639,7 +2766,8 @@
       "equity-value",
       "enterprise-value",
       "fcff",
-      "fcfe"
+      "fcfe",
+      "terminal-value"
     ],
     "section": "dcf"
   },
@@ -2681,7 +2809,9 @@
     "where": "Your model.",
     "related": [
       "fair-value-per-share",
-      "market-cap"
+      "market-cap",
+      "cash",
+      "dcf-ev"
     ],
     "section": "dcf"
   },
@@ -2737,7 +2867,8 @@
     "where": "Your model.",
     "related": [
       "sensitivity",
-      "diluted-shares"
+      "diluted-shares",
+      "equity-value"
     ],
     "section": "dcf"
   },
@@ -2770,7 +2901,12 @@
     "where": "Your model.",
     "related": [
       "terminal-value",
-      "discount-rate"
+      "discount-rate",
+      "dcf-intro",
+      "fair-value-per-share",
+      "margin-of-safety",
+      "reverse-dcf",
+      "embedded-expectations"
     ],
     "section": "dcf"
   },
@@ -2837,7 +2973,10 @@
     "watch": "Moving the goalposts after the fact (“it’s only temporary”) is confirmation bias in action.",
     "where": "Your notes.",
     "related": [
-      "thesis-def"
+      "thesis-def",
+      "risk-factors",
+      "value-trap",
+      "circle-of-competence"
     ],
     "section": "thesis"
   },
@@ -2883,7 +3022,8 @@
     "related": [
       "value-trap",
       "sensitivity",
-      "permanent-capital-loss"
+      "permanent-capital-loss",
+      "opportunity-cost"
     ],
     "section": "value-investing"
   },
@@ -2934,7 +3074,8 @@
       "maintenance-capex",
       "normalized-earnings",
       "fcf",
-      "dilution"
+      "dilution",
+      "capex"
     ],
     "section": "value-investing"
   },
@@ -2981,7 +3122,8 @@
     "related": [
       "capex",
       "owner-earnings",
-      "value-trap"
+      "value-trap",
+      "capex-efficiency"
     ],
     "section": "value-investing"
   },
@@ -3031,7 +3173,10 @@
     "related": [
       "cyclicality",
       "earnings-quality",
-      "pe"
+      "pe",
+      "owner-earnings",
+      "value-trap",
+      "operating-margin-trend"
     ],
     "section": "value-investing"
   },
@@ -3076,7 +3221,9 @@
       "incremental-roic",
       "management-incentives",
       "opportunity-cost",
-      "dilution"
+      "dilution",
+      "fcfe",
+      "capex-efficiency"
     ],
     "section": "value-investing"
   },
@@ -3117,7 +3264,11 @@
       "catalysts",
       "normalized-earnings",
       "maintenance-capex",
-      "invalidation"
+      "invalidation",
+      "margin-of-safety",
+      "permanent-capital-loss",
+      "liquidation-value",
+      "ncav"
     ],
     "section": "value-investing"
   },
@@ -3162,7 +3313,9 @@
     "related": [
       "roic",
       "wacc",
-      "capital-allocation"
+      "capital-allocation",
+      "reverse-dcf",
+      "capex-efficiency"
     ],
     "section": "value-investing"
   },
@@ -3190,7 +3343,7 @@
         "7% fits this particular set of other assumptions"
       ]
     ],
-    "interp": "Ask whether the required growth, margins, and reinvestment are plausible. Repeat with different discount rates and terminal assumptions.",
+    "interp": "Ask whether the required growth, margins, and reinvestment are plausible. Repeat with different discount rates and terminal assumptions. Test required Revenue Growth, Operating Margin and Free Cash Flow while explicitly fixing Terminal Growth, reinvestment and ROIC assumptions. Change one assumption at a time; many combinations can support the same value.",
     "better": [
       "na"
     ],
@@ -3204,9 +3357,11 @@
     "related": [
       "dcf-intro",
       "sensitivity",
-      "incremental-roic"
+      "incremental-roic",
+      "embedded-expectations"
     ],
-    "section": "value-investing"
+    "section": "value-investing",
+    "body": " <div class=\"card\"><p><b>Traditional DCF:</b> Assumptions → Estimated Fair Value</p><p><b>Reverse DCF:</b> Current Market Value → Required Future Performance</p></div><aside class=\"card reverse-reserved\" aria-label=\"Future Reverse DCF calculator\"><b>Interactive Reverse DCF calculator — planned</b><p>Reserved for a future single-assumption solver. No automatic solution is calculated here yet.</p><a href=\"#tool-dcf\">Explore assumptions in the existing DCF calculator</a></aside>"
   },
   "interest-coverage": {
     "id": "interest-coverage",
@@ -3333,7 +3488,8 @@
     "related": [
       "normalized-earnings",
       "profit-vs-cash",
-      "working-capital"
+      "working-capital",
+      "management-incentives"
     ],
     "section": "value-investing"
   },
@@ -3375,7 +3531,8 @@
     "related": [
       "fcfe",
       "nopat",
-      "dcf-ev"
+      "dcf-ev",
+      "dcf-intro"
     ],
     "section": "value-investing"
   },
@@ -3421,7 +3578,9 @@
     "related": [
       "fcff",
       "discount-rate",
-      "capital-allocation"
+      "capital-allocation",
+      "dcf-intro",
+      "dcf-ev"
     ],
     "section": "value-investing"
   },
@@ -3704,8 +3863,281 @@
       "current-assets",
       "liabilities",
       "liquidation-value",
-      "value-trap"
+      "value-trap",
+      "tangible-book-value"
     ],
     "section": "value-investing"
+  },
+  "price-sales": {
+    "id": "price-sales",
+    "section": "valuation",
+    "title": "Price-to-Sales",
+    "what": "Equity market value per dollar of revenue. Useful when earnings are negative or temporarily depressed.",
+    "interp": "Compare the same revenue period and similar businesses. Two companies with identical P/S can deserve very different valuations because margins, reinvestment and risk differ.",
+    "watch": "Does not account for debt or tell you whether sales are profitable. A low multiple is not proof of cheapness.",
+    "related": [
+      "market-cap",
+      "ev-revenue",
+      "embedded-expectations"
+    ],
+    "stmt": "calc",
+    "formula": "P/S = Market Cap / Revenue",
+    "example": [
+      [
+        "Market Cap / annual Revenue",
+        "$2B / $1B = 2×"
+      ]
+    ],
+    "short": "Equity market value per dollar of revenue. Useful when earnings are negative or temporarily depressed."
+  },
+  "ev-revenue": {
+    "id": "ev-revenue",
+    "section": "valuation",
+    "title": "EV / Revenue",
+    "what": "Operating business value per dollar of revenue. Includes the cash/debt bridge, making comparisons across capital structures more useful than P/S alone.",
+    "interp": "Use consistent revenue periods. Consider Revenue Growth, Gross Margin, Operating Margin, expected future margins, capital intensity, Free Cash Flow potential, ROIC, competitive advantage and risk.",
+    "watch": "A multiple is not a valuation by itself. A high multiple does not automatically mean expensive; a low multiple does not automatically mean cheap.",
+    "related": [
+      "enterprise-value",
+      "price-sales",
+      "gross-margin",
+      "operating-margin",
+      "capex-efficiency",
+      "fcf",
+      "roic",
+      "moat",
+      "embedded-expectations"
+    ],
+    "stmt": "calc",
+    "formula": "EV / Revenue = Enterprise Value / Revenue",
+    "example": [
+      [
+        "EV / annual Revenue",
+        "$1.5B / $1B = 1.5×"
+      ]
+    ],
+    "short": "Operating business value per dollar of revenue. Includes the cash/debt bridge, making comparisons across capital structures more useful than P/S alone.",
+    "body": "<aside class=\"card multiple-principle\"><b>A multiple is not a valuation by itself.</b></aside>"
+  },
+  "profitable-growth": {
+    "id": "profitable-growth",
+    "section": "business",
+    "title": "Profitable Growth",
+    "what": "Revenue Growth measures expansion in sales; Profitable Growth asks whether that expansion creates economic value.",
+    "interp": "Ask: Is Revenue growing? Is Gross Margin stable or improving? Is Operating Margin improving? Is Free Cash Flow improving? Is ROIC improving?",
+    "watch": "Growth alone does not create shareholder value if it permanently destroys capital. Improving ROIC is not sufficient if returns remain below the cost of capital.",
+    "related": [
+      "revenue",
+      "gross-margin",
+      "operating-margin",
+      "fcf",
+      "roic",
+      "wacc"
+    ],
+    "stmt": "qual",
+    "example": [
+      [
+        "Sales +40%; return on new capital 4%; cost of capital 10%",
+        "Growth can destroy value despite higher revenue."
+      ]
+    ],
+    "short": "Revenue Growth measures expansion in sales; Profitable Growth asks whether that expansion creates economic value."
+  },
+  "operating-margin-trend": {
+    "id": "operating-margin-trend",
+    "section": "margins",
+    "title": "Operating Margin Trend",
+    "what": "The direction and durability of operating profitability across periods, not just today’s margin.",
+    "interp": "Compare quarter-over-quarter, year-over-year and multi-year trends. This reveals whether an early-stage or high-growth company is approaching a sustainable profit model.",
+    "watch": "Control for seasonality, acquisitions, one-off costs and accounting changes. An improving loss is progress, not proof of future profitability.",
+    "related": [
+      "operating-margin",
+      "operating-leverage",
+      "normalized-earnings"
+    ],
+    "stmt": "calc",
+    "formula": "Operating Margin = Operating Income / Revenue",
+    "body": " <ol class=\"concept-flow\"><li>Operating Loss</li><li>Smaller Operating Loss</li><li>Operating Breakeven</li><li>Positive Operating Margin</li><li>Operating Margin Expansion</li></ol>",
+    "short": "The direction and durability of operating profitability across periods, not just today’s margin.",
+    "example": [
+      [
+        "Year 1 → Year 5 Operating Margin",
+        "−20% → −8% → 0% → 5% → 12%"
+      ]
+    ]
+  },
+  "backlog": {
+    "id": "backlog",
+    "section": "business",
+    "title": "Backlog",
+    "what": "Contracted future business that has not yet been recognized as Revenue. Reported definitions vary by company.",
+    "interp": "Examine backlog growth, expected recognition period, cancellation risk, customer concentration, contract profitability and conversion into Revenue.",
+    "watch": "Backlog ≠ Revenue. Backlog ≠ Profit. Backlog ≠ Cash Flow. Options, funding conditions and cancellations can change reported totals.",
+    "related": [
+      "backlog-quality",
+      "contracted-sales",
+      "revenue-recognition",
+      "revenue",
+      "deferred-revenue"
+    ],
+    "stmt": "qual",
+    "example": [
+      [
+        "Signed contract / delivered this year",
+        "$100m / $20m"
+      ],
+      [
+        "Remaining backlog, assuming no changes",
+        "$80m"
+      ]
+    ],
+    "short": "Contracted future business that has not yet been recognized as Revenue. Reported definitions vary by company."
+  },
+  "backlog-quality": {
+    "id": "backlog-quality",
+    "section": "business",
+    "title": "Backlog Quality",
+    "what": "The likelihood that contracted business converts into profitable revenue and collectible cash.",
+    "interp": "A large backlog is valuable only if the company can fulfill it profitably. Favor credible customers, realistic delivery schedules and sustainable contract margins.",
+    "watch": "Size alone hides cancellation rights, concentration, fixed-price cost overruns and execution constraints.",
+    "related": [
+      "backlog",
+      "customer-concentration",
+      "gross-margin",
+      "fcf"
+    ],
+    "stmt": "qual",
+    "example": [
+      [
+        "Backlog $1B; expected costs $1.1B",
+        "Large sales visibility, expected contract loss."
+      ]
+    ],
+    "short": "The likelihood that contracted business converts into profitable revenue and collectible cash."
+  },
+  "deferred-revenue": {
+    "id": "deferred-revenue",
+    "section": "balance",
+    "title": "Deferred Revenue",
+    "what": "A contract liability generally arising when payment is received, or becomes due, before the related goods or services are transferred.",
+    "interp": "Customer prepayments can finance operations. Unlike Backlog, Deferred Revenue reflects advance consideration received or due for unfulfilled performance; definitions and overlap must be checked in the notes.",
+    "watch": "Billing is not necessarily cash collection. Do not add Deferred Revenue to Backlog if it is already included in the reported Backlog.",
+    "related": [
+      "backlog",
+      "contracted-sales",
+      "revenue-recognition",
+      "liabilities",
+      "ocf"
+    ],
+    "stmt": "qual",
+    "example": [
+      [
+        "Annual service paid upfront",
+        "$120"
+      ],
+      [
+        "After one month: revenue / remaining liability",
+        "$10 / $110"
+      ]
+    ],
+    "body": " <p>Illustrative prepaid service:</p><ol class=\"concept-flow\"><li>Customer pays</li><li>Cash received</li><li>Deferred Revenue liability</li><li>Product/service delivered</li><li>Revenue recognized</li></ol>",
+    "short": "A contract liability generally arising when payment is received, or becomes due, before the related goods or services are transferred."
+  },
+  "contracted-sales": {
+    "id": "contracted-sales",
+    "section": "business",
+    "title": "Contracted Sales",
+    "what": "Sales value announced under signed agreements, often covering several future periods. It is not a standardized substitute for recognized revenue.",
+    "interp": "Read contract duration, enforceability, cancellation clauses, delivery obligations and collection terms. Distinguish each stage in the comparison below.",
+    "watch": "A press release announcing billions in signed contracts does not mean billions in Revenue were generated during that period. Do not sum overlapping contract metrics.",
+    "related": [
+      "backlog",
+      "deferred-revenue",
+      "revenue-recognition",
+      "cash"
+    ],
+    "stmt": "qual",
+    "body": "<table class=\"exm\"><tr><th>Contracted Sales</th><td>Signed agreement value; may span years.</td></tr><tr><th>Backlog</th><td>Contracted business not yet recognized as Revenue.</td></tr><tr><th>Deferred Revenue</th><td>Advance consideration received or due before performance.</td></tr><tr><th>Recognized Revenue</th><td>Goods/services transferred under accounting rules.</td></tr><tr><th>Cash Received</th><td>Actual collection; can precede or follow recognition.</td></tr></table>",
+    "short": "Sales value announced under signed agreements, often covering several future periods. It is not a standardized substitute for recognized revenue."
+  },
+  "revenue-recognition": {
+    "id": "revenue-recognition",
+    "section": "income",
+    "title": "Revenue Recognition",
+    "what": "Revenue is recorded as promised goods or services are transferred to the customer—at a point in time or over time as performance obligations are satisfied.",
+    "interp": "An order signals demand; a contract sets obligations; cash collection records payment. Recognition follows delivery/performance under the accounting rules, not simply the signature or payment date.",
+    "watch": "Orders can be cancelled and cash can arrive before or after Revenue. Use accounting policies and contract notes to understand timing.",
+    "related": [
+      "revenue",
+      "contracted-sales",
+      "backlog",
+      "deferred-revenue",
+      "receivables"
+    ],
+    "stmt": "qual",
+    "example": [
+      [
+        "Equipment delivered in March, paid in April",
+        "Revenue may be recognized in March; cash arrives in April."
+      ]
+    ],
+    "short": "Revenue is recorded as promised goods or services are transferred to the customer—at a point in time or over time as performance obligations are satisfied."
+  },
+  "capex-efficiency": {
+    "id": "capex-efficiency",
+    "section": "efficiency",
+    "title": "CapEx Efficiency",
+    "what": "How effectively capital spending produces future economic returns. Falling CapEx is not automatically good; rising CapEx is not automatically bad.",
+    "interp": "What economic return is the company generating from incremental capital investment? Connect spending to capacity, Revenue, Operating Leverage, Free Cash Flow and ROIC.",
+    "watch": "Compare investment cohorts over appropriate lags. The examples are signals to investigate, not causal proof. Falling spending can reflect underinvestment; high growth can require substantial reinvestment.",
+    "related": [
+      "capex",
+      "maintenance-capex",
+      "fcf",
+      "roic",
+      "incremental-roic",
+      "operating-leverage",
+      "capital-allocation",
+      "ev-revenue"
+    ],
+    "stmt": "qual",
+    "example": [
+      [
+        "Promising scenario",
+        "CapEx ↑ 50%; Revenue ↑ 150%; margins ↑; ROIC ↑"
+      ],
+      [
+        "Concerning scenario",
+        "CapEx ↑ 150%; Revenue ↑ 30%; margins ↓; ROIC ↓"
+      ]
+    ],
+    "short": "How effectively capital spending produces future economic returns. Falling CapEx is not automatically good; rising CapEx is not automatically bad."
+  },
+  "embedded-expectations": {
+    "id": "embedded-expectations",
+    "section": "valuation",
+    "title": "Embedded Expectations",
+    "what": "Today’s stock price already reflects expectations about future performance.",
+    "interp": "What must happen for today’s valuation to make sense? Test Revenue Growth, future Operating Margin, Free Cash Flow Margin, ROIC, market share, Total Addressable Market and the duration of high growth.",
+    "watch": "A great company can still be a poor investment if the market price assumes an unrealistically successful future. Price alone cannot uniquely identify all implied assumptions.",
+    "related": [
+      "growth-vs-valuation",
+      "reverse-dcf",
+      "sensitivity",
+      "fcf-margin",
+      "roic",
+      "market-share",
+      "tam",
+      "price-sales",
+      "ev-revenue"
+    ],
+    "stmt": "qual",
+    "example": [
+      [
+        "Price requires 30% growth for ten years",
+        "Test market size, competition and funding needs before accepting it."
+      ]
+    ],
+    "short": "Today’s stock price already reflects expectations about future performance."
   }
 }
