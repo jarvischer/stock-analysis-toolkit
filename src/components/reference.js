@@ -52,7 +52,7 @@
       ['Operating Income', 'Gross Profit − Operating Expenses', 'operating-income'], ['Operating Margin', 'Operating Income / Revenue', 'operating-margin'], ['Net Margin', 'Net Income / Revenue', 'net-margin']]],
     ['Cash Flow', [['FCF', 'Operating Cash Flow − CapEx', 'fcf'], ['FCF Margin', 'FCF / Revenue', 'fcf-margin']]],
     ['Balance Sheet', [['Net Cash', 'Cash − Debt', 'net-cash'], ['Net Debt', 'Debt − Cash', 'net-debt'], ['Current Ratio', 'Current Assets / Current Liabilities', 'current-ratio'], ['Debt / EBITDA', 'Debt / EBITDA', 'debt-ebitda']]],
-    ['Capital Efficiency', [['NOPAT', 'Operating Income × (1 − Tax Rate)', 'nopat'], ['ROIC', 'NOPAT / Invested Capital', 'roic'], ['Value Creation Spread', 'ROIC − WACC', 'wacc']]],
+    ['Capital Efficiency', [['NOPAT', 'Operating Income × (1 − Tax Rate)', 'nopat'], ['ROIC', 'NOPAT / Invested Capital', 'roic'], ['Value Creation Spread', 'ROIC − WACC', 'roic'], ['WACC', '(E Weight × Cost of Equity) + (D Weight × Cost of Debt × (1 − Tax Rate))', 'wacc']]],
     ['Per Share', [['EPS', 'Net Income / Shares Outstanding', 'eps']]],
     ['Valuation', [['Market Cap', 'Share Price × Shares Outstanding', 'market-cap'], ['P/E', 'Market Cap / Net Income', 'pe'], ['Enterprise Value', 'Market Cap + Debt − Cash', 'enterprise-value'],
       ['P/S', 'Market Cap / Revenue', 'price-sales'], ['EV / Revenue', 'Enterprise Value / Revenue', 'ev-revenue'], ['EV / EBITDA', 'Enterprise Value / EBITDA', 'ev-ebitda'], ['Price / FCF', 'Market Cap / FCF', 'price-fcf'], ['FCF Yield', 'FCF / Market Cap', 'fcf-yield']]],
@@ -65,7 +65,7 @@
       ['FCFE', 'Net Income + D&A − CapEx − Increase in Non-cash Operating Working Capital + Net Borrowing', 'fcfe'],
       ['Common Tangible Book Value', 'Total Equity − Preferred Equity − Goodwill − Other Intangible Assets', 'tangible-book-value'],
       ['Common NCAV', 'Current Assets − Total Liabilities − Preferred Equity', 'ncav']]],
-    ['DCF', [['Present Value', 'Future Cash Flow / (1 + r)^t', 'present-value'], ['Terminal Value', 'FCF next year / (r − g)', 'terminal-value'], ['DCF Enterprise Value', 'PV of Forecast FCF + PV of Terminal Value', 'dcf-ev'],
+    ['DCF', [['Future Value', 'PV × (1 + r)^t', 'future-value'], ['Present Value', 'Future Cash Flow / (1 + r)^t', 'present-value'], ['Terminal Value', 'FCF next year / (r − g)', 'terminal-value'], ['DCF Enterprise Value', 'PV of Forecast FCF + PV of Terminal Value', 'dcf-ev'],
       ['Equity Value', 'Enterprise Value − Debt + Cash', 'equity-value'], ['Fair Value Per Share', 'Equity Value / Diluted Shares Outstanding', 'fair-value-per-share']]],
   ];
   SAT.SHEET = SHEET;
@@ -78,6 +78,7 @@
           <button class="iconbtn" onclick="window.print()">Print</button></div>
         <div class="sheet" data-list>${SHEET.map(([g, rows]) => `<section class="sheet-g" data-grp="${g}"><h4 class="sheet-h">${g}</h4>${rows.map(([n, fx, id]) =>
           `<a class="sheet-i" href="${H(id)}" data-hay="${esc((n + ' ' + fx + ' ' + g).toLowerCase())}"><b>${n}</b><code>= ${fx}</code></a>`).join('')}</section>`).join('')}</div>`;
+      if (SAT.C['future-value']) el.appendChild(SAT.el(SAT.C['future-value'].body));
       const inp = el.querySelector('[data-f]');
       let grp = 'All';
       const run = () => {

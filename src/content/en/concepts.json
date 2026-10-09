@@ -426,7 +426,8 @@
       "debt",
       "cyclicality",
       "thesis-def",
-      "circle-of-competence"
+      "circle-of-competence",
+      "required-return"
     ],
     "section": "business"
   },
@@ -1163,7 +1164,9 @@
       "ebitda",
       "cfs",
       "ppe",
-      "capex-efficiency"
+      "capex-efficiency",
+      "profitable-growth",
+      "invested-capital"
     ],
     "section": "cashflow"
   },
@@ -1938,7 +1941,9 @@
       "equity",
       "debt",
       "ppe",
-      "nopat"
+      "nopat",
+      "profitable-growth",
+      "capex"
     ],
     "section": "efficiency"
   },
@@ -1996,7 +2001,13 @@
       "capex-efficiency",
       "embedded-expectations"
     ],
-    "section": "efficiency"
+    "section": "efficiency",
+    "aka": [
+      "ROIC vs WACC",
+      "ROIC − WACC Spread",
+      "Value Creation Spread"
+    ],
+    "body": "<aside class=\"card multiple-principle\"><h4>ROIC vs WACC</h4><ul><li><b dir=\"ltr\">ROIC &gt; WACC</b> — generally creates economic value.</li><li><b dir=\"ltr\">ROIC &lt; WACC</b> — may destroy economic value.</li><li><b dir=\"ltr\">ROIC ≈ WACC</b> — approximately earns its Cost of Capital.</li></ul><h4>ROIC − WACC Spread</h4><div class=\"fx\">Value Creation Spread = ROIC − WACC</div><p dir=\"auto\">ROIC 18% − WACC 9% = +9 percentage points. A positive spread is generally desirable.</p><p>Check sustainable, forward-looking incremental returns. Historical average ROIC can hide weak new projects.</p></aside>"
   },
   "wacc": {
     "id": "wacc",
@@ -2010,9 +2021,9 @@
       "hurdle rate",
       "value creation spread"
     ],
-    "what": "The blended minimum return that the company’s capital providers (shareholders and lenders) require for the risk they take. Think of it as the company’s <b>cost of money</b> and its hurdle rate. It is also the usual discount rate in a DCF.",
+    "what": "WACC is the blended required return of the providers financing a business: primarily equity investors and debt investors. It is the typical Discount Rate for FCFF.",
     "he": "WACC — התשואה המינימלית שהמשקיעים דורשים. ROIC גבוה ממנה = יצירת ערך.",
-    "formula": "Value Creation Spread = ROIC − WACC",
+    "formula": "WACC = (Equity Weight × Cost of Equity) + (Debt Weight × Cost of Debt × (1 − Tax Rate))",
     "example": [
       [
         "ROIC",
@@ -2024,11 +2035,24 @@
       ],
       [
         "Spread",
-        "+11%",
+        "+11 percentage points",
+        "res"
+      ],
+      [
+        "Equity: 60% weight × 10% cost",
+        "6%"
+      ],
+      [
+        "Debt: 40% weight × 5% cost × (1 − 25% tax)",
+        "1.5%"
+      ],
+      [
+        "WACC",
+        "7.5%",
         "res"
       ]
     ],
-    "interp": "<b>ROIC &gt; WACC</b> → generally creates economic value: each reinvested dollar earns more than it costs. <b>ROIC &lt; WACC</b> → may destroy economic value: growth makes things worse. Typical WACC: large stable companies ~7–9%, riskier companies 10–15%.",
+    "interp": "Use market-value equity and debt weights that sum to 100%. Interest may reduce taxable income, so the debt cost is adjusted for the usable tax benefit. The adjustment assumes interest deductions can be used.",
     "better": [
       "lower",
       "For the company, a lower cost of capital is better; for analysis what matters is the spread."
@@ -2036,15 +2060,21 @@
     "compare": [
       "ROIC"
     ],
-    "watch": "The detailed formula (cost of equity via beta, cost of debt, weights) involves many estimates — small changes swing the result. <b>Growth ≠ Value Creation</b> unless ROIC &gt; WACC.",
+    "watch": "WACC is an estimate, not a universal fixed hurdle. Deduction limits or tax losses can reduce the usable tax benefit. Use cost of equity for FCFE. Growth creates value only when incremental returns exceed the appropriate cost of capital.",
     "where": "Estimated by you (not reported).",
     "related": [
       "roic",
       "discount-rate",
       "incremental-roic",
-      "profitable-growth"
+      "profitable-growth",
+      "required-return",
+      "opportunity-cost",
+      "present-value",
+      "dcf-intro",
+      "fcff"
     ],
-    "section": "efficiency"
+    "section": "efficiency",
+    "body": "<ol class=\"concept-flow\"><li>Future FCFF</li><li>Discount using WACC</li><li>Present Value of FCFF</li><li>Enterprise Value (including discounted Terminal Value)</li></ol><p>For positive future cash flows, all else equal: Higher WACC → Lower Enterprise Value; Lower WACC → Higher Enterprise Value.</p><table class=\"exm\"><tr><th>$100 in 10 years</th><th>PV</th></tr><tr><td>7%</td><td>$50.83</td></tr><tr><td>12%</td><td>$32.20</td></tr></table><p>The cash flow is unchanged; only the required return changed.</p><a href=\"#tool-sensitivity\">Explore DCF sensitivity</a>"
   },
   "shares-outstanding": {
     "id": "shares-outstanding",
@@ -2548,9 +2578,34 @@
       "fcf-yield",
       "dcf-intro",
       "pe",
-      "embedded-expectations"
+      "embedded-expectations",
+      "required-return",
+      "opportunity-cost"
     ],
     "section": "valuation"
+  },
+  "time-value-money": {
+    "id": "time-value-money",
+    "section": "dcf",
+    "title": "Time Value of Money",
+    "short": "Money today is worth more than the same amount received in the future, when the required return is positive.",
+    "what": "Money today is worth more than the same amount received in the future, when the required return is positive.",
+    "interp": "Today’s money can earn investment returns. Waiting has an opportunity cost; inflation reduces purchasing power, and future cash flows carry risk and uncertainty. DCF translates those future cash flows into today’s value.",
+    "watch": "Match nominal cash flows with nominal rates and real cash flows with real rates. Do not deduct inflation twice.",
+    "stmt": "model",
+    "related": [
+      "present-value",
+      "future-value",
+      "opportunity-cost",
+      "dcf-intro"
+    ],
+    "abbr": "TVM",
+    "example": [
+      [
+        "$100 today vs $100 in 10 years",
+        "Not economically equivalent at a positive required return."
+      ]
+    ]
   },
   "dcf-intro": {
     "id": "dcf-intro",
@@ -2583,7 +2638,13 @@
       "fcfe",
       "reverse-dcf",
       "fcf",
-      "growth-vs-valuation"
+      "growth-vs-valuation",
+      "time-value-money",
+      "wacc",
+      "profitable-growth",
+      "dcf-ev",
+      "equity-value",
+      "fair-value-per-share"
     ],
     "section": "dcf"
   },
@@ -2598,7 +2659,7 @@
       "time value of money"
     ],
     "what": "What a future amount of money is worth today. Money today is worth more than money later because it can be invested, and the future is uncertain.",
-    "formula": "PV = Future Cash Flow / (1 + r)ᵗ\n\nPV = Present Value · r = Discount Rate · t = Years",
+    "formula": "PV = Future Cash Flow / (1 + r)^t\nPV = Present Value · r = Discount Rate per period · t = Number of periods",
     "example": [
       [
         "$100 received in one year",
@@ -2612,9 +2673,14 @@
         "PV = 100 / 1.10",
         "$90.91",
         "res"
+      ],
+      [
+        "$100 received in 10 years at 10%",
+        "100 / (1.10)^10 ≈ $38.55",
+        "res"
       ]
     ],
-    "interp": "At a 10% required return, receiving $90.91 today is equivalent to $100 in a year.",
+    "interp": "At a 10% required return, receiving $90.91 today is equivalent to $100 in a year. Present Value converts future money into today’s economic value. Use the calculator below; set Years to 10 to reproduce the $38.55 example.",
     "better": [
       "na"
     ],
@@ -2623,9 +2689,55 @@
     "where": "Your model.",
     "related": [
       "discount-rate",
-      "dcf-intro"
+      "dcf-intro",
+      "time-value-money",
+      "future-value",
+      "wacc"
     ],
     "section": "dcf"
+  },
+  "future-value": {
+    "id": "future-value",
+    "section": "dcf",
+    "title": "Future Value",
+    "short": "Future Value compounds today’s money forward at an assumed rate of return.",
+    "what": "Future Value compounds today’s money forward at an assumed rate of return.",
+    "interp": "Compounding asks what today’s money will be worth in the future. Discounting reverses the direction: what is future money worth today?",
+    "watch": "The assumed return is not guaranteed. Match the rate and period; these examples use annual compounding without fees or taxes.",
+    "stmt": "model",
+    "related": [
+      "time-value-money",
+      "present-value",
+      "discount-rate"
+    ],
+    "abbr": "FV",
+    "formula": "FV = PV × (1 + r)^t",
+    "example": [
+      [
+        "Invest $100 for 10 years at 10%",
+        "100 × (1.10)^10 ≈ $259.37",
+        "res"
+      ]
+    ],
+    "body": "<div class=\"card compounding-reference\"><h4>Compounding vs Discounting</h4><table class=\"exm\"><tr><th>Compounding</th><td>Present → Future: What will today’s money be worth?<div class=\"fx\">PV × (1 + r)^t = FV</div></td></tr><tr><th>Discounting</th><td>Future → Present: What is future money worth today?<div class=\"fx\">FV / (1 + r)^t = PV</div></td></tr></table></div>"
+  },
+  "required-return": {
+    "id": "required-return",
+    "section": "dcf",
+    "title": "Required Return",
+    "short": "The minimum expected return investors require for time, risk and opportunity cost.",
+    "what": "The minimum expected return investors require for time, risk and opportunity cost.",
+    "interp": "Higher perceived risk generally increases the required return. Match the required return to the claims and cash flows being valued.",
+    "watch": "A required return is a hurdle, not a promised or realized return. An arbitrary target does not establish a company’s WACC.",
+    "stmt": "model",
+    "related": [
+      "risk-factors",
+      "discount-rate",
+      "wacc",
+      "growth-vs-valuation",
+      "opportunity-cost"
+    ],
+    "body": "<ol class=\"concept-flow\"><li>Risk</li><li>Required Return</li><li>Discount Rate</li><li>Valuation</li></ol>"
   },
   "discount-rate": {
     "id": "discount-rate",
@@ -2638,19 +2750,15 @@
     "short": "The rate matched to the cash flows being valued.",
     "stmt": "model",
     "key": 1,
-    "what": "The annual rate used to convert future cash into today’s value. It reflects the time value of money and risk — riskier businesses get higher discount rates. Use WACC for FCFF and the cost of equity for FCFE.",
+    "what": "The annual rate used to convert future cash into today’s value. It reflects the time value of money and risk — riskier businesses get higher discount rates. Use WACC for FCFF and the cost of equity for FCFE. The Discount Rate is the required return used to calculate Present Value.",
     "example": [
       [
-        "Stable large company",
-        "~7–9%"
+        "$100 in 10 years; rate 7%",
+        "$50.83"
       ],
       [
-        "Average company",
-        "~9–11%"
-      ],
-      [
-        "Risky / early-stage",
-        "12%+"
+        "Same cash flow; rate 12%",
+        "$32.20"
       ]
     ],
     "interp": "Discount Rate ↑ → Valuation ↓. Discount Rate ↓ → Valuation ↑.",
@@ -2661,7 +2769,7 @@
       "WACC estimates",
       "Your own required return"
     ],
-    "watch": "A 1-point change in r can move a DCF value by 15–25%.",
+    "watch": "Small changes in the rate can materially change DCF value. Match the rate to cash-flow risk, currency and inflation assumptions.",
     "where": "Your assumption.",
     "related": [
       "wacc",
@@ -2669,9 +2777,12 @@
       "sensitivity",
       "terminal-value",
       "fcfe",
-      "opportunity-cost"
+      "opportunity-cost",
+      "future-value",
+      "required-return"
     ],
-    "section": "dcf"
+    "section": "dcf",
+    "body": "<ol class=\"concept-flow\"><li>Higher Risk</li><li>Higher Required Return</li><li>Higher Discount Rate</li><li>Lower Present Value</li></ol><p>The $100 cash flow did not change. Only the required return changed. Higher rates reduce the Present Value of positive future cash flows; lower rates increase it.</p><a href=\"#dcf/present-value\">Try both rates in the Present Value calculator</a>"
   },
   "terminal-value": {
     "id": "terminal-value",
@@ -2767,7 +2878,8 @@
       "enterprise-value",
       "fcff",
       "fcfe",
-      "terminal-value"
+      "terminal-value",
+      "dcf-intro"
     ],
     "section": "dcf"
   },
@@ -2811,7 +2923,8 @@
       "fair-value-per-share",
       "market-cap",
       "cash",
-      "dcf-ev"
+      "dcf-ev",
+      "dcf-intro"
     ],
     "section": "dcf"
   },
@@ -2868,7 +2981,8 @@
     "related": [
       "sensitivity",
       "diluted-shares",
-      "equity-value"
+      "equity-value",
+      "dcf-intro"
     ],
     "section": "dcf"
   },
@@ -3223,7 +3337,8 @@
       "opportunity-cost",
       "dilution",
       "fcfe",
-      "capex-efficiency"
+      "capex-efficiency",
+      "profitable-growth"
     ],
     "section": "value-investing"
   },
@@ -3315,7 +3430,8 @@
       "wacc",
       "capital-allocation",
       "reverse-dcf",
-      "capex-efficiency"
+      "capex-efficiency",
+      "profitable-growth"
     ],
     "section": "value-investing"
   },
@@ -3532,7 +3648,8 @@
       "fcfe",
       "nopat",
       "dcf-ev",
-      "dcf-intro"
+      "dcf-intro",
+      "wacc"
     ],
     "section": "value-investing"
   },
@@ -3660,7 +3777,7 @@
     "title": "Opportunity Cost",
     "stmt": "qual",
     "short": "The benefit forgone by choosing one use of capital over another.",
-    "what": "Compare an investment with realistic alternatives, including retaining liquidity. Consider risk, time, taxes, and confidence in the estimates.",
+    "what": "Compare an investment with realistic alternatives, including retaining liquidity. Consider risk, time, taxes, and confidence in the estimates. Capital invested in one company cannot simultaneously be invested elsewhere. The opportunity cost of capital reflects alternatives with comparable risk.",
     "example": [
       [
         "Choice A",
@@ -3673,6 +3790,10 @@
       [
         "Decision",
         "The higher forecast alone does not settle the choice"
+      ],
+      [
+        "Comparable-risk alternative earns 8%",
+        "$100 in five years has a PV of about $68.06 at 8%. Evaluate the delayed payment against that alternative."
       ]
     ],
     "interp": "An investment can appear undervalued yet be less attractive than another available use of funds.",
@@ -3689,9 +3810,16 @@
     "related": [
       "capital-allocation",
       "discount-rate",
-      "margin-of-safety"
+      "margin-of-safety",
+      "time-value-money",
+      "required-return",
+      "wacc",
+      "growth-vs-valuation"
     ],
-    "section": "value-investing"
+    "section": "value-investing",
+    "aka": [
+      "Opportunity Cost of Capital"
+    ]
   },
   "management-incentives": {
     "id": "management-incentives",
@@ -3932,7 +4060,12 @@
       "operating-margin",
       "fcf",
       "roic",
-      "wacc"
+      "wacc",
+      "capex",
+      "invested-capital",
+      "incremental-roic",
+      "capital-allocation",
+      "dcf-intro"
     ],
     "stmt": "qual",
     "example": [
@@ -3941,7 +4074,8 @@
         "Growth can destroy value despite higher revenue."
       ]
     ],
-    "short": "Revenue Growth measures expansion in sales; Profitable Growth asks whether that expansion creates economic value."
+    "short": "Revenue Growth measures expansion in sales; Profitable Growth asks whether that expansion creates economic value.",
+    "body": " <aside class=\"card multiple-principle\"><b>Growth does not automatically create shareholder value.</b><p>Growth + ROIC &gt; WACC → Potential value creation.</p><p>Growth + ROIC &lt; WACC → Potential value destruction.</p><p>For new growth, test incremental ROIC: rapid Revenue Growth can destroy value when new investment earns less than its Cost of Capital.</p></aside>"
   },
   "operating-margin-trend": {
     "id": "operating-margin-trend",

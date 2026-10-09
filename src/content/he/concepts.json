@@ -426,7 +426,8 @@
       "debt",
       "cyclicality",
       "thesis-def",
-      "circle-of-competence"
+      "circle-of-competence",
+      "required-return"
     ],
     "section": "business"
   },
@@ -1157,7 +1158,9 @@
       "ebitda",
       "cfs",
       "ppe",
-      "capex-efficiency"
+      "capex-efficiency",
+      "profitable-growth",
+      "invested-capital"
     ],
     "section": "cashflow"
   },
@@ -1942,7 +1945,9 @@
       "equity",
       "debt",
       "ppe",
-      "nopat"
+      "nopat",
+      "profitable-growth",
+      "capex"
     ],
     "section": "efficiency"
   },
@@ -1999,7 +2004,13 @@
       "capex-efficiency",
       "embedded-expectations"
     ],
-    "section": "efficiency"
+    "section": "efficiency",
+    "aka": [
+      "ROIC vs WACC",
+      "ROIC − WACC Spread",
+      "Value Creation Spread"
+    ],
+    "body": "<aside class=\"card multiple-principle\"><h4>ROIC vs WACC</h4><ul><li><b dir=\"ltr\">ROIC &gt; WACC</b> — בדרך כלל יוצר ערך כלכלי.</li><li><b dir=\"ltr\">ROIC &lt; WACC</b> — עלול להשמיד ערך כלכלי.</li><li><b dir=\"ltr\">ROIC ≈ WACC</b> — מניב בקירוב את עלות ההון.</li></ul><h4>הפער בין התשואה לעלות ההון</h4><div class=\"fx\">Value Creation Spread = ROIC − WACC</div><p dir=\"auto\">תשואה של 18% פחות עלות הון של 9% נותנת פער חיובי של 9 נקודות אחוז. פער חיובי רצוי בדרך כלל.</p><p>בחנו תשואות שוליות עתידיות ובנות־קיימא. ממוצע היסטורי יכול להסתיר פרויקטים חדשים חלשים.</p></aside>"
   },
   "wacc": {
     "id": "wacc",
@@ -2013,8 +2024,8 @@
       "hurdle rate",
       "value creation spread"
     ],
-    "what": "עלות המימון המשוקללת של חוב והון עצמי, עם התחשבות במגן המס על ריבית לפי ההנחות המתאימות.",
-    "formula": "Value Creation Spread = ROIC − WACC",
+    "what": "עלות ההון הממוצעת המשוקללת היא התשואה הנדרשת המשולבת של מממני העסק, בעיקר בעלי מניות ומלווים. זהו שיעור ההיוון המקובל לתזרים החופשי לפירמה.",
+    "formula": "WACC = (Equity Weight × Cost of Equity) + (Debt Weight × Cost of Debt × (1 − Tax Rate))",
     "example": [
       [
         "תשואה על ההון המושקע",
@@ -2026,11 +2037,24 @@
       ],
       [
         "פער תשואה",
-        "+11%",
+        "11 נקודות אחוז",
+        "res"
+      ],
+      [
+        "הון עצמי: משקל 60% ועלות 10%",
+        "6%"
+      ],
+      [
+        "חוב: משקל 40%, עלות 5% ומס 25%",
+        "1.5%"
+      ],
+      [
+        "WACC",
+        "7.5%",
         "res"
       ]
     ],
-    "interp": "זהו שיעור היוון לתזרים לפירמה ורף להשוואה לתשואה על ההון המושקע.",
+    "interp": "השתמשו במשקולות לפי שווי שוק שסכומן 100%. ריבית עשויה להפחית הכנסה חייבת במס, ולכן עלות החוב מותאמת להטבת המס שניתן לנצל.",
     "better": [
       "lower"
     ],
@@ -2039,15 +2063,21 @@
       "עלות הון עצמי",
       "רגישות הערכת השווי"
     ],
-    "watch": "זו הערכה התלויה בסיכון, מבנה ההון ושוק המימון. אין להשתמש בה אוטומטית להיוון תזרים להון העצמי.",
+    "watch": "עלות ההון היא אומדן ולא רף קבוע לכל עסק. מגבלות ניכוי או הפסדי מס עשויים לצמצם את ההטבה. לתזרים לבעלי המניות השתמשו בעלות ההון העצמי. יצירת ערך מצמיחה דורשת תשואה שולית מעל עלות ההון המתאימה.",
     "where": "הנחות ואומדנים במודל שלכם, המבוססים על הדוחות והמחקר.",
     "related": [
       "roic",
       "discount-rate",
       "incremental-roic",
-      "profitable-growth"
+      "profitable-growth",
+      "required-return",
+      "opportunity-cost",
+      "present-value",
+      "dcf-intro",
+      "fcff"
     ],
-    "section": "efficiency"
+    "section": "efficiency",
+    "body": "<ol class=\"concept-flow\"><li>תזרים עתידי לפירמה</li><li>היוון בעלות ההון המשוקללת</li><li>ערך נוכחי של התזרים</li><li>שווי פעילות, כולל ערך נוכחי של שווי סופי</li></ol><p>לתזרימים עתידיים חיוביים, בהנחות אחרות קבועות: עלות הון גבוהה יותר מפחיתה את שווי הפעילות, ונמוכה יותר מגדילה אותו.</p><table class=\"exm\"><tr><th>100 דולר בעוד עשור</th><th>PV</th></tr><tr><td>7%</td><td>$50.83</td></tr><tr><td>12%</td><td>$32.20</td></tr></table><p>התזרים לא השתנה; רק התשואה הנדרשת השתנתה.</p><a href=\"#tool-sensitivity\">בדיקת רגישות השווי</a>"
   },
   "shares-outstanding": {
     "id": "shares-outstanding",
@@ -2551,9 +2581,34 @@
       "fcf-yield",
       "dcf-intro",
       "pe",
-      "embedded-expectations"
+      "embedded-expectations",
+      "required-return",
+      "opportunity-cost"
     ],
     "section": "valuation"
+  },
+  "time-value-money": {
+    "id": "time-value-money",
+    "section": "dcf",
+    "title": "ערך הזמן של הכסף",
+    "short": "בהנחת תשואה נדרשת חיובית, כסף היום שווה יותר מאותו סכום שיתקבל בעתיד.",
+    "what": "בהנחת תשואה נדרשת חיובית, כסף היום שווה יותר מאותו סכום שיתקבל בעתיד.",
+    "interp": "כסף היום יכול להניב תשואה. להמתנה יש עלות אלטרנטיבית; אינפלציה מפחיתה כוח קנייה ותזרים עתידי כרוך בסיכון ובאי־ודאות. היוון מתרגם את התזרים העתידי לערך נוכחי.",
+    "watch": "התאימו תזרים נומינלי לריבית נומינלית ותזרים ריאלי לריבית ריאלית. אין להפחית אינפלציה פעמיים.",
+    "stmt": "model",
+    "related": [
+      "present-value",
+      "future-value",
+      "opportunity-cost",
+      "dcf-intro"
+    ],
+    "abbr": "TVM",
+    "example": [
+      [
+        "100 דולר היום לעומת 100 דולר בעוד עשור",
+        "אינם שקולים כלכלית כאשר התשואה הנדרשת חיובית."
+      ]
+    ]
   },
   "dcf-intro": {
     "id": "dcf-intro",
@@ -2586,7 +2641,13 @@
       "fcfe",
       "reverse-dcf",
       "fcf",
-      "growth-vs-valuation"
+      "growth-vs-valuation",
+      "time-value-money",
+      "wacc",
+      "profitable-growth",
+      "dcf-ev",
+      "equity-value",
+      "fair-value-per-share"
     ],
     "section": "dcf"
   },
@@ -2601,7 +2662,7 @@
       "time value of money"
     ],
     "what": "השווי היום של סכום שיתקבל בעתיד, לאחר היוון לפי זמן וסיכון.",
-    "formula": "PV = Future Cash Flow / (1 + r)ᵗ\n\nPV = Present Value · r = Discount Rate · t = Years",
+    "formula": "PV = Future Cash Flow / (1 + r)^t\nPV = Present Value · r = Discount Rate per period · t = Number of periods",
     "example": [
       [
         "100 דולר שיתקבלו בעוד שנה",
@@ -2615,9 +2676,14 @@
         "PV = 100 / 1.10",
         "$90.91",
         "res"
+      ],
+      [
+        "100 דולר בעוד עשר שנים בשיעור היוון של 10%",
+        "100 / (1.10)^10 ≈ $38.55",
+        "res"
       ]
     ],
-    "interp": "ככל שהכסף רחוק יותר או שיעור ההיוון גבוה יותר, ערכו הנוכחי נמוך יותר בתזרים חיובי.",
+    "interp": "ככל שהכסף רחוק יותר או שיעור ההיוון גבוה יותר, ערכו הנוכחי נמוך יותר בתזרים חיובי. ערך נוכחי ממיר כסף עתידי לערכו הכלכלי היום. הזינו עשר שנים במחשבון להדגמת השווי של 38.55 דולר.",
     "better": [
       "na"
     ],
@@ -2629,9 +2695,55 @@
     "where": "הנחות ואומדנים במודל שלכם, המבוססים על הדוחות והמחקר.",
     "related": [
       "discount-rate",
-      "dcf-intro"
+      "dcf-intro",
+      "time-value-money",
+      "future-value",
+      "wacc"
     ],
     "section": "dcf"
+  },
+  "future-value": {
+    "id": "future-value",
+    "section": "dcf",
+    "title": "ערך עתידי",
+    "short": "ערך עתידי מצמיח את הכסף של היום קדימה לפי תשואה משוערת.",
+    "what": "ערך עתידי מצמיח את הכסף של היום קדימה לפי תשואה משוערת.",
+    "interp": "צבירה שואלת כמה יהיה שווה הכסף בעתיד. היוון פועל בכיוון ההפוך: כמה שווה היום כסף שיתקבל בעתיד?",
+    "watch": "התשואה המשוערת אינה מובטחת. התאימו בין הריבית לתקופה; הדוגמאות מניחות צבירה שנתית ללא מסים ועמלות.",
+    "stmt": "model",
+    "related": [
+      "time-value-money",
+      "present-value",
+      "discount-rate"
+    ],
+    "abbr": "FV",
+    "formula": "FV = PV × (1 + r)^t",
+    "example": [
+      [
+        "השקעת 100 דולר לעשר שנים בתשואה של 10%",
+        "100 × (1.10)^10 ≈ $259.37",
+        "res"
+      ]
+    ],
+    "body": "<div class=\"card compounding-reference\"><h4>צבירה לעומת היוון</h4><table class=\"exm\"><tr><th>צבירה</th><td>מה יהיה שווי הכסף של היום בעתיד?<div class=\"fx\">PV × (1 + r)^t = FV</div></td></tr><tr><th>היוון</th><td>מהו השווי היום של כסף עתידי?<div class=\"fx\">FV / (1 + r)^t = PV</div></td></tr></table></div>"
+  },
+  "required-return": {
+    "id": "required-return",
+    "section": "dcf",
+    "title": "תשואה נדרשת",
+    "short": "התשואה הצפויה המינימלית שהמשקיעים דורשים כפיצוי על זמן, סיכון ועלות אלטרנטיבית.",
+    "what": "התשואה הצפויה המינימלית שהמשקיעים דורשים כפיצוי על זמן, סיכון ועלות אלטרנטיבית.",
+    "interp": "סיכון נתפס גבוה יותר מגדיל בדרך כלל את התשואה הנדרשת. התאימו את התשואה לזכויות ולתזרים המוערכים.",
+    "watch": "תשואה נדרשת היא רף ולא תשואה מובטחת או ממומשת. יעד שרירותי אינו קובע את עלות ההון של החברה.",
+    "stmt": "model",
+    "related": [
+      "risk-factors",
+      "discount-rate",
+      "wacc",
+      "growth-vs-valuation",
+      "opportunity-cost"
+    ],
+    "body": "<ol class=\"concept-flow\"><li>סיכון</li><li>תשואה נדרשת</li><li>שיעור היוון</li><li>הערכת שווי</li></ol>"
   },
   "discount-rate": {
     "id": "discount-rate",
@@ -2644,19 +2756,15 @@
     "short": "השיעור המשמש להמרת תזרים עתידי לערך נוכחי, בהתאם לזמן ולסיכון..",
     "stmt": "model",
     "key": 1,
-    "what": "השיעור המשמש להמרת תזרים עתידי לערך נוכחי, בהתאם לזמן ולסיכון.",
+    "what": "השיעור המשמש להמרת תזרים עתידי לערך נוכחי, בהתאם לזמן ולסיכון. שיעור ההיוון הוא התשואה הנדרשת המשמשת לחישוב ערך נוכחי.",
     "example": [
       [
-        "חברה גדולה ויציבה",
-        "~7–9%"
+        "100 דולר בעוד עשור; שיעור 7%",
+        "$50.83"
       ],
       [
-        "חברה ממוצעת",
-        "~9–11%"
-      ],
-      [
-        "מסוכן או בשלב מוקדם",
-        "12%+"
+        "אותו תזרים; שיעור 12%",
+        "$32.20"
       ]
     ],
     "interp": "לתזרים לפירמה משתמשים בעלות הון משוקללת; לתזרים להון העצמי משתמשים בעלות ההון העצמי.",
@@ -2668,7 +2776,7 @@
       "סיכון",
       "רגישות התוצאה"
     ],
-    "watch": "שינוי קטן בשיעור יכול לשנות מהותית את השווי. אין שיעור יחיד המתאים לכל חברה.",
+    "watch": "שינוי קטן בשיעור עשוי לשנות מהותית את השווי. התאימו אותו לסיכון התזרים, למטבע ולהנחות האינפלציה.",
     "where": "הנחות ואומדנים במודל שלכם, המבוססים על הדוחות והמחקר.",
     "related": [
       "wacc",
@@ -2676,9 +2784,12 @@
       "sensitivity",
       "terminal-value",
       "fcfe",
-      "opportunity-cost"
+      "opportunity-cost",
+      "future-value",
+      "required-return"
     ],
-    "section": "dcf"
+    "section": "dcf",
+    "body": "<ol class=\"concept-flow\"><li>סיכון גבוה יותר</li><li>תשואה נדרשת גבוהה יותר</li><li>שיעור היוון גבוה יותר</li><li>ערך נוכחי נמוך יותר</li></ol><p>תזרים של 100 דולר לא השתנה. רק התשואה הנדרשת השתנתה. שיעור גבוה מפחית ערך נוכחי של תזרים עתידי חיובי, ושיעור נמוך מגדיל אותו.</p><a href=\"#dcf/present-value\">בדקו את שני השיעורים במחשבון הערך הנוכחי</a>"
   },
   "terminal-value": {
     "id": "terminal-value",
@@ -2776,7 +2887,8 @@
       "enterprise-value",
       "fcff",
       "fcfe",
-      "terminal-value"
+      "terminal-value",
+      "dcf-intro"
     ],
     "section": "dcf"
   },
@@ -2821,7 +2933,8 @@
       "fair-value-per-share",
       "market-cap",
       "cash",
-      "dcf-ev"
+      "dcf-ev",
+      "dcf-intro"
     ],
     "section": "dcf"
   },
@@ -2879,7 +2992,8 @@
     "related": [
       "sensitivity",
       "diluted-shares",
-      "equity-value"
+      "equity-value",
+      "dcf-intro"
     ],
     "section": "dcf"
   },
@@ -3234,7 +3348,8 @@
       "opportunity-cost",
       "dilution",
       "fcfe",
-      "capex-efficiency"
+      "capex-efficiency",
+      "profitable-growth"
     ],
     "section": "value-investing"
   },
@@ -3325,7 +3440,8 @@
       "wacc",
       "capital-allocation",
       "reverse-dcf",
-      "capex-efficiency"
+      "capex-efficiency",
+      "profitable-growth"
     ],
     "section": "value-investing"
   },
@@ -3540,7 +3656,8 @@
       "fcfe",
       "nopat",
       "dcf-ev",
-      "dcf-intro"
+      "dcf-intro",
+      "wacc"
     ],
     "section": "value-investing"
   },
@@ -3667,7 +3784,7 @@
     "title": "עלות אלטרנטיבית",
     "stmt": "qual",
     "short": "התועלת שעליה מוותרים כאשר בוחרים שימוש אחד בכסף במקום חלופה זמינה..",
-    "what": "התועלת שעליה מוותרים כאשר בוחרים שימוש אחד בכסף במקום חלופה זמינה.",
+    "what": "התועלת שעליה מוותרים כאשר בוחרים שימוש אחד בכסף במקום חלופה זמינה. הון שהושקע בחברה אחת אינו זמין להשקעה אחרת באותו זמן. עלות ההון האלטרנטיבית משקפת חלופות בסיכון דומה.",
     "example": [
       [
         "חלופה א׳",
@@ -3680,6 +3797,10 @@
       [
         "החלטה",
         "התחזית הגבוהה יותר אינה מספיקה להכרעה"
+      ],
+      [
+        "חלופה בסיכון דומה מניבה 8%",
+        "ערכם הנוכחי של 100 דולר בעוד חמש שנים הוא כ־68.06 דולר בהיוון של 8%. השוו את התשלום הדחוי לחלופה."
       ]
     ],
     "interp": "השוו תשואה צפויה יחד עם סיכון, זמן, מסים ונזילות. השקעה יכולה להיות זולה ועדיין פחות מושכת מחלופה אחרת.",
@@ -3696,9 +3817,16 @@
     "related": [
       "capital-allocation",
       "discount-rate",
-      "margin-of-safety"
+      "margin-of-safety",
+      "time-value-money",
+      "required-return",
+      "wacc",
+      "growth-vs-valuation"
     ],
-    "section": "value-investing"
+    "section": "value-investing",
+    "aka": [
+      "Opportunity Cost of Capital"
+    ]
   },
   "management-incentives": {
     "id": "management-incentives",
@@ -3937,7 +4065,12 @@
       "operating-margin",
       "fcf",
       "roic",
-      "wacc"
+      "wacc",
+      "capex",
+      "invested-capital",
+      "incremental-roic",
+      "capital-allocation",
+      "dcf-intro"
     ],
     "stmt": "qual",
     "example": [
@@ -3946,7 +4079,8 @@
         "הצמיחה עלולה להשמיד ערך למרות הגידול בהכנסות."
       ]
     ],
-    "short": "צמיחת הכנסות מודדת גידול במכירות; צמיחה רווחית בוחנת אם הגידול יוצר ערך כלכלי."
+    "short": "צמיחת הכנסות מודדת גידול במכירות; צמיחה רווחית בוחנת אם הגידול יוצר ערך כלכלי.",
+    "body": " <aside class=\"card multiple-principle\"><b>צמיחה אינה יוצרת ערך לבעלי המניות באופן אוטומטי.</b><p>צמיחה בתשואה מעל עלות ההון עשויה ליצור ערך; צמיחה בתשואה נמוכה ממנה עשויה להשמיד ערך.</p><p>לצמיחה חדשה בחנו תשואה שולית: גם צמיחת הכנסות מהירה עלולה להשמיד ערך אם השקעות חדשות מניבות פחות מעלות ההון.</p></aside>"
   },
   "operating-margin-trend": {
     "id": "operating-margin-trend",

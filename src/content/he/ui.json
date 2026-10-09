@@ -775,7 +775,7 @@
   "Valuation range": "טווח שווי",
   "Valuation should be a range, not a single magical number": "הערכת שווי צריכה להיות טווח, לא מספר קסם יחיד",
   "Value / Share": "שווי למניה",
-  "Value Creation Spread": "פער יצירת ערך",
+  "Value Creation Spread": "פער יצירת הערך",
   "Value of all cash after the forecast.": "שווי כלל התזרימים אחרי תקופת התחזית.",
   "Value the company under three sets of assumptions. Revenue grows at the scenario rate; FCF margin moves linearly from today’s level to the scenario’s target by the final forecast year. (§44)": "העריכו את החברה בשלושה תרחישים. ההכנסות גדלות לפי קצב התרחיש; שיעור התזרים משתנה בקו ישר מהמצב הנוכחי ליעד בסוף התחזית. (§44)",
   "Vertical Integration": "אינטגרציה אנכית",
@@ -1028,5 +1028,6 @@
   "Reset growth checklist": "איפוס בדיקת הצמיחה",
   "EV from Share Price": "שווי פעילות ממחיר המניה",
   "Net Cash (+) / Net Debt (−)": "מזומן נטו (+) / חוב נטו (−)",
-  "Clear growth checklist ticks?": "לנקות את סימוני בדיקת הצמיחה?"
+  "Clear growth checklist ticks?": "לנקות את סימוני בדיקת הצמיחה?",
+  "Future Value": "ערך עתידי"
 }
