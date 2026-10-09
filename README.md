@@ -1,40 +1,81 @@
-# Stock Analysis Reference
+# Stock Analysis Toolkit · מדריך לניתוח מניות
 
-A personal **stock analysis handbook, formula cheat sheet and financial glossary**. It's built so that, mid-analysis, you can search a metric and get the answer straight away.
+A bilingual English/Hebrew stock-analysis handbook with 94 concepts, four guided learning paths, a company case, statement tracing, and valuation tools.
 
-**Live:** https://jarvischer.github.io/stock-analysis-toolkit/
+**Live:** [English](https://jarvischer.github.io/stock-analysis-toolkit/?lang=en) · [עברית](https://jarvischer.github.io/stock-analysis-toolkit/?lang=he)
 
-## What's inside
-- **Search** (press `/`): type ROIC, FCF, Gross Margin, EV, CapEx… and jump to the concept.
-- **Handbook, 14 sections:** Framework · Business Analysis · Income Statement · Profitability & Margins · Cash Flow · Balance Sheet · Capital Efficiency · Per-Share Metrics · Valuation · DCF · Investment Thesis · Formula Cheat Sheet · Glossary · Value Investing.
-- **Standard concept card**, the same for every concept: What is it? · Formula · Example · Interpretation · Generally (higher/lower) · Compare against · Watch out · Financial statement. Optional extras on a card are “How do I interpret this?”, cross-links, and a small “Try it” calculator.
-- **Quick Reference:** one line per formula; click an entry to open the full card.
-- **Statement Map:** shows which numbers come straight from filings and which ones you calculate yourself.
-- **Important Principles** and **Favorites** (★ any card).
-- **Learning Mode:** expands every “How do I interpret this?” section.
-- **Learning paths:** four guided paths covering financial statements, business quality, valuation, and thinking like a business owner, with fourteen lessons, hints, answer feedback, and saved exercise completion.
-- **Concept exercises:** fourteen core concept cards include practice questions before a collapsible worked example.
-- **Interactive Statement Map:** trace gross margin, free cash flow, and net debt to sample statement figures, then select the required figures yourself.
-- **Value Investing:** 20 concept cards with fictional examples, pitfalls, related concepts, and further reading. Includes owner earnings, maintenance CapEx, margin of safety, normalized earnings, capital allocation, value traps, risk, and asset-based valuation.
-- **Company case:** analyze fictional manufacturer Cedar Works in three chapters. Calculate metrics, save your reasoning, and compare it with a suggested discussion.
-- **Tools (secondary, collapsed in the nav):** DCF calculator, sensitivity table, Bear/Base/Bull, SOTP, company analyzer, thesis worksheet, checklist.
+## Local development
 
-Favorites, notes and tool inputs are saved in your browser. Use Export / Import to back them up.
-Lesson completion and case reflections also use browser storage and are included in Export / Import. Written reflections are not automatically graded.
+Use Node.js 22 or newer.
 
-## Adding a concept
-Add an object to the right file in `js/content/`:
-```js
-{ id: 'roe', title: 'ROE', abbr: 'Return on Equity', short: 'Net Income / Equity.', stmt: 'calc',
-  what: '…', formula: 'ROE = Net Income / Shareholders’ Equity',
-  example: [['Net Income', '$2B'], ['Equity', '$10B'], ['ROE', '20%', 'res']],
-  interp: '…', better: ['higher', '…'], compare: ['ROIC', 'Peers'], watch: '…',
-  q: { tells: '…', hl: '…', compare: '…', fool: '…' }, related: ['roic', 'equity'] }
+```sh
+npm ci
+npm run dev
 ```
-It then shows up automatically in the section page, search, Quick Reference and Glossary. To add a whole new section, call `SAT.section({...})` in a new `js/content/*.js` file and add a `<script>` tag for it in `index.html`.
 
-There's no build step: it's plain HTML, CSS and JS. Run the math tests with `node tests/finance.test.js`.
+Open `http://127.0.0.1:4173`. After editing source files, run `npm run build` again and refresh. `npm run preview` serves an existing build. This is a static application; no server, API key, or production framework dependency is required.
 
-For browser interaction checks, serve the repository locally and open `tests/learning.browser.html` in a dedicated test browser profile. The page reports pass/fail results for lessons, validation, saved completion, statement tracing, case progression, reflection escaping, and mobile overflow. It restores the original app storage after the checks.
+## Project structure
 
-*Educational reference. Not investment advice.*
+```text
+src/
+  index.html             Application shell
+  app.js                 Navigation, search, import/export
+  i18n.js                Language selection and shared UI localization
+  components/            Cards, reference pages, calculators and worksheets
+  content/
+    en/                  English catalogs
+    he/                  Hebrew catalogs with the same IDs
+    register.js          Connects localized content to shared calculators
+  finance/               Shared math, storage, and calculator definitions
+  learning/              Exercise validation, lesson navigation, case behavior
+  styles/                Themes, responsive layout, and RTL rules
+scripts/                 Validation, deterministic static build, preview server
+tests/                  Financial and browser regression checks
+```
+
+Each language has five JSON catalogs:
+
+- `concepts.json`: explanations, examples, interpretation, pitfalls, and related IDs.
+- `sections.json`: section titles, introductions, and supporting diagrams.
+- `lessons.json`: exercise questions, hints, answers, learning paths, and case chapters.
+- `learn.json`: reusable metric explanations for the tools.
+- `ui.json`: shared labels and messages. Keys use normalized English text; `{name}` placeholders preserve dynamic values.
+
+The Hebrew explanations are written for Hebrew readers. English financial names, abbreviations, and conventional formulas remain visible where useful. The renderer translates shared UI text and attributes, including dynamically rendered feedback. It excludes user-authored notes, field values, and formula blocks. Mark additional user-authored output with `data-user-content`.
+
+## Adding or editing a concept
+
+1. Edit the entry with the same stable ID in both `content/en/concepts.json` and `content/he/concepts.json`.
+2. Set its `section` to an existing section ID. Add the section to both section catalogs if needed.
+3. Keep numeric calculator logic in `finance/calculators.js`. Do not put executable code in translation files.
+4. For exercises, add the same ID and answer to both lesson catalogs, then include that ID in a learning path.
+5. Add new shared UI messages in both UI catalogs. Keep placeholder names identical.
+6. Run the checks below before publishing.
+
+Stable IDs automatically connect concepts to search, the glossary, Quick Reference, favorites, and learning progress. Add selected formulas to the curated formula sheet in `components/reference.js`.
+
+## Validation and tests
+
+```sh
+npm test
+npm run build
+npx playwright install chromium
+npm run test:browser
+```
+
+To use an installed Chrome instead: `CHROME_PATH=/usr/bin/google-chrome npm run test:browser`.
+
+Validation checks required Hebrew explanations, matching catalog IDs, section membership, related links, and exercise-answer consistency. Browser tests cover every page in both languages, bilingual search, the existing learning interactions, language switching, saved data, RTL numbers, and mobile navigation. `scripts/browser-audit.mjs` is an optional local translation/visual audit using installed Chrome; it writes reports and screenshots to `/tmp`.
+
+## Build and deployment
+
+`npm run build` validates the catalogs and assembles `dist/` with content-hashed JavaScript and CSS. Relative asset URLs work at the repository’s existing GitHub Pages path. Source code and tests are not published.
+
+GitHub Actions runs validation, finance tests, the build, and browser tests for pull requests and pushes. Successful pushes to `main` publish the tested `dist/` artifact. GitHub Pages must use **GitHub Actions** as its publishing source. See [GitHub’s custom Pages workflow documentation](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).
+
+## Language and saved data
+
+Use the English / עברית switch or `?lang=en` / `?lang=he`. The language preference persists in the browser. Hash routes and all existing `sat:` storage keys are retained. Favorites, notes, calculator inputs, and lesson completion are shared across languages and included in Export / Import. Changing language does not translate or overwrite your notes. Data remains on the same origin and site address as before.
+
+Educational reference. Not investment advice.

@@ -74,7 +74,7 @@
         });
         const other = P(st.other) || 0, debt = P(st.debt) || 0, cash = P(st.cash) || 0, sh = P(st.shares), px = P(st.price);
         const eq = segTot + other - (debt - cash);
-        sum.innerHTML = '<tbody>' + st.rows.map((r) => `<tr><td class="lbl">${SAT.esc(r.name || 'Segment')}</td><td class="muted lbl">${(BASIS.find((b) => b[0] === r.basis) || [, ''])[1]}${r.basis !== 'manual' && r.mult ? ' × ' + SAT.esc(r.mult) : ''}</td><td>${f.money(segValue(r))}</td></tr>`).join('') +
+        sum.innerHTML = '<tbody>' + st.rows.map((r) => `<tr><td class="lbl" data-user-content>${SAT.esc(r.name || 'Segment')}</td><td class="muted lbl">${(BASIS.find((b) => b[0] === r.basis) || [, ''])[1]}${r.basis !== 'manual' && r.mult ? ' × ' + SAT.esc(r.mult) : ''}</td><td>${f.money(segValue(r))}</td></tr>`).join('') +
           `<tr class="tot"><td class="lbl">Sum of segments</td><td></td><td>${f.money(segTot)}</td></tr>
            <tr><td class="lbl">+ Other assets</td><td></td><td>${f.money(other)}</td></tr>
            <tr><td class="lbl">− Net debt (Debt − Cash)</td><td></td><td>${f.money(-(debt - cash))}</td></tr>

@@ -123,8 +123,8 @@
         const k = g.term.toLowerCase(); if (map.has(k) && !g.def) return;
         map.set(k, { term: g.term, href: g.href || H(g.id), def: g.def || (SAT.C[g.id] || {}).short, sub: g.id && SAT.C[g.id] && SAT.C[g.id].title !== g.term ? 'see ' + SAT.C[g.id].title : '' });
       });
-      const all = [...map.values()].sort((a, b) => a.term.replace(/[^a-z0-9]/gi, '').localeCompare(b.term.replace(/[^a-z0-9]/gi, ''), 'en', { sensitivity: 'base' }));
-      const letter = (t) => { const ch = t.replace(/[^a-z0-9]/gi, '')[0].toUpperCase(); return /[0-9]/.test(ch) ? '#' : ch; };
+      const all = [...map.values()].sort((a, b) => a.term.localeCompare(b.term, SAT.lang, { sensitivity: 'base' }));
+      const letter = (t) => { const ch = (t.replace(/[^\p{L}\p{N}]/gu, '')[0] || '#').toUpperCase(); return /[0-9]/.test(ch) ? '#' : ch; };
       const letters = [...new Set(all.map((g) => letter(g.term)))];
       el.innerHTML = `<div class="page-head"><div class="sec-num">Section 13</div><h2>Glossary</h2><p>${all.length} terms, A–Z. Each links to its full explanation.</p></div>
         <div class="filterbar"><input class="filter" data-f placeholder="Filter terms…" aria-label="Filter glossary"><div class="az">${letters.map((l) => `<a href="javascript:void 0" data-jump="g-${l}">${l}</a>`).join('')}</div></div>

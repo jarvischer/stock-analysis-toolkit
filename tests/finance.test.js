@@ -1,5 +1,5 @@
 // Run: node tests/finance.test.js — checks the worked examples from the spec.
-const SAT = require('../js/core.js');
+const SAT = require('../src/finance/core.js');
 const F = SAT.fin, f = SAT.fmt;
 let fail = 0;
 const near = (a, b, tol = 1e-6) => Math.abs(a - b) <= tol * Math.max(1, Math.abs(b));

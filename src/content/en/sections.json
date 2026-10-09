@@ -1,0 +1,92 @@
+[
+  {
+    "id": "framework",
+    "num": 1,
+    "title": "Analysis Framework",
+    "intro": "The whole process exists to answer three questions. Click any stage to open it.",
+    "he": "תהליך הניתוח: מהעסק → למספרים → לשווי → להחלטה.",
+    "top": "<div class=\"card\"><h3>Learn by doing</h3><p>Follow a short lesson, trace numbers through statements, or analyze a fictional company.</p><div class=\"btns\"><a class=\"btn\" href=\"#learning\">Start a learning path</a><a class=\"btn ghost\" href=\"#company-case\">Try the company case</a></div></div><div class=\"fw\">\n      <div class=\"fw-map\"><a class=\"fw-step\" href=\"#business\"><span class=\"fw-i\">1</span><span><b>BUSINESS</b><span class=\"fw-d\">What does it sell, to whom, how does it make money, and why does it win?</span></span></a><div class=\"fw-arrow\">↓</div><a class=\"fw-step\" href=\"#income\"><span class=\"fw-i\">2</span><span><b>REVENUE & GROWTH</b><span class=\"fw-d\">How big is it and how fast is demand growing?</span></span></a><div class=\"fw-arrow\">↓</div><a class=\"fw-step\" href=\"#margins\"><span class=\"fw-i\">3</span><span><b>PROFITABILITY</b><span class=\"fw-d\">How much of each revenue dollar becomes profit?</span></span></a><div class=\"fw-arrow\">↓</div><a class=\"fw-step\" href=\"#cashflow\"><span class=\"fw-i\">4</span><span><b>CASH FLOW</b><span class=\"fw-d\">Does accounting profit turn into real cash?</span></span></a><div class=\"fw-arrow\">↓</div><a class=\"fw-step\" href=\"#balance\"><span class=\"fw-i\">5</span><span><b>BALANCE SHEET</b><span class=\"fw-d\">Can it survive bad times? How much cash and debt?</span></span></a><div class=\"fw-arrow\">↓</div><a class=\"fw-step\" href=\"#efficiency\"><span class=\"fw-i\">6</span><span><b>CAPITAL EFFICIENCY</b><span class=\"fw-d\">How much profit per dollar of capital? ROIC vs WACC.</span></span></a><div class=\"fw-arrow\">↓</div><a class=\"fw-step\" href=\"#valuation\"><span class=\"fw-i\">7</span><span><b>VALUATION</b><span class=\"fw-d\">What is the market charging? Multiples: P/E, EV/EBITDA, FCF yield.</span></span></a><div class=\"fw-arrow\">↓</div><a class=\"fw-step\" href=\"#dcf\"><span class=\"fw-i\">8</span><span><b>INTRINSIC VALUE</b><span class=\"fw-d\">What is it worth based on future cash? DCF, scenarios, range.</span></span></a><div class=\"fw-arrow\">↓</div><a class=\"fw-step\" href=\"#thesis\"><span class=\"fw-i\">9</span><span><b>INVESTMENT THESIS</b><span class=\"fw-d\">Why is the market wrong, what’s the catalyst, what would prove me wrong?</span></span></a></div>\n      <div class=\"fw-side\">\n        <div class=\"bigq\"><span>Q1</span><div><b>Is this a good business?</b><p>Stages 1–6: moat, growth, margins, cash, balance sheet, ROIC.</p></div></div>\n        <div class=\"bigq\"><span>Q2</span><div><b>What is the business worth?</b><p>Stages 7–8: multiples and intrinsic value (DCF), as a range.</p></div></div>\n        <div class=\"bigq\"><span>Q3</span><div><b>Is the stock price attractive compared with that value?</b><p>Stage 9: upside vs downside, what the price implies, thesis &amp; invalidation.</p></div></div>\n        <div class=\"callout warn\"><b>Great company ≠ great investment.</b> Q1 and Q3 are different questions.</div>\n        <div class=\"btns\"><a class=\"btn\" href=\"#quickref\">Quick Reference</a><a class=\"btn ghost\" href=\"#cheatsheet\">Formula Cheat Sheet</a><a class=\"btn ghost\" href=\"#statements\">Statement Map</a><a class=\"btn ghost\" href=\"#principles\">Principles</a></div>\n      </div></div>"
+  },
+  {
+    "id": "business",
+    "num": 2,
+    "title": "Business Analysis",
+    "intro": "Understand the business before the numbers. These concepts come mainly from the 10-K (Item 1 “Business”, Item 1A “Risk Factors”, segment notes) and earnings calls.",
+    "he": "קודם להבין את העסק — ורק אחר כך את המספרים."
+  },
+  {
+    "id": "income",
+    "num": 3,
+    "title": "Income Statement",
+    "intro": "Also called the P&amp;L (Profit &amp; Loss). It shows how revenue flows down to net income over a period — a quarter (10-Q) or a year (10-K).",
+    "he": "דוח רווח והפסד: מההכנסות מורידים עלויות שלב אחר שלב עד לרווח הנקי.",
+    "top": "<div class=\"card is-struct\">\n      <div class=\"is-l\">Revenue</div><div class=\"is-l m\">− Cost of Revenue</div><div class=\"is-line\"></div><div class=\"is-l t\"><a href=\"#income/gross-profit\">Gross Profit</a></div>\n      <div class=\"is-l m\">− Operating Expenses <span class=\"muted\">(R&amp;D, S&amp;M, G&amp;A)</span></div><div class=\"is-line\"></div><div class=\"is-l t\"><a href=\"#income/operating-income\">Operating Income</a> <span class=\"muted\">(≈ EBIT)</span></div>\n      <div class=\"is-l m\">− Interest</div><div class=\"is-l m\">− Other Expenses <span class=\"muted\">(+ other income)</span></div><div class=\"is-l m\">− Taxes</div><div class=\"is-line\"></div><div class=\"is-l t\"><a href=\"#income/net-income\">Net Income</a></div>\n    </div>"
+  },
+  {
+    "id": "margins",
+    "num": 4,
+    "title": "Profitability & Margins",
+    "intro": "Margins turn dollar profits into percentages so you can compare across time and companies. Each margin answers: “of every $100 of revenue, how much is left at this level?”",
+    "he": "שולי רווח — מתוך כל 100$ הכנסות, כמה נשאר בכל שלב."
+  },
+  {
+    "id": "cashflow",
+    "num": 5,
+    "title": "Cash Flow",
+    "intro": "Profit is an accounting opinion; cash is a fact. The cash flow statement shows where cash actually came from and went.",
+    "he": "תזרים מזומנים — מאיפה הגיע המזומן ולאן הוא הלך בפועל."
+  },
+  {
+    "id": "balance",
+    "num": 6,
+    "title": "Balance Sheet",
+    "intro": "A snapshot at one date of what the company <b>owns</b>, what it <b>owes</b>, and what is left for <b>shareholders</b>.",
+    "he": "מאזן: נכסים = התחייבויות + הון עצמי.",
+    "top": "<div class=\"card bs-eq\">\n      <div class=\"bs-col a\"><div class=\"bs-h\"><a href=\"#balance/assets\">ASSETS</a></div><div class=\"bs-b\">What the company owns<br><small>Cash · Receivables · Inventory · PP&amp;E · Intangibles</small></div></div>\n      <div class=\"bs-op\">=</div>\n      <div class=\"bs-col\"><div class=\"bs-stack\"><div class=\"bs-col l\"><div class=\"bs-h\"><a href=\"#balance/liabilities\">LIABILITIES</a></div><div class=\"bs-b\">What it owes<br><small>Payables · Debt · Deferred revenue</small></div></div>\n      <div class=\"bs-plus\">+</div>\n      <div class=\"bs-col e\"><div class=\"bs-h\"><a href=\"#balance/equity\">SHAREHOLDERS’ EQUITY</a></div><div class=\"bs-b\">What belongs to owners<br><small>= Assets − Liabilities</small></div></div></div></div>\n    </div>"
+  },
+  {
+    "id": "efficiency",
+    "num": 7,
+    "title": "Capital Efficiency",
+    "intro": "Profitability alone is insufficient — what matters is how much capital was needed to earn that profit.",
+    "he": "לא רק כמה מרוויחים — אלא כמה הון היה צריך כדי להרוויח את זה.",
+    "top": "<div class=\"card\"><h4 style=\"margin-top:0\">Why profit alone is not enough</h4>\n      <div class=\"tbl-wrap\"><table class=\"t\"><thead><tr><th>Company</th><th>Profit (NOPAT)</th><th>Capital used</th><th>Return on capital</th></tr></thead><tbody>\n      <tr><td class=\"lbl\"><b>A</b></td><td>$3B</td><td>$15B</td><td class=\"pos-c\">20%</td></tr>\n      <tr><td class=\"lbl\"><b>B</b></td><td>$4B</td><td>$40B</td><td>10%</td></tr></tbody></table></div>\n      <p class=\"muted\" style=\"margin:8px 0 0\">B earns more dollars, but A is the far more efficient business: each $1 of capital produces twice as much profit. If both reinvest, A compounds value much faster.</p></div>"
+  },
+  {
+    "id": "pershare",
+    "num": 8,
+    "title": "Per-Share Metrics",
+    "intro": "You own shares, not the company. A company can grow while each existing share gets a smaller slice — always look at per-share economics.",
+    "he": "אתה מחזיק מניות, לא את החברה. תמיד לבדוק נתונים למניה."
+  },
+  {
+    "id": "valuation",
+    "num": 9,
+    "title": "Valuation",
+    "intro": "Multiples compare what the market charges with what the business produces.",
+    "top": "<div class=\"card banner\"><div class=\"banner-t\">GREAT COMPANY ≠ GREAT INVESTMENT</div>\n      <p>A fantastic business can still be a poor investment if you buy it at an excessive valuation. The return you earn depends on the <b>price you pay</b> relative to the cash the business will produce.</p>\n      <p class=\"he\" lang=\"he\" dir=\"rtl\">חברה מצוינת יכולה להיות השקעה גרועה אם קונים אותה במחיר מופרז.</p></div>"
+  },
+  {
+    "id": "dcf",
+    "num": 10,
+    "title": "Discounted Cash Flow — DCF",
+    "intro": "<b>A company is worth the present value of the cash it can generate for its owners in the future.</b> Because future money is worth less than money today, future cash flows are discounted back to today.",
+    "he": "חברה שווה את הערך הנוכחי של כל המזומנים שתייצר בעתיד.",
+    "top": "<div class=\"card\"><h4 style=\"margin-top:0\">The DCF process</h4><div class=\"proc\"><div class=\"proc-s\"><b>1. Revenue Forecast</b><span>Project sales for 5–10 years from growth drivers.</span></div><div class=\"proc-a\">→</div><div class=\"proc-s\"><b>2. Margin Forecast</b><span>Project operating / FCF margins.</span></div><div class=\"proc-a\">→</div><div class=\"proc-s\"><b>3. FCF Forecast</b><span>Revenue × FCF margin = FCF each year.</span></div><div class=\"proc-a\">→</div><div class=\"proc-s\"><b>4. Discount FCF</b><span>PV = FCFₜ / (1+r)ᵗ for each year.</span></div><div class=\"proc-a\">→</div><div class=\"proc-s\"><b>5. Terminal Value</b><span>Value of all cash after the forecast.</span></div><div class=\"proc-a\">→</div><div class=\"proc-s\"><b>6. Enterprise Value</b><span>Sum of PV of FCF + PV of TV.</span></div><div class=\"proc-a\">→</div><div class=\"proc-s\"><b>7. Equity Value</b><span>EV − Debt + Cash.</span></div><div class=\"proc-a\">→</div><div class=\"proc-s\"><b>8. Fair Value Per Share</b><span>Equity Value / Diluted Shares.</span></div></div>\n      <div class=\"btns\"><a class=\"btn ghost\" href=\"#tool-dcf\">Open DCF calculator (tool)</a><a class=\"btn ghost\" href=\"#tool-sensitivity\">Sensitivity table (tool)</a></div></div>"
+  },
+  {
+    "id": "thesis",
+    "num": 11,
+    "title": "Investment Thesis",
+    "intro": "A short written argument for why a stock is mispriced and what will make the market see it.",
+    "top": "<div class=\"card banner red\"><div class=\"banner-t\">WHAT WOULD PROVE ME WRONG?</div>\n      <p><b>Confirmation bias</b> is the tendency to seek and believe information that supports what we already think. Once you own a stock, every piece of news starts to look like support. The defence: <b>define thesis-breaking conditions before investing</b>, in writing, with numbers — then act on them when they happen.</p>\n      <p class=\"he\" lang=\"he\" dir=\"rtl\">מה יוכיח שטעיתי? להגדיר מראש, בכתב, לפני הקנייה.</p>\n      <p class=\"muted\">Examples: revenue growth falls below X% · margins fall below X% · major customer lost · competitor gains significant share · debt rises above X · product launch fails · regulatory change.</p>\n      <div class=\"btns\"><a class=\"btn\" href=\"#tool-thesis\">Open thesis worksheet (tool)</a></div></div>"
+  },
+  {
+    "id": "value-investing",
+    "num": 14,
+    "title": "Value Investing",
+    "intro": "Estimate lasting earning power, examine management decisions, and test what can go wrong. All examples are fictional.",
+    "top": "<div class=\"btns\"><a class=\"btn\" href=\"#learn-owner\">Think like a business owner — guided path</a></div>",
+    "bottom": "<div class=\"card\"><h3>Further reading</h3><p><a href=\"https://www.berkshirehathaway.com/letters/1986.html\">Berkshire Hathaway: owner earnings</a> · <a href=\"https://www.oaktreecapital.com/insights/memo/what-really-matters\">Oaktree: investment judgment and risk</a> · <a href=\"https://pages.stern.nyu.edu/~adamodar/New_Home_Page/lectures/val.html\">Aswath Damodaran: matching cash flows and discount rates</a> · <a href=\"https://www.cfainstitute.org/insights/professional-learning/refresher-readings/2026/financial-analysis-techniques\">CFA Institute: financial analysis techniques</a></p></div>"
+  }
+]

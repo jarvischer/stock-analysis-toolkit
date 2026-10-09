@@ -546,3 +546,27 @@ button:disabled { opacity: .5; cursor: not-allowed; }
 .practice :focus-visible, .lesson-steps :focus-visible, .statement-lab :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 @media (max-width: 800px) { .learning-grid { grid-template-columns: 1fr; } }
 @media (max-width: 480px) { .source-row { gap: 6px; padding: 8px 2px; } .source-marker { min-width: 0; } }
+
+/* Direction follows the selected language; numbers and formulas keep their order. */
+[dir="rtl"] { --sans: Arial, 'Inter', sans-serif; }
+[dir="rtl"] .side { border-right: 0; border-left: 1px solid var(--line); }
+[dir="rtl"] .cc.key, [dir="rtl"] .pr { border-left-width: 1px; border-right: 4px solid var(--accent); }
+[dir="rtl"] .side .grp-t, [dir="rtl"] table.t td:first-child, [dir="rtl"] table.t th:first-child,
+[dir="rtl"] .wrap, [dir="rtl"] .tip::after { text-align: right !important; }
+[dir="rtl"] .three ul { padding-left: 0; padding-right: 18px; }
+[dir="rtl"] .is-l.m { padding-left: 0; padding-right: 14px; }
+[dir="rtl"] .search kbd { right: auto; left: 9px; }
+.formula, .fx, code, .mf, .mv, .range, .stackbar, .exm td:last-child, .ex td:last-child,
+input[inputmode="decimal"], input[data-u="$"], input[data-u="#"], input[data-u="%"] { direction: ltr; unicode-bidi: isolate; }
+[dir="rtl"] .exm td:last-child, [dir="rtl"] .ex td:last-child { unicode-bidi: plaintext; }
+input[data-u="text"], textarea { unicode-bidi: plaintext; }
+[dir="rtl"] .inp { direction: ltr; }
+[dir="rtl"] .brand { white-space: normal; }
+[dir="rtl"] .brand small { line-height: 1.5; }
+[dir="rtl"] .cc-h h3 small { display: inline-block; }
+@media (max-width: 860px) {
+  [dir="rtl"] .side { left: auto; right: 0; transform: translateX(105%); }
+  [dir="rtl"] .nav-open .side, [dir="rtl"] body.nav-open .side { transform: translateX(0); }
+}
+/* Explicit component display rules must not override the HTML hidden state. */
+[hidden] { display: none !important; }

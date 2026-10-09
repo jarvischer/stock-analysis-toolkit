@@ -49,7 +49,7 @@
       });
       node.querySelector('[data-co]').addEventListener('input', (e) => { st._co = e.target.value; paint(); });
       node.querySelector('[data-reset]').addEventListener('click', () => {
-        if (!confirm('Clear all ticks for a new company?')) return;
+        if (!confirm(SAT.t('Clear all ticks for a new company?'))) return;
         Object.keys(st).forEach((k) => delete st[k]);
         node.querySelectorAll('[data-ck]').forEach((c) => { c.checked = false; });
         node.querySelector('[data-co]').value = '';

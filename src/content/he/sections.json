@@ -1,0 +1,83 @@
+[
+  {
+    "id": "framework",
+    "num": 1,
+    "title": "מסגרת ניתוח",
+    "intro": "הניתוח מתחיל בהבנת העסק, ממשיך בבדיקת הנתונים ומסתיים בהשוואת מחיר לערך.",
+    "top": "<div class=\"card\"><h3>לומדים באמצעות תרגול</h3><p>עברו שיעור קצר, עקבו אחר נתונים בדוחות או נתחו חברה בדיונית.</p><div class=\"btns\"><a class=\"btn\" href=\"#learning\">התחלת מסלול לימוד</a><a class=\"btn ghost\" href=\"#company-case\">למקרה הבוחן</a></div></div><div class=\"fw\">\n      <div class=\"fw-map\"><a class=\"fw-step\" href=\"#business\"><span class=\"fw-i\">1</span><span><b>העסק</b><span class=\"fw-d\">מה החברה מוכרת, למי, איך היא מרוויחה ולמה בוחרים בה?</span></span></a><div class=\"fw-arrow\">↓</div><a class=\"fw-step\" href=\"#income\"><span class=\"fw-i\">2</span><span><b>הכנסות וצמיחה</b><span class=\"fw-d\">מה גודל העסק ובאיזו מהירות הביקוש גדל?</span></span></a><div class=\"fw-arrow\">↓</div><a class=\"fw-step\" href=\"#margins\"><span class=\"fw-i\">3</span><span><b>רווחיות</b><span class=\"fw-d\">כמה מכל שקל מכירות הופך לרווח?</span></span></a><div class=\"fw-arrow\">↓</div><a class=\"fw-step\" href=\"#cashflow\"><span class=\"fw-i\">4</span><span><b>תזרים מזומנים</b><span class=\"fw-d\">האם הרווח החשבונאי הופך למזומן?</span></span></a><div class=\"fw-arrow\">↓</div><a class=\"fw-step\" href=\"#balance\"><span class=\"fw-i\">5</span><span><b>מאזן</b><span class=\"fw-d\">האם העסק יכול לשרוד תקופה קשה? כמה מזומן וחוב יש לו?</span></span></a><div class=\"fw-arrow\">↓</div><a class=\"fw-step\" href=\"#efficiency\"><span class=\"fw-i\">6</span><span><b>יעילות ההון</b><span class=\"fw-d\">כמה רווח נוצר מכל יחידת הון? השוו תשואה לעלות הון.</span></span></a><div class=\"fw-arrow\">↓</div><a class=\"fw-step\" href=\"#valuation\"><span class=\"fw-i\">7</span><span><b>הערכת שווי</b><span class=\"fw-d\">מה המחיר שהשוק דורש ביחס לרווח ולתזרים?</span></span></a><div class=\"fw-arrow\">↓</div><a class=\"fw-step\" href=\"#dcf\"><span class=\"fw-i\">8</span><span><b>ערך פנימי</b><span class=\"fw-d\">מה השווי לפי מזומן עתידי? היוון, תרחישים וטווח.</span></span></a><div class=\"fw-arrow\">↓</div><a class=\"fw-step\" href=\"#thesis\"><span class=\"fw-i\">9</span><span><b>תזת השקעה</b><span class=\"fw-d\">מדוע השוק טועה, מה הזרז ומה יפריך את התזה?</span></span></a></div>\n      <div class=\"fw-side\">\n        <div class=\"bigq\"><span>Q1</span><div><b>האם זה עסק טוב?</b><p>שלבים 1–6: חפיר, צמיחה, רווחיות, מזומן, מאזן ותשואה על הון.</p></div></div>\n        <div class=\"bigq\"><span>Q2</span><div><b>מה שווי העסק?</b><p>שלבים 7–8: מכפילים וערך פנימי כטווח.</p></div></div>\n        <div class=\"bigq\"><span>Q3</span><div><b>האם מחיר המניה מושך ביחס לערך?</b><p>שלב 9: פוטנציאל עלייה וירידה, ציפיות במחיר, תזה והפרכתה.</p></div></div>\n        <div class=\"callout warn\"><b>חברה מצוינת אינה בהכרח השקעה מצוינת.</b>איכות העסק ואיכות ההשקעה במחיר הנוכחי הן שאלות שונות.</div>\n        <div class=\"btns\"><a class=\"btn\" href=\"#quickref\">עיון מהיר</a><a class=\"btn ghost\" href=\"#cheatsheet\">דף נוסחאות</a><a class=\"btn ghost\" href=\"#statements\">מפת הדוחות</a><a class=\"btn ghost\" href=\"#principles\">עקרונות</a></div>\n      </div></div>"
+  },
+  {
+    "id": "business",
+    "num": 2,
+    "title": "ניתוח העסק",
+    "intro": "הבינו מה העסק מוכר, למי ומדוע לקוחות בוחרים בו."
+  },
+  {
+    "id": "income",
+    "num": 3,
+    "title": "דוח רווח והפסד",
+    "intro": "עקבו אחר הדרך מההכנסות לרווח הנקי בתקופה.",
+    "top": "<div class=\"card is-struct\">\n      <div class=\"is-l\">הכנסות</div><div class=\"is-l m\">− עלות ההכנסות</div><div class=\"is-line\"></div><div class=\"is-l t\"><a href=\"#income/gross-profit\">רווח גולמי</a></div>\n      <div class=\"is-l m\">− הוצאות תפעול<span class=\"muted\">(R&amp;D, S&amp;M, G&amp;A)</span></div><div class=\"is-line\"></div><div class=\"is-l t\"><a href=\"#income/operating-income\">רווח תפעולי</a> <span class=\"muted\">(≈ EBIT)</span></div>\n      <div class=\"is-l m\">− ריבית</div><div class=\"is-l m\">− הוצאות אחרות<span class=\"muted\">(בתוספת הכנסות אחרות)</span></div><div class=\"is-l m\">− מסים</div><div class=\"is-line\"></div><div class=\"is-l t\"><a href=\"#income/net-income\">רווח נקי</a></div>\n    </div>"
+  },
+  {
+    "id": "margins",
+    "num": 4,
+    "title": "רווחיות ושיעורי רווח",
+    "intro": "בדקו כמה נשאר מכל שקל מכירות בכל שלב."
+  },
+  {
+    "id": "cashflow",
+    "num": 5,
+    "title": "תזרים מזומנים",
+    "intro": "בדקו מאין המזומן מגיע ולאן הוא הולך."
+  },
+  {
+    "id": "balance",
+    "num": 6,
+    "title": "מאזן",
+    "intro": "תמונת הנכסים, ההתחייבויות וההון העצמי בתאריך מסוים.",
+    "top": "<div class=\"card bs-eq\">\n      <div class=\"bs-col a\"><div class=\"bs-h\"><a href=\"#balance/assets\">נכסים</a></div><div class=\"bs-b\">מה החברה מחזיקה<br><small>מזומן · לקוחות · מלאי · רכוש קבוע · נכסים בלתי מוחשיים</small></div></div>\n      <div class=\"bs-op\">=</div>\n      <div class=\"bs-col\"><div class=\"bs-stack\"><div class=\"bs-col l\"><div class=\"bs-h\"><a href=\"#balance/liabilities\">התחייבויות</a></div><div class=\"bs-b\">מה החברה חייבת<br><small>ספקים · חוב · הכנסות נדחות</small></div></div>\n      <div class=\"bs-plus\">+</div>\n      <div class=\"bs-col e\"><div class=\"bs-h\"><a href=\"#balance/equity\">הון בעלי המניות</a></div><div class=\"bs-b\">מה שייך לבעלים<br><small>= Assets − Liabilities</small></div></div></div></div>\n    </div>"
+  },
+  {
+    "id": "efficiency",
+    "num": 7,
+    "title": "יעילות ההון",
+    "intro": "לא רק כמה מרוויחים, אלא כמה הון נדרש כדי להרוויח.",
+    "top": "<div class=\"card\"><h4 style=\"margin-top:0\">למה רווח לבדו אינו מספיק</h4>\n      <div class=\"tbl-wrap\"><table class=\"t\"><thead><tr><th>חברה</th><th>רווח תפעולי לאחר מס</th><th>הון ששימש לפעילות</th><th>תשואה על ההון</th></tr></thead><tbody>\n      <tr><td class=\"lbl\"><b>A</b></td><td>$3B</td><td>$15B</td><td class=\"pos-c\">20%</td></tr>\n      <tr><td class=\"lbl\"><b>B</b></td><td>$4B</td><td>$40B</td><td>10%</td></tr></tbody></table></div>\n      <p class=\"muted\" style=\"margin:8px 0 0\">חברה ב׳ מרוויחה יותר כסף, אך חברה א׳ יעילה יותר: כל יחידת הון מפיקה פי שניים רווח. צמיחה בערך תלויה גם ביכולת להשקיע מחדש בתשואות כאלה.</p></div>"
+  },
+  {
+    "id": "pershare",
+    "num": 8,
+    "title": "מדדים למניה",
+    "intro": "בחנו מה קורה לחלקו של בעל מניה יחיד."
+  },
+  {
+    "id": "valuation",
+    "num": 9,
+    "title": "הערכת שווי",
+    "intro": "השוו את המחיר בשוק ליכולת העסק לייצר רווח ותזרים.",
+    "top": "<div class=\"card banner\"><div class=\"banner-t\">חברה מצוינת אינה בהכרח השקעה מצוינת</div>\n      <p>גם עסק מצוין יכול להיות השקעה חלשה אם קונים אותו בשווי מופרז. התשואה תלויה ב־<b>מחיר ששולם</b>ביחס למזומן שהעסק ייצר.</p>\n      <p class=\"he\" lang=\"he\" dir=\"rtl\">חברה מצוינת יכולה להיות השקעה גרועה אם קונים אותה במחיר מופרז.</p></div>"
+  },
+  {
+    "id": "dcf",
+    "num": 10,
+    "title": "היוון תזרימי מזומנים",
+    "intro": "אומדן ערך נוכחי של תזרימים עתידיים לפי הנחות מפורשות.",
+    "top": "<div class=\"card\"><h4 style=\"margin-top:0\">שלבי מודל ההיוון</h4><div class=\"proc\"><div class=\"proc-s\"><b>1. תחזית הכנסות</b><span>תחזית מכירות ל־5–10 שנים לפי מנועי הצמיחה.</span></div><div class=\"proc-a\">→</div><div class=\"proc-s\"><b>2. תחזית שיעורי רווח</b><span>תחזית שיעורי רווח תפעולי ותזרים חופשי.</span></div><div class=\"proc-a\">→</div><div class=\"proc-s\"><b>3. תחזית תזרים חופשי</b><span>הכנסות כפול שיעור תזרים חופשי נותנות את התזרים בכל שנה.</span></div><div class=\"proc-a\">→</div><div class=\"proc-s\"><b>4. היוון התזרים</b><span>PV = FCFₜ / (1+r)ᵗ for each year.</span></div><div class=\"proc-a\">→</div><div class=\"proc-s\"><b>5. ערך סופי</b><span>שווי כלל התזרימים אחרי תקופת התחזית.</span></div><div class=\"proc-a\">→</div><div class=\"proc-s\"><b>6. שווי פעילות</b><span>סכום הערכים הנוכחיים של תזרימי התחזית ושל הערך הסופי.</span></div><div class=\"proc-a\">→</div><div class=\"proc-s\"><b>7. שווי הון עצמי</b><span>EV − Debt + Cash.</span></div><div class=\"proc-a\">→</div><div class=\"proc-s\"><b>8. שווי מוערך למניה</b><span>Equity Value / Diluted Shares.</span></div></div>\n      <div class=\"btns\"><a class=\"btn ghost\" href=\"#tool-dcf\">פתיחת מחשבון היוון תזרימים</a><a class=\"btn ghost\" href=\"#tool-sensitivity\">טבלת רגישות — כלי</a></div></div>"
+  },
+  {
+    "id": "thesis",
+    "num": 11,
+    "title": "תזת השקעה",
+    "intro": "נסחו את ההזדמנות, הסיכונים והתנאים שיפריכו את ההנחות.",
+    "top": "<div class=\"card banner red\"><div class=\"banner-t\">מה יוכיח שטעיתי?</div>\n      <p><b>הטיית אישור</b>היא הנטייה לחפש מידע התומך בדעה הקיימת ולהאמין בו. לאחר קנייה, קל לפרש חדשות כתמיכה. ההגנה היא:<b>להגדיר לפני ההשקעה תנאים שיפריכו את התזה</b>, בכתב ועם נתונים — ופעלו לפיהם כשהם מתקיימים.</p>\n      <p class=\"he\" lang=\"he\" dir=\"rtl\">מה יוכיח שטעיתי? להגדיר מראש, בכתב, לפני הקנייה.</p>\n      <p class=\"muted\">דוגמאות: ירידת צמיחה או רווחיות מתחת לרף, אובדן לקוח מרכזי, התחזקות מתחרה, גידול בחוב, כישלון השקה או שינוי רגולטורי.</p>\n      <div class=\"btns\"><a class=\"btn\" href=\"#tool-thesis\">פתיחת גיליון תזת השקעה</a></div></div>"
+  },
+  {
+    "id": "value-investing",
+    "num": 14,
+    "title": "השקעות ערך",
+    "intro": "העריכו כוח רווח מתמשך, החלטות הנהלה וסיכונים. כל הדוגמאות בדיוניות.",
+    "top": "<div class=\"btns\"><a class=\"btn\" href=\"#learn-owner\">לחשוב כמו בעלי עסק — מסלול מודרך</a></div>",
+    "bottom": "<div class=\"card\"><h3>לקריאה נוספת</h3><p><a href=\"https://www.berkshirehathaway.com/letters/1986.html\">ברקשייר האת׳וויי: רווחי בעלים</a> · <a href=\"https://www.oaktreecapital.com/insights/memo/what-really-matters\">אוקטרי: שיקול דעת וסיכון בהשקעות</a> · <a href=\"https://pages.stern.nyu.edu/~adamodar/New_Home_Page/lectures/val.html\">אסוואת דמודרן: התאמת תזרימים ושיעורי היוון</a> · <a href=\"https://www.cfainstitute.org/insights/professional-learning/refresher-readings/2026/financial-analysis-techniques\">מכון CFA: שיטות לניתוח פיננסי</a></p></div>"
+  }
+]

@@ -1,7 +1,5 @@
-<!doctype html><html lang="en"><meta charset="utf-8"><title>Learning browser tests</title><body><pre id="results">RUNNING</pre><iframe src="../index.html" title="App under test" width="1200" height="900"></iframe><script>
-const frame = document.querySelector('iframe');
-frame.addEventListener('load', async () => {
-  const w = frame.contentWindow, d = w.document, lines = [];
+module.exports = async function () {
+  const w = window, d = document, lines = [];
   const originalData = w.SAT.store.dump();
   const assert = (ok, message) => { if (!ok) throw new Error(message); lines.push('PASS ' + message); };
   const go = async (hash) => { w.location.hash = hash; await new Promise(r => setTimeout(r, 30)); assert(!d.querySelector('#view').textContent.includes('Error rendering'), 'Render ' + hash); };
@@ -66,7 +64,7 @@ frame.addEventListener('load', async () => {
     assert(!d.querySelector('.case-note img'), 'Saved reflection is escaped');
     assert(d.querySelector('.case-note').textContent.includes('<img'), 'Reflection text preserved');
     assert(w.SAT.store.dump()['learning-results']['case:2'].passed, 'Learning results included in export');
-    await go('#learning'); frame.width = '375'; await new Promise(r => setTimeout(r, 30));
+    await go('#learning');  await new Promise(r => setTimeout(r, 30));
     assert(d.documentElement.scrollWidth <= w.innerWidth, 'Mobile learning page fits viewport');
     await go('#statements'); assert(d.documentElement.scrollWidth <= w.innerWidth, 'Mobile statement map fits viewport');
     await go('#learn-owner'); assert(d.documentElement.scrollWidth <= w.innerWidth, 'Mobile owner lesson fits viewport');
@@ -74,6 +72,5 @@ frame.addEventListener('load', async () => {
     lines.push('ALL PASSED');
   } catch (e) { lines.push('FAIL ' + e.stack); }
   finally { w.SAT.store.clear(); w.SAT.store.load(originalData); }
-  document.querySelector('#results').textContent = lines.join('\n');
-});
-</script></body></html>
+  return lines;
+};

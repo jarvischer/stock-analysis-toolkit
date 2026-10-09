@@ -54,10 +54,10 @@
     const st = SAT.STMT[c.stmt] || null;
     const row = (label, html, cls) => (html ? `<div class="cr ${cls || ''}"><div class="cl">${label}</div><div class="cv">${html}</div></div>` : '');
     const better = c.better ? `<span class="hl ${BETTER[c.better[0]][1]}">${BETTER[c.better[0]][0]}</span>${c.better[1] ? ' ' + c.better[1] : ''}` : '';
-    const ex = c.example ? `<table class="exm">${c.example.map((r) => `<tr class="${r[2] || ''}"><td>${r[0]}</td><td>${r[1]}</td></tr>`).join('')}</table>` : '';
+    const ex = c.example ? `<table class="exm">${c.example.map((r) => `<tr class="${r[2] || ''}"><td>${r[0]}</td><td dir="auto">${r[1]}</td></tr>`).join('')}</table>` : '';
     const node = SAT.el(`<article class="cc${c.key ? ' key' : ''}" id="k-${c.id}">
       <header class="cc-h">
-        <div><h3>${c.title}${c.abbr ? ` <small>${c.abbr}</small>` : ''}</h3>
+        <div><h3>${c.title}${SAT.lang === 'he' ? ` <small data-no-translate dir="ltr">${esc(window.SAT_CATALOGS.en.concepts[c.id].title)}</small>` : ''}${c.abbr ? ` <small data-no-translate dir="ltr">${c.abbr}</small>` : ''}</h3>
         ${c.aka ? `<div class="aka">Also called: ${c.aka.join(' · ')}</div>` : ''}</div>
         <div class="cc-tools">${st ? `<a class="sbadge ${st[1]}" href="#statements" title="Where it comes from">${st[0]}</a>` : ''}
           <button class="star" data-fav="${c.id}" aria-pressed="${fav}" title="Bookmark" aria-label="Bookmark ${esc(c.title)}">★</button></div>
@@ -106,7 +106,7 @@
   SAT.searchIndex = function () {
     const items = [];
     Object.values(SAT.C).forEach((c) => items.push({
-      id: c.id, title: c.title, sub: c.abbr || '', hay: [c.title, c.abbr, (c.aka || []).join(' '), (c.tags || []).join(' ')].join(' ').toLowerCase(),
+      id: c.id, title: c.title, sub: c.abbr || '', hay: [c.title, window.SAT_CATALOGS.en.concepts[c.id].title, window.SAT_CATALOGS.he.concepts[c.id].title, c.abbr, (c.aka || []).join(' '), (c.tags || []).join(' ')].join(' ').toLowerCase(),
       formula: c.formula ? c.formula.replace(/<[^>]+>/g, '').split('\n')[0] : '', section: (SAT.SECTIONS.find((s) => s.id === c.section) || {}).title, href: SAT.href(c.id),
     }));
     SAT.GLOSSARY.forEach((g) => { if (SAT.C[g.id]) items.push({ id: g.id, title: g.term, sub: '→ ' + SAT.C[g.id].title, hay: g.term.toLowerCase(), formula: '', section: 'Glossary', href: SAT.href(g.id) }); });

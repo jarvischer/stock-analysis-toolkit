@@ -2,23 +2,7 @@
 (function () {
   'use strict';
   const E = SAT.esc;
-  const exercise = (question, answer, unit, hint, explanation) => ({ question, answer, unit, hint, explanation });
-  SAT.EXERCISES = {
-    revenue: exercise('Revenue grew from $80m to $100m. What was the growth rate?', 25, '%', 'Divide the increase by the previous revenue, then multiply by 100.', '(100 − 80) / 80 × 100 = 25%. Use the previous period as the denominator.'),
-    'gross-margin': exercise('Revenue is $100m and direct costs are $60m. What is gross margin?', 40, '%', 'First subtract direct costs from revenue. Then divide by revenue.', '(100 − 60) / 100 × 100 = 40%. Each revenue dollar leaves $0.40 before operating expenses.'),
-    fcf: exercise('Operating cash flow is $24m and capital spending is $9m. What is free cash flow?', 15, '$m', 'Subtract capital spending from operating cash flow.', '24 − 9 = $15m. This simplified FCF measure deducts capital spending; it is not the same as net income.'),
-    'operating-margin': exercise('Gross profit is $40m, operating expenses are $25m, and revenue is $100m. What is operating margin?', 15, '%', 'Subtract operating expenses from gross profit, then divide by revenue.', '(40 − 25) / 100 × 100 = 15%. Operating expenses reduce the amount left from gross profit.'),
-    roic: exercise('NOPAT is $12m and average invested capital is $80m. What is ROIC?', 15, '%', 'Divide NOPAT by average invested capital.', '12 / 80 × 100 = 15%. Compare this return with the cost of capital and with comparable businesses.'),
-    'net-debt': exercise('Debt is $50m and cash is $20m. What is net debt?', 30, '$m', 'Subtract cash from debt.', '50 − 20 = $30m. Also examine debt maturities and whether cash is available to repay debt.'),
-    pe: exercise('Market capitalization is $180m and annual net income is $12m. What is P/E?', 15, '×', 'Divide market capitalization by net income.', '180 / 12 = 15×. This multiple alone does not establish whether the company is cheap.'),
-    'present-value': exercise('You expect $110 one year from now. At a 10% discount rate, what is its present value?', 100, '$', 'Divide the future amount by 1.10.', '110 / 1.10 = $100. Discounting converts a future cash flow into a value today.'),
-    sensitivity: { question: 'In a DCF with unchanged positive cash flows and terminal growth, what happens when the discount rate increases?', choices: ['Estimated value falls', 'Estimated value rises', 'Estimated value stays unchanged'], answer: 0, hint: 'A larger discount rate reduces the present value of future cash flows.', explanation: 'Estimated value falls. Test a range of discount rates because one valuation result can conceal substantial uncertainty.' },
-    'margin-of-safety': exercise('Conservative estimated value is $100 per share and the price is $70. What is the margin of safety?', 30, '%', 'Divide the discount by estimated value, not by price.', '(100 − 70) / 100 × 100 = 30%. Upside from the price is about 42.9%; it uses a different denominator.'),
-    'owner-earnings': exercise('Net income is $20m, D&A is $6m, maintenance CapEx is $8m, and required working capital increases by $2m. With no other adjustments, what are owner earnings?', 16, '$m', 'Add D&A to net income, then subtract maintenance spending and the working-capital increase.', '20 + 6 − 8 − 2 = $16m. Maintenance spending is an estimate; assess a range and keep the reinvestment consistent with the growth forecast.'),
-    'normalized-earnings': exercise('Reported earnings are $30m, including an $8m asset-sale gain and a genuine one-time $3m closure cost. Both items are after tax. What are adjusted earnings before cycle analysis?', 25, '$m', 'Remove the unusual gain and add back the unusual cost.', '30 − 8 + 3 = $25m. This does not finish normalization: assess the economic cycle and whether the excluded cost really is exceptional.'),
-    'capital-allocation': { question: 'Management repurchases shares. Which evidence best supports the claim that this creates value?', choices: ['EPS rises after the share count falls', 'Shares are bought below a well-supported value estimate while retaining adequate liquidity', 'The repurchase is larger than last year'], answer: 1, hint: 'Consider the price paid, available alternatives, and the company’s remaining financial capacity.', explanation: 'Price and financial capacity matter. Higher EPS alone does not establish value creation; also compare repurchases with other uses of capital.' },
-    'value-trap': { question: 'Which situation provides the strongest evidence of a possible value trap?', choices: ['A sound business stays below a credible value estimate without a near-term catalyst', 'A share price falls while operating performance remains stable', 'A low P/E uses peak profits while customers leave permanently and replacement spending is deferred'], answer: 2, hint: 'Look for lasting damage to earning power or assets, not a delay in market recognition alone.', explanation: 'Lost customers and deferred necessary spending can undermine the earnings used in the valuation. A missing catalyst alone does not establish a value trap.' },
-  };
+  SAT.EXERCISES = SAT.content.lessons.exercises;
   function records() { const v = SAT.store.get('learning-results', {}); return v && typeof v === 'object' && !Array.isArray(v) ? v : {}; }
   SAT.exercise = function (id, key, onPass) {
     const q = SAT.EXERCISES[id];
@@ -45,12 +29,7 @@
     });
     return node;
   };
-  const paths = [
-    { id: 'learn-statements', title: 'Read financial statements', summary: 'Follow revenue through profit and cash generation.', lessons: ['revenue', 'gross-margin', 'fcf'] },
-    { id: 'learn-business', title: 'Assess a business', summary: 'Connect profitability, capital efficiency, and debt.', lessons: ['operating-margin', 'roic', 'net-debt'] },
-    { id: 'learn-valuation', title: 'Explore valuation', summary: 'Understand multiples, discounting, and uncertainty.', lessons: ['pe', 'present-value', 'sensitivity'] },
-    { id: 'learn-owner', title: 'Think like a business owner', summary: 'Estimate earning power, assess capital allocation, and avoid apparent bargains with weak economics.', lessons: ['margin-of-safety', 'owner-earnings', 'normalized-earnings', 'capital-allocation', 'value-trap'] },
-  ];
+  const paths = SAT.content.lessons.paths;
   const lessonKey = (path, id) => path.id + ':' + id;
   SAT.register({ id: 'learning', group: 'learning', title: 'Learning paths', render(el) {
     el.innerHTML = `<div class="page-head"><div class="sec-num">Start here</div><h2>Learn stock analysis by doing</h2><p>Four guided paths. Read an explanation, solve a problem, and apply the idea. Start with financial statements if you are new.</p></div><div class="learning-grid">${paths.map((p, i) => {
@@ -75,16 +54,8 @@
     draw();
   } }));
 
-  const sources = [
-    ['revenue', 'Revenue', 100, 'Income statement'], ['cogs', 'Direct costs', 60, 'Income statement'], ['net-income', 'Net income', 12, 'Income statement'],
-    ['ocf', 'Operating cash flow', 24, 'Cash flow statement'], ['capex', 'Capital spending', 9, 'Cash flow statement'],
-    ['debt', 'Debt', 50, 'Balance sheet'], ['cash', 'Cash', 20, 'Balance sheet'],
-  ];
-  const traces = [
-    { id: 'gross-margin', title: 'Gross margin', inputs: ['revenue', 'cogs'], formula: '($100m − $60m) / $100m × 100 = 40%', why: 'Calculate gross profit from revenue and direct costs, then divide by revenue.' },
-    { id: 'fcf', title: 'Free cash flow', inputs: ['ocf', 'capex'], formula: '$24m − $9m = $15m', why: 'Use operating cash flow, then deduct capital spending. Net income is not the starting figure.' },
-    { id: 'net-debt', title: 'Net debt', inputs: ['debt', 'cash'], formula: '$50m − $20m = $30m', why: 'Both figures come from the balance sheet at the same date.' },
-  ];
+  const sources = SAT.content.lessons.sources;
+  const traces = SAT.content.lessons.traces;
   SAT.statementLab = function () {
     const node = SAT.el(`<section class="card statement-lab"><div class="sec-num">Interactive statement lab · Fictional figures</div><h3>Where does the number come from?</h3><p>Choose a metric to trace its source figures. Then practice finding them yourself. All amounts are in $m.</p><div class="lesson-steps">${traces.map((t, i) => `<button class="chip" data-trace="${i}" aria-pressed="false">${t.title}</button>`).join('')}</div><fieldset><legend>Sample statement figures</legend>${sources.map(([id, label, amount, statement]) => `<label class="source-row" data-source="${id}"><input type="checkbox" value="${id}"><span><b>${label}</b><small>${statement}</small></span><strong>$${amount}m</strong><span class="source-marker"></span></label>`).join('')}</fieldset><div class="trace-result" role="status"></div><div class="btns"><button class="btn ghost" data-practice>Practice finding the figures</button><button class="btn" data-check hidden>Check selected figures</button></div><p class="source-feedback" role="status"></p></section>`);
     let active = 0;
@@ -114,11 +85,7 @@
     show(); return node;
   };
 
-  const chapters = [
-    { title: 'Does growth produce profit?', data: [['Previous revenue', '$80m'], ['Current revenue', '$100m'], ['Direct costs', '$60m'], ['Operating expenses', '$25m'], ['Net income', '$12m']], id: 'gross-margin', prompt: 'What else would you inspect before calling this a strong business?', model: 'Revenue increased by 25% and gross margin is 40%. Those figures alone do not establish business quality. Compare margins over time, customer retention, and competitors. Operating profit is $15m after operating expenses.' },
-    { title: 'Does profit turn into cash?', data: [['Operating cash flow', '$24m'], ['Capital spending', '$9m'], ['Cash', '$20m'], ['Debt', '$50m']], id: 'fcf', prompt: 'What could make this year’s cash flow look stronger than its lasting cash generation?', model: 'Free cash flow is $15m, above net income of $12m. Inspect working-capital movements and deferred capital spending. Net debt is $30m; debt maturities and available cash also matter.' },
-    { title: 'What does the price assume?', data: [['Market capitalization', '$180m'], ['Annual net income', '$12m'], ['Shares outstanding', '10m'], ['Share price', '$18']], id: 'pe', prompt: 'What would you need to know before deciding whether 15× earnings is attractive?', model: 'P/E is 15×, but the multiple cannot settle the valuation. Check earnings durability, growth needs, peer differences, and debt. Test downside assumptions and write down what would invalidate your thesis.' },
-  ];
+  const chapters = SAT.content.lessons.chapters;
   SAT.register({ id: 'company-case', group: 'learning', title: 'Company case: Cedar Works', render(el) {
     let step = 0;
     function draw() {

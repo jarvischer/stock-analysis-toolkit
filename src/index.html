@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css">
+<!-- APP_STYLE -->
 <script>try{var t=localStorage.getItem('sat:theme');if(t)document.documentElement.setAttribute('data-theme',JSON.parse(t));}catch(e){}</script>
 </head>
 <body>
@@ -22,6 +22,7 @@
     <div id="qres" class="qres" hidden role="listbox"></div>
   </div>
   <div class="toggles">
+    <button class="iconbtn" id="bLanguage" type="button" aria-label="Switch to Hebrew">עברית</button>
     <button class="tog" id="tLearn" aria-pressed="false" title="Expand “How do I interpret this?” on every card"><span class="dot"></span>Learning <span class="lbl-long">Mode</span></button>
     <button class="iconbtn" id="bTheme" title="Toggle light / dark">◐</button>
     <button class="iconbtn" id="bExport" title="Download favorites, notes and tool inputs as JSON">Export</button>
@@ -36,28 +37,6 @@
   </main>
 </div>
 
-<script src="js/core.js"></script>
-<script src="js/learn.js"></script>
-<script src="js/handbook.js"></script>
-<!-- Handbook content: each file adds sections + concept cards. Add new concepts here. -->
-<script src="js/content/framework.js"></script>
-<script src="js/content/income.js"></script>
-<script src="js/content/cashflow.js"></script>
-<script src="js/content/balance.js"></script>
-<script src="js/content/efficiency.js"></script>
-<script src="js/content/valuation.js"></script>
-<!-- Reference views (quick reference, cheat sheet, glossary, statement map, principles, favorites) -->
-<script src="js/pages.js"></script>
-<script src="js/content/value-investing.js"></script>
-<script src="js/learning.js"></script>
-<!-- Secondary tools (calculators) -->
-<script src="js/modules/dcf.js"></script>
-<script src="js/modules/scenarios.js"></script>
-<script src="js/modules/sotp.js"></script>
-<script src="js/modules/analyzer.js"></script>
-<script src="js/modules/thesis.js"></script>
-<script src="js/modules/checklist.js"></script>
-<script src="js/modules/roadmap.js"></script>
-<script src="js/app.js"></script>
+<!-- APP_SCRIPT -->
 </body>
 </html>

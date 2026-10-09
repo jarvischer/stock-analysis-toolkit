@@ -4,6 +4,7 @@
   const side = document.getElementById('side');
   const view = document.getElementById('view');
   const mods = SAT.modules;
+  mods.sort((a, b) => (a.num || 99) - (b.num || 99));
 
   side.innerHTML = SAT.groups.map((g) => {
     const items = mods.filter((m) => m.group === g.id);
@@ -32,7 +33,7 @@
       view.innerHTML = '';
       try { m.render(view); } catch (e) { view.innerHTML = `<div class="callout bad"><b>Error rendering ${SAT.esc(m.title)}:</b> ${SAT.esc(e.message)}</div>`; console.error(e); }
       current = m.id;
-      document.title = m.title + ' · Stock Analysis Reference';
+      document.title = SAT.t(m.title) + ' · ' + SAT.t('Stock Analysis Reference');
     }
     document.body.classList.remove('nav-open');
     const target = sub && document.getElementById('k-' + sub);
@@ -45,6 +46,7 @@
   window.addEventListener('hashchange', route);
   if (!location.hash) { const last = SAT.store.get('lastPage', null); if (last) history.replaceState(null, '', '#' + last); }
   route();
+  SAT.startLocalization();
 
   /* ---------- Search ---------- */
   const q = document.getElementById('q'), res = document.getElementById('qres');
