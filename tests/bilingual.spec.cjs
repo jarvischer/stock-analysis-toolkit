@@ -83,6 +83,7 @@ test('Hebrew mobile layout and menu', async ({page})=>{
     await page.goto('/?lang=he#'+route);
     expect(await page.evaluate(()=>document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   }
+  expect((await page.locator('#side').boundingBox()).x).toBeGreaterThanOrEqual(375);
   await page.locator('#menuBtn').click();
   await expect(page.locator('body')).toHaveClass(/nav-open/);
   await expect.poll(async () => { const box = await page.locator('#side').boundingBox(); return box.x + box.width; }).toBeLessThanOrEqual(376);

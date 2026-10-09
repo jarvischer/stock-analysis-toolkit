@@ -3,7 +3,7 @@ import { writeFile } from 'node:fs/promises';
 const browser = await chromium.launch({executablePath:process.env.CHROME_PATH || '/usr/bin/google-chrome',args:['--no-sandbox']});
 const page = await browser.newPage();const errors=[];page.on('pageerror',e=>errors.push(e.message));
 await page.goto('http://127.0.0.1:4173/?lang=he');
-const routes = await page.evaluate(()=>SAT.modules.filter(m=>!m.planned).map(m=>m.id));
+const routes = process.argv.includes('--screenshots-only') ? [] : await page.evaluate(()=>SAT.modules.filter(m=>!m.planned).map(m=>m.id));
 const texts=new Set();
 for(const route of routes){
   await page.goto('http://127.0.0.1:4173/?lang=he#'+route);
