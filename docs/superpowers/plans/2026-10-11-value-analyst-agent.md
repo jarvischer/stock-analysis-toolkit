@@ -20,6 +20,7 @@
 - `EDGAR_NAME` and `EDGAR_EMAIL` come from the environment. They never appear in the repository, in fixtures or in logs.
 - `data/` and `analyses/` are in `.gitignore`.
 - SIC 6000–6799 → `model_fit: "not_suitable"`.
+- A short history never stops the analysis. Evidence level from `policy.json` → `evidence` (high ≥5 years, medium 3–4, low 0–2); required margin of safety = policy value for the quality score + `evidence.margin_add[level]`.
 - Annual duration = 358–380 days inclusive; ≥368 days → flag `long_year`; growth uses value × 364 / period_days for such years.
 - App: all analysis text is untrusted input; escape with `SAT.esc`; the analysis content container has `data-no-translate`; every new UI label has an English and a Hebrew key in `src/content/*/ui.json`.
 - Commit messages end with `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>`.
@@ -30,7 +31,7 @@
 2. **A debt tag is missing (Snowflake: convertible notes only)** → debt uses the convertible tag; with neither, debt-based metrics are `not_available`, not 0. Pinned in Task 4 (`debt falls back to convertible notes` / `missing debt is not zero`).
 3. **Negative or zero denominators (loss year, negative invested capital change)** → status `not_meaningful`, never `Infinity` or a sign-flipped ratio. Pinned in Task 4 (`P/E and ratios with a loss are not meaningful`) and Task 5.
 4. **A hostile or malformed analysis file is imported into the app** → no script runs, the text shows literally, a wrong file gives a clear message. Pinned in Task 10 (Playwright XSS and bad-file tests).
-5. **No price is given, or assumptions give r ≤ terminal growth** → all non-valuation metrics still compute; valuation metrics are `not_available` / `not_meaningful`. Pinned in Task 5.
+5. **A company with 0–2 years of annual data (a recent IPO such as SpaceX)** → no crash; the analysis continues with evidence level `low`, `not_testable` rules, the interim balance sheet for price metrics, and validated text facts from the prospectus. Pinned in Tasks 11–13 (`test_no_annual_periods_still_builds`, `no annual periods: no crash…`, text-fact validator tests).
 
 ---
 
@@ -60,6 +61,7 @@
 | `scripts/sat.mjs` | `npm run sat -- <extract|calc|validate>` dispatcher |
 | `src/components/analyses.js` | App page "Analyses" |
 | `tests/analyses.spec.cjs`, `tests/fixtures/analysis-sample.json` | App tests |
+| `tests/fixtures/sections/prospectus.txt` | Text-fact fixture for the validator |
 
 ---
 
@@ -2284,7 +2286,967 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
 
 ---
 
-### Task 11: End-to-end run on the test set
+### Task 11: Short history in stage 1 — interim balance sheet, history years, prospectus text
+
+**Files:**
+- Modify: `tools/extract/sat_extract/select.py`, `tools/extract/sat_extract/fetch.py`, `tools/extract/sat_extract/__main__.py`, `tools/extract/tests/test_fetch.py`, `tools/extract/tests/test_live.py`
+- Replace: `tools/extract/sat_extract/facts.py`, `tools/extract/sat_extract/sections.py`
+- Create: `tools/extract/tests/test_short_history.py`
+
+**Interfaces:**
+- Consumes: Tasks 1–3.
+- Produces:
+  - `INTERIM_FORMS = {"10-Q", "10-Q/A"}` in `select.py`; `annual_series(records, tags, unit, kind, forms=ANNUAL_FORMS)`.
+  - `facts.json` gains `"history_years": int` and `"interim": {"period_end", "form": "10-Q", "facts": [fact objects]} | None`. `interim` exists only when the newest 10-Q balance sheet is newer than the last annual period (or when there is no annual period).
+  - `write_sections(company, out_dir)` no longer fails without a 10-K; `write_short_history_sections(company, out_dir) -> list[str]` writes `latest_10q.txt` and `prospectus.txt` (latest 424B4, else S-1).
+  - Raw records now also contain 10-Q records.
+
+- [ ] **Step 1: Write the failing tests**
+
+`tools/extract/tests/test_short_history.py`:
+```python
+import json
+from pathlib import Path
+
+from sat_extract.facts import build_facts
+from sat_extract.select import INTERIM_FORMS, annual_series
+
+MAPPING = json.loads((Path(__file__).resolve().parents[3] / "agent/mapping/line-items.json").read_text())
+COMPANY = {"ticker": "YNG", "name": "Young Corp", "cik": "0000000002", "sic": 7370,
+           "sic_description": "Services", "fiscal_year_end": "1231"}
+
+
+def r(concept, value, end, start=None, form="10-K", filed="2026-08-04"):
+    return {"concept": "us-gaap:" + concept, "value": value, "unit": "shares" if "Shares" in concept else "USD",
+            "start": start, "end": end, "form": form, "accession": "0000000002-26-000001", "filed": filed}
+
+
+def build(records):
+    return build_facts(records, MAPPING, COMPANY, 10, "2026-10-11", "5.61.1")
+
+
+def test_forms_parameter():
+    recs = [r("Assets", 192.77e9, "2026-06-30", form="10-Q")]
+    assert annual_series(recs, ["us-gaap:Assets"], "USD", "instant") == {}
+    assert annual_series(recs, ["us-gaap:Assets"], "USD", "instant", INTERIM_FORMS)["2026-06-30"]["value"] == 192.77e9
+
+
+def test_no_annual_periods_still_builds():
+    recs = [r("CashAndCashEquivalentsAtCarryingValue", 93.522e9, "2026-06-30", form="10-Q"),
+            r("CommonStockSharesOutstanding", 5.0e9, "2026-06-30", form="10-Q")]
+    out = build(recs)
+    assert out["periods"] == [] and out["history_years"] == 0 and out["facts"] == []
+    interim = {f["item"]: f for f in out["interim"]["facts"]}
+    assert out["interim"]["period_end"] == "2026-06-30"
+    assert interim["cash_sti"]["status"] == "constructed" and interim["cash_sti"]["value"] == 93.522e9
+    assert interim["shares_outstanding"]["value"] == 5.0e9
+    assert interim["long_term_debt"]["status"] == "not_available"
+
+
+def test_interim_only_when_newer_than_last_annual():
+    annual = [r("Revenues", 100.0, "2025-12-31", start="2025-01-01", filed="2026-02-15"),
+              r("Assets", 90.0, "2025-12-31", filed="2026-02-15")]
+    older = annual + [r("Assets", 80.0, "2025-06-30", form="10-Q")]
+    newer = annual + [r("Assets", 95.0, "2026-06-30", form="10-Q")]
+    assert build(older)["interim"] is None
+    assert build(newer)["interim"]["period_end"] == "2026-06-30"
+    assert build(newer)["history_years"] == 1
+```
+
+Replace the test `test_records_from_dataframe` in `tools/extract/tests/test_fetch.py` with:
+```python
+def test_records_from_dataframe():
+    df = pd.DataFrame([
+        {"concept": "us-gaap:Revenues", "numeric_value": 275235000000.0, "unit": "USD",
+         "period_start": dt.date(2024, 9, 2), "period_end": dt.date(2025, 8, 31), "form_type": "10-K",
+         "accession": "0000909832-25-000101", "filing_date": dt.date(2025, 10, 8)},
+        {"concept": "us-gaap:AssetsCurrent", "numeric_value": 40.0, "unit": "USD",
+         "period_start": pd.NaT, "period_end": dt.date(2025, 8, 31), "form_type": "10-K",
+         "accession": "x", "filing_date": dt.date(2025, 10, 8)},
+        {"concept": "dei:EntityRegistrantName", "numeric_value": None, "unit": None,
+         "period_start": pd.NaT, "period_end": dt.date(2025, 8, 31), "form_type": "10-K",
+         "accession": "x", "filing_date": dt.date(2025, 10, 8)},
+        {"concept": "us-gaap:Revenues", "numeric_value": 70.0, "unit": "USD",
+         "period_start": dt.date(2025, 9, 1), "period_end": dt.date(2025, 11, 23), "form_type": "10-Q",
+         "accession": "q", "filing_date": dt.date(2025, 12, 10)},
+        {"concept": "us-gaap:Revenues", "numeric_value": 1.0, "unit": "USD",
+         "period_start": dt.date(2025, 1, 1), "period_end": dt.date(2025, 12, 31), "form_type": "S-8",
+         "accession": "s", "filing_date": dt.date(2026, 1, 10)},
+    ])
+    out = records_from_dataframe(df)
+    assert [x["form"] for x in out] == ["10-K", "10-K", "10-Q"]
+    assert out[0] == {"concept": "us-gaap:Revenues", "value": 275235000000.0, "unit": "USD", "start": "2024-09-02",
+                      "end": "2025-08-31", "form": "10-K", "accession": "0000909832-25-000101", "filed": "2025-10-08"}
+    assert out[1]["start"] is None
+```
+
+- [ ] **Step 2: Run the tests to make sure they fail**
+
+Run: `uv run --project tools/extract pytest tools/extract/tests -q`
+Expected: FAIL — `ImportError: cannot import name 'INTERIM_FORMS'` and the changed fetch test fails.
+
+- [ ] **Step 3: Add the forms parameter to `select.py`**
+
+In `tools/extract/sat_extract/select.py`, replace:
+```python
+ANNUAL_FORMS = {"10-K", "10-K/A", "10-KT", "10-KT/A"}
+```
+with:
+```python
+ANNUAL_FORMS = {"10-K", "10-K/A", "10-KT", "10-KT/A"}
+INTERIM_FORMS = {"10-Q", "10-Q/A"}
+```
+Replace:
+```python
+def _is_annual(rec: dict, kind: str) -> bool:
+    if rec["form"] not in ANNUAL_FORMS:
+```
+with:
+```python
+def _is_annual(rec: dict, kind: str, forms: set[str]) -> bool:
+    if rec["form"] not in forms:
+```
+Replace:
+```python
+def annual_series(records: list[dict], tags: list[str], unit: str,
+                  kind: Literal["duration", "instant"]) -> dict[str, dict]:
+    by_end: dict[str, list[dict]] = {}
+    for rec in records:
+        if rec["concept"] in tags and rec["unit"] == unit and _is_annual(rec, kind):
+```
+with:
+```python
+def annual_series(records: list[dict], tags: list[str], unit: str,
+                  kind: Literal["duration", "instant"], forms: set[str] = ANNUAL_FORMS) -> dict[str, dict]:
+    by_end: dict[str, list[dict]] = {}
+    for rec in records:
+        if rec["concept"] in tags and rec["unit"] == unit and _is_annual(rec, kind, forms):
+```
+
+- [ ] **Step 4: Replace `facts.py`**
+
+`tools/extract/sat_extract/facts.py`:
+```python
+"""Build facts.json: one value (or an explicit gap) for each mapped item and period."""
+from __future__ import annotations
+
+from .select import ANNUAL_FORMS, INTERIM_FORMS, annual_series
+
+FINANCIAL_SIC = range(6000, 6800)  # banks, insurers, REITs and other financial companies
+
+
+def _periods(records: list[dict], mapping: dict, years: int) -> list[str]:
+    ends: set[str] = set()
+    for item in mapping["period_items"]:
+        spec = mapping["items"][item]
+        ends.update(annual_series(records, spec["tags"], spec["unit"], spec["kind"]))
+    return sorted(ends)[-years:]
+
+
+def _missing(item: str, end: str, spec: dict) -> dict:
+    return {"item": item, "period_end": end, "period_days": None, "value": None, "unit": spec["unit"],
+            "status": "not_available", "source": None, "flags": [], "tried": list(spec["tags"])}
+
+
+def _reported(item: str, end: str, unit: str, chosen: dict) -> dict:
+    fact = {"item": item, "period_end": end, "period_days": chosen.get("period_days"),
+            "value": chosen["value"], "unit": unit, "status": "reported",
+            "source": {"tag": chosen["tag"], "form": chosen["form"],
+                       "accession": chosen["accession"], "filed": chosen["filed"]},
+            "flags": list(chosen["flags"])}
+    for key in ("original_value", "original_accession", "conflict"):
+        if key in chosen:
+            fact[key] = chosen[key]
+    return fact
+
+
+def _constructed(item: str, end: str, spec: dict, records: list[dict], forms: set[str] = ANNUAL_FORMS) -> dict | None:
+    rule = spec.get("construct")
+    if not rule:
+        return None
+    parts, total, period_days, flags = [], 0.0, None, ["constructed"]
+    for group in rule["required"]:
+        chosen = annual_series(records, group, spec["unit"], spec["kind"], forms).get(end)
+        if chosen is None:
+            return None
+        parts.append(chosen)
+    for group in rule.get("optional", []):
+        chosen = annual_series(records, group, spec["unit"], spec["kind"], forms).get(end)
+        if chosen is not None:
+            parts.append(chosen)
+    for chosen in parts:
+        total += chosen["value"]
+        period_days = period_days or chosen.get("period_days")
+        flags.extend(f for f in chosen["flags"] if f not in flags)
+    return {"item": item, "period_end": end, "period_days": period_days, "value": total,
+            "unit": spec["unit"], "status": "constructed",
+            "source": {"parts": [{"tag": c["tag"], "value": c["value"], "accession": c["accession"]} for c in parts]},
+            "flags": flags}
+
+
+def _interim(records: list[dict], mapping: dict, last_period: str | None) -> dict | None:
+    """The newest 10-Q balance sheet, if it is newer than the last annual period."""
+    instants = {item: spec for item, spec in mapping["items"].items() if spec["kind"] == "instant"}
+    series = {item: annual_series(records, spec["tags"], spec["unit"], "instant", INTERIM_FORMS)
+              for item, spec in instants.items()}
+    ends = sorted({end for values in series.values() for end in values})
+    if not ends or (last_period is not None and ends[-1] <= last_period):
+        return None
+    end = ends[-1]
+    facts = []
+    for item, spec in instants.items():
+        if end in series[item]:
+            facts.append(_reported(item, end, spec["unit"], series[item][end]))
+        else:
+            facts.append(_constructed(item, end, spec, records, INTERIM_FORMS) or _missing(item, end, spec))
+    return {"period_end": end, "form": "10-Q", "facts": facts}
+
+
+def build_facts(records: list[dict], mapping: dict, company: dict, years: int,
+                extracted_at: str, edgartools_version: str) -> dict:
+    periods = _periods(records, mapping, years)
+    facts = []
+    for item, spec in mapping["items"].items():
+        series = annual_series(records, spec["tags"], spec["unit"], spec["kind"])
+        for end in periods:
+            if end in series:
+                facts.append(_reported(item, end, spec["unit"], series[end]))
+            else:
+                facts.append(_constructed(item, end, spec, records) or _missing(item, end, spec))
+    sic = int(company["sic"]) if company.get("sic") not in (None, "") else None
+    return {"schema_version": 1,
+            "company": {**company, "sic": sic,
+                        "model_fit": "not_suitable" if sic in FINANCIAL_SIC else "suitable"},
+            "extracted_at": extracted_at, "edgartools_version": edgartools_version,
+            "periods": periods, "history_years": len(periods),
+            "interim": _interim(records, mapping, periods[-1] if periods else None),
+            "facts": facts}
+```
+
+- [ ] **Step 5: Keep 10-Q records in `fetch.py`**
+
+In `tools/extract/sat_extract/fetch.py`, replace:
+```python
+from .select import ANNUAL_FORMS
+```
+with:
+```python
+from .select import ANNUAL_FORMS, INTERIM_FORMS
+```
+and replace:
+```python
+    keep = df[df["form_type"].isin(ANNUAL_FORMS) & df["numeric_value"].notna()]
+```
+with:
+```python
+    keep = df[df["form_type"].isin(ANNUAL_FORMS | INTERIM_FORMS) & df["numeric_value"].notna()]
+```
+
+- [ ] **Step 6: Replace `sections.py`**
+
+`tools/extract/sat_extract/sections.py`:
+```python
+"""10-K sections, the executive pay part of the proxy statement, and (for a short history)
+the latest 10-Q and the prospectus, as plain text. The first line of each file names the filing."""
+from __future__ import annotations
+
+from pathlib import Path
+
+TENK_ITEMS = {"item1": "Item 1", "item1a": "Item 1A", "item7": "Item 7", "item7a": "Item 7A", "item8": "Item 8"}
+PAY_HEADING = "Compensation Discussion and Analysis"
+PAY_MAX_CHARS = 60_000
+
+
+def _latest(company, form: str):
+    filings = company.get_filings(form=form)
+    return filings.latest() if filings else None
+
+
+def _header(filing) -> str:
+    return f"# {filing.form} {filing.accession_no} filed {filing.filing_date}"
+
+
+def write_sections(company, out_dir: Path) -> list[str]:
+    out_dir.mkdir(parents=True, exist_ok=True)
+    written = []
+    filing = _latest(company, "10-K")
+    tenk = filing.obj() if filing is not None else None
+    for key, item in TENK_ITEMS.items():
+        if tenk is None:
+            text = "# no 10-K filed\n\nnot available"
+        else:
+            text = f"{_header(filing)} — {item}\n\n{tenk[item] or 'not available'}"
+        (out_dir / f"{key}.txt").write_text(text + "\n")
+        written.append(key)
+    pay = "not available"
+    proxy = _latest(company, "DEF 14A")
+    if proxy is not None:
+        try:
+            text = proxy.text() or ""
+        except Exception as exc:  # a proxy that cannot be parsed must not stop the extraction
+            text = ""
+            pay = f"not available ({exc.__class__.__name__} while reading DEF 14A {proxy.accession_no})"
+        first = text.find(PAY_HEADING)
+        second = text.find(PAY_HEADING, first + 1) if first >= 0 else -1
+        start = second if second >= 0 else first  # the first match is usually the table of contents
+        if start >= 0:
+            pay = f"{_header(proxy)}\n\n{text[start:start + PAY_MAX_CHARS]}"
+    (out_dir / "proxy_pay.txt").write_text(pay + "\n")
+    written.append("proxy_pay")
+    return written
+
+
+def write_short_history_sections(company, out_dir: Path) -> list[str]:
+    """Latest 10-Q and prospectus (424B4, else S-1). The prospectus can be over 1.5 million characters;
+    the agent searches it and does not read all of it."""
+    out_dir.mkdir(parents=True, exist_ok=True)
+    written = []
+    for key, forms in (("latest_10q", ["10-Q"]), ("prospectus", ["424B4", "S-1"])):
+        filing = next((f for f in (_latest(company, form) for form in forms) if f is not None), None)
+        if filing is None:
+            continue
+        (out_dir / f"{key}.txt").write_text(f"{_header(filing)}\n\n{filing.text()}\n")
+        written.append(key)
+    return written
+```
+
+- [ ] **Step 7: Call it from the CLI**
+
+In `tools/extract/sat_extract/__main__.py`, replace:
+```python
+    from .sections import write_sections
+```
+with:
+```python
+    from .sections import write_sections, write_short_history_sections
+```
+and replace:
+```python
+    sections = write_sections(handle, out / "sections")
+    missing = sum(1 for f in facts["facts"] if f["status"] == "not_available")
+    print(f"{company['name']} ({company['ticker']}), model fit: {facts['company']['model_fit']}")
+```
+with:
+```python
+    sections = write_sections(handle, out / "sections")
+    if facts["history_years"] < 3:
+        sections += write_short_history_sections(handle, out / "sections")
+    missing = sum(1 for f in facts["facts"] if f["status"] == "not_available")
+    print(f"{company['name']} ({company['ticker']}), model fit: {facts['company']['model_fit']}, "
+          f"history: {facts['history_years']} years"
+          + (f", interim balance sheet {facts['interim']['period_end']}" if facts["interim"] else ""))
+```
+
+Append to `tools/extract/tests/test_live.py`:
+```python
+
+
+@pytest.mark.live
+def test_spcx_short_history(tmp_path):
+    subprocess.run([sys.executable, "-m", "sat_extract", "SPCX", "--out", str(tmp_path)], check=True)
+    facts = json.loads((tmp_path / "SPCX" / "facts.json").read_text())
+    assert facts["history_years"] < 3
+    assert facts["interim"]["period_end"] >= "2026-06-30"
+    assert (tmp_path / "SPCX" / "sections" / "prospectus.txt").stat().st_size > 100_000
+```
+
+- [ ] **Step 8: Run the tests to make sure they pass**
+
+Run: `uv run --project tools/extract pytest tools/extract/tests -q`
+Expected: `22 passed, 2 deselected`. If the user has set the SEC identity: `uv run --project tools/extract pytest tools/extract/tests -m live -q` → `2 passed`.
+
+- [ ] **Step 9: Commit**
+
+```bash
+git add tools/extract
+git commit -m "Support short histories in stage 1: interim balance sheet, history years, prospectus text
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
+```
+
+---
+
+### Task 12: Short history in stage 2 — evidence level, not-testable rules, revenue reverse DCF
+
+**Files:**
+- Modify: `tools/calc/facts-table.mjs`, `tools/calc/metrics.mjs`, `tools/calc/valuation.mjs`, `tools/calc/cli.mjs`, `agent/policy.json`
+- Create: `tools/calc/test/short-history.test.mjs`
+
+**Interfaces:**
+- Consumes: `facts.json` with `history_years` and `interim` (Task 11).
+- Produces:
+  - `metrics.json` gains `evidence: {history_years, level: 'high'|'medium'|'low', margin_add}`.
+  - Metric status may be `not_testable` (with `years_available`).
+  - Metric `reverse-dcf-revenue` (card `reverse-dcf`) with extra field `implied_growth`.
+  - Metric inputs may carry `source` (from assumptions such as `base_revenue`).
+  - New assumptions (in `adjustments.json` → `assumptions`): `target_fcf_margin: number`, `base_revenue: {value, period_end, source}`, `base_fcf_margin: {value, period_end, source}`.
+
+- [ ] **Step 1: Add the evidence settings to the policy**
+
+In `agent/policy.json`, replace:
+```json
+  "lookback_years": 10,
+```
+with:
+```json
+  "lookback_years": 10,
+  "evidence": { "high_years": 5, "medium_years": 3, "margin_add": { "high": 0, "medium": 0.10, "low": 0.20 } },
+```
+
+- [ ] **Step 2: Write the failing tests**
+
+`tools/calc/test/short-history.test.mjs`:
+```js
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
+import { createRequire } from 'node:module';
+import { computeAll } from '../cli.mjs';
+import { makeFacts } from './helpers.mjs';
+const SAT = createRequire(import.meta.url)('../../../src/finance/core.js');
+
+const policy = JSON.parse(readFileSync(new URL('../../../agent/policy.json', import.meta.url)));
+const interim = (end, values) => ({ period_end: end, form: '10-Q', facts: Object.entries(values).map(([item, value]) => (
+  { item, period_end: end, period_days: null, value, unit: 'USD', status: 'reported', source: { tag: 'us-gaap:T', form: '10-Q', accession: 'Q', filed: '2026-08-04' }, flags: [] })) });
+const none = { items: [], assumptions: {} };
+const get = (out, key) => out.metrics.find((m) => m.key === key);
+
+test('no annual periods: no crash, low evidence, price metrics use the interim balance sheet', () => {
+  const facts = { ...makeFacts({}, { ends: [] }), history_years: 0,
+    interim: interim('2026-06-30', { shares_outstanding: 5e9, cash_sti: 93.5e9, long_term_debt: 20e9 }) };
+  const out = computeAll(facts, { policy, adjustments: none, price: { value: 100, date: '2026-10-10' } });
+  assert.deepEqual(out.evidence, { history_years: 0, level: 'low', margin_add: 0.20 });
+  assert.equal(get(out, 'market-cap').value, 500e9);
+  assert.equal(get(out, 'enterprise-value').value, 500e9 + 20e9 - 93.5e9);
+  assert.equal(get(out, 'dcf-value-base').status, 'not_available');
+});
+
+test('one annual period: no crash; multi-year rules are not testable', () => {
+  const facts = { ...makeFacts({ revenue: [100], operating_income: [20], net_income: [15], pretax_income: [20], income_tax: [5],
+    equity: [60], long_term_debt: [10], cash_sti: [5] }, { ends: ['2025-12-31'] }), history_years: 1, interim: null };
+  const out = computeAll(facts, { policy, adjustments: none, price: null });
+  assert.equal(get(out, 'revenue-growth').status, 'not_available');
+  const r = get(out, 'roic-years-above-wacc');
+  assert.equal(r.status, 'not_testable'); assert.equal(r.years_available, 1);
+  assert.equal(out.metrics.some((m) => m.key === 'diluted-shares-change'), false);
+});
+
+test('evidence levels follow the policy', () => {
+  const level = (n) => computeAll({ ...makeFacts({ revenue: Array(n).fill(1) }, { ends: Array.from({ length: n }, (_, i) => `${2016 + i}-12-31`) }), history_years: n, interim: null },
+    { policy, adjustments: none, price: null }).evidence.level;
+  assert.equal(level(2), 'low'); assert.equal(level(3), 'medium'); assert.equal(level(5), 'high');
+});
+
+test('revenue reverse DCF gives the revenue that the price requires', () => {
+  const facts = { ...makeFacts({ revenue: [80, 100], ocf: [-5, -2], capex: [3, 3], shares_outstanding: [10, 10], cash_sti: [50, 40], long_term_debt: [0, 0] },
+    { ends: ['2024-12-31', '2025-12-31'] }), history_years: 2, interim: null };
+  const out = computeAll(facts, { policy, price: { value: 100, date: '2026-10-10' }, adjustments: { items: [], assumptions: { target_fcf_margin: 0.2 } } });
+  const m = get(out, 'reverse-dcf-revenue');
+  assert.equal(m.status, 'ok');
+  const g = m.implied_growth, m0 = (-2 - 3) / 100;
+  const d = SAT.fin.dcfFlows({ flows: SAT.fin.revenueFlows(100, g, m0, 0.2, 10), r: 0.09, tg: 0.025, debt: 0, cash: 40, shares: 10 });
+  assert.ok(Math.abs(d.fv - 100) < 1e-4);
+  assert.ok(Math.abs(m.value - 100 * (1 + g) ** 10) < 1e-6);
+});
+
+test('revenue reverse DCF without annual revenue uses a sourced base revenue assumption', () => {
+  const facts = { ...makeFacts({}, { ends: [] }), history_years: 0, interim: interim('2026-06-30', { shares_outstanding: 10, cash_sti: 40, long_term_debt: 0 }) };
+  const base = { value: 100, period_end: '2025-12-31', source: '424B4 0001628280-26-042639, "Total revenues"' };
+  const out = computeAll(facts, { policy, price: { value: 100, date: '2026-10-10' },
+    adjustments: { items: [], assumptions: { target_fcf_margin: 0.2, base_revenue: base, base_fcf_margin: { value: -0.05, period_end: '2025-12-31', source: 'estimate from prospectus' } } } });
+  const m = get(out, 'reverse-dcf-revenue');
+  assert.equal(m.status, 'ok');
+  assert.equal(m.inputs.find((i) => i.name === 'base_revenue').source, base.source);
+});
+
+test('revenue reverse DCF needs a target margin', () => {
+  const facts = { ...makeFacts({ revenue: [100] }, { ends: ['2025-12-31'] }), history_years: 1, interim: null };
+  const m = get(computeAll(facts, { policy, adjustments: none, price: { value: 100, date: '2026-10-10' } }), 'reverse-dcf-revenue');
+  assert.equal(m.status, 'not_available'); assert.ok(m.missing.includes('target_fcf_margin'));
+});
+```
+
+- [ ] **Step 3: Run the tests to make sure they fail**
+
+Run: `node --test 'tools/calc/test/*.test.mjs'`
+Expected: FAIL in `short-history.test.mjs` (`out.evidence` is undefined; `market-cap` is `not_available`).
+
+- [ ] **Step 4: Include interim facts in the lookup**
+
+In `tools/calc/facts-table.mjs`, replace:
+```js
+  for (const f of facts.facts) table.set(f.item + '|' + f.period_end, f);
+```
+with:
+```js
+  for (const f of [...facts.facts, ...(facts.interim?.facts || [])]) table.set(f.item + '|' + f.period_end, f);
+```
+
+- [ ] **Step 5: Short-history changes in `metrics.mjs`**
+
+Replace:
+```js
+    ...(f.assumed_zero ? { assumed_zero: true } : {}), ...(f.adjusted ? { adjusted: true } : {}), ...(f.estimate ? { estimate: f.estimate } : {}),
+```
+with:
+```js
+    ...(f.assumed_zero ? { assumed_zero: true } : {}), ...(f.adjusted ? { adjusted: true } : {}), ...(f.estimate ? { estimate: f.estimate } : {}),
+    ...(f.source && typeof f.source === 'string' ? { source: f.source } : {}),
+```
+Replace:
+```js
+  const ends = facts.periods, last = ends[ends.length - 1], out = [];
+  const year = (key, end) => perYear.find((m) => m.key === key && m.period_end === end);
+```
+with:
+```js
+  const ends = facts.periods, last = ends[ends.length - 1], out = [];
+  if (!ends.length) return out;
+  const year = (key, end) => perYear.find((m) => m.key === key && m.period_end === end);
+```
+Replace:
+```js
+  const first = ends[0], span = ends.length - 1;
+  out.push(calc('diluted-shares-change',
+```
+with:
+```js
+  const first = ends[0], span = ends.length - 1;
+  if (span >= 1) out.push(calc('diluted-shares-change',
+```
+Replace:
+```js
+    status: roics.length ? 'ok' : 'not_available', formula: `Count of years with ROIC > WACC (${A.wacc}) in the last ${A.lookback_years} years`,
+```
+with:
+```js
+    status: !roics.length ? 'not_available' : roics.length < A.min_roic_years_above_wacc ? 'not_testable' : 'ok', years_available: roics.length,
+    formula: `Count of years with ROIC > WACC (${A.wacc}) in the last ${A.lookback_years} years`,
+```
+
+- [ ] **Step 6: Short-history changes in `valuation.mjs`**
+
+After the function `impliedGrowth`, add:
+```js
+function revenueDcfPerShare(rev0, g, m0, m1, r, tg, years, claims, cash, shares) {
+  const d = F.dcfFlows({ flows: F.revenueFlows(rev0, g, m0, m1, years), r, tg, debt: claims, cash, shares });
+  return d.valid ? d.fv : NaN;
+}
+
+// Growth that makes a revenue-driven DCF (FCF margin moving from m0 to m1) equal the price.
+function impliedRevenueGrowth(target, rev0, m0, m1, r, tg, years, claims, cash, shares) {
+  if (!(rev0 > 0 && m1 > 0)) return NaN;
+  let lo = -0.5, hi = 2;
+  const f = (g) => revenueDcfPerShare(rev0, g, m0, m1, r, tg, years, claims, cash, shares) - target;
+  if (!(f(lo) < 0 && f(hi) > 0)) return NaN;
+  for (let i = 0; i < 200; i++) { const mid = (lo + hi) / 2; if (f(mid) > 0) hi = mid; else lo = mid; }
+  return (lo + hi) / 2;
+}
+```
+Replace:
+```js
+  const ends = facts.periods, last = ends[ends.length - 1], D = A.dcf;
+  const year = (key, end = last) => perYear.find((m) => m.key === key && m.period_end === end);
+  const px = price && Number.isFinite(price.value) ? { item: 'price', period_end: price.date, value: price.value } : null;
+  const shares = T.get('shares_outstanding', last), debt = debtFact(T, last), cash = T.get('cash_sti', last);
+  const minority = T.get('minority_interest', last), preferred = T.get('preferred', last);
+  const claims = debt ? { item: 'debt_and_other_claims', period_end: last, value: debt.value + minority.value + preferred.value } : null;
+  const mcap = px && shares ? { item: 'market_cap', period_end: last, value: px.value * shares.value } : null;
+```
+with:
+```js
+  const ends = facts.periods, lastAnnual = ends[ends.length - 1] ?? null, D = A.dcf;
+  // Price-based metrics use the newest balance sheet: the 10-Q one if it is newer than the last annual period.
+  const bs = facts.interim && (!lastAnnual || facts.interim.period_end > lastAnnual) ? facts.interim.period_end : lastAnnual;
+  const last = lastAnnual ?? bs;
+  const year = (key, end = lastAnnual) => perYear.find((m) => m.key === key && m.period_end === end);
+  const px = price && Number.isFinite(price.value) ? { item: 'price', period_end: price.date, value: price.value } : null;
+  const shares = T.get('shares_outstanding', bs), debt = debtFact(T, bs), cash = T.get('cash_sti', bs);
+  const minority = T.get('minority_interest', bs), preferred = T.get('preferred', bs);
+  const claims = debt ? { item: 'debt_and_other_claims', period_end: bs, value: debt.value + minority.value + preferred.value } : null;
+  const mcap = px && shares ? { item: 'market_cap', period_end: bs, value: px.value * shares.value } : null;
+```
+Replace:
+```js
+  const fcff0 = fcffs.every(Boolean) ?
+```
+with:
+```js
+  const fcff0 = fcffs.length && fcffs.every(Boolean) ?
+```
+Replace:
+```js
+  const normal = multi.find((m) => m.key === 'normalized-net-income');
+```
+with:
+```js
+  const sourced = (name, a) => (a && Number.isFinite(a.value) ? { item: name, period_end: a.period_end ?? null, value: a.value, source: a.source } : null);
+  const rev0 = (lastAnnual && T.get('revenue', lastAnnual)) || sourced('base_revenue', A.base_revenue);
+  const margin0 = okMetric(year('fcf-margin')) || sourced('base_fcf_margin', A.base_fcf_margin);
+  const target = Number.isFinite(A.target_fcf_margin) ? { item: 'target_fcf_margin', period_end: last, value: A.target_fcf_margin, estimate: 'analyst assumption' } : null;
+  const growthFor = (v) => impliedRevenueGrowth(v.price, v.base_revenue, v.current_fcf_margin, v.target_fcf_margin, A.wacc, D.terminal_growth.base, D.years,
+    v.debt_and_other_claims, v.cash_sti, v.shares_outstanding);
+  const rr = calc('reverse-dcf-revenue', 'reverse-dcf', last,
+    `Year-${D.years} revenue that makes a revenue DCF equal the price (FCF margin moves from current to target; WACC ${A.wacc}; terminal growth ${D.terminal_growth.base})`,
+    { price: px, base_revenue: rev0, current_fcf_margin: margin0, target_fcf_margin: target, debt_and_other_claims: claims, cash_sti: cash, shares_outstanding: shares },
+    (v) => v.base_revenue * (1 + growthFor(v)) ** D.years);
+  if (rr.status === 'ok') rr.implied_growth = growthFor(Object.fromEntries(rr.inputs.map((i) => [i.name, i.value])));
+  out.push(rr);
+
+  const normal = multi.find((m) => m.key === 'normalized-net-income');
+```
+
+- [ ] **Step 7: Evidence in `cli.mjs`**
+
+In `tools/calc/cli.mjs`, replace:
+```js
+  const A = merge({ ...policy.valuation, lookback_years: policy.lookback_years }, adjustments.assumptions);
+```
+with:
+```js
+  const A = merge({ ...policy.valuation, lookback_years: policy.lookback_years, min_roic_years_above_wacc: policy.min_roic_years_above_wacc }, adjustments.assumptions);
+  const years = facts.history_years ?? facts.periods.length, E = policy.evidence;
+  const level = years >= E.high_years ? 'high' : years >= E.medium_years ? 'medium' : 'low';
+```
+and replace:
+```js
+  return { schema_version: 1, company: facts.company, periods: facts.periods, price, assumptions: A,
+```
+with:
+```js
+  return { schema_version: 1, company: facts.company, periods: facts.periods, price, assumptions: A,
+    evidence: { history_years: years, level, margin_add: E.margin_add[level] },
+```
+
+- [ ] **Step 8: Run all tool tests**
+
+Run: `node --test 'tools/calc/test/*.test.mjs'`
+Expected: `# fail 0` (the earlier tests still pass: `makeFacts` has no `interim`, and Task 4/5 tests do not set `min_roic_years_above_wacc`).
+
+- [ ] **Step 9: Commit**
+
+```bash
+git add agent/policy.json tools/calc
+git commit -m "Support short histories in stage 2: evidence level, not-testable rules, revenue reverse DCF
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
+```
+
+---
+
+### Task 13: Text facts, evidence in the analysis, prompt and app
+
+**Files:**
+- Modify: `agent/schema/analysis.schema.json`, `tools/agent/validate.mjs`, `tools/agent/test/validate.test.mjs`, `tests/fixtures/analysis-sample.json`, `tests/fixtures/sample-metrics.json`, `agent/analyst.md`, `src/components/analyses.js`, `tests/analyses.spec.cjs`, `src/content/en/ui.json`, `src/content/he/ui.json`
+- Create: `tests/fixtures/sections/prospectus.txt`
+
+**Interfaces:**
+- Consumes: `metrics.json` `evidence` (Task 12); section files (Task 11).
+- Produces:
+  - Analysis fact: `{item, period_end: string|null, value, source, quote: string|null, file: string|null}`. A text fact has `file` (a name in `data/<T>/sections/`) and `quote`.
+  - Analysis top level: `evidence: {history_years, level}`.
+  - `validateAnalysis(analysis, {facts, metrics, cards, policy, readSection})` where `readSection(name) → string|null`.
+
+- [ ] **Step 1: Update the schema**
+
+In `agent/schema/analysis.schema.json`:
+
+Replace:
+```json
+  "required": ["schema_version", "ticker", "company", "cik", "analysis_date", "data_as_of", "price", "runner", "result", "steps", "adjustments"],
+```
+with:
+```json
+  "required": ["schema_version", "ticker", "company", "cik", "analysis_date", "data_as_of", "price", "runner", "evidence", "result", "steps", "adjustments"],
+```
+Replace:
+```json
+    "runner": { "type": "string", "enum": ["claude-code", "codex", "other"] },
+```
+with:
+```json
+    "runner": { "type": "string", "enum": ["claude-code", "codex", "other"] },
+    "evidence": {
+      "type": "object", "additionalProperties": false, "required": ["history_years", "level"],
+      "properties": { "history_years": { "type": "integer" }, "level": { "type": "string", "enum": ["high", "medium", "low"] } }
+    },
+```
+Replace the `fact` and `calculation` definitions with:
+```json
+    "fact": {
+      "type": "object", "additionalProperties": false, "required": ["item", "period_end", "value", "source", "quote", "file"],
+      "properties": { "item": { "type": "string" }, "period_end": { "type": ["string", "null"] }, "value": { "type": ["number", "null"] },
+                      "source": { "type": "string" }, "quote": { "type": ["string", "null"] }, "file": { "type": ["string", "null"] } }
+    },
+    "calculation": {
+      "type": "object", "additionalProperties": false, "required": ["metric", "period_end", "value", "explanation"],
+      "properties": { "metric": { "type": "string" }, "period_end": { "type": ["string", "null"] }, "value": { "type": ["number", "null"] }, "explanation": { "type": "string" } }
+    },
+```
+
+- [ ] **Step 2: Update the fixtures**
+
+In `tests/fixtures/analysis-sample.json`:
+- after `"runner": "claude-code",` add `"evidence": { "history_years": 5, "level": "high" },`
+- change the step 0 fact to:
+```json
+{ "item": "revenue", "period_end": "2025-12-31", "value": 1000000000, "source": "10-K 0000000001-26-000001", "quote": null, "file": null }
+```
+
+In `tests/fixtures/sample-metrics.json`, after `"price": { "value": 50, "date": "2026-10-10" },` add:
+```json
+  "evidence": { "history_years": 5, "level": "high", "margin_add": 0 },
+```
+
+`tests/fixtures/sections/prospectus.txt`:
+```
+# 424B4 0001628280-26-042639 filed 2026-06-12
+
+Summary consolidated financial data (in millions)
+
+Total revenues ..............................................................................                            $18,674      $14,015      $10,387
+```
+
+- [ ] **Step 3: Write the failing tests**
+
+In `tools/agent/test/validate.test.mjs`, replace:
+```js
+const ctx = () => ({ facts: load('tests/fixtures/sample-facts.json'), metrics: load('tests/fixtures/sample-metrics.json'),
+  cards: new Set(Object.keys(load('src/content/en/concepts.json'))) });
+```
+with:
+```js
+const sectionText = readFileSync(new URL('../../../tests/fixtures/sections/prospectus.txt', import.meta.url), 'utf8');
+const ctx = () => ({ facts: load('tests/fixtures/sample-facts.json'), metrics: load('tests/fixtures/sample-metrics.json'),
+  cards: new Set(Object.keys(load('src/content/en/concepts.json'))), policy: load('agent/policy.json'),
+  readSection: (name) => (name === 'prospectus.txt' ? sectionText : null) });
+const textFact = (over = {}) => ({ item: 'revenue', period_end: '2025-12-31', value: 18674000000, source: '424B4 0001628280-26-042639',
+  quote: 'Total revenues ..............................................................................                            $18,674', file: 'prospectus.txt', ...over });
+```
+and append:
+```js
+test('a text fact is valid when the quote is in the file and contains the number', () => {
+  const a = sample(); a.steps[0].facts.push(textFact());
+  assert.deepEqual(validateAnalysis(a, ctx()).errors, []);
+});
+
+test('a text fact with a wrong number, a missing quote or a bad file name is an error', () => {
+  for (const [over, re] of [[{ value: 19e9 }, /number/], [{ quote: 'Total revenues were $25,000' }, /quote/], [{ file: '../facts.json' }, /file/]]) {
+    const a = sample(); a.steps[0].facts.push(textFact(over));
+    assert.match(validateAnalysis(a, ctx()).errors.join('\n'), re);
+  }
+});
+
+test('evidence must match metrics.json', () => {
+  const a = sample(); a.evidence.level = 'low';
+  assert.match(validateAnalysis(a, ctx()).errors.join('\n'), /evidence/);
+});
+
+test('required margin of safety = policy for the score + evidence add-on', () => {
+  const a = sample(); a.result.required_margin_of_safety = 0.2;
+  assert.match(validateAnalysis(a, ctx()).errors.join('\n'), /required_margin_of_safety/);
+});
+```
+
+- [ ] **Step 4: Run the tests to make sure they fail**
+
+Run: `node --test 'tools/agent/test/*.test.mjs'`
+Expected: FAIL in the four new tests.
+
+- [ ] **Step 5: Update `validate.mjs`**
+
+In `tools/agent/validate.mjs`:
+
+Replace:
+```js
+import { readFileSync } from 'node:fs';
+```
+with:
+```js
+import { existsSync, readFileSync } from 'node:fs';
+```
+After the function `knownNumbers`, add:
+```js
+const SECTION_FILE = /^[a-z0-9_]+\.txt$/;
+const norm = (t) => t.replace(/\s+/g, ' ').trim();
+function quoteHasNumber(quote, value) {
+  if (value == null) return false;
+  const numbers = [...quote.replace(/,/g, '').matchAll(/\d+(?:\.\d+)?/g)].map((m) => Number(m[0]));
+  return numbers.some((n) => [1, 1e3, 1e6, 1e9].some((s) => Math.abs(n * s - Math.abs(value)) <= 0.005 * Math.max(1, Math.abs(value))));
+}
+```
+Change the signature line:
+```js
+export function validateAnalysis(analysis, { facts, metrics, cards }) {
+```
+to:
+```js
+export function validateAnalysis(analysis, { facts, metrics, cards, policy = null, readSection = () => null }) {
+```
+Replace the facts loop:
+```js
+    for (const f of s.facts) {
+      const ref = facts.facts.find((x) => x.item === f.item && x.period_end === f.period_end);
+```
+with:
+```js
+    for (const f of s.facts) {
+      if (f.file != null) {
+        if (!SECTION_FILE.test(f.file)) { errors.push(`step ${s.n}: text fact file "${f.file}" must be a section file name`); continue; }
+        const text = readSection(f.file);
+        if (text == null) errors.push(`step ${s.n}: text fact file ${f.file} does not exist`);
+        else if (!f.quote || !norm(text).includes(norm(f.quote))) errors.push(`step ${s.n}: text fact ${f.item}: quote not found in ${f.file}`);
+        else if (!quoteHasNumber(f.quote, f.value)) errors.push(`step ${s.n}: text fact ${f.item}: the quote does not contain the number ${f.value}`);
+        continue;
+      }
+      const ref = [...facts.facts, ...(facts.interim?.facts || [])].find((x) => x.item === f.item && x.period_end === f.period_end);
+```
+Replace:
+```js
+  const q = analysis.result.quality_score;
+  if (q != null && (q < 1 || q > 5)) errors.push('result.quality_score must be 1–5 or null');
+```
+with:
+```js
+  const q = analysis.result.quality_score;
+  if (q != null && (q < 1 || q > 5)) errors.push('result.quality_score must be 1–5 or null');
+  const ev = metrics.evidence;
+  if (ev && (analysis.evidence.level !== ev.level || analysis.evidence.history_years !== ev.history_years))
+    errors.push(`evidence must match metrics.json (${ev.history_years} years, ${ev.level})`);
+  if (policy && ev && q != null) {
+    const base = policy.required_margin_of_safety[String(q)];
+    const expected = base == null ? null : base + ev.margin_add;
+    if (!same(analysis.result.required_margin_of_safety, expected))
+      errors.push(`result.required_margin_of_safety must be ${expected} (policy for score ${q} + evidence add-on ${ev.margin_add})`);
+  }
+```
+Replace:
+```js
+    if (/(^|\.)(source|period_end|analysis_date|data_as_of|date|cik|ticker)$/.test(path)) continue;
+```
+with:
+```js
+    if (/(^|\.)(source|period_end|analysis_date|data_as_of|date|cik|ticker|quote|file)$/.test(path)) continue;
+```
+In `main`, replace:
+```js
+    cards: new Set(Object.keys(JSON.parse(readFileSync('src/content/en/concepts.json', 'utf8')))),
+  });
+```
+with:
+```js
+    cards: new Set(Object.keys(JSON.parse(readFileSync('src/content/en/concepts.json', 'utf8')))),
+    policy: JSON.parse(readFileSync('agent/policy.json', 'utf8')),
+    readSection: (name) => { const p = join(dir, 'sections', name); return SECTION_FILE.test(name) && existsSync(p) ? readFileSync(p, 'utf8') : null; },
+  });
+```
+
+- [ ] **Step 6: Run the validator tests**
+
+Run: `node --test 'tools/agent/test/*.test.mjs'`
+Expected: `# fail 0`
+
+- [ ] **Step 7: Update the system prompt**
+
+In `agent/analyst.md`, after the line starting with `- \`agent/policy.json\``, add:
+```markdown
+- `data/<T>/sections/latest_10q.txt` and `prospectus.txt` — only when the history is short (fewer than 3 annual periods). The prospectus can be over 1.5 million characters. Search it (for example for "Summary consolidated financial data", "Total revenues", "Net cash provided by operating activities"); do not read all of it.
+- `metrics.json` → `evidence` — history years, evidence level and the add-on to the required margin of safety.
+```
+After the section `## Rules for judgment`, add:
+````markdown
+## Short history and text facts
+
+A short history is less evidence, not a reason to stop. Start `result.summary` with "Low evidence: N years of data." (or "Medium evidence") when the level is not `high`. Copy `evidence.history_years` and `evidence.level` from `metrics.json` into the analysis.
+
+- A rule metric with status `not_testable` is neither passed nor failed. Say which rule cannot be tested and why.
+- You may use a number from a section file as a **text fact**: copy the exact words from the file into `quote` (including the number), set `file` (for example `prospectus.txt`), and set `source` to the form and accession from the first line of the file. The validator checks the quote and the number. Note the unit stated in the text (for example "in millions").
+- For a young company, set `target_fcf_margin` in `adjustments.json` → `assumptions` (explain why), and read `reverse-dcf-revenue`: the revenue that the price requires in year 10. If there is no annual revenue in XBRL, also set `base_revenue` and `base_fcf_margin` with a `source` that names the text fact.
+- For a company with very different businesses, describe how a Sum of the Parts would value it (`card:capital-allocation` for segment decisions); the app has a SOTP tool.
+````
+Replace the step 5 sentence:
+```markdown
+**Step 5 — Decision.** Overall quality score = the lower of steps 2 and 3, rounded down. Required margin of safety = `policy.required_margin_of_safety[score]` (`null` = does not qualify at any price).
+```
+with:
+```markdown
+**Step 5 — Decision.** Overall quality score = the lower of steps 2 and 3, rounded down. Required margin of safety = `policy.required_margin_of_safety[score]` + `evidence.margin_add` (`null` = does not qualify at any price). The validator checks this number.
+```
+Replace the output line:
+```markdown
+- Each `facts` entry copies `item`, `period_end` and `value` from `facts.json`; `source` = "`<form> <accession>`".
+```
+with:
+```markdown
+- Each `facts` entry copies `item`, `period_end` and `value` from `facts.json` (or `facts.json` → `interim`); `source` = "`<form> <accession>`"; `quote` and `file` are `null`. A text fact sets `quote` and `file` (see "Short history and text facts").
+```
+
+- [ ] **Step 8: Show evidence and text facts in the app**
+
+In `src/components/analyses.js`, replace:
+```js
+  const STATUS = { meets_rules: 'Meets your rules', does_not_meet_rules: 'Does not meet your rules', stopped: 'Stopped' };
+```
+with:
+```js
+  const STATUS = { meets_rules: 'Meets your rules', does_not_meet_rules: 'Does not meet your rules', stopped: 'Stopped' };
+  const LEVEL = { high: 'High evidence', medium: 'Medium evidence', low: 'Low evidence' };
+```
+Replace:
+```js
+      return `<li><code>${E(f.item)}</code> ${E(f.period_end)}: <b>${E(num(f.value))}</b> — ${url ? `<a href="${E(url)}" target="_blank" rel="noopener">${E(f.source)}</a>` : E(f.source)}</li>`;
+```
+with:
+```js
+      const text = f.file ? ` <span class="muted">(from report text)</span><br><q data-no-translate>${E(f.quote)}</q>` : '';
+      return `<li data-fact${f.file ? ' data-text-fact' : ''}><code>${E(f.item)}</code> ${E(f.period_end || '')}: <b>${E(num(f.value))}</b> — ${url ? `<a href="${E(url)}" target="_blank" rel="noopener">${E(f.source)}</a>` : E(f.source)}${text}</li>`;
+```
+Replace:
+```js
+          <div class="metric"><div class="ml">Data as of</div><div class="mv" data-no-translate>${E(a.data_as_of)}</div></div>
+```
+with:
+```js
+          <div class="metric"><div class="ml">Data as of</div><div class="mv" data-no-translate>${E(a.data_as_of)}</div></div>
+          <div class="metric"><div class="ml">Evidence level</div><div class="mv" data-evidence="${E(a.evidence?.level || '')}">${E(LEVEL[a.evidence?.level] || '—')}</div>
+            <div class="muted">${E(a.evidence?.history_years ?? '—')} years of data</div></div>
+```
+
+In `tests/analyses.spec.cjs`, after the line `  await expect(page.locator('[data-step]')).toHaveCount(7);` (the first one in the first test), add:
+```js
+  await expect(page.locator('[data-evidence="high"]')).toHaveCount(1);
+```
+
+Add UI keys (same script pattern as Task 10, Step 5):
+```bash
+python3 - <<'EOF'
+import json
+he = {"Evidence level":"רמת ראיות","High evidence":"ראיות חזקות","Medium evidence":"ראיות בינוניות","Low evidence":"ראיות חלשות",
+"{years} years of data":"{years} שנות נתונים","(from report text)":"(מתוך טקסט הדוח)"}
+for lang in ["en","he"]:
+    p=f"src/content/{lang}/ui.json"; d=json.load(open(p))
+    for k,v in he.items(): d.setdefault(k, k if lang=="en" else v)
+    open(p,"w").write(json.dumps(d,ensure_ascii=False,indent=2)+"\n")
+EOF
+```
+
+- [ ] **Step 9: Run all tests**
+
+Run: `npm test && npm run test:extract && npm run build && CHROME_PATH=/usr/bin/google-chrome npx playwright test`
+Expected: all pass.
+
+- [ ] **Step 10: Commit**
+
+```bash
+git add agent tools/agent tests src/components/analyses.js src/content/en/ui.json src/content/he/ui.json
+git commit -m "Add text facts, evidence level and short-history guidance to the analysis and the app
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
+```
+
+---
+
+### Task 14: End-to-end run on the test set
 
 **Files:**
 - Create: `tools/extract/tests/fixtures/cost-records.json` (trimmed real records), `tools/extract/tests/test_cost_fixture.py`
@@ -2297,9 +3259,9 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
 
 Run (one at a time):
 ```bash
-for T in COST AAL INTC SNOW JPM; do npm run sat -- extract $T --save-records || break; done
+for T in COST AAL INTC SNOW JPM SPCX; do npm run sat -- extract $T --save-records || break; done
 ```
-Expected: five `data/<T>/facts.json` files. JPM prints `model fit: not_suitable`.
+Expected: six `data/<T>/facts.json` files. JPM prints `model fit: not_suitable`. SPCX prints `history: 0 years` (or 1 after its first 10-K) and an interim balance sheet date, and writes `sections/prospectus.txt`.
 
 - [ ] **Step 2: Check 10 values for each company against the 10-K by hand**
 
@@ -2349,9 +3311,9 @@ def test_53_week_year_flagged():
 Run: `npm run test:extract`
 Expected: all pass.
 
-- [ ] **Step 4: Run the agent on COST and on JPM**
+- [ ] **Step 4: Run the agent on COST, JPM and SPCX**
 
-Ask the user for the current COST price and date. Then, in Claude Code: "Use the value-analyst skill for COST, price <P> on <date>". Then the same for JPM. Expected: `npm run sat -- validate` reports `valid` for both; JPM has `result.status = "stopped"` and `stopped_at_step = 0`. Import both files on the Analyses page and review them with the user.
+Ask the user for the current price and date of each company. Then, in Claude Code: "Use the value-analyst skill for COST, price <P> on <date>". Then the same for JPM and SPCX. Expected: `npm run sat -- validate` reports `valid` for all three; JPM has `result.status = "stopped"` and `stopped_at_step = 0`; SPCX has `evidence.level = "low"`, uses text facts from `prospectus.txt`, sets `target_fcf_margin`, and reports `reverse-dcf-revenue`. Import both files on the Analyses page and review them with the user.
 
 - [ ] **Step 5: Commit**
 
@@ -2359,7 +3321,7 @@ Ask the user for the current COST price and date. Then, in Claude Code: "Use the
 git add agent/mapping/line-items.json tools/extract/tests/fixtures/cost-records.json tools/extract/tests/test_cost_fixture.py
 git commit -m "Verify extraction on the five-company test set and add the COST fixture
 
-Hand checks (company | item | facts.json | 10-K | match), one line for each of the 50 values from Step 2.
+Hand checks (company | item | facts.json | 10-K | match), one line for each of the 50 values from Step 2 (COST, AAL, INTC, SNOW, JPM).
 
 Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
 ```
@@ -2371,11 +3333,13 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
 | Spec section | Task |
 |---|---|
 | 2 Architecture, CLI, runners | 8, 9 |
-| 3 Extract: rules 1–7, line items, facts format, sections | 1, 2, 3, 11 |
+| 3 Extract: rules 1–7, line items, facts format, sections | 1, 2, 3, 14 |
+| 3 Short history: history years, interim balance sheet, prospectus and 10-Q text, text facts | 11, 13 |
+| 4 Short history: evidence level, not-testable rules, revenue reverse DCF | 12 |
 | 4 Calculate: metrics table, adjustments, missing inputs | 4, 5, 6 |
 | 5 Interpret: system prompt, steps 0–6, policy, checkpoints | 6, 9 |
 | 6 App page | 10 |
 | 7 Error handling | 3 (identity, ticker), 2 (n/a, conflicts via Task 1), 1 (restated, long year), 2 (SIC), 7 (validation retries in skill), 9 |
-| 8 Testing | 1–7, 10, 11 |
+| 8 Testing | 1–7, 10–14 |
 | 9 Prior art | design only |
 | 11 Decisions (`analyses/` ignored) | 1 |

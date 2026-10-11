@@ -29,6 +29,7 @@ Add an AI analyst to the stock analysis handbook. The analyst gets the facts fro
 ### Out of scope (this version)
 
 - Israeli companies and PDF parsing
+- Trailing-twelve-month values from 10-Q reports
 - The assistant inside the web app
 - Market prices from a data feed (the user enters the price)
 - Portfolio management, alerts, trading of any kind
@@ -126,6 +127,15 @@ sat validate analyses/COST-….json     → format and rule checks of the agent 
 
 Item 1, 1A, 7, 7A and 8 from the latest 10-K, and the executive pay section of the latest DEF 14A, as plain text files with the accession number in the first line.
 
+### Short history (added 2026-10-11)
+
+A short history means less evidence, not "no analysis". Verified example: SpaceX (SPCX, IPO 2026-06-12) has no 10-K, one 10-Q, and annual figures only in the prospectus text (3 years of revenue: $18,674M, $14,015M, $10,387M). The 424B4 text is about 1.6 million characters.
+
+- `facts.json` records `history_years` (number of annual periods). Stage 2 sets the evidence level from `policy.json` → `evidence`: `high` (≥5 years), `medium` (3–4), `low` (0–2).
+- If the latest 10-Q balance sheet is newer than the last annual period, the extractor adds it as `interim` (XBRL instants: cash, debt, shares and the other balance sheet items). Verified for SPCX at 2026-06-30.
+- If `history_years` < 3, the extractor also writes `sections/latest_10q.txt` and `sections/prospectus.txt` (latest 424B4, else S-1).
+- **Text facts:** the agent may use a number from a section file if it gives the exact quote and the file name. `sat validate` checks that the quote is in the file and that the quote contains the number (allowing the scales 1, thousand, million, billion).
+
 ## 4. Stage 2 — Calculate
 
 Node.js, imports `src/finance/core.js`. Each metric uses the ID of its concept card.
@@ -140,6 +150,14 @@ Node.js, imports `src/finance/core.js`. Each metric uses the ID of its concept c
 | Value (needs price) | `market-cap`; `enterprise-value`; `pe`; `ev-ebitda`; `fcf-yield`; `reverse-dcf` implied growth; FCFF DCF bear/base/bull; `margin-of-safety` |
 
 Each metric value records its inputs (item, period) and its formula, so the user can follow it back to the filing.
+
+### Short history in the calculations
+
+- No calculation fails with 0, 1 or 2 periods. Metrics that need more years are `not_available`.
+- A rule metric that needs more years than exist (for example `roic-years-above-wacc` with fewer than `min_roic_years_above_wacc` years) has the status `not_testable`.
+- Price-based metrics use the newest balance sheet (`interim` if newer).
+- `reverse-dcf-revenue`: the year-N revenue (and the growth rate) that makes a revenue-driven DCF equal the price, with FCF margin moving from the current margin to `target_fcf_margin` (an assumption that the agent sets). If there is no annual revenue, the agent can set `base_revenue` and `base_fcf_margin` with a source (for example a prospectus text fact).
+- `metrics.json` contains `evidence: {history_years, level, margin_add}`.
 
 ### Adjustments
 
@@ -195,6 +213,7 @@ If a stop rule fails, the agent completes the remaining steps but marks the resu
 { "required_margin_of_safety": { "5": 0.20, "4": 0.25, "3": 0.40, "2": null, "1": null },
   "max_debt_to_ebitda": 3.0, "min_interest_coverage": 5,
   "min_roic_years_above_wacc": 7, "lookback_years": 10,
+  "evidence": { "high_years": 5, "medium_years": 3, "margin_add": { "high": 0, "medium": 0.10, "low": 0.20 } },
   "valuation": { "wacc": 0.09, "normal_pe": 15, "maintenance_capex_ratio": 1.0,
     "dcf": { "years": 10, "growth_cap": 0.10, "growth_delta": { "bear": -0.05, "bull": 0.03 },
              "terminal_growth": { "bear": 0.02, "base": 0.025, "bull": 0.03 } } } }
@@ -202,7 +221,7 @@ If a stop rule fails, the agent completes the remaining steps but marks the resu
 
 DCF defaults: FCFF₀ = average FCFF of the last 3 years; base growth = min(5-year revenue CAGR, `growth_cap`).
 
-`null` means "does not qualify at any price". The values are suggestions; the user sets them.
+`null` means "does not qualify at any price". Required margin of safety = `required_margin_of_safety[quality score]` + `evidence.margin_add[level]`. The values are suggestions; the user sets them.
 
 ## 6. The app
 
@@ -258,3 +277,4 @@ A new page "Analyses" (group Tools):
 
 - 2026-10-11: the user accepted the default values in `policy.json` and the design.
 - 2026-10-11: `analyses/` is not committed by default.
+- 2026-10-11: short history does not stop the analysis; it lowers the evidence level and raises the required margin of safety (+10 points medium, +20 points low).
