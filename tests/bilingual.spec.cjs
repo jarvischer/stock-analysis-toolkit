@@ -91,3 +91,27 @@ test('Hebrew mobile layout and menu', async ({page})=>{
   await page.locator('#side a[href="#learning"]').click();
   await expect(page.locator('body')).not.toHaveClass(/nav-open/);
 });
+
+// English-only text on a Hebrew page must be a formula, an abbreviation or a proper name listed in the allowlist.
+// If this test fails, add a Hebrew entry to src/content/he/ui.json, or add the exact string to the allowlist.
+const allowedEnglish = new Set(require('./he-english-allowlist.json'));
+test('Hebrew pages show no untranslated English UI text', async ({page}) => {
+  await page.goto('/?lang=he');
+  const routes = await page.evaluate(()=>SAT.modules.filter(m=>!m.planned).map(m=>m.id));
+  const found = new Map();
+  for (const route of routes) {
+    await page.goto('/?lang=he#'+route);
+    for (const text of await page.evaluate(()=>{
+      const english = t => /[A-Za-z]{2}/.test(t) && !/[א-ת]/.test(t), out = [];
+      const skip = 'script,style,textarea,.case-note,[data-user-content],[data-no-translate],.formula,.fx,code,.mf';
+      const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+      while (walker.nextNode()) { const n = walker.currentNode, t = n.nodeValue.replace(/\s+/g,' ').trim(); if (english(t) && !n.parentElement.closest(skip)) out.push(t); }
+      for (const el of document.querySelectorAll('[title],[placeholder],[aria-label],[data-tip]')) {
+        if (el.closest('[data-no-translate],[data-user-content]')) continue;
+        for (const a of ['title','placeholder','aria-label','data-tip']) { const t = (el.getAttribute(a) || '').trim(); if (english(t)) out.push(t); }
+      }
+      return out;
+    })) if (!allowedEnglish.has(text) && !found.has(text)) found.set(text, route);
+  }
+  expect([...found].map(([text, route]) => `${route}: ${text}`)).toEqual([]);
+});

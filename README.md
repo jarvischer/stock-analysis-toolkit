@@ -66,7 +66,7 @@ npm run test:browser
 
 To use an installed Chrome instead: `CHROME_PATH=/usr/bin/google-chrome npm run test:browser`.
 
-Validation checks required Hebrew explanations, matching catalog IDs, section membership, related links, and exercise-answer consistency. Browser tests cover every page in both languages, bilingual search, the existing learning interactions, language switching, saved data, RTL numbers, and mobile navigation. `scripts/browser-audit.mjs` is an optional local translation/visual audit using installed Chrome; it writes reports and screenshots to `/tmp`.
+Validation checks required Hebrew explanations, matching catalog IDs, section membership, related links, and exercise-answer consistency. Browser tests cover every page in both languages, bilingual search, the existing learning interactions, language switching, saved data, RTL numbers, and mobile navigation. A browser test fails when a Hebrew page shows English UI text. Formulas, abbreviations, and proper names that stay in English are listed in `tests/he-english-allowlist.json`. `scripts/browser-audit.mjs` is an optional local translation/visual audit using installed Chrome; it writes reports and screenshots to `/tmp`.
 
 ## Build and deployment
 

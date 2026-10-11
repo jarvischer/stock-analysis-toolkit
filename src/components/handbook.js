@@ -58,7 +58,7 @@
     const node = SAT.el(`<article class="cc${c.key ? ' key' : ''}" id="k-${c.id}">
       <header class="cc-h">
         <div><h3>${c.title}${SAT.lang === 'he' ? ` <small data-no-translate dir="ltr">${esc(window.SAT_CATALOGS.en.concepts[c.id].title)}</small>` : ''}${c.abbr ? ` <small data-no-translate dir="ltr">${c.abbr}</small>` : ''}</h3>
-        ${c.aka ? `<div class="aka">Also called: ${c.aka.join(' · ')}</div>` : ''}</div>
+        ${c.aka ? `<div class="aka">Also called: <span data-no-translate dir="auto">${c.aka.join(' · ')}</span></div>` : ''}</div>
         <div class="cc-tools">${st ? `<a class="sbadge ${st[1]}" href="#statements" title="Where it comes from">${st[0]}</a>` : ''}
           <button class="star" data-fav="${c.id}" aria-pressed="${fav}" title="Bookmark" aria-label="Bookmark ${esc(c.title)}">★</button></div>
       </header>
