@@ -79,4 +79,25 @@ GitHub Actions runs validation, finance tests, the build, and browser tests for 
 
 Use the English / עברית switch or `?lang=en` / `?lang=he`. The language preference persists in the browser. Hash routes and all existing `sat:` storage keys are retained. Favorites, notes, calculator inputs, and lesson completion are shared across languages and included in Export / Import. Changing language does not translate or overwrite your notes. Data remains on the same origin and site address as before.
 
+## Value analyst agent (local)
+
+An AI analyst that reads SEC filings, calculates the handbook's metrics with tested code, and writes an analysis with sources and decision drivers. It never recommends to buy or sell. Design: `docs/superpowers/specs/2026-10-11-value-analyst-agent-design.md`.
+
+Requirements: Node.js 22, [uv](https://docs.astral.sh/uv/), and SEC identity variables (SEC asks for a name and an email address in each request):
+
+```sh
+export EDGAR_NAME="Your Name" EDGAR_EMAIL="you@example.com"
+npm run sat -- extract COST
+npm run sat -- calc COST --price 912.40 --price-date 2026-10-10
+```
+
+Then, in Claude Code, ask: "Use the value-analyst skill for COST, price 912.40 on 2026-10-10". In Codex, the same skill is in `.agents/skills/`. Headless:
+
+```sh
+claude -p "Use the value-analyst skill for COST, price 912.40 on 2026-10-10" --allowedTools "Bash(npm run sat:*)" Read Write
+codex exec "Use the value-analyst skill for COST, price 912.40 on 2026-10-10" --output-schema agent/schema/analysis.schema.json
+```
+
+The analysis is written to `analyses/` (not committed). Import it in the app on the **Analyses** page. `data/` is a local cache. Edit `agent/policy.json` to set your own rules.
+
 Educational reference. Not investment advice.

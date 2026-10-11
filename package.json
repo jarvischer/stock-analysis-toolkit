@@ -7,8 +7,10 @@
     "dev": "node scripts/build.mjs && node scripts/serve.mjs",
     "preview": "node scripts/serve.mjs",
     "validate": "node scripts/validate.mjs",
-    "test": "node tests/finance.test.js && node scripts/validate.mjs",
-    "test:browser": "playwright test"
+    "test": "node tests/finance.test.js && node scripts/validate.mjs && node --test 'tools/calc/test/*.test.mjs' 'tools/agent/test/*.test.mjs'",
+    "test:browser": "playwright test",
+    "test:extract": "uv run --project tools/extract pytest tools/extract/tests -q",
+    "sat": "node scripts/sat.mjs"
   },
   "repository": {
     "type": "git",
