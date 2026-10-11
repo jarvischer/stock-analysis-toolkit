@@ -4,6 +4,60 @@ A bilingual English/Hebrew stock-analysis handbook with concept cards, four guid
 
 **Live:** [English](https://jarvischer.github.io/stock-analysis-toolkit/?lang=en) · [עברית](https://jarvischer.github.io/stock-analysis-toolkit/?lang=he)
 
+## Quick start
+
+### Requirements
+
+- Node.js 22 or newer
+- [uv](https://docs.astral.sh/uv/) (only for the value analyst agent)
+- Google Chrome (only for the browser tests)
+
+### Start the app
+
+```sh
+npm ci           # one time: install dependencies
+npm run dev      # build and serve at http://127.0.0.1:4173
+```
+
+After you edit a file in `src/`, run `npm run build` and refresh the page.
+
+### Run the tests
+
+```sh
+npm test                                    # finance, catalogs, agent tools
+npm run test:extract                        # SEC extraction (offline)
+npm run build
+CHROME_PATH=/usr/bin/google-chrome npm run test:browser
+```
+
+### Analyze a company with the agent
+
+1. One time: put your SEC identity in a file outside the repository. SEC requires a name and an email address in each request.
+   ```sh
+   mkdir -p ~/.config/sat
+   printf 'EDGAR_NAME="Your name"\nEDGAR_EMAIL="you@example.com"\n' > ~/.config/sat/edgar.env
+   chmod 600 ~/.config/sat/edgar.env
+   ```
+2. In each new terminal, load the identity:
+   ```sh
+   set -a; . ~/.config/sat/edgar.env; set +a
+   ```
+3. Start Claude Code in the repository and ask:
+   > Use the value-analyst skill for COST, price 946.92 on 2026-10-09
+
+   The skill gets the data, calculates the metrics, writes `analyses/COST-<date>.json` and validates it. In Codex, ask the same thing.
+4. Open the app, go to **Tools → Analyses**, and import the file.
+
+To run the steps yourself:
+
+```sh
+npm run sat -- extract COST                                  # SEC data → data/COST/
+npm run sat -- calc COST --price 946.92 --price-date 2026-10-09
+npm run sat -- validate analyses/COST-2026-10-11.json
+```
+
+Set your own rules (required margin of safety, debt limits, WACC) in `agent/policy.json`.
+
 ## Local development
 
 Use Node.js 22 or newer.
@@ -86,7 +140,7 @@ An AI analyst that reads SEC filings, calculates the handbook's metrics with tes
 Requirements: Node.js 22, [uv](https://docs.astral.sh/uv/), and SEC identity variables (SEC asks for a name and an email address in each request):
 
 ```sh
-export EDGAR_NAME="Your Name" EDGAR_EMAIL="you@example.com"
+set -a; . ~/.config/sat/edgar.env; set +a   # see Quick start
 npm run sat -- extract COST
 npm run sat -- calc COST --price 912.40 --price-date 2026-10-10
 ```
