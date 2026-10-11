@@ -30,6 +30,14 @@ def records_from_dataframe(df: pd.DataFrame) -> list[dict]:
             for r in keep.itertuples(index=False)]
 
 
+def records_from_company(company) -> list[dict]:
+    """XBRL records, or [] when SEC has no company facts (for example a very recent IPO) or they cannot be parsed."""
+    facts = company.get_facts()  # edgartools returns None in both cases
+    if facts is None:
+        return []
+    return records_from_dataframe(facts.to_dataframe(include_metadata=True))
+
+
 def fetch(ticker: str, cache_dir: Path):
     """Return (company_info, records, edgar_company). Raises SystemExit for an unknown ticker."""
     import edgar  # imported here so tests do not need network setup
@@ -46,5 +54,4 @@ def fetch(ticker: str, cache_dir: Path):
     info = {"ticker": ticker.upper(), "name": company.name, "cik": str(company.cik).zfill(10),
             "sic": company.sic, "sic_description": getattr(company, "sic_description", None),
             "fiscal_year_end": getattr(company, "fiscal_year_end", None)}
-    df = company.get_facts().to_dataframe(include_metadata=True)
-    return info, records_from_dataframe(df), company
+    return info, records_from_company(company), company

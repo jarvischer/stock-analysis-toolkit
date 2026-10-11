@@ -4,6 +4,8 @@ from __future__ import annotations
 from .select import ANNUAL_FORMS, INTERIM_FORMS, annual_series
 
 FINANCIAL_SIC = range(6000, 6800)  # banks, insurers, REITs and other financial companies
+SPLIT_ITEMS = {"diluted_avg_shares": 1, "shares_outstanding": 1, "eps_diluted": -1}  # exponent of the share factor
+SPLIT_TOLERANCE = 0.02
 
 
 def _periods(records: list[dict], mapping: dict, years: int) -> list[str]:
@@ -25,7 +27,7 @@ def _reported(item: str, end: str, unit: str, chosen: dict) -> dict:
             "source": {"tag": chosen["tag"], "form": chosen["form"],
                        "accession": chosen["accession"], "filed": chosen["filed"]},
             "flags": list(chosen["flags"])}
-    for key in ("original_value", "original_accession", "conflict"):
+    for key in ("original_value", "original_accession", "previous_value", "conflict"):
         if key in chosen:
             fact[key] = chosen[key]
     return fact
@@ -73,6 +75,38 @@ def _interim(records: list[dict], mapping: dict, last_period: str | None) -> dic
     return {"period_end": end, "form": "10-Q", "facts": facts}
 
 
+def _split_factor(fact: dict) -> float | None:
+    """Share factor (10 for a 10-for-1 split, 0.25 for a 1-for-4 reverse split) when a restatement
+    changed a share count or EPS by a whole-number ratio."""
+    if "restated" not in fact["flags"] or not fact.get("previous_value"):
+        return None
+    ratio = fact["value"] / fact["previous_value"]
+    shares = ratio if SPLIT_ITEMS[fact["item"]] == 1 else 1 / ratio
+    whole = shares if shares >= 1 else 1 / shares
+    if whole < 1.5 or abs(whole - round(whole)) > SPLIT_TOLERANCE * whole:
+        return None
+    return float(round(whole)) if shares >= 1 else 1 / round(whole)
+
+
+def _adjust_for_splits(facts: list[dict]) -> None:
+    """A 10-K restates share counts for a split only in its own comparative years. Older years come from
+    pre-split filings, so scale them, and mark split restatements as split_adjusted, not restated."""
+    share_facts = [f for f in facts if f["item"] in SPLIT_ITEMS and f["status"] == "reported"]
+    events: dict[str, float] = {}
+    for f in share_facts:
+        factor = _split_factor(f)
+        if factor:
+            events[f["source"]["filed"]] = factor
+            f["flags"] = [x for x in f["flags"] if x != "restated"] + ["split_adjusted"]
+    for filed, factor in sorted(events.items()):
+        for f in share_facts:
+            if f["source"]["filed"] < filed:
+                f.setdefault("original_value", f["value"])
+                f["value"] = f["value"] * factor ** SPLIT_ITEMS[f["item"]]
+                if "split_adjusted" not in f["flags"]:
+                    f["flags"].append("split_adjusted")
+
+
 def build_facts(records: list[dict], mapping: dict, company: dict, years: int,
                 extracted_at: str, edgartools_version: str) -> dict:
     periods = _periods(records, mapping, years)
@@ -84,6 +118,7 @@ def build_facts(records: list[dict], mapping: dict, company: dict, years: int,
                 facts.append(_reported(item, end, spec["unit"], series[end]))
             else:
                 facts.append(_constructed(item, end, spec, records) or _missing(item, end, spec))
+    _adjust_for_splits(facts)
     sic = int(company["sic"]) if company.get("sic") not in (None, "") else None
     return {"schema_version": 1,
             "company": {**company, "sic": sic,

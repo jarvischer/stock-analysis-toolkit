@@ -54,6 +54,9 @@ def annual_series(records: list[dict], tags: list[str], unit: str,
                 chosen["flags"].append("restated")
                 chosen["original_value"] = first["value"]
                 chosen["original_accession"] = first["accession"]
+                earlier = [h for h in hits if h["filed"] < latest["filed"]]
+                if earlier:
+                    chosen["previous_value"] = earlier[-1]["value"]  # the value just before this restatement
             for other in tags[position + 1:]:
                 others = [r for r in recs if r["concept"] == other]
                 if not others:

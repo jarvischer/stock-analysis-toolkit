@@ -10,7 +10,7 @@ PAY_MAX_CHARS = 60_000
 
 
 def _latest(company, form: str):
-    filings = company.get_filings(form=form)
+    filings = company.get_filings(form=form, amendments=False)  # a 10-K/A often has only Part III
     return filings.latest() if filings else None
 
 
@@ -22,10 +22,17 @@ def write_sections(company, out_dir: Path) -> list[str]:
     out_dir.mkdir(parents=True, exist_ok=True)
     written = []
     filing = _latest(company, "10-K")
-    tenk = filing.obj() if filing is not None else None
+    tenk, error = None, None
+    if filing is not None:
+        try:
+            tenk = filing.obj()
+        except Exception as exc:  # a 10-K that cannot be parsed must not stop the extraction
+            error = exc
     for key, item in TENK_ITEMS.items():
-        if tenk is None:
+        if filing is None:
             text = "# no 10-K filed\n\nnot available"
+        elif tenk is None:
+            text = f"{_header(filing)} — {item}\n\nnot available ({error.__class__.__name__} while reading the 10-K)"
         else:
             text = f"{_header(filing)} — {item}\n\n{tenk[item] or 'not available'}"
         (out_dir / f"{key}.txt").write_text(text + "\n")
@@ -57,6 +64,10 @@ def write_short_history_sections(company, out_dir: Path) -> list[str]:
         filing = next((f for f in (_latest(company, form) for form in forms) if f is not None), None)
         if filing is None:
             continue
-        (out_dir / f"{key}.txt").write_text(f"{_header(filing)}\n\n{filing.text()}\n")
+        try:
+            body = filing.text()
+        except Exception as exc:
+            body = f"not available ({exc.__class__.__name__} while reading {filing.form})"
+        (out_dir / f"{key}.txt").write_text(f"{_header(filing)}\n\n{body}\n")
         written.append(key)
     return written
