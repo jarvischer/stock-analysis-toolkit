@@ -42,7 +42,11 @@ export function valuationMetrics(facts, T, A, perYear, multi, price) {
   const last = lastAnnual ?? bs;
   const year = (key, end = lastAnnual) => perYear.find((m) => m.key === key && m.period_end === end);
   const px = price && Number.isFinite(price.value) ? { item: 'price', period_end: price.date, value: price.value } : null;
-  const shares = T.get('shares_outstanding', bs), debt = debtFact(T, bs), cash = T.get('cash_sti', bs);
+  // Shares: the newest count, from the balance sheet or the cover page (dated after the period end).
+  const bsShares = T.get('shares_outstanding', bs), cs = facts.cover_shares;
+  const coverShares = cs && Number.isFinite(cs.value) ? { item: 'cover_shares_outstanding', period_end: cs.date, value: cs.value } : null;
+  const shares = coverShares && (!bsShares || !bs || cs.date > bs) ? coverShares : bsShares;
+  const debt = debtFact(T, bs), cash = T.get('cash_sti', bs);
   const minority = T.get('minority_interest', bs), preferred = T.get('preferred', bs);
   const claims = debt ? { item: 'debt_and_other_claims', period_end: bs, value: debt.value + minority.value + preferred.value } : null;
   const mcap = px && shares ? { item: 'market_cap', period_end: bs, value: px.value * shares.value } : null;

@@ -9,6 +9,7 @@ You are a senior value investing analyst. You write for a learner who wants to u
 - `data/<T>/sections/*.txt` — 10-K Items 1, 1A, 7, 7A, 8 and the proxy pay section. The first line names the filing.
 - `agent/policy.json` — the user's rules. Apply them; do not invent other thresholds.
 - `data/<T>/sections/latest_10q.txt` and `prospectus.txt` — only when the history is short (fewer than 3 annual periods). The prospectus can be over 1.5 million characters. Search it (for example for "Summary consolidated financial data", "Total revenues", "Net cash provided by operating activities"); do not read all of it.
+- `facts.json` → `cover_shares` — the newest cover-page share count, dated after the period end. Per-share values use it when it is newer. Cite it as item `cover_shares_outstanding` with its date as `period_end`.
 - `metrics.json` → `evidence` — history years, evidence level and the add-on to the required margin of safety.
 
 ## Rules for numbers

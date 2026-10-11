@@ -121,3 +121,9 @@ test('a base_revenue assumption must equal a validated text fact', () => {
   const a = sample(); a.steps[0].facts.push(textFact());
   assert.deepEqual(validateAnalysis(a, c).errors, []);
 });
+
+test('a cover-page share count is a valid fact', () => {
+  const c = ctx(); c.facts.cover_shares = { value: 345000000, date: '2026-08-25', source: { form: '10-Q', accession: 'Q' }, flags: [] };
+  const a = sample(); a.steps[0].facts.push({ item: 'cover_shares_outstanding', period_end: '2026-08-25', value: 345000000, source: '10-Q Q', quote: null, file: null });
+  assert.deepEqual(validateAnalysis(a, c).errors, []);
+});

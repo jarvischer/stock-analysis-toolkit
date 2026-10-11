@@ -38,22 +38,24 @@ def _constructed(item: str, end: str, spec: dict, records: list[dict], forms: se
     if not rule:
         return None
     parts, total, period_days, flags = [], 0.0, None, ["constructed"]
-    for group in rule["required"]:
+    for group, sign in [(g, 1) for g in rule["required"]] + [(g, -1) for g in rule.get("subtract", [])]:
         chosen = annual_series(records, group, spec["unit"], spec["kind"], forms).get(end)
         if chosen is None:
             return None
-        parts.append(chosen)
+        parts.append({**chosen, "sign": sign})
     for group in rule.get("optional", []):
         chosen = annual_series(records, group, spec["unit"], spec["kind"], forms).get(end)
         if chosen is not None:
-            parts.append(chosen)
+            parts.append({**chosen, "sign": 1})
     for chosen in parts:
-        total += chosen["value"]
+        total += chosen["sign"] * chosen["value"]
+        if chosen["tag"] in rule.get("flag_tags", {}):
+            flags.append(rule["flag_tags"][chosen["tag"]])
         period_days = period_days or chosen.get("period_days")
         flags.extend(f for f in chosen["flags"] if f not in flags)
     return {"item": item, "period_end": end, "period_days": period_days, "value": total,
             "unit": spec["unit"], "status": "constructed",
-            "source": {"parts": [{"tag": c["tag"], "value": c["value"], "accession": c["accession"]} for c in parts]},
+            "source": {"parts": [{"tag": c["tag"], "value": c["value"], "sign": c["sign"], "accession": c["accession"]} for c in parts]},
             "flags": flags}
 
 
@@ -107,6 +109,20 @@ def _adjust_for_splits(facts: list[dict]) -> None:
                     f["flags"].append("split_adjusted")
 
 
+def _cover_shares(records: list[dict], tag: str | None) -> dict | None:
+    """The newest cover-page share count (10-K or 10-Q). It is dated after the period end and is the most
+    current count for per-share values. Several values for the same date and filing are share classes."""
+    hits = [r for r in records if tag and r["concept"] == tag and r["unit"] == "shares" and r["form"] in ANNUAL_FORMS | INTERIM_FORMS]
+    if not hits:
+        return None
+    newest = max(hits, key=lambda r: (r["end"], r["filed"]))
+    same = [r for r in hits if r["end"] == newest["end"] and r["accession"] == newest["accession"]]
+    values = {r["value"] for r in same}  # identical values are one fact listed twice
+    return {"value": sum(values), "date": newest["end"],
+            "source": {"tag": tag, "form": newest["form"], "accession": newest["accession"], "filed": newest["filed"]},
+            "flags": ["summed_classes"] if len(values) > 1 else []}
+
+
 def build_facts(records: list[dict], mapping: dict, company: dict, years: int,
                 extracted_at: str, edgartools_version: str) -> dict:
     periods = _periods(records, mapping, years)
@@ -126,4 +142,5 @@ def build_facts(records: list[dict], mapping: dict, company: dict, years: int,
             "extracted_at": extracted_at, "edgartools_version": edgartools_version,
             "periods": periods, "history_years": len(periods),
             "interim": _interim(records, mapping, periods[-1] if periods else None),
+            "cover_shares": _cover_shares(records, mapping.get("cover_shares_tag")),
             "facts": facts}

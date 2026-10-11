@@ -46,3 +46,12 @@ test('the CLI rejects an adjustment for a missing item or an unknown period', ()
   assert.equal(run({ item: 'revenue', end: '2025-12-31' }), 0);
   assert.equal(run({ item: 'sbc', end: '2025-12-31' }), 0); // ZERO_IF_MISSING items may be adjusted
 });
+
+test('per-share values use the newest share count, including the cover page', () => {
+  const base = makeFacts({ revenue: [100], net_income: [10], shares_outstanding: [null], cash_sti: [5], long_term_debt: [0] }, { ends: ['2025-12-31'] });
+  const cover = { value: 20, date: '2026-03-10', source: { tag: 'dei:EntityCommonStockSharesOutstanding', form: '10-K', accession: 'C', filed: '2026-03-20' }, flags: [] };
+  const out = computeAll({ ...base, history_years: 1, interim: null, cover_shares: cover }, { policy, adjustments: none, price: { value: 10, date: '2026-10-09' } });
+  const mcap = at(out, 'market-cap');
+  assert.equal(mcap.value, 200);
+  assert.equal(mcap.inputs.find((i) => i.name === 'shares_outstanding').item, 'cover_shares_outstanding');
+});

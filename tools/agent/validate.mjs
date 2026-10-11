@@ -63,7 +63,8 @@ export function validateAnalysis(analysis, { facts, metrics, cards, policy = nul
         else textFacts.push(f);
         continue;
       }
-      const ref = [...facts.facts, ...(facts.interim?.facts || [])].find((x) => x.item === f.item && x.period_end === f.period_end);
+      const cover = facts.cover_shares ? [{ item: 'cover_shares_outstanding', period_end: facts.cover_shares.date, value: facts.cover_shares.value }] : [];
+      const ref = [...facts.facts, ...(facts.interim?.facts || []), ...cover].find((x) => x.item === f.item && x.period_end === f.period_end);
       if (!ref) errors.push(`step ${s.n}: fact ${f.item} ${f.period_end} is not in facts.json`);
       else if (!same(f.value, ref.value)) errors.push(`step ${s.n}: fact ${f.item} ${f.period_end} = ${f.value}, facts.json has ${ref.value}`);
     }
