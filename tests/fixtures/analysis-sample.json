@@ -1,0 +1,24 @@
+{
+  "schema_version": 1, "ticker": "SMPL", "company": "Sample Corp", "cik": "0000000001",
+  "analysis_date": "2026-10-11", "data_as_of": "2026-02-15",
+  "price": { "value": 50, "date": "2026-10-10" }, "runner": "claude-code",
+  "result": { "status": "meets_rules", "stopped_at_step": null, "quality_score": 4, "required_margin_of_safety": 0.25, "margin_of_safety": 0.31,
+              "summary": "Test summary <img src=x onerror=\"window.__xss=1\"> stays text." },
+  "steps": [
+    { "n": 0, "title": "Model fit", "facts": [{ "item": "revenue", "period_end": "2025-12-31", "value": 1000000000, "source": "10-K 0000000001-26-000001" }],
+      "calculations": [], "score": null, "reason": "Retail company; the framework applies.", "drivers": [], "open_questions": [], "cards": [] },
+    { "n": 1, "title": "Stop rules", "facts": [], "calculations": [], "score": 4, "reason": "No stop rule fails.", "drivers": [], "open_questions": [], "cards": ["interest-coverage"] },
+    { "n": 2, "title": "Business quality", "facts": [],
+      "calculations": [{ "metric": "operating-margin", "period_end": "2025-12-31", "value": 0.125, "explanation": "Stable margin." }],
+      "score": 4, "reason": "Stable 12.5% operating margin.", "drivers": [{ "text": "Margin is stable", "reversing_change": "Margin falls below 8%" }],
+      "open_questions": ["Is the margin cyclical?"], "cards": ["operating-margin"] },
+    { "n": 3, "title": "Management", "facts": [], "calculations": [], "score": 3, "reason": "No data on buyback prices.", "drivers": [], "open_questions": [], "cards": ["capital-allocation"] },
+    { "n": 4, "title": "Value", "facts": [], "calculations": [], "score": null, "reason": "See margin of safety.", "drivers": [], "open_questions": [], "cards": ["reverse-dcf"] },
+    { "n": 5, "title": "Decision", "facts": [],
+      "calculations": [{ "metric": "margin-of-safety-base", "period_end": "2025-12-31", "value": 0.31, "explanation": "Above the 25% requirement." }],
+      "score": null, "reason": "Margin of safety 31% is above the required 25%.", "drivers": [{ "text": "Margin of safety", "reversing_change": "Price above $69" }],
+      "open_questions": [], "cards": ["margin-of-safety"] },
+    { "n": 6, "title": "Commitment", "facts": [], "calculations": [], "score": null, "reason": "Draft invalidation conditions below.", "drivers": [], "open_questions": ["Operating margin below 8% for two years?"], "cards": ["invalidation"] }
+  ],
+  "adjustments": []
+}

@@ -1,0 +1,65 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "ticker", "company", "cik", "analysis_date", "data_as_of", "price", "runner", "result", "steps", "adjustments"],
+  "properties": {
+    "schema_version": { "type": "integer", "enum": [1] },
+    "ticker": { "type": "string" },
+    "company": { "type": "string" },
+    "cik": { "type": "string" },
+    "analysis_date": { "type": "string" },
+    "data_as_of": { "type": "string" },
+    "price": {
+      "type": "object", "additionalProperties": false, "required": ["value", "date"],
+      "properties": { "value": { "type": ["number", "null"] }, "date": { "type": ["string", "null"] } }
+    },
+    "runner": { "type": "string", "enum": ["claude-code", "codex", "other"] },
+    "result": {
+      "type": "object", "additionalProperties": false,
+      "required": ["status", "stopped_at_step", "quality_score", "required_margin_of_safety", "margin_of_safety", "summary"],
+      "properties": {
+        "status": { "type": "string", "enum": ["meets_rules", "does_not_meet_rules", "stopped"] },
+        "stopped_at_step": { "type": ["integer", "null"] },
+        "quality_score": { "type": ["integer", "null"] },
+        "required_margin_of_safety": { "type": ["number", "null"] },
+        "margin_of_safety": { "type": ["number", "null"] },
+        "summary": { "type": "string" }
+      }
+    },
+    "steps": { "type": "array", "items": { "$ref": "#/definitions/step" } },
+    "adjustments": { "type": "array", "items": { "$ref": "#/definitions/adjustment" } }
+  },
+  "definitions": {
+    "step": {
+      "type": "object", "additionalProperties": false,
+      "required": ["n", "title", "facts", "calculations", "score", "reason", "drivers", "open_questions", "cards"],
+      "properties": {
+        "n": { "type": "integer" },
+        "title": { "type": "string" },
+        "facts": { "type": "array", "items": { "$ref": "#/definitions/fact" } },
+        "calculations": { "type": "array", "items": { "$ref": "#/definitions/calculation" } },
+        "score": { "type": ["integer", "null"] },
+        "reason": { "type": "string" },
+        "drivers": { "type": "array", "items": { "$ref": "#/definitions/driver" } },
+        "open_questions": { "type": "array", "items": { "type": "string" } },
+        "cards": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "fact": {
+      "type": "object", "additionalProperties": false, "required": ["item", "period_end", "value", "source"],
+      "properties": { "item": { "type": "string" }, "period_end": { "type": "string" }, "value": { "type": ["number", "null"] }, "source": { "type": "string" } }
+    },
+    "calculation": {
+      "type": "object", "additionalProperties": false, "required": ["metric", "period_end", "value", "explanation"],
+      "properties": { "metric": { "type": "string" }, "period_end": { "type": "string" }, "value": { "type": ["number", "null"] }, "explanation": { "type": "string" } }
+    },
+    "driver": {
+      "type": "object", "additionalProperties": false, "required": ["text", "reversing_change"],
+      "properties": { "text": { "type": "string" }, "reversing_change": { "type": "string" } }
+    },
+    "adjustment": {
+      "type": "object", "additionalProperties": false, "required": ["item", "period_end", "delta", "reason", "source"],
+      "properties": { "item": { "type": "string" }, "period_end": { "type": "string" }, "delta": { "type": "number" }, "reason": { "type": "string" }, "source": { "type": "string" } }
+    }
+  }
+}

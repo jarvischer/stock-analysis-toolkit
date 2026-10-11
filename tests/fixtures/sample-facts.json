@@ -1,0 +1,7 @@
+{ "schema_version": 1,
+  "company": { "ticker": "SMPL", "name": "Sample Corp", "cik": "0000000001", "sic": 5331, "sic_description": "Retail", "fiscal_year_end": "1231", "model_fit": "suitable" },
+  "extracted_at": "2026-10-11", "edgartools_version": "5.61.1", "periods": ["2025-12-31"],
+  "facts": [
+    { "item": "revenue", "period_end": "2025-12-31", "period_days": 365, "value": 1000000000, "unit": "USD", "status": "reported",
+      "source": { "tag": "us-gaap:Revenues", "form": "10-K", "accession": "0000000001-26-000001", "filed": "2026-02-15" }, "flags": [] }
+  ] }

@@ -1,0 +1,6 @@
+{ "schema_version": 1, "company": { "ticker": "SMPL" }, "periods": ["2025-12-31"], "price": { "value": 50, "date": "2026-10-10" },
+  "assumptions": {}, "adjustments": { "items": [], "assumptions": {} }, "facts_extracted_at": "2026-10-11",
+  "metrics": [
+    { "key": "operating-margin", "card": "operating-margin", "period_end": "2025-12-31", "value": 0.125, "status": "ok", "formula": "Operating income / Revenue", "inputs": [] },
+    { "key": "margin-of-safety-base", "card": "margin-of-safety", "period_end": "2025-12-31", "value": 0.31, "status": "ok", "formula": "(DCF value base − Price) / DCF value base", "inputs": [] }
+  ] }

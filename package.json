@@ -15,7 +15,8 @@
     "url": "git+https://github.com/jarvischer/stock-analysis-toolkit.git"
   },
   "devDependencies": {
-    "@playwright/test": "^1.64.0"
+    "@playwright/test": "^1.64.0",
+    "ajv": "8.18.0"
   },
   "private": true,
   "engines": {
