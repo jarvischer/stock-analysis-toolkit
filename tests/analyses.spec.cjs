@@ -30,3 +30,22 @@ test('a wrong file gives a clear message', async ({ page }) => {
   await expect(page.locator('#toast')).toContainText('This file is not an analysis');
   await expect(page.locator('[data-analysis-empty]')).toBeVisible();
 });
+
+test('a file with malformed steps is rejected and not stored', async ({ page }) => {
+  await page.goto('/?lang=en#tool-analyses');
+  const bad = JSON.stringify({ steps: [{}], result: { status: 'meets_rules' } });
+  await page.locator('[data-analysis-file]').setInputFiles({ name: 'bad.json', mimeType: 'application/json', buffer: Buffer.from(bad) });
+  await expect(page.locator('#toast')).toContainText('This file is not an analysis');
+  expect(await page.evaluate(() => localStorage.getItem('sat:analysis:last'))).toBeNull();
+  await page.reload();
+  await expect(page.locator('[data-analysis-pick]')).toBeVisible();
+});
+
+test('a damaged stored analysis is discarded and the page still works', async ({ page }) => {
+  await page.goto('/?lang=en#tool-analyses');
+  await page.evaluate(() => localStorage.setItem('sat:analysis:last', JSON.stringify({ steps: [{}], result: { status: 'x' } })));
+  await page.reload();
+  await expect(page.locator('#view')).not.toContainText('Error rendering');
+  await expect(page.locator('[data-analysis-empty]')).toBeVisible();
+  expect(await page.evaluate(() => localStorage.getItem('sat:analysis:last'))).toBeNull();
+});

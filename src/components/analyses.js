@@ -6,7 +6,9 @@
   const LEVEL = { high: 'High evidence', medium: 'Medium evidence', low: 'Low evidence' };
   const pct = (v) => (v == null ? '—' : SAT.fmt.pct(v));
   const num = (v) => (v == null ? '—' : Math.abs(v) >= 1000 ? SAT.fmt.money(v) : String(Math.round(v * 10000) / 10000));
-  const isAnalysis = (a) => a && typeof a === 'object' && Array.isArray(a.steps) && a.result && typeof a.result.status === 'string';
+  const isStep = (s) => s && typeof s === 'object' && ['facts', 'calculations', 'drivers', 'open_questions', 'cards'].every((k) => Array.isArray(s[k]));
+  const isAnalysis = (a) => a && typeof a === 'object' && Array.isArray(a.steps) && a.steps.every(isStep) && a.result && typeof a.result.status === 'string';
+  const forget = () => { try { localStorage.removeItem('sat:' + KEY); } catch (e) { /* storage unavailable */ } };
 
   function secUrl(cik, source) {
     const m = /(\d{10}-\d{2}-\d{6})/.exec(source || '');
@@ -56,6 +58,16 @@
     view.querySelector('[data-analysis-empty]').hidden = true;
   }
 
+  // Show an analysis; a file that still fails to render leaves the page usable.
+  function show(el, a) {
+    try { render(el, a); return true; } catch (e) {
+      console.error(e);
+      el.querySelector('[data-analysis-out]').innerHTML = '';
+      el.querySelector('[data-analysis-empty]').hidden = false;
+      return false;
+    }
+  }
+
   SAT.register({
     id: 'tool-analyses', group: 'tools', title: 'Analyses',
     render(el) {
@@ -70,12 +82,12 @@
         const f = input.files[0]; if (!f) return;
         f.text().then((t) => {
           let a; try { a = JSON.parse(t); } catch (e) { a = null; }
-          if (!isAnalysis(a)) { SAT.toast('This file is not an analysis'); return; }
-          SAT.store.set(KEY, a); render(el, a); SAT.toast('Analysis imported');
+          if (!isAnalysis(a) || !show(el, a)) { SAT.toast('This file is not an analysis'); return; }
+          SAT.store.set(KEY, a); SAT.toast('Analysis imported');
         });
       });
       const saved = SAT.store.get(KEY, null);
-      if (isAnalysis(saved)) render(el, saved);
+      if (saved != null && !(isAnalysis(saved) && show(el, saved))) forget();
     },
   });
 })();
