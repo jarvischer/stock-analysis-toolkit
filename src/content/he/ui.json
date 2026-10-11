@@ -1040,5 +1040,11 @@
   "Open questions": "שאלות פתוחות",
   "Related cards": "כרטיסים קשורים",
   "This file is not an analysis": "הקובץ אינו ניתוח",
-  "Analysis imported": "הניתוח יובא"
+  "Analysis imported": "הניתוח יובא",
+  "Evidence level": "רמת ראיות",
+  "High evidence": "ראיות חזקות",
+  "Medium evidence": "ראיות בינוניות",
+  "Low evidence": "ראיות חלשות",
+  "{years} years of data": "{years} שנות נתונים",
+  "(from report text)": "(מתוך טקסט הדוח)"
 }

@@ -1,5 +1,5 @@
 // sat validate analyses/<T>-<date>.json — checks an agent analysis against the schema, facts.json and metrics.json.
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { parseArgs } from 'node:util';
 import Ajv from 'ajv';
@@ -23,10 +23,18 @@ function knownNumbers(facts, metrics) {
   return out;
 }
 
+const SECTION_FILE = /^[a-z0-9_]+\.txt$/;
+const norm = (t) => t.replace(/\s+/g, ' ').trim();
+function quoteHasNumber(quote, value) {
+  if (value == null) return false;
+  const numbers = [...quote.replace(/,/g, '').matchAll(/\d+(?:\.\d+)?/g)].map((m) => Number(m[0]));
+  return numbers.some((n) => [1, 1e3, 1e6, 1e9].some((s) => Math.abs(n * s - Math.abs(value)) <= 0.005 * Math.max(1, Math.abs(value))));
+}
+
 function textNumberWarnings(analysis, known) {
   const warnings = [];
   for (const [path, text] of strings(analysis, '', [])) {
-    if (/(^|\.)(source|period_end|analysis_date|data_as_of|date|cik|ticker)$/.test(path)) continue;
+    if (/(^|\.)(source|period_end|analysis_date|data_as_of|date|cik|ticker|quote|file)$/.test(path)) continue;
     for (const m of text.matchAll(/(\d+(?:\.\d+)?)%|\$(\d+(?:\.\d+)?)\s?([BMK])?/g)) {
       const x = m[1] != null ? Number(m[1]) / 100 : Number(m[2]) * ({ B: 1e9, M: 1e6, K: 1e3 }[m[3]] || 1);
       const tol = m[1] != null ? 0.0006 : 0.006 * Math.abs(x);
@@ -36,7 +44,7 @@ function textNumberWarnings(analysis, known) {
   return warnings;
 }
 
-export function validateAnalysis(analysis, { facts, metrics, cards }) {
+export function validateAnalysis(analysis, { facts, metrics, cards, policy = null, readSection = () => null }) {
   const errors = [];
   if (!check(analysis)) return { errors: check.errors.map((e) => `schema ${e.instancePath || '/'} ${e.message} ${JSON.stringify(e.params)}`), warnings: [] };
   if (analysis.steps.map((s) => s.n).join(',') !== '0,1,2,3,4,5,6') errors.push('steps 0–6 must each appear once, in order');
@@ -44,7 +52,15 @@ export function validateAnalysis(analysis, { facts, metrics, cards }) {
     if (s.score != null && (s.score < 1 || s.score > 5)) errors.push(`step ${s.n}: score must be 1–5 or null`);
     for (const c of s.cards) if (!cards.has(c)) errors.push(`step ${s.n}: unknown card "${c}"`);
     for (const f of s.facts) {
-      const ref = facts.facts.find((x) => x.item === f.item && x.period_end === f.period_end);
+      if (f.file != null) {
+        if (!SECTION_FILE.test(f.file)) { errors.push(`step ${s.n}: text fact file "${f.file}" must be a section file name`); continue; }
+        const text = readSection(f.file);
+        if (text == null) errors.push(`step ${s.n}: text fact file ${f.file} does not exist`);
+        else if (!f.quote || !norm(text).includes(norm(f.quote))) errors.push(`step ${s.n}: text fact ${f.item}: quote not found in ${f.file}`);
+        else if (!quoteHasNumber(f.quote, f.value)) errors.push(`step ${s.n}: text fact ${f.item}: the quote does not contain the number ${f.value}`);
+        continue;
+      }
+      const ref = [...facts.facts, ...(facts.interim?.facts || [])].find((x) => x.item === f.item && x.period_end === f.period_end);
       if (!ref) errors.push(`step ${s.n}: fact ${f.item} ${f.period_end} is not in facts.json`);
       else if (!same(f.value, ref.value)) errors.push(`step ${s.n}: fact ${f.item} ${f.period_end} = ${f.value}, facts.json has ${ref.value}`);
     }
@@ -56,6 +72,15 @@ export function validateAnalysis(analysis, { facts, metrics, cards }) {
   }
   const q = analysis.result.quality_score;
   if (q != null && (q < 1 || q > 5)) errors.push('result.quality_score must be 1–5 or null');
+  const ev = metrics.evidence;
+  if (ev && (analysis.evidence.level !== ev.level || analysis.evidence.history_years !== ev.history_years))
+    errors.push(`evidence must match metrics.json (${ev.history_years} years, ${ev.level})`);
+  if (policy && ev && q != null) {
+    const base = policy.required_margin_of_safety[String(q)];
+    const expected = base == null ? null : base + ev.margin_add;
+    if (!same(analysis.result.required_margin_of_safety, expected))
+      errors.push(`result.required_margin_of_safety must be ${expected} (policy for score ${q} + evidence add-on ${ev.margin_add})`);
+  }
   if (analysis.result.status === 'stopped' && analysis.result.stopped_at_step == null) errors.push('result.stopped_at_step is required when status is "stopped"');
   for (const [path, text] of strings(analysis, '', [])) {
     const m = FORBIDDEN.exec(text);
@@ -73,6 +98,8 @@ export function main(argv) {
     facts: JSON.parse(readFileSync(join(dir, 'facts.json'), 'utf8')),
     metrics: JSON.parse(readFileSync(join(dir, 'metrics.json'), 'utf8')),
     cards: new Set(Object.keys(JSON.parse(readFileSync('src/content/en/concepts.json', 'utf8')))),
+    policy: JSON.parse(readFileSync('agent/policy.json', 'utf8')),
+    readSection: (name) => { const p = join(dir, 'sections', name); return SECTION_FILE.test(name) && existsSync(p) ? readFileSync(p, 'utf8') : null; },
   });
   for (const w of r.warnings) console.log('warning: ' + w);
   for (const e of r.errors) console.log('error: ' + e);

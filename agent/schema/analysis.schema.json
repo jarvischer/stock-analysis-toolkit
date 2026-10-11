@@ -1,7 +1,7 @@
 {
   "type": "object",
   "additionalProperties": false,
-  "required": ["schema_version", "ticker", "company", "cik", "analysis_date", "data_as_of", "price", "runner", "result", "steps", "adjustments"],
+  "required": ["schema_version", "ticker", "company", "cik", "analysis_date", "data_as_of", "price", "runner", "evidence", "result", "steps", "adjustments"],
   "properties": {
     "schema_version": { "type": "integer", "enum": [1] },
     "ticker": { "type": "string" },
@@ -14,6 +14,10 @@
       "properties": { "value": { "type": ["number", "null"] }, "date": { "type": ["string", "null"] } }
     },
     "runner": { "type": "string", "enum": ["claude-code", "codex", "other"] },
+    "evidence": {
+      "type": "object", "additionalProperties": false, "required": ["history_years", "level"],
+      "properties": { "history_years": { "type": "integer" }, "level": { "type": "string", "enum": ["high", "medium", "low"] } }
+    },
     "result": {
       "type": "object", "additionalProperties": false,
       "required": ["status", "stopped_at_step", "quality_score", "required_margin_of_safety", "margin_of_safety", "summary"],
@@ -46,12 +50,13 @@
       }
     },
     "fact": {
-      "type": "object", "additionalProperties": false, "required": ["item", "period_end", "value", "source"],
-      "properties": { "item": { "type": "string" }, "period_end": { "type": "string" }, "value": { "type": ["number", "null"] }, "source": { "type": "string" } }
+      "type": "object", "additionalProperties": false, "required": ["item", "period_end", "value", "source", "quote", "file"],
+      "properties": { "item": { "type": "string" }, "period_end": { "type": ["string", "null"] }, "value": { "type": ["number", "null"] },
+                      "source": { "type": "string" }, "quote": { "type": ["string", "null"] }, "file": { "type": ["string", "null"] } }
     },
     "calculation": {
       "type": "object", "additionalProperties": false, "required": ["metric", "period_end", "value", "explanation"],
-      "properties": { "metric": { "type": "string" }, "period_end": { "type": "string" }, "value": { "type": ["number", "null"] }, "explanation": { "type": "string" } }
+      "properties": { "metric": { "type": "string" }, "period_end": { "type": ["string", "null"] }, "value": { "type": ["number", "null"] }, "explanation": { "type": "string" } }
     },
     "driver": {
       "type": "object", "additionalProperties": false, "required": ["text", "reversing_change"],

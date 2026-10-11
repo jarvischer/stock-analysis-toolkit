@@ -3,6 +3,7 @@
   'use strict';
   const E = SAT.esc, KEY = 'analysis:last';
   const STATUS = { meets_rules: 'Meets your rules', does_not_meet_rules: 'Does not meet your rules', stopped: 'Stopped' };
+  const LEVEL = { high: 'High evidence', medium: 'Medium evidence', low: 'Low evidence' };
   const pct = (v) => (v == null ? '—' : SAT.fmt.pct(v));
   const num = (v) => (v == null ? '—' : Math.abs(v) >= 1000 ? SAT.fmt.money(v) : String(Math.round(v * 10000) / 10000));
   const isAnalysis = (a) => a && typeof a === 'object' && Array.isArray(a.steps) && a.result && typeof a.result.status === 'string';
@@ -18,7 +19,8 @@
   function step(a, s) {
     const facts = s.facts.map((f) => {
       const url = secUrl(a.cik, f.source);
-      return `<li><code>${E(f.item)}</code> ${E(f.period_end)}: <b>${E(num(f.value))}</b> — ${url ? `<a href="${E(url)}" target="_blank" rel="noopener">${E(f.source)}</a>` : E(f.source)}</li>`;
+      const text = f.file ? ` <span class="muted">(from report text)</span><br><q data-no-translate>${E(f.quote)}</q>` : '';
+      return `<li data-fact${f.file ? ' data-text-fact' : ''}><code>${E(f.item)}</code> ${E(f.period_end || '')}: <b>${E(num(f.value))}</b> — ${url ? `<a href="${E(url)}" target="_blank" rel="noopener">${E(f.source)}</a>` : E(f.source)}${text}</li>`;
     }).join('');
     const calcs = s.calculations.map((c) => `<li data-calc><code>${E(c.metric)}</code> ${E(c.period_end)}: <b>${E(num(c.value))}</b> — ${E(c.explanation)}</li>`).join('');
     const drivers = s.drivers.map((d) => `<li>${E(d.text)} <span class="muted">— <span data-label>Would change if</span>: ${E(d.reversing_change)}</span></li>`).join('');
@@ -45,6 +47,8 @@
           <div class="metric"><div class="ml">Margin of safety</div><div class="mv">${E(pct(r.margin_of_safety))}</div></div>
           <div class="metric"><div class="ml">Required margin of safety</div><div class="mv">${E(pct(r.required_margin_of_safety))}</div></div>
           <div class="metric"><div class="ml">Data as of</div><div class="mv" data-no-translate>${E(a.data_as_of)}</div></div>
+          <div class="metric"><div class="ml">Evidence level</div><div class="mv" data-evidence="${E(a.evidence?.level || '')}">${E(LEVEL[a.evidence?.level] || '—')}</div>
+            <div class="muted">${E(a.evidence?.history_years ?? '—')} years of data</div></div>
         </div>
         <p data-analysis-summary data-no-translate>${E(r.summary)}</p>
       </section>

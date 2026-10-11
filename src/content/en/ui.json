@@ -1040,5 +1040,11 @@
   "Open questions": "Open questions",
   "Related cards": "Related cards",
   "This file is not an analysis": "This file is not an analysis",
-  "Analysis imported": "Analysis imported"
+  "Analysis imported": "Analysis imported",
+  "Evidence level": "Evidence level",
+  "High evidence": "High evidence",
+  "Medium evidence": "Medium evidence",
+  "Low evidence": "Low evidence",
+  "{years} years of data": "{years} years of data",
+  "(from report text)": "(from report text)"
 }
