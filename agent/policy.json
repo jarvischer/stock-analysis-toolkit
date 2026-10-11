@@ -1,0 +1,18 @@
+{
+  "required_margin_of_safety": { "5": 0.20, "4": 0.25, "3": 0.40, "2": null, "1": null },
+  "max_debt_to_ebitda": 3.0,
+  "min_interest_coverage": 5,
+  "min_roic_years_above_wacc": 7,
+  "lookback_years": 10,
+  "valuation": {
+    "wacc": 0.09,
+    "normal_pe": 15,
+    "maintenance_capex_ratio": 1.0,
+    "dcf": {
+      "years": 10,
+      "growth_cap": 0.10,
+      "growth_delta": { "bear": -0.05, "bull": 0.03 },
+      "terminal_growth": { "bear": 0.02, "base": 0.025, "bull": 0.03 }
+    }
+  }
+}
