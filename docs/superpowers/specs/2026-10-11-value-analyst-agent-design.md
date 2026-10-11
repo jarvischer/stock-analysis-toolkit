@@ -66,7 +66,7 @@ sat calc COST [--adjust adj.json]     → data/COST/metrics.json
 sat validate analyses/COST-….json     → format and rule checks of the agent output
 ```
 
-`data/` is a local cache and is not committed. `analyses/` is committed only when the user decides.
+`data/` and `analyses/` are in `.gitignore`. The user can add an analysis to git on purpose (`git add -f`).
 
 ### Runners
 
@@ -113,7 +113,7 @@ sat validate analyses/COST-….json     → format and rule checks of the agent 
 ```json
 {
   "item": "capex", "period_end": "2026-08-30", "period_days": 364,
-  "value": 5100000000, "unit": "USD", "status": "reported",
+  "value": 6435000000, "unit": "USD", "status": "reported",
   "source": { "tag": "us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
               "form": "10-K", "accession": "0000909832-26-000093", "filed": "2026-10-07" },
   "flags": []
@@ -146,9 +146,12 @@ Each metric value records its inputs (item, period) and its formula, so the user
 Some metrics need judgment (maintenance CapEx, normal earnings, one-time items, leases, invested capital). Stage 2 calculates a default with a stated definition. The agent can write `adjustments.json`:
 
 ```json
-[{ "item": "operating_income", "period_end": "2023-12-31", "delta": 1200000000,
-   "reason": "Add back the legal settlement charge", "source": "10-K Item 8, Note 14" }]
+{ "items": [{ "item": "operating_income", "period_end": "2023-12-31", "delta": 1200000000,
+              "reason": "Add back the legal settlement charge", "source": "10-K Item 8, Note 14" }],
+  "assumptions": { "wacc": 0.095, "maintenance_capex_ratio": 0.8 } }
 ```
+
+`items` change reported values (each needs a reason and a source). `assumptions` replace values from `policy.json` → `valuation` for this company.
 
 `sat calc --adjust` calculates again. `metrics.json` then has both the default and the adjusted value.
 
@@ -191,8 +194,13 @@ If a stop rule fails, the agent completes the remaining steps but marks the resu
 ```json
 { "required_margin_of_safety": { "5": 0.20, "4": 0.25, "3": 0.40, "2": null, "1": null },
   "max_debt_to_ebitda": 3.0, "min_interest_coverage": 5,
-  "min_roic_years_above_wacc": 7, "lookback_years": 10 }
+  "min_roic_years_above_wacc": 7, "lookback_years": 10,
+  "valuation": { "wacc": 0.09, "normal_pe": 15, "maintenance_capex_ratio": 1.0,
+    "dcf": { "years": 10, "growth_cap": 0.10, "growth_delta": { "bear": -0.05, "bull": 0.03 },
+             "terminal_growth": { "bear": 0.02, "base": 0.025, "bull": 0.03 } } } }
 ```
+
+DCF defaults: FCFF₀ = average FCFF of the last 3 years; base growth = min(5-year revenue CAGR, `growth_cap`).
 
 `null` means "does not qualify at any price". The values are suggestions; the user sets them.
 
@@ -225,7 +233,7 @@ A new page "Analyses" (group Tools):
 |---|---|
 | 1 Extract | Saved EDGAR responses for 5 companies (offline). 10 values for each company checked by hand against the 10-K. Tests for each rule in section 3. |
 | 2 Calculate | Unit tests for each metric (same style as `tests/finance.test.js`); one company checked fully against hand calculations. |
-| 3 Interpret | `sat validate`: schema; each number in the text is in `metrics.json`; each fact has a source; no "buy"/"sell". Test set: COST (high quality), AAL (high debt), INTC (possible value trap), SNOW (high SBC, convertible debt), JPM (bank, model fit). Results reviewed with the user. |
+| 3 Interpret | `sat validate`: schema (errors); each fact and each calculation matches `facts.json` / `metrics.json` (errors); card IDs exist (errors); no "buy"/"sell" (errors); numbers in free text that match no fact or metric (warnings). Test set: COST (high quality), AAL (high debt), INTC (possible value trap), SNOW (high SBC, convertible debt), JPM (bank, model fit). Results reviewed with the user. |
 | App | Playwright test that imports a fixture analysis in both languages. |
 
 ## 9. Prior art reviewed
@@ -246,7 +254,7 @@ A new page "Analyses" (group Tools):
 - Hebrew analysis text.
 - Peer comparison.
 
-## 11. Decisions to confirm
+## 11. Decisions
 
-- Default values in `policy.json`.
-- Whether `analyses/` files are committed to the public repository (they would be public on GitHub).
+- 2026-10-11: the user accepted the default values in `policy.json` and the design.
+- 2026-10-11: `analyses/` is not committed by default.
