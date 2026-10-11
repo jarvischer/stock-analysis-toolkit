@@ -22,7 +22,7 @@ def _missing(item: str, end: str, spec: dict) -> dict:
 
 
 def _reported(item: str, end: str, unit: str, chosen: dict) -> dict:
-    fact = {"item": item, "period_end": end, "period_days": chosen.get("period_days"),
+    fact = {"item": item, "period_end": end, "period_start": chosen.get("period_start"), "period_days": chosen.get("period_days"),
             "value": chosen["value"], "unit": unit, "status": "reported",
             "source": {"tag": chosen["tag"], "form": chosen["form"],
                        "accession": chosen["accession"], "filed": chosen["filed"]},
@@ -135,6 +135,18 @@ def build_facts(records: list[dict], mapping: dict, company: dict, years: int,
             else:
                 facts.append(_constructed(item, end, spec, records) or _missing(item, end, spec))
     _adjust_for_splits(facts)
+    from .ttm import build_ttm
+    ttm = build_ttm(records, mapping, facts, periods[-1] if periods else None)
+    if ttm:
+        ttm["balance_sheets"] = []
+        for item, spec in mapping["items"].items():
+            if spec["kind"] != "instant":
+                continue
+            series = annual_series(records, spec["tags"], spec["unit"], "instant", ANNUAL_FORMS | INTERIM_FORMS)
+            for end in (ttm["period_end"], ttm["prior_ytd_end"]):
+                if end:
+                    ttm["balance_sheets"].append(_reported(item, end, spec["unit"], series[end]) if end in series
+                                               else _constructed(item, end, spec, records, ANNUAL_FORMS | INTERIM_FORMS) or _missing(item, end, spec))
     sic = int(company["sic"]) if company.get("sic") not in (None, "") else None
     return {"schema_version": 1,
             "company": {**company, "sic": sic,
@@ -143,4 +155,5 @@ def build_facts(records: list[dict], mapping: dict, company: dict, years: int,
             "periods": periods, "history_years": len(periods),
             "interim": _interim(records, mapping, periods[-1] if periods else None),
             "cover_shares": _cover_shares(records, mapping.get("cover_shares_tag")),
+            "ttm": ttm,
             "facts": facts}

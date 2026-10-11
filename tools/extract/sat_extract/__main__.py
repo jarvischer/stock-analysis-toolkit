@@ -32,8 +32,7 @@ def main(argv: list[str] | None = None) -> int:
     if args.save_records:
         (out / "records.json").write_text(json.dumps(records) + "\n")
     sections = write_sections(handle, out / "sections")
-    if facts["history_years"] < 3:
-        sections += write_short_history_sections(handle, out / "sections")
+    sections += write_short_history_sections(handle, out / "sections", include_prospectus=facts["history_years"] < 3)
     missing = sum(1 for f in facts["facts"] if f["status"] == "not_available")
     print(f"{company['name']} ({company['ticker']}), model fit: {facts['company']['model_fit']}, "
           f"history: {facts['history_years']} years"

@@ -1,6 +1,7 @@
 // Price-based metrics, FCFF DCF scenarios, reverse DCF and margin of safety.
 import { createRequire } from 'node:module';
 import { calc, debtFact } from './metrics.mjs';
+import { shareAssumption } from './share-assumption.mjs';
 const SAT = createRequire(import.meta.url)('../../src/finance/core.js');
 const F = SAT.fin;
 
@@ -45,7 +46,9 @@ export function valuationMetrics(facts, T, A, perYear, multi, price) {
   // Shares: the newest count, from the balance sheet or the cover page (dated after the period end).
   const bsShares = T.get('shares_outstanding', bs), cs = facts.cover_shares;
   const coverShares = cs && Number.isFinite(cs.value) ? { item: 'cover_shares_outstanding', period_end: cs.date, value: cs.value } : null;
-  const shares = coverShares && (!bsShares || !bs || cs.date > bs) ? coverShares : bsShares;
+  const reportedShares = coverShares && (!bsShares || !bs || cs.date > bs) ? coverShares : bsShares;
+  const assumedShares = shareAssumption(A.shares_outstanding);
+  const shares = assumedShares && (!reportedShares || assumedShares.period_end > reportedShares.period_end) ? assumedShares : reportedShares;
   const debt = debtFact(T, bs), cash = T.get('cash_sti', bs);
   const minority = T.get('minority_interest', bs), preferred = T.get('preferred', bs);
   const claims = debt ? { item: 'debt_and_other_claims', period_end: bs, value: debt.value + minority.value + preferred.value } : null;

@@ -1046,5 +1046,22 @@
   "Medium evidence": "ראיות בינוניות",
   "Low evidence": "ראיות חלשות",
   "{years} years of data": "{years} שנות נתונים",
-  "(from report text)": "(מתוך טקסט הדוח)"
+  "(from report text)": "(מתוך טקסט הדוח)",
+  "Valuation comparison": "השוואת הערכות שווי",
+  "These estimates use different assumptions. The conservative policy verdict remains separate.": "אומדנים אלה משתמשים בהנחות שונות. המסקנה לפי המדיניות השמרנית מוצגת בנפרד.",
+  "Model": "מודל",
+  "Value per share": "שווי למניה",
+  "Price / value": "מחיר חלקי שווי",
+  "Value gap versus price": "פער שווי ביחס למחיר",
+  "Value gap uses price as the denominator. Margin of safety uses estimated value. Neither is a predicted return.": "פער השווי מחושב ביחס למחיר. מרווח הביטחון מחושב ביחס לשווי המוערך. אף אחד מהם אינו תחזית תשואה.",
+  "Cash flow starting points": "נקודות מוצא לתזרים",
+  "Basis": "בסיס",
+  "Date": "תאריך",
+  "Conditional required growth": "צמיחה נדרשת בהינתן ההנחות",
+  "Required growth depends on the starting cash flow and model assumptions; it is not an observed market forecast.": "הצמיחה הנדרשת תלויה בתזרים ההתחלתי ובהנחות המודל; זו אינה תחזית שוק נצפית.",
+  "Explicit forward forecasts": "תחזיות פעילות מפורטות",
+  "Reinvestment": "השקעה חוזרת",
+  "Sensitivity analysis": "ניתוח רגישות",
+  "Growth or growth shift": "צמיחה או שינוי בצמיחה",
+  "Operating income": "רווח תפעולי"
 }

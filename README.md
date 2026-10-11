@@ -155,3 +155,5 @@ codex exec "Use the value-analyst skill for COST, price 912.40 on 2026-10-10" --
 The analysis is written to `analyses/` (not committed). Import it in the app on the **Analyses** page. `data/` is a local cache. Edit `agent/policy.json` to set your own rules.
 
 Educational reference. Not investment advice.
+
+Valuation comparisons add matched TTM metrics, explicit tax/maintenance normalization, segment forecasts labeled Value/Growth/GARP/Quality, and sensitivity analysis without changing the conservative policy screen. See [the model contract and output guide](docs/valuation-models.md). Generate an English report with `npm run sat -- compare TICKER --out analyses/TICKER-valuation.md` after calculation.

@@ -1,0 +1,637 @@
+{
+  "items": [],
+  "assumptions": {
+    "normalization": {
+      "tax_rate": {
+        "value": 0.21,
+        "reason": "Illustrative normalized cash-tax estimate for comparison; sustainable company tax rate is not established.",
+        "source": "Analyst assumption, 2026-10-11"
+      },
+      "maintenance_capex": {
+        "method": "depreciation",
+        "reason": "Physical depreciation used as an explicit maintenance proxy, excluding acquisition amortization; replacement spending is not independently verified.",
+        "source": "Analyst proxy using reported physical depreciation"
+      }
+    },
+    "forward_scenarios": [
+      {
+        "id": "illustrative-growth",
+        "style": "growth",
+        "years": 10,
+        "tax_rate": 0.21,
+        "wacc": 0.09,
+        "terminal_growth": 0.025,
+        "terminal_roic": 0.15,
+        "sbc_treatment": "expensed_in_margins",
+        "corporate_costs": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "segments": [
+          {
+            "name": "Semiconductor solutions (including AI)",
+            "base_revenue": {
+              "period_end": "2026-08-02",
+              "components": [
+                {
+                  "item": "segment_revenue_semiconductor",
+                  "period_end": "2025-11-02",
+                  "value": 36858000000,
+                  "source": "10-K 0001730168-25-000121",
+                  "sign": 1
+                },
+                {
+                  "item": "segment_revenue_semiconductor",
+                  "period_end": "2026-08-02",
+                  "value": 48363000000,
+                  "source": "10-Q 0001730168-26-000080",
+                  "sign": 1
+                },
+                {
+                  "item": "segment_revenue_semiconductor",
+                  "period_end": "2025-08-03",
+                  "value": 25786000000,
+                  "source": "10-Q 0001730168-26-000080",
+                  "sign": -1
+                }
+              ]
+            },
+            "base_working_capital_ratio": 0.18,
+            "growth": [
+              0.3,
+              0.25,
+              0.2,
+              0.15,
+              0.12,
+              0.1,
+              0.08,
+              0.06,
+              0.05,
+              0.04
+            ],
+            "operating_margin": [
+              0.4,
+              0.4,
+              0.4,
+              0.4,
+              0.4,
+              0.4,
+              0.4,
+              0.4,
+              0.4,
+              0.4
+            ],
+            "depreciation_to_revenue": [
+              0.015,
+              0.015,
+              0.015,
+              0.015,
+              0.015,
+              0.015,
+              0.015,
+              0.015,
+              0.015,
+              0.015
+            ],
+            "capex_to_revenue": [
+              0.025,
+              0.025,
+              0.025,
+              0.025,
+              0.025,
+              0.025,
+              0.025,
+              0.025,
+              0.025,
+              0.025
+            ],
+            "working_capital_to_revenue": [
+              0.18,
+              0.18,
+              0.18,
+              0.18,
+              0.18,
+              0.18,
+              0.18,
+              0.18,
+              0.18,
+              0.18
+            ]
+          },
+          {
+            "name": "Infrastructure software (including VMware)",
+            "base_revenue": {
+              "period_end": "2026-08-02",
+              "components": [
+                {
+                  "item": "segment_revenue_software",
+                  "period_end": "2025-11-02",
+                  "value": 27029000000,
+                  "source": "10-K 0001730168-25-000121",
+                  "sign": 1
+                },
+                {
+                  "item": "segment_revenue_software",
+                  "period_end": "2026-08-02",
+                  "value": 22726000000,
+                  "source": "10-Q 0001730168-26-000080",
+                  "sign": 1
+                },
+                {
+                  "item": "segment_revenue_software",
+                  "period_end": "2025-08-03",
+                  "value": 20086000000,
+                  "source": "10-Q 0001730168-26-000080",
+                  "sign": -1
+                }
+              ]
+            },
+            "base_working_capital_ratio": 0.05,
+            "growth": [
+              0.12,
+              0.11,
+              0.1,
+              0.09,
+              0.08,
+              0.07,
+              0.06,
+              0.05,
+              0.04,
+              0.03
+            ],
+            "operating_margin": [
+              0.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "depreciation_to_revenue": [
+              0.005,
+              0.005,
+              0.005,
+              0.005,
+              0.005,
+              0.005,
+              0.005,
+              0.005,
+              0.005,
+              0.005
+            ],
+            "capex_to_revenue": [
+              0.01,
+              0.01,
+              0.01,
+              0.01,
+              0.01,
+              0.01,
+              0.01,
+              0.01,
+              0.01,
+              0.01
+            ],
+            "working_capital_to_revenue": [
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05
+            ]
+          }
+        ],
+        "source": "Analyst sensitivity assumptions, 2026-10-11; revenue bases from cited 10-K and 10-Q excerpts",
+        "reason": "Illustrative scenario, not management guidance or a calibrated fair-value forecast. Revenue growth fades by segment. Operating margins include SBC and all allocated corporate costs, exclude acquisition amortization, and include the physical depreciation added back. Zero unallocated corporate costs is intentional. Tax, margins, capital intensity and working capital ratios are estimates; style labels do not imply suitability."
+      },
+      {
+        "id": "illustrative-garp",
+        "style": "garp",
+        "years": 10,
+        "tax_rate": 0.21,
+        "wacc": 0.09,
+        "terminal_growth": 0.025,
+        "terminal_roic": 0.15,
+        "sbc_treatment": "expensed_in_margins",
+        "corporate_costs": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "segments": [
+          {
+            "name": "Semiconductor solutions (including AI)",
+            "base_revenue": {
+              "period_end": "2026-08-02",
+              "components": [
+                {
+                  "item": "segment_revenue_semiconductor",
+                  "period_end": "2025-11-02",
+                  "value": 36858000000,
+                  "source": "10-K 0001730168-25-000121",
+                  "sign": 1
+                },
+                {
+                  "item": "segment_revenue_semiconductor",
+                  "period_end": "2026-08-02",
+                  "value": 48363000000,
+                  "source": "10-Q 0001730168-26-000080",
+                  "sign": 1
+                },
+                {
+                  "item": "segment_revenue_semiconductor",
+                  "period_end": "2025-08-03",
+                  "value": 25786000000,
+                  "source": "10-Q 0001730168-26-000080",
+                  "sign": -1
+                }
+              ]
+            },
+            "base_working_capital_ratio": 0.18,
+            "growth": [
+              0.2,
+              0.18,
+              0.15,
+              0.12,
+              0.1,
+              0.08,
+              0.06,
+              0.05,
+              0.04,
+              0.03
+            ],
+            "operating_margin": [
+              0.4,
+              0.4,
+              0.4,
+              0.4,
+              0.4,
+              0.4,
+              0.4,
+              0.4,
+              0.4,
+              0.4
+            ],
+            "depreciation_to_revenue": [
+              0.015,
+              0.015,
+              0.015,
+              0.015,
+              0.015,
+              0.015,
+              0.015,
+              0.015,
+              0.015,
+              0.015
+            ],
+            "capex_to_revenue": [
+              0.025,
+              0.025,
+              0.025,
+              0.025,
+              0.025,
+              0.025,
+              0.025,
+              0.025,
+              0.025,
+              0.025
+            ],
+            "working_capital_to_revenue": [
+              0.18,
+              0.18,
+              0.18,
+              0.18,
+              0.18,
+              0.18,
+              0.18,
+              0.18,
+              0.18,
+              0.18
+            ]
+          },
+          {
+            "name": "Infrastructure software (including VMware)",
+            "base_revenue": {
+              "period_end": "2026-08-02",
+              "components": [
+                {
+                  "item": "segment_revenue_software",
+                  "period_end": "2025-11-02",
+                  "value": 27029000000,
+                  "source": "10-K 0001730168-25-000121",
+                  "sign": 1
+                },
+                {
+                  "item": "segment_revenue_software",
+                  "period_end": "2026-08-02",
+                  "value": 22726000000,
+                  "source": "10-Q 0001730168-26-000080",
+                  "sign": 1
+                },
+                {
+                  "item": "segment_revenue_software",
+                  "period_end": "2025-08-03",
+                  "value": 20086000000,
+                  "source": "10-Q 0001730168-26-000080",
+                  "sign": -1
+                }
+              ]
+            },
+            "base_working_capital_ratio": 0.05,
+            "growth": [
+              0.1,
+              0.09,
+              0.08,
+              0.07,
+              0.06,
+              0.05,
+              0.04,
+              0.03,
+              0.03,
+              0.03
+            ],
+            "operating_margin": [
+              0.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "depreciation_to_revenue": [
+              0.005,
+              0.005,
+              0.005,
+              0.005,
+              0.005,
+              0.005,
+              0.005,
+              0.005,
+              0.005,
+              0.005
+            ],
+            "capex_to_revenue": [
+              0.01,
+              0.01,
+              0.01,
+              0.01,
+              0.01,
+              0.01,
+              0.01,
+              0.01,
+              0.01,
+              0.01
+            ],
+            "working_capital_to_revenue": [
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05
+            ]
+          }
+        ],
+        "source": "Analyst sensitivity assumptions, 2026-10-11; revenue bases from cited 10-K and 10-Q excerpts",
+        "reason": "Illustrative scenario, not management guidance or a calibrated fair-value forecast. Revenue growth fades by segment. Operating margins include SBC and all allocated corporate costs, exclude acquisition amortization, and include the physical depreciation added back. Zero unallocated corporate costs is intentional. Tax, margins, capital intensity and working capital ratios are estimates; style labels do not imply suitability."
+      },
+      {
+        "id": "illustrative-quality",
+        "style": "quality",
+        "years": 10,
+        "tax_rate": 0.21,
+        "wacc": 0.09,
+        "terminal_growth": 0.025,
+        "terminal_roic": 0.15,
+        "sbc_treatment": "expensed_in_margins",
+        "corporate_costs": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "segments": [
+          {
+            "name": "Semiconductor solutions (including AI)",
+            "base_revenue": {
+              "period_end": "2026-08-02",
+              "components": [
+                {
+                  "item": "segment_revenue_semiconductor",
+                  "period_end": "2025-11-02",
+                  "value": 36858000000,
+                  "source": "10-K 0001730168-25-000121",
+                  "sign": 1
+                },
+                {
+                  "item": "segment_revenue_semiconductor",
+                  "period_end": "2026-08-02",
+                  "value": 48363000000,
+                  "source": "10-Q 0001730168-26-000080",
+                  "sign": 1
+                },
+                {
+                  "item": "segment_revenue_semiconductor",
+                  "period_end": "2025-08-03",
+                  "value": 25786000000,
+                  "source": "10-Q 0001730168-26-000080",
+                  "sign": -1
+                }
+              ]
+            },
+            "base_working_capital_ratio": 0.18,
+            "growth": [
+              0.15,
+              0.13,
+              0.11,
+              0.09,
+              0.08,
+              0.06,
+              0.05,
+              0.04,
+              0.03,
+              0.03
+            ],
+            "operating_margin": [
+              0.4,
+              0.4,
+              0.4,
+              0.4,
+              0.4,
+              0.4,
+              0.4,
+              0.4,
+              0.4,
+              0.4
+            ],
+            "depreciation_to_revenue": [
+              0.015,
+              0.015,
+              0.015,
+              0.015,
+              0.015,
+              0.015,
+              0.015,
+              0.015,
+              0.015,
+              0.015
+            ],
+            "capex_to_revenue": [
+              0.025,
+              0.025,
+              0.025,
+              0.025,
+              0.025,
+              0.025,
+              0.025,
+              0.025,
+              0.025,
+              0.025
+            ],
+            "working_capital_to_revenue": [
+              0.18,
+              0.18,
+              0.18,
+              0.18,
+              0.18,
+              0.18,
+              0.18,
+              0.18,
+              0.18,
+              0.18
+            ]
+          },
+          {
+            "name": "Infrastructure software (including VMware)",
+            "base_revenue": {
+              "period_end": "2026-08-02",
+              "components": [
+                {
+                  "item": "segment_revenue_software",
+                  "period_end": "2025-11-02",
+                  "value": 27029000000,
+                  "source": "10-K 0001730168-25-000121",
+                  "sign": 1
+                },
+                {
+                  "item": "segment_revenue_software",
+                  "period_end": "2026-08-02",
+                  "value": 22726000000,
+                  "source": "10-Q 0001730168-26-000080",
+                  "sign": 1
+                },
+                {
+                  "item": "segment_revenue_software",
+                  "period_end": "2025-08-03",
+                  "value": 20086000000,
+                  "source": "10-Q 0001730168-26-000080",
+                  "sign": -1
+                }
+              ]
+            },
+            "base_working_capital_ratio": 0.05,
+            "growth": [
+              0.08,
+              0.07,
+              0.06,
+              0.05,
+              0.04,
+              0.04,
+              0.03,
+              0.03,
+              0.03,
+              0.03
+            ],
+            "operating_margin": [
+              0.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "depreciation_to_revenue": [
+              0.005,
+              0.005,
+              0.005,
+              0.005,
+              0.005,
+              0.005,
+              0.005,
+              0.005,
+              0.005,
+              0.005
+            ],
+            "capex_to_revenue": [
+              0.01,
+              0.01,
+              0.01,
+              0.01,
+              0.01,
+              0.01,
+              0.01,
+              0.01,
+              0.01,
+              0.01
+            ],
+            "working_capital_to_revenue": [
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05
+            ]
+          }
+        ],
+        "source": "Analyst sensitivity assumptions, 2026-10-11; revenue bases from cited 10-K and 10-Q excerpts",
+        "reason": "Illustrative scenario, not management guidance or a calibrated fair-value forecast. Revenue growth fades by segment. Operating margins include SBC and all allocated corporate costs, exclude acquisition amortization, and include the physical depreciation added back. Zero unallocated corporate costs is intentional. Tax, margins, capital intensity and working capital ratios are estimates; style labels do not imply suitability."
+      }
+    ]
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "facts": 577,
+  "metrics": 285,
+  "calculation_inputs": 721,
+  "text_facts": 14,
+  "cards": 109,
+  "workbook_sheets": [
+    "Start here",
+    "Facts",
+    "Annual facts",
+    "Metrics",
+    "Calculations",
+    "Calc inputs",
+    "Text facts",
+    "Cards",
+    "My analysis",
+    "Assumptions",
+    "Workbench",
+    "Valuation Models",
+    "Forward Forecasts",
+    "Forward Segments",
+    "Sensitivity"
+  ],
+  "live_formulas": 26,
+  "independent_numeric_checks": [
+    "fcf",
+    "fcff",
+    "ebitda",
+    "roic",
+    "market-cap",
+    "enterprise-value",
+    "dcf-value-base"
+  ],
+  "status": "passed",
+  "forward_years": 30,
+  "segment_years": 60,
+  "sensitivity_rows": 216,
+  "excel_formulas_evaluated_independently": 26
+}

@@ -1046,5 +1046,22 @@
   "Medium evidence": "Medium evidence",
   "Low evidence": "Low evidence",
   "{years} years of data": "{years} years of data",
-  "(from report text)": "(from report text)"
+  "(from report text)": "(from report text)",
+  "Valuation comparison": "Valuation comparison",
+  "These estimates use different assumptions. The conservative policy verdict remains separate.": "These estimates use different assumptions. The conservative policy verdict remains separate.",
+  "Model": "Model",
+  "Value per share": "Value per share",
+  "Price / value": "Price / value",
+  "Value gap versus price": "Value gap versus price",
+  "Value gap uses price as the denominator. Margin of safety uses estimated value. Neither is a predicted return.": "Value gap uses price as the denominator. Margin of safety uses estimated value. Neither is a predicted return.",
+  "Cash flow starting points": "Cash flow starting points",
+  "Basis": "Basis",
+  "Date": "Date",
+  "Conditional required growth": "Conditional required growth",
+  "Required growth depends on the starting cash flow and model assumptions; it is not an observed market forecast.": "Required growth depends on the starting cash flow and model assumptions; it is not an observed market forecast.",
+  "Explicit forward forecasts": "Explicit forward forecasts",
+  "Reinvestment": "Reinvestment",
+  "Sensitivity analysis": "Sensitivity analysis",
+  "Growth or growth shift": "Growth or growth shift",
+  "Operating income": "Operating income"
 }

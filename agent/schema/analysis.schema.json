@@ -31,7 +31,8 @@
       }
     },
     "steps": { "type": "array", "items": { "$ref": "#/definitions/step" } },
-    "adjustments": { "type": "array", "items": { "$ref": "#/definitions/adjustment" } }
+    "adjustments": { "type": "array", "items": { "$ref": "#/definitions/adjustment" } },
+    "valuation": { "type": "object", "description": "Exact copy of metrics.json valuation comparison; checked by the validator" }
   },
   "definitions": {
     "step": {

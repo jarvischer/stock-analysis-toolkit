@@ -66,3 +66,33 @@ test('revenue reverse DCF needs a target margin', () => {
   const m = get(computeAll(facts, { policy, adjustments: none, price: { value: 100, date: '2026-10-10' } }), 'reverse-dcf-revenue');
   assert.equal(m.status, 'not_available'); assert.ok(m.missing.includes('target_fcf_margin'));
 });
+
+test('text share classes unlock market cap and revenue reverse DCF with source provenance', () => {
+  const facts = { ...makeFacts({}, { ends: [] }), history_years: 0,
+    interim: interim('2026-06-30', { cash_sti: 40, long_term_debt: 0 }) };
+  const shares = { period_end: '2026-07-28', source: '10-Q Q',
+    components: [{ item: 'cover_shares_class_a', value: 6 }, { item: 'cover_shares_class_b', value: 4 }] };
+  const assumptions = { shares_outstanding: shares, target_fcf_margin: 0.2,
+    base_revenue: { value: 100, period_end: '2025-12-31', source: '424B4 P' },
+    base_fcf: { value: -5, period_end: '2025-12-31', source: '424B4 P' } };
+  const run = (f = facts, s = shares) => computeAll(f, { policy, price: { value: 100, date: '2026-10-10' },
+    adjustments: { items: [], assumptions: { ...assumptions, shares_outstanding: s } } });
+  const out = run();
+  assert.equal(get(out, 'market-cap').value, 1000);
+  const input = get(out, 'market-cap').inputs.find((i) => i.name === 'shares_outstanding');
+  assert.equal(input.source, '10-Q Q'); assert.equal(input.period_end, shares.period_end);
+  assert.match(input.estimate, /cited share counts/);
+  const m = get(out, 'reverse-dcf-revenue');
+  assert.equal(m.status, 'ok');
+  const d = SAT.fin.dcfFlows({ flows: SAT.fin.revenueFlows(100, m.implied_growth, -0.05, 0.2, 10), r: 0.09, tg: 0.025, debt: 0, cash: 40, shares: 10 });
+  assert.ok(Math.abs(d.fv - 100) < 1e-4);
+  for (const date of ['2026-07-28', '2026-08-01']) {
+    assert.equal(get(run({ ...facts, cover_shares: { value: 20, date } }), 'market-cap').value, 2000);
+  }
+  assert.equal(get(run({ ...facts, cover_shares: { value: 20, date: '2026-07-01' } }), 'market-cap').value, 1000);
+  for (const over of [{ components: [] }, { source: '' }, { period_end: '2026-02-30' },
+    { components: [shares.components[0], shares.components[0]] }, { value: 11 },
+    ...[0, -1, 1.5, Infinity].map((value) => ({ components: [{ item: 'cover_shares_class_a', value }] }))]) {
+    assert.throws(() => run(facts, { ...shares, ...over }), /shares_outstanding assumption/);
+  }
+});

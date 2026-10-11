@@ -7,7 +7,11 @@
   const pct = (v) => (v == null ? '—' : SAT.fmt.pct(v));
   const num = (v) => (v == null ? '—' : Math.abs(v) >= 1000 ? SAT.fmt.money(v) : String(Math.round(v * 10000) / 10000));
   const isStep = (s) => s && typeof s === 'object' && ['facts', 'calculations', 'drivers', 'open_questions', 'cards'].every((k) => Array.isArray(s[k]));
-  const isAnalysis = (a) => a && typeof a === 'object' && Array.isArray(a.steps) && a.steps.every(isStep) && a.result && typeof a.result.status === 'string';
+  const objects = a => Array.isArray(a) && a.every(v => v && typeof v === 'object' && !Array.isArray(v));
+  const isValuation = v => v == null || (typeof v === 'object' && objects(v.comparisons) && objects(v.cash_flow_bases) &&
+    ['sensitivity', 'forward_sensitivity'].every(k => v[k] == null || objects(v[k])) &&
+    (v.forward == null || objects(v.forward) && v.forward.every(s => objects(s.rows))));
+  const isAnalysis = (a) => a && typeof a === 'object' && Array.isArray(a.steps) && a.steps.every(isStep) && a.result && typeof a.result.status === 'string' && isValuation(a.valuation);
   const forget = () => { try { localStorage.removeItem('sat:' + KEY); } catch (e) { /* storage unavailable */ } };
 
   function secUrl(cik, source) {
@@ -38,6 +42,22 @@
     </article>`;
   }
 
+  function valuation(v) {
+    if (!v || !Array.isArray(v.comparisons) || !Array.isArray(v.cash_flow_bases)) return '';
+    const money = n => Number.isFinite(n) ? SAT.fmt.price(n) : '—';
+    const rows = v.comparisons.map(c => `<tr data-valuation-case><td data-no-translate>${E(c.style)} / ${E(c.label)}</td><td data-no-translate>${E(c.status)}</td><td>${E(money(c.value_per_share))}</td><td>${Number.isFinite(c.price_to_value) ? E(c.price_to_value.toFixed(2)) + '×' : '—'}</td><td>${E(pct(c.gap_to_price))}</td><td>${E(pct(c.margin_of_safety))}</td></tr>`).join('');
+    const bases = v.cash_flow_bases.map(b => `<tr><td data-no-translate>${E(b.label)}</td><td data-no-translate>${E(b.period_end || '')}</td><td>${E(num(b.value))}</td><td>${E(pct(b.required_growth))}</td></tr>`).join('');
+    const forecasts = (v.forward || []).map(s => `<details><summary data-no-translate>${E(s.label)}</summary><p data-no-translate>${E(s.assumptions?.reason || '')}</p><p data-no-translate>${E(s.assumptions?.source || '')}</p><p data-no-translate>${E(s.explanation)}</p><div class="table-wrap"><table class="t"><thead><tr><th>Year</th><th>Revenue</th><th>Operating income</th><th>Taxes</th><th>Reinvestment</th><th>FCFF</th></tr></thead><tbody>${(s.rows || []).map(r => `<tr><td>${E(r.year)}</td>${['revenue', 'operating_income', 'taxes', 'reinvestment', 'fcff'].map(k => `<td>${E(num(r[k]))}</td>`).join('')}</tr>`).join('')}</tbody></table></div></details>`).join('');
+    const sensitivity = [...(v.sensitivity || []), ...(v.forward_sensitivity || [])].map(s => `<tr><td data-no-translate>${E(s.basis || s.scenario)}</td><td>${E(pct(s.wacc))}</td><td>${E(pct(s.growth ?? s.growth_delta))}</td><td>${E(pct(s.terminal_growth))}</td><td>${E(money(s.value_per_share))}</td></tr>`).join('');
+    return `<section class="card" data-valuation-comparison><h3>Valuation comparison</h3><p>These estimates use different assumptions. The conservative policy verdict remains separate.</p>
+      <div class="table-wrap"><table class="t"><thead><tr><th>Model</th><th>Status</th><th>Value per share</th><th>Price / value</th><th>Value gap versus price</th><th>Margin of safety</th></tr></thead><tbody>${rows}</tbody></table></div>
+      <p>Value gap uses price as the denominator. Margin of safety uses estimated value. Neither is a predicted return.</p>
+      <h4>Cash flow starting points</h4><div class="table-wrap"><table class="t"><thead><tr><th>Basis</th><th>Date</th><th>FCFF</th><th>Conditional required growth</th></tr></thead><tbody>${bases}</tbody></table></div>
+      <p>Required growth depends on the starting cash flow and model assumptions; it is not an observed market forecast.</p>
+      <h4>Explicit forward forecasts</h4>${forecasts}
+      <details><summary>Sensitivity analysis</summary><p data-no-translate>${E(v.sensitivity_note)}</p><div class="table-wrap"><table class="t"><thead><tr><th>Basis</th><th>WACC</th><th>Growth or growth shift</th><th>Terminal growth</th><th>Value per share</th></tr></thead><tbody>${sensitivity}</tbody></table></div></details></section>`;
+  }
+
   function render(view, a) {
     const r = a.result;
     view.querySelector('[data-analysis-out]').innerHTML = `
@@ -54,6 +74,7 @@
         </div>
         <p data-analysis-summary data-no-translate>${E(r.summary)}</p>
       </section>
+      ${valuation(a.valuation)}
       ${a.steps.map((s) => step(a, s)).join('')}`;
     view.querySelector('[data-analysis-empty]').hidden = true;
   }

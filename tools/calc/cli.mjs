@@ -5,6 +5,8 @@ import { parseArgs } from 'node:util';
 import { factTable, ZERO_IF_MISSING } from './facts-table.mjs';
 import { yearMetrics, multiYearMetrics } from './metrics.mjs';
 import { valuationMetrics } from './valuation.mjs';
+import { basisMetrics } from './metric-bases.mjs';
+import { valuationComparison } from './valuation-comparison.mjs';
 
 const merge = (base, over) => {
   const out = { ...base };
@@ -24,13 +26,19 @@ export function computeAll(facts, { policy, adjustments = { items: [], assumptio
   const level = years >= E.high_years ? 'high' : years >= E.medium_years ? 'medium' : 'low';
   const items = adjustments.items || [];
   const metrics = run(facts, A, items, price);
+  const reported = items.length ? run(facts, A, [], price) : metrics.map(m => ({ ...m }));
+  for (const m of metrics) m.basis = items.length ? 'adjusted' : 'reported';
+  const bases = basisMetrics(facts, A, reported, metrics);
+  const valuation = valuationComparison(facts, A, [...metrics, ...bases], price);
   if (items.length) {
     const base = new Map(run(facts, A, [], price).map((m) => [m.key + '|' + m.period_end, m.value]));
     for (const m of metrics) { const d = base.get(m.key + '|' + m.period_end); if (d !== m.value) m.default_value = d ?? null; }
   }
   return { schema_version: 1, company: facts.company, periods: facts.periods, price, assumptions: A,
     evidence: { history_years: years, level, margin_add: E.margin_add[level] },
-    adjustments: { items, assumptions: adjustments.assumptions || {} }, facts_extracted_at: facts.extracted_at, metrics };
+    adjustments: { items, assumptions: adjustments.assumptions || {} }, facts_extracted_at: facts.extracted_at,
+    metric_sets: { reported, adjusted: items.length ? metrics : [], normalized: bases.filter(m => m.basis === 'normalized'), ttm: bases.filter(m => m.period_basis === 'ttm' && m.basis !== 'normalized') },
+    valuation: valuation.comparison, metrics: [...metrics, ...bases, ...valuation.extraMetrics] };
 }
 
 export function main(argv) {
@@ -54,7 +62,9 @@ export function main(argv) {
   const unknown = (adjustments.items || []).filter((a) => !known.has(a.item + '|' + a.period_end) && !(ZERO_IF_MISSING.includes(a.item) && periods.has(a.period_end)));
   if (unknown.length) { console.error(`These adjustments match no reported value (item or period_end is wrong, or the value is not available): ${JSON.stringify(unknown)}`); return 1; }
   const policy = JSON.parse(readFileSync(values.policy, 'utf8'));
-  const out = computeAll(facts, { policy, adjustments, price });
+  let out;
+  try { out = computeAll(facts, { policy, adjustments, price }); }
+  catch (e) { console.error(e.message); return 1; }
   writeFileSync(join(dir, 'metrics.json'), JSON.stringify(out, null, 2) + '\n');
   const count = (s) => out.metrics.filter((m) => m.status === s).length;
   console.log(`${out.metrics.length} metrics: ${count('ok')} ok, ${count('not_available')} not available, ${count('not_meaningful')} not meaningful → ${join(dir, 'metrics.json')}`);

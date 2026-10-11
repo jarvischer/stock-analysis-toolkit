@@ -55,12 +55,15 @@ def write_sections(company, out_dir: Path) -> list[str]:
     return written
 
 
-def write_short_history_sections(company, out_dir: Path) -> list[str]:
+def write_short_history_sections(company, out_dir: Path, include_prospectus: bool = True) -> list[str]:
     """Latest 10-Q and prospectus (424B4, else S-1). The prospectus can be over 1.5 million characters;
     the agent searches it and does not read all of it."""
     out_dir.mkdir(parents=True, exist_ok=True)
     written = []
-    for key, forms in (("latest_10q", ["10-Q"]), ("prospectus", ["424B4", "S-1"])):
+    requests = [("latest_10q", ["10-Q"])]
+    if include_prospectus:
+        requests.append(("prospectus", ["424B4", "S-1"]))
+    for key, forms in requests:
         filing = next((f for f in (_latest(company, form) for form in forms) if f is not None), None)
         if filing is None:
             continue

@@ -127,3 +127,63 @@ test('a cover-page share count is a valid fact', () => {
   const a = sample(); a.steps[0].facts.push({ item: 'cover_shares_outstanding', period_end: '2026-08-25', value: 345000000, source: '10-Q Q', quote: null, file: null });
   assert.deepEqual(validateAnalysis(a, c).errors, []);
 });
+
+test('share assumptions need exact text facts with matching item, date and source', () => {
+  const quote = 'There were 6,000 Class A and 4,000 Class B shares outstanding.';
+  const a = sample(), c = { ...ctx(), readSection: () => quote };
+  const components = [{ item: 'cover_shares_class_a', value: 6000 }, { item: 'cover_shares_class_b', value: 4000 }];
+  c.metrics.assumptions = { shares_outstanding: { period_end: '2026-07-28', source: '10-Q Q', components } };
+  assert.match(validateAnalysis(a, c).errors.join('\n'), /shares_outstanding component/);
+  a.steps[0].facts.push(...components.map((f) => ({ ...f, period_end: '2026-07-28', source: '10-Q Q', quote, file: 'latest_10q.txt' })));
+  assert.deepEqual(validateAnalysis(a, c).errors, []);
+  for (const over of [{ item: 'revenue' }, { value: 6001 }, { period_end: '2026-07-27' }, { source: '10-Q WRONG' }, { quote: 'Not in the filing' }]) {
+    const changed = structuredClone(a);
+    Object.assign(changed.steps[0].facts.at(-2), over);
+    assert.match(validateAnalysis(changed, c).errors.join('\n'), /shares_outstanding component/);
+  }
+  c.metrics.assumptions.shares_outstanding.components = [components[0], components[0]];
+  assert.match(validateAnalysis(a, c).errors.join('\n'), /distinct positive/);
+});
+
+test('warnings recognize policy, price, interim facts and validated text facts', () => {
+  const a = sample(), c = ctx();
+  a.steps[0].facts.push(textFact());
+  c.facts.interim = { facts: [{ value: 100009000000 }] };
+  a.steps[0].reason = 'WACC 9%, margin 25%, price $50.00, revenue $18,674 million, cash $100.009B.';
+  assert.equal(validateAnalysis(a, c).warnings.some((w) => w.startsWith('steps[0].reason:')), false);
+  a.steps[0].facts.at(-1).quote = 'Invalid quote';
+  assert.match(validateAnalysis(a, c).warnings.join('\n'), /\$18,674 million/);
+});
+
+test('warnings preserve negative signs and allow rounding to displayed precision', () => {
+  const a = sample(), c = ctx();
+  c.metrics.metrics.push({ key: 'test-negative', value: -1.073, inputs: [] }, { key: 'test-money', value: -6355000000, inputs: [] });
+  a.steps[0].reason = 'Margins −107% and -107.3%; cash −$6,355 million and $-6.355B.';
+  assert.equal(validateAnalysis(a, c).warnings.some((w) => w.startsWith('steps[0].reason:')), false);
+  a.steps[0].reason = 'Margins +107.3% and 107.3%; cash $6.355B; unknown 47.123%.';
+  assert.equal(validateAnalysis(a, c).warnings.filter((w) => w.startsWith('steps[0].reason:')).length, 4);
+});
+
+test('percentages stored in text facts as whole percentages suppress warnings only after validation', () => {
+  const quote = 'Voting control was 82.4%.';
+  const a = sample(), c = { ...ctx(), readSection: () => quote };
+  a.steps[0].facts.push(textFact({ item: 'voting_control', value: 82.4, quote }));
+  a.steps[0].reason = 'Voting control was 82.4%.';
+  assert.deepEqual(validateAnalysis(a, c).errors, []);
+  assert.equal(validateAnalysis(a, c).warnings.some((w) => w.startsWith('steps[0].reason:')), false);
+});
+
+test('valuation comparisons must exactly match calculator output', () => {
+  const a=sample(), c=ctx(); c.metrics.valuation={version:1,comparisons:[{value_per_share:100}]};
+  a.valuation=structuredClone(c.metrics.valuation);
+  assert.deepEqual(validateAnalysis(a,c).errors,[]);
+  a.valuation.comparisons[0].value_per_share=200;
+  assert.match(validateAnalysis(a,c).errors.join('\n'),/valuation must exactly match/);
+});
+test('forward bases need checked source, date and value, including text evidence', () => {
+  const a=sample(), c=ctx(), f=textFact();a.steps[0].facts.push(f);
+  c.metrics.assumptions={forward_scenarios:[{id:'test',segments:[{base_revenue:{period_end:f.period_end,components:[{item:f.item,value:f.value,source:f.source,sign:1}]}}]}]};
+  assert.deepEqual(validateAnalysis(a,c).errors,[]);
+  c.metrics.assumptions.forward_scenarios[0].segments[0].base_revenue.components[0].source='wrong source';
+  assert.match(validateAnalysis(a,c).errors.join('\n'),/must match a sourced reported or validated text fact/);
+});

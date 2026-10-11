@@ -35,6 +35,7 @@ A short history is less evidence, not a reason to stop. Start `result.summary` w
 
 - A rule metric with status `not_testable` is neither passed nor failed. Say which rule cannot be tested and why.
 - You may use a number from a section file as a **text fact**: copy the exact words from the file into `quote` (including the number), set `file` (for example `prospectus.txt`), and set `source` to the form and accession from the first line of the file. The validator checks the quote and the number. Note the unit stated in the text (for example "in millions").
+- If the cover page reports shares by class and no extracted total is available, add each outstanding common-share class as a text fact (for example `cover_shares_class_a`). Include all classes on the same date, with the same source, and verify that they belong in the per-share denominator. Do not use authorized shares, weighted averages, or add a total to its constituent classes. Set `adjustments.json` → `assumptions.shares_outstanding` to `{ "period_end": "2026-07-28", "source": "10-Q <accession>", "components": [{ "item": "cover_shares_class_a", "value": 100 }, { "item": "cover_shares_class_b", "value": 50 }] }` (example values only). For a reported total, use one component named `cover_shares_outstanding`. The calculator sums the components and uses this count only when no extracted count exists or the assumption is newer. The validator requires each component to match a validated text fact by item, exact value, date and source. Describe this as a checked shares assumption, cite its date, and run both `calc` and `validate`.
 - For a young company, set `target_fcf_margin` in `adjustments.json` → `assumptions` (explain why), and read `reverse-dcf-revenue`: the revenue that the price requires in year 10. If there is no annual revenue in XBRL, also set `base_revenue` and `base_fcf` (free cash flow, a number from a text fact, not a ratio) as `{ value, period_end, source }`. Stage 2 calculates the margin; the validator checks that each value equals a text fact in the analysis.
 - For a company with very different businesses, describe how a Sum of the Parts would value it (`card:capital-allocation` for segment decisions); the app has a SOTP tool.
 
@@ -78,6 +79,16 @@ When a reported value hides the normal picture (a one-time charge, a legal settl
 Run `npm run sat -- calc <T> --adjust data/<T>/adjustments.json` (with the same price arguments). `metrics.json` then has both `value` and `default_value`. Copy the items into the analysis `adjustments` array. Explain each adjustment in the step where it matters.
 
 ## Output
+
+### Valuation comparison
+
+Keep the conservative policy result. Also assess the latest matched TTM periods in `facts.json → ttm`; never combine unmatched quarterly durations or replace a missing value with zero. Cite TTM component sources and dates. Missing historical amortization makes complete D&A unavailable.
+
+Use explicit `assumptions.normalization` for a sustainable tax estimate and maintenance-capital proxy. Show the unclipped reported tax rate alongside normalized NOPAT, ROIC and FCFF. A tax benefit is not evidence for a zero long-run tax rate. Do not automatically use acquisition amortization as maintenance spending. Keep `metric_sets.reported`, `adjusted`, `normalized` and `ttm` distinct.
+
+For companies where growth or business mix makes the historical policy model incomplete, add sourced, non-overlapping segment forecasts through `assumptions.forward_scenarios`. Follow [the valuation model contract](../docs/valuation-models.md). Forecast revenue, margins, cash taxes and reinvestment explicitly. Growth/GARP/Quality labels must describe assumptions, not automatically increase value. Do not invent a forecast to fill a style: leave it `not_configured` when evidence is insufficient. Clearly label illustrative scenarios; they are not management guidance. Margins must include SBC and allocated corporate expenses. Include terminal reinvestment.
+
+Copy `metrics.json → valuation` unchanged into the analysis root. Include every source component used by the scenarios as a reported fact or checked text fact in the steps. Explain reverse DCF as conditional on its starting cash flow, WACC, terminal growth, capital claims and horizon. Display price/value and value gap divided by price alongside the policy margin of safety, which divides by model value. Render the readable comparison with `npm run sat -- compare <T> --out analyses/<T>-<date>-valuation.md`.
 
 Write `analyses/<T>-<analysis_date>.json` that matches `agent/schema/analysis.schema.json`:
 - `steps` has exactly seven entries, `n` = 0–6, in order.
