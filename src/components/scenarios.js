@@ -16,7 +16,7 @@
       const shared = SAT.el(`<section class="card"><header><h3>Shared inputs</h3></header>
         <div class="fields">
           ${SAT.field({ k: 'rev', label: 'Current Revenue (LTM)' })}
-          ${SAT.field({ k: 'm0', label: 'Current FCF Margin', u: '%', tip: 'FCF / Revenue today' })}
+          ${SAT.field({ k: 'm0', label: 'Current FCF Margin', u: '%', tip: 'FCFF / Revenue today. Discounted at WACC, so use cash flow to the firm' })}
           ${SAT.field({ k: 'debt', label: 'Total Debt' })}
           ${SAT.field({ k: 'cash', label: 'Cash' })}
           ${SAT.field({ k: 'shares', label: 'Diluted Shares', u: '#' })}

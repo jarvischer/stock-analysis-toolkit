@@ -48,6 +48,10 @@ eq('tg up → value up', fv(0.10, 0.035) > fv(0.10, 0.03) ? 1 : 0, 1);
 // Revenue flows with constant margin == FCF forecast
 const rf = F.revenueFlows(10e9, 0.1, 0.15, 0.15, 3);
 eq('revenue flows', rf[2], 10e9 * 1.331 * 0.15);
+// FCFF from reported OCF: add back after-tax interest, subtract SBC; blank inputs count as 0
+eq('FCFF example', F.fcff(5.5e9, 1.5e9, 0.2e9, 0.21, 0.4e9), 5.5e9 - 1.5e9 + 0.2e9 * 0.79 - 0.4e9);
+eq('FCFF blanks = FCF', F.fcff(5.5e9, -1.5e9, NaN, NaN, NaN), 4e9);
+eq('FCFF sign-insensitive', F.fcff(100, -10, -20, 0.25, -5), 100 - 10 + 15 - 5);
 // Storage: a corrupt value must not drop the rest of the export; imports must be plain objects
 const mem = new Map();
 globalThis.localStorage = { get length() { return mem.size; }, key: (i) => [...mem.keys()][i], getItem: (k) => (mem.has(k) ? mem.get(k) : null), setItem: (k, v) => mem.set(k, String(v)), removeItem: (k) => mem.delete(k) };

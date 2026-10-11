@@ -110,6 +110,9 @@
     grossProfit: (rev, cogs) => rev - cogs,
     opIncome: (gp, opex) => gp - opex,
     fcf: (ocf, capex) => ocf - Math.abs(capex), // CapEx entered as positive or negative
+    /* Free cash flow to the firm from reported OCF: add back after-tax interest (US GAAP puts interest
+       paid in OCF) and treat stock-based compensation as a cash cost. Blank interest / SBC count as 0. */
+    fcff: (ocf, capex, interest, tax, sbc) => ocf - Math.abs(capex) + Math.abs(interest || 0) * (1 - (tax || 0)) - Math.abs(sbc || 0),
     netCash: (cash, debt) => cash - debt,
     nopat: (ebit, tax) => ebit * (1 - tax),
     roic: (nopat, ic) => div(nopat, ic),

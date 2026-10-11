@@ -8,7 +8,7 @@
 
   SAT.dcfFields = function () {
     return `<div class="az-sec">Actual data</div><div class="fields">
-      ${SAT.field({ k: 'fcf0', label: 'Current FCF (last 12 months)', tip: 'Operating Cash Flow − CapEx' })}
+      ${SAT.field({ k: 'fcf0', label: 'Current FCFF (last 12 months)', tip: 'Free cash flow to the firm: OCF + after-tax interest − CapEx − SBC. Discount it at WACC.' })}
       ${SAT.field({ k: 'debt', label: 'Total Debt' })}
       ${SAT.field({ k: 'cash', label: 'Cash & Investments' })}
       ${SAT.field({ k: 'shares', label: 'Diluted Shares Outstanding', u: '#' })}
