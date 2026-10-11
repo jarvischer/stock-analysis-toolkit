@@ -24,6 +24,7 @@ function knownNumbers(facts, metrics) {
 }
 
 const SECTION_FILE = /^[a-z0-9_]+\.txt$/;
+const QUOTE_MAX = 300; // a longer quote could contain almost any number
 const norm = (t) => t.replace(/\s+/g, ' ').trim();
 function quoteHasNumber(quote, value) {
   if (value == null) return false;
@@ -45,7 +46,7 @@ function textNumberWarnings(analysis, known) {
 }
 
 export function validateAnalysis(analysis, { facts, metrics, cards, policy = null, readSection = () => null }) {
-  const errors = [];
+  const errors = [], textFacts = [];
   if (!check(analysis)) return { errors: check.errors.map((e) => `schema ${e.instancePath || '/'} ${e.message} ${JSON.stringify(e.params)}`), warnings: [] };
   if (analysis.steps.map((s) => s.n).join(',') !== '0,1,2,3,4,5,6') errors.push('steps 0–6 must each appear once, in order');
   for (const s of analysis.steps) {
@@ -56,8 +57,10 @@ export function validateAnalysis(analysis, { facts, metrics, cards, policy = nul
         if (!SECTION_FILE.test(f.file)) { errors.push(`step ${s.n}: text fact file "${f.file}" must be a section file name`); continue; }
         const text = readSection(f.file);
         if (text == null) errors.push(`step ${s.n}: text fact file ${f.file} does not exist`);
+        else if (f.quote && f.quote.length > QUOTE_MAX) errors.push(`step ${s.n}: text fact ${f.item}: quote is longer than ${QUOTE_MAX} characters`);
         else if (!f.quote || !norm(text).includes(norm(f.quote))) errors.push(`step ${s.n}: text fact ${f.item}: quote not found in ${f.file}`);
         else if (!quoteHasNumber(f.quote, f.value)) errors.push(`step ${s.n}: text fact ${f.item}: the quote does not contain the number ${f.value}`);
+        else textFacts.push(f);
         continue;
       }
       const ref = [...facts.facts, ...(facts.interim?.facts || [])].find((x) => x.item === f.item && x.period_end === f.period_end);
@@ -81,8 +84,24 @@ export function validateAnalysis(analysis, { facts, metrics, cards, policy = nul
     if (!same(analysis.result.required_margin_of_safety, expected))
       errors.push(`result.required_margin_of_safety must be ${expected} (policy for score ${q} + evidence add-on ${ev.margin_add})`);
   }
+  // The verdict numbers must come from metrics.json and follow the method in agent/analyst.md.
+  const r = analysis.result;
+  const mos = metrics.metrics.find((m) => m.key === 'margin-of-safety-base');
+  const mosValue = mos && mos.status === 'ok' ? mos.value : null;
+  if (!same(r.margin_of_safety, mosValue)) errors.push(`result.margin_of_safety must be ${mosValue} (margin-of-safety-base in metrics.json)`);
+  const s2 = analysis.steps.find((s) => s.n === 2)?.score, s3 = analysis.steps.find((s) => s.n === 3)?.score;
+  if (s2 != null && s3 != null && q !== Math.min(s2, s3)) errors.push(`result.quality_score must be ${Math.min(s2, s3)} (the lower of the step 2 and step 3 scores)`);
+  if (r.status === 'meets_rules' && !(r.margin_of_safety != null && r.required_margin_of_safety != null && r.margin_of_safety >= r.required_margin_of_safety))
+    errors.push('result.status "meets_rules" needs margin_of_safety ≥ required_margin_of_safety');
+  const marketPrice = metrics.price?.value ?? null;
+  if (!same(analysis.price.value, marketPrice)) errors.push(`price.value must be ${marketPrice} (the price in metrics.json)`);
+  for (const name of ['base_revenue', 'base_fcf']) {
+    const assumed = metrics.assumptions?.[name];
+    if (assumed && !textFacts.some((f) => same(f.value, assumed.value))) errors.push(`assumption ${name} = ${assumed.value} must equal the value of a validated text fact`);
+  }
   if (analysis.result.status === 'stopped' && analysis.result.stopped_at_step == null) errors.push('result.stopped_at_step is required when status is "stopped"');
   for (const [path, text] of strings(analysis, '', [])) {
+    if (path.endsWith('.quote')) continue; // a filing may say "we sell"; only the agent's own words are checked
     const m = FORBIDDEN.exec(text);
     if (m) errors.push(`${path}: the word "${m[0]}" is not allowed; describe the result against the rules instead`);
   }

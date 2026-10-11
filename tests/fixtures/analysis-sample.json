@@ -12,7 +12,7 @@
       "calculations": [{ "metric": "operating-margin", "period_end": "2025-12-31", "value": 0.125, "explanation": "Stable margin." }],
       "score": 4, "reason": "Stable 12.5% operating margin.", "drivers": [{ "text": "Margin is stable", "reversing_change": "Margin falls below 8%" }],
       "open_questions": ["Is the margin cyclical?"], "cards": ["operating-margin"] },
-    { "n": 3, "title": "Management", "facts": [], "calculations": [], "score": 3, "reason": "No data on buyback prices.", "drivers": [], "open_questions": [], "cards": ["capital-allocation"] },
+    { "n": 3, "title": "Management", "facts": [], "calculations": [], "score": 4, "reason": "No data on buyback prices.", "drivers": [], "open_questions": [], "cards": ["capital-allocation"] },
     { "n": 4, "title": "Value", "facts": [], "calculations": [], "score": null, "reason": "See margin of safety.", "drivers": [], "open_questions": [], "cards": ["reverse-dcf"] },
     { "n": 5, "title": "Decision", "facts": [],
       "calculations": [{ "metric": "margin-of-safety-base", "period_end": "2025-12-31", "value": 0.31, "explanation": "Above the 25% requirement." }],

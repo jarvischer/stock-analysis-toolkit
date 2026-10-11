@@ -81,3 +81,43 @@ test('required margin of safety = policy for the score + evidence add-on', () =>
   const a = sample(); a.result.required_margin_of_safety = 0.2;
   assert.match(validateAnalysis(a, ctx()).errors.join('\n'), /required_margin_of_safety/);
 });
+
+test('the verdict margin of safety must match metrics.json', () => {
+  const a = sample(); a.result.margin_of_safety = 0.45;
+  assert.match(validateAnalysis(a, ctx()).errors.join('\n'), /margin_of_safety must be 0\.31/);
+});
+
+test('the quality score must be the lower of the step 2 and step 3 scores', () => {
+  const a = sample(); a.steps[3].score = 2;
+  assert.match(validateAnalysis(a, ctx()).errors.join('\n'), /quality_score must be 2/);
+});
+
+test('meets_rules needs a margin of safety at least the required margin', () => {
+  const c = ctx(); c.metrics.metrics[1].value = 0.1;
+  const a = sample(); a.result.margin_of_safety = 0.1; a.steps[5].calculations[0].value = 0.1;
+  assert.match(validateAnalysis(a, c).errors.join('\n'), /meets_rules/);
+});
+
+test('the price must match metrics.json', () => {
+  const a = sample(); a.price.value = 60;
+  assert.match(validateAnalysis(a, ctx()).errors.join('\n'), /price\.value must be 50/);
+});
+
+test('forbidden words are not checked inside filing quotes', () => {
+  const a = sample(); a.steps[0].facts.push(textFact({ quote: 'We sell launch services and Starlink subscriptions; revenue was $18,674 million.' }));
+  assert.deepEqual(validateAnalysis(a, ctx()).errors, []);
+});
+
+test('a quote longer than 300 characters is an error', () => {
+  const long = 'x'.repeat(400) + ' $18,674';
+  const c = { ...ctx(), readSection: () => long };
+  const a = sample(); a.steps[0].facts.push(textFact({ quote: long }));
+  assert.match(validateAnalysis(a, c).errors.join('\n'), /300/);
+});
+
+test('a base_revenue assumption must equal a validated text fact', () => {
+  const c = ctx(); c.metrics.assumptions = { base_revenue: { value: 18674000000, period_end: '2025-12-31', source: '424B4' } };
+  assert.match(validateAnalysis(sample(), c).errors.join('\n'), /base_revenue/);
+  const a = sample(); a.steps[0].facts.push(textFact());
+  assert.deepEqual(validateAnalysis(a, c).errors, []);
+});

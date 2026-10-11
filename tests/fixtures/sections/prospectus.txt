@@ -3,3 +3,5 @@
 Summary consolidated financial data (in millions)
 
 Total revenues ..............................................................................                            $18,674      $14,015      $10,387
+
+We sell launch services and Starlink subscriptions; revenue was $18,674 million.
