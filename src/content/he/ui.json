@@ -1011,5 +1011,14 @@
   "Current FCFF (last 12 months)": "תזרים חופשי לפירמה (FCFF) נוכחי — 12 החודשים האחרונים",
   "Free cash flow to the firm: OCF + after-tax interest − CapEx − SBC. Discount it at WACC.": "תזרים חופשי לפירמה: תזרים מפעילות שוטפת + ריבית לאחר מס − השקעות הוניות − תגמול מבוסס מניות. מהוונים אותו לפי WACC.",
   "FCFF / Revenue today. Discounted at WACC, so use cash flow to the firm": "FCFF חלקי הכנסות היום. ההיוון הוא לפי WACC, לכן השתמשו בתזרים לפירמה",
-  "Cost of Equity (CAPM)": "עלות ההון העצמי (CAPM)"
+  "Cost of Equity (CAPM)": "עלות ההון העצמי (CAPM)",
+  "Risk-free Rate": "ריבית חסרת סיכון",
+  "Beta": "בטא",
+  "Equity Risk Premium": "פרמיית סיכון של שוק המניות",
+  "Cost of Equity": "עלות ההון העצמי",
+  "Market Value of Equity": "שווי שוק של ההון העצמי",
+  "Market Value of Debt": "שווי שוק של החוב",
+  "Pre-tax Cost of Debt": "עלות החוב לפני מס",
+  "Equity Weight": "משקל ההון העצמי",
+  "After-tax Cost of Debt": "עלות החוב לאחר מס"
 }

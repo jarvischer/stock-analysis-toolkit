@@ -1011,5 +1011,14 @@
   "Current FCFF (last 12 months)": "Current FCFF (last 12 months)",
   "Free cash flow to the firm: OCF + after-tax interest − CapEx − SBC. Discount it at WACC.": "Free cash flow to the firm: OCF + after-tax interest − CapEx − SBC. Discount it at WACC.",
   "FCFF / Revenue today. Discounted at WACC, so use cash flow to the firm": "FCFF / Revenue today. Discounted at WACC, so use cash flow to the firm",
-  "Cost of Equity (CAPM)": "Cost of Equity (CAPM)"
+  "Cost of Equity (CAPM)": "Cost of Equity (CAPM)",
+  "Risk-free Rate": "Risk-free Rate",
+  "Beta": "Beta",
+  "Equity Risk Premium": "Equity Risk Premium",
+  "Cost of Equity": "Cost of Equity",
+  "Market Value of Equity": "Market Value of Equity",
+  "Market Value of Debt": "Market Value of Debt",
+  "Pre-tax Cost of Debt": "Pre-tax Cost of Debt",
+  "Equity Weight": "Equity Weight",
+  "After-tax Cost of Debt": "After-tax Cost of Debt"
 }

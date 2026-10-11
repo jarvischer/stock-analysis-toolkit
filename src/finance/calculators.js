@@ -13,6 +13,22 @@
       {id:'e',label:'Enterprise Value',f:v => validBridge(v) ? F.ev(F.marketCap(v.p,v.s),v.d,v.c) : NaN}
     ]
   };
+  const ok = x => Number.isFinite(x);
+  SAT.calculators['cost-of-equity'] = {
+    id: 'h-coe', defaults: {rf:'4',b:'1.2',erp:'5'},
+    fields: [{k:'rf',label:'Risk-free Rate',u:'%',kind:'assume'},{k:'b',label:'Beta',u:'#',kind:'assume',ph:'1.0'},{k:'erp',label:'Equity Risk Premium',u:'%',kind:'assume'}],
+    outputs: [{id:'k',label:'Cost of Equity',fmt:'pct',f:v => ok(v.rf) && ok(v.b) && ok(v.erp) ? v.rf + v.b * v.erp : NaN}]
+  };
+  /* Weights from market values; debt cost is after tax. */
+  SAT.calculators.wacc = {
+    id: 'h-wacc', defaults: {e:'6B',d:'4B',ke:'10',kd:'5',t:'25'},
+    fields: [{k:'e',label:'Market Value of Equity'},{k:'d',label:'Market Value of Debt'},{k:'ke',label:'Cost of Equity',u:'%',kind:'assume'},{k:'kd',label:'Pre-tax Cost of Debt',u:'%',kind:'assume'},{k:'t',label:'Tax Rate',u:'%',kind:'assume'}],
+    outputs: [
+      {id:'we',label:'Equity Weight',fmt:'pct',f:v => v.e >= 0 && v.d >= 0 ? SAT.div(v.e, v.e + v.d) : NaN},
+      {id:'kd',label:'After-tax Cost of Debt',fmt:'pct',f:v => v.kd * (1 - v.t)},
+      {id:'w',label:'WACC',fmt:'pct',f:v => v.e >= 0 && v.d >= 0 ? SAT.div(v.e * v.ke + v.d * v.kd * (1 - v.t), v.e + v.d) : NaN}
+    ]
+  };
   for (const [id,label] of [['price-sales','Market Cap'],['ev-revenue','Enterprise Value']]) {
     SAT.calculators[id] = {id:'h-'+id,defaults:{v:'2B',r:'1B'},fields:[{k:'v',label},{k:'r',label:'Revenue'}],outputs:[{id:'multiple',label:id === 'price-sales' ? 'P/S' : 'EV / Revenue',fmt:'x',f:v => v.r > 0 ? SAT.div(v.v,v.r) : NaN}]};
   }
