@@ -5,7 +5,7 @@ export const ZERO_IF_MISSING = ['preferred', 'minority_interest', 'goodwill', 'i
 
 export function factTable(facts, adjustmentItems = []) {
   const table = new Map();
-  for (const f of facts.facts) table.set(f.item + '|' + f.period_end, f);
+  for (const f of [...facts.facts, ...(facts.interim?.facts || [])]) table.set(f.item + '|' + f.period_end, f);
   const adjustments = new Map(adjustmentItems.map((a) => [a.item + '|' + a.period_end, a]));
   return {
     get(item, end) {

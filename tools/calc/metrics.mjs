@@ -11,6 +11,7 @@ export function calc(key, card, end, formula, named, fn) {
   const inputs = entries.filter(([, f]) => f != null).map(([name, f]) => ({
     name, item: f.item ?? name, period_end: f.period_end ?? end, value: f.value,
     ...(f.assumed_zero ? { assumed_zero: true } : {}), ...(f.adjusted ? { adjusted: true } : {}), ...(f.estimate ? { estimate: f.estimate } : {}),
+    ...(f.source && typeof f.source === 'string' ? { source: f.source } : {}),
   }));
   if (missing.length) return { key, card, period_end: end, value: null, status: 'not_available', formula, inputs, missing };
   const v = fn(Object.fromEntries(entries.map(([name, f]) => [name, f.value])));
@@ -109,6 +110,7 @@ export function yearMetrics(facts, T, A) {
 
 export function multiYearMetrics(facts, T, A, perYear) {
   const ends = facts.periods, last = ends[ends.length - 1], out = [];
+  if (!ends.length) return out;
   const year = (key, end) => perYear.find((m) => m.key === key && m.period_end === end);
   // 5-year CAGR and the longest available span (with 3 periods: only 2 years; with 10 periods: 5 and 9 years).
   const spans = [...new Set([5, ends.length - 1].filter((n) => n >= 1 && n < ends.length))];
@@ -119,7 +121,7 @@ export function multiYearMetrics(facts, T, A, perYear) {
       (v) => (v.first_revenue > 0 && v.revenue > 0 ? (v.revenue / v.first_revenue) ** (1 / n) - 1 : NaN)));
   }
   const first = ends[0], span = ends.length - 1;
-  out.push(calc('diluted-shares-change', 'dilution', last, `Diluted shares / Diluted shares ${span} years earlier − 1`,
+  if (span >= 1) out.push(calc('diluted-shares-change', 'dilution', last, `Diluted shares / Diluted shares ${span} years earlier − 1`,
     { diluted_avg_shares: T.get('diluted_avg_shares', last), first_shares: T.get('diluted_avg_shares', first) }, (v) => v.diluted_avg_shares / v.first_shares - 1));
   const back = Math.min(5, span);
   if (back > 0) {
@@ -131,7 +133,8 @@ export function multiYearMetrics(facts, T, A, perYear) {
   }
   const roics = ends.slice(-A.lookback_years).map((e) => year('roic', e)).filter((m) => m && m.status === 'ok');
   out.push({ key: 'roic-years-above-wacc', card: 'roic', period_end: last, value: roics.filter((m) => m.value > A.wacc).length,
-    status: roics.length ? 'ok' : 'not_available', formula: `Count of years with ROIC > WACC (${A.wacc}) in the last ${A.lookback_years} years`,
+    status: !roics.length ? 'not_available' : roics.length < A.min_roic_years_above_wacc ? 'not_testable' : 'ok', years_available: roics.length,
+    formula: `Count of years with ROIC > WACC (${A.wacc}) in the last ${A.lookback_years} years`,
     inputs: roics.map((m) => ({ name: 'roic', item: 'roic', period_end: m.period_end, value: m.value })) });
   const nis = ends.slice(-5).map((e) => T.get('net_income', e));
   out.push(calc('normalized-net-income', 'normalized-earnings', last, `Average net income of the last ${nis.length} years (mid-cycle proxy)`,

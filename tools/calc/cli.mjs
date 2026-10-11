@@ -19,7 +19,9 @@ function run(facts, A, items, price) {
 }
 
 export function computeAll(facts, { policy, adjustments = { items: [], assumptions: {} }, price = null }) {
-  const A = merge({ ...policy.valuation, lookback_years: policy.lookback_years }, adjustments.assumptions);
+  const A = merge({ ...policy.valuation, lookback_years: policy.lookback_years, min_roic_years_above_wacc: policy.min_roic_years_above_wacc }, adjustments.assumptions);
+  const years = facts.history_years ?? facts.periods.length, E = policy.evidence;
+  const level = years >= E.high_years ? 'high' : years >= E.medium_years ? 'medium' : 'low';
   const items = adjustments.items || [];
   const metrics = run(facts, A, items, price);
   if (items.length) {
@@ -27,6 +29,7 @@ export function computeAll(facts, { policy, adjustments = { items: [], assumptio
     for (const m of metrics) { const d = base.get(m.key + '|' + m.period_end); if (d !== m.value) m.default_value = d ?? null; }
   }
   return { schema_version: 1, company: facts.company, periods: facts.periods, price, assumptions: A,
+    evidence: { history_years: years, level, margin_add: E.margin_add[level] },
     adjustments: { items, assumptions: adjustments.assumptions || {} }, facts_extracted_at: facts.extracted_at, metrics };
 }
 

@@ -20,14 +20,32 @@ function impliedGrowth(target, fcff0, r, tg, years, claims, cash, shares) {
   return (lo + hi) / 2;
 }
 
+function revenueDcfPerShare(rev0, g, m0, m1, r, tg, years, claims, cash, shares) {
+  const d = F.dcfFlows({ flows: F.revenueFlows(rev0, g, m0, m1, years), r, tg, debt: claims, cash, shares });
+  return d.valid ? d.fv : NaN;
+}
+
+// Growth that makes a revenue-driven DCF (FCF margin moving from m0 to m1) equal the price.
+function impliedRevenueGrowth(target, rev0, m0, m1, r, tg, years, claims, cash, shares) {
+  if (!(rev0 > 0 && m1 > 0)) return NaN;
+  let lo = -0.5, hi = 2;
+  const f = (g) => revenueDcfPerShare(rev0, g, m0, m1, r, tg, years, claims, cash, shares) - target;
+  if (!(f(lo) < 0 && f(hi) > 0)) return NaN;
+  for (let i = 0; i < 200; i++) { const mid = (lo + hi) / 2; if (f(mid) > 0) hi = mid; else lo = mid; }
+  return (lo + hi) / 2;
+}
+
 export function valuationMetrics(facts, T, A, perYear, multi, price) {
-  const ends = facts.periods, last = ends[ends.length - 1], D = A.dcf;
-  const year = (key, end = last) => perYear.find((m) => m.key === key && m.period_end === end);
+  const ends = facts.periods, lastAnnual = ends[ends.length - 1] ?? null, D = A.dcf;
+  // Price-based metrics use the newest balance sheet: the 10-Q one if it is newer than the last annual period.
+  const bs = facts.interim && (!lastAnnual || facts.interim.period_end > lastAnnual) ? facts.interim.period_end : lastAnnual;
+  const last = lastAnnual ?? bs;
+  const year = (key, end = lastAnnual) => perYear.find((m) => m.key === key && m.period_end === end);
   const px = price && Number.isFinite(price.value) ? { item: 'price', period_end: price.date, value: price.value } : null;
-  const shares = T.get('shares_outstanding', last), debt = debtFact(T, last), cash = T.get('cash_sti', last);
-  const minority = T.get('minority_interest', last), preferred = T.get('preferred', last);
-  const claims = debt ? { item: 'debt_and_other_claims', period_end: last, value: debt.value + minority.value + preferred.value } : null;
-  const mcap = px && shares ? { item: 'market_cap', period_end: last, value: px.value * shares.value } : null;
+  const shares = T.get('shares_outstanding', bs), debt = debtFact(T, bs), cash = T.get('cash_sti', bs);
+  const minority = T.get('minority_interest', bs), preferred = T.get('preferred', bs);
+  const claims = debt ? { item: 'debt_and_other_claims', period_end: bs, value: debt.value + minority.value + preferred.value } : null;
+  const mcap = px && shares ? { item: 'market_cap', period_end: bs, value: px.value * shares.value } : null;
   const out = [];
 
   out.push(
@@ -42,7 +60,7 @@ export function valuationMetrics(facts, T, A, perYear, multi, price) {
   );
 
   const fcffs = ends.slice(-3).map((e) => okMetric(year('fcff', e)));
-  const fcff0 = fcffs.every(Boolean) ? { item: 'fcff0', period_end: last, value: fcffs.reduce((s, f) => s + f.value, 0) / fcffs.length } : null;
+  const fcff0 = fcffs.length && fcffs.every(Boolean) ? { item: 'fcff0', period_end: last, value: fcffs.reduce((s, f) => s + f.value, 0) / fcffs.length } : null;
   const cagr = multi.find((m) => m.key === 'revenue-cagr-5') ?? multi.find((m) => m.key.startsWith('revenue-cagr-'));
   const baseGrowth = D.base_growth != null
     ? { item: 'base_growth', period_end: last, value: D.base_growth, estimate: 'set in assumptions' }
@@ -61,6 +79,19 @@ export function valuationMetrics(facts, T, A, perYear, multi, price) {
   out.push(calc('reverse-dcf-growth', 'reverse-dcf', last, `Growth for ${D.years} years that makes the base DCF value equal the price`,
     { price: px, fcff0, debt_and_other_claims: claims, cash_sti: cash, shares_outstanding: shares },
     (v) => impliedGrowth(v.price, v.fcff0, A.wacc, D.terminal_growth.base, D.years, v.debt_and_other_claims, v.cash_sti, v.shares_outstanding)));
+
+  const sourced = (name, a) => (a && Number.isFinite(a.value) ? { item: name, period_end: a.period_end ?? null, value: a.value, source: a.source } : null);
+  const rev0 = (lastAnnual && T.get('revenue', lastAnnual)) || sourced('base_revenue', A.base_revenue);
+  const margin0 = okMetric(year('fcf-margin')) || sourced('base_fcf_margin', A.base_fcf_margin);
+  const target = Number.isFinite(A.target_fcf_margin) ? { item: 'target_fcf_margin', period_end: last, value: A.target_fcf_margin, estimate: 'analyst assumption' } : null;
+  const growthFor = (v) => impliedRevenueGrowth(v.price, v.base_revenue, v.current_fcf_margin, v.target_fcf_margin, A.wacc, D.terminal_growth.base, D.years,
+    v.debt_and_other_claims, v.cash_sti, v.shares_outstanding);
+  const rr = calc('reverse-dcf-revenue', 'reverse-dcf', last,
+    `Year-${D.years} revenue that makes a revenue DCF equal the price (FCF margin moves from current to target; WACC ${A.wacc}; terminal growth ${D.terminal_growth.base})`,
+    { price: px, base_revenue: rev0, current_fcf_margin: margin0, target_fcf_margin: target, debt_and_other_claims: claims, cash_sti: cash, shares_outstanding: shares },
+    (v) => v.base_revenue * (1 + growthFor(v)) ** D.years);
+  if (rr.status === 'ok') rr.implied_growth = growthFor(Object.fromEntries(rr.inputs.map((i) => [i.name, i.value])));
+  out.push(rr);
 
   const normal = multi.find((m) => m.key === 'normalized-net-income');
   out.push(
