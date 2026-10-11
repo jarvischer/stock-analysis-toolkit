@@ -1184,6 +1184,128 @@
         "missing": []
       },
       {
+        "item": "depreciation",
+        "period_start": "2025-08-04",
+        "period_end": "2026-08-02",
+        "period_days": 364,
+        "unit": "USD",
+        "value": 632000000.0,
+        "status": "constructed",
+        "basis": "ttm",
+        "source": {
+          "formula": "Annual + current YTD - prior YTD",
+          "parts": [
+            {
+              "value": 574000000.0,
+              "period_start": "2024-11-04",
+              "period_end": "2025-11-02",
+              "source": {
+                "accession": "0001730168-25-000121",
+                "filed": "2025-12-18",
+                "form": "10-K"
+              },
+              "tag": "us-gaap:Depreciation",
+              "flags": [],
+              "sign": 1,
+              "role": "annual"
+            },
+            {
+              "value": 484000000.0,
+              "period_start": "2025-11-03",
+              "period_end": "2026-08-02",
+              "source": {
+                "accession": "0001730168-26-000080",
+                "filed": "2026-09-10",
+                "form": "10-Q"
+              },
+              "tag": "us-gaap:Depreciation",
+              "flags": [],
+              "sign": 1,
+              "role": "current_ytd"
+            },
+            {
+              "value": 426000000.0,
+              "period_start": "2024-11-04",
+              "period_end": "2025-08-03",
+              "source": {
+                "accession": "0001730168-26-000080",
+                "filed": "2026-09-10",
+                "form": "10-Q"
+              },
+              "tag": "us-gaap:Depreciation",
+              "flags": [],
+              "sign": -1,
+              "role": "prior_ytd"
+            }
+          ]
+        },
+        "flags": [
+          "ttm"
+        ],
+        "missing": []
+      },
+      {
+        "item": "amortization",
+        "period_start": "2025-08-04",
+        "period_end": "2026-08-02",
+        "period_days": 364,
+        "unit": "USD",
+        "value": 7994000000.0,
+        "status": "constructed",
+        "basis": "ttm",
+        "source": {
+          "formula": "Annual + current YTD - prior YTD",
+          "parts": [
+            {
+              "value": 8062000000.0,
+              "period_start": "2024-11-04",
+              "period_end": "2025-11-02",
+              "source": {
+                "accession": "0001730168-25-000121",
+                "filed": "2025-12-18",
+                "form": "10-K"
+              },
+              "tag": "us-gaap:AmortizationOfIntangibleAssets",
+              "flags": [],
+              "sign": 1,
+              "role": "annual"
+            },
+            {
+              "value": 5942000000.0,
+              "period_start": "2025-11-03",
+              "period_end": "2026-08-02",
+              "source": {
+                "accession": "0001730168-26-000080",
+                "filed": "2026-09-10",
+                "form": "10-Q"
+              },
+              "tag": "us-gaap:AmortizationOfIntangibleAssets",
+              "flags": [],
+              "sign": 1,
+              "role": "current_ytd"
+            },
+            {
+              "value": 6010000000.0,
+              "period_start": "2024-11-04",
+              "period_end": "2025-08-03",
+              "source": {
+                "accession": "0001730168-26-000080",
+                "filed": "2026-09-10",
+                "form": "10-Q"
+              },
+              "tag": "us-gaap:AmortizationOfIntangibleAssets",
+              "flags": [],
+              "sign": -1,
+              "role": "prior_ytd"
+            }
+          ]
+        },
+        "flags": [
+          "ttm"
+        ],
+        "missing": []
+      },
+      {
         "item": "ocf",
         "period_start": "2025-08-04",
         "period_end": "2026-08-02",
@@ -1648,128 +1770,6 @@
                 "form": "10-Q"
               },
               "tag": "us-gaap:RepaymentsOfDebt",
-              "flags": [],
-              "sign": -1,
-              "role": "prior_ytd"
-            }
-          ]
-        },
-        "flags": [
-          "ttm"
-        ],
-        "missing": []
-      },
-      {
-        "item": "depreciation",
-        "period_start": "2025-08-04",
-        "period_end": "2026-08-02",
-        "period_days": 364,
-        "unit": "USD",
-        "value": 632000000.0,
-        "status": "constructed",
-        "basis": "ttm",
-        "source": {
-          "formula": "Annual + current YTD - prior YTD",
-          "parts": [
-            {
-              "value": 574000000.0,
-              "period_start": "2024-11-04",
-              "period_end": "2025-11-02",
-              "source": {
-                "accession": "0001730168-25-000121",
-                "filed": "2025-12-18",
-                "form": "10-K"
-              },
-              "tag": "us-gaap:Depreciation",
-              "flags": [],
-              "sign": 1,
-              "role": "annual"
-            },
-            {
-              "value": 484000000.0,
-              "period_start": "2025-11-03",
-              "period_end": "2026-08-02",
-              "source": {
-                "accession": "0001730168-26-000080",
-                "filed": "2026-09-10",
-                "form": "10-Q"
-              },
-              "tag": "us-gaap:Depreciation",
-              "flags": [],
-              "sign": 1,
-              "role": "current_ytd"
-            },
-            {
-              "value": 426000000.0,
-              "period_start": "2024-11-04",
-              "period_end": "2025-08-03",
-              "source": {
-                "accession": "0001730168-26-000080",
-                "filed": "2026-09-10",
-                "form": "10-Q"
-              },
-              "tag": "us-gaap:Depreciation",
-              "flags": [],
-              "sign": -1,
-              "role": "prior_ytd"
-            }
-          ]
-        },
-        "flags": [
-          "ttm"
-        ],
-        "missing": []
-      },
-      {
-        "item": "amortization",
-        "period_start": "2025-08-04",
-        "period_end": "2026-08-02",
-        "period_days": 364,
-        "unit": "USD",
-        "value": 7994000000.0,
-        "status": "constructed",
-        "basis": "ttm",
-        "source": {
-          "formula": "Annual + current YTD - prior YTD",
-          "parts": [
-            {
-              "value": 8062000000.0,
-              "period_start": "2024-11-04",
-              "period_end": "2025-11-02",
-              "source": {
-                "accession": "0001730168-25-000121",
-                "filed": "2025-12-18",
-                "form": "10-K"
-              },
-              "tag": "us-gaap:AmortizationOfIntangibleAssets",
-              "flags": [],
-              "sign": 1,
-              "role": "annual"
-            },
-            {
-              "value": 5942000000.0,
-              "period_start": "2025-11-03",
-              "period_end": "2026-08-02",
-              "source": {
-                "accession": "0001730168-26-000080",
-                "filed": "2026-09-10",
-                "form": "10-Q"
-              },
-              "tag": "us-gaap:AmortizationOfIntangibleAssets",
-              "flags": [],
-              "sign": 1,
-              "role": "current_ytd"
-            },
-            {
-              "value": 6010000000.0,
-              "period_start": "2024-11-04",
-              "period_end": "2025-08-03",
-              "source": {
-                "accession": "0001730168-26-000080",
-                "filed": "2026-09-10",
-                "form": "10-Q"
-              },
-              "tag": "us-gaap:AmortizationOfIntangibleAssets",
               "flags": [],
               "sign": -1,
               "role": "prior_ytd"
@@ -4507,6 +4507,325 @@
       "flags": [
         "constructed"
       ]
+    },
+    {
+      "item": "depreciation",
+      "period_end": "2016-10-30",
+      "period_start": "2015-11-02",
+      "period_days": 364,
+      "value": 402000000.0,
+      "unit": "USD",
+      "status": "reported",
+      "source": {
+        "tag": "us-gaap:Depreciation",
+        "form": "10-K",
+        "accession": "0001730168-18-000084",
+        "filed": "2018-12-21"
+      },
+      "flags": []
+    },
+    {
+      "item": "depreciation",
+      "period_end": "2017-10-29",
+      "period_start": "2016-10-31",
+      "period_days": 364,
+      "value": 451000000.0,
+      "unit": "USD",
+      "status": "reported",
+      "source": {
+        "tag": "us-gaap:Depreciation",
+        "form": "10-K",
+        "accession": "0001730168-19-000144",
+        "filed": "2019-12-20"
+      },
+      "flags": []
+    },
+    {
+      "item": "depreciation",
+      "period_end": "2018-11-04",
+      "period_start": "2017-10-30",
+      "period_days": 371,
+      "value": 515000000.0,
+      "unit": "USD",
+      "status": "reported",
+      "source": {
+        "tag": "us-gaap:Depreciation",
+        "form": "10-K",
+        "accession": "0001730168-20-000226",
+        "filed": "2020-12-18"
+      },
+      "flags": [
+        "long_year"
+      ]
+    },
+    {
+      "item": "depreciation",
+      "period_end": "2019-11-03",
+      "period_start": "2018-11-05",
+      "period_days": 364,
+      "value": 569000000.0,
+      "unit": "USD",
+      "status": "reported",
+      "source": {
+        "tag": "us-gaap:Depreciation",
+        "form": "10-K",
+        "accession": "0001730168-21-000153",
+        "filed": "2021-12-17"
+      },
+      "flags": []
+    },
+    {
+      "item": "depreciation",
+      "period_end": "2020-11-01",
+      "period_start": "2019-11-04",
+      "period_days": 364,
+      "value": 570000000.0,
+      "unit": "USD",
+      "status": "reported",
+      "source": {
+        "tag": "us-gaap:Depreciation",
+        "form": "10-K",
+        "accession": "0001730168-22-000118",
+        "filed": "2022-12-16"
+      },
+      "flags": []
+    },
+    {
+      "item": "depreciation",
+      "period_end": "2021-10-31",
+      "period_start": "2020-11-02",
+      "period_days": 364,
+      "value": 539000000.0,
+      "unit": "USD",
+      "status": "reported",
+      "source": {
+        "tag": "us-gaap:Depreciation",
+        "form": "10-K",
+        "accession": "0001730168-23-000096",
+        "filed": "2023-12-14"
+      },
+      "flags": []
+    },
+    {
+      "item": "depreciation",
+      "period_end": "2022-10-30",
+      "period_start": "2021-11-01",
+      "period_days": 364,
+      "value": 529000000.0,
+      "unit": "USD",
+      "status": "reported",
+      "source": {
+        "tag": "us-gaap:Depreciation",
+        "form": "10-K",
+        "accession": "0001730168-24-000139",
+        "filed": "2024-12-20"
+      },
+      "flags": []
+    },
+    {
+      "item": "depreciation",
+      "period_end": "2023-10-29",
+      "period_start": "2022-10-31",
+      "period_days": 364,
+      "value": 502000000.0,
+      "unit": "USD",
+      "status": "reported",
+      "source": {
+        "tag": "us-gaap:Depreciation",
+        "form": "10-K",
+        "accession": "0001730168-25-000121",
+        "filed": "2025-12-18"
+      },
+      "flags": []
+    },
+    {
+      "item": "depreciation",
+      "period_end": "2024-11-03",
+      "period_start": "2023-10-30",
+      "period_days": 371,
+      "value": 593000000.0,
+      "unit": "USD",
+      "status": "reported",
+      "source": {
+        "tag": "us-gaap:Depreciation",
+        "form": "10-K",
+        "accession": "0001730168-25-000121",
+        "filed": "2025-12-18"
+      },
+      "flags": [
+        "long_year"
+      ]
+    },
+    {
+      "item": "depreciation",
+      "period_end": "2025-11-02",
+      "period_start": "2024-11-04",
+      "period_days": 364,
+      "value": 574000000.0,
+      "unit": "USD",
+      "status": "reported",
+      "source": {
+        "tag": "us-gaap:Depreciation",
+        "form": "10-K",
+        "accession": "0001730168-25-000121",
+        "filed": "2025-12-18"
+      },
+      "flags": []
+    },
+    {
+      "item": "amortization",
+      "period_end": "2016-10-30",
+      "period_start": "2015-11-02",
+      "period_days": 364,
+      "value": 2640000000.0,
+      "unit": "USD",
+      "status": "reported",
+      "source": {
+        "tag": "us-gaap:AmortizationOfIntangibleAssets",
+        "form": "10-K",
+        "accession": "0001730168-18-000084",
+        "filed": "2018-12-21"
+      },
+      "flags": []
+    },
+    {
+      "item": "amortization",
+      "period_end": "2017-10-29",
+      "period_start": "2016-10-31",
+      "period_days": 364,
+      "value": 4286000000.0,
+      "unit": "USD",
+      "status": "reported",
+      "source": {
+        "tag": "us-gaap:AmortizationOfIntangibleAssets",
+        "form": "10-K",
+        "accession": "0001730168-19-000144",
+        "filed": "2019-12-20"
+      },
+      "flags": []
+    },
+    {
+      "item": "amortization",
+      "period_end": "2018-11-04",
+      "period_start": "2017-10-30",
+      "period_days": 371,
+      "value": 3566000000.0,
+      "unit": "USD",
+      "status": "reported",
+      "source": {
+        "tag": "us-gaap:AmortizationOfIntangibleAssets",
+        "form": "10-K",
+        "accession": "0001730168-19-000144",
+        "filed": "2019-12-20"
+      },
+      "flags": [
+        "long_year"
+      ]
+    },
+    {
+      "item": "amortization",
+      "period_end": "2019-11-03",
+      "period_start": "2018-11-05",
+      "period_days": 364,
+      "value": 5239000000.0,
+      "unit": "USD",
+      "status": "reported",
+      "source": {
+        "tag": "us-gaap:AmortizationOfIntangibleAssets",
+        "form": "10-K",
+        "accession": "0001730168-19-000144",
+        "filed": "2019-12-20"
+      },
+      "flags": []
+    },
+    {
+      "item": "amortization",
+      "period_end": "2020-11-01",
+      "period_days": null,
+      "value": null,
+      "unit": "USD",
+      "status": "not_available",
+      "source": null,
+      "flags": [],
+      "tried": [
+        "us-gaap:AmortizationOfIntangibleAssets"
+      ]
+    },
+    {
+      "item": "amortization",
+      "period_end": "2021-10-31",
+      "period_days": null,
+      "value": null,
+      "unit": "USD",
+      "status": "not_available",
+      "source": null,
+      "flags": [],
+      "tried": [
+        "us-gaap:AmortizationOfIntangibleAssets"
+      ]
+    },
+    {
+      "item": "amortization",
+      "period_end": "2022-10-30",
+      "period_days": null,
+      "value": null,
+      "unit": "USD",
+      "status": "not_available",
+      "source": null,
+      "flags": [],
+      "tried": [
+        "us-gaap:AmortizationOfIntangibleAssets"
+      ]
+    },
+    {
+      "item": "amortization",
+      "period_end": "2023-10-29",
+      "period_start": "2022-10-31",
+      "period_days": 364,
+      "value": 3247000000.0,
+      "unit": "USD",
+      "status": "reported",
+      "source": {
+        "tag": "us-gaap:AmortizationOfIntangibleAssets",
+        "form": "10-K",
+        "accession": "0001730168-25-000121",
+        "filed": "2025-12-18"
+      },
+      "flags": []
+    },
+    {
+      "item": "amortization",
+      "period_end": "2024-11-03",
+      "period_start": "2023-10-30",
+      "period_days": 371,
+      "value": 9267000000.0,
+      "unit": "USD",
+      "status": "reported",
+      "source": {
+        "tag": "us-gaap:AmortizationOfIntangibleAssets",
+        "form": "10-K",
+        "accession": "0001730168-25-000121",
+        "filed": "2025-12-18"
+      },
+      "flags": [
+        "long_year"
+      ]
+    },
+    {
+      "item": "amortization",
+      "period_end": "2025-11-02",
+      "period_start": "2024-11-04",
+      "period_days": 364,
+      "value": 8062000000.0,
+      "unit": "USD",
+      "status": "reported",
+      "source": {
+        "tag": "us-gaap:AmortizationOfIntangibleAssets",
+        "form": "10-K",
+        "accession": "0001730168-25-000121",
+        "filed": "2025-12-18"
+      },
+      "flags": []
     },
     {
       "item": "eps_diluted",
@@ -10289,325 +10608,6 @@
       "status": "reported",
       "source": {
         "tag": "us-gaap:LongTermDebtMaturitiesRepaymentsOfPrincipalAfterYearFive",
-        "form": "10-K",
-        "accession": "0001730168-25-000121",
-        "filed": "2025-12-18"
-      },
-      "flags": []
-    },
-    {
-      "item": "depreciation",
-      "period_end": "2016-10-30",
-      "period_start": "2015-11-02",
-      "period_days": 364,
-      "value": 402000000.0,
-      "unit": "USD",
-      "status": "reported",
-      "source": {
-        "tag": "us-gaap:Depreciation",
-        "form": "10-K",
-        "accession": "0001730168-18-000084",
-        "filed": "2018-12-21"
-      },
-      "flags": []
-    },
-    {
-      "item": "depreciation",
-      "period_end": "2017-10-29",
-      "period_start": "2016-10-31",
-      "period_days": 364,
-      "value": 451000000.0,
-      "unit": "USD",
-      "status": "reported",
-      "source": {
-        "tag": "us-gaap:Depreciation",
-        "form": "10-K",
-        "accession": "0001730168-19-000144",
-        "filed": "2019-12-20"
-      },
-      "flags": []
-    },
-    {
-      "item": "depreciation",
-      "period_end": "2018-11-04",
-      "period_start": "2017-10-30",
-      "period_days": 371,
-      "value": 515000000.0,
-      "unit": "USD",
-      "status": "reported",
-      "source": {
-        "tag": "us-gaap:Depreciation",
-        "form": "10-K",
-        "accession": "0001730168-20-000226",
-        "filed": "2020-12-18"
-      },
-      "flags": [
-        "long_year"
-      ]
-    },
-    {
-      "item": "depreciation",
-      "period_end": "2019-11-03",
-      "period_start": "2018-11-05",
-      "period_days": 364,
-      "value": 569000000.0,
-      "unit": "USD",
-      "status": "reported",
-      "source": {
-        "tag": "us-gaap:Depreciation",
-        "form": "10-K",
-        "accession": "0001730168-21-000153",
-        "filed": "2021-12-17"
-      },
-      "flags": []
-    },
-    {
-      "item": "depreciation",
-      "period_end": "2020-11-01",
-      "period_start": "2019-11-04",
-      "period_days": 364,
-      "value": 570000000.0,
-      "unit": "USD",
-      "status": "reported",
-      "source": {
-        "tag": "us-gaap:Depreciation",
-        "form": "10-K",
-        "accession": "0001730168-22-000118",
-        "filed": "2022-12-16"
-      },
-      "flags": []
-    },
-    {
-      "item": "depreciation",
-      "period_end": "2021-10-31",
-      "period_start": "2020-11-02",
-      "period_days": 364,
-      "value": 539000000.0,
-      "unit": "USD",
-      "status": "reported",
-      "source": {
-        "tag": "us-gaap:Depreciation",
-        "form": "10-K",
-        "accession": "0001730168-23-000096",
-        "filed": "2023-12-14"
-      },
-      "flags": []
-    },
-    {
-      "item": "depreciation",
-      "period_end": "2022-10-30",
-      "period_start": "2021-11-01",
-      "period_days": 364,
-      "value": 529000000.0,
-      "unit": "USD",
-      "status": "reported",
-      "source": {
-        "tag": "us-gaap:Depreciation",
-        "form": "10-K",
-        "accession": "0001730168-24-000139",
-        "filed": "2024-12-20"
-      },
-      "flags": []
-    },
-    {
-      "item": "depreciation",
-      "period_end": "2023-10-29",
-      "period_start": "2022-10-31",
-      "period_days": 364,
-      "value": 502000000.0,
-      "unit": "USD",
-      "status": "reported",
-      "source": {
-        "tag": "us-gaap:Depreciation",
-        "form": "10-K",
-        "accession": "0001730168-25-000121",
-        "filed": "2025-12-18"
-      },
-      "flags": []
-    },
-    {
-      "item": "depreciation",
-      "period_end": "2024-11-03",
-      "period_start": "2023-10-30",
-      "period_days": 371,
-      "value": 593000000.0,
-      "unit": "USD",
-      "status": "reported",
-      "source": {
-        "tag": "us-gaap:Depreciation",
-        "form": "10-K",
-        "accession": "0001730168-25-000121",
-        "filed": "2025-12-18"
-      },
-      "flags": [
-        "long_year"
-      ]
-    },
-    {
-      "item": "depreciation",
-      "period_end": "2025-11-02",
-      "period_start": "2024-11-04",
-      "period_days": 364,
-      "value": 574000000.0,
-      "unit": "USD",
-      "status": "reported",
-      "source": {
-        "tag": "us-gaap:Depreciation",
-        "form": "10-K",
-        "accession": "0001730168-25-000121",
-        "filed": "2025-12-18"
-      },
-      "flags": []
-    },
-    {
-      "item": "amortization",
-      "period_end": "2016-10-30",
-      "period_start": "2015-11-02",
-      "period_days": 364,
-      "value": 2640000000.0,
-      "unit": "USD",
-      "status": "reported",
-      "source": {
-        "tag": "us-gaap:AmortizationOfIntangibleAssets",
-        "form": "10-K",
-        "accession": "0001730168-18-000084",
-        "filed": "2018-12-21"
-      },
-      "flags": []
-    },
-    {
-      "item": "amortization",
-      "period_end": "2017-10-29",
-      "period_start": "2016-10-31",
-      "period_days": 364,
-      "value": 4286000000.0,
-      "unit": "USD",
-      "status": "reported",
-      "source": {
-        "tag": "us-gaap:AmortizationOfIntangibleAssets",
-        "form": "10-K",
-        "accession": "0001730168-19-000144",
-        "filed": "2019-12-20"
-      },
-      "flags": []
-    },
-    {
-      "item": "amortization",
-      "period_end": "2018-11-04",
-      "period_start": "2017-10-30",
-      "period_days": 371,
-      "value": 3566000000.0,
-      "unit": "USD",
-      "status": "reported",
-      "source": {
-        "tag": "us-gaap:AmortizationOfIntangibleAssets",
-        "form": "10-K",
-        "accession": "0001730168-19-000144",
-        "filed": "2019-12-20"
-      },
-      "flags": [
-        "long_year"
-      ]
-    },
-    {
-      "item": "amortization",
-      "period_end": "2019-11-03",
-      "period_start": "2018-11-05",
-      "period_days": 364,
-      "value": 5239000000.0,
-      "unit": "USD",
-      "status": "reported",
-      "source": {
-        "tag": "us-gaap:AmortizationOfIntangibleAssets",
-        "form": "10-K",
-        "accession": "0001730168-19-000144",
-        "filed": "2019-12-20"
-      },
-      "flags": []
-    },
-    {
-      "item": "amortization",
-      "period_end": "2020-11-01",
-      "period_days": null,
-      "value": null,
-      "unit": "USD",
-      "status": "not_available",
-      "source": null,
-      "flags": [],
-      "tried": [
-        "us-gaap:AmortizationOfIntangibleAssets"
-      ]
-    },
-    {
-      "item": "amortization",
-      "period_end": "2021-10-31",
-      "period_days": null,
-      "value": null,
-      "unit": "USD",
-      "status": "not_available",
-      "source": null,
-      "flags": [],
-      "tried": [
-        "us-gaap:AmortizationOfIntangibleAssets"
-      ]
-    },
-    {
-      "item": "amortization",
-      "period_end": "2022-10-30",
-      "period_days": null,
-      "value": null,
-      "unit": "USD",
-      "status": "not_available",
-      "source": null,
-      "flags": [],
-      "tried": [
-        "us-gaap:AmortizationOfIntangibleAssets"
-      ]
-    },
-    {
-      "item": "amortization",
-      "period_end": "2023-10-29",
-      "period_start": "2022-10-31",
-      "period_days": 364,
-      "value": 3247000000.0,
-      "unit": "USD",
-      "status": "reported",
-      "source": {
-        "tag": "us-gaap:AmortizationOfIntangibleAssets",
-        "form": "10-K",
-        "accession": "0001730168-25-000121",
-        "filed": "2025-12-18"
-      },
-      "flags": []
-    },
-    {
-      "item": "amortization",
-      "period_end": "2024-11-03",
-      "period_start": "2023-10-30",
-      "period_days": 371,
-      "value": 9267000000.0,
-      "unit": "USD",
-      "status": "reported",
-      "source": {
-        "tag": "us-gaap:AmortizationOfIntangibleAssets",
-        "form": "10-K",
-        "accession": "0001730168-25-000121",
-        "filed": "2025-12-18"
-      },
-      "flags": [
-        "long_year"
-      ]
-    },
-    {
-      "item": "amortization",
-      "period_end": "2025-11-02",
-      "period_start": "2024-11-04",
-      "period_days": 364,
-      "value": 8062000000.0,
-      "unit": "USD",
-      "status": "reported",
-      "source": {
-        "tag": "us-gaap:AmortizationOfIntangibleAssets",
         "form": "10-K",
         "accession": "0001730168-25-000121",
         "filed": "2025-12-18"

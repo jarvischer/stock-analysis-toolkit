@@ -17,6 +17,8 @@ All amounts are in the units shown. Missing values are not zero. Constructed val
 | TTM | income_tax | 2026-08-02 | $2,204,000,000 | USD | constructed | ttm | https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html<br>https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/0001730168-26-000080-index.html |
 | TTM | net_income | 2026-08-02 | $38,265,000,000 | USD | constructed | ttm | https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html<br>https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/0001730168-26-000080-index.html |
 | TTM | d_and_a | 2026-08-02 | $8,626,000,000 | USD | constructed | ttm | https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html<br>https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/0001730168-26-000080-index.html |
+| TTM | depreciation | 2026-08-02 | $632,000,000 | USD | constructed | ttm | https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html<br>https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/0001730168-26-000080-index.html |
+| TTM | amortization | 2026-08-02 | $7,994,000,000 | USD | constructed | ttm | https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html<br>https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/0001730168-26-000080-index.html |
 | TTM | ocf | 2026-08-02 | $40,653,000,000 | USD | constructed | ttm | https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html<br>https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/0001730168-26-000080-index.html |
 | TTM | capex | 2026-08-02 | $1,250,000,000 | USD | constructed | ttm | https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html<br>https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/0001730168-26-000080-index.html |
 | TTM | sbc | 2026-08-02 | $8,482,000,000 | USD | constructed | ttm | https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html<br>https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/0001730168-26-000080-index.html |
@@ -25,8 +27,6 @@ All amounts are in the units shown. Missing values are not zero. Constructed val
 | TTM | dividends | 2026-08-02 | $12,078,000,000 | USD | constructed | ttm | https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html<br>https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/0001730168-26-000080-index.html |
 | TTM | debt_issued | 2026-08-02 | $9,445,000,000 | USD | constructed | ttm | https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html<br>https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/0001730168-26-000080-index.html |
 | TTM | debt_repaid | 2026-08-02 | $14,166,000,000 | USD | constructed | ttm | https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html<br>https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/0001730168-26-000080-index.html |
-| TTM | depreciation | 2026-08-02 | $632,000,000 | USD | constructed | ttm | https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html<br>https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/0001730168-26-000080-index.html |
-| TTM | amortization | 2026-08-02 | $7,994,000,000 | USD | constructed | ttm | https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html<br>https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/0001730168-26-000080-index.html |
 | TTM balance sheet | cash_sti | 2026-08-02 | $23,975,000,000 | USD | constructed | constructed | https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/0001730168-26-000080-index.html |
 | TTM balance sheet | cash_sti | 2025-08-03 | $10,718,000,000 | USD | constructed | constructed | https://www.sec.gov/Archives/edgar/data/1730168/000173016825000098/0001730168-25-000098-index.html |
 | TTM balance sheet | receivables | 2026-08-02 | $13,707,000,000 | USD | reported |  | https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/0001730168-26-000080-index.html |
@@ -187,6 +187,26 @@ All amounts are in the units shown. Missing values are not zero. Constructed val
 | Annual | d_and_a | 2023-10-29 | $3,749,000,000 | USD | constructed | constructed | https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html |
 | Annual | d_and_a | 2024-11-03 | $9,860,000,000 | USD | constructed | constructed, long_year | https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html |
 | Annual | d_and_a | 2025-11-02 | $8,636,000,000 | USD | constructed | constructed | https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html |
+| Annual | depreciation | 2016-10-30 | $402,000,000 | USD | reported |  | https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html |
+| Annual | depreciation | 2017-10-29 | $451,000,000 | USD | reported |  | https://www.sec.gov/Archives/edgar/data/1730168/000173016819000144/0001730168-19-000144-index.html |
+| Annual | depreciation | 2018-11-04 | $515,000,000 | USD | reported | long_year | https://www.sec.gov/Archives/edgar/data/1730168/000173016820000226/0001730168-20-000226-index.html |
+| Annual | depreciation | 2019-11-03 | $569,000,000 | USD | reported |  | https://www.sec.gov/Archives/edgar/data/1730168/000173016821000153/0001730168-21-000153-index.html |
+| Annual | depreciation | 2020-11-01 | $570,000,000 | USD | reported |  | https://www.sec.gov/Archives/edgar/data/1730168/000173016822000118/0001730168-22-000118-index.html |
+| Annual | depreciation | 2021-10-31 | $539,000,000 | USD | reported |  | https://www.sec.gov/Archives/edgar/data/1730168/000173016823000096/0001730168-23-000096-index.html |
+| Annual | depreciation | 2022-10-30 | $529,000,000 | USD | reported |  | https://www.sec.gov/Archives/edgar/data/1730168/000173016824000139/0001730168-24-000139-index.html |
+| Annual | depreciation | 2023-10-29 | $502,000,000 | USD | reported |  | https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html |
+| Annual | depreciation | 2024-11-03 | $593,000,000 | USD | reported | long_year | https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html |
+| Annual | depreciation | 2025-11-02 | $574,000,000 | USD | reported |  | https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html |
+| Annual | amortization | 2016-10-30 | $2,640,000,000 | USD | reported |  | https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html |
+| Annual | amortization | 2017-10-29 | $4,286,000,000 | USD | reported |  | https://www.sec.gov/Archives/edgar/data/1730168/000173016819000144/0001730168-19-000144-index.html |
+| Annual | amortization | 2018-11-04 | $3,566,000,000 | USD | reported | long_year | https://www.sec.gov/Archives/edgar/data/1730168/000173016819000144/0001730168-19-000144-index.html |
+| Annual | amortization | 2019-11-03 | $5,239,000,000 | USD | reported |  | https://www.sec.gov/Archives/edgar/data/1730168/000173016819000144/0001730168-19-000144-index.html |
+| Annual | amortization | 2020-11-01 | Not available | USD | not_available |  |  |
+| Annual | amortization | 2021-10-31 | Not available | USD | not_available |  |  |
+| Annual | amortization | 2022-10-30 | Not available | USD | not_available |  |  |
+| Annual | amortization | 2023-10-29 | $3,247,000,000 | USD | reported |  | https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html |
+| Annual | amortization | 2024-11-03 | $9,267,000,000 | USD | reported | long_year | https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html |
+| Annual | amortization | 2025-11-02 | $8,062,000,000 | USD | reported |  | https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html |
 | Annual | eps_diluted | 2016-10-30 | -0 | USD per share | reported | split_adjusted | https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html |
 | Annual | eps_diluted | 2017-10-29 | 0 | USD per share | reported | split_adjusted | https://www.sec.gov/Archives/edgar/data/1730168/000173016819000144/0001730168-19-000144-index.html |
 | Annual | eps_diluted | 2018-11-04 | 3 | USD per share | reported | long_year, split_adjusted | https://www.sec.gov/Archives/edgar/data/1730168/000173016820000226/0001730168-20-000226-index.html |
@@ -537,26 +557,6 @@ All amounts are in the units shown. Missing values are not zero. Constructed val
 | Annual | maturity_after_y5 | 2023-10-29 | $31,323,000,000 | USD | reported |  | https://www.sec.gov/Archives/edgar/data/1730168/000173016823000096/0001730168-23-000096-index.html |
 | Annual | maturity_after_y5 | 2024-11-03 | $36,793,000,000 | USD | reported |  | https://www.sec.gov/Archives/edgar/data/1730168/000173016824000139/0001730168-24-000139-index.html |
 | Annual | maturity_after_y5 | 2025-11-02 | $43,287,000,000 | USD | reported |  | https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html |
-| Annual | depreciation | 2016-10-30 | $402,000,000 | USD | reported |  | https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html |
-| Annual | depreciation | 2017-10-29 | $451,000,000 | USD | reported |  | https://www.sec.gov/Archives/edgar/data/1730168/000173016819000144/0001730168-19-000144-index.html |
-| Annual | depreciation | 2018-11-04 | $515,000,000 | USD | reported | long_year | https://www.sec.gov/Archives/edgar/data/1730168/000173016820000226/0001730168-20-000226-index.html |
-| Annual | depreciation | 2019-11-03 | $569,000,000 | USD | reported |  | https://www.sec.gov/Archives/edgar/data/1730168/000173016821000153/0001730168-21-000153-index.html |
-| Annual | depreciation | 2020-11-01 | $570,000,000 | USD | reported |  | https://www.sec.gov/Archives/edgar/data/1730168/000173016822000118/0001730168-22-000118-index.html |
-| Annual | depreciation | 2021-10-31 | $539,000,000 | USD | reported |  | https://www.sec.gov/Archives/edgar/data/1730168/000173016823000096/0001730168-23-000096-index.html |
-| Annual | depreciation | 2022-10-30 | $529,000,000 | USD | reported |  | https://www.sec.gov/Archives/edgar/data/1730168/000173016824000139/0001730168-24-000139-index.html |
-| Annual | depreciation | 2023-10-29 | $502,000,000 | USD | reported |  | https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html |
-| Annual | depreciation | 2024-11-03 | $593,000,000 | USD | reported | long_year | https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html |
-| Annual | depreciation | 2025-11-02 | $574,000,000 | USD | reported |  | https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html |
-| Annual | amortization | 2016-10-30 | $2,640,000,000 | USD | reported |  | https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html |
-| Annual | amortization | 2017-10-29 | $4,286,000,000 | USD | reported |  | https://www.sec.gov/Archives/edgar/data/1730168/000173016819000144/0001730168-19-000144-index.html |
-| Annual | amortization | 2018-11-04 | $3,566,000,000 | USD | reported | long_year | https://www.sec.gov/Archives/edgar/data/1730168/000173016819000144/0001730168-19-000144-index.html |
-| Annual | amortization | 2019-11-03 | $5,239,000,000 | USD | reported |  | https://www.sec.gov/Archives/edgar/data/1730168/000173016819000144/0001730168-19-000144-index.html |
-| Annual | amortization | 2020-11-01 | Not available | USD | not_available |  |  |
-| Annual | amortization | 2021-10-31 | Not available | USD | not_available |  |  |
-| Annual | amortization | 2022-10-30 | Not available | USD | not_available |  |  |
-| Annual | amortization | 2023-10-29 | $3,247,000,000 | USD | reported |  | https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html |
-| Annual | amortization | 2024-11-03 | $9,267,000,000 | USD | reported | long_year | https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html |
-| Annual | amortization | 2025-11-02 | $8,062,000,000 | USD | reported |  | https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html |
 | Interim | cash_sti | 2026-08-02 | $23,975,000,000 | USD | constructed | constructed | https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/0001730168-26-000080-index.html |
 | Interim | receivables | 2026-08-02 | $13,707,000,000 | USD | reported |  | https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/0001730168-26-000080-index.html |
 | Interim | inventory | 2026-08-02 | $4,523,000,000 | USD | reported |  | https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/0001730168-26-000080-index.html |

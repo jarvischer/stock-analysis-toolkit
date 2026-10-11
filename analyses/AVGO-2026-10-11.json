@@ -20,7 +20,7 @@
     "quality_score": 3,
     "required_margin_of_safety": 0.4,
     "margin_of_safety": -2.585728059848587,
-    "summary": "Broadcom does not meet the rules at $361.54, the supplied price dated 2026-10-09. The base margin of safety is −258.6%, against a required 40%; even the bull DCF estimate is $136.18 per share. Quality is 3 of 5: return on invested capital exceeds the 9% cost of capital in only 6 of 9 measurable years, while customer concentration and stock-based pay weaken the case. The latest annual debt and interest tests pass, but the valuation requires cash-flow growth of 26.5% annually for 10 years. A lower price or explicitly revised valuation assumptions could change the result; these are model estimates, not price predictions."
+    "summary": "Broadcom does not meet the conservative policy rules at the supplied price of $361.54 dated 2026-10-09. The policy base estimate remains $100.83; this is conditional on its historical cash-flow base and capped growth. TTM FCF is $39.40B and the reverse DCF requires 18.3% annual FCFF growth from the TTM starting point, versus 26.5% from the historical average. Separate illustrative segment forecasts and a 21% tax normalization are shown for comparison; they are assumptions, not management guidance or price targets."
   },
   "steps": [
     {
@@ -59,7 +59,7 @@
         }
       ],
       "score": null,
-      "reason": "Broadcom designs semiconductor products and infrastructure software, so the operating-company FCFF and ROIC model is suitable. Free cash flow to the firm (FCFF) is cash available to all capital providers; return on invested capital (ROIC) measures operating profit after tax relative to the capital used. Annual history covers fiscal 2016 through fiscal 2025, with the latest annual period ending 2025-11-02. The newest extracted balance sheet is dated 2026-08-02; the latest filing date is 2026-09-10. Fiscal 2018 and fiscal 2024 carry long_year flags. Historical shares are split-adjusted; restated and tag_conflict flags require attention and do not by themselves establish an accounting problem. The 2025 tax benefit causes the calculator to use a zero tax rate; the 2024 rate reaches its upper limit. These rates are not normalized estimates. D&A for 2020–2022 contains only depreciation in its source parts, so historical EBITDA and owner earnings for those years are incomplete. The latest cover-page share count is dated 2026-08-28 and needs no text-share assumption.",
+      "reason": "Broadcom designs semiconductor products and infrastructure software, so the operating-company FCFF and ROIC model is suitable. Free cash flow to the firm (FCFF) is cash available to all capital providers; return on invested capital (ROIC) measures operating profit after tax relative to the capital used. Annual history covers fiscal 2016 through fiscal 2025, with the latest annual period ending 2025-11-02. The newest extracted balance sheet is dated 2026-08-02; the latest filing date is 2026-09-10. Fiscal 2018 and fiscal 2024 carry long_year flags. Historical shares are split-adjusted; restated and tag_conflict flags require attention and do not by themselves establish an accounting problem. The legacy policy tax-shield proxy clips the 2025 tax benefit to zero. The report now shows unclipped reported tax and separate normalized metrics using an illustrative 21% tax estimate. Complete D&A for fiscal 2020 through 2022 is unavailable because amortization is missing, so affected EBITDA and owner-earnings metrics are unavailable. The latest cover-page share count is dated 2026-08-28 and needs no text-share assumption. Matched trailing-twelve-month (TTM) flows run through 2026-08-02. TTM means the latest annual total plus current fiscal year-to-date flows minus matching prior-year flows.",
       "drivers": [
         {
           "text": "The company has positive operating income and positive FCFF, so the FCFF and ROIC model applies.",
@@ -196,8 +196,8 @@
         {
           "metric": "debt-ebitda",
           "period_end": "2020-11-01",
-          "value": 8.957678883071553,
-          "explanation": "The high value in fiscal 2020 is partly a data gap: d_and_a seems to contain depreciation only, so EBITDA is too low."
+          "value": null,
+          "explanation": "Updated calculation: Debt / EBITDA (only when EBITDA > 0). Missing complete inputs remain unavailable."
         },
         {
           "metric": "interest-coverage",
@@ -255,7 +255,7 @@
         }
       ],
       "score": null,
-      "reason": "Competence: Broadcom designs semiconductor products and infrastructure software. Its chips serve AI computing, networking, wireless, broadband and storage markets. Its software includes VMware private cloud, mainframe and security products. It develops technology internally and expands through acquisitions. It reaches customers directly and through distributors, with significant customer concentration. The latest annual survival checks pass: debt/EBITDA is 1.91 versus a maximum of 3.0, and operating profit covers interest 7.94 times versus a minimum of 5. These are fiscal 2025 ratios, not trailing ratios through the latest quarter. Debt due over three years is $12.8B, compared with fiscal 2025 cash of $16.2B and free cash flow of $26.9B. The interim cash balance is $24.0B. Earlier interest-coverage failures show that acquisitions can strain financing; historical debt/EBITDA for 2020–2022 also suffers from missing amortization. Operating cash flow exceeds net income in the latest year, but receivables rose from $4.4B to $7.15B during fiscal 2025 and reached $13.7B at the interim date. One customer accounts for 44% of annual-end receivables. This warrants review of collections and payment terms. The 2025 income-tax benefit reflects settlements, expired limitation periods and stock-award tax benefits. No stop rule is identified as failing on the available latest annual evidence; this does not establish that all accounting concerns are resolved.",
+      "reason": "Competence: Broadcom designs semiconductor products and infrastructure software. Its chips serve AI computing, networking, wireless, broadband and storage markets. Its software includes VMware private cloud, mainframe and security products. It develops technology internally and expands through acquisitions. It reaches customers directly and through distributors, with significant customer concentration. The latest annual survival checks pass: debt/EBITDA is 1.91 versus a maximum of 3.0, and operating profit covers interest 7.94 times versus a minimum of 5. These are fiscal 2025 ratios, not trailing ratios through the latest quarter. Debt due over three years is $12.8B, compared with fiscal 2025 cash of $16.2B and free cash flow of $26.9B. The interim cash balance is $24.0B. Earlier interest-coverage failures show that acquisitions can strain financing; historical debt/EBITDA for fiscal 2020 through 2022 is unavailable because amortization is missing. Operating cash flow exceeds net income in the latest year, but receivables rose from $4.4B to $7.15B during fiscal 2025 and reached $13.7B at the interim date. One customer accounts for 44% of annual-end receivables. This warrants review of collections and payment terms. The 2025 income-tax benefit reflects settlements, expired limitation periods and stock-award tax benefits. No stop rule is identified as failing on the available latest annual evidence; this does not establish that all accounting concerns are resolved.",
       "drivers": [
         {
           "text": "Debt is 1.91 times EBITDA and interest coverage is 7.94 in fiscal 2025, both inside the policy limits.",
@@ -267,8 +267,8 @@
         }
       ],
       "open_questions": [
-        "What payment terms and collection risks explain the interim increase in receivables? The extraction does not include the latest 10-Q narrative for this company.",
-        "What recurring tax rate should replace the unusual reported tax effects in a separate sensitivity analysis?"
+        "How do customer payment terms and the non-recourse receivables factoring disclosed in the latest 10-Q affect cash conversion and collection risk?",
+        "What evidence supports a sustainable cash-tax rate instead of the illustrative normalization estimate?"
       ],
       "cards": [
         "circle-of-competence",
@@ -408,7 +408,7 @@
         }
       ],
       "score": 3,
-      "reason": "Business quality score: 3 of 5, an analyst judgment under the policy. ROIC exceeds the 9% weighted average cost of capital (WACC) in 6 of 9 measurable years; the policy requires 7. The first annual ROIC is unavailable because starting invested capital is missing. Fiscal 2025 ROIC is 19.9%, but its zero tax-rate input makes it sensitive to tax normalization; no normalized case has been calculated. Gross margin is 67.8%, operating margin 39.9%, and free cash flow is 42.1% of revenue. These support a strong operating franchise. Incremental ROIC, the added operating return on added capital, is 29.4% over five years, also sensitive to tax effects. One distributor accounts for 32% of revenue; this is not the same as one ultimate customer. The top five end customers account for approximately 40%. The filings identify cyclical semiconductor demand, dependence on AI investment and customers developing their own alternatives. The competitive advantage rests on specialized chip design, networking technology and established software deployments. Acquisitions and customer bargaining power reduce confidence in extrapolating past growth.",
+      "reason": "Business quality score: 3 of 5, an analyst judgment under the policy. ROIC exceeds the 9% weighted average cost of capital (WACC) in 6 of 9 measurable years; the policy requires 7. The first annual ROIC is unavailable because starting invested capital is missing. Fiscal 2025 policy ROIC is 19.9%. At the explicit illustrative 21% normalized tax estimate, annual ROIC is 15.72% and TTM ROIC is 25.83%. These normalized estimates are separate from the historical policy test. Gross margin is 67.8%, operating margin 39.9%, and free cash flow is 42.1% of revenue. These support a strong operating franchise. Incremental ROIC, the added operating return on added capital, is 29.4% over five years, also sensitive to tax effects. One distributor accounts for 32% of revenue; this is not the same as one ultimate customer. The top five end customers account for approximately 40%. The filings identify cyclical semiconductor demand, dependence on AI investment and customers developing their own alternatives. The competitive advantage rests on specialized chip design, networking technology and established software deployments. Acquisitions and customer bargaining power reduce confidence in extrapolating past growth.",
       "drivers": [
         {
           "text": "ROIC was above the WACC in only 6 of 9 years because of large acquisitions; the policy needs 7.",
@@ -424,8 +424,8 @@
         }
       ],
       "open_questions": [
-        "Do you want to add back the amortization of acquired intangibles to examine ROIC on the business without the effect of acquisitions? This is a less conservative view.",
-        "Which tax rate do you think is normal for Broadcom after the Singapore incentives end in 2030?"
+        "What sustainable tax rate is supported by the geographic profit mix and tax incentives? The 21% normalization is an estimate, not a verified recurring company rate.",
+        "How much of reported physical depreciation approximates maintenance spending? Acquisition amortization is not automatically treated as maintenance capital."
       ],
       "cards": [
         "roic",
@@ -522,7 +522,7 @@
           "period_end": "2025-11-02",
           "value": 96,
           "source": "DEF 14A 0001193125-26-085691",
-          "quote": "96% of our Chief Executive Officer’s (“CEO”) and 95% of our other named executive officers’ (“NEOs”) average annualized target total compensation in fiscal 2025 is comprised of variable compensation",
+          "quote": "96% of our Chief Executive Officer\u2019s (\u201cCEO\u201d) and 95% of our other named executive officers\u2019 (\u201cNEOs\u201d) average annualized target total compensation in fiscal 2025 is comprised of variable compensation",
           "file": "proxy_pay.txt"
         }
       ],
@@ -637,6 +637,38 @@
           "source": "10-K 0001730168-25-000121",
           "quote": "Infrastructure software 20,765 13,977",
           "file": "item7.txt"
+        },
+        {
+          "item": "segment_revenue_semiconductor",
+          "period_end": "2026-08-02",
+          "value": 48363000000,
+          "source": "10-Q 0001730168-26-000080",
+          "quote": "Semiconductor solutions $ 20,839 $9,166 $11,673 127% $ 48,363 $25,786 $22,577 88%",
+          "file": "latest_10q.txt"
+        },
+        {
+          "item": "segment_revenue_semiconductor",
+          "period_end": "2025-08-03",
+          "value": 25786000000,
+          "source": "10-Q 0001730168-26-000080",
+          "quote": "Semiconductor solutions $ 20,839 $9,166 $11,673 127% $ 48,363 $25,786 $22,577 88%",
+          "file": "latest_10q.txt"
+        },
+        {
+          "item": "segment_revenue_software",
+          "period_end": "2026-08-02",
+          "value": 22726000000,
+          "source": "10-Q 0001730168-26-000080",
+          "quote": "Infrastructure software 8,752 6,786 1,966 29% 22,726 20,086 2,640 13%",
+          "file": "latest_10q.txt"
+        },
+        {
+          "item": "segment_revenue_software",
+          "period_end": "2025-08-03",
+          "value": 20086000000,
+          "source": "10-Q 0001730168-26-000080",
+          "quote": "Infrastructure software 8,752 6,786 1,966 29% 22,726 20,086 2,640 13%",
+          "file": "latest_10q.txt"
         }
       ],
       "calculations": [
@@ -699,22 +731,113 @@
           "period_end": "2025-11-02",
           "value": 0.015594560963330862,
           "explanation": "Free cash flow is 1.6% of the market value."
+        },
+        {
+          "metric": "reported-tax-rate-annual",
+          "period_end": "2025-11-02",
+          "value": -0.0174666725328875,
+          "explanation": "Income tax expense / Pretax income (unclipped; positive pretax income required)"
+        },
+        {
+          "metric": "normalized-roic-annual",
+          "period_end": "2025-11-02",
+          "value": 0.15721037013899736,
+          "explanation": "Operating income \u00d7 (1 - normalized tax rate) / average invested capital"
+        },
+        {
+          "metric": "normalized-fcff-annual",
+          "period_end": "2025-11-02",
+          "value": 24804360000,
+          "explanation": "Operating income \u00d7 (1 - normalized tax rate) + D&A - |CapEx| - \u0394Operating working capital; SBC remains expensed in operating income"
+        },
+        {
+          "metric": "reported-tax-rate-ttm",
+          "period_end": "2026-08-02",
+          "value": 0.05446143962045022,
+          "explanation": "Income tax expense / Pretax income (unclipped; positive pretax income required)"
+        },
+        {
+          "metric": "ttm-revenue",
+          "period_end": "2026-08-02",
+          "value": 89104000000,
+          "explanation": "Annual revenue + current YTD - prior YTD"
+        },
+        {
+          "metric": "ttm-net-income",
+          "period_end": "2026-08-02",
+          "value": 38265000000,
+          "explanation": "Annual net income + current YTD - prior YTD"
+        },
+        {
+          "metric": "ttm-fcf",
+          "period_end": "2026-08-02",
+          "value": 39403000000,
+          "explanation": "TTM OCF - |TTM CapEx|"
+        },
+        {
+          "metric": "ttm-fcff",
+          "period_end": "2026-08-02",
+          "value": 33867298154.142677,
+          "explanation": "TTM OCF + Interest \u00d7 (1 - tax shield proxy) - |CapEx| - SBC; not tax-normalized"
+        },
+        {
+          "metric": "ttm-ebitda",
+          "period_end": "2026-08-02",
+          "value": 51440000000,
+          "explanation": "TTM operating income + complete TTM D&A"
+        },
+        {
+          "metric": "ttm-pe",
+          "period_end": "2026-08-02",
+          "value": 45.10278691734222,
+          "explanation": "Market cap / TTM net income (positive earnings required)"
+        },
+        {
+          "metric": "ttm-fcf-margin",
+          "period_end": "2026-08-02",
+          "value": 0.44221359310468666,
+          "explanation": "TTM FCF / TTM revenue"
+        },
+        {
+          "metric": "ttm-fcf-yield",
+          "period_end": "2026-08-02",
+          "value": 0.022830961047712192,
+          "explanation": "TTM FCF / market cap"
+        },
+        {
+          "metric": "ttm-ev-ebitda",
+          "period_end": "2026-08-02",
+          "value": 34.239932764232115,
+          "explanation": "Latest EV / complete TTM EBITDA"
+        },
+        {
+          "metric": "normalized-roic-ttm",
+          "period_end": "2026-08-02",
+          "value": 0.2582681867120746,
+          "explanation": "Operating income \u00d7 (1 - normalized tax rate) / average invested capital"
+        },
+        {
+          "metric": "normalized-fcff-ttm",
+          "period_end": "2026-08-02",
+          "value": 34211060000,
+          "explanation": "Operating income \u00d7 (1 - normalized tax rate) + D&A - |CapEx| - \u0394Operating working capital; SBC remains expensed in operating income"
         }
       ],
       "score": null,
-      "reason": "Discounted cash flow (DCF) estimates the present value of future cash available to capital providers. The policy estimates use WACC of 9%, a 10-year forecast and a base growth cap of 10%. Scenario growth estimates are 5%, 10% and 13%; terminal growth estimates are 2%, 2.5% and 3%. These are policy assumptions, not forecasts supplied by management. The starting FCFF is the three-year average of $18.6B, and the calculator treats stock-based compensation as a cash-flow cost. Per-share values use the August 2026 share count and interim cash and debt. Missing preferred stock and minority interest are assumed_zero, which affects claims deducted from business value; missing historical intangibles are also assumed_zero in some asset calculations. The resulting DCF estimates are $63.51 bear, $100.83 base and $136.18 bull. Reverse DCF solves for the growth needed to justify the supplied price: 26.5% annually for 10 years under the base discount and terminal assumptions. Historical revenue growth was 21.7% over five years and includes acquisitions; it is not directly equivalent to organic FCFF growth. Earnings value at the policy multiple is $38.55 per share. Tangible book value and net current asset value are negative and do not provide a positive asset-based valuation floor. Revenue reverse DCF is unavailable without an explicit target margin. A sum-of-the-parts analysis could value software and semiconductors separately, but must allocate unallocated expenses and stock-based pay; no numerical SOTP estimate is included. The mature growth cap and averaging of historical cash flow can understate value if durable AI growth proves materially stronger; the current conclusion is conditional on the policy.",
+      "reason": "Discounted cash flow (DCF) estimates the present value of future cash available to capital providers. The policy estimates use WACC of 9%, a 10-year forecast and a base growth cap of 10%. Scenario growth estimates are 5%, 10% and 13%; terminal growth estimates are 2%, 2.5% and 3%. These are policy assumptions, not forecasts supplied by management. The starting FCFF is the three-year average of $18.6B, and the calculator treats stock-based compensation as a cash-flow cost. Per-share values use the August 2026 share count and interim cash and debt. Missing preferred stock and minority interest are assumed_zero, which affects claims deducted from business value; missing historical intangibles are also assumed_zero in some asset calculations. The resulting DCF estimates are $63.51 bear, $100.83 base and $136.18 bull. Reverse DCF solves for the growth needed to justify the supplied price: 26.5% annually for 10 years under the base discount and terminal assumptions. Historical revenue growth was 21.7% over five years and includes acquisitions; it is not directly equivalent to organic FCFF growth. Earnings value at the policy multiple is $38.55 per share. Tangible book value and net current asset value are negative and do not provide a positive asset-based valuation floor. Revenue reverse DCF is unavailable without an explicit target margin. A sum-of-the-parts analysis could value software and semiconductors separately, but must allocate unallocated expenses and stock-based pay; no numerical SOTP estimate is included. The mature growth cap and averaging of historical cash flow can understate value if durable AI growth proves materially stronger; the current conclusion is conditional on the policy. The refreshed comparison adds TTM revenue of $89.10B, TTM FCF of $39.40B, TTM FCFF of $33.87B, and TTM P/E of 45.10 times. From TTM FCFF, the conditional reverse DCF requires 18.3% annual growth, versus 26.5% from the historical average; neither is a direct observation of market expectations. With the illustrative normalized tax estimate, TTM operating-model FCFF is $34.21B. The separate illustrative Growth, GARP and Quality segment cases estimate $173.97, $138.64 and $117.60 per share, respectively. Their margins, tax, capital intensity and growth paths are explicit estimates rather than management guidance. The comparison contains yearly operating forecasts and sensitivity results; its values do not change the conservative policy screen.",
       "drivers": [
         {
-          "text": "The supplied price requires 26.5% annual FCFF growth for 10 years under the model.",
+          "text": "Conditional required FCFF growth is 26.5% from the historical average and 18.3% from the TTM starting point; the starting cash flow materially changes the interpretation.",
           "reversing_change": "A lower price or a sourced growth scenario that produces the required margin of safety would change the valuation test."
         },
         {
-          "text": "Even the bull DCF value ($136.18) is far below the price.",
+          "text": "The policy bull value is $136.18; the separate illustrative Growth case is $173.97. Both remain below the supplied price, subject to different explicit assumptions.",
           "reversing_change": "Explicitly revised growth or discount-rate estimates would need to raise model value enough to meet the required margin of safety."
         }
       ],
       "open_questions": [
-        "Do you accept the growth limit of 0.10 in the policy for a company whose AI revenue grows quickly? A higher limit is less conservative."
+        "Which segment growth, operating-margin, reinvestment and tax estimates are supported by durable operating evidence?",
+        "How sensitive is the conclusion to WACC, terminal growth and the selected historical or normalized cash-flow base? Review the exported sensitivity tables."
       ],
       "cards": [
         "reverse-dcf",
@@ -740,13 +863,13 @@
           "metric": "margin-of-safety-base",
           "period_end": "2025-11-02",
           "value": -2.585728059848587,
-          "explanation": "The price is far above the base DCF value; the margin of safety is −2.59 as a fraction."
+          "explanation": "The price is far above the base DCF value; the margin of safety is \u22122.59 as a fraction."
         },
         {
           "metric": "margin-of-safety-bear",
           "period_end": "2025-11-02",
           "value": -4.692472131792246,
-          "explanation": "The margin of safety against the bear DCF value is −4.69 as a fraction."
+          "explanation": "The margin of safety against the bear DCF value is \u22124.69 as a fraction."
         },
         {
           "metric": "revenue-growth",
@@ -762,10 +885,10 @@
         }
       ],
       "score": null,
-      "reason": "The overall quality score is 3, the lower of the business and management scores. With high evidence from 10 annual periods, the policy requires a 40% margin of safety. Margin of safety means (estimated value minus price) divided by estimated value; the base result is −258.6% and the bear result is −469.2%. A negative margin means price exceeds model value; it is not a predicted investment loss. The result is does_not_meet_rules. Latest annual revenue and owner earnings increased, so this review does not identify a persistent operating decline; this alone cannot rule out a future value trap. The supplied price is above all three DCF estimates. AI demand and software profitability provide possible business reasons for investor optimism, but filings do not establish the market motivations behind the price. No market-news or sentiment analysis is included.",
+      "reason": "The overall quality score is 3, the lower of the business and management scores. With high evidence from 10 annual periods, the policy requires a 40% margin of safety. Margin of safety means (estimated value minus price) divided by estimated value; the base result is \u2212258.6% and the bear result is \u2212469.2%. A negative margin means price exceeds model value; it is not a predicted investment loss. The result is does_not_meet_rules. Latest annual revenue and owner earnings increased, so this review does not identify a persistent operating decline; this alone cannot rule out a future value trap. The supplied price is above the three policy DCF estimates and the separate illustrative forward cases. This is a conditional model result, not a universal claim about intrinsic value. AI demand and software profitability provide possible business reasons for investor optimism, but filings do not establish the market motivations behind the price. No market-news or sentiment analysis is included.",
       "drivers": [
         {
-          "text": "The base margin of safety is −2.59 against a requirement of 0.40.",
+          "text": "The base margin of safety is \u22122.59 against a requirement of 0.40.",
           "reversing_change": "margin-of-safety-base reaches 0.40 or more, from a much lower price or from a much higher base DCF value."
         },
         {
@@ -793,9 +916,9 @@
         }
       ],
       "open_questions": [
-        "At what price do you want to examine Broadcom again? The base DCF value is $100.83 per share.",
-        "Do you accept the policy WACC of 0.09 and the growth limit of 0.10 for Broadcom?",
-        "Do you want to watch customer concentration and receivables each quarter?"
+        "What evidence would justify revising the explicit segment growth and margin estimates?",
+        "What sustainable cash-tax rate and maintenance-capital estimate should replace the illustrative assumptions?",
+        "How will customer concentration, receivable collection and SBC dilution be monitored each quarter?"
       ],
       "cards": [
         "thesis-def",
@@ -803,5 +926,4158 @@
       ]
     }
   ],
-  "adjustments": []
+  "adjustments": [],
+  "valuation": {
+    "version": 1,
+    "price": {
+      "value": 361.54,
+      "date": "2026-10-09"
+    },
+    "capital": {
+      "shares": 4773629865,
+      "claims": 59419000000,
+      "cash": 23975000000,
+      "shares_date": "2026-08-28",
+      "balance_sheet_date": "2026-08-02"
+    },
+    "profile": {
+      "model_fit": "suitable",
+      "evidence_years": 10,
+      "ttm_available": true,
+      "revenue_growth_above_policy_cap": true,
+      "unusual_latest_tax_rate": true,
+      "limitations": [
+        "Investment styles label documented scenarios; they do not change the conservative policy verdict.",
+        "Forward margins must include stock compensation and all unallocated corporate costs.",
+        "Normalization is an estimate and remains separate from reported and adjusted metrics."
+      ]
+    },
+    "normalization": {
+      "tax_rate": {
+        "value": 0.21,
+        "reason": "Illustrative normalized cash-tax estimate for comparison; sustainable company tax rate is not established.",
+        "source": "Analyst assumption, 2026-10-11"
+      },
+      "maintenance_capex": {
+        "method": "depreciation",
+        "reason": "Physical depreciation used as an explicit maintenance proxy, excluding acquisition amortization; replacement spending is not independently verified.",
+        "source": "Analyst proxy using reported physical depreciation"
+      }
+    },
+    "cash_flow_bases": [
+      {
+        "id": "historical-average",
+        "label": "Historical three-year FCFF average (policy)",
+        "value": 18591133285.862534,
+        "period_end": "2025-11-02",
+        "basis": "historical_average",
+        "definition": "Legacy cash-flow FCFF averaged over available last three annual periods; not tax-normalized",
+        "required_growth": 0.26504625455184294,
+        "status": "ok",
+        "reverse_dcf_note": "Conditional on this starting cash flow, discount rate, terminal growth, forecast horizon and capital claims; not a direct observation of market expectations."
+      },
+      {
+        "id": "latest-annual",
+        "label": "Latest annual FCFF",
+        "value": 22556000000,
+        "period_end": "2025-11-02",
+        "basis": "reported",
+        "definition": "OCF + after-tax interest - CapEx - SBC (legacy cash-flow definition); uses documented adjustments when configured",
+        "required_growth": 0.23841753760652262,
+        "status": "ok",
+        "reverse_dcf_note": "Conditional on this starting cash flow, discount rate, terminal growth, forecast horizon and capital claims; not a direct observation of market expectations."
+      },
+      {
+        "id": "ttm-fcff",
+        "label": "ttm-fcff",
+        "value": 33867298154.142677,
+        "period_end": "2026-08-02",
+        "basis": "reported",
+        "definition": "TTM OCF + Interest \u00d7 (1 - tax shield proxy) - |CapEx| - SBC; not tax-normalized",
+        "required_growth": 0.18331251241954616,
+        "status": "ok",
+        "reverse_dcf_note": "Conditional on this starting cash flow, discount rate, terminal growth, forecast horizon and capital claims; not a direct observation of market expectations."
+      },
+      {
+        "id": "normalized-fcff-annual",
+        "label": "normalized-fcff-annual",
+        "value": 24804360000,
+        "period_end": "2025-11-02",
+        "basis": "normalized",
+        "definition": "Operating income \u00d7 (1 - normalized tax rate) + D&A - |CapEx| - \u0394Operating working capital; SBC remains expensed in operating income",
+        "required_growth": 0.22543491522774384,
+        "status": "ok",
+        "reverse_dcf_note": "Conditional on this starting cash flow, discount rate, terminal growth, forecast horizon and capital claims; not a direct observation of market expectations."
+      },
+      {
+        "id": "normalized-fcff-ttm",
+        "label": "normalized-fcff-ttm",
+        "value": 34211060000,
+        "period_end": "2026-08-02",
+        "basis": "normalized",
+        "definition": "Operating income \u00d7 (1 - normalized tax rate) + D&A - |CapEx| - \u0394Operating working capital; SBC remains expensed in operating income",
+        "required_growth": 0.18195641699331244,
+        "status": "ok",
+        "reverse_dcf_note": "Conditional on this starting cash flow, discount rate, terminal growth, forecast horizon and capital claims; not a direct observation of market expectations."
+      },
+      {
+        "id": "forward-illustrative-growth",
+        "label": "Year-one FCFF: illustrative-growth",
+        "basis": "forward",
+        "value": 33215158200,
+        "period_end": "2026-08-02",
+        "status": "ok",
+        "required_growth": null,
+        "definition": "Explicit year-one segment forecast, not a historical starting cash flow"
+      },
+      {
+        "id": "forward-illustrative-garp",
+        "label": "Year-one FCFF: illustrative-garp",
+        "basis": "forward",
+        "value": 32264528000,
+        "period_end": "2026-08-02",
+        "status": "ok",
+        "required_growth": null,
+        "definition": "Explicit year-one segment forecast, not a historical starting cash flow"
+      },
+      {
+        "id": "forward-illustrative-quality",
+        "label": "Year-one FCFF: illustrative-quality",
+        "basis": "forward",
+        "value": 31688338300,
+        "period_end": "2026-08-02",
+        "status": "ok",
+        "required_growth": null,
+        "definition": "Explicit year-one segment forecast, not a historical starting cash flow"
+      }
+    ],
+    "comparisons": [
+      {
+        "id": "policy",
+        "style": "value",
+        "status": "ok",
+        "label": "Conservative policy model",
+        "starting_basis": "historical-average",
+        "value_per_share": 100.82750112825528,
+        "margin_of_safety": -2.585728059848587,
+        "price_to_value": 3.585728059848587,
+        "gap_to_price": -0.7211166091490422,
+        "assumptions": {
+          "wacc": 0.09,
+          "years": 10,
+          "growth": 0.1,
+          "terminal_growth": 0.025
+        }
+      },
+      {
+        "id": "illustrative-growth",
+        "style": "growth",
+        "status": "ok",
+        "label": "illustrative-growth",
+        "starting_basis": "explicit_segment_forecast",
+        "value_per_share": 173.96930074292695,
+        "margin_of_safety": -1.078182750956991,
+        "price_to_value": 2.078182750956991,
+        "gap_to_price": -0.5188103647095013,
+        "assumptions": {
+          "id": "illustrative-growth",
+          "style": "growth",
+          "years": 10,
+          "tax_rate": 0.21,
+          "wacc": 0.09,
+          "terminal_growth": 0.025,
+          "terminal_roic": 0.15,
+          "sbc_treatment": "expensed_in_margins",
+          "corporate_costs": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "segments": [
+            {
+              "name": "Semiconductor solutions (including AI)",
+              "base_revenue": {
+                "period_end": "2026-08-02",
+                "components": [
+                  {
+                    "item": "segment_revenue_semiconductor",
+                    "period_end": "2025-11-02",
+                    "value": 36858000000,
+                    "source": "10-K 0001730168-25-000121",
+                    "sign": 1
+                  },
+                  {
+                    "item": "segment_revenue_semiconductor",
+                    "period_end": "2026-08-02",
+                    "value": 48363000000,
+                    "source": "10-Q 0001730168-26-000080",
+                    "sign": 1
+                  },
+                  {
+                    "item": "segment_revenue_semiconductor",
+                    "period_end": "2025-08-03",
+                    "value": 25786000000,
+                    "source": "10-Q 0001730168-26-000080",
+                    "sign": -1
+                  }
+                ]
+              },
+              "base_working_capital_ratio": 0.18,
+              "growth": [
+                0.3,
+                0.25,
+                0.2,
+                0.15,
+                0.12,
+                0.1,
+                0.08,
+                0.06,
+                0.05,
+                0.04
+              ],
+              "operating_margin": [
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4
+              ],
+              "depreciation_to_revenue": [
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015
+              ],
+              "capex_to_revenue": [
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025
+              ],
+              "working_capital_to_revenue": [
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18
+              ]
+            },
+            {
+              "name": "Infrastructure software (including VMware)",
+              "base_revenue": {
+                "period_end": "2026-08-02",
+                "components": [
+                  {
+                    "item": "segment_revenue_software",
+                    "period_end": "2025-11-02",
+                    "value": 27029000000,
+                    "source": "10-K 0001730168-25-000121",
+                    "sign": 1
+                  },
+                  {
+                    "item": "segment_revenue_software",
+                    "period_end": "2026-08-02",
+                    "value": 22726000000,
+                    "source": "10-Q 0001730168-26-000080",
+                    "sign": 1
+                  },
+                  {
+                    "item": "segment_revenue_software",
+                    "period_end": "2025-08-03",
+                    "value": 20086000000,
+                    "source": "10-Q 0001730168-26-000080",
+                    "sign": -1
+                  }
+                ]
+              },
+              "base_working_capital_ratio": 0.05,
+              "growth": [
+                0.12,
+                0.11,
+                0.1,
+                0.09,
+                0.08,
+                0.07,
+                0.06,
+                0.05,
+                0.04,
+                0.03
+              ],
+              "operating_margin": [
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5
+              ],
+              "depreciation_to_revenue": [
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005
+              ],
+              "capex_to_revenue": [
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01
+              ],
+              "working_capital_to_revenue": [
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05
+              ]
+            }
+          ],
+          "source": "Analyst sensitivity assumptions, 2026-10-11; revenue bases from cited 10-K and 10-Q excerpts",
+          "reason": "Illustrative scenario, not management guidance or a calibrated fair-value forecast. Revenue growth fades by segment. Operating margins include SBC and all allocated corporate costs, exclude acquisition amortization, and include the physical depreciation added back. Zero unallocated corporate costs is intentional. Tax, margins, capital intensity and working capital ratios are estimates; style labels do not imply suitability."
+        }
+      },
+      {
+        "id": "illustrative-garp",
+        "style": "garp",
+        "status": "ok",
+        "label": "illustrative-garp",
+        "starting_basis": "explicit_segment_forecast",
+        "value_per_share": 138.63867075946024,
+        "margin_of_safety": -1.6077861106103382,
+        "price_to_value": 2.607786110610338,
+        "gap_to_price": -0.6165329679718421,
+        "assumptions": {
+          "id": "illustrative-garp",
+          "style": "garp",
+          "years": 10,
+          "tax_rate": 0.21,
+          "wacc": 0.09,
+          "terminal_growth": 0.025,
+          "terminal_roic": 0.15,
+          "sbc_treatment": "expensed_in_margins",
+          "corporate_costs": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "segments": [
+            {
+              "name": "Semiconductor solutions (including AI)",
+              "base_revenue": {
+                "period_end": "2026-08-02",
+                "components": [
+                  {
+                    "item": "segment_revenue_semiconductor",
+                    "period_end": "2025-11-02",
+                    "value": 36858000000,
+                    "source": "10-K 0001730168-25-000121",
+                    "sign": 1
+                  },
+                  {
+                    "item": "segment_revenue_semiconductor",
+                    "period_end": "2026-08-02",
+                    "value": 48363000000,
+                    "source": "10-Q 0001730168-26-000080",
+                    "sign": 1
+                  },
+                  {
+                    "item": "segment_revenue_semiconductor",
+                    "period_end": "2025-08-03",
+                    "value": 25786000000,
+                    "source": "10-Q 0001730168-26-000080",
+                    "sign": -1
+                  }
+                ]
+              },
+              "base_working_capital_ratio": 0.18,
+              "growth": [
+                0.2,
+                0.18,
+                0.15,
+                0.12,
+                0.1,
+                0.08,
+                0.06,
+                0.05,
+                0.04,
+                0.03
+              ],
+              "operating_margin": [
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4
+              ],
+              "depreciation_to_revenue": [
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015
+              ],
+              "capex_to_revenue": [
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025
+              ],
+              "working_capital_to_revenue": [
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18
+              ]
+            },
+            {
+              "name": "Infrastructure software (including VMware)",
+              "base_revenue": {
+                "period_end": "2026-08-02",
+                "components": [
+                  {
+                    "item": "segment_revenue_software",
+                    "period_end": "2025-11-02",
+                    "value": 27029000000,
+                    "source": "10-K 0001730168-25-000121",
+                    "sign": 1
+                  },
+                  {
+                    "item": "segment_revenue_software",
+                    "period_end": "2026-08-02",
+                    "value": 22726000000,
+                    "source": "10-Q 0001730168-26-000080",
+                    "sign": 1
+                  },
+                  {
+                    "item": "segment_revenue_software",
+                    "period_end": "2025-08-03",
+                    "value": 20086000000,
+                    "source": "10-Q 0001730168-26-000080",
+                    "sign": -1
+                  }
+                ]
+              },
+              "base_working_capital_ratio": 0.05,
+              "growth": [
+                0.1,
+                0.09,
+                0.08,
+                0.07,
+                0.06,
+                0.05,
+                0.04,
+                0.03,
+                0.03,
+                0.03
+              ],
+              "operating_margin": [
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5
+              ],
+              "depreciation_to_revenue": [
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005
+              ],
+              "capex_to_revenue": [
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01
+              ],
+              "working_capital_to_revenue": [
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05
+              ]
+            }
+          ],
+          "source": "Analyst sensitivity assumptions, 2026-10-11; revenue bases from cited 10-K and 10-Q excerpts",
+          "reason": "Illustrative scenario, not management guidance or a calibrated fair-value forecast. Revenue growth fades by segment. Operating margins include SBC and all allocated corporate costs, exclude acquisition amortization, and include the physical depreciation added back. Zero unallocated corporate costs is intentional. Tax, margins, capital intensity and working capital ratios are estimates; style labels do not imply suitability."
+        }
+      },
+      {
+        "id": "illustrative-quality",
+        "style": "quality",
+        "status": "ok",
+        "label": "illustrative-quality",
+        "starting_basis": "explicit_segment_forecast",
+        "value_per_share": 117.60180008462504,
+        "margin_of_safety": -2.074272670484972,
+        "price_to_value": 3.074272670484972,
+        "gap_to_price": -0.6747198094688691,
+        "assumptions": {
+          "id": "illustrative-quality",
+          "style": "quality",
+          "years": 10,
+          "tax_rate": 0.21,
+          "wacc": 0.09,
+          "terminal_growth": 0.025,
+          "terminal_roic": 0.15,
+          "sbc_treatment": "expensed_in_margins",
+          "corporate_costs": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "segments": [
+            {
+              "name": "Semiconductor solutions (including AI)",
+              "base_revenue": {
+                "period_end": "2026-08-02",
+                "components": [
+                  {
+                    "item": "segment_revenue_semiconductor",
+                    "period_end": "2025-11-02",
+                    "value": 36858000000,
+                    "source": "10-K 0001730168-25-000121",
+                    "sign": 1
+                  },
+                  {
+                    "item": "segment_revenue_semiconductor",
+                    "period_end": "2026-08-02",
+                    "value": 48363000000,
+                    "source": "10-Q 0001730168-26-000080",
+                    "sign": 1
+                  },
+                  {
+                    "item": "segment_revenue_semiconductor",
+                    "period_end": "2025-08-03",
+                    "value": 25786000000,
+                    "source": "10-Q 0001730168-26-000080",
+                    "sign": -1
+                  }
+                ]
+              },
+              "base_working_capital_ratio": 0.18,
+              "growth": [
+                0.15,
+                0.13,
+                0.11,
+                0.09,
+                0.08,
+                0.06,
+                0.05,
+                0.04,
+                0.03,
+                0.03
+              ],
+              "operating_margin": [
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4
+              ],
+              "depreciation_to_revenue": [
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015
+              ],
+              "capex_to_revenue": [
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025
+              ],
+              "working_capital_to_revenue": [
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18
+              ]
+            },
+            {
+              "name": "Infrastructure software (including VMware)",
+              "base_revenue": {
+                "period_end": "2026-08-02",
+                "components": [
+                  {
+                    "item": "segment_revenue_software",
+                    "period_end": "2025-11-02",
+                    "value": 27029000000,
+                    "source": "10-K 0001730168-25-000121",
+                    "sign": 1
+                  },
+                  {
+                    "item": "segment_revenue_software",
+                    "period_end": "2026-08-02",
+                    "value": 22726000000,
+                    "source": "10-Q 0001730168-26-000080",
+                    "sign": 1
+                  },
+                  {
+                    "item": "segment_revenue_software",
+                    "period_end": "2025-08-03",
+                    "value": 20086000000,
+                    "source": "10-Q 0001730168-26-000080",
+                    "sign": -1
+                  }
+                ]
+              },
+              "base_working_capital_ratio": 0.05,
+              "growth": [
+                0.08,
+                0.07,
+                0.06,
+                0.05,
+                0.04,
+                0.04,
+                0.03,
+                0.03,
+                0.03,
+                0.03
+              ],
+              "operating_margin": [
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5
+              ],
+              "depreciation_to_revenue": [
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005
+              ],
+              "capex_to_revenue": [
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01
+              ],
+              "working_capital_to_revenue": [
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05
+              ]
+            }
+          ],
+          "source": "Analyst sensitivity assumptions, 2026-10-11; revenue bases from cited 10-K and 10-Q excerpts",
+          "reason": "Illustrative scenario, not management guidance or a calibrated fair-value forecast. Revenue growth fades by segment. Operating margins include SBC and all allocated corporate costs, exclude acquisition amortization, and include the physical depreciation added back. Zero unallocated corporate costs is intentional. Tax, margins, capital intensity and working capital ratios are estimates; style labels do not imply suitability."
+        }
+      }
+    ],
+    "forward": [
+      {
+        "id": "illustrative-growth",
+        "style": "growth",
+        "status": "ok",
+        "label": "illustrative-growth",
+        "starting_basis": "explicit_segment_forecast",
+        "value_per_share": 173.96930074292695,
+        "margin_of_safety": -1.078182750956991,
+        "price_to_value": 2.078182750956991,
+        "gap_to_price": -0.5188103647095013,
+        "assumptions": {
+          "id": "illustrative-growth",
+          "style": "growth",
+          "years": 10,
+          "tax_rate": 0.21,
+          "wacc": 0.09,
+          "terminal_growth": 0.025,
+          "terminal_roic": 0.15,
+          "sbc_treatment": "expensed_in_margins",
+          "corporate_costs": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "segments": [
+            {
+              "name": "Semiconductor solutions (including AI)",
+              "base_revenue": {
+                "period_end": "2026-08-02",
+                "components": [
+                  {
+                    "item": "segment_revenue_semiconductor",
+                    "period_end": "2025-11-02",
+                    "value": 36858000000,
+                    "source": "10-K 0001730168-25-000121",
+                    "sign": 1
+                  },
+                  {
+                    "item": "segment_revenue_semiconductor",
+                    "period_end": "2026-08-02",
+                    "value": 48363000000,
+                    "source": "10-Q 0001730168-26-000080",
+                    "sign": 1
+                  },
+                  {
+                    "item": "segment_revenue_semiconductor",
+                    "period_end": "2025-08-03",
+                    "value": 25786000000,
+                    "source": "10-Q 0001730168-26-000080",
+                    "sign": -1
+                  }
+                ]
+              },
+              "base_working_capital_ratio": 0.18,
+              "growth": [
+                0.3,
+                0.25,
+                0.2,
+                0.15,
+                0.12,
+                0.1,
+                0.08,
+                0.06,
+                0.05,
+                0.04
+              ],
+              "operating_margin": [
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4
+              ],
+              "depreciation_to_revenue": [
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015
+              ],
+              "capex_to_revenue": [
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025
+              ],
+              "working_capital_to_revenue": [
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18
+              ]
+            },
+            {
+              "name": "Infrastructure software (including VMware)",
+              "base_revenue": {
+                "period_end": "2026-08-02",
+                "components": [
+                  {
+                    "item": "segment_revenue_software",
+                    "period_end": "2025-11-02",
+                    "value": 27029000000,
+                    "source": "10-K 0001730168-25-000121",
+                    "sign": 1
+                  },
+                  {
+                    "item": "segment_revenue_software",
+                    "period_end": "2026-08-02",
+                    "value": 22726000000,
+                    "source": "10-Q 0001730168-26-000080",
+                    "sign": 1
+                  },
+                  {
+                    "item": "segment_revenue_software",
+                    "period_end": "2025-08-03",
+                    "value": 20086000000,
+                    "source": "10-Q 0001730168-26-000080",
+                    "sign": -1
+                  }
+                ]
+              },
+              "base_working_capital_ratio": 0.05,
+              "growth": [
+                0.12,
+                0.11,
+                0.1,
+                0.09,
+                0.08,
+                0.07,
+                0.06,
+                0.05,
+                0.04,
+                0.03
+              ],
+              "operating_margin": [
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5
+              ],
+              "depreciation_to_revenue": [
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005
+              ],
+              "capex_to_revenue": [
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01
+              ],
+              "working_capital_to_revenue": [
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05
+              ]
+            }
+          ],
+          "source": "Analyst sensitivity assumptions, 2026-10-11; revenue bases from cited 10-K and 10-Q excerpts",
+          "reason": "Illustrative scenario, not management guidance or a calibrated fair-value forecast. Revenue growth fades by segment. Operating margins include SBC and all allocated corporate costs, exclude acquisition amortization, and include the physical depreciation added back. Zero unallocated corporate costs is intentional. Tax, margins, capital intensity and working capital ratios are estimates; style labels do not imply suitability."
+        },
+        "rows": [
+          {
+            "year": 1,
+            "segments": [
+              {
+                "name": "Semiconductor solutions (including AI)",
+                "revenue": 77265500000,
+                "operating_income": 30906200000,
+                "depreciation": 1158982500,
+                "capex": 1931637500,
+                "change_in_working_capital": 3209490000
+              },
+              {
+                "name": "Infrastructure software (including VMware)",
+                "revenue": 33229280000.000004,
+                "operating_income": 16614640000.000002,
+                "depreciation": 166146400.00000003,
+                "capex": 332292800.00000006,
+                "change_in_working_capital": 178014000.00000024
+              }
+            ],
+            "revenue": 110494780000,
+            "corporate_costs": 0,
+            "operating_income": 47520840000,
+            "taxes": 9979376400,
+            "nopat": 37541463600,
+            "depreciation": 1325128900,
+            "capex": 2263930300,
+            "change_in_working_capital": 3387504000,
+            "reinvestment": 4326305400,
+            "fcff": 33215158200
+          },
+          {
+            "year": 2,
+            "segments": [
+              {
+                "name": "Semiconductor solutions (including AI)",
+                "revenue": 96581875000,
+                "operating_income": 38632750000,
+                "depreciation": 1448728125,
+                "capex": 2414546875,
+                "change_in_working_capital": 3476947500
+              },
+              {
+                "name": "Infrastructure software (including VMware)",
+                "revenue": 36884500800.00001,
+                "operating_income": 18442250400.000004,
+                "depreciation": 184422504.00000003,
+                "capex": 368845008.00000006,
+                "change_in_working_capital": 182761040.00000024
+              }
+            ],
+            "revenue": 133466375800,
+            "corporate_costs": 0,
+            "operating_income": 57075000400,
+            "taxes": 11985750084,
+            "nopat": 45089250316,
+            "depreciation": 1633150629,
+            "capex": 2783391883,
+            "change_in_working_capital": 3659708540,
+            "reinvestment": 4809949794,
+            "fcff": 40279300522
+          },
+          {
+            "year": 3,
+            "segments": [
+              {
+                "name": "Semiconductor solutions (including AI)",
+                "revenue": 115898250000,
+                "operating_income": 46359300000,
+                "depreciation": 1738473750,
+                "capex": 2897456250,
+                "change_in_working_capital": 3476947500
+              },
+              {
+                "name": "Infrastructure software (including VMware)",
+                "revenue": 40572950880.000015,
+                "operating_income": 20286475440.000008,
+                "depreciation": 202864754.4000001,
+                "capex": 405729508.8000002,
+                "change_in_working_capital": 184422504.00000048
+              }
+            ],
+            "revenue": 156471200880,
+            "corporate_costs": 0,
+            "operating_income": 66645775440.00001,
+            "taxes": 13995612842.400002,
+            "nopat": 52650162597.600006,
+            "depreciation": 1941338504.4,
+            "capex": 3303185758.8,
+            "change_in_working_capital": 3661370004.0000005,
+            "reinvestment": 5023217258.400001,
+            "fcff": 47626945339.200005
+          },
+          {
+            "year": 4,
+            "segments": [
+              {
+                "name": "Semiconductor solutions (including AI)",
+                "revenue": 133282987499.99998,
+                "operating_income": 53313195000,
+                "depreciation": 1999244812.4999998,
+                "capex": 3332074687.5,
+                "change_in_working_capital": 3129252749.999996
+              },
+              {
+                "name": "Infrastructure software (including VMware)",
+                "revenue": 44224516459.20002,
+                "operating_income": 22112258229.60001,
+                "depreciation": 221122582.2960001,
+                "capex": 442245164.5920002,
+                "change_in_working_capital": 182578278.96000004
+              }
+            ],
+            "revenue": 177507503959.2,
+            "corporate_costs": 0,
+            "operating_income": 75425453229.6,
+            "taxes": 15839345178.216002,
+            "nopat": 59586108051.384,
+            "depreciation": 2220367394.796,
+            "capex": 3774319852.092,
+            "change_in_working_capital": 3311831028.959996,
+            "reinvestment": 4865783486.255997,
+            "fcff": 54720324565.128
+          },
+          {
+            "year": 5,
+            "segments": [
+              {
+                "name": "Semiconductor solutions (including AI)",
+                "revenue": 149276946000,
+                "operating_income": 59710778400,
+                "depreciation": 2239154190,
+                "capex": 3731923650,
+                "change_in_working_capital": 2878912530.000004
+              },
+              {
+                "name": "Infrastructure software (including VMware)",
+                "revenue": 47762477775.93603,
+                "operating_income": 23881238887.968014,
+                "depreciation": 238812388.87968016,
+                "capex": 477624777.7593603,
+                "change_in_working_capital": 176898065.83680058
+              }
+            ],
+            "revenue": 197039423775.93604,
+            "corporate_costs": 0,
+            "operating_income": 83592017287.96802,
+            "taxes": 17554323630.47328,
+            "nopat": 66037693657.494736,
+            "depreciation": 2477966578.87968,
+            "capex": 4209548427.7593603,
+            "change_in_working_capital": 3055810595.8368044,
+            "reinvestment": 4787392444.716484,
+            "fcff": 61250301212.778244
+          },
+          {
+            "year": 6,
+            "segments": [
+              {
+                "name": "Semiconductor solutions (including AI)",
+                "revenue": 164204640600,
+                "operating_income": 65681856240,
+                "depreciation": 2463069609,
+                "capex": 4105116015,
+                "change_in_working_capital": 2686985028
+              },
+              {
+                "name": "Infrastructure software (including VMware)",
+                "revenue": 51105851220.25155,
+                "operating_income": 25552925610.125774,
+                "depreciation": 255529256.10125774,
+                "capex": 511058512.2025155,
+                "change_in_working_capital": 167168672.21577597
+              }
+            ],
+            "revenue": 215310491820.25156,
+            "corporate_costs": 0,
+            "operating_income": 91234781850.12578,
+            "taxes": 19159304188.526413,
+            "nopat": 72075477661.59937,
+            "depreciation": 2718598865.101258,
+            "capex": 4616174527.202516,
+            "change_in_working_capital": 2854153700.215776,
+            "reinvestment": 4751729362.317034,
+            "fcff": 67323748299.28233
+          },
+          {
+            "year": 7,
+            "segments": [
+              {
+                "name": "Semiconductor solutions (including AI)",
+                "revenue": 177341011848,
+                "operating_income": 70936404739.2,
+                "depreciation": 2660115177.72,
+                "capex": 4433525296.2,
+                "change_in_working_capital": 2364546824.6399994
+              },
+              {
+                "name": "Infrastructure software (including VMware)",
+                "revenue": 54172202293.466644,
+                "operating_income": 27086101146.733322,
+                "depreciation": 270861011.4673332,
+                "capex": 541722022.9346664,
+                "change_in_working_capital": 153317553.66075468
+              }
+            ],
+            "revenue": 231513214141.46664,
+            "corporate_costs": 0,
+            "operating_income": 98022505885.93332,
+            "taxes": 20584726236.045998,
+            "nopat": 77437779649.88733,
+            "depreciation": 2930976189.187333,
+            "capex": 4975247319.134666,
+            "change_in_working_capital": 2517864378.300754,
+            "reinvestment": 4562135508.248087,
+            "fcff": 72875644141.63925
+          },
+          {
+            "year": 8,
+            "segments": [
+              {
+                "name": "Semiconductor solutions (including AI)",
+                "revenue": 187981472558.88,
+                "operating_income": 75192589023.552,
+                "depreciation": 2819722088.3832,
+                "capex": 4699536813.972,
+                "change_in_working_capital": 1915282927.9584007
+              },
+              {
+                "name": "Infrastructure software (including VMware)",
+                "revenue": 56880812408.13998,
+                "operating_income": 28440406204.06999,
+                "depreciation": 284404062.0406999,
+                "capex": 568808124.0813998,
+                "change_in_working_capital": 135430505.7336669
+              }
+            ],
+            "revenue": 244862284967.02,
+            "corporate_costs": 0,
+            "operating_income": 103632995227.622,
+            "taxes": 21762928997.800617,
+            "nopat": 81870066229.82138,
+            "depreciation": 3104126150.4239,
+            "capex": 5268344938.0534,
+            "change_in_working_capital": 2050713433.6920676,
+            "reinvestment": 4214932221.3215675,
+            "fcff": 77655134008.49982
+          },
+          {
+            "year": 9,
+            "segments": [
+              {
+                "name": "Semiconductor solutions (including AI)",
+                "revenue": 197380546186.824,
+                "operating_income": 78952218474.7296,
+                "depreciation": 2960708192.80236,
+                "capex": 4934513654.6706,
+                "change_in_working_capital": 1691833253.0299187
+              },
+              {
+                "name": "Infrastructure software (including VMware)",
+                "revenue": 59156044904.465576,
+                "operating_income": 29578022452.232788,
+                "depreciation": 295780224.5223279,
+                "capex": 591560449.0446558,
+                "change_in_working_capital": 113761624.81627989
+              }
+            ],
+            "revenue": 256536591091.28958,
+            "corporate_costs": 0,
+            "operating_income": 108530240926.96239,
+            "taxes": 22791350594.6621,
+            "nopat": 85738890332.3003,
+            "depreciation": 3256488417.324688,
+            "capex": 5526074103.715256,
+            "change_in_working_capital": 1805594877.8461986,
+            "reinvestment": 4075180564.2367663,
+            "fcff": 81663709768.06354
+          },
+          {
+            "year": 10,
+            "segments": [
+              {
+                "name": "Semiconductor solutions (including AI)",
+                "revenue": 205275768034.29697,
+                "operating_income": 82110307213.7188,
+                "depreciation": 3079136520.5144544,
+                "capex": 5131894200.857425,
+                "change_in_working_capital": 1421139932.5451355
+              },
+              {
+                "name": "Infrastructure software (including VMware)",
+                "revenue": 60930726251.59955,
+                "operating_income": 30465363125.799774,
+                "depreciation": 304653631.25799775,
+                "capex": 609307262.5159955,
+                "change_in_working_capital": 88734067.35669851
+              }
+            ],
+            "revenue": 266206494285.8965,
+            "corporate_costs": 0,
+            "operating_income": 112575670339.51857,
+            "taxes": 23640890771.2989,
+            "nopat": 88934779568.21967,
+            "depreciation": 3383790151.7724524,
+            "capex": 5741201463.373421,
+            "change_in_working_capital": 1509873999.901834,
+            "reinvestment": 3867285311.5028024,
+            "fcff": 85067494256.71684
+          }
+        ],
+        "valuation": {
+          "value_per_share": 173.96930074292695,
+          "enterprise_value": 865909049619.6028,
+          "equity_value": 830465049619.6028,
+          "pv_flows": 372239981690.5716,
+          "terminal_value": 1168694218684.9377,
+          "pv_terminal_value": 493669067929.0312,
+          "terminal_fcff": 75965124214.52095,
+          "terminal_reinvestment_rate": 0.16666666666666669,
+          "terminal_value_share": 0.5701165360795131
+        },
+        "explanation": "FCFF = EBIT - cash-tax estimate + depreciation - CapEx - change in operating working capital. SBC stays expensed in operating margins; no second deduction. Terminal reinvestment = next-year NOPAT \u00d7 terminal growth / terminal ROIC."
+      },
+      {
+        "id": "illustrative-garp",
+        "style": "garp",
+        "status": "ok",
+        "label": "illustrative-garp",
+        "starting_basis": "explicit_segment_forecast",
+        "value_per_share": 138.63867075946024,
+        "margin_of_safety": -1.6077861106103382,
+        "price_to_value": 2.607786110610338,
+        "gap_to_price": -0.6165329679718421,
+        "assumptions": {
+          "id": "illustrative-garp",
+          "style": "garp",
+          "years": 10,
+          "tax_rate": 0.21,
+          "wacc": 0.09,
+          "terminal_growth": 0.025,
+          "terminal_roic": 0.15,
+          "sbc_treatment": "expensed_in_margins",
+          "corporate_costs": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "segments": [
+            {
+              "name": "Semiconductor solutions (including AI)",
+              "base_revenue": {
+                "period_end": "2026-08-02",
+                "components": [
+                  {
+                    "item": "segment_revenue_semiconductor",
+                    "period_end": "2025-11-02",
+                    "value": 36858000000,
+                    "source": "10-K 0001730168-25-000121",
+                    "sign": 1
+                  },
+                  {
+                    "item": "segment_revenue_semiconductor",
+                    "period_end": "2026-08-02",
+                    "value": 48363000000,
+                    "source": "10-Q 0001730168-26-000080",
+                    "sign": 1
+                  },
+                  {
+                    "item": "segment_revenue_semiconductor",
+                    "period_end": "2025-08-03",
+                    "value": 25786000000,
+                    "source": "10-Q 0001730168-26-000080",
+                    "sign": -1
+                  }
+                ]
+              },
+              "base_working_capital_ratio": 0.18,
+              "growth": [
+                0.2,
+                0.18,
+                0.15,
+                0.12,
+                0.1,
+                0.08,
+                0.06,
+                0.05,
+                0.04,
+                0.03
+              ],
+              "operating_margin": [
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4
+              ],
+              "depreciation_to_revenue": [
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015
+              ],
+              "capex_to_revenue": [
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025
+              ],
+              "working_capital_to_revenue": [
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18
+              ]
+            },
+            {
+              "name": "Infrastructure software (including VMware)",
+              "base_revenue": {
+                "period_end": "2026-08-02",
+                "components": [
+                  {
+                    "item": "segment_revenue_software",
+                    "period_end": "2025-11-02",
+                    "value": 27029000000,
+                    "source": "10-K 0001730168-25-000121",
+                    "sign": 1
+                  },
+                  {
+                    "item": "segment_revenue_software",
+                    "period_end": "2026-08-02",
+                    "value": 22726000000,
+                    "source": "10-Q 0001730168-26-000080",
+                    "sign": 1
+                  },
+                  {
+                    "item": "segment_revenue_software",
+                    "period_end": "2025-08-03",
+                    "value": 20086000000,
+                    "source": "10-Q 0001730168-26-000080",
+                    "sign": -1
+                  }
+                ]
+              },
+              "base_working_capital_ratio": 0.05,
+              "growth": [
+                0.1,
+                0.09,
+                0.08,
+                0.07,
+                0.06,
+                0.05,
+                0.04,
+                0.03,
+                0.03,
+                0.03
+              ],
+              "operating_margin": [
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5
+              ],
+              "depreciation_to_revenue": [
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005
+              ],
+              "capex_to_revenue": [
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01
+              ],
+              "working_capital_to_revenue": [
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05
+              ]
+            }
+          ],
+          "source": "Analyst sensitivity assumptions, 2026-10-11; revenue bases from cited 10-K and 10-Q excerpts",
+          "reason": "Illustrative scenario, not management guidance or a calibrated fair-value forecast. Revenue growth fades by segment. Operating margins include SBC and all allocated corporate costs, exclude acquisition amortization, and include the physical depreciation added back. Zero unallocated corporate costs is intentional. Tax, margins, capital intensity and working capital ratios are estimates; style labels do not imply suitability."
+        },
+        "rows": [
+          {
+            "year": 1,
+            "segments": [
+              {
+                "name": "Semiconductor solutions (including AI)",
+                "revenue": 71322000000,
+                "operating_income": 28528800000,
+                "depreciation": 1069830000,
+                "capex": 1783050000,
+                "change_in_working_capital": 2139660000
+              },
+              {
+                "name": "Infrastructure software (including VMware)",
+                "revenue": 32635900000.000004,
+                "operating_income": 16317950000.000002,
+                "depreciation": 163179500.00000003,
+                "capex": 326359000.00000006,
+                "change_in_working_capital": 148345000.00000024
+              }
+            ],
+            "revenue": 103957900000,
+            "corporate_costs": 0,
+            "operating_income": 44846750000,
+            "taxes": 9417817500,
+            "nopat": 35428932500,
+            "depreciation": 1233009500,
+            "capex": 2109409000,
+            "change_in_working_capital": 2288005000,
+            "reinvestment": 3164404500,
+            "fcff": 32264528000
+          },
+          {
+            "year": 2,
+            "segments": [
+              {
+                "name": "Semiconductor solutions (including AI)",
+                "revenue": 84159960000,
+                "operating_income": 33663984000,
+                "depreciation": 1262399400,
+                "capex": 2103999000,
+                "change_in_working_capital": 2310832800
+              },
+              {
+                "name": "Infrastructure software (including VMware)",
+                "revenue": 35573131000.00001,
+                "operating_income": 17786565500.000004,
+                "depreciation": 177865655.00000003,
+                "capex": 355731310.00000006,
+                "change_in_working_capital": 146861550.00000024
+              }
+            ],
+            "revenue": 119733091000,
+            "corporate_costs": 0,
+            "operating_income": 51450549500,
+            "taxes": 10804615395,
+            "nopat": 40645934105,
+            "depreciation": 1440265055,
+            "capex": 2459730310,
+            "change_in_working_capital": 2457694350,
+            "reinvestment": 3477159605,
+            "fcff": 37168774500
+          },
+          {
+            "year": 3,
+            "segments": [
+              {
+                "name": "Semiconductor solutions (including AI)",
+                "revenue": 96783954000,
+                "operating_income": 38713581600,
+                "depreciation": 1451759310,
+                "capex": 2419598850,
+                "change_in_working_capital": 2272318920
+              },
+              {
+                "name": "Infrastructure software (including VMware)",
+                "revenue": 38418981480.00001,
+                "operating_income": 19209490740.000004,
+                "depreciation": 192094907.40000004,
+                "capex": 384189814.8000001,
+                "change_in_working_capital": 142292524
+              }
+            ],
+            "revenue": 135202935480,
+            "corporate_costs": 0,
+            "operating_income": 57923072340,
+            "taxes": 12163845191.4,
+            "nopat": 45759227148.6,
+            "depreciation": 1643854217.4,
+            "capex": 2803788664.8,
+            "change_in_working_capital": 2414611444,
+            "reinvestment": 3574545891.4,
+            "fcff": 42184681257.2
+          },
+          {
+            "year": 4,
+            "segments": [
+              {
+                "name": "Semiconductor solutions (including AI)",
+                "revenue": 108398028480.00002,
+                "operating_income": 43359211392.00001,
+                "depreciation": 1625970427.2000003,
+                "capex": 2709950712.0000005,
+                "change_in_working_capital": 2090533406.4000015
+              },
+              {
+                "name": "Infrastructure software (including VMware)",
+                "revenue": 41108310183.60001,
+                "operating_income": 20554155091.800007,
+                "depreciation": 205541550.91800007,
+                "capex": 411083101.83600014,
+                "change_in_working_capital": 134466435.1800003
+              }
+            ],
+            "revenue": 149506338663.60004,
+            "corporate_costs": 0,
+            "operating_income": 63913366483.80002,
+            "taxes": 13421806961.598003,
+            "nopat": 50491559522.20201,
+            "depreciation": 1831511978.1180003,
+            "capex": 3121033813.8360004,
+            "change_in_working_capital": 2224999841.580002,
+            "reinvestment": 3514521677.2980022,
+            "fcff": 46977037844.904015
+          },
+          {
+            "year": 5,
+            "segments": [
+              {
+                "name": "Semiconductor solutions (including AI)",
+                "revenue": 119237831328.00003,
+                "operating_income": 47695132531.20001,
+                "depreciation": 1788567469.9200003,
+                "capex": 2980945783.200001,
+                "change_in_working_capital": 1951164512.6400032
+              },
+              {
+                "name": "Infrastructure software (including VMware)",
+                "revenue": 43574808794.61602,
+                "operating_income": 21787404397.30801,
+                "depreciation": 217874043.9730801,
+                "capex": 435748087.9461602,
+                "change_in_working_capital": 123324930.55080032
+              }
+            ],
+            "revenue": 162812640122.61606,
+            "corporate_costs": 0,
+            "operating_income": 69482536928.50803,
+            "taxes": 14591332754.986685,
+            "nopat": 54891204173.52134,
+            "depreciation": 2006441513.8930805,
+            "capex": 3416693871.146161,
+            "change_in_working_capital": 2074489443.1908035,
+            "reinvestment": 3484741800.443884,
+            "fcff": 51406462373.07745
+          },
+          {
+            "year": 6,
+            "segments": [
+              {
+                "name": "Semiconductor solutions (including AI)",
+                "revenue": 128776857834.24004,
+                "operating_income": 51510743133.696014,
+                "depreciation": 1931652867.5136006,
+                "capex": 3219421445.856001,
+                "change_in_working_capital": 1717024771.1231995
+              },
+              {
+                "name": "Infrastructure software (including VMware)",
+                "revenue": 45753549234.346825,
+                "operating_income": 22876774617.173412,
+                "depreciation": 228767746.17173412,
+                "capex": 457535492.34346825,
+                "change_in_working_capital": 108937021.98654032
+              }
+            ],
+            "revenue": 174530407068.58685,
+            "corporate_costs": 0,
+            "operating_income": 74387517750.86943,
+            "taxes": 15621378727.682579,
+            "nopat": 58766139023.18685,
+            "depreciation": 2160420613.6853347,
+            "capex": 3676956938.199469,
+            "change_in_working_capital": 1825961793.1097398,
+            "reinvestment": 3342498117.623874,
+            "fcff": 55423640905.56297
+          },
+          {
+            "year": 7,
+            "segments": [
+              {
+                "name": "Semiconductor solutions (including AI)",
+                "revenue": 136503469304.29445,
+                "operating_income": 54601387721.71778,
+                "depreciation": 2047552039.5644166,
+                "capex": 3412586732.6073613,
+                "change_in_working_capital": 1390790064.6097946
+              },
+              {
+                "name": "Infrastructure software (including VMware)",
+                "revenue": 47583691203.720695,
+                "operating_income": 23791845601.860348,
+                "depreciation": 237918456.01860347,
+                "capex": 475836912.03720695,
+                "change_in_working_capital": 91507098.46869326
+              }
+            ],
+            "revenue": 184087160508.01514,
+            "corporate_costs": 0,
+            "operating_income": 78393233323.57812,
+            "taxes": 16462578997.951406,
+            "nopat": 61930654325.62672,
+            "depreciation": 2285470495.58302,
+            "capex": 3888423644.6445684,
+            "change_in_working_capital": 1482297163.0784879,
+            "reinvestment": 3085250312.140036,
+            "fcff": 58845404013.48668
+          },
+          {
+            "year": 8,
+            "segments": [
+              {
+                "name": "Semiconductor solutions (including AI)",
+                "revenue": 143328642769.5092,
+                "operating_income": 57331457107.80368,
+                "depreciation": 2149929641.542638,
+                "capex": 3583216069.23773,
+                "change_in_working_capital": 1228531223.738655
+              },
+              {
+                "name": "Infrastructure software (including VMware)",
+                "revenue": 49011201939.83232,
+                "operating_income": 24505600969.91616,
+                "depreciation": 245056009.69916162,
+                "capex": 490112019.39832324,
+                "change_in_working_capital": 71375536.80558157
+              }
+            ],
+            "revenue": 192339844709.3415,
+            "corporate_costs": 0,
+            "operating_income": 81837058077.71985,
+            "taxes": 17185782196.321167,
+            "nopat": 64651275881.39868,
+            "depreciation": 2394985651.2417994,
+            "capex": 4073328088.636053,
+            "change_in_working_capital": 1299906760.5442367,
+            "reinvestment": 2978249197.9384904,
+            "fcff": 61673026683.46019
+          },
+          {
+            "year": 9,
+            "segments": [
+              {
+                "name": "Semiconductor solutions (including AI)",
+                "revenue": 149061788480.28955,
+                "operating_income": 59624715392.11582,
+                "depreciation": 2235926827.2043433,
+                "capex": 3726544712.007239,
+                "change_in_working_capital": 1031966227.940464
+              },
+              {
+                "name": "Infrastructure software (including VMware)",
+                "revenue": 50481537998.02729,
+                "operating_income": 25240768999.013645,
+                "depreciation": 252407689.99013644,
+                "capex": 504815379.9802729,
+                "change_in_working_capital": 73516802.90974855
+              }
+            ],
+            "revenue": 199543326478.31683,
+            "corporate_costs": 0,
+            "operating_income": 84865484391.12947,
+            "taxes": 17821751722.137188,
+            "nopat": 67043732668.99228,
+            "depreciation": 2488334517.19448,
+            "capex": 4231360091.9875116,
+            "change_in_working_capital": 1105483030.8502126,
+            "reinvestment": 2848508605.6432443,
+            "fcff": 64195224063.34903
+          },
+          {
+            "year": 10,
+            "segments": [
+              {
+                "name": "Semiconductor solutions (including AI)",
+                "revenue": 153533642134.69824,
+                "operating_income": 61413456853.8793,
+                "depreciation": 2303004632.0204735,
+                "capex": 3838341053.3674564,
+                "change_in_working_capital": 804933657.7935638
+              },
+              {
+                "name": "Infrastructure software (including VMware)",
+                "revenue": 51995984137.96811,
+                "operating_income": 25997992068.984055,
+                "depreciation": 259979920.68984056,
+                "capex": 519959841.3796811,
+                "change_in_working_capital": 75722306.99704075
+              }
+            ],
+            "revenue": 205529626272.66635,
+            "corporate_costs": 0,
+            "operating_income": 87411448922.86336,
+            "taxes": 18356404273.801304,
+            "nopat": 69055044649.06206,
+            "depreciation": 2562984552.710314,
+            "capex": 4358300894.747137,
+            "change_in_working_capital": 880655964.7906046,
+            "reinvestment": 2675972306.827428,
+            "fcff": 66379072342.23463
+          }
+        ],
+        "valuation": {
+          "value_per_share": 138.63867075946024,
+          "enterprise_value": 697253699181.2616,
+          "equity_value": 661809699181.2616,
+          "pv_flows": 313935275351.9177,
+          "terminal_value": 907454112375.4949,
+          "pv_terminal_value": 383318423829.3439,
+          "terminal_fcff": 58984517304.407166,
+          "terminal_reinvestment_rate": 0.16666666666666669,
+          "terminal_value_share": 0.5497545933129492
+        },
+        "explanation": "FCFF = EBIT - cash-tax estimate + depreciation - CapEx - change in operating working capital. SBC stays expensed in operating margins; no second deduction. Terminal reinvestment = next-year NOPAT \u00d7 terminal growth / terminal ROIC."
+      },
+      {
+        "id": "illustrative-quality",
+        "style": "quality",
+        "status": "ok",
+        "label": "illustrative-quality",
+        "starting_basis": "explicit_segment_forecast",
+        "value_per_share": 117.60180008462504,
+        "margin_of_safety": -2.074272670484972,
+        "price_to_value": 3.074272670484972,
+        "gap_to_price": -0.6747198094688691,
+        "assumptions": {
+          "id": "illustrative-quality",
+          "style": "quality",
+          "years": 10,
+          "tax_rate": 0.21,
+          "wacc": 0.09,
+          "terminal_growth": 0.025,
+          "terminal_roic": 0.15,
+          "sbc_treatment": "expensed_in_margins",
+          "corporate_costs": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "segments": [
+            {
+              "name": "Semiconductor solutions (including AI)",
+              "base_revenue": {
+                "period_end": "2026-08-02",
+                "components": [
+                  {
+                    "item": "segment_revenue_semiconductor",
+                    "period_end": "2025-11-02",
+                    "value": 36858000000,
+                    "source": "10-K 0001730168-25-000121",
+                    "sign": 1
+                  },
+                  {
+                    "item": "segment_revenue_semiconductor",
+                    "period_end": "2026-08-02",
+                    "value": 48363000000,
+                    "source": "10-Q 0001730168-26-000080",
+                    "sign": 1
+                  },
+                  {
+                    "item": "segment_revenue_semiconductor",
+                    "period_end": "2025-08-03",
+                    "value": 25786000000,
+                    "source": "10-Q 0001730168-26-000080",
+                    "sign": -1
+                  }
+                ]
+              },
+              "base_working_capital_ratio": 0.18,
+              "growth": [
+                0.15,
+                0.13,
+                0.11,
+                0.09,
+                0.08,
+                0.06,
+                0.05,
+                0.04,
+                0.03,
+                0.03
+              ],
+              "operating_margin": [
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4
+              ],
+              "depreciation_to_revenue": [
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015
+              ],
+              "capex_to_revenue": [
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025
+              ],
+              "working_capital_to_revenue": [
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18
+              ]
+            },
+            {
+              "name": "Infrastructure software (including VMware)",
+              "base_revenue": {
+                "period_end": "2026-08-02",
+                "components": [
+                  {
+                    "item": "segment_revenue_software",
+                    "period_end": "2025-11-02",
+                    "value": 27029000000,
+                    "source": "10-K 0001730168-25-000121",
+                    "sign": 1
+                  },
+                  {
+                    "item": "segment_revenue_software",
+                    "period_end": "2026-08-02",
+                    "value": 22726000000,
+                    "source": "10-Q 0001730168-26-000080",
+                    "sign": 1
+                  },
+                  {
+                    "item": "segment_revenue_software",
+                    "period_end": "2025-08-03",
+                    "value": 20086000000,
+                    "source": "10-Q 0001730168-26-000080",
+                    "sign": -1
+                  }
+                ]
+              },
+              "base_working_capital_ratio": 0.05,
+              "growth": [
+                0.08,
+                0.07,
+                0.06,
+                0.05,
+                0.04,
+                0.04,
+                0.03,
+                0.03,
+                0.03,
+                0.03
+              ],
+              "operating_margin": [
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5
+              ],
+              "depreciation_to_revenue": [
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005
+              ],
+              "capex_to_revenue": [
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01
+              ],
+              "working_capital_to_revenue": [
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05
+              ]
+            }
+          ],
+          "source": "Analyst sensitivity assumptions, 2026-10-11; revenue bases from cited 10-K and 10-Q excerpts",
+          "reason": "Illustrative scenario, not management guidance or a calibrated fair-value forecast. Revenue growth fades by segment. Operating margins include SBC and all allocated corporate costs, exclude acquisition amortization, and include the physical depreciation added back. Zero unallocated corporate costs is intentional. Tax, margins, capital intensity and working capital ratios are estimates; style labels do not imply suitability."
+        },
+        "rows": [
+          {
+            "year": 1,
+            "segments": [
+              {
+                "name": "Semiconductor solutions (including AI)",
+                "revenue": 68350249999.99999,
+                "operating_income": 27340100000,
+                "depreciation": 1025253749.9999999,
+                "capex": 1708756250,
+                "change_in_working_capital": 1604744999.999998
+              },
+              {
+                "name": "Infrastructure software (including VMware)",
+                "revenue": 32042520000.000004,
+                "operating_income": 16021260000.000002,
+                "depreciation": 160212600.00000003,
+                "capex": 320425200.00000006,
+                "change_in_working_capital": 118676000.00000024
+              }
+            ],
+            "revenue": 100392770000,
+            "corporate_costs": 0,
+            "operating_income": 43361360000,
+            "taxes": 9105885600,
+            "nopat": 34255474400,
+            "depreciation": 1185466350,
+            "capex": 2029181450,
+            "change_in_working_capital": 1723420999.9999983,
+            "reinvestment": 2567136099.999998,
+            "fcff": 31688338300
+          },
+          {
+            "year": 2,
+            "segments": [
+              {
+                "name": "Semiconductor solutions (including AI)",
+                "revenue": 77235782499.99998,
+                "operating_income": 30894312999.999996,
+                "depreciation": 1158536737.4999998,
+                "capex": 1930894562.4999998,
+                "change_in_working_capital": 1599395849.999998
+              },
+              {
+                "name": "Infrastructure software (including VMware)",
+                "revenue": 34285496400.000008,
+                "operating_income": 17142748200.000004,
+                "depreciation": 171427482.00000003,
+                "capex": 342854964.00000006,
+                "change_in_working_capital": 112148820.00000024
+              }
+            ],
+            "revenue": 111521278900,
+            "corporate_costs": 0,
+            "operating_income": 48037061200,
+            "taxes": 10087782852,
+            "nopat": 37949278348,
+            "depreciation": 1329964219.4999998,
+            "capex": 2273749526.5,
+            "change_in_working_capital": 1711544669.9999983,
+            "reinvestment": 2655329976.9999986,
+            "fcff": 35293948371
+          },
+          {
+            "year": 3,
+            "segments": [
+              {
+                "name": "Semiconductor solutions (including AI)",
+                "revenue": 85731718574.99998,
+                "operating_income": 34292687429.999996,
+                "depreciation": 1285975778.6249998,
+                "capex": 2143292964.3749998,
+                "change_in_working_capital": 1529268493.5
+              },
+              {
+                "name": "Infrastructure software (including VMware)",
+                "revenue": 36342626184.00001,
+                "operating_income": 18171313092.000004,
+                "depreciation": 181713130.92000005,
+                "capex": 363426261.8400001,
+                "change_in_working_capital": 102856489.20000005
+              }
+            ],
+            "revenue": 122074344759,
+            "corporate_costs": 0,
+            "operating_income": 52464000522,
+            "taxes": 11017440109.619999,
+            "nopat": 41446560412.380005,
+            "depreciation": 1467688909.5449998,
+            "capex": 2506719226.2149997,
+            "change_in_working_capital": 1632124982.7,
+            "reinvestment": 2671155299.37,
+            "fcff": 38775405113.01001
+          },
+          {
+            "year": 4,
+            "segments": [
+              {
+                "name": "Semiconductor solutions (including AI)",
+                "revenue": 93447573246.74998,
+                "operating_income": 37379029298.7,
+                "depreciation": 1401713598.7012498,
+                "capex": 2336189331.16875,
+                "change_in_working_capital": 1388853840.915001
+              },
+              {
+                "name": "Infrastructure software (including VMware)",
+                "revenue": 38159757493.20001,
+                "operating_income": 19079878746.600006,
+                "depreciation": 190798787.46600005,
+                "capex": 381597574.9320001,
+                "change_in_working_capital": 90856565.46000028
+              }
+            ],
+            "revenue": 131607330739.95,
+            "corporate_costs": 0,
+            "operating_income": 56458908045.3,
+            "taxes": 11856370689.513,
+            "nopat": 44602537355.787,
+            "depreciation": 1592512386.16725,
+            "capex": 2717786906.10075,
+            "change_in_working_capital": 1479710406.3750012,
+            "reinvestment": 2604984926.3085012,
+            "fcff": 41997552429.4785
+          },
+          {
+            "year": 5,
+            "segments": [
+              {
+                "name": "Semiconductor solutions (including AI)",
+                "revenue": 100923379106.48999,
+                "operating_income": 40369351642.596,
+                "depreciation": 1513850686.59735,
+                "capex": 2523084477.66225,
+                "change_in_working_capital": 1345645054.7532005
+              },
+              {
+                "name": "Infrastructure software (including VMware)",
+                "revenue": 39686147792.92802,
+                "operating_income": 19843073896.46401,
+                "depreciation": 198430738.96464008,
+                "capex": 396861477.92928016,
+                "change_in_working_capital": 76319514.98640013
+              }
+            ],
+            "revenue": 140609526899.418,
+            "corporate_costs": 0,
+            "operating_income": 60212425539.06001,
+            "taxes": 12644609363.202602,
+            "nopat": 47567816175.85741,
+            "depreciation": 1712281425.56199,
+            "capex": 2919945955.5915303,
+            "change_in_working_capital": 1421964569.7396007,
+            "reinvestment": 2629629099.769141,
+            "fcff": 44938187076.088264
+          },
+          {
+            "year": 6,
+            "segments": [
+              {
+                "name": "Semiconductor solutions (including AI)",
+                "revenue": 106978781852.8794,
+                "operating_income": 42791512741.151764,
+                "depreciation": 1604681727.793191,
+                "capex": 2674469546.3219852,
+                "change_in_working_capital": 1089972494.3500938
+              },
+              {
+                "name": "Infrastructure software (including VMware)",
+                "revenue": 41273593704.64514,
+                "operating_income": 20636796852.32257,
+                "depreciation": 206367968.52322572,
+                "capex": 412735937.04645145,
+                "change_in_working_capital": 79372295.5858562
+              }
+            ],
+            "revenue": 148252375557.52454,
+            "corporate_costs": 0,
+            "operating_income": 63428309593.474335,
+            "taxes": 13319945014.62961,
+            "nopat": 50108364578.84473,
+            "depreciation": 1811049696.3164167,
+            "capex": 3087205483.368437,
+            "change_in_working_capital": 1169344789.93595,
+            "reinvestment": 2445500576.9879704,
+            "fcff": 47662864001.85675
+          },
+          {
+            "year": 7,
+            "segments": [
+              {
+                "name": "Semiconductor solutions (including AI)",
+                "revenue": 112327720945.52338,
+                "operating_income": 44931088378.20935,
+                "depreciation": 1684915814.1828506,
+                "capex": 2808193023.6380844,
+                "change_in_working_capital": 962809036.6759148
+              },
+              {
+                "name": "Infrastructure software (including VMware)",
+                "revenue": 42511801515.7845,
+                "operating_income": 21255900757.89225,
+                "depreciation": 212559007.5789225,
+                "capex": 425118015.157845,
+                "change_in_working_capital": 61910390.55696797
+              }
+            ],
+            "revenue": 154839522461.30786,
+            "corporate_costs": 0,
+            "operating_income": 66186989136.1016,
+            "taxes": 13899267718.581335,
+            "nopat": 52287721417.52026,
+            "depreciation": 1897474821.761773,
+            "capex": 3233311038.7959294,
+            "change_in_working_capital": 1024719427.2328827,
+            "reinvestment": 2360555644.2670393,
+            "fcff": 49927165773.25323
+          },
+          {
+            "year": 8,
+            "segments": [
+              {
+                "name": "Semiconductor solutions (including AI)",
+                "revenue": 116820829783.34431,
+                "operating_income": 46728331913.33773,
+                "depreciation": 1752312446.7501647,
+                "capex": 2920520744.583608,
+                "change_in_working_capital": 808759590.8077698
+              },
+              {
+                "name": "Infrastructure software (including VMware)",
+                "revenue": 43787155561.25803,
+                "operating_income": 21893577780.629017,
+                "depreciation": 218935777.80629018,
+                "capex": 437871555.61258036,
+                "change_in_working_capital": 63767702.27367687
+              }
+            ],
+            "revenue": 160607985344.60236,
+            "corporate_costs": 0,
+            "operating_income": 68621909693.96675,
+            "taxes": 14410601035.733017,
+            "nopat": 54211308658.233734,
+            "depreciation": 1971248224.556455,
+            "capex": 3358392300.1961884,
+            "change_in_working_capital": 872527293.0814466,
+            "reinvestment": 2259671368.72118,
+            "fcff": 51951637289.51256
+          },
+          {
+            "year": 9,
+            "segments": [
+              {
+                "name": "Semiconductor solutions (including AI)",
+                "revenue": 120325454676.84465,
+                "operating_income": 48130181870.73786,
+                "depreciation": 1804881820.1526697,
+                "capex": 3008136366.9211164,
+                "change_in_working_capital": 630832480.830059
+              },
+              {
+                "name": "Infrastructure software (including VMware)",
+                "revenue": 45100770228.09578,
+                "operating_income": 22550385114.04789,
+                "depreciation": 225503851.1404789,
+                "capex": 451007702.2809578,
+                "change_in_working_capital": 65680733.341887
+              }
+            ],
+            "revenue": 165426224904.94043,
+            "corporate_costs": 0,
+            "operating_income": 70680566984.78575,
+            "taxes": 14842919066.805008,
+            "nopat": 55837647917.98074,
+            "depreciation": 2030385671.2931485,
+            "capex": 3459144069.202074,
+            "change_in_working_capital": 696513214.171946,
+            "reinvestment": 2125271612.0808716,
+            "fcff": 53712376305.89988
+          },
+          {
+            "year": 10,
+            "segments": [
+              {
+                "name": "Semiconductor solutions (including AI)",
+                "revenue": 123935218317.15,
+                "operating_income": 49574087326.86,
+                "depreciation": 1859028274.7572498,
+                "capex": 3098380457.92875,
+                "change_in_working_capital": 649757455.2549629
+              },
+              {
+                "name": "Infrastructure software (including VMware)",
+                "revenue": 46453793334.93865,
+                "operating_income": 23226896667.469326,
+                "depreciation": 232268966.67469326,
+                "capex": 464537933.3493865,
+                "change_in_working_capital": 67651155.34214354
+              }
+            ],
+            "revenue": 170389011652.08865,
+            "corporate_costs": 0,
+            "operating_income": 72800983994.32933,
+            "taxes": 15288206638.809158,
+            "nopat": 57512777355.52017,
+            "depreciation": 2091297241.4319432,
+            "capex": 3562918391.2781367,
+            "change_in_working_capital": 717408610.5971065,
+            "reinvestment": 2189029760.4433002,
+            "fcff": 55323747595.07687
+          }
+        ],
+        "valuation": {
+          "value_per_share": 117.60180008462504,
+          "enterprise_value": 596831465061.7256,
+          "equity_value": 561387465061.7256,
+          "pv_flows": 277583142538.69604,
+          "terminal_value": 755776881915.4893,
+          "pv_terminal_value": 319248322523.02954,
+          "terminal_fcff": 49125497324.506805,
+          "terminal_reinvestment_rate": 0.16666666666666669,
+          "terminal_value_share": 0.5349053145011585
+        },
+        "explanation": "FCFF = EBIT - cash-tax estimate + depreciation - CapEx - change in operating working capital. SBC stays expensed in operating margins; no second deduction. Terminal reinvestment = next-year NOPAT \u00d7 terminal growth / terminal ROIC."
+      }
+    ],
+    "sensitivity": [
+      {
+        "basis": "historical-average",
+        "wacc": 0.06999999999999999,
+        "growth": 0.05,
+        "terminal_growth": 0.02,
+        "value_per_share": 93.52048470650458,
+        "status": "ok"
+      },
+      {
+        "basis": "historical-average",
+        "wacc": 0.06999999999999999,
+        "growth": 0.05,
+        "terminal_growth": 0.025,
+        "value_per_share": 101.18851112259271,
+        "status": "ok"
+      },
+      {
+        "basis": "historical-average",
+        "wacc": 0.06999999999999999,
+        "growth": 0.05,
+        "terminal_growth": 0.03,
+        "value_per_share": 110.77354414270286,
+        "status": "ok"
+      },
+      {
+        "basis": "historical-average",
+        "wacc": 0.06999999999999999,
+        "growth": 0.1,
+        "terminal_growth": 0.02,
+        "value_per_share": 142.8161413469887,
+        "status": "ok"
+      },
+      {
+        "basis": "historical-average",
+        "wacc": 0.06999999999999999,
+        "growth": 0.1,
+        "terminal_growth": 0.025,
+        "value_per_share": 155.0261918767297,
+        "status": "ok"
+      },
+      {
+        "basis": "historical-average",
+        "wacc": 0.06999999999999999,
+        "growth": 0.1,
+        "terminal_growth": 0.03,
+        "value_per_share": 170.288755038906,
+        "status": "ok"
+      },
+      {
+        "basis": "historical-average",
+        "wacc": 0.06999999999999999,
+        "growth": 0.15000000000000002,
+        "terminal_growth": 0.02,
+        "value_per_share": 215.11635895946057,
+        "status": "ok"
+      },
+      {
+        "basis": "historical-average",
+        "wacc": 0.06999999999999999,
+        "growth": 0.15000000000000002,
+        "terminal_growth": 0.025,
+        "value_per_share": 234.1608343203928,
+        "status": "ok"
+      },
+      {
+        "basis": "historical-average",
+        "wacc": 0.06999999999999999,
+        "growth": 0.15000000000000002,
+        "terminal_growth": 0.03,
+        "value_per_share": 257.9664285215581,
+        "status": "ok"
+      },
+      {
+        "basis": "historical-average",
+        "wacc": 0.09,
+        "growth": 0.05,
+        "terminal_growth": 0.02,
+        "value_per_share": 63.511949049484585,
+        "status": "ok"
+      },
+      {
+        "basis": "historical-average",
+        "wacc": 0.09,
+        "growth": 0.05,
+        "terminal_growth": 0.025,
+        "value_per_share": 66.72169189500578,
+        "status": "ok"
+      },
+      {
+        "basis": "historical-average",
+        "wacc": 0.09,
+        "growth": 0.05,
+        "terminal_growth": 0.03,
+        "value_per_share": 70.46639188144718,
+        "status": "ok"
+      },
+      {
+        "basis": "historical-average",
+        "wacc": 0.09,
+        "growth": 0.1,
+        "terminal_growth": 0.02,
+        "value_per_share": 95.71652208297415,
+        "status": "ok"
+      },
+      {
+        "basis": "historical-average",
+        "wacc": 0.09,
+        "growth": 0.1,
+        "terminal_growth": 0.025,
+        "value_per_share": 100.82750112825528,
+        "status": "ok"
+      },
+      {
+        "basis": "historical-average",
+        "wacc": 0.09,
+        "growth": 0.1,
+        "terminal_growth": 0.03,
+        "value_per_share": 106.79031001441662,
+        "status": "ok"
+      },
+      {
+        "basis": "historical-average",
+        "wacc": 0.09,
+        "growth": 0.15000000000000002,
+        "terminal_growth": 0.02,
+        "value_per_share": 142.4681779911519,
+        "status": "ok"
+      },
+      {
+        "basis": "historical-average",
+        "wacc": 0.09,
+        "growth": 0.15000000000000002,
+        "terminal_growth": 0.025,
+        "value_per_share": 150.439964370005,
+        "status": "ok"
+      },
+      {
+        "basis": "historical-average",
+        "wacc": 0.09,
+        "growth": 0.15000000000000002,
+        "terminal_growth": 0.03,
+        "value_per_share": 159.74038181200027,
+        "status": "ok"
+      },
+      {
+        "basis": "historical-average",
+        "wacc": 0.11,
+        "growth": 0.05,
+        "terminal_growth": 0.02,
+        "value_per_share": 46.95212991382639,
+        "status": "ok"
+      },
+      {
+        "basis": "historical-average",
+        "wacc": 0.11,
+        "growth": 0.05,
+        "terminal_growth": 0.025,
+        "value_per_share": 48.57301368277116,
+        "status": "ok"
+      },
+      {
+        "basis": "historical-average",
+        "wacc": 0.11,
+        "growth": 0.05,
+        "terminal_growth": 0.03,
+        "value_per_share": 50.39650792283405,
+        "status": "ok"
+      },
+      {
+        "basis": "historical-average",
+        "wacc": 0.11,
+        "growth": 0.1,
+        "terminal_growth": 0.02,
+        "value_per_share": 69.9612180864568,
+        "status": "ok"
+      },
+      {
+        "basis": "historical-average",
+        "wacc": 0.11,
+        "growth": 0.1,
+        "terminal_growth": 0.025,
+        "value_per_share": 72.5422045942927,
+        "status": "ok"
+      },
+      {
+        "basis": "historical-average",
+        "wacc": 0.11,
+        "growth": 0.1,
+        "terminal_growth": 0.03,
+        "value_per_share": 75.44581441560811,
+        "status": "ok"
+      },
+      {
+        "basis": "historical-average",
+        "wacc": 0.11,
+        "growth": 0.15000000000000002,
+        "terminal_growth": 0.02,
+        "value_per_share": 103.02458562555114,
+        "status": "ok"
+      },
+      {
+        "basis": "historical-average",
+        "wacc": 0.11,
+        "growth": 0.15000000000000002,
+        "terminal_growth": 0.025,
+        "value_per_share": 107.05024742241694,
+        "status": "ok"
+      },
+      {
+        "basis": "historical-average",
+        "wacc": 0.11,
+        "growth": 0.15000000000000002,
+        "terminal_growth": 0.03,
+        "value_per_share": 111.57911694389098,
+        "status": "ok"
+      },
+      {
+        "basis": "latest-annual",
+        "wacc": 0.06999999999999999,
+        "growth": 0.05,
+        "terminal_growth": 0.02,
+        "value_per_share": 115.04877018185697,
+        "status": "ok"
+      },
+      {
+        "basis": "latest-annual",
+        "wacc": 0.06999999999999999,
+        "growth": 0.05,
+        "terminal_growth": 0.025,
+        "value_per_share": 124.35213007830878,
+        "status": "ok"
+      },
+      {
+        "basis": "latest-annual",
+        "wacc": 0.06999999999999999,
+        "growth": 0.05,
+        "terminal_growth": 0.03,
+        "value_per_share": 135.98132994887354,
+        "status": "ok"
+      },
+      {
+        "basis": "latest-annual",
+        "wacc": 0.06999999999999999,
+        "growth": 0.1,
+        "terminal_growth": 0.02,
+        "value_per_share": 174.85754106664777,
+        "status": "ok"
+      },
+      {
+        "basis": "latest-annual",
+        "wacc": 0.06999999999999999,
+        "growth": 0.1,
+        "terminal_growth": 0.025,
+        "value_per_share": 189.6715868547155,
+        "status": "ok"
+      },
+      {
+        "basis": "latest-annual",
+        "wacc": 0.06999999999999999,
+        "growth": 0.1,
+        "terminal_growth": 0.03,
+        "value_per_share": 208.1891440898003,
+        "status": "ok"
+      },
+      {
+        "basis": "latest-annual",
+        "wacc": 0.06999999999999999,
+        "growth": 0.15000000000000002,
+        "terminal_growth": 0.02,
+        "value_per_share": 262.5769761000702,
+        "status": "ok"
+      },
+      {
+        "basis": "latest-annual",
+        "wacc": 0.06999999999999999,
+        "growth": 0.15000000000000002,
+        "terminal_growth": 0.025,
+        "value_per_share": 285.6830008719892,
+        "status": "ok"
+      },
+      {
+        "basis": "latest-annual",
+        "wacc": 0.06999999999999999,
+        "growth": 0.15000000000000002,
+        "terminal_growth": 0.03,
+        "value_per_share": 314.56553183688794,
+        "status": "ok"
+      },
+      {
+        "basis": "latest-annual",
+        "wacc": 0.09,
+        "growth": 0.05,
+        "terminal_growth": 0.02,
+        "value_per_share": 78.64041788444942,
+        "status": "ok"
+      },
+      {
+        "basis": "latest-annual",
+        "wacc": 0.09,
+        "growth": 0.05,
+        "terminal_growth": 0.025,
+        "value_per_share": 82.5346914884492,
+        "status": "ok"
+      },
+      {
+        "basis": "latest-annual",
+        "wacc": 0.09,
+        "growth": 0.05,
+        "terminal_growth": 0.03,
+        "value_per_share": 87.07801069311563,
+        "status": "ok"
+      },
+      {
+        "basis": "latest-annual",
+        "wacc": 0.09,
+        "growth": 0.1,
+        "terminal_growth": 0.02,
+        "value_per_share": 117.71314885646501,
+        "status": "ok"
+      },
+      {
+        "basis": "latest-annual",
+        "wacc": 0.09,
+        "growth": 0.1,
+        "terminal_growth": 0.025,
+        "value_per_share": 123.9141287307273,
+        "status": "ok"
+      },
+      {
+        "basis": "latest-annual",
+        "wacc": 0.09,
+        "growth": 0.1,
+        "terminal_growth": 0.03,
+        "value_per_share": 131.1486052507,
+        "status": "ok"
+      },
+      {
+        "basis": "latest-annual",
+        "wacc": 0.09,
+        "growth": 0.15000000000000002,
+        "terminal_growth": 0.02,
+        "value_per_share": 174.43536876904915,
+        "status": "ok"
+      },
+      {
+        "basis": "latest-annual",
+        "wacc": 0.09,
+        "growth": 0.15000000000000002,
+        "terminal_growth": 0.025,
+        "value_per_share": 184.1072704652274,
+        "status": "ok"
+      },
+      {
+        "basis": "latest-annual",
+        "wacc": 0.09,
+        "growth": 0.15000000000000002,
+        "terminal_growth": 0.03,
+        "value_per_share": 195.39115577743544,
+        "status": "ok"
+      },
+      {
+        "basis": "latest-annual",
+        "wacc": 0.11,
+        "growth": 0.05,
+        "terminal_growth": 0.02,
+        "value_per_share": 58.54894337988286,
+        "status": "ok"
+      },
+      {
+        "basis": "latest-annual",
+        "wacc": 0.11,
+        "growth": 0.05,
+        "terminal_growth": 0.025,
+        "value_per_share": 60.515507425772434,
+        "status": "ok"
+      },
+      {
+        "basis": "latest-annual",
+        "wacc": 0.11,
+        "growth": 0.05,
+        "terminal_growth": 0.03,
+        "value_per_share": 62.72789197739822,
+        "status": "ok"
+      },
+      {
+        "basis": "latest-annual",
+        "wacc": 0.11,
+        "growth": 0.1,
+        "terminal_growth": 0.02,
+        "value_per_share": 86.4651002295847,
+        "status": "ok"
+      },
+      {
+        "basis": "latest-annual",
+        "wacc": 0.11,
+        "growth": 0.1,
+        "terminal_growth": 0.025,
+        "value_per_share": 89.59652480578401,
+        "status": "ok"
+      },
+      {
+        "basis": "latest-annual",
+        "wacc": 0.11,
+        "growth": 0.1,
+        "terminal_growth": 0.03,
+        "value_per_share": 93.11937745400823,
+        "status": "ok"
+      },
+      {
+        "basis": "latest-annual",
+        "wacc": 0.11,
+        "growth": 0.15000000000000002,
+        "terminal_growth": 0.02,
+        "value_per_share": 126.57977784199964,
+        "status": "ok"
+      },
+      {
+        "basis": "latest-annual",
+        "wacc": 0.11,
+        "growth": 0.15000000000000002,
+        "terminal_growth": 0.025,
+        "value_per_share": 131.46397861093047,
+        "status": "ok"
+      },
+      {
+        "basis": "latest-annual",
+        "wacc": 0.11,
+        "growth": 0.15000000000000002,
+        "terminal_growth": 0.03,
+        "value_per_share": 136.95870447597764,
+        "status": "ok"
+      },
+      {
+        "basis": "ttm-fcff",
+        "wacc": 0.06999999999999999,
+        "growth": 0.05,
+        "terminal_growth": 0.02,
+        "value_per_share": 176.46643521733475,
+        "status": "ok"
+      },
+      {
+        "basis": "ttm-fcff",
+        "wacc": 0.06999999999999999,
+        "growth": 0.05,
+        "terminal_growth": 0.025,
+        "value_per_share": 190.4352090889621,
+        "status": "ok"
+      },
+      {
+        "basis": "ttm-fcff",
+        "wacc": 0.06999999999999999,
+        "growth": 0.05,
+        "terminal_growth": 0.03,
+        "value_per_share": 207.8961764284963,
+        "status": "ok"
+      },
+      {
+        "basis": "ttm-fcff",
+        "wacc": 0.06999999999999999,
+        "growth": 0.1,
+        "terminal_growth": 0.02,
+        "value_per_share": 266.2678838690467,
+        "status": "ok"
+      },
+      {
+        "basis": "ttm-fcff",
+        "wacc": 0.06999999999999999,
+        "growth": 0.1,
+        "terminal_growth": 0.025,
+        "value_per_share": 288.51082169373257,
+        "status": "ok"
+      },
+      {
+        "basis": "ttm-fcff",
+        "wacc": 0.06999999999999999,
+        "growth": 0.1,
+        "terminal_growth": 0.03,
+        "value_per_share": 316.31449397458977,
+        "status": "ok"
+      },
+      {
+        "basis": "ttm-fcff",
+        "wacc": 0.06999999999999999,
+        "growth": 0.15000000000000002,
+        "terminal_growth": 0.02,
+        "value_per_share": 397.97653168735974,
+        "status": "ok"
+      },
+      {
+        "basis": "ttm-fcff",
+        "wacc": 0.06999999999999999,
+        "growth": 0.15000000000000002,
+        "terminal_growth": 0.025,
+        "value_per_share": 432.6696789700156,
+        "status": "ok"
+      },
+      {
+        "basis": "ttm-fcff",
+        "wacc": 0.06999999999999999,
+        "growth": 0.15000000000000002,
+        "terminal_growth": 0.03,
+        "value_per_share": 476.03611307333557,
+        "status": "ok"
+      },
+      {
+        "basis": "ttm-fcff",
+        "wacc": 0.09,
+        "growth": 0.05,
+        "terminal_growth": 0.02,
+        "value_per_share": 121.8001591685066,
+        "status": "ok"
+      },
+      {
+        "basis": "ttm-fcff",
+        "wacc": 0.09,
+        "growth": 0.05,
+        "terminal_growth": 0.025,
+        "value_per_share": 127.64731847159527,
+        "status": "ok"
+      },
+      {
+        "basis": "ttm-fcff",
+        "wacc": 0.09,
+        "growth": 0.05,
+        "terminal_growth": 0.03,
+        "value_per_share": 134.46900432519877,
+        "status": "ok"
+      },
+      {
+        "basis": "ttm-fcff",
+        "wacc": 0.09,
+        "growth": 0.1,
+        "terminal_growth": 0.02,
+        "value_per_share": 180.46693650162672,
+        "status": "ok"
+      },
+      {
+        "basis": "ttm-fcff",
+        "wacc": 0.09,
+        "growth": 0.1,
+        "terminal_growth": 0.025,
+        "value_per_share": 189.7775604708357,
+        "status": "ok"
+      },
+      {
+        "basis": "ttm-fcff",
+        "wacc": 0.09,
+        "growth": 0.1,
+        "terminal_growth": 0.03,
+        "value_per_share": 200.63995510157963,
+        "status": "ok"
+      },
+      {
+        "basis": "ttm-fcff",
+        "wacc": 0.09,
+        "growth": 0.15000000000000002,
+        "terminal_growth": 0.02,
+        "value_per_share": 265.6340021934309,
+        "status": "ok"
+      },
+      {
+        "basis": "ttm-fcff",
+        "wacc": 0.09,
+        "growth": 0.15000000000000002,
+        "terminal_growth": 0.025,
+        "value_per_share": 280.15613282217834,
+        "status": "ok"
+      },
+      {
+        "basis": "ttm-fcff",
+        "wacc": 0.09,
+        "growth": 0.15000000000000002,
+        "terminal_growth": 0.03,
+        "value_per_share": 297.0986185557171,
+        "status": "ok"
+      },
+      {
+        "basis": "ttm-fcff",
+        "wacc": 0.11,
+        "growth": 0.05,
+        "terminal_growth": 0.02,
+        "value_per_share": 91.63328749788627,
+        "status": "ok"
+      },
+      {
+        "basis": "ttm-fcff",
+        "wacc": 0.11,
+        "growth": 0.05,
+        "terminal_growth": 0.025,
+        "value_per_share": 94.58603669461262,
+        "status": "ok"
+      },
+      {
+        "basis": "ttm-fcff",
+        "wacc": 0.11,
+        "growth": 0.05,
+        "terminal_growth": 0.03,
+        "value_per_share": 97.90787954092978,
+        "status": "ok"
+      },
+      {
+        "basis": "ttm-fcff",
+        "wacc": 0.11,
+        "growth": 0.1,
+        "terminal_growth": 0.02,
+        "value_per_share": 133.5487338246581,
+        "status": "ok"
+      },
+      {
+        "basis": "ttm-fcff",
+        "wacc": 0.11,
+        "growth": 0.1,
+        "terminal_growth": 0.025,
+        "value_per_share": 138.25049343493257,
+        "status": "ok"
+      },
+      {
+        "basis": "ttm-fcff",
+        "wacc": 0.11,
+        "growth": 0.1,
+        "terminal_growth": 0.03,
+        "value_per_share": 143.53997299649137,
+        "status": "ok"
+      },
+      {
+        "basis": "ttm-fcff",
+        "wacc": 0.11,
+        "growth": 0.15000000000000002,
+        "terminal_growth": 0.02,
+        "value_per_share": 193.77996928559838,
+        "status": "ok"
+      },
+      {
+        "basis": "ttm-fcff",
+        "wacc": 0.11,
+        "growth": 0.15000000000000002,
+        "terminal_growth": 0.025,
+        "value_per_share": 201.11348070987898,
+        "status": "ok"
+      },
+      {
+        "basis": "ttm-fcff",
+        "wacc": 0.11,
+        "growth": 0.15000000000000002,
+        "terminal_growth": 0.03,
+        "value_per_share": 209.36368106219467,
+        "status": "ok"
+      },
+      {
+        "basis": "normalized-fcff-annual",
+        "wacc": 0.06999999999999999,
+        "growth": 0.05,
+        "terminal_growth": 0.02,
+        "value_per_share": 127.25683149165393,
+        "status": "ok"
+      },
+      {
+        "basis": "normalized-fcff-annual",
+        "wacc": 0.06999999999999999,
+        "growth": 0.05,
+        "terminal_growth": 0.025,
+        "value_per_share": 137.48754119555326,
+        "status": "ok"
+      },
+      {
+        "basis": "normalized-fcff-annual",
+        "wacc": 0.06999999999999999,
+        "growth": 0.05,
+        "terminal_growth": 0.03,
+        "value_per_share": 150.27592832542743,
+        "status": "ok"
+      },
+      {
+        "basis": "normalized-fcff-annual",
+        "wacc": 0.06999999999999999,
+        "growth": 0.1,
+        "terminal_growth": 0.02,
+        "value_per_share": 193.0272821116162,
+        "status": "ok"
+      },
+      {
+        "basis": "normalized-fcff-annual",
+        "wacc": 0.06999999999999999,
+        "growth": 0.1,
+        "terminal_growth": 0.025,
+        "value_per_share": 209.31797748241405,
+        "status": "ok"
+      },
+      {
+        "basis": "normalized-fcff-annual",
+        "wacc": 0.06999999999999999,
+        "growth": 0.1,
+        "terminal_growth": 0.03,
+        "value_per_share": 229.6813466959114,
+        "status": "ok"
+      },
+      {
+        "basis": "normalized-fcff-annual",
+        "wacc": 0.06999999999999999,
+        "growth": 0.15000000000000002,
+        "terminal_growth": 0.02,
+        "value_per_share": 289.4905045608812,
+        "status": "ok"
+      },
+      {
+        "basis": "normalized-fcff-annual",
+        "wacc": 0.06999999999999999,
+        "growth": 0.15000000000000002,
+        "terminal_growth": 0.025,
+        "value_per_share": 314.89971526364747,
+        "status": "ok"
+      },
+      {
+        "basis": "normalized-fcff-annual",
+        "wacc": 0.06999999999999999,
+        "growth": 0.15000000000000002,
+        "terminal_growth": 0.03,
+        "value_per_share": 346.66122864210536,
+        "status": "ok"
+      },
+      {
+        "basis": "normalized-fcff-annual",
+        "wacc": 0.09,
+        "growth": 0.05,
+        "terminal_growth": 0.02,
+        "value_per_share": 87.21933027726644,
+        "status": "ok"
+      },
+      {
+        "basis": "normalized-fcff-annual",
+        "wacc": 0.09,
+        "growth": 0.05,
+        "terminal_growth": 0.025,
+        "value_per_share": 91.5017812620203,
+        "status": "ok"
+      },
+      {
+        "basis": "normalized-fcff-annual",
+        "wacc": 0.09,
+        "growth": 0.05,
+        "terminal_growth": 0.03,
+        "value_per_share": 96.49797407756648,
+        "status": "ok"
+      },
+      {
+        "basis": "normalized-fcff-annual",
+        "wacc": 0.09,
+        "growth": 0.1,
+        "terminal_growth": 0.02,
+        "value_per_share": 130.18679282439467,
+        "status": "ok"
+      },
+      {
+        "basis": "normalized-fcff-annual",
+        "wacc": 0.09,
+        "growth": 0.1,
+        "terminal_growth": 0.025,
+        "value_per_share": 137.00588030240303,
+        "status": "ok"
+      },
+      {
+        "basis": "normalized-fcff-annual",
+        "wacc": 0.09,
+        "growth": 0.1,
+        "terminal_growth": 0.03,
+        "value_per_share": 144.9614823600795,
+        "status": "ok"
+      },
+      {
+        "basis": "normalized-fcff-annual",
+        "wacc": 0.09,
+        "growth": 0.15000000000000002,
+        "terminal_growth": 0.02,
+        "value_per_share": 192.56302809265608,
+        "status": "ok"
+      },
+      {
+        "basis": "normalized-fcff-annual",
+        "wacc": 0.09,
+        "growth": 0.15000000000000002,
+        "terminal_growth": 0.025,
+        "value_per_share": 203.19901548211416,
+        "status": "ok"
+      },
+      {
+        "basis": "normalized-fcff-annual",
+        "wacc": 0.09,
+        "growth": 0.15000000000000002,
+        "terminal_growth": 0.03,
+        "value_per_share": 215.60766743648196,
+        "status": "ok"
+      },
+      {
+        "basis": "normalized-fcff-annual",
+        "wacc": 0.11,
+        "growth": 0.05,
+        "terminal_growth": 0.02,
+        "value_per_share": 65.12515726156812,
+        "status": "ok"
+      },
+      {
+        "basis": "normalized-fcff-annual",
+        "wacc": 0.11,
+        "growth": 0.05,
+        "terminal_growth": 0.025,
+        "value_per_share": 67.28774648648842,
+        "status": "ok"
+      },
+      {
+        "basis": "normalized-fcff-annual",
+        "wacc": 0.11,
+        "growth": 0.05,
+        "terminal_growth": 0.03,
+        "value_per_share": 69.72065936452374,
+        "status": "ok"
+      },
+      {
+        "basis": "normalized-fcff-annual",
+        "wacc": 0.11,
+        "growth": 0.1,
+        "terminal_growth": 0.02,
+        "value_per_share": 95.82396929900699,
+        "status": "ok"
+      },
+      {
+        "basis": "normalized-fcff-annual",
+        "wacc": 0.11,
+        "growth": 0.1,
+        "terminal_growth": 0.025,
+        "value_per_share": 99.2675312116198,
+        "status": "ok"
+      },
+      {
+        "basis": "normalized-fcff-annual",
+        "wacc": 0.11,
+        "growth": 0.1,
+        "terminal_growth": 0.03,
+        "value_per_share": 103.14153836330925,
+        "status": "ok"
+      },
+      {
+        "basis": "normalized-fcff-annual",
+        "wacc": 0.11,
+        "growth": 0.15000000000000002,
+        "terminal_growth": 0.02,
+        "value_per_share": 139.9372387076912,
+        "status": "ok"
+      },
+      {
+        "basis": "normalized-fcff-annual",
+        "wacc": 0.11,
+        "growth": 0.15000000000000002,
+        "terminal_growth": 0.025,
+        "value_per_share": 145.3082918281397,
+        "status": "ok"
+      },
+      {
+        "basis": "normalized-fcff-annual",
+        "wacc": 0.11,
+        "growth": 0.15000000000000002,
+        "terminal_growth": 0.03,
+        "value_per_share": 151.35072658864428,
+        "status": "ok"
+      },
+      {
+        "basis": "normalized-fcff-ttm",
+        "wacc": 0.06999999999999999,
+        "growth": 0.05,
+        "terminal_growth": 0.02,
+        "value_per_share": 178.33298047262977,
+        "status": "ok"
+      },
+      {
+        "basis": "normalized-fcff-ttm",
+        "wacc": 0.06999999999999999,
+        "growth": 0.05,
+        "terminal_growth": 0.025,
+        "value_per_share": 192.44354101612623,
+        "status": "ok"
+      },
+      {
+        "basis": "normalized-fcff-ttm",
+        "wacc": 0.06999999999999999,
+        "growth": 0.05,
+        "terminal_growth": 0.03,
+        "value_per_share": 210.08174169549682,
+        "status": "ok"
+      },
+      {
+        "basis": "normalized-fcff-ttm",
+        "wacc": 0.06999999999999999,
+        "growth": 0.1,
+        "terminal_growth": 0.02,
+        "value_per_share": 269.04593708132944,
+        "status": "ok"
+      },
+      {
+        "basis": "normalized-fcff-ttm",
+        "wacc": 0.06999999999999999,
+        "growth": 0.1,
+        "terminal_growth": 0.025,
+        "value_per_share": 291.51464648451855,
+        "status": "ok"
+      },
+      {
+        "basis": "normalized-fcff-ttm",
+        "wacc": 0.06999999999999999,
+        "growth": 0.1,
+        "terminal_growth": 0.03,
+        "value_per_share": 319.600533238505,
+        "status": "ok"
+      },
+      {
+        "basis": "normalized-fcff-ttm",
+        "wacc": 0.06999999999999999,
+        "growth": 0.15000000000000002,
+        "terminal_growth": 0.02,
+        "value_per_share": 402.09146177961446,
+        "status": "ok"
+      },
+      {
+        "basis": "normalized-fcff-ttm",
+        "wacc": 0.06999999999999999,
+        "growth": 0.15000000000000002,
+        "terminal_growth": 0.025,
+        "value_per_share": 437.13675349062737,
+        "status": "ok"
+      },
+      {
+        "basis": "normalized-fcff-ttm",
+        "wacc": 0.06999999999999999,
+        "growth": 0.15000000000000002,
+        "terminal_growth": 0.03,
+        "value_per_share": 480.94336812939355,
+        "status": "ok"
+      },
+      {
+        "basis": "normalized-fcff-ttm",
+        "wacc": 0.09,
+        "growth": 0.05,
+        "terminal_growth": 0.02,
+        "value_per_share": 123.11182756662922,
+        "status": "ok"
+      },
+      {
+        "basis": "normalized-fcff-ttm",
+        "wacc": 0.09,
+        "growth": 0.05,
+        "terminal_growth": 0.025,
+        "value_per_share": 129.01833705070675,
+        "status": "ok"
+      },
+      {
+        "basis": "normalized-fcff-ttm",
+        "wacc": 0.09,
+        "growth": 0.05,
+        "terminal_growth": 0.03,
+        "value_per_share": 135.90926478213055,
+        "status": "ok"
+      },
+      {
+        "basis": "normalized-fcff-ttm",
+        "wacc": 0.09,
+        "growth": 0.1,
+        "terminal_growth": 0.02,
+        "value_per_share": 182.37408788084642,
+        "status": "ok"
+      },
+      {
+        "basis": "normalized-fcff-ttm",
+        "wacc": 0.09,
+        "growth": 0.1,
+        "terminal_growth": 0.025,
+        "value_per_share": 191.7792170942344,
+        "status": "ok"
+      },
+      {
+        "basis": "normalized-fcff-ttm",
+        "wacc": 0.09,
+        "growth": 0.1,
+        "terminal_growth": 0.03,
+        "value_per_share": 202.75186784318714,
+        "status": "ok"
+      },
+      {
+        "basis": "normalized-fcff-ttm",
+        "wacc": 0.09,
+        "growth": 0.15000000000000002,
+        "terminal_growth": 0.02,
+        "value_per_share": 268.40562134256885,
+        "status": "ok"
+      },
+      {
+        "basis": "normalized-fcff-ttm",
+        "wacc": 0.09,
+        "growth": 0.15000000000000002,
+        "terminal_growth": 0.025,
+        "value_per_share": 283.07515535755624,
+        "status": "ok"
+      },
+      {
+        "basis": "normalized-fcff-ttm",
+        "wacc": 0.09,
+        "growth": 0.15000000000000002,
+        "terminal_growth": 0.03,
+        "value_per_share": 300.189611708375,
+        "status": "ok"
+      },
+      {
+        "basis": "normalized-fcff-ttm",
+        "wacc": 0.11,
+        "growth": 0.05,
+        "terminal_growth": 0.02,
+        "value_per_share": 92.63875433714719,
+        "status": "ok"
+      },
+      {
+        "basis": "normalized-fcff-ttm",
+        "wacc": 0.11,
+        "growth": 0.05,
+        "terminal_growth": 0.025,
+        "value_per_share": 95.62147470280472,
+        "status": "ok"
+      },
+      {
+        "basis": "normalized-fcff-ttm",
+        "wacc": 0.11,
+        "growth": 0.05,
+        "terminal_growth": 0.03,
+        "value_per_share": 98.97703511416945,
+        "status": "ok"
+      },
+      {
+        "basis": "normalized-fcff-ttm",
+        "wacc": 0.11,
+        "growth": 0.1,
+        "terminal_growth": 0.02,
+        "value_per_share": 134.9796532977147,
+        "status": "ok"
+      },
+      {
+        "basis": "normalized-fcff-ttm",
+        "wacc": 0.11,
+        "growth": 0.1,
+        "terminal_growth": 0.025,
+        "value_per_share": 139.7291369855064,
+        "status": "ok"
+      },
+      {
+        "basis": "normalized-fcff-ttm",
+        "wacc": 0.11,
+        "growth": 0.1,
+        "terminal_growth": 0.03,
+        "value_per_share": 145.07230613427203,
+        "status": "ok"
+      },
+      {
+        "basis": "normalized-fcff-ttm",
+        "wacc": 0.11,
+        "growth": 0.15000000000000002,
+        "terminal_growth": 0.02,
+        "value_per_share": 195.82225139485007,
+        "status": "ok"
+      },
+      {
+        "basis": "normalized-fcff-ttm",
+        "wacc": 0.11,
+        "growth": 0.15000000000000002,
+        "terminal_growth": 0.025,
+        "value_per_share": 203.2301998590254,
+        "status": "ok"
+      },
+      {
+        "basis": "normalized-fcff-ttm",
+        "wacc": 0.11,
+        "growth": 0.15000000000000002,
+        "terminal_growth": 0.03,
+        "value_per_share": 211.5641418812226,
+        "status": "ok"
+      }
+    ],
+    "forward_sensitivity": [
+      {
+        "scenario": "illustrative-growth",
+        "wacc": 0.06999999999999999,
+        "growth_delta": -0.02,
+        "terminal_growth": 0.02,
+        "value_per_share": 211.24890298908923,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-growth",
+        "wacc": 0.06999999999999999,
+        "growth_delta": -0.02,
+        "terminal_growth": 0.025,
+        "value_per_share": 221.53189253849848,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-growth",
+        "wacc": 0.06999999999999999,
+        "growth_delta": -0.02,
+        "terminal_growth": 0.03,
+        "value_per_share": 234.31978790870875,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-growth",
+        "wacc": 0.06999999999999999,
+        "growth_delta": 0,
+        "terminal_growth": 0.02,
+        "value_per_share": 246.66536660726794,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-growth",
+        "wacc": 0.06999999999999999,
+        "growth_delta": 0,
+        "terminal_growth": 0.025,
+        "value_per_share": 258.9913933946322,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-growth",
+        "wacc": 0.06999999999999999,
+        "growth_delta": 0,
+        "terminal_growth": 0.03,
+        "value_per_share": 274.3200038274103,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-growth",
+        "wacc": 0.06999999999999999,
+        "growth_delta": 0.02,
+        "terminal_growth": 0.02,
+        "value_per_share": 287.78509693991185,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-growth",
+        "wacc": 0.06999999999999999,
+        "growth_delta": 0.02,
+        "terminal_growth": 0.025,
+        "value_per_share": 302.51252289705553,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-growth",
+        "wacc": 0.06999999999999999,
+        "growth_delta": 0.02,
+        "terminal_growth": 0.03,
+        "value_per_share": 320.8275062302138,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-growth",
+        "wacc": 0.09,
+        "growth_delta": -0.02,
+        "terminal_growth": 0.02,
+        "value_per_share": 146.75184081088472,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-growth",
+        "wacc": 0.09,
+        "growth_delta": -0.02,
+        "terminal_growth": 0.025,
+        "value_per_share": 150.11625353137552,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-growth",
+        "wacc": 0.09,
+        "growth_delta": -0.02,
+        "terminal_growth": 0.03,
+        "value_per_share": 154.0049278480544,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-growth",
+        "wacc": 0.09,
+        "growth_delta": 0,
+        "terminal_growth": 0.02,
+        "value_per_share": 169.93644229089236,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-growth",
+        "wacc": 0.09,
+        "growth_delta": 0,
+        "terminal_growth": 0.025,
+        "value_per_share": 173.96930074292695,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-growth",
+        "wacc": 0.09,
+        "growth_delta": 0,
+        "terminal_growth": 0.03,
+        "value_per_share": 178.6305817414545,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-growth",
+        "wacc": 0.09,
+        "growth_delta": 0.02,
+        "terminal_growth": 0.02,
+        "value_per_share": 196.7290032157333,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-growth",
+        "wacc": 0.09,
+        "growth_delta": 0.02,
+        "terminal_growth": 0.025,
+        "value_per_share": 201.54755709952548,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-growth",
+        "wacc": 0.09,
+        "growth_delta": 0.02,
+        "terminal_growth": 0.03,
+        "value_per_share": 207.11696498379433,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-growth",
+        "wacc": 0.11,
+        "growth_delta": -0.02,
+        "terminal_growth": 0.02,
+        "value_per_share": 110.92979736648108,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-growth",
+        "wacc": 0.11,
+        "growth_delta": -0.02,
+        "terminal_growth": 0.025,
+        "value_per_share": 112.17124222559434,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-growth",
+        "wacc": 0.11,
+        "growth_delta": -0.02,
+        "terminal_growth": 0.03,
+        "value_per_share": 113.54506016766783,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-growth",
+        "wacc": 0.11,
+        "growth_delta": 0,
+        "terminal_growth": 0.02,
+        "value_per_share": 127.5156405164929,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-growth",
+        "wacc": 0.11,
+        "growth_delta": 0,
+        "terminal_growth": 0.025,
+        "value_per_share": 129.00373719450076,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-growth",
+        "wacc": 0.11,
+        "growth_delta": 0,
+        "terminal_growth": 0.03,
+        "value_per_share": 130.65050700532217,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-growth",
+        "wacc": 0.11,
+        "growth_delta": 0.02,
+        "terminal_growth": 0.02,
+        "value_per_share": 146.59580968869435,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-growth",
+        "wacc": 0.11,
+        "growth_delta": 0.02,
+        "terminal_growth": 0.025,
+        "value_per_share": 148.37382250827528,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-growth",
+        "wacc": 0.11,
+        "growth_delta": 0.02,
+        "terminal_growth": 0.03,
+        "value_per_share": 150.34142170919492,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-garp",
+        "wacc": 0.06999999999999999,
+        "growth_delta": -0.02,
+        "terminal_growth": 0.02,
+        "value_per_share": 166.92499845634921,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-garp",
+        "wacc": 0.06999999999999999,
+        "growth_delta": -0.02,
+        "terminal_growth": 0.025,
+        "value_per_share": 174.8719120415628,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-garp",
+        "wacc": 0.06999999999999999,
+        "growth_delta": -0.02,
+        "terminal_growth": 0.03,
+        "value_per_share": 184.75467025652682,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-garp",
+        "wacc": 0.06999999999999999,
+        "growth_delta": 0,
+        "terminal_growth": 0.02,
+        "value_per_share": 195.4222646186828,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-garp",
+        "wacc": 0.06999999999999999,
+        "growth_delta": 0,
+        "terminal_growth": 0.025,
+        "value_per_share": 204.9930347299873,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-garp",
+        "wacc": 0.06999999999999999,
+        "growth_delta": 0,
+        "terminal_growth": 0.03,
+        "value_per_share": 216.89521611484813,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-garp",
+        "wacc": 0.06999999999999999,
+        "growth_delta": 0.02,
+        "terminal_growth": 0.02,
+        "value_per_share": 228.60730625524457,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-garp",
+        "wacc": 0.06999999999999999,
+        "growth_delta": 0.02,
+        "terminal_growth": 0.025,
+        "value_per_share": 240.09472461372133,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-garp",
+        "wacc": 0.06999999999999999,
+        "growth_delta": 0.02,
+        "terminal_growth": 0.03,
+        "value_per_share": 254.38044408627215,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-garp",
+        "wacc": 0.09,
+        "growth_delta": -0.02,
+        "terminal_growth": 0.02,
+        "value_per_share": 116.76300686225284,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-garp",
+        "wacc": 0.09,
+        "growth_delta": -0.02,
+        "terminal_growth": 0.025,
+        "value_per_share": 119.36309675111885,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-garp",
+        "wacc": 0.09,
+        "growth_delta": -0.02,
+        "terminal_growth": 0.03,
+        "value_per_share": 122.36834718020845,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-garp",
+        "wacc": 0.09,
+        "growth_delta": 0,
+        "terminal_growth": 0.02,
+        "value_per_share": 135.5072836708469,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-garp",
+        "wacc": 0.09,
+        "growth_delta": 0,
+        "terminal_growth": 0.025,
+        "value_per_share": 138.63867075946024,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-garp",
+        "wacc": 0.09,
+        "growth_delta": 0,
+        "terminal_growth": 0.03,
+        "value_per_share": 142.25800808775747,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-garp",
+        "wacc": 0.09,
+        "growth_delta": 0.02,
+        "terminal_growth": 0.02,
+        "value_per_share": 157.22425862120153,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-garp",
+        "wacc": 0.09,
+        "growth_delta": 0.02,
+        "terminal_growth": 0.025,
+        "value_per_share": 160.98273919391386,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-garp",
+        "wacc": 0.09,
+        "growth_delta": 0.02,
+        "terminal_growth": 0.03,
+        "value_per_share": 165.3268872182712,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-garp",
+        "wacc": 0.11,
+        "growth_delta": -0.02,
+        "terminal_growth": 0.02,
+        "value_per_share": 88.79266571950753,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-garp",
+        "wacc": 0.11,
+        "growth_delta": -0.02,
+        "terminal_growth": 0.025,
+        "value_per_share": 89.75208077762626,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-garp",
+        "wacc": 0.11,
+        "growth_delta": -0.02,
+        "terminal_growth": 0.03,
+        "value_per_share": 90.81379657681241,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-garp",
+        "wacc": 0.11,
+        "growth_delta": 0,
+        "terminal_growth": 0.02,
+        "value_per_share": 102.26497387273908,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-garp",
+        "wacc": 0.11,
+        "growth_delta": 0,
+        "terminal_growth": 0.025,
+        "value_per_share": 103.4204338968248,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-garp",
+        "wacc": 0.11,
+        "growth_delta": 0,
+        "terminal_growth": 0.03,
+        "value_per_share": 104.69909859206668,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-garp",
+        "wacc": 0.11,
+        "growth_delta": 0.02,
+        "terminal_growth": 0.02,
+        "value_per_share": 117.79738855277226,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-garp",
+        "wacc": 0.11,
+        "growth_delta": 0.02,
+        "terminal_growth": 0.025,
+        "value_per_share": 119.18424170448374,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-garp",
+        "wacc": 0.11,
+        "growth_delta": 0.02,
+        "terminal_growth": 0.03,
+        "value_per_share": 120.71897256977824,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-quality",
+        "wacc": 0.06999999999999999,
+        "growth_delta": -0.02,
+        "terminal_growth": 0.02,
+        "value_per_share": 140.74063490258527,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-quality",
+        "wacc": 0.06999999999999999,
+        "growth_delta": -0.02,
+        "terminal_growth": 0.025,
+        "value_per_share": 147.33613167573782,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-quality",
+        "wacc": 0.06999999999999999,
+        "growth_delta": -0.02,
+        "terminal_growth": 0.03,
+        "value_per_share": 155.5382719428627,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-quality",
+        "wacc": 0.06999999999999999,
+        "growth_delta": 0,
+        "terminal_growth": 0.02,
+        "value_per_share": 165.08640937542316,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-quality",
+        "wacc": 0.06999999999999999,
+        "growth_delta": 0,
+        "terminal_growth": 0.025,
+        "value_per_share": 173.0574645435093,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-quality",
+        "wacc": 0.06999999999999999,
+        "growth_delta": 0,
+        "terminal_growth": 0.03,
+        "value_per_share": 182.97024515948442,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-quality",
+        "wacc": 0.06999999999999999,
+        "growth_delta": 0.02,
+        "terminal_growth": 0.02,
+        "value_per_share": 193.4997037546091,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-quality",
+        "wacc": 0.06999999999999999,
+        "growth_delta": 0.02,
+        "terminal_growth": 0.025,
+        "value_per_share": 203.09935565890805,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-quality",
+        "wacc": 0.06999999999999999,
+        "growth_delta": 0.02,
+        "terminal_growth": 0.03,
+        "value_per_share": 215.03745435605853,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-quality",
+        "wacc": 0.09,
+        "growth_delta": -0.02,
+        "terminal_growth": 0.02,
+        "value_per_share": 98.92668064292559,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-quality",
+        "wacc": 0.09,
+        "growth_delta": -0.02,
+        "terminal_growth": 0.025,
+        "value_per_share": 101.08461079883293,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-quality",
+        "wacc": 0.09,
+        "growth_delta": -0.02,
+        "terminal_growth": 0.03,
+        "value_per_share": 103.57880169383098,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-quality",
+        "wacc": 0.09,
+        "growth_delta": 0,
+        "terminal_growth": 0.02,
+        "value_per_share": 114.99381149586064,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-quality",
+        "wacc": 0.09,
+        "growth_delta": 0,
+        "terminal_growth": 0.025,
+        "value_per_share": 117.60180008462504,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-quality",
+        "wacc": 0.09,
+        "growth_delta": 0,
+        "terminal_growth": 0.03,
+        "value_per_share": 120.61618003318266,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-quality",
+        "wacc": 0.09,
+        "growth_delta": 0.02,
+        "terminal_growth": 0.02,
+        "value_per_share": 133.6444854918496,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-quality",
+        "wacc": 0.09,
+        "growth_delta": 0.02,
+        "terminal_growth": 0.025,
+        "value_per_share": 136.78532219346448,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-quality",
+        "wacc": 0.09,
+        "growth_delta": 0.02,
+        "terminal_growth": 0.03,
+        "value_per_share": 140.41558162628178,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-quality",
+        "wacc": 0.11,
+        "growth_delta": -0.02,
+        "terminal_growth": 0.02,
+        "value_per_share": 75.54674990429075,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-quality",
+        "wacc": 0.11,
+        "growth_delta": -0.02,
+        "terminal_growth": 0.025,
+        "value_per_share": 76.34301110080229,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-quality",
+        "wacc": 0.11,
+        "growth_delta": -0.02,
+        "terminal_growth": 0.03,
+        "value_per_share": 77.22417622893035,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-quality",
+        "wacc": 0.11,
+        "growth_delta": 0,
+        "terminal_growth": 0.02,
+        "value_per_share": 87.13301146518104,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-quality",
+        "wacc": 0.11,
+        "growth_delta": 0,
+        "terminal_growth": 0.025,
+        "value_per_share": 88.09534108854405,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-quality",
+        "wacc": 0.11,
+        "growth_delta": 0,
+        "terminal_growth": 0.03,
+        "value_per_share": 89.16028222794287,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-quality",
+        "wacc": 0.11,
+        "growth_delta": 0.02,
+        "terminal_growth": 0.02,
+        "value_per_share": 100.51260381040841,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-quality",
+        "wacc": 0.11,
+        "growth_delta": 0.02,
+        "terminal_growth": 0.025,
+        "value_per_share": 101.67155067587063,
+        "status": "ok"
+      },
+      {
+        "scenario": "illustrative-quality",
+        "wacc": 0.11,
+        "growth_delta": 0.02,
+        "terminal_growth": 0.03,
+        "value_per_share": 102.95407400825538,
+        "status": "ok"
+      }
+    ],
+    "sensitivity_note": "Historical sensitivity varies constant FCFF growth. Forward sensitivity shifts every segment annual revenue growth by -2, 0 or +2 percentage points while recalculating reinvestment."
+  }
 }

@@ -1,6 +1,6 @@
 # AVGO — data and calculations for your own analysis
 
-[Read the investment report](../AVGO-2026-10-11-valuation.md) · [Download the Excel workbook](../../output/spreadsheet/AVGO-2026-10-11-v2.xlsx)
+[Read the full investment report](../AVGO-2026-10-11.md) · [Valuation comparison](../AVGO-2026-10-11-valuation.md) · [Download the Excel workbook](../../output/spreadsheet/AVGO-2026-10-11-v2.xlsx)
 
 This is the complete reference pack behind the report: **285 calculated results, 577 annual/interim/TTM/cover-page records, 721 calculation inputs, 14 unique text facts, and all 109 handbook cards**.
 

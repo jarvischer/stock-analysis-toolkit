@@ -1,6 +1,6 @@
 # AVGO: valuation comparison
 
-[All calculations and cards](README.md) · [Excel workbook](../../output/spreadsheet/AVGO-2026-10-11-v2.xlsx) · [Importable analysis JSON](../AVGO-2026-10-11-v2.json)
+[Full investment report](../AVGO-2026-10-11.md) · [All calculations and cards](README.md) · [Excel workbook](../../output/spreadsheet/AVGO-2026-10-11-v2.xlsx)
 
 Price: $361.54 on 2026-10-09.
 

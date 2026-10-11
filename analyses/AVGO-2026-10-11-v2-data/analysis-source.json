@@ -59,7 +59,7 @@
         }
       ],
       "score": null,
-      "reason": "Broadcom designs semiconductor products and infrastructure software, so the operating-company FCFF and ROIC model is suitable. Free cash flow to the firm (FCFF) is cash available to all capital providers; return on invested capital (ROIC) measures operating profit after tax relative to the capital used. Annual history covers fiscal 2016 through fiscal 2025, with the latest annual period ending 2025-11-02. The newest extracted balance sheet is dated 2026-08-02; the latest filing date is 2026-09-10. Fiscal 2018 and fiscal 2024 carry long_year flags. Historical shares are split-adjusted; restated and tag_conflict flags require attention and do not by themselves establish an accounting problem. The 2025 tax benefit causes the calculator to use a zero tax rate; the 2024 rate reaches its upper limit. These rates are not normalized estimates. D&A for 2020–2022 contains only depreciation in its source parts, so historical EBITDA and owner earnings for those years are incomplete. The latest cover-page share count is dated 2026-08-28 and needs no text-share assumption.",
+      "reason": "Broadcom designs semiconductor products and infrastructure software, so the operating-company FCFF and ROIC model is suitable. Free cash flow to the firm (FCFF) is cash available to all capital providers; return on invested capital (ROIC) measures operating profit after tax relative to the capital used. Annual history covers fiscal 2016 through fiscal 2025, with the latest annual period ending 2025-11-02. The newest extracted balance sheet is dated 2026-08-02; the latest filing date is 2026-09-10. Fiscal 2018 and fiscal 2024 carry long_year flags. Historical shares are split-adjusted; restated and tag_conflict flags require attention and do not by themselves establish an accounting problem. The legacy policy tax-shield proxy clips the 2025 tax benefit to zero. The report now shows unclipped reported tax and separate normalized metrics using an illustrative 21% tax estimate. Complete D&A for fiscal 2020 through 2022 is unavailable because amortization is missing, so affected EBITDA and owner-earnings metrics are unavailable. The latest cover-page share count is dated 2026-08-28 and needs no text-share assumption. Matched trailing-twelve-month (TTM) flows run through 2026-08-02. TTM means the latest annual total plus current fiscal year-to-date flows minus matching prior-year flows.",
       "drivers": [
         {
           "text": "The company has positive operating income and positive FCFF, so the FCFF and ROIC model applies.",
@@ -255,7 +255,7 @@
         }
       ],
       "score": null,
-      "reason": "Competence: Broadcom designs semiconductor products and infrastructure software. Its chips serve AI computing, networking, wireless, broadband and storage markets. Its software includes VMware private cloud, mainframe and security products. It develops technology internally and expands through acquisitions. It reaches customers directly and through distributors, with significant customer concentration. The latest annual survival checks pass: debt/EBITDA is 1.91 versus a maximum of 3.0, and operating profit covers interest 7.94 times versus a minimum of 5. These are fiscal 2025 ratios, not trailing ratios through the latest quarter. Debt due over three years is $12.8B, compared with fiscal 2025 cash of $16.2B and free cash flow of $26.9B. The interim cash balance is $24.0B. Earlier interest-coverage failures show that acquisitions can strain financing; historical debt/EBITDA for 2020–2022 also suffers from missing amortization. Operating cash flow exceeds net income in the latest year, but receivables rose from $4.4B to $7.15B during fiscal 2025 and reached $13.7B at the interim date. One customer accounts for 44% of annual-end receivables. This warrants review of collections and payment terms. The 2025 income-tax benefit reflects settlements, expired limitation periods and stock-award tax benefits. No stop rule is identified as failing on the available latest annual evidence; this does not establish that all accounting concerns are resolved.",
+      "reason": "Competence: Broadcom designs semiconductor products and infrastructure software. Its chips serve AI computing, networking, wireless, broadband and storage markets. Its software includes VMware private cloud, mainframe and security products. It develops technology internally and expands through acquisitions. It reaches customers directly and through distributors, with significant customer concentration. The latest annual survival checks pass: debt/EBITDA is 1.91 versus a maximum of 3.0, and operating profit covers interest 7.94 times versus a minimum of 5. These are fiscal 2025 ratios, not trailing ratios through the latest quarter. Debt due over three years is $12.8B, compared with fiscal 2025 cash of $16.2B and free cash flow of $26.9B. The interim cash balance is $24.0B. Earlier interest-coverage failures show that acquisitions can strain financing; historical debt/EBITDA for fiscal 2020 through 2022 is unavailable because amortization is missing. Operating cash flow exceeds net income in the latest year, but receivables rose from $4.4B to $7.15B during fiscal 2025 and reached $13.7B at the interim date. One customer accounts for 44% of annual-end receivables. This warrants review of collections and payment terms. The 2025 income-tax benefit reflects settlements, expired limitation periods and stock-award tax benefits. No stop rule is identified as failing on the available latest annual evidence; this does not establish that all accounting concerns are resolved.",
       "drivers": [
         {
           "text": "Debt is 1.91 times EBITDA and interest coverage is 7.94 in fiscal 2025, both inside the policy limits.",
@@ -267,8 +267,8 @@
         }
       ],
       "open_questions": [
-        "What payment terms and collection risks explain the interim increase in receivables? The extraction does not include the latest 10-Q narrative for this company.",
-        "What recurring tax rate should replace the unusual reported tax effects in a separate sensitivity analysis?"
+        "How do customer payment terms and the non-recourse receivables factoring disclosed in the latest 10-Q affect cash conversion and collection risk?",
+        "What evidence supports a sustainable cash-tax rate instead of the illustrative normalization estimate?"
       ],
       "cards": [
         "circle-of-competence",
@@ -408,7 +408,7 @@
         }
       ],
       "score": 3,
-      "reason": "Business quality score: 3 of 5, an analyst judgment under the policy. ROIC exceeds the 9% weighted average cost of capital (WACC) in 6 of 9 measurable years; the policy requires 7. The first annual ROIC is unavailable because starting invested capital is missing. Fiscal 2025 ROIC is 19.9%, but its zero tax-rate input makes it sensitive to tax normalization; no normalized case has been calculated. Gross margin is 67.8%, operating margin 39.9%, and free cash flow is 42.1% of revenue. These support a strong operating franchise. Incremental ROIC, the added operating return on added capital, is 29.4% over five years, also sensitive to tax effects. One distributor accounts for 32% of revenue; this is not the same as one ultimate customer. The top five end customers account for approximately 40%. The filings identify cyclical semiconductor demand, dependence on AI investment and customers developing their own alternatives. The competitive advantage rests on specialized chip design, networking technology and established software deployments. Acquisitions and customer bargaining power reduce confidence in extrapolating past growth.",
+      "reason": "Business quality score: 3 of 5, an analyst judgment under the policy. ROIC exceeds the 9% weighted average cost of capital (WACC) in 6 of 9 measurable years; the policy requires 7. The first annual ROIC is unavailable because starting invested capital is missing. Fiscal 2025 policy ROIC is 19.9%. At the explicit illustrative 21% normalized tax estimate, annual ROIC is 15.72% and TTM ROIC is 25.83%. These normalized estimates are separate from the historical policy test. Gross margin is 67.8%, operating margin 39.9%, and free cash flow is 42.1% of revenue. These support a strong operating franchise. Incremental ROIC, the added operating return on added capital, is 29.4% over five years, also sensitive to tax effects. One distributor accounts for 32% of revenue; this is not the same as one ultimate customer. The top five end customers account for approximately 40%. The filings identify cyclical semiconductor demand, dependence on AI investment and customers developing their own alternatives. The competitive advantage rests on specialized chip design, networking technology and established software deployments. Acquisitions and customer bargaining power reduce confidence in extrapolating past growth.",
       "drivers": [
         {
           "text": "ROIC was above the WACC in only 6 of 9 years because of large acquisitions; the policy needs 7.",
@@ -424,8 +424,8 @@
         }
       ],
       "open_questions": [
-        "Do you want to add back the amortization of acquired intangibles to examine ROIC on the business without the effect of acquisitions? This is a less conservative view.",
-        "Which tax rate do you think is normal for Broadcom after the Singapore incentives end in 2030?"
+        "What sustainable tax rate is supported by the geographic profit mix and tax incentives? The 21% normalization is an estimate, not a verified recurring company rate.",
+        "How much of reported physical depreciation approximates maintenance spending? Acquisition amortization is not automatically treated as maintenance capital."
       ],
       "cards": [
         "roic",
@@ -522,7 +522,7 @@
           "period_end": "2025-11-02",
           "value": 96,
           "source": "DEF 14A 0001193125-26-085691",
-          "quote": "96% of our Chief Executive Officer’s (“CEO”) and 95% of our other named executive officers’ (“NEOs”) average annualized target total compensation in fiscal 2025 is comprised of variable compensation",
+          "quote": "96% of our Chief Executive Officer\u2019s (\u201cCEO\u201d) and 95% of our other named executive officers\u2019 (\u201cNEOs\u201d) average annualized target total compensation in fiscal 2025 is comprised of variable compensation",
           "file": "proxy_pay.txt"
         }
       ],
@@ -742,13 +742,13 @@
           "metric": "normalized-roic-annual",
           "period_end": "2025-11-02",
           "value": 0.15721037013899736,
-          "explanation": "Operating income × (1 - normalized tax rate) / average invested capital"
+          "explanation": "Operating income \u00d7 (1 - normalized tax rate) / average invested capital"
         },
         {
           "metric": "normalized-fcff-annual",
           "period_end": "2025-11-02",
           "value": 24804360000,
-          "explanation": "Operating income × (1 - normalized tax rate) + D&A - |CapEx| - ΔOperating working capital; SBC remains expensed in operating income"
+          "explanation": "Operating income \u00d7 (1 - normalized tax rate) + D&A - |CapEx| - \u0394Operating working capital; SBC remains expensed in operating income"
         },
         {
           "metric": "reported-tax-rate-ttm",
@@ -778,7 +778,7 @@
           "metric": "ttm-fcff",
           "period_end": "2026-08-02",
           "value": 33867298154.142677,
-          "explanation": "TTM OCF + Interest × (1 - tax shield proxy) - |CapEx| - SBC; not tax-normalized"
+          "explanation": "TTM OCF + Interest \u00d7 (1 - tax shield proxy) - |CapEx| - SBC; not tax-normalized"
         },
         {
           "metric": "ttm-ebitda",
@@ -814,29 +814,30 @@
           "metric": "normalized-roic-ttm",
           "period_end": "2026-08-02",
           "value": 0.2582681867120746,
-          "explanation": "Operating income × (1 - normalized tax rate) / average invested capital"
+          "explanation": "Operating income \u00d7 (1 - normalized tax rate) / average invested capital"
         },
         {
           "metric": "normalized-fcff-ttm",
           "period_end": "2026-08-02",
           "value": 34211060000,
-          "explanation": "Operating income × (1 - normalized tax rate) + D&A - |CapEx| - ΔOperating working capital; SBC remains expensed in operating income"
+          "explanation": "Operating income \u00d7 (1 - normalized tax rate) + D&A - |CapEx| - \u0394Operating working capital; SBC remains expensed in operating income"
         }
       ],
       "score": null,
-      "reason": "Discounted cash flow (DCF) estimates the present value of future cash available to capital providers. The policy estimates use WACC of 9%, a 10-year forecast and a base growth cap of 10%. Scenario growth estimates are 5%, 10% and 13%; terminal growth estimates are 2%, 2.5% and 3%. These are policy assumptions, not forecasts supplied by management. The starting FCFF is the three-year average of $18.6B, and the calculator treats stock-based compensation as a cash-flow cost. Per-share values use the August 2026 share count and interim cash and debt. Missing preferred stock and minority interest are assumed_zero, which affects claims deducted from business value; missing historical intangibles are also assumed_zero in some asset calculations. The resulting DCF estimates are $63.51 bear, $100.83 base and $136.18 bull. Reverse DCF solves for the growth needed to justify the supplied price: 26.5% annually for 10 years under the base discount and terminal assumptions. Historical revenue growth was 21.7% over five years and includes acquisitions; it is not directly equivalent to organic FCFF growth. Earnings value at the policy multiple is $38.55 per share. Tangible book value and net current asset value are negative and do not provide a positive asset-based valuation floor. Revenue reverse DCF is unavailable without an explicit target margin. A sum-of-the-parts analysis could value software and semiconductors separately, but must allocate unallocated expenses and stock-based pay; no numerical SOTP estimate is included. The mature growth cap and averaging of historical cash flow can understate value if durable AI growth proves materially stronger; the current conclusion is conditional on the policy.",
+      "reason": "Discounted cash flow (DCF) estimates the present value of future cash available to capital providers. The policy estimates use WACC of 9%, a 10-year forecast and a base growth cap of 10%. Scenario growth estimates are 5%, 10% and 13%; terminal growth estimates are 2%, 2.5% and 3%. These are policy assumptions, not forecasts supplied by management. The starting FCFF is the three-year average of $18.6B, and the calculator treats stock-based compensation as a cash-flow cost. Per-share values use the August 2026 share count and interim cash and debt. Missing preferred stock and minority interest are assumed_zero, which affects claims deducted from business value; missing historical intangibles are also assumed_zero in some asset calculations. The resulting DCF estimates are $63.51 bear, $100.83 base and $136.18 bull. Reverse DCF solves for the growth needed to justify the supplied price: 26.5% annually for 10 years under the base discount and terminal assumptions. Historical revenue growth was 21.7% over five years and includes acquisitions; it is not directly equivalent to organic FCFF growth. Earnings value at the policy multiple is $38.55 per share. Tangible book value and net current asset value are negative and do not provide a positive asset-based valuation floor. Revenue reverse DCF is unavailable without an explicit target margin. A sum-of-the-parts analysis could value software and semiconductors separately, but must allocate unallocated expenses and stock-based pay; no numerical SOTP estimate is included. The mature growth cap and averaging of historical cash flow can understate value if durable AI growth proves materially stronger; the current conclusion is conditional on the policy. The refreshed comparison adds TTM revenue of $89.10B, TTM FCF of $39.40B, TTM FCFF of $33.87B, and TTM P/E of 45.10 times. From TTM FCFF, the conditional reverse DCF requires 18.3% annual growth, versus 26.5% from the historical average; neither is a direct observation of market expectations. With the illustrative normalized tax estimate, TTM operating-model FCFF is $34.21B. The separate illustrative Growth, GARP and Quality segment cases estimate $173.97, $138.64 and $117.60 per share, respectively. Their margins, tax, capital intensity and growth paths are explicit estimates rather than management guidance. The comparison contains yearly operating forecasts and sensitivity results; its values do not change the conservative policy screen.",
       "drivers": [
         {
-          "text": "The supplied price requires 26.5% annual FCFF growth for 10 years under the model.",
+          "text": "Conditional required FCFF growth is 26.5% from the historical average and 18.3% from the TTM starting point; the starting cash flow materially changes the interpretation.",
           "reversing_change": "A lower price or a sourced growth scenario that produces the required margin of safety would change the valuation test."
         },
         {
-          "text": "Even the bull DCF value ($136.18) is far below the price.",
+          "text": "The policy bull value is $136.18; the separate illustrative Growth case is $173.97. Both remain below the supplied price, subject to different explicit assumptions.",
           "reversing_change": "Explicitly revised growth or discount-rate estimates would need to raise model value enough to meet the required margin of safety."
         }
       ],
       "open_questions": [
-        "Do you accept the growth limit of 0.10 in the policy for a company whose AI revenue grows quickly? A higher limit is less conservative."
+        "Which segment growth, operating-margin, reinvestment and tax estimates are supported by durable operating evidence?",
+        "How sensitive is the conclusion to WACC, terminal growth and the selected historical or normalized cash-flow base? Review the exported sensitivity tables."
       ],
       "cards": [
         "reverse-dcf",
@@ -862,13 +863,13 @@
           "metric": "margin-of-safety-base",
           "period_end": "2025-11-02",
           "value": -2.585728059848587,
-          "explanation": "The price is far above the base DCF value; the margin of safety is −2.59 as a fraction."
+          "explanation": "The price is far above the base DCF value; the margin of safety is \u22122.59 as a fraction."
         },
         {
           "metric": "margin-of-safety-bear",
           "period_end": "2025-11-02",
           "value": -4.692472131792246,
-          "explanation": "The margin of safety against the bear DCF value is −4.69 as a fraction."
+          "explanation": "The margin of safety against the bear DCF value is \u22124.69 as a fraction."
         },
         {
           "metric": "revenue-growth",
@@ -884,10 +885,10 @@
         }
       ],
       "score": null,
-      "reason": "The overall quality score is 3, the lower of the business and management scores. With high evidence from 10 annual periods, the policy requires a 40% margin of safety. Margin of safety means (estimated value minus price) divided by estimated value; the base result is −258.6% and the bear result is −469.2%. A negative margin means price exceeds model value; it is not a predicted investment loss. The result is does_not_meet_rules. Latest annual revenue and owner earnings increased, so this review does not identify a persistent operating decline; this alone cannot rule out a future value trap. The supplied price is above all three DCF estimates. AI demand and software profitability provide possible business reasons for investor optimism, but filings do not establish the market motivations behind the price. No market-news or sentiment analysis is included.",
+      "reason": "The overall quality score is 3, the lower of the business and management scores. With high evidence from 10 annual periods, the policy requires a 40% margin of safety. Margin of safety means (estimated value minus price) divided by estimated value; the base result is \u2212258.6% and the bear result is \u2212469.2%. A negative margin means price exceeds model value; it is not a predicted investment loss. The result is does_not_meet_rules. Latest annual revenue and owner earnings increased, so this review does not identify a persistent operating decline; this alone cannot rule out a future value trap. The supplied price is above the three policy DCF estimates and the separate illustrative forward cases. This is a conditional model result, not a universal claim about intrinsic value. AI demand and software profitability provide possible business reasons for investor optimism, but filings do not establish the market motivations behind the price. No market-news or sentiment analysis is included.",
       "drivers": [
         {
-          "text": "The base margin of safety is −2.59 against a requirement of 0.40.",
+          "text": "The base margin of safety is \u22122.59 against a requirement of 0.40.",
           "reversing_change": "margin-of-safety-base reaches 0.40 or more, from a much lower price or from a much higher base DCF value."
         },
         {
@@ -915,9 +916,9 @@
         }
       ],
       "open_questions": [
-        "At what price do you want to examine Broadcom again? The base DCF value is $100.83 per share.",
-        "Do you accept the policy WACC of 0.09 and the growth limit of 0.10 for Broadcom?",
-        "Do you want to watch customer concentration and receivables each quarter?"
+        "What evidence would justify revising the explicit segment growth and margin estimates?",
+        "What sustainable cash-tax rate and maintenance-capital estimate should replace the illustrative assumptions?",
+        "How will customer concentration, receivable collection and SBC dilution be monitored each quarter?"
       ],
       "cards": [
         "thesis-def",
@@ -992,7 +993,7 @@
         "value": 33867298154.142677,
         "period_end": "2026-08-02",
         "basis": "reported",
-        "definition": "TTM OCF + Interest × (1 - tax shield proxy) - |CapEx| - SBC; not tax-normalized",
+        "definition": "TTM OCF + Interest \u00d7 (1 - tax shield proxy) - |CapEx| - SBC; not tax-normalized",
         "required_growth": 0.18331251241954616,
         "status": "ok",
         "reverse_dcf_note": "Conditional on this starting cash flow, discount rate, terminal growth, forecast horizon and capital claims; not a direct observation of market expectations."
@@ -1003,7 +1004,7 @@
         "value": 24804360000,
         "period_end": "2025-11-02",
         "basis": "normalized",
-        "definition": "Operating income × (1 - normalized tax rate) + D&A - |CapEx| - ΔOperating working capital; SBC remains expensed in operating income",
+        "definition": "Operating income \u00d7 (1 - normalized tax rate) + D&A - |CapEx| - \u0394Operating working capital; SBC remains expensed in operating income",
         "required_growth": 0.22543491522774384,
         "status": "ok",
         "reverse_dcf_note": "Conditional on this starting cash flow, discount rate, terminal growth, forecast horizon and capital claims; not a direct observation of market expectations."
@@ -1014,7 +1015,7 @@
         "value": 34211060000,
         "period_end": "2026-08-02",
         "basis": "normalized",
-        "definition": "Operating income × (1 - normalized tax rate) + D&A - |CapEx| - ΔOperating working capital; SBC remains expensed in operating income",
+        "definition": "Operating income \u00d7 (1 - normalized tax rate) + D&A - |CapEx| - \u0394Operating working capital; SBC remains expensed in operating income",
         "required_growth": 0.18195641699331244,
         "status": "ok",
         "reverse_dcf_note": "Conditional on this starting cash flow, discount rate, terminal growth, forecast horizon and capital claims; not a direct observation of market expectations."
@@ -2260,7 +2261,7 @@
           "terminal_reinvestment_rate": 0.16666666666666669,
           "terminal_value_share": 0.5701165360795131
         },
-        "explanation": "FCFF = EBIT - cash-tax estimate + depreciation - CapEx - change in operating working capital. SBC stays expensed in operating margins; no second deduction. Terminal reinvestment = next-year NOPAT × terminal growth / terminal ROIC."
+        "explanation": "FCFF = EBIT - cash-tax estimate + depreciation - CapEx - change in operating working capital. SBC stays expensed in operating margins; no second deduction. Terminal reinvestment = next-year NOPAT \u00d7 terminal growth / terminal ROIC."
       },
       {
         "id": "illustrative-garp",
@@ -2801,7 +2802,7 @@
           "terminal_reinvestment_rate": 0.16666666666666669,
           "terminal_value_share": 0.5497545933129492
         },
-        "explanation": "FCFF = EBIT - cash-tax estimate + depreciation - CapEx - change in operating working capital. SBC stays expensed in operating margins; no second deduction. Terminal reinvestment = next-year NOPAT × terminal growth / terminal ROIC."
+        "explanation": "FCFF = EBIT - cash-tax estimate + depreciation - CapEx - change in operating working capital. SBC stays expensed in operating margins; no second deduction. Terminal reinvestment = next-year NOPAT \u00d7 terminal growth / terminal ROIC."
       },
       {
         "id": "illustrative-quality",
@@ -3342,7 +3343,7 @@
           "terminal_reinvestment_rate": 0.16666666666666669,
           "terminal_value_share": 0.5349053145011585
         },
-        "explanation": "FCFF = EBIT - cash-tax estimate + depreciation - CapEx - change in operating working capital. SBC stays expensed in operating margins; no second deduction. Terminal reinvestment = next-year NOPAT × terminal growth / terminal ROIC."
+        "explanation": "FCFF = EBIT - cash-tax estimate + depreciation - CapEx - change in operating working capital. SBC stays expensed in operating margins; no second deduction. Terminal reinvestment = next-year NOPAT \u00d7 terminal growth / terminal ROIC."
       }
     ],
     "sensitivity": [
