@@ -1,6 +1,6 @@
 # Stock Analysis Toolkit · מדריך לניתוח מניות
 
-A bilingual English/Hebrew stock-analysis handbook with 94 concepts, four guided learning paths, a company case, statement tracing, and valuation tools.
+A bilingual English/Hebrew stock-analysis handbook with concept cards, four guided learning paths, a company case, statement tracing, and valuation tools.
 
 **Live:** [English](https://jarvischer.github.io/stock-analysis-toolkit/?lang=en) · [עברית](https://jarvischer.github.io/stock-analysis-toolkit/?lang=he)
 

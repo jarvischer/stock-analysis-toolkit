@@ -48,5 +48,15 @@ eq('tg up → value up', fv(0.10, 0.035) > fv(0.10, 0.03) ? 1 : 0, 1);
 // Revenue flows with constant margin == FCF forecast
 const rf = F.revenueFlows(10e9, 0.1, 0.15, 0.15, 3);
 eq('revenue flows', rf[2], 10e9 * 1.331 * 0.15);
+// Storage: a corrupt value must not drop the rest of the export; imports must be plain objects
+const mem = new Map();
+globalThis.localStorage = { get length() { return mem.size; }, key: (i) => [...mem.keys()][i], getItem: (k) => (mem.has(k) ? mem.get(k) : null), setItem: (k, v) => mem.set(k, String(v)), removeItem: (k) => mem.delete(k) };
+mem.set('sat:a', '1'); mem.set('sat:bad', '{oops'); mem.set('sat:b', '"x"'); mem.set('other', '2');
+const dumped = SAT.store.dump();
+eq('dump skips corrupt value', JSON.stringify(dumped), '{"a":1,"b":"x"}');
+let threw = 0; try { SAT.store.load([1, 2]); } catch (e) { threw = 1; }
+eq('load rejects array', threw, 1);
+SAT.store.load({ c: [3] });
+eq('load merges object', JSON.stringify(SAT.store.get('c')), '[3]');
 console.log(fail ? `\n${fail} FAILED` : '\nall passed');
 process.exit(fail ? 1 : 0);

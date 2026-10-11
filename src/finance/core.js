@@ -30,12 +30,17 @@
       try {
         for (let i = 0; i < root.localStorage.length; i++) {
           const k = root.localStorage.key(i);
-          if (k.startsWith(P)) out[k.slice(P.length)] = JSON.parse(root.localStorage.getItem(k));
+          if (!k.startsWith(P)) continue;
+          try { out[k.slice(P.length)] = JSON.parse(root.localStorage.getItem(k)); } catch (e) { /* skip one corrupt value */ }
         }
-      } catch (e) { /* ignore */ }
+      } catch (e) { /* storage unavailable */ }
       return out;
     },
-    load(obj) { Object.keys(obj || {}).forEach((k) => SAT.store.set(k, obj[k])); },
+    /* Merges an export into existing data. Rejects anything that is not a plain object. */
+    load(obj) {
+      if (!obj || typeof obj !== 'object' || Array.isArray(obj)) throw new Error('Not a saved-data export');
+      Object.keys(obj).forEach((k) => SAT.store.set(k, obj[k]));
+    },
     clear() {
       try {
         Object.keys(SAT.store.dump()).forEach((k) => root.localStorage.removeItem(P + k));
