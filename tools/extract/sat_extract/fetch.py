@@ -2,8 +2,8 @@
 from __future__ import annotations
 
 import os
+import sys
 from collections.abc import Mapping
-from pathlib import Path
 
 import pandas as pd
 
@@ -34,17 +34,18 @@ def records_from_company(company) -> list[dict]:
     """XBRL records, or [] when SEC has no company facts (for example a very recent IPO) or they cannot be parsed."""
     facts = company.get_facts()  # edgartools returns None in both cases
     if facts is None:
+        print("warning: SEC returned no XBRL company facts for this company; only text sections are available",
+              file=sys.stderr)
         return []
     return records_from_dataframe(facts.to_dataframe(include_metadata=True))
 
 
-def fetch(ticker: str, cache_dir: Path):
+def fetch(ticker: str):
     """Return (company_info, records, edgar_company). Raises SystemExit for an unknown ticker."""
     import edgar  # imported here so tests do not need network setup
 
     edgar.set_identity(require_identity())
-    cache_dir.mkdir(parents=True, exist_ok=True)
-    edgar.use_local_storage(str(cache_dir))
+    # No edgar.use_local_storage(): in that mode get_facts() reads only a local bulk download and returns None.
     try:
         company = edgar.Company(ticker)
     except Exception as exc:  # edgartools raises for unknown tickers

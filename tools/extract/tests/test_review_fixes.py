@@ -99,3 +99,8 @@ def test_sections_skip_amendments_and_survive_parse_errors(tmp_path):
     assert "not available" in (tmp_path / "item1.txt").read_text()
     assert "not available" in (tmp_path / "latest_10q.txt").read_text()
     assert "full text" in (tmp_path / "prospectus.txt").read_text()
+
+
+def test_missing_xbrl_facts_are_reported(capsys):
+    records_from_company(FakeCompany([], facts=None))
+    assert "no XBRL company facts" in capsys.readouterr().err

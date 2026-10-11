@@ -24,7 +24,7 @@ def main(argv: list[str] | None = None) -> int:
     from .sections import write_sections, write_short_history_sections
 
     out = Path(args.out) / args.ticker.upper()
-    company, records, handle = fetch(args.ticker, Path(args.out) / ".edgar-cache")
+    company, records, handle = fetch(args.ticker)
     mapping = json.loads((REPO / "agent/mapping/line-items.json").read_text())
     facts = build_facts(records, mapping, company, args.years, dt.date.today().isoformat(), edgar.__version__)
     out.mkdir(parents=True, exist_ok=True)
