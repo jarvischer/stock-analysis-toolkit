@@ -1,4 +1,6 @@
 // Readable valuation output generated from metrics.json; no new finance arithmetic here.
+import { exportExpectations } from './export-expectations.mjs';
+import { renderOperatingReview } from './operating-report.mjs';
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { parseArgs } from 'node:util';
@@ -10,6 +12,7 @@ export function renderComparison(metrics) {
   const v = metrics.valuation;
   if (!v) throw new Error('Run sat calc first to produce a valuation comparison');
   let text = `# ${metrics.company.ticker}: valuation comparison\n\nPrice: ${money(metrics.price?.value)} on ${metrics.price?.date ?? 'not supplied'}.\n\nThese are conditional model estimates, not price targets. The conservative policy verdict is separate from the forward scenarios. Missing models are not assigned an invented value.\n\n`;
+  text += renderOperatingReview(v);
   text += '## Models side by side\n\n' + table(['Model', 'Style', 'Status', 'Value/share', 'Price/value', 'Value gap / price', 'Margin of safety'], v.comparisons.map(c => [c.label, c.style, c.status, money(c.value_per_share), Number.isFinite(c.price_to_value) ? c.price_to_value.toFixed(2) + '×' : '—', pct(c.gap_to_price), pct(c.margin_of_safety)]));
   text += 'Value gap uses price as the denominator; margin of safety uses model value. Neither percentage predicts an investment return.\n\n';
   text += '## Cash-flow bases and conditional reverse DCF\n\n' + table(['Starting point', 'Basis/date', 'FCFF', 'Required annual growth'], v.cash_flow_bases.map(b => [b.label, `${b.basis}; ${b.period_end ?? '—'}`, money(b.value), pct(b.required_growth)]));
@@ -33,9 +36,10 @@ export function renderComparison(metrics) {
   return text;
 }
 export function main(argv) {
-  const { values, positionals } = parseArgs({ args: argv, allowPositionals: true, options: { data: { type: 'string', default: 'data' }, out: { type: 'string' } } });
+  const { values, positionals } = parseArgs({ args: argv, allowPositionals: true, options: { data: { type: 'string', default: 'data' }, out: { type: 'string' }, 'export-dir': { type: 'string' } } });
   if (!positionals[0]) { console.error('Usage: sat compare TICKER [--data data] [--out report.md]'); return 1; }
   const ticker = positionals[0].toUpperCase(), metrics = JSON.parse(readFileSync(join(values.data, ticker, 'metrics.json')));
   const path = values.out || join('analyses', `${ticker}-valuation.md`); mkdirSync(dirname(path), { recursive: true }); writeFileSync(path, renderComparison(metrics));
+  if (values['export-dir']) exportExpectations(metrics, values['export-dir']);
   console.log(`Valuation comparison → ${path}`); return 0;
 }

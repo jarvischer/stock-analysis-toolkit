@@ -1,10 +1,136 @@
 # AVGO: valuation comparison
 
-[Full investment report](AVGO-2026-10-11.md) · [All calculations and cards](AVGO-2026-10-11-v2-data/README.md) · [Excel workbook](../output/spreadsheet/AVGO-2026-10-11-v2.xlsx)
+[Full investment report](AVGO-2026-10-11.md) · [All data and cards](AVGO-2026-10-11-v3-data/README.md) · [Excel workbook](../output/spreadsheet/AVGO-2026-10-11-v3.xlsx)
 
 Price: $361.54 on 2026-10-09.
 
 These are conditional model estimates, not price targets. The conservative policy verdict is separate from the forward scenarios. Missing models are not assigned an invented value.
+
+## Business classification and central valuation
+
+AI-led semiconductor growth with a recurring infrastructure-software cash-flow business. Quality-growth analysis with GARP price discipline; quality constrained by customer concentration and acquisition accounting.
+
+An explicit AI/non-AI/software FCFF model represents the changing mix better than the historical-average policy screen. Selection follows business economics, not whichever style label gives the highest value. Central assumptions remain provisional because long-run AI margins and cash taxes are not independently established.
+
+**Central conditional estimate: $318.73** (provisional_estimate). Method: Explicit segment FCFF DCF. Business profile determines model suitability. Investment lens does not set growth or margins. Valuation is conditional on the explicit operating forecast; the policy result is a separate investment screen. GARP is a price discipline, not an intrinsic company category.
+
+| Layer | Question answered |
+| --- | --- |
+| Business classification | Which operating model fits the revenue mix and economics? |
+| Valuation | What are the explicit operating cash flows worth under these estimates? |
+| Price-implied outcomes | Which operating paths would support the supplied price? |
+| Policy decision | Does the company at this price meet the user’s quality and margin-of-safety rules? |
+
+- AI growth and near-term guidance require a distinct AI operating forecast. [Source](https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial)
+- Software profitability and rising end-customer concentration require separate treatment of margins and execution risk. [Source](https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/)
+
+## What Must Be True?
+
+For each assumed segment operating margin, solve a common constant revenue growth rate that reprices the entire DCF to the supplied price. This consolidated hurdle holds the starting segment revenue mix fixed; it is not the AI-led central forecast. Capital intensity, working capital, corporate costs, discount rate and terminal reinvestment are held to the referenced model. Each row is a different conditional path; revenue, margin and FCFF cannot be solved independently from one price.
+
+Milestones are rolling twelve-month periods ending on the base month/day, not fiscal-year forecasts. The terminal value starts only after the full forecast horizon; 2030 is not treated as a separate exit. All monetary amounts below are full-company USD billions; margins include SBC. Shares and net financial claims are held fixed. This is a conditional expectations test, not a prediction.
+
+| Assumed margin | Required annual revenue growth | Milestone period | Required revenue | Operating margin | Required FCFF |
+| --- | --- | --- | --- | --- | --- |
+| 35.00% | 24.97% | 2030-08-02 | $217.31B | 35.00% | $52.34B |
+| 35.00% | 24.97% | 2035-08-02 | $662.27B | 35.00% | $159.51B |
+| 45.00% | 21.34% | 2030-08-02 | $193.18B | 45.00% | $62.42B |
+| 45.00% | 21.34% | 2035-08-02 | $508.20B | 45.00% | $164.21B |
+| 55.00% | 18.50% | 2030-08-02 | $175.71B | 55.00% | $71.13B |
+| 55.00% | 18.50% | 2035-08-02 | $410.59B | 55.00% | $166.21B |
+
+WACC 9.00%, tax estimate 21.00%, terminal growth 2.50%, terminal ROIC 15.00%. The solver recomputes investment needs as revenue grows. Higher reinvestment, dilution, or lower terminal returns would change these requirements.
+
+## AI economics and execution risk
+
+Q3 AI revenue was $16.70B, 56.44% of same-quarter consolidated revenue, growing 221.00% year over year. Management’s next-quarter AI guidance is $21.70B. These are supplemental AI measures, not a separate audited segment. [Source](https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial)
+
+Four reported quarters sum to $42.40B of TTM AI revenue; the inputs are rounded management figures. AI is subtracted from total semiconductors to avoid double counting. The forecast separates AI, non-AI chips and infrastructure software.
+
+| Operating case | Value/share | Period | AI revenue | Total revenue | FCFF |
+| --- | --- | --- | --- | --- | --- |
+| operating-central | $318.73 | 2027-08-02 | $106.00B | $156.78B | $38.35B |
+| operating-central | $318.73 | 2028-08-02 | $169.60B | $224.22B | $59.26B |
+| operating-central | $318.73 | 2030-08-02 | $274.75B | $336.16B | $97.18B |
+| operating-central | $318.73 | 2035-08-02 | $417.78B | $491.88B | $150.22B |
+| ai-slowdown | $125.83 | 2027-08-02 | $76.32B | $127.10B | $29.79B |
+| ai-slowdown | $125.83 | 2028-08-02 | $95.40B | $150.02B | $38.54B |
+| ai-slowdown | $125.83 | 2030-08-02 | $110.19B | $171.60B | $47.15B |
+| ai-slowdown | $125.83 | 2035-08-02 | $128.98B | $203.07B | $56.60B |
+| ai-execution-upside | $541.44 | 2027-08-02 | $118.72B | $169.50B | $43.71B |
+| ai-execution-upside | $541.44 | 2028-08-02 | $237.44B | $292.06B | $77.60B |
+| ai-execution-upside | $541.44 | 2030-08-02 | $415.52B | $476.93B | $146.67B |
+| ai-execution-upside | $541.44 | 2035-08-02 | $722.09B | $796.19B | $262.38B |
+
+The slowdown case combines weaker AI demand with margin compression. That loss of operating value is not captured by simply labeling Broadcom a growth company. Models retain the same WACC and terminal assumptions so the differences can be traced to operations.
+
+The latest quarter has 55.00% of total revenue tied to five end customers; one distributor accounts for 50.00%. These are different exposures and cannot be added. The exact AI-only customer distribution is not disclosed in the reviewed evidence. [Source](https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/)
+
+## Compare required outcomes with external evidence
+
+| Evidence | Available benchmark | Implication and limit |
+| --- | --- | --- |
+| Management guidance | $21.70B AI and $34.80B total revenue for FY2026 Q4; 66.00% non-GAAP operating margin | Supports rapid near-term growth. Non-GAAP margin is not our margin after SBC; quarterly guidance is not a decade forecast. [Source](https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial) |
+| Analyst outlook | $120.00B AI in FY2027 and $240.00B in FY2028 discussed by Morningstar | The central AI case is below this aggressive ramp. One provider, not consensus; fiscal periods differ from our rolling periods. [Source](https://global.morningstar.com/en-gb/stocks/why-broadcom-stock-is-worth-usd-650) |
+| Historical pace | Five-year consolidated revenue CAGR 21.74%; reported AI quarterly growth 221.00% | Consolidated history includes acquisitions. The required operating-path CAGR can be compared numerically, but a quarterly AI surge cannot establish sustained organic growth through 2035. |
+| Potential market | AMD estimates more than $1000.00B of data-center silicon demand by 2030 | A competitor’s broad market estimate, not Broadcom’s serviceable market. Total company revenue includes software and must not be divided by this figure as market share. No independently supported 2035 market estimate is supplied. [Source](https://ir.amd.com/financial-information/sec-filings/content/0001193125-26-129106/0001193125-26-129106.pdf) |
+| Competition and constraints | Custom silicon competes with general-purpose GPU ecosystems, rival ASIC design partners and customers internalizing more design work. Power, advanced packaging, customer financing and AI monetization constrain delivery. Market size does not establish achievable share or profit. | Execution needs both customer spending and delivery capacity. Customer internal design, GPU ecosystems, alternative ASIC partners and systems passthrough can reduce margins. |
+
+One identifiable research provider, not a consensus dataset. No verified like-for-like 2030/2035 revenue, margin and FCFF analyst consensus was obtained. Verified release guidance covers the next quarter. Longer-term AI ambitions discussed by analysts are labeled secondary reports; no verified management 2030/2035 operating forecast is claimed. Consequently, no invented 2030/2035 consensus gap is displayed. The full required-outcome table is available for replacement with dated comparable estimates when obtained.
+
+## Does capital allocation create value?
+
+Mixed evidence: dividends and repurchases fit within annual FCF, but diluted shares still increased. VMware added a profitable software platform, while the cash-and-stock cost and debt exposure make standalone acquisition returns essential. Consolidated returns do not establish a deal IRR.
+
+| Measure | Calculated result | Interpretation |
+| --- | --- | --- |
+| Dividends / annual FCF | 41.40% | Income distributions use cash that could otherwise fund debt reduction or reinvestment. |
+| Repurchases / annual FCF | 9.10% | Spending on shares is not proof of value creation; compare execution price with value and net share-count change. |
+| Total distributions / annual FCF | 50.50% | Coverage is positive; it does not establish that the allocation was optimal. |
+| FCF after dividends and repurchases | $13.32B | Before acquisitions and debt repayments; not unrestricted excess cash. |
+| VMware cash + stock consideration | $84.19B | Stock is a real shareholder cost. This is not enterprise purchase price; assumed notes and acquired cash must be reconciled separately. [Source](https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/) |
+
+**Acquisition returns:** Consolidated incremental ROIC and software segment earnings do not isolate VMware standalone cash flows, integration costs, incremental capital or the counterfactual. No acquisition IRR is inferred from goodwill or segment growth. Software cash generation and consolidated normalized ROIC provide supportive evidence, while customer retention, integration costs and the price paid remain essential. Goodwill records purchase accounting; it is neither an independent economic asset valuation nor proof that management destroyed value.
+
+**Dilution:** the fiscal-year increase in diluted shares despite repurchases weakens the capital-return claim. SBC expense and repurchase cash are different measurements; compare net shares and per-share cash growth, not their dollar difference alone.
+
+**Judgment:** capital allocation is mixed, with demonstrated cash generation but incomplete acquisition-specific return evidence. A positive deal IRR or a precise repurchase return is not claimed.
+
+## Research inputs and audit trail
+
+| Input | Value (raw units) | Type | As of | Meaning | Source |
+| --- | --- | --- | --- | --- | --- |
+| ai_q4_2025 | 6500000000 | reported | 2025-12-11 | Management supplemental AI revenue, rounded; not a separate audited reporting segment. | [Source](https://www.fool.com/earnings/call-transcripts/2025/12/12/broadcom-avgo-q4-2025-earnings-call-transcript/) |
+| ai_q1_2026 | 8400000000 | reported | 2026-03-04 | Management supplemental AI revenue, rounded; not a separate audited reporting segment. | [Source](https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-first-quarter-fiscal-year-2026-financial) |
+| ai_q2_2026 | 10800000000 | reported | 2026-06-03 | Management supplemental AI revenue, rounded; not a separate audited reporting segment. | [Source](https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-second-quarter-fiscal-year-2026-financial) |
+| ai_q3_2026 | 16700000000 | reported | 2026-09-02 | Management supplemental AI revenue, rounded; not a separate audited reporting segment. | [Source](https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial) |
+| total_q3_2026 | 29591000000 | reported | 2026-09-02 | Consolidated quarter revenue in full USD. | [Source](https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial) |
+| ai_q3_growth | 2.21 | reported | 2026-09-02 | Year-over-year AI quarterly revenue growth, not a sustainable long-run CAGR. | [Source](https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial) |
+| ai_q4_guidance | 21700000000 | management_guidance | 2026-09-02 | FY2026 Q4 AI revenue guidance; not 2030 guidance. | [Source](https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial) |
+| total_q4_guidance | 34800000000 | management_guidance | 2026-09-02 | FY2026 Q4 consolidated revenue guidance. | [Source](https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial) |
+| non_gaap_q4_margin_guidance | 0.66 | management_guidance | 2026-09-02 | Non-GAAP operating margin; not interchangeable with our margin including SBC. | [Source](https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial) |
+| analyst_ai_2027 | 120000000000 | analyst_estimate | 2026-09-29 | Single research provider discussion of FY2027 AI outlook; not consensus or independently verified management guidance. | [Source](https://global.morningstar.com/en-gb/stocks/why-broadcom-stock-is-worth-usd-650) |
+| analyst_ai_2028 | 240000000000 | analyst_estimate | 2026-09-29 | Morningstar discussion of FY2028 AI outlook; analyst-reported management ambition, not independently verified here. | [Source](https://global.morningstar.com/en-gb/stocks/why-broadcom-stock-is-worth-usd-650) |
+| analyst_anthropic_2027 | 60000000000 | analyst_estimate | 2026-09-29 | Customer revenue embedded in Morningstar model; uncertain future contribution, not booked revenue. | [Source](https://global.morningstar.com/en-gb/stocks/why-broadcom-stock-is-worth-usd-650) |
+| market_2030 | 1000000000000 | market_estimate | 2026-10-11 | AMD estimates more than this amount for the broad data-center silicon market in 2030. This floor is not Broadcom-specific serviceable demand; networking/system scopes overlap imperfectly. As-of is the retrieval date for the annual-report letter, not an asserted publication date. | [Source](https://ir.amd.com/financial-information/sec-filings/content/0001193125-26-129106/0001193125-26-129106.pdf) |
+| top_five_q3 | 0.55 | reported | 2026-09-10 | Approximate share of all-company quarterly revenue from top five end customers, not AI-only concentration. | [Source](https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/) |
+| distributor_q3 | 0.5 | reported | 2026-09-10 | One distributor share of all-company quarterly revenue; channel exposure differs from end-customer concentration. | [Source](https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/) |
+| top_five_ytd | 0.5 | reported | 2026-09-10 | Approximate top-five end-customer share of nine-month consolidated revenue. | [Source](https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/) |
+| vmware_cash | 30788000000 | reported | 2025-12-18 | Cash consideration reported for the acquisition; not cash net of acquired balances. | [Source](https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/) |
+| vmware_stock_fair_value | 53398000000 | reported | 2025-12-18 | Fair value of acquisition shares issued; economically material consideration. | [Source](https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/) |
+| vmware_shares | 544000000 | reported | 2025-12-18 | Split-adjusted shares issued in the acquisition. | [Source](https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/) |
+| vmware_assumed_notes | 8250000000 | reported | 2025-12-18 | Assumed notes; do not confuse cash plus stock with enterprise acquisition cost. | [Source](https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/) |
+
+| Calculation | Value (raw units) | Formula | Inputs |
+| --- | --- | --- | --- |
+| ai-quarter-revenue-share | 0.5643607853739313 | AI quarterly revenue / same-quarter consolidated revenue | {"ai":16700000000,"total":29591000000} |
+| ai-ttm-revenue | 42400000000 | Sum of four successive AI quarterly revenues (management supplemental measure) | {"ai_q4_2025":6500000000,"ai_q1_2026":8400000000,"ai_q2_2026":10800000000,"ai_q3_2026":16700000000} |
+| historical-revenue-cagr-5 | 0.21743712435641926 | Copy of calculated five-year consolidated revenue CAGR; includes acquisitions | {"cagr":0.21743712435641926} |
+| dividends-to-fcf | 0.4139852864680092 | Reported cash dividends / annual FCF | {"dividends":11142000000,"fcf":26914000000} |
+| repurchases-to-fcf | 0.09103069034703129 | Reported repurchases / annual FCF | {"repurchases":2450000000,"fcf":26914000000} |
+| distributions-to-fcf | 0.5050159768150405 | (Dividends + repurchases) / annual FCF | {"dividends":11142000000,"repurchases":2450000000,"fcf":26914000000} |
+| fcf-after-distributions | 13322000000 | FCF - dividends - repurchases; before debt repayments and acquisitions | {"dividends":11142000000,"repurchases":2450000000,"fcf":26914000000} |
+| vmware-cash-and-stock-consideration | 84186000000 | Cash paid + fair value of shares issued; excludes assumed debt and acquired cash | {"cash":30788000000,"stock":53398000000} |
 
 ## Models side by side
 
@@ -14,6 +140,9 @@ These are conditional model estimates, not price targets. The conservative polic
 | illustrative-growth | growth | ok | $173.97 | 2.08× | -51.88% | -107.82% |
 | illustrative-garp | garp | ok | $138.64 | 2.61× | -61.65% | -160.78% |
 | illustrative-quality | quality | ok | $117.60 | 3.07× | -67.47% | -207.43% |
+| operating-central | growth | ok | $318.73 | 1.13× | -11.84% | -13.43% |
+| ai-slowdown | growth | ok | $125.83 | 2.87× | -65.19% | -187.31% |
+| ai-execution-upside | growth | ok | $541.44 | 0.67× | 49.76% | 33.23% |
 
 Value gap uses price as the denominator; margin of safety uses model value. Neither percentage predicts an investment return.
 
@@ -29,6 +158,9 @@ Value gap uses price as the denominator; margin of safety uses model value. Neit
 | Year-one FCFF: illustrative-growth | forward; 2026-08-02 | $33,215,158,200.00 | Not available |
 | Year-one FCFF: illustrative-garp | forward; 2026-08-02 | $32,264,528,000.00 | Not available |
 | Year-one FCFF: illustrative-quality | forward; 2026-08-02 | $31,688,338,300.00 | Not available |
+| Year-one FCFF: operating-central | forward; 2026-08-02 | $38,353,438,525.00 | Not available |
+| Year-one FCFF: ai-slowdown | forward; 2026-08-02 | $29,790,334,525.00 | Not available |
+| Year-one FCFF: ai-execution-upside | forward; 2026-08-02 | $43,707,710,525.00 | Not available |
 
 Required growth depends on the selected cash-flow base, WACC, terminal growth, capital claims and forecast horizon. It is not a direct measure of what the market expects. Year-one forward FCFF is a forecast, not a historical starting point.
 
@@ -40,6 +172,9 @@ Required growth depends on the selected cash-flow base, WACC, terminal growth, c
 - **Year-one FCFF: illustrative-growth:** Explicit year-one segment forecast, not a historical starting cash flow
 - **Year-one FCFF: illustrative-garp:** Explicit year-one segment forecast, not a historical starting cash flow
 - **Year-one FCFF: illustrative-quality:** Explicit year-one segment forecast, not a historical starting cash flow
+- **Year-one FCFF: operating-central:** Explicit year-one segment forecast, not a historical starting cash flow
+- **Year-one FCFF: ai-slowdown:** Explicit year-one segment forecast, not a historical starting cash flow
+- **Year-one FCFF: ai-execution-upside:** Explicit year-one segment forecast, not a historical starting cash flow
 
 ## Reported, TTM and normalized metrics
 
@@ -794,6 +929,1089 @@ Terminal reinvestment rate: 16.67%. Terminal value share of enterprise value: 53
 
 </details>
 
+## Forward scenario: operating-central (growth)
+
+**Reason:** Analyst estimate: explicit AI adoption path with growth fading, non-AI semiconductors growing modestly and software compounding. Central AI growth is below the aggressive analyst-reported 2027/2028 outlook, reflecting delivery and concentration risk. Downside slows AI and compresses its margin; upside tests execution nearer that outlook. Margins include SBC and all allocated corporate costs, exclude acquisition amortization and include physical depreciation. No style premium or probability weighting. These are rolling TTM forecasts, not exact fiscal-year guidance.
+
+**Source / assumption basis:** https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial ; https://global.morningstar.com/en-gb/stocks/why-broadcom-stock-is-worth-usd-650 ; analyst estimates dated 2026-10-11
+
+FCFF = EBIT - cash-tax estimate + depreciation - CapEx - change in operating working capital. SBC stays expensed in operating margins; no second deduction. Terminal reinvestment = next-year NOPAT × terminal growth / terminal ROIC.
+
+| Year | Revenue | Operating profit | Tax estimate | D&A | CapEx | Δ working capital | FCFF |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 1 | $156,775,330,000.00 | $65,155,757,500.00 | $13,682,709,075.00 | $2,019,337,150.00 | $3,420,944,050.00 | $11,718,003,000.00 | $38,353,438,525.00 |
+| 2 | $224,224,639,500.00 | $92,441,455,025.00 | $19,412,705,555.25 | $2,997,847,512.50 | $5,057,332,867.50 | $11,708,895,070.00 | $59,260,369,044.75 |
+| 3 | $287,050,989,085.00 | $117,837,303,875.75 | $24,745,833,813.91 | $3,911,000,989.88 | $6,584,128,957.53 | $10,928,599,962.10 | $79,489,742,132.09 |
+| 4 | $336,164,774,143.15 | $137,731,230,684.82 | $28,923,558,443.81 | $4,620,074,296.50 | $7,770,523,380.11 | $8,481,246,210.24 | $97,175,976,947.16 |
+| 5 | $380,487,149,314.39 | $155,684,859,578.84 | $32,693,820,511.56 | $5,259,566,085.13 | $8,840,567,000.98 | $7,648,557,624.62 | $111,761,480,526.82 |
+| 6 | $414,914,782,102.99 | $169,650,160,920.79 | $35,626,533,793.37 | $5,753,593,519.23 | $9,667,677,234.10 | $5,905,942,151.47 | $124,203,601,261.09 |
+| 7 | $445,210,417,778.40 | $181,925,955,454.57 | $38,204,450,645.46 | $6,189,222,925.87 | $10,396,860,433.25 | $5,208,747,751.17 | $134,305,119,550.56 |
+| 8 | $469,827,715,783.75 | $191,888,128,307.01 | $40,296,506,944.47 | $6,543,814,395.72 | $10,990,290,883.04 | $4,240,429,638.05 | $142,904,715,237.17 |
+| 9 | $491,880,310,324.14 | $200,827,877,382.97 | $42,173,854,250.42 | $6,859,495,273.60 | $11,518,943,686.21 | $3,773,062,494.27 | $150,221,512,225.67 |
+| 10 | $510,814,545,243.98 | $208,523,843,948.51 | $43,790,007,229.19 | $7,127,947,515.96 | $11,968,957,637.05 | $3,205,865,626.88 | $156,686,960,971.35 |
+
+Terminal reinvestment rate: 16.67%. Terminal value share of enterprise value: 58.73%.
+
+<details><summary>All scenario assumptions and source components</summary>
+
+```json
+{
+  "id": "operating-central",
+  "style": "growth",
+  "years": 10,
+  "tax_rate": 0.21,
+  "wacc": 0.09,
+  "terminal_growth": 0.025,
+  "terminal_roic": 0.15,
+  "sbc_treatment": "expensed_in_margins",
+  "corporate_costs": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "segments": [
+    {
+      "name": "AI semiconductors (custom accelerators and networking)",
+      "base_revenue": {
+        "period_end": "2026-08-02",
+        "components": [
+          {
+            "item": "ai_q4_2025",
+            "value": 6500000000,
+            "period_end": "2025-11-02",
+            "source": "https://www.fool.com/earnings/call-transcripts/2025/12/12/broadcom-avgo-q4-2025-earnings-call-transcript/",
+            "sign": 1
+          },
+          {
+            "item": "ai_q1_2026",
+            "value": 8400000000,
+            "period_end": "2026-02-01",
+            "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-first-quarter-fiscal-year-2026-financial",
+            "sign": 1
+          },
+          {
+            "item": "ai_q2_2026",
+            "value": 10800000000,
+            "period_end": "2026-05-03",
+            "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-second-quarter-fiscal-year-2026-financial",
+            "sign": 1
+          },
+          {
+            "item": "ai_q3_2026",
+            "value": 16700000000,
+            "period_end": "2026-08-02",
+            "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial",
+            "sign": 1
+          }
+        ]
+      },
+      "base_working_capital_ratio": 0.18,
+      "growth": [
+        1.5,
+        0.6,
+        0.35,
+        0.2,
+        0.15,
+        0.1,
+        0.08,
+        0.06,
+        0.05,
+        0.04
+      ],
+      "operating_margin": [
+        0.4,
+        0.4,
+        0.4,
+        0.4,
+        0.4,
+        0.4,
+        0.4,
+        0.4,
+        0.4,
+        0.4
+      ],
+      "depreciation_to_revenue": [
+        0.015,
+        0.015,
+        0.015,
+        0.015,
+        0.015,
+        0.015,
+        0.015,
+        0.015,
+        0.015,
+        0.015
+      ],
+      "capex_to_revenue": [
+        0.025,
+        0.025,
+        0.025,
+        0.025,
+        0.025,
+        0.025,
+        0.025,
+        0.025,
+        0.025,
+        0.025
+      ],
+      "working_capital_to_revenue": [
+        0.18,
+        0.18,
+        0.18,
+        0.18,
+        0.18,
+        0.18,
+        0.18,
+        0.18,
+        0.18,
+        0.18
+      ]
+    },
+    {
+      "name": "Non-AI semiconductors",
+      "base_revenue": {
+        "period_end": "2026-08-02",
+        "components": [
+          {
+            "item": "segment_revenue_semiconductor",
+            "period_end": "2025-11-02",
+            "value": 36858000000,
+            "source": "10-K 0001730168-25-000121",
+            "sign": 1
+          },
+          {
+            "item": "segment_revenue_semiconductor",
+            "period_end": "2026-08-02",
+            "value": 48363000000,
+            "source": "10-Q 0001730168-26-000080",
+            "sign": 1
+          },
+          {
+            "item": "segment_revenue_semiconductor",
+            "period_end": "2025-08-03",
+            "value": 25786000000,
+            "source": "10-Q 0001730168-26-000080",
+            "sign": -1
+          },
+          {
+            "item": "ai_q4_2025",
+            "value": 6500000000,
+            "period_end": "2025-11-02",
+            "source": "https://www.fool.com/earnings/call-transcripts/2025/12/12/broadcom-avgo-q4-2025-earnings-call-transcript/",
+            "sign": -1
+          },
+          {
+            "item": "ai_q1_2026",
+            "value": 8400000000,
+            "period_end": "2026-02-01",
+            "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-first-quarter-fiscal-year-2026-financial",
+            "sign": -1
+          },
+          {
+            "item": "ai_q2_2026",
+            "value": 10800000000,
+            "period_end": "2026-05-03",
+            "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-second-quarter-fiscal-year-2026-financial",
+            "sign": -1
+          },
+          {
+            "item": "ai_q3_2026",
+            "value": 16700000000,
+            "period_end": "2026-08-02",
+            "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial",
+            "sign": -1
+          }
+        ]
+      },
+      "base_working_capital_ratio": 0.18,
+      "growth": [
+        0.03,
+        0.03,
+        0.03,
+        0.03,
+        0.03,
+        0.03,
+        0.03,
+        0.03,
+        0.03,
+        0.03
+      ],
+      "operating_margin": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "depreciation_to_revenue": [
+        0.015,
+        0.015,
+        0.015,
+        0.015,
+        0.015,
+        0.015,
+        0.015,
+        0.015,
+        0.015,
+        0.015
+      ],
+      "capex_to_revenue": [
+        0.025,
+        0.025,
+        0.025,
+        0.025,
+        0.025,
+        0.025,
+        0.025,
+        0.025,
+        0.025,
+        0.025
+      ],
+      "working_capital_to_revenue": [
+        0.18,
+        0.18,
+        0.18,
+        0.18,
+        0.18,
+        0.18,
+        0.18,
+        0.18,
+        0.18,
+        0.18
+      ]
+    },
+    {
+      "name": "Infrastructure software (including VMware)",
+      "base_revenue": {
+        "period_end": "2026-08-02",
+        "components": [
+          {
+            "item": "segment_revenue_software",
+            "period_end": "2025-11-02",
+            "value": 27029000000,
+            "source": "10-K 0001730168-25-000121",
+            "sign": 1
+          },
+          {
+            "item": "segment_revenue_software",
+            "period_end": "2026-08-02",
+            "value": 22726000000,
+            "source": "10-Q 0001730168-26-000080",
+            "sign": 1
+          },
+          {
+            "item": "segment_revenue_software",
+            "period_end": "2025-08-03",
+            "value": 20086000000,
+            "source": "10-Q 0001730168-26-000080",
+            "sign": -1
+          }
+        ]
+      },
+      "base_working_capital_ratio": 0.05,
+      "growth": [
+        0.12,
+        0.1,
+        0.08,
+        0.07,
+        0.06,
+        0.05,
+        0.04,
+        0.03,
+        0.03,
+        0.03
+      ],
+      "operating_margin": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "depreciation_to_revenue": [
+        0.005,
+        0.005,
+        0.005,
+        0.005,
+        0.005,
+        0.005,
+        0.005,
+        0.005,
+        0.005,
+        0.005
+      ],
+      "capex_to_revenue": [
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01
+      ],
+      "working_capital_to_revenue": [
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05
+      ]
+    }
+  ],
+  "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial ; https://global.morningstar.com/en-gb/stocks/why-broadcom-stock-is-worth-usd-650 ; analyst estimates dated 2026-10-11",
+  "reason": "Analyst estimate: explicit AI adoption path with growth fading, non-AI semiconductors growing modestly and software compounding. Central AI growth is below the aggressive analyst-reported 2027/2028 outlook, reflecting delivery and concentration risk. Downside slows AI and compresses its margin; upside tests execution nearer that outlook. Margins include SBC and all allocated corporate costs, exclude acquisition amortization and include physical depreciation. No style premium or probability weighting. These are rolling TTM forecasts, not exact fiscal-year guidance."
+}
+```
+
+</details>
+
+## Forward scenario: ai-slowdown (growth)
+
+**Reason:** Analyst estimate: explicit AI adoption path with growth fading, non-AI semiconductors growing modestly and software compounding. Central AI growth is below the aggressive analyst-reported 2027/2028 outlook, reflecting delivery and concentration risk. Downside slows AI and compresses its margin; upside tests execution nearer that outlook. Margins include SBC and all allocated corporate costs, exclude acquisition amortization and include physical depreciation. No style premium or probability weighting. These are rolling TTM forecasts, not exact fiscal-year guidance.
+
+**Source / assumption basis:** https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial ; https://global.morningstar.com/en-gb/stocks/why-broadcom-stock-is-worth-usd-650 ; analyst estimates dated 2026-10-11
+
+FCFF = EBIT - cash-tax estimate + depreciation - CapEx - change in operating working capital. SBC stays expensed in operating margins; no second deduction. Terminal reinvestment = next-year NOPAT × terminal growth / terminal ROIC.
+
+| Year | Revenue | Operating profit | Tax estimate | D&A | CapEx | Δ working capital | FCFF |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 1 | $127,095,330,000.00 | $47,178,157,500.00 | $9,907,413,075.00 | $1,574,137,150.00 | $2,678,944,050.00 | $6,375,603,000.00 | $29,790,334,525.00 |
+| 2 | $150,024,639,500.00 | $55,129,455,025.00 | $11,577,185,555.25 | $1,884,847,512.50 | $3,202,332,867.50 | $3,695,295,070.00 | $38,539,489,044.75 |
+| 3 | $163,030,989,085.00 | $59,834,103,875.75 | $12,565,161,813.91 | $2,050,700,989.88 | $3,483,628,957.53 | $1,960,999,962.10 | $43,875,014,132.09 |
+| 4 | $171,599,774,143.15 | $63,090,270,684.82 | $13,248,956,843.81 | $2,151,599,296.50 | $3,656,398,380.11 | $1,183,146,210.24 | $47,153,368,547.16 |
+| 5 | $179,116,829,314.39 | $65,969,173,178.84 | $13,853,526,367.56 | $2,239,011,285.13 | $3,806,309,000.98 | $1,023,600,024.62 | $49,524,749,070.82 |
+| 6 | $185,385,816,502.99 | $68,395,989,528.79 | $14,363,157,801.05 | $2,310,659,035.23 | $3,929,453,094.10 | $837,385,943.47 | $51,576,651,725.41 |
+| 7 | $191,417,519,210.40 | $70,682,933,320.81 | $14,843,415,997.37 | $2,382,329,447.35 | $4,052,037,969.05 | $841,239,816.93 | $53,328,568,984.81 |
+| 8 | $197,160,044,786.71 | $72,803,421,320.44 | $15,288,718,477.29 | $2,453,799,330.77 | $4,173,599,108.12 | $842,970,600.82 | $54,951,932,464.97 |
+| 9 | $203,074,846,130.31 | $74,987,523,960.05 | $15,747,380,031.61 | $2,527,413,310.69 | $4,298,807,081.36 | $868,259,718.85 | $56,600,490,438.92 |
+| 10 | $209,167,091,514.22 | $77,237,149,678.85 | $16,219,801,432.56 | $2,603,235,710.01 | $4,427,771,293.80 | $894,307,510.41 | $58,298,505,152.09 |
+
+Terminal reinvestment rate: 16.67%. Terminal value share of enterprise value: 53.24%.
+
+<details><summary>All scenario assumptions and source components</summary>
+
+```json
+{
+  "id": "ai-slowdown",
+  "style": "growth",
+  "years": 10,
+  "tax_rate": 0.21,
+  "wacc": 0.09,
+  "terminal_growth": 0.025,
+  "terminal_roic": 0.15,
+  "sbc_treatment": "expensed_in_margins",
+  "corporate_costs": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "segments": [
+    {
+      "name": "AI semiconductors (custom accelerators and networking)",
+      "base_revenue": {
+        "period_end": "2026-08-02",
+        "components": [
+          {
+            "item": "ai_q4_2025",
+            "value": 6500000000,
+            "period_end": "2025-11-02",
+            "source": "https://www.fool.com/earnings/call-transcripts/2025/12/12/broadcom-avgo-q4-2025-earnings-call-transcript/",
+            "sign": 1
+          },
+          {
+            "item": "ai_q1_2026",
+            "value": 8400000000,
+            "period_end": "2026-02-01",
+            "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-first-quarter-fiscal-year-2026-financial",
+            "sign": 1
+          },
+          {
+            "item": "ai_q2_2026",
+            "value": 10800000000,
+            "period_end": "2026-05-03",
+            "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-second-quarter-fiscal-year-2026-financial",
+            "sign": 1
+          },
+          {
+            "item": "ai_q3_2026",
+            "value": 16700000000,
+            "period_end": "2026-08-02",
+            "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial",
+            "sign": 1
+          }
+        ]
+      },
+      "base_working_capital_ratio": 0.18,
+      "growth": [
+        0.8,
+        0.25,
+        0.1,
+        0.05,
+        0.04,
+        0.03,
+        0.03,
+        0.03,
+        0.03,
+        0.03
+      ],
+      "operating_margin": [
+        0.32,
+        0.32,
+        0.32,
+        0.32,
+        0.32,
+        0.32,
+        0.32,
+        0.32,
+        0.32,
+        0.32
+      ],
+      "depreciation_to_revenue": [
+        0.015,
+        0.015,
+        0.015,
+        0.015,
+        0.015,
+        0.015,
+        0.015,
+        0.015,
+        0.015,
+        0.015
+      ],
+      "capex_to_revenue": [
+        0.025,
+        0.025,
+        0.025,
+        0.025,
+        0.025,
+        0.025,
+        0.025,
+        0.025,
+        0.025,
+        0.025
+      ],
+      "working_capital_to_revenue": [
+        0.18,
+        0.18,
+        0.18,
+        0.18,
+        0.18,
+        0.18,
+        0.18,
+        0.18,
+        0.18,
+        0.18
+      ]
+    },
+    {
+      "name": "Non-AI semiconductors",
+      "base_revenue": {
+        "period_end": "2026-08-02",
+        "components": [
+          {
+            "item": "segment_revenue_semiconductor",
+            "period_end": "2025-11-02",
+            "value": 36858000000,
+            "source": "10-K 0001730168-25-000121",
+            "sign": 1
+          },
+          {
+            "item": "segment_revenue_semiconductor",
+            "period_end": "2026-08-02",
+            "value": 48363000000,
+            "source": "10-Q 0001730168-26-000080",
+            "sign": 1
+          },
+          {
+            "item": "segment_revenue_semiconductor",
+            "period_end": "2025-08-03",
+            "value": 25786000000,
+            "source": "10-Q 0001730168-26-000080",
+            "sign": -1
+          },
+          {
+            "item": "ai_q4_2025",
+            "value": 6500000000,
+            "period_end": "2025-11-02",
+            "source": "https://www.fool.com/earnings/call-transcripts/2025/12/12/broadcom-avgo-q4-2025-earnings-call-transcript/",
+            "sign": -1
+          },
+          {
+            "item": "ai_q1_2026",
+            "value": 8400000000,
+            "period_end": "2026-02-01",
+            "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-first-quarter-fiscal-year-2026-financial",
+            "sign": -1
+          },
+          {
+            "item": "ai_q2_2026",
+            "value": 10800000000,
+            "period_end": "2026-05-03",
+            "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-second-quarter-fiscal-year-2026-financial",
+            "sign": -1
+          },
+          {
+            "item": "ai_q3_2026",
+            "value": 16700000000,
+            "period_end": "2026-08-02",
+            "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial",
+            "sign": -1
+          }
+        ]
+      },
+      "base_working_capital_ratio": 0.18,
+      "growth": [
+        0.03,
+        0.03,
+        0.03,
+        0.03,
+        0.03,
+        0.03,
+        0.03,
+        0.03,
+        0.03,
+        0.03
+      ],
+      "operating_margin": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "depreciation_to_revenue": [
+        0.015,
+        0.015,
+        0.015,
+        0.015,
+        0.015,
+        0.015,
+        0.015,
+        0.015,
+        0.015,
+        0.015
+      ],
+      "capex_to_revenue": [
+        0.025,
+        0.025,
+        0.025,
+        0.025,
+        0.025,
+        0.025,
+        0.025,
+        0.025,
+        0.025,
+        0.025
+      ],
+      "working_capital_to_revenue": [
+        0.18,
+        0.18,
+        0.18,
+        0.18,
+        0.18,
+        0.18,
+        0.18,
+        0.18,
+        0.18,
+        0.18
+      ]
+    },
+    {
+      "name": "Infrastructure software (including VMware)",
+      "base_revenue": {
+        "period_end": "2026-08-02",
+        "components": [
+          {
+            "item": "segment_revenue_software",
+            "period_end": "2025-11-02",
+            "value": 27029000000,
+            "source": "10-K 0001730168-25-000121",
+            "sign": 1
+          },
+          {
+            "item": "segment_revenue_software",
+            "period_end": "2026-08-02",
+            "value": 22726000000,
+            "source": "10-Q 0001730168-26-000080",
+            "sign": 1
+          },
+          {
+            "item": "segment_revenue_software",
+            "period_end": "2025-08-03",
+            "value": 20086000000,
+            "source": "10-Q 0001730168-26-000080",
+            "sign": -1
+          }
+        ]
+      },
+      "base_working_capital_ratio": 0.05,
+      "growth": [
+        0.12,
+        0.1,
+        0.08,
+        0.07,
+        0.06,
+        0.05,
+        0.04,
+        0.03,
+        0.03,
+        0.03
+      ],
+      "operating_margin": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "depreciation_to_revenue": [
+        0.005,
+        0.005,
+        0.005,
+        0.005,
+        0.005,
+        0.005,
+        0.005,
+        0.005,
+        0.005,
+        0.005
+      ],
+      "capex_to_revenue": [
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01
+      ],
+      "working_capital_to_revenue": [
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05
+      ]
+    }
+  ],
+  "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial ; https://global.morningstar.com/en-gb/stocks/why-broadcom-stock-is-worth-usd-650 ; analyst estimates dated 2026-10-11",
+  "reason": "Analyst estimate: explicit AI adoption path with growth fading, non-AI semiconductors growing modestly and software compounding. Central AI growth is below the aggressive analyst-reported 2027/2028 outlook, reflecting delivery and concentration risk. Downside slows AI and compresses its margin; upside tests execution nearer that outlook. Margins include SBC and all allocated corporate costs, exclude acquisition amortization and include physical depreciation. No style premium or probability weighting. These are rolling TTM forecasts, not exact fiscal-year guidance."
+}
+```
+
+</details>
+
+## Forward scenario: ai-execution-upside (growth)
+
+**Reason:** Analyst estimate: explicit AI adoption path with growth fading, non-AI semiconductors growing modestly and software compounding. Central AI growth is below the aggressive analyst-reported 2027/2028 outlook, reflecting delivery and concentration risk. Downside slows AI and compresses its margin; upside tests execution nearer that outlook. Margins include SBC and all allocated corporate costs, exclude acquisition amortization and include physical depreciation. No style premium or probability weighting. These are rolling TTM forecasts, not exact fiscal-year guidance.
+
+**Source / assumption basis:** https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial ; https://global.morningstar.com/en-gb/stocks/why-broadcom-stock-is-worth-usd-650 ; analyst estimates dated 2026-10-11
+
+FCFF = EBIT - cash-tax estimate + depreciation - CapEx - change in operating working capital. SBC stays expensed in operating margins; no second deduction. Terminal reinvestment = next-year NOPAT × terminal growth / terminal ROIC.
+
+| Year | Revenue | Operating profit | Tax estimate | D&A | CapEx | Δ working capital | FCFF |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 1 | $169,495,330,000.00 | $74,992,557,500.00 | $15,748,437,075.00 | $2,210,137,150.00 | $3,738,944,050.00 | $14,007,603,000.00 | $43,707,710,525.00 |
+| 2 | $292,064,639,500.00 | $129,075,055,025.00 | $27,105,761,555.25 | $4,015,447,512.50 | $6,753,332,867.50 | $21,630,495,070.00 | $77,600,913,044.75 |
+| 3 | $390,506,989,085.00 | $172,516,343,875.75 | $36,228,432,213.91 | $5,462,840,989.88 | $9,170,528,957.53 | $17,339,479,962.10 | $115,240,743,732.09 |
+| 4 | $476,932,774,143.15 | $210,659,230,684.82 | $44,238,438,443.81 | $6,731,594,296.50 | $11,289,723,380.11 | $15,197,406,210.24 | $146,665,256,947.16 |
+| 5 | $563,146,349,314.39 | $248,693,499,578.84 | $52,225,634,911.56 | $7,999,454,085.13 | $13,407,047,000.98 | $15,188,973,624.62 | $175,871,298,126.82 |
+| 6 | $640,771,102,102.99 | $282,929,392,920.79 | $59,415,172,513.37 | $9,141,438,319.23 | $15,314,085,234.10 | $13,681,423,751.47 | $203,660,149,741.09 |
+| 7 | $700,603,595,378.40 | $309,313,600,894.57 | $64,955,856,187.86 | $10,020,120,589.87 | $16,781,689,873.25 | $10,525,382,119.17 | $227,070,793,304.16 |
+| 8 | $753,159,671,239.75 | $332,469,714,841.41 | $69,818,640,116.70 | $10,793,793,727.56 | $18,073,589,769.44 | $9,269,409,652.13 | $246,101,869,030.71 |
+| 9 | $796,191,064,640.94 | $351,435,911,722.81 | $73,801,541,461.79 | $11,424,156,588.35 | $19,126,712,544.13 | $7,549,246,289.21 | $262,382,568,016.03 |
+| 10 | $827,297,729,733.45 | $365,156,199,661.94 | $76,682,801,929.01 | $11,875,195,283.30 | $19,881,037,249.28 | $5,396,903,057.96 | $275,070,652,708.99 |
+
+Terminal reinvestment rate: 16.67%. Terminal value share of enterprise value: 61.12%.
+
+<details><summary>All scenario assumptions and source components</summary>
+
+```json
+{
+  "id": "ai-execution-upside",
+  "style": "growth",
+  "years": 10,
+  "tax_rate": 0.21,
+  "wacc": 0.09,
+  "terminal_growth": 0.025,
+  "terminal_roic": 0.15,
+  "sbc_treatment": "expensed_in_margins",
+  "corporate_costs": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "segments": [
+    {
+      "name": "AI semiconductors (custom accelerators and networking)",
+      "base_revenue": {
+        "period_end": "2026-08-02",
+        "components": [
+          {
+            "item": "ai_q4_2025",
+            "value": 6500000000,
+            "period_end": "2025-11-02",
+            "source": "https://www.fool.com/earnings/call-transcripts/2025/12/12/broadcom-avgo-q4-2025-earnings-call-transcript/",
+            "sign": 1
+          },
+          {
+            "item": "ai_q1_2026",
+            "value": 8400000000,
+            "period_end": "2026-02-01",
+            "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-first-quarter-fiscal-year-2026-financial",
+            "sign": 1
+          },
+          {
+            "item": "ai_q2_2026",
+            "value": 10800000000,
+            "period_end": "2026-05-03",
+            "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-second-quarter-fiscal-year-2026-financial",
+            "sign": 1
+          },
+          {
+            "item": "ai_q3_2026",
+            "value": 16700000000,
+            "period_end": "2026-08-02",
+            "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial",
+            "sign": 1
+          }
+        ]
+      },
+      "base_working_capital_ratio": 0.18,
+      "growth": [
+        1.8,
+        1,
+        0.4,
+        0.25,
+        0.2,
+        0.15,
+        0.1,
+        0.08,
+        0.06,
+        0.04
+      ],
+      "operating_margin": [
+        0.44,
+        0.44,
+        0.44,
+        0.44,
+        0.44,
+        0.44,
+        0.44,
+        0.44,
+        0.44,
+        0.44
+      ],
+      "depreciation_to_revenue": [
+        0.015,
+        0.015,
+        0.015,
+        0.015,
+        0.015,
+        0.015,
+        0.015,
+        0.015,
+        0.015,
+        0.015
+      ],
+      "capex_to_revenue": [
+        0.025,
+        0.025,
+        0.025,
+        0.025,
+        0.025,
+        0.025,
+        0.025,
+        0.025,
+        0.025,
+        0.025
+      ],
+      "working_capital_to_revenue": [
+        0.18,
+        0.18,
+        0.18,
+        0.18,
+        0.18,
+        0.18,
+        0.18,
+        0.18,
+        0.18,
+        0.18
+      ]
+    },
+    {
+      "name": "Non-AI semiconductors",
+      "base_revenue": {
+        "period_end": "2026-08-02",
+        "components": [
+          {
+            "item": "segment_revenue_semiconductor",
+            "period_end": "2025-11-02",
+            "value": 36858000000,
+            "source": "10-K 0001730168-25-000121",
+            "sign": 1
+          },
+          {
+            "item": "segment_revenue_semiconductor",
+            "period_end": "2026-08-02",
+            "value": 48363000000,
+            "source": "10-Q 0001730168-26-000080",
+            "sign": 1
+          },
+          {
+            "item": "segment_revenue_semiconductor",
+            "period_end": "2025-08-03",
+            "value": 25786000000,
+            "source": "10-Q 0001730168-26-000080",
+            "sign": -1
+          },
+          {
+            "item": "ai_q4_2025",
+            "value": 6500000000,
+            "period_end": "2025-11-02",
+            "source": "https://www.fool.com/earnings/call-transcripts/2025/12/12/broadcom-avgo-q4-2025-earnings-call-transcript/",
+            "sign": -1
+          },
+          {
+            "item": "ai_q1_2026",
+            "value": 8400000000,
+            "period_end": "2026-02-01",
+            "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-first-quarter-fiscal-year-2026-financial",
+            "sign": -1
+          },
+          {
+            "item": "ai_q2_2026",
+            "value": 10800000000,
+            "period_end": "2026-05-03",
+            "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-second-quarter-fiscal-year-2026-financial",
+            "sign": -1
+          },
+          {
+            "item": "ai_q3_2026",
+            "value": 16700000000,
+            "period_end": "2026-08-02",
+            "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial",
+            "sign": -1
+          }
+        ]
+      },
+      "base_working_capital_ratio": 0.18,
+      "growth": [
+        0.03,
+        0.03,
+        0.03,
+        0.03,
+        0.03,
+        0.03,
+        0.03,
+        0.03,
+        0.03,
+        0.03
+      ],
+      "operating_margin": [
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35,
+        0.35
+      ],
+      "depreciation_to_revenue": [
+        0.015,
+        0.015,
+        0.015,
+        0.015,
+        0.015,
+        0.015,
+        0.015,
+        0.015,
+        0.015,
+        0.015
+      ],
+      "capex_to_revenue": [
+        0.025,
+        0.025,
+        0.025,
+        0.025,
+        0.025,
+        0.025,
+        0.025,
+        0.025,
+        0.025,
+        0.025
+      ],
+      "working_capital_to_revenue": [
+        0.18,
+        0.18,
+        0.18,
+        0.18,
+        0.18,
+        0.18,
+        0.18,
+        0.18,
+        0.18,
+        0.18
+      ]
+    },
+    {
+      "name": "Infrastructure software (including VMware)",
+      "base_revenue": {
+        "period_end": "2026-08-02",
+        "components": [
+          {
+            "item": "segment_revenue_software",
+            "period_end": "2025-11-02",
+            "value": 27029000000,
+            "source": "10-K 0001730168-25-000121",
+            "sign": 1
+          },
+          {
+            "item": "segment_revenue_software",
+            "period_end": "2026-08-02",
+            "value": 22726000000,
+            "source": "10-Q 0001730168-26-000080",
+            "sign": 1
+          },
+          {
+            "item": "segment_revenue_software",
+            "period_end": "2025-08-03",
+            "value": 20086000000,
+            "source": "10-Q 0001730168-26-000080",
+            "sign": -1
+          }
+        ]
+      },
+      "base_working_capital_ratio": 0.05,
+      "growth": [
+        0.12,
+        0.1,
+        0.08,
+        0.07,
+        0.06,
+        0.05,
+        0.04,
+        0.03,
+        0.03,
+        0.03
+      ],
+      "operating_margin": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "depreciation_to_revenue": [
+        0.005,
+        0.005,
+        0.005,
+        0.005,
+        0.005,
+        0.005,
+        0.005,
+        0.005,
+        0.005,
+        0.005
+      ],
+      "capex_to_revenue": [
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01
+      ],
+      "working_capital_to_revenue": [
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05
+      ]
+    }
+  ],
+  "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial ; https://global.morningstar.com/en-gb/stocks/why-broadcom-stock-is-worth-usd-650 ; analyst estimates dated 2026-10-11",
+  "reason": "Analyst estimate: explicit AI adoption path with growth fading, non-AI semiconductors growing modestly and software compounding. Central AI growth is below the aggressive analyst-reported 2027/2028 outlook, reflecting delivery and concentration risk. Downside slows AI and compresses its margin; upside tests execution nearer that outlook. Margins include SBC and all allocated corporate costs, exclude acquisition amortization and include physical depreciation. No style premium or probability weighting. These are rolling TTM forecasts, not exact fiscal-year guidance."
+}
+```
+
+</details>
+
 ## Sensitivity analysis
 
 Historical sensitivity varies constant FCFF growth. Forward sensitivity shifts every segment annual revenue growth by -2, 0 or +2 percentage points while recalculating reinvestment.
@@ -1025,6 +2243,87 @@ Historical sensitivity varies constant FCFF growth. Forward sensitivity shifts e
 | illustrative-quality | 11% | 2% | 2% | $100.51 |
 | illustrative-quality | 11% | 2% | 2.5% | $101.67 |
 | illustrative-quality | 11% | 2% | 3% | $102.95 |
+| operating-central | 7% | -2% | 2% | $392.44 |
+| operating-central | 7% | -2% | 2.5% | $411.72 |
+| operating-central | 7% | -2% | 3% | $435.69 |
+| operating-central | 7% | 0% | 2% | $452.98 |
+| operating-central | 7% | 0% | 2.5% | $475.81 |
+| operating-central | 7% | 0% | 3% | $504.21 |
+| operating-central | 7% | 2% | 2% | $522.62 |
+| operating-central | 7% | 2% | 2.5% | $549.58 |
+| operating-central | 7% | 2% | 3% | $583.11 |
+| operating-central | 9% | -2% | 2% | $271.89 |
+| operating-central | 9% | -2% | 2.5% | $278.20 |
+| operating-central | 9% | -2% | 3% | $285.49 |
+| operating-central | 9% | 0% | 2% | $311.26 |
+| operating-central | 9% | 0% | 2.5% | $318.73 |
+| operating-central | 9% | 0% | 3% | $327.36 |
+| operating-central | 9% | 2% | 2% | $356.36 |
+| operating-central | 9% | 2% | 2.5% | $365.18 |
+| operating-central | 9% | 2% | 3% | $375.38 |
+| operating-central | 11% | -2% | 2% | $205.08 |
+| operating-central | 11% | -2% | 2.5% | $207.41 |
+| operating-central | 11% | -2% | 3% | $209.98 |
+| operating-central | 11% | 0% | 2% | $233.06 |
+| operating-central | 11% | 0% | 2.5% | $235.81 |
+| operating-central | 11% | 0% | 3% | $238.86 |
+| operating-central | 11% | 2% | 2% | $264.98 |
+| operating-central | 11% | 2% | 2.5% | $268.23 |
+| operating-central | 11% | 2% | 3% | $271.83 |
+| ai-slowdown | 7% | -2% | 2% | $150.97 |
+| ai-slowdown | 7% | -2% | 2.5% | $157.99 |
+| ai-slowdown | 7% | -2% | 3% | $166.72 |
+| ai-slowdown | 7% | 0% | 2% | $176.29 |
+| ai-slowdown | 7% | 0% | 2.5% | $184.75 |
+| ai-slowdown | 7% | 0% | 3% | $195.26 |
+| ai-slowdown | 7% | 2% | 2% | $205.76 |
+| ai-slowdown | 7% | 2% | 2.5% | $215.92 |
+| ai-slowdown | 7% | 2% | 3% | $228.55 |
+| ai-slowdown | 9% | -2% | 2% | $106.40 |
+| ai-slowdown | 9% | -2% | 2.5% | $108.70 |
+| ai-slowdown | 9% | -2% | 3% | $111.35 |
+| ai-slowdown | 9% | 0% | 2% | $123.07 |
+| ai-slowdown | 9% | 0% | 2.5% | $125.83 |
+| ai-slowdown | 9% | 0% | 3% | $129.03 |
+| ai-slowdown | 9% | 2% | 2% | $142.37 |
+| ai-slowdown | 9% | 2% | 2.5% | $145.69 |
+| ai-slowdown | 9% | 2% | 3% | $149.53 |
+| ai-slowdown | 11% | -2% | 2% | $81.45 |
+| ai-slowdown | 11% | -2% | 2.5% | $82.29 |
+| ai-slowdown | 11% | -2% | 3% | $83.23 |
+| ai-slowdown | 11% | 0% | 2% | $93.44 |
+| ai-slowdown | 11% | 0% | 2.5% | $94.46 |
+| ai-slowdown | 11% | 0% | 3% | $95.59 |
+| ai-slowdown | 11% | 2% | 2% | $107.26 |
+| ai-slowdown | 11% | 2% | 2.5% | $108.48 |
+| ai-slowdown | 11% | 2% | 3% | $109.84 |
+| ai-execution-upside | 7% | -2% | 2% | $675.17 |
+| ai-execution-upside | 7% | -2% | 2.5% | $709.21 |
+| ai-execution-upside | 7% | -2% | 3% | $751.55 |
+| ai-execution-upside | 7% | 0% | 2% | $775.12 |
+| ai-execution-upside | 7% | 0% | 2.5% | $815.10 |
+| ai-execution-upside | 7% | 0% | 3% | $864.82 |
+| ai-execution-upside | 7% | 2% | 2% | $889.37 |
+| ai-execution-upside | 7% | 2% | 2.5% | $936.20 |
+| ai-execution-upside | 7% | 2% | 3% | $994.45 |
+| ai-execution-upside | 9% | -2% | 2% | $463.70 |
+| ai-execution-upside | 9% | -2% | 2.5% | $474.84 |
+| ai-execution-upside | 9% | -2% | 3% | $487.71 |
+| ai-execution-upside | 9% | 0% | 2% | $528.35 |
+| ai-execution-upside | 9% | 0% | 2.5% | $541.44 |
+| ai-execution-upside | 9% | 0% | 3% | $556.56 |
+| ai-execution-upside | 9% | 2% | 2% | $601.99 |
+| ai-execution-upside | 9% | 2% | 2.5% | $617.32 |
+| ai-execution-upside | 9% | 2% | 3% | $635.03 |
+| ai-execution-upside | 11% | -2% | 2% | $346.98 |
+| ai-execution-upside | 11% | -2% | 2.5% | $351.09 |
+| ai-execution-upside | 11% | -2% | 3% | $355.64 |
+| ai-execution-upside | 11% | 0% | 2% | $392.69 |
+| ai-execution-upside | 11% | 0% | 2.5% | $397.52 |
+| ai-execution-upside | 11% | 0% | 3% | $402.86 |
+| ai-execution-upside | 11% | 2% | 2% | $444.56 |
+| ai-execution-upside | 11% | 2% | 2.5% | $450.21 |
+| ai-execution-upside | 11% | 2% | 3% | $456.47 |
 
 </details>
 

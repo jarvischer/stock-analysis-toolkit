@@ -1,0 +1,759 @@
+﻿Parent metric,Metric period,Input name,Input item,Input date,Value (raw units),Assumed zero,Estimate,Adjusted,Source / derivation,Input unit
+revenue-growth,2016-10-30,revenue,revenue,2016-10-30,13240000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,USD
+gross-margin,2016-10-30,gross_profit,gross_profit,2016-10-30,5940000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,USD
+gross-margin,2016-10-30,revenue,revenue,2016-10-30,13240000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,USD
+operating-margin,2016-10-30,operating_income,operating_income,2016-10-30,-409000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,USD
+operating-margin,2016-10-30,revenue,revenue,2016-10-30,13240000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,USD
+net-margin,2016-10-30,net_income,net_income,2016-10-30,-1739000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,USD
+net-margin,2016-10-30,revenue,revenue,2016-10-30,13240000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,USD
+fcf,2016-10-30,ocf,ocf,2016-10-30,3411000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,USD
+fcf,2016-10-30,capex,capex,2016-10-30,723000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,USD
+fcf-margin,2016-10-30,ocf,ocf,2016-10-30,3411000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,USD
+fcf-margin,2016-10-30,capex,capex,2016-10-30,723000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,USD
+fcf-margin,2016-10-30,revenue,revenue,2016-10-30,13240000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,USD
+fcff,2016-10-30,ocf,ocf,2016-10-30,3411000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,USD
+fcff,2016-10-30,capex,capex,2016-10-30,723000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,USD
+fcff,2016-10-30,interest_expense,interest_expense,2016-10-30,585000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,USD
+fcff,2016-10-30,tax_rate,tax_rate,2016-10-30,0.21,False,US federal rate; no usable effective rate,False,Derived or model input; see parent calculation formula and model assumptions.,ratio (decimal)
+fcff,2016-10-30,sbc,sbc,2016-10-30,679000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,USD
+fcfe,2016-10-30,net_income,net_income,2016-10-30,-1739000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,USD
+fcfe,2016-10-30,d_and_a,d_and_a,2016-10-30,3042000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,USD
+fcfe,2016-10-30,capex,capex,2016-10-30,723000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,USD
+fcfe,2016-10-30,debt_issued,debt_issued,2016-10-30,19510000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,USD
+fcfe,2016-10-30,debt_repaid,debt_repaid,2016-10-30,11317000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,USD
+owner-earnings,2016-10-30,net_income,net_income,2016-10-30,-1739000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,USD
+owner-earnings,2016-10-30,d_and_a,d_and_a,2016-10-30,3042000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,USD
+earnings-quality,2016-10-30,ocf,ocf,2016-10-30,3411000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,USD
+earnings-quality,2016-10-30,net_income,net_income,2016-10-30,-1739000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,USD
+ebitda,2016-10-30,operating_income,operating_income,2016-10-30,-409000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,USD
+ebitda,2016-10-30,d_and_a,d_and_a,2016-10-30,3042000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,USD
+nopat,2016-10-30,operating_income,operating_income,2016-10-30,-409000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,USD
+nopat,2016-10-30,tax_rate,tax_rate,2016-10-30,0.21,False,US federal rate; no usable effective rate,False,Derived or model input; see parent calculation formula and model assumptions.,ratio (decimal)
+invested-capital,2016-10-30,equity,equity,2016-10-30,21876000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016819000144/0001730168-19-000144-index.html,USD
+invested-capital,2016-10-30,cash_sti,cash_sti,2016-10-30,3097000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016819000144/0001730168-19-000144-index.html,USD
+roic,2016-10-30,operating_income,operating_income,2016-10-30,-409000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,USD
+roic,2016-10-30,tax_rate,tax_rate,2016-10-30,0.21,False,US federal rate; no usable effective rate,False,Derived or model input; see parent calculation formula and model assumptions.,ratio (decimal)
+net-debt,2016-10-30,cash_sti,cash_sti,2016-10-30,3097000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016819000144/0001730168-19-000144-index.html,USD
+debt-ebitda,2016-10-30,ebitda,ebitda,2016-10-30,2633000000,False,,False,Derived: ebitda @ 2016-10-30; see Calculations and Calc inputs.,USD
+interest-coverage,2016-10-30,operating_income,operating_income,2016-10-30,-409000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,USD
+interest-coverage,2016-10-30,interest_expense,interest_expense,2016-10-30,585000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,USD
+tangible-book-value,2016-10-30,equity,equity,2016-10-30,21876000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016819000144/0001730168-19-000144-index.html,USD
+tangible-book-value,2016-10-30,preferred,preferred,2016-10-30,0,True,,False,"
+Transformed calculation input: differs from the raw filing value; see formula and flags.",USD
+tangible-book-value,2016-10-30,goodwill,goodwill,2016-10-30,24732000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,USD
+tangible-book-value,2016-10-30,intangibles,intangibles,2016-10-30,0,True,,False,"
+Transformed calculation input: differs from the raw filing value; see formula and flags.",USD
+ncav,2016-10-30,preferred,preferred,2016-10-30,0,True,,False,"
+Transformed calculation input: differs from the raw filing value; see formula and flags.",USD
+dilution,2016-10-30,diluted_avg_shares,diluted_avg_shares,2016-10-30,3830000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,shares
+sbc-to-revenue,2016-10-30,sbc,sbc,2016-10-30,679000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,USD
+sbc-to-revenue,2016-10-30,revenue,revenue,2016-10-30,13240000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,USD
+eps,2016-10-30,eps_diluted,eps_diluted,2016-10-30,-0.48600000000000004,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,USD per share
+revenue-growth,2017-10-29,revenue,revenue,2017-10-29,17636000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,USD
+revenue-growth,2017-10-29,previous_revenue,revenue,2016-10-30,13240000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,USD
+gross-margin,2017-10-29,gross_profit,gross_profit,2017-10-29,8509000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016819000144/0001730168-19-000144-index.html,USD
+gross-margin,2017-10-29,revenue,revenue,2017-10-29,17636000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,USD
+operating-margin,2017-10-29,operating_income,operating_income,2017-10-29,2371000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016819000144/0001730168-19-000144-index.html,USD
+operating-margin,2017-10-29,revenue,revenue,2017-10-29,17636000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,USD
+net-margin,2017-10-29,net_income,net_income,2017-10-29,1692000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,USD
+net-margin,2017-10-29,revenue,revenue,2017-10-29,17636000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,USD
+fcf,2017-10-29,ocf,ocf,2017-10-29,6551000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016819000144/0001730168-19-000144-index.html,USD
+fcf,2017-10-29,capex,capex,2017-10-29,1069000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016819000144/0001730168-19-000144-index.html,USD
+fcf-margin,2017-10-29,ocf,ocf,2017-10-29,6551000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016819000144/0001730168-19-000144-index.html,USD
+fcf-margin,2017-10-29,capex,capex,2017-10-29,1069000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016819000144/0001730168-19-000144-index.html,USD
+fcf-margin,2017-10-29,revenue,revenue,2017-10-29,17636000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,USD
+fcff,2017-10-29,ocf,ocf,2017-10-29,6551000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016819000144/0001730168-19-000144-index.html,USD
+fcff,2017-10-29,capex,capex,2017-10-29,1069000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016819000144/0001730168-19-000144-index.html,USD
+fcff,2017-10-29,interest_expense,interest_expense,2017-10-29,454000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016819000144/0001730168-19-000144-index.html,USD
+fcff,2017-10-29,tax_rate,tax_rate,2017-10-29,0.019178082191780823,False,,False,Derived or model input; see parent calculation formula and model assumptions.,ratio (decimal)
+fcff,2017-10-29,sbc,sbc,2017-10-29,921000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016819000144/0001730168-19-000144-index.html,USD
+fcfe,2017-10-29,net_income,net_income,2017-10-29,1692000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,USD
+fcfe,2017-10-29,d_and_a,d_and_a,2017-10-29,4737000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016819000144/0001730168-19-000144-index.html,USD
+fcfe,2017-10-29,capex,capex,2017-10-29,1069000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016819000144/0001730168-19-000144-index.html,USD
+fcfe,2017-10-29,debt_issued,debt_issued,2017-10-29,17426000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016819000144/0001730168-19-000144-index.html,USD
+fcfe,2017-10-29,debt_repaid,debt_repaid,2017-10-29,13668000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016819000144/0001730168-19-000144-index.html,USD
+owner-earnings,2017-10-29,net_income,net_income,2017-10-29,1692000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,USD
+owner-earnings,2017-10-29,d_and_a,d_and_a,2017-10-29,4737000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016819000144/0001730168-19-000144-index.html,USD
+earnings-quality,2017-10-29,ocf,ocf,2017-10-29,6551000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016819000144/0001730168-19-000144-index.html,USD
+earnings-quality,2017-10-29,net_income,net_income,2017-10-29,1692000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,USD
+ebitda,2017-10-29,operating_income,operating_income,2017-10-29,2371000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016819000144/0001730168-19-000144-index.html,USD
+ebitda,2017-10-29,d_and_a,d_and_a,2017-10-29,4737000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016819000144/0001730168-19-000144-index.html,USD
+nopat,2017-10-29,operating_income,operating_income,2017-10-29,2371000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016819000144/0001730168-19-000144-index.html,USD
+nopat,2017-10-29,tax_rate,tax_rate,2017-10-29,0.019178082191780823,False,,False,Derived or model input; see parent calculation formula and model assumptions.,ratio (decimal)
+invested-capital,2017-10-29,equity,equity,2017-10-29,20285000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,USD
+invested-capital,2017-10-29,debt,debt,2017-10-29,17548000000,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+invested-capital,2017-10-29,cash_sti,cash_sti,2017-10-29,11204000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016820000226/0001730168-20-000226-index.html,USD
+roic,2017-10-29,operating_income,operating_income,2017-10-29,2371000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016819000144/0001730168-19-000144-index.html,USD
+roic,2017-10-29,tax_rate,tax_rate,2017-10-29,0.019178082191780823,False,,False,Derived or model input; see parent calculation formula and model assumptions.,ratio (decimal)
+roic,2017-10-29,average_invested_capital,invested_capital,2017-10-29,26629000000,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+net-debt,2017-10-29,debt,debt,2017-10-29,17548000000,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+net-debt,2017-10-29,cash_sti,cash_sti,2017-10-29,11204000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016820000226/0001730168-20-000226-index.html,USD
+debt-ebitda,2017-10-29,debt,debt,2017-10-29,17548000000,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+debt-ebitda,2017-10-29,ebitda,ebitda,2017-10-29,7108000000,False,,False,Derived: ebitda @ 2017-10-29; see Calculations and Calc inputs.,USD
+interest-coverage,2017-10-29,operating_income,operating_income,2017-10-29,2371000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016819000144/0001730168-19-000144-index.html,USD
+interest-coverage,2017-10-29,interest_expense,interest_expense,2017-10-29,454000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016819000144/0001730168-19-000144-index.html,USD
+current-ratio,2017-10-29,current_assets,current_assets,2017-10-29,15823000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,USD
+current-ratio,2017-10-29,current_liabilities,current_liabilities,2017-10-29,2529000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,USD
+tangible-book-value,2017-10-29,equity,equity,2017-10-29,20285000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,USD
+tangible-book-value,2017-10-29,preferred,preferred,2017-10-29,0,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,USD
+tangible-book-value,2017-10-29,goodwill,goodwill,2017-10-29,24706000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016819000144/0001730168-19-000144-index.html,USD
+tangible-book-value,2017-10-29,intangibles,intangibles,2017-10-29,10832000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,USD
+ncav,2017-10-29,current_assets,current_assets,2017-10-29,15823000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,USD
+ncav,2017-10-29,total_liabilities,total_liabilities,2017-10-29,31232000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,USD
+ncav,2017-10-29,preferred,preferred,2017-10-29,0,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,USD
+dilution,2017-10-29,diluted_avg_shares,diluted_avg_shares,2017-10-29,4210000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016819000144/0001730168-19-000144-index.html,shares
+dilution,2017-10-29,previous_shares,diluted_avg_shares,2016-10-30,3830000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,shares
+sbc-to-revenue,2017-10-29,sbc,sbc,2017-10-29,921000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016819000144/0001730168-19-000144-index.html,USD
+sbc-to-revenue,2017-10-29,revenue,revenue,2017-10-29,17636000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,USD
+eps,2017-10-29,eps_diluted,eps_diluted,2017-10-29,0.40199999999999997,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016819000144/0001730168-19-000144-index.html,USD per share
+revenue-growth,2018-11-04,revenue,revenue,2018-11-04,20454641509.433964,False,,False,"https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html
+Transformed calculation input: differs from the raw filing value; see formula and flags.",USD
+revenue-growth,2018-11-04,previous_revenue,revenue,2017-10-29,17636000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,USD
+gross-margin,2018-11-04,gross_profit,gross_profit,2018-11-04,10733000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016820000226/0001730168-20-000226-index.html,USD
+gross-margin,2018-11-04,revenue,revenue,2018-11-04,20848000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,USD
+operating-margin,2018-11-04,operating_income,operating_income,2018-11-04,5135000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016820000226/0001730168-20-000226-index.html,USD
+operating-margin,2018-11-04,revenue,revenue,2018-11-04,20848000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,USD
+net-margin,2018-11-04,net_income,net_income,2018-11-04,12259000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,USD
+net-margin,2018-11-04,revenue,revenue,2018-11-04,20848000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,USD
+fcf,2018-11-04,ocf,ocf,2018-11-04,8880000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016820000226/0001730168-20-000226-index.html,USD
+fcf,2018-11-04,capex,capex,2018-11-04,635000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016820000226/0001730168-20-000226-index.html,USD
+fcf-margin,2018-11-04,ocf,ocf,2018-11-04,8880000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016820000226/0001730168-20-000226-index.html,USD
+fcf-margin,2018-11-04,capex,capex,2018-11-04,635000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016820000226/0001730168-20-000226-index.html,USD
+fcf-margin,2018-11-04,revenue,revenue,2018-11-04,20848000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,USD
+fcff,2018-11-04,ocf,ocf,2018-11-04,8880000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016820000226/0001730168-20-000226-index.html,USD
+fcff,2018-11-04,capex,capex,2018-11-04,635000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016820000226/0001730168-20-000226-index.html,USD
+fcff,2018-11-04,interest_expense,interest_expense,2018-11-04,628000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016820000226/0001730168-20-000226-index.html,USD
+fcff,2018-11-04,tax_rate,tax_rate,2018-11-04,0,False,,False,Derived or model input; see parent calculation formula and model assumptions.,ratio (decimal)
+fcff,2018-11-04,sbc,sbc,2018-11-04,1227000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016820000226/0001730168-20-000226-index.html,USD
+fcfe,2018-11-04,net_income,net_income,2018-11-04,12259000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,USD
+fcfe,2018-11-04,d_and_a,d_and_a,2018-11-04,4081000000,False,,False,"https://www.sec.gov/Archives/edgar/data/1730168/000173016820000226/0001730168-20-000226-index.html
+https://www.sec.gov/Archives/edgar/data/1730168/000173016819000144/0001730168-19-000144-index.html",USD
+fcfe,2018-11-04,capex,capex,2018-11-04,635000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016820000226/0001730168-20-000226-index.html,USD
+fcfe,2018-11-04,change_in_owc,change_in_owc,2018-11-04,848000000,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+fcfe,2018-11-04,debt_issued,debt_issued,2018-11-04,0,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016820000226/0001730168-20-000226-index.html,USD
+fcfe,2018-11-04,debt_repaid,debt_repaid,2018-11-04,973000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016820000226/0001730168-20-000226-index.html,USD
+owner-earnings,2018-11-04,net_income,net_income,2018-11-04,12259000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,USD
+owner-earnings,2018-11-04,d_and_a,d_and_a,2018-11-04,4081000000,False,,False,"https://www.sec.gov/Archives/edgar/data/1730168/000173016820000226/0001730168-20-000226-index.html
+https://www.sec.gov/Archives/edgar/data/1730168/000173016819000144/0001730168-19-000144-index.html",USD
+owner-earnings,2018-11-04,change_in_owc,change_in_owc,2018-11-04,848000000,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+earnings-quality,2018-11-04,ocf,ocf,2018-11-04,8880000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016820000226/0001730168-20-000226-index.html,USD
+earnings-quality,2018-11-04,net_income,net_income,2018-11-04,12259000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,USD
+ebitda,2018-11-04,operating_income,operating_income,2018-11-04,5135000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016820000226/0001730168-20-000226-index.html,USD
+ebitda,2018-11-04,d_and_a,d_and_a,2018-11-04,4081000000,False,,False,"https://www.sec.gov/Archives/edgar/data/1730168/000173016820000226/0001730168-20-000226-index.html
+https://www.sec.gov/Archives/edgar/data/1730168/000173016819000144/0001730168-19-000144-index.html",USD
+nopat,2018-11-04,operating_income,operating_income,2018-11-04,5135000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016820000226/0001730168-20-000226-index.html,USD
+nopat,2018-11-04,tax_rate,tax_rate,2018-11-04,0,False,,False,Derived or model input; see parent calculation formula and model assumptions.,ratio (decimal)
+invested-capital,2018-11-04,equity,equity,2018-11-04,26657000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016819000144/0001730168-19-000144-index.html,USD
+invested-capital,2018-11-04,debt,debt,2018-11-04,17493000000,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+invested-capital,2018-11-04,cash_sti,cash_sti,2018-11-04,4292000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016821000153/0001730168-21-000153-index.html,USD
+roic,2018-11-04,operating_income,operating_income,2018-11-04,5135000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016820000226/0001730168-20-000226-index.html,USD
+roic,2018-11-04,tax_rate,tax_rate,2018-11-04,0,False,,False,Derived or model input; see parent calculation formula and model assumptions.,ratio (decimal)
+roic,2018-11-04,average_invested_capital,average_invested_capital,2018-11-04,33243500000,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+net-debt,2018-11-04,debt,debt,2018-11-04,17493000000,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+net-debt,2018-11-04,cash_sti,cash_sti,2018-11-04,4292000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016821000153/0001730168-21-000153-index.html,USD
+debt-ebitda,2018-11-04,debt,debt,2018-11-04,17493000000,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+debt-ebitda,2018-11-04,ebitda,ebitda,2018-11-04,9216000000,False,,False,Derived: ebitda @ 2018-11-04; see Calculations and Calc inputs.,USD
+interest-coverage,2018-11-04,operating_income,operating_income,2018-11-04,5135000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016820000226/0001730168-20-000226-index.html,USD
+interest-coverage,2018-11-04,interest_expense,interest_expense,2018-11-04,628000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016820000226/0001730168-20-000226-index.html,USD
+current-ratio,2018-11-04,current_assets,current_assets,2018-11-04,9107000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016819000144/0001730168-19-000144-index.html,USD
+current-ratio,2018-11-04,current_liabilities,current_liabilities,2018-11-04,2338000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016819000144/0001730168-19-000144-index.html,USD
+tangible-book-value,2018-11-04,equity,equity,2018-11-04,26657000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016819000144/0001730168-19-000144-index.html,USD
+tangible-book-value,2018-11-04,preferred,preferred,2018-11-04,0,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016819000144/0001730168-19-000144-index.html,USD
+tangible-book-value,2018-11-04,goodwill,goodwill,2018-11-04,26913000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016820000226/0001730168-20-000226-index.html,USD
+tangible-book-value,2018-11-04,intangibles,intangibles,2018-11-04,10762000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016819000144/0001730168-19-000144-index.html,USD
+ncav,2018-11-04,current_assets,current_assets,2018-11-04,9107000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016819000144/0001730168-19-000144-index.html,USD
+ncav,2018-11-04,total_liabilities,total_liabilities,2018-11-04,23467000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016819000144/0001730168-19-000144-index.html,USD
+ncav,2018-11-04,preferred,preferred,2018-11-04,0,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016819000144/0001730168-19-000144-index.html,USD
+dilution,2018-11-04,diluted_avg_shares,diluted_avg_shares,2018-11-04,4310000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016820000226/0001730168-20-000226-index.html,shares
+dilution,2018-11-04,previous_shares,diluted_avg_shares,2017-10-29,4210000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016819000144/0001730168-19-000144-index.html,shares
+sbc-to-revenue,2018-11-04,sbc,sbc,2018-11-04,1227000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016820000226/0001730168-20-000226-index.html,USD
+sbc-to-revenue,2018-11-04,revenue,revenue,2018-11-04,20848000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,USD
+eps,2018-11-04,eps_diluted,eps_diluted,2018-11-04,2.8440000000000003,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016820000226/0001730168-20-000226-index.html,USD per share
+debt-due-3y,2018-11-04,maturity_y1,maturity_y1,2018-11-04,0,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,USD
+debt-due-3y,2018-11-04,maturity_y2,maturity_y2,2018-11-04,2787000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,USD
+debt-due-3y,2018-11-04,maturity_y3,maturity_y3,2018-11-04,750000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,USD
+revenue-growth,2019-11-03,revenue,revenue,2019-11-03,22597000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016821000153/0001730168-21-000153-index.html,USD
+revenue-growth,2019-11-03,previous_revenue,revenue,2018-11-04,20454641509.433964,False,,False,"https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html
+Transformed calculation input: differs from the raw filing value; see formula and flags.",USD
+gross-margin,2019-11-03,gross_profit,gross_profit,2019-11-03,12483000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016821000153/0001730168-21-000153-index.html,USD
+gross-margin,2019-11-03,revenue,revenue,2019-11-03,22597000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016821000153/0001730168-21-000153-index.html,USD
+operating-margin,2019-11-03,operating_income,operating_income,2019-11-03,3444000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016821000153/0001730168-21-000153-index.html,USD
+operating-margin,2019-11-03,revenue,revenue,2019-11-03,22597000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016821000153/0001730168-21-000153-index.html,USD
+net-margin,2019-11-03,net_income,net_income,2019-11-03,2724000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016821000153/0001730168-21-000153-index.html,USD
+net-margin,2019-11-03,revenue,revenue,2019-11-03,22597000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016821000153/0001730168-21-000153-index.html,USD
+fcf,2019-11-03,ocf,ocf,2019-11-03,9697000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016821000153/0001730168-21-000153-index.html,USD
+fcf,2019-11-03,capex,capex,2019-11-03,432000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016821000153/0001730168-21-000153-index.html,USD
+fcf-margin,2019-11-03,ocf,ocf,2019-11-03,9697000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016821000153/0001730168-21-000153-index.html,USD
+fcf-margin,2019-11-03,capex,capex,2019-11-03,432000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016821000153/0001730168-21-000153-index.html,USD
+fcf-margin,2019-11-03,revenue,revenue,2019-11-03,22597000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016821000153/0001730168-21-000153-index.html,USD
+fcff,2019-11-03,ocf,ocf,2019-11-03,9697000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016821000153/0001730168-21-000153-index.html,USD
+fcff,2019-11-03,capex,capex,2019-11-03,432000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016821000153/0001730168-21-000153-index.html,USD
+fcff,2019-11-03,interest_expense,interest_expense,2019-11-03,1444000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016821000153/0001730168-21-000153-index.html,USD
+fcff,2019-11-03,tax_rate,tax_rate,2019-11-03,0,False,,False,Derived or model input; see parent calculation formula and model assumptions.,ratio (decimal)
+fcff,2019-11-03,sbc,sbc,2019-11-03,2185000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016821000153/0001730168-21-000153-index.html,USD
+fcfe,2019-11-03,net_income,net_income,2019-11-03,2724000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016821000153/0001730168-21-000153-index.html,USD
+fcfe,2019-11-03,d_and_a,d_and_a,2019-11-03,5808000000,False,,False,"https://www.sec.gov/Archives/edgar/data/1730168/000173016821000153/0001730168-21-000153-index.html
+https://www.sec.gov/Archives/edgar/data/1730168/000173016819000144/0001730168-19-000144-index.html",USD
+fcfe,2019-11-03,capex,capex,2019-11-03,432000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016821000153/0001730168-21-000153-index.html,USD
+fcfe,2019-11-03,change_in_owc,change_in_owc,2019-11-03,-360000000,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+fcfe,2019-11-03,debt_issued,debt_issued,2019-11-03,28793000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016821000153/0001730168-21-000153-index.html,USD
+fcfe,2019-11-03,debt_repaid,debt_repaid,2019-11-03,16800000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016821000153/0001730168-21-000153-index.html,USD
+owner-earnings,2019-11-03,net_income,net_income,2019-11-03,2724000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016821000153/0001730168-21-000153-index.html,USD
+owner-earnings,2019-11-03,d_and_a,d_and_a,2019-11-03,5808000000,False,,False,"https://www.sec.gov/Archives/edgar/data/1730168/000173016821000153/0001730168-21-000153-index.html
+https://www.sec.gov/Archives/edgar/data/1730168/000173016819000144/0001730168-19-000144-index.html",USD
+owner-earnings,2019-11-03,change_in_owc,change_in_owc,2019-11-03,-360000000,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+earnings-quality,2019-11-03,ocf,ocf,2019-11-03,9697000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016821000153/0001730168-21-000153-index.html,USD
+earnings-quality,2019-11-03,net_income,net_income,2019-11-03,2724000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016821000153/0001730168-21-000153-index.html,USD
+ebitda,2019-11-03,operating_income,operating_income,2019-11-03,3444000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016821000153/0001730168-21-000153-index.html,USD
+ebitda,2019-11-03,d_and_a,d_and_a,2019-11-03,5808000000,False,,False,"https://www.sec.gov/Archives/edgar/data/1730168/000173016821000153/0001730168-21-000153-index.html
+https://www.sec.gov/Archives/edgar/data/1730168/000173016819000144/0001730168-19-000144-index.html",USD
+nopat,2019-11-03,operating_income,operating_income,2019-11-03,3444000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016821000153/0001730168-21-000153-index.html,USD
+nopat,2019-11-03,tax_rate,tax_rate,2019-11-03,0,False,,False,Derived or model input; see parent calculation formula and model assumptions.,ratio (decimal)
+invested-capital,2019-11-03,equity,equity,2019-11-03,24941000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016819000144/0001730168-19-000144-index.html,USD
+invested-capital,2019-11-03,debt,debt,2019-11-03,32798000000,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+invested-capital,2019-11-03,cash_sti,cash_sti,2019-11-03,5055000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016821000153/0001730168-21-000153-index.html,USD
+roic,2019-11-03,operating_income,operating_income,2019-11-03,3444000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016821000153/0001730168-21-000153-index.html,USD
+roic,2019-11-03,tax_rate,tax_rate,2019-11-03,0,False,,False,Derived or model input; see parent calculation formula and model assumptions.,ratio (decimal)
+roic,2019-11-03,average_invested_capital,average_invested_capital,2019-11-03,46271000000,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+net-debt,2019-11-03,debt,debt,2019-11-03,32798000000,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+net-debt,2019-11-03,cash_sti,cash_sti,2019-11-03,5055000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016821000153/0001730168-21-000153-index.html,USD
+debt-ebitda,2019-11-03,debt,debt,2019-11-03,32798000000,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+debt-ebitda,2019-11-03,ebitda,ebitda,2019-11-03,9252000000,False,,False,Derived: ebitda @ 2019-11-03; see Calculations and Calc inputs.,USD
+interest-coverage,2019-11-03,operating_income,operating_income,2019-11-03,3444000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016821000153/0001730168-21-000153-index.html,USD
+interest-coverage,2019-11-03,interest_expense,interest_expense,2019-11-03,1444000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016821000153/0001730168-21-000153-index.html,USD
+current-ratio,2019-11-03,current_assets,current_assets,2019-11-03,9917000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016820000226/0001730168-20-000226-index.html,USD
+current-ratio,2019-11-03,current_liabilities,current_liabilities,2019-11-03,6899000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016820000226/0001730168-20-000226-index.html,USD
+tangible-book-value,2019-11-03,equity,equity,2019-11-03,24941000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016819000144/0001730168-19-000144-index.html,USD
+tangible-book-value,2019-11-03,preferred,preferred,2019-11-03,0,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016820000226/0001730168-20-000226-index.html,USD
+tangible-book-value,2019-11-03,goodwill,goodwill,2019-11-03,36714000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016821000153/0001730168-21-000153-index.html,USD
+tangible-book-value,2019-11-03,intangibles,intangibles,2019-11-03,17554000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016820000226/0001730168-20-000226-index.html,USD
+ncav,2019-11-03,current_assets,current_assets,2019-11-03,9917000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016820000226/0001730168-20-000226-index.html,USD
+ncav,2019-11-03,total_liabilities,total_liabilities,2019-11-03,42523000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016820000226/0001730168-20-000226-index.html,USD
+ncav,2019-11-03,preferred,preferred,2019-11-03,0,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016820000226/0001730168-20-000226-index.html,USD
+dilution,2019-11-03,diluted_avg_shares,diluted_avg_shares,2019-11-03,4190000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016821000153/0001730168-21-000153-index.html,shares
+dilution,2019-11-03,previous_shares,diluted_avg_shares,2018-11-04,4310000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016820000226/0001730168-20-000226-index.html,shares
+sbc-to-revenue,2019-11-03,sbc,sbc,2019-11-03,2185000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016821000153/0001730168-21-000153-index.html,USD
+sbc-to-revenue,2019-11-03,revenue,revenue,2019-11-03,22597000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016821000153/0001730168-21-000153-index.html,USD
+eps,2019-11-03,eps_diluted,eps_diluted,2019-11-03,0.643,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016821000153/0001730168-21-000153-index.html,USD per share
+debt-due-3y,2019-11-03,maturity_y1,maturity_y1,2019-11-03,4537000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016819000144/0001730168-19-000144-index.html,USD
+debt-due-3y,2019-11-03,maturity_y2,maturity_y2,2019-11-03,2750000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016819000144/0001730168-19-000144-index.html,USD
+debt-due-3y,2019-11-03,maturity_y3,maturity_y3,2019-11-03,5509000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016819000144/0001730168-19-000144-index.html,USD
+revenue-growth,2020-11-01,revenue,revenue,2020-11-01,23888000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016822000118/0001730168-22-000118-index.html,USD
+revenue-growth,2020-11-01,previous_revenue,revenue,2019-11-03,22597000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016821000153/0001730168-21-000153-index.html,USD
+gross-margin,2020-11-01,gross_profit,gross_profit,2020-11-01,13516000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016822000118/0001730168-22-000118-index.html,USD
+gross-margin,2020-11-01,revenue,revenue,2020-11-01,23888000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016822000118/0001730168-22-000118-index.html,USD
+operating-margin,2020-11-01,operating_income,operating_income,2020-11-01,4014000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016822000118/0001730168-22-000118-index.html,USD
+operating-margin,2020-11-01,revenue,revenue,2020-11-01,23888000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016822000118/0001730168-22-000118-index.html,USD
+net-margin,2020-11-01,net_income,net_income,2020-11-01,2960000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016822000118/0001730168-22-000118-index.html,USD
+net-margin,2020-11-01,revenue,revenue,2020-11-01,23888000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016822000118/0001730168-22-000118-index.html,USD
+fcf,2020-11-01,ocf,ocf,2020-11-01,12061000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016822000118/0001730168-22-000118-index.html,USD
+fcf,2020-11-01,capex,capex,2020-11-01,463000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016822000118/0001730168-22-000118-index.html,USD
+fcf-margin,2020-11-01,ocf,ocf,2020-11-01,12061000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016822000118/0001730168-22-000118-index.html,USD
+fcf-margin,2020-11-01,capex,capex,2020-11-01,463000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016822000118/0001730168-22-000118-index.html,USD
+fcf-margin,2020-11-01,revenue,revenue,2020-11-01,23888000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016822000118/0001730168-22-000118-index.html,USD
+fcff,2020-11-01,ocf,ocf,2020-11-01,12061000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016822000118/0001730168-22-000118-index.html,USD
+fcff,2020-11-01,capex,capex,2020-11-01,463000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016822000118/0001730168-22-000118-index.html,USD
+fcff,2020-11-01,interest_expense,interest_expense,2020-11-01,1777000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016822000118/0001730168-22-000118-index.html,USD
+fcff,2020-11-01,tax_rate,tax_rate,2020-11-01,0,False,,False,Derived or model input; see parent calculation formula and model assumptions.,ratio (decimal)
+fcff,2020-11-01,sbc,sbc,2020-11-01,1976000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016822000118/0001730168-22-000118-index.html,USD
+fcfe,2020-11-01,net_income,net_income,2020-11-01,2960000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016822000118/0001730168-22-000118-index.html,USD
+fcfe,2020-11-01,capex,capex,2020-11-01,463000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016822000118/0001730168-22-000118-index.html,USD
+fcfe,2020-11-01,change_in_owc,change_in_owc,2020-11-01,-814000000,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+fcfe,2020-11-01,debt_issued,debt_issued,2020-11-01,27802000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016822000118/0001730168-22-000118-index.html,USD
+fcfe,2020-11-01,debt_repaid,debt_repaid,2020-11-01,18814000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016822000118/0001730168-22-000118-index.html,USD
+owner-earnings,2020-11-01,net_income,net_income,2020-11-01,2960000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016822000118/0001730168-22-000118-index.html,USD
+owner-earnings,2020-11-01,change_in_owc,change_in_owc,2020-11-01,-814000000,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+earnings-quality,2020-11-01,ocf,ocf,2020-11-01,12061000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016822000118/0001730168-22-000118-index.html,USD
+earnings-quality,2020-11-01,net_income,net_income,2020-11-01,2960000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016822000118/0001730168-22-000118-index.html,USD
+ebitda,2020-11-01,operating_income,operating_income,2020-11-01,4014000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016822000118/0001730168-22-000118-index.html,USD
+nopat,2020-11-01,operating_income,operating_income,2020-11-01,4014000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016822000118/0001730168-22-000118-index.html,USD
+nopat,2020-11-01,tax_rate,tax_rate,2020-11-01,0,False,,False,Derived or model input; see parent calculation formula and model assumptions.,ratio (decimal)
+invested-capital,2020-11-01,equity,equity,2020-11-01,23874000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016823000096/0001730168-23-000096-index.html,USD
+invested-capital,2020-11-01,debt,debt,2020-11-01,41062000000,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+invested-capital,2020-11-01,cash_sti,cash_sti,2020-11-01,7618000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016821000153/0001730168-21-000153-index.html,USD
+roic,2020-11-01,operating_income,operating_income,2020-11-01,4014000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016822000118/0001730168-22-000118-index.html,USD
+roic,2020-11-01,tax_rate,tax_rate,2020-11-01,0,False,,False,Derived or model input; see parent calculation formula and model assumptions.,ratio (decimal)
+roic,2020-11-01,average_invested_capital,average_invested_capital,2020-11-01,55001000000,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+net-debt,2020-11-01,debt,debt,2020-11-01,41062000000,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+net-debt,2020-11-01,cash_sti,cash_sti,2020-11-01,7618000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016821000153/0001730168-21-000153-index.html,USD
+debt-ebitda,2020-11-01,debt,debt,2020-11-01,41062000000,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+interest-coverage,2020-11-01,operating_income,operating_income,2020-11-01,4014000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016822000118/0001730168-22-000118-index.html,USD
+interest-coverage,2020-11-01,interest_expense,interest_expense,2020-11-01,1777000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016822000118/0001730168-22-000118-index.html,USD
+current-ratio,2020-11-01,current_assets,current_assets,2020-11-01,11895000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016821000153/0001730168-21-000153-index.html,USD
+current-ratio,2020-11-01,current_liabilities,current_liabilities,2020-11-01,6371000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016821000153/0001730168-21-000153-index.html,USD
+tangible-book-value,2020-11-01,equity,equity,2020-11-01,23874000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016823000096/0001730168-23-000096-index.html,USD
+tangible-book-value,2020-11-01,preferred,preferred,2020-11-01,0,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016821000153/0001730168-21-000153-index.html,USD
+tangible-book-value,2020-11-01,goodwill,goodwill,2020-11-01,43447000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016822000118/0001730168-22-000118-index.html,USD
+tangible-book-value,2020-11-01,intangibles,intangibles,2020-11-01,16782000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016821000153/0001730168-21-000153-index.html,USD
+ncav,2020-11-01,current_assets,current_assets,2020-11-01,11895000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016821000153/0001730168-21-000153-index.html,USD
+ncav,2020-11-01,total_liabilities,total_liabilities,2020-11-01,52032000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016821000153/0001730168-21-000153-index.html,USD
+ncav,2020-11-01,preferred,preferred,2020-11-01,0,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016821000153/0001730168-21-000153-index.html,USD
+dilution,2020-11-01,diluted_avg_shares,diluted_avg_shares,2020-11-01,4210000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016822000118/0001730168-22-000118-index.html,shares
+dilution,2020-11-01,previous_shares,diluted_avg_shares,2019-11-03,4190000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016821000153/0001730168-21-000153-index.html,shares
+sbc-to-revenue,2020-11-01,sbc,sbc,2020-11-01,1976000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016822000118/0001730168-22-000118-index.html,USD
+sbc-to-revenue,2020-11-01,revenue,revenue,2020-11-01,23888000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016822000118/0001730168-22-000118-index.html,USD
+eps,2020-11-01,eps_diluted,eps_diluted,2020-11-01,0.633,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016822000118/0001730168-22-000118-index.html,USD per share
+debt-due-3y,2020-11-01,maturity_y2,maturity_y2,2020-11-01,1827000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016820000226/0001730168-20-000226-index.html,USD
+debt-due-3y,2020-11-01,maturity_y3,maturity_y3,2020-11-01,3069000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016820000226/0001730168-20-000226-index.html,USD
+revenue-growth,2021-10-31,revenue,revenue,2021-10-31,27450000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016823000096/0001730168-23-000096-index.html,USD
+revenue-growth,2021-10-31,previous_revenue,revenue,2020-11-01,23888000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016822000118/0001730168-22-000118-index.html,USD
+gross-margin,2021-10-31,gross_profit,gross_profit,2021-10-31,16844000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016823000096/0001730168-23-000096-index.html,USD
+gross-margin,2021-10-31,revenue,revenue,2021-10-31,27450000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016823000096/0001730168-23-000096-index.html,USD
+operating-margin,2021-10-31,operating_income,operating_income,2021-10-31,8519000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016823000096/0001730168-23-000096-index.html,USD
+operating-margin,2021-10-31,revenue,revenue,2021-10-31,27450000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016823000096/0001730168-23-000096-index.html,USD
+net-margin,2021-10-31,net_income,net_income,2021-10-31,6736000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016823000096/0001730168-23-000096-index.html,USD
+net-margin,2021-10-31,revenue,revenue,2021-10-31,27450000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016823000096/0001730168-23-000096-index.html,USD
+fcf,2021-10-31,ocf,ocf,2021-10-31,13764000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016823000096/0001730168-23-000096-index.html,USD
+fcf,2021-10-31,capex,capex,2021-10-31,443000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016823000096/0001730168-23-000096-index.html,USD
+fcf-margin,2021-10-31,ocf,ocf,2021-10-31,13764000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016823000096/0001730168-23-000096-index.html,USD
+fcf-margin,2021-10-31,capex,capex,2021-10-31,443000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016823000096/0001730168-23-000096-index.html,USD
+fcf-margin,2021-10-31,revenue,revenue,2021-10-31,27450000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016823000096/0001730168-23-000096-index.html,USD
+fcff,2021-10-31,ocf,ocf,2021-10-31,13764000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016823000096/0001730168-23-000096-index.html,USD
+fcff,2021-10-31,capex,capex,2021-10-31,443000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016823000096/0001730168-23-000096-index.html,USD
+fcff,2021-10-31,interest_expense,interest_expense,2021-10-31,1885000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016823000096/0001730168-23-000096-index.html,USD
+fcff,2021-10-31,tax_rate,tax_rate,2021-10-31,0.004286770140428677,False,,False,Derived or model input; see parent calculation formula and model assumptions.,ratio (decimal)
+fcff,2021-10-31,sbc,sbc,2021-10-31,1704000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016823000096/0001730168-23-000096-index.html,USD
+fcfe,2021-10-31,net_income,net_income,2021-10-31,6736000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016823000096/0001730168-23-000096-index.html,USD
+fcfe,2021-10-31,capex,capex,2021-10-31,443000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016823000096/0001730168-23-000096-index.html,USD
+fcfe,2021-10-31,change_in_owc,change_in_owc,2021-10-31,-182000000,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+fcfe,2021-10-31,debt_issued,debt_issued,2021-10-31,9904000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016823000096/0001730168-23-000096-index.html,USD
+fcfe,2021-10-31,debt_repaid,debt_repaid,2021-10-31,11495000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016823000096/0001730168-23-000096-index.html,USD
+owner-earnings,2021-10-31,net_income,net_income,2021-10-31,6736000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016823000096/0001730168-23-000096-index.html,USD
+owner-earnings,2021-10-31,change_in_owc,change_in_owc,2021-10-31,-182000000,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+earnings-quality,2021-10-31,ocf,ocf,2021-10-31,13764000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016823000096/0001730168-23-000096-index.html,USD
+earnings-quality,2021-10-31,net_income,net_income,2021-10-31,6736000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016823000096/0001730168-23-000096-index.html,USD
+ebitda,2021-10-31,operating_income,operating_income,2021-10-31,8519000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016823000096/0001730168-23-000096-index.html,USD
+nopat,2021-10-31,operating_income,operating_income,2021-10-31,8519000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016823000096/0001730168-23-000096-index.html,USD
+nopat,2021-10-31,tax_rate,tax_rate,2021-10-31,0.004286770140428677,False,,False,Derived or model input; see parent calculation formula and model assumptions.,ratio (decimal)
+invested-capital,2021-10-31,equity,equity,2021-10-31,24962000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016824000139/0001730168-24-000139-index.html,USD
+invested-capital,2021-10-31,debt,debt,2021-10-31,39704000000,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+invested-capital,2021-10-31,cash_sti,cash_sti,2021-10-31,12163000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016822000118/0001730168-22-000118-index.html,USD
+roic,2021-10-31,operating_income,operating_income,2021-10-31,8519000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016823000096/0001730168-23-000096-index.html,USD
+roic,2021-10-31,tax_rate,tax_rate,2021-10-31,0.004286770140428677,False,,False,Derived or model input; see parent calculation formula and model assumptions.,ratio (decimal)
+roic,2021-10-31,average_invested_capital,average_invested_capital,2021-10-31,54910500000,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+net-debt,2021-10-31,debt,debt,2021-10-31,39704000000,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+net-debt,2021-10-31,cash_sti,cash_sti,2021-10-31,12163000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016822000118/0001730168-22-000118-index.html,USD
+debt-ebitda,2021-10-31,debt,debt,2021-10-31,39704000000,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+interest-coverage,2021-10-31,operating_income,operating_income,2021-10-31,8519000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016823000096/0001730168-23-000096-index.html,USD
+interest-coverage,2021-10-31,interest_expense,interest_expense,2021-10-31,1885000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016823000096/0001730168-23-000096-index.html,USD
+current-ratio,2021-10-31,current_assets,current_assets,2021-10-31,16586000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016822000118/0001730168-22-000118-index.html,USD
+current-ratio,2021-10-31,current_liabilities,current_liabilities,2021-10-31,6281000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016822000118/0001730168-22-000118-index.html,USD
+tangible-book-value,2021-10-31,equity,equity,2021-10-31,24962000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016824000139/0001730168-24-000139-index.html,USD
+tangible-book-value,2021-10-31,preferred,preferred,2021-10-31,0,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016822000118/0001730168-22-000118-index.html,USD
+tangible-book-value,2021-10-31,goodwill,goodwill,2021-10-31,43450000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016823000096/0001730168-23-000096-index.html,USD
+tangible-book-value,2021-10-31,intangibles,intangibles,2021-10-31,11374000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016822000118/0001730168-22-000118-index.html,USD
+ncav,2021-10-31,current_assets,current_assets,2021-10-31,16586000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016822000118/0001730168-22-000118-index.html,USD
+ncav,2021-10-31,total_liabilities,total_liabilities,2021-10-31,50581000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016822000118/0001730168-22-000118-index.html,USD
+ncav,2021-10-31,preferred,preferred,2021-10-31,0,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016822000118/0001730168-22-000118-index.html,USD
+dilution,2021-10-31,diluted_avg_shares,diluted_avg_shares,2021-10-31,4290000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016823000096/0001730168-23-000096-index.html,shares
+dilution,2021-10-31,previous_shares,diluted_avg_shares,2020-11-01,4210000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016822000118/0001730168-22-000118-index.html,shares
+sbc-to-revenue,2021-10-31,sbc,sbc,2021-10-31,1704000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016823000096/0001730168-23-000096-index.html,USD
+sbc-to-revenue,2021-10-31,revenue,revenue,2021-10-31,27450000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016823000096/0001730168-23-000096-index.html,USD
+eps,2021-10-31,eps_diluted,eps_diluted,2021-10-31,1.5,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016823000096/0001730168-23-000096-index.html,USD per share
+debt-due-3y,2021-10-31,maturity_y1,maturity_y1,2021-10-31,264000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016821000153/0001730168-21-000153-index.html,USD
+debt-due-3y,2021-10-31,maturity_y2,maturity_y2,2021-10-31,403000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016821000153/0001730168-21-000153-index.html,USD
+debt-due-3y,2021-10-31,maturity_y3,maturity_y3,2021-10-31,1563000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016821000153/0001730168-21-000153-index.html,USD
+revenue-growth,2022-10-30,revenue,revenue,2022-10-30,33203000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016824000139/0001730168-24-000139-index.html,USD
+revenue-growth,2022-10-30,previous_revenue,revenue,2021-10-31,27450000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016823000096/0001730168-23-000096-index.html,USD
+gross-margin,2022-10-30,gross_profit,gross_profit,2022-10-30,22095000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016824000139/0001730168-24-000139-index.html,USD
+gross-margin,2022-10-30,revenue,revenue,2022-10-30,33203000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016824000139/0001730168-24-000139-index.html,USD
+operating-margin,2022-10-30,operating_income,operating_income,2022-10-30,14225000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016824000139/0001730168-24-000139-index.html,USD
+operating-margin,2022-10-30,revenue,revenue,2022-10-30,33203000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016824000139/0001730168-24-000139-index.html,USD
+net-margin,2022-10-30,net_income,net_income,2022-10-30,11495000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016824000139/0001730168-24-000139-index.html,USD
+net-margin,2022-10-30,revenue,revenue,2022-10-30,33203000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016824000139/0001730168-24-000139-index.html,USD
+fcf,2022-10-30,ocf,ocf,2022-10-30,16736000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016824000139/0001730168-24-000139-index.html,USD
+fcf,2022-10-30,capex,capex,2022-10-30,424000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016824000139/0001730168-24-000139-index.html,USD
+fcf-margin,2022-10-30,ocf,ocf,2022-10-30,16736000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016824000139/0001730168-24-000139-index.html,USD
+fcf-margin,2022-10-30,capex,capex,2022-10-30,424000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016824000139/0001730168-24-000139-index.html,USD
+fcf-margin,2022-10-30,revenue,revenue,2022-10-30,33203000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016824000139/0001730168-24-000139-index.html,USD
+fcff,2022-10-30,ocf,ocf,2022-10-30,16736000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016824000139/0001730168-24-000139-index.html,USD
+fcff,2022-10-30,capex,capex,2022-10-30,424000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016824000139/0001730168-24-000139-index.html,USD
+fcff,2022-10-30,interest_expense,interest_expense,2022-10-30,1737000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016824000139/0001730168-24-000139-index.html,USD
+fcff,2022-10-30,tax_rate,tax_rate,2022-10-30,0.07551873894161171,False,,False,Derived or model input; see parent calculation formula and model assumptions.,ratio (decimal)
+fcff,2022-10-30,sbc,sbc,2022-10-30,1533000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016824000139/0001730168-24-000139-index.html,USD
+fcfe,2022-10-30,net_income,net_income,2022-10-30,11495000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016824000139/0001730168-24-000139-index.html,USD
+fcfe,2022-10-30,capex,capex,2022-10-30,424000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016824000139/0001730168-24-000139-index.html,USD
+fcfe,2022-10-30,change_in_owc,change_in_owc,2022-10-30,1603000000,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+fcfe,2022-10-30,debt_issued,debt_issued,2022-10-30,1935000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016824000139/0001730168-24-000139-index.html,USD
+fcfe,2022-10-30,debt_repaid,debt_repaid,2022-10-30,2361000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016824000139/0001730168-24-000139-index.html,USD
+owner-earnings,2022-10-30,net_income,net_income,2022-10-30,11495000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016824000139/0001730168-24-000139-index.html,USD
+owner-earnings,2022-10-30,change_in_owc,change_in_owc,2022-10-30,1603000000,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+earnings-quality,2022-10-30,ocf,ocf,2022-10-30,16736000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016824000139/0001730168-24-000139-index.html,USD
+earnings-quality,2022-10-30,net_income,net_income,2022-10-30,11495000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016824000139/0001730168-24-000139-index.html,USD
+ebitda,2022-10-30,operating_income,operating_income,2022-10-30,14225000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016824000139/0001730168-24-000139-index.html,USD
+nopat,2022-10-30,operating_income,operating_income,2022-10-30,14225000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016824000139/0001730168-24-000139-index.html,USD
+nopat,2022-10-30,tax_rate,tax_rate,2022-10-30,0.07551873894161171,False,,False,Derived or model input; see parent calculation formula and model assumptions.,ratio (decimal)
+invested-capital,2022-10-30,equity,equity,2022-10-30,22709000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+invested-capital,2022-10-30,debt,debt,2022-10-30,39478000000,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+invested-capital,2022-10-30,cash_sti,cash_sti,2022-10-30,12416000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016823000096/0001730168-23-000096-index.html,USD
+roic,2022-10-30,operating_income,operating_income,2022-10-30,14225000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016824000139/0001730168-24-000139-index.html,USD
+roic,2022-10-30,tax_rate,tax_rate,2022-10-30,0.07551873894161171,False,,False,Derived or model input; see parent calculation formula and model assumptions.,ratio (decimal)
+roic,2022-10-30,average_invested_capital,average_invested_capital,2022-10-30,51137000000,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+net-debt,2022-10-30,debt,debt,2022-10-30,39478000000,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+net-debt,2022-10-30,cash_sti,cash_sti,2022-10-30,12416000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016823000096/0001730168-23-000096-index.html,USD
+debt-ebitda,2022-10-30,debt,debt,2022-10-30,39478000000,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+interest-coverage,2022-10-30,operating_income,operating_income,2022-10-30,14225000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016824000139/0001730168-24-000139-index.html,USD
+interest-coverage,2022-10-30,interest_expense,interest_expense,2022-10-30,1737000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016824000139/0001730168-24-000139-index.html,USD
+current-ratio,2022-10-30,current_assets,current_assets,2022-10-30,18504000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016823000096/0001730168-23-000096-index.html,USD
+current-ratio,2022-10-30,current_liabilities,current_liabilities,2022-10-30,7052000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016823000096/0001730168-23-000096-index.html,USD
+tangible-book-value,2022-10-30,equity,equity,2022-10-30,22709000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+tangible-book-value,2022-10-30,preferred,preferred,2022-10-30,0,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016823000096/0001730168-23-000096-index.html,USD
+tangible-book-value,2022-10-30,goodwill,goodwill,2022-10-30,43614000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016824000139/0001730168-24-000139-index.html,USD
+tangible-book-value,2022-10-30,intangibles,intangibles,2022-10-30,7111000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016823000096/0001730168-23-000096-index.html,USD
+ncav,2022-10-30,current_assets,current_assets,2022-10-30,18504000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016823000096/0001730168-23-000096-index.html,USD
+ncav,2022-10-30,total_liabilities,total_liabilities,2022-10-30,50540000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016823000096/0001730168-23-000096-index.html,USD
+ncav,2022-10-30,preferred,preferred,2022-10-30,0,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016823000096/0001730168-23-000096-index.html,USD
+dilution,2022-10-30,diluted_avg_shares,diluted_avg_shares,2022-10-30,4232000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016824000139/0001730168-24-000139-index.html,shares
+dilution,2022-10-30,previous_shares,diluted_avg_shares,2021-10-31,4290000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016823000096/0001730168-23-000096-index.html,shares
+sbc-to-revenue,2022-10-30,sbc,sbc,2022-10-30,1533000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016824000139/0001730168-24-000139-index.html,USD
+sbc-to-revenue,2022-10-30,revenue,revenue,2022-10-30,33203000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016824000139/0001730168-24-000139-index.html,USD
+eps,2022-10-30,eps_diluted,eps_diluted,2022-10-30,2.65,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016824000139/0001730168-24-000139-index.html,USD per share
+debt-due-3y,2022-10-30,maturity_y1,maturity_y1,2022-10-30,403000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016822000118/0001730168-22-000118-index.html,USD
+debt-due-3y,2022-10-30,maturity_y2,maturity_y2,2022-10-30,1563000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016822000118/0001730168-22-000118-index.html,USD
+debt-due-3y,2022-10-30,maturity_y3,maturity_y3,2022-10-30,495000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016822000118/0001730168-22-000118-index.html,USD
+revenue-growth,2023-10-29,revenue,revenue,2023-10-29,35819000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+revenue-growth,2023-10-29,previous_revenue,revenue,2022-10-30,33203000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016824000139/0001730168-24-000139-index.html,USD
+gross-margin,2023-10-29,gross_profit,gross_profit,2023-10-29,24690000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+gross-margin,2023-10-29,revenue,revenue,2023-10-29,35819000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+operating-margin,2023-10-29,operating_income,operating_income,2023-10-29,16207000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+operating-margin,2023-10-29,revenue,revenue,2023-10-29,35819000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+net-margin,2023-10-29,net_income,net_income,2023-10-29,14082000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016824000139/0001730168-24-000139-index.html,USD
+net-margin,2023-10-29,revenue,revenue,2023-10-29,35819000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+fcf,2023-10-29,ocf,ocf,2023-10-29,18085000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+fcf,2023-10-29,capex,capex,2023-10-29,452000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+fcf-margin,2023-10-29,ocf,ocf,2023-10-29,18085000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+fcf-margin,2023-10-29,capex,capex,2023-10-29,452000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+fcf-margin,2023-10-29,revenue,revenue,2023-10-29,35819000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+fcff,2023-10-29,ocf,ocf,2023-10-29,18085000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+fcff,2023-10-29,capex,capex,2023-10-29,452000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+fcff,2023-10-29,interest_expense,interest_expense,2023-10-29,1622000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016824000139/0001730168-24-000139-index.html,USD
+fcff,2023-10-29,tax_rate,tax_rate,2023-10-29,0.06723190037755845,False,,False,Derived or model input; see parent calculation formula and model assumptions.,ratio (decimal)
+fcff,2023-10-29,sbc,sbc,2023-10-29,2171000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+fcfe,2023-10-29,net_income,net_income,2023-10-29,14082000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016824000139/0001730168-24-000139-index.html,USD
+fcfe,2023-10-29,d_and_a,d_and_a,2023-10-29,3749000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+fcfe,2023-10-29,capex,capex,2023-10-29,452000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+fcfe,2023-10-29,change_in_owc,change_in_owc,2023-10-29,-43000000,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+fcfe,2023-10-29,debt_issued,debt_issued,2023-10-29,0,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+fcfe,2023-10-29,debt_repaid,debt_repaid,2023-10-29,403000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+owner-earnings,2023-10-29,net_income,net_income,2023-10-29,14082000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016824000139/0001730168-24-000139-index.html,USD
+owner-earnings,2023-10-29,d_and_a,d_and_a,2023-10-29,3749000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+owner-earnings,2023-10-29,change_in_owc,change_in_owc,2023-10-29,-43000000,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+earnings-quality,2023-10-29,ocf,ocf,2023-10-29,18085000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+earnings-quality,2023-10-29,net_income,net_income,2023-10-29,14082000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016824000139/0001730168-24-000139-index.html,USD
+ebitda,2023-10-29,operating_income,operating_income,2023-10-29,16207000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+ebitda,2023-10-29,d_and_a,d_and_a,2023-10-29,3749000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+nopat,2023-10-29,operating_income,operating_income,2023-10-29,16207000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+nopat,2023-10-29,tax_rate,tax_rate,2023-10-29,0.06723190037755845,False,,False,Derived or model input; see parent calculation formula and model assumptions.,ratio (decimal)
+invested-capital,2023-10-29,equity,equity,2023-10-29,23988000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+invested-capital,2023-10-29,debt,debt,2023-10-29,39184000000,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+invested-capital,2023-10-29,cash_sti,cash_sti,2023-10-29,14189000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016824000139/0001730168-24-000139-index.html,USD
+roic,2023-10-29,operating_income,operating_income,2023-10-29,16207000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+roic,2023-10-29,tax_rate,tax_rate,2023-10-29,0.06723190037755845,False,,False,Derived or model input; see parent calculation formula and model assumptions.,ratio (decimal)
+roic,2023-10-29,average_invested_capital,average_invested_capital,2023-10-29,49377000000,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+net-debt,2023-10-29,debt,debt,2023-10-29,39184000000,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+net-debt,2023-10-29,cash_sti,cash_sti,2023-10-29,14189000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016824000139/0001730168-24-000139-index.html,USD
+debt-ebitda,2023-10-29,debt,debt,2023-10-29,39184000000,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+debt-ebitda,2023-10-29,ebitda,ebitda,2023-10-29,19956000000,False,,False,Derived: ebitda @ 2023-10-29; see Calculations and Calc inputs.,USD
+interest-coverage,2023-10-29,operating_income,operating_income,2023-10-29,16207000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+interest-coverage,2023-10-29,interest_expense,interest_expense,2023-10-29,1622000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016824000139/0001730168-24-000139-index.html,USD
+current-ratio,2023-10-29,current_assets,current_assets,2023-10-29,20847000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016824000139/0001730168-24-000139-index.html,USD
+current-ratio,2023-10-29,current_liabilities,current_liabilities,2023-10-29,7405000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016824000139/0001730168-24-000139-index.html,USD
+tangible-book-value,2023-10-29,equity,equity,2023-10-29,23988000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+tangible-book-value,2023-10-29,preferred,preferred,2023-10-29,0,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016824000139/0001730168-24-000139-index.html,USD
+tangible-book-value,2023-10-29,goodwill,goodwill,2023-10-29,43653000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+tangible-book-value,2023-10-29,intangibles,intangibles,2023-10-29,3867000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016824000139/0001730168-24-000139-index.html,USD
+ncav,2023-10-29,current_assets,current_assets,2023-10-29,20847000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016824000139/0001730168-24-000139-index.html,USD
+ncav,2023-10-29,total_liabilities,total_liabilities,2023-10-29,48873000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016824000139/0001730168-24-000139-index.html,USD
+ncav,2023-10-29,preferred,preferred,2023-10-29,0,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016824000139/0001730168-24-000139-index.html,USD
+dilution,2023-10-29,diluted_avg_shares,diluted_avg_shares,2023-10-29,4272000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,shares
+dilution,2023-10-29,previous_shares,diluted_avg_shares,2022-10-30,4232000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016824000139/0001730168-24-000139-index.html,shares
+sbc-to-revenue,2023-10-29,sbc,sbc,2023-10-29,2171000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+sbc-to-revenue,2023-10-29,revenue,revenue,2023-10-29,35819000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+eps,2023-10-29,eps_diluted,eps_diluted,2023-10-29,3.3,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD per share
+debt-due-3y,2023-10-29,maturity_y1,maturity_y1,2023-10-29,1563000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016823000096/0001730168-23-000096-index.html,USD
+debt-due-3y,2023-10-29,maturity_y2,maturity_y2,2023-10-29,495000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016823000096/0001730168-23-000096-index.html,USD
+debt-due-3y,2023-10-29,maturity_y3,maturity_y3,2023-10-29,1652000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016823000096/0001730168-23-000096-index.html,USD
+revenue-growth,2024-11-03,revenue,revenue,2024-11-03,50600905660.37736,False,,False,"https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html
+Transformed calculation input: differs from the raw filing value; see formula and flags.",USD
+revenue-growth,2024-11-03,previous_revenue,revenue,2023-10-29,35819000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+gross-margin,2024-11-03,gross_profit,gross_profit,2024-11-03,32509000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+gross-margin,2024-11-03,revenue,revenue,2024-11-03,51574000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+operating-margin,2024-11-03,operating_income,operating_income,2024-11-03,13463000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+operating-margin,2024-11-03,revenue,revenue,2024-11-03,51574000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+net-margin,2024-11-03,net_income,net_income,2024-11-03,5895000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016824000139/0001730168-24-000139-index.html,USD
+net-margin,2024-11-03,revenue,revenue,2024-11-03,51574000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+fcf,2024-11-03,ocf,ocf,2024-11-03,19962000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+fcf,2024-11-03,capex,capex,2024-11-03,548000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+fcf-margin,2024-11-03,ocf,ocf,2024-11-03,19962000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+fcf-margin,2024-11-03,capex,capex,2024-11-03,548000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+fcf-margin,2024-11-03,revenue,revenue,2024-11-03,51574000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+fcff,2024-11-03,ocf,ocf,2024-11-03,19962000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+fcff,2024-11-03,capex,capex,2024-11-03,548000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+fcff,2024-11-03,interest_expense,interest_expense,2024-11-03,3953000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016824000139/0001730168-24-000139-index.html,USD
+fcff,2024-11-03,tax_rate,tax_rate,2024-11-03,0.35,False,,False,Derived or model input; see parent calculation formula and model assumptions.,ratio (decimal)
+fcff,2024-11-03,sbc,sbc,2024-11-03,5741000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+fcfe,2024-11-03,net_income,net_income,2024-11-03,5895000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016824000139/0001730168-24-000139-index.html,USD
+fcfe,2024-11-03,d_and_a,d_and_a,2024-11-03,9860000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+fcfe,2024-11-03,capex,capex,2024-11-03,548000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+fcfe,2024-11-03,change_in_owc,change_in_owc,2024-11-03,672000000,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+fcfe,2024-11-03,debt_issued,debt_issued,2024-11-03,39954000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+fcfe,2024-11-03,debt_repaid,debt_repaid,2024-11-03,19608000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+owner-earnings,2024-11-03,net_income,net_income,2024-11-03,5895000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016824000139/0001730168-24-000139-index.html,USD
+owner-earnings,2024-11-03,d_and_a,d_and_a,2024-11-03,9860000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+owner-earnings,2024-11-03,change_in_owc,change_in_owc,2024-11-03,672000000,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+earnings-quality,2024-11-03,ocf,ocf,2024-11-03,19962000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+earnings-quality,2024-11-03,net_income,net_income,2024-11-03,5895000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016824000139/0001730168-24-000139-index.html,USD
+ebitda,2024-11-03,operating_income,operating_income,2024-11-03,13463000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+ebitda,2024-11-03,d_and_a,d_and_a,2024-11-03,9860000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+nopat,2024-11-03,operating_income,operating_income,2024-11-03,13463000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+nopat,2024-11-03,tax_rate,tax_rate,2024-11-03,0.35,False,,False,Derived or model input; see parent calculation formula and model assumptions.,ratio (decimal)
+invested-capital,2024-11-03,equity,equity,2024-11-03,67678000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+invested-capital,2024-11-03,debt,debt,2024-11-03,67540000000,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+invested-capital,2024-11-03,cash_sti,cash_sti,2024-11-03,9348000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+roic,2024-11-03,operating_income,operating_income,2024-11-03,13463000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+roic,2024-11-03,tax_rate,tax_rate,2024-11-03,0.35,False,,False,Derived or model input; see parent calculation formula and model assumptions.,ratio (decimal)
+roic,2024-11-03,average_invested_capital,average_invested_capital,2024-11-03,87426500000,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+net-debt,2024-11-03,debt,debt,2024-11-03,67540000000,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+net-debt,2024-11-03,cash_sti,cash_sti,2024-11-03,9348000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+debt-ebitda,2024-11-03,debt,debt,2024-11-03,67540000000,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+debt-ebitda,2024-11-03,ebitda,ebitda,2024-11-03,23323000000,False,,False,Derived: ebitda @ 2024-11-03; see Calculations and Calc inputs.,USD
+interest-coverage,2024-11-03,operating_income,operating_income,2024-11-03,13463000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+interest-coverage,2024-11-03,interest_expense,interest_expense,2024-11-03,3953000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016824000139/0001730168-24-000139-index.html,USD
+current-ratio,2024-11-03,current_assets,current_assets,2024-11-03,19595000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+current-ratio,2024-11-03,current_liabilities,current_liabilities,2024-11-03,16697000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+tangible-book-value,2024-11-03,equity,equity,2024-11-03,67678000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+tangible-book-value,2024-11-03,preferred,preferred,2024-11-03,0,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+tangible-book-value,2024-11-03,goodwill,goodwill,2024-11-03,97873000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+tangible-book-value,2024-11-03,intangibles,intangibles,2024-11-03,40583000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+ncav,2024-11-03,current_assets,current_assets,2024-11-03,19595000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+ncav,2024-11-03,total_liabilities,total_liabilities,2024-11-03,97967000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+ncav,2024-11-03,preferred,preferred,2024-11-03,0,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+dilution,2024-11-03,diluted_avg_shares,diluted_avg_shares,2024-11-03,4778000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,shares
+dilution,2024-11-03,previous_shares,diluted_avg_shares,2023-10-29,4272000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,shares
+sbc-to-revenue,2024-11-03,sbc,sbc,2024-11-03,5741000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+sbc-to-revenue,2024-11-03,revenue,revenue,2024-11-03,51574000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+eps,2024-11-03,eps_diluted,eps_diluted,2024-11-03,1.23,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD per share
+debt-due-3y,2024-11-03,maturity_y1,maturity_y1,2024-11-03,1245000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016824000139/0001730168-24-000139-index.html,USD
+debt-due-3y,2024-11-03,maturity_y2,maturity_y2,2024-11-03,3152000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016824000139/0001730168-24-000139-index.html,USD
+debt-due-3y,2024-11-03,maturity_y3,maturity_y3,2024-11-03,11732000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016824000139/0001730168-24-000139-index.html,USD
+revenue-growth,2025-11-02,revenue,revenue,2025-11-02,63887000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+revenue-growth,2025-11-02,previous_revenue,revenue,2024-11-03,50600905660.37736,False,,False,"https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html
+Transformed calculation input: differs from the raw filing value; see formula and flags.",USD
+gross-margin,2025-11-02,gross_profit,gross_profit,2025-11-02,43294000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+gross-margin,2025-11-02,revenue,revenue,2025-11-02,63887000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+operating-margin,2025-11-02,operating_income,operating_income,2025-11-02,25484000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+operating-margin,2025-11-02,revenue,revenue,2025-11-02,63887000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+net-margin,2025-11-02,net_income,net_income,2025-11-02,23126000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+net-margin,2025-11-02,revenue,revenue,2025-11-02,63887000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+fcf,2025-11-02,ocf,ocf,2025-11-02,27537000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+fcf,2025-11-02,capex,capex,2025-11-02,623000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+fcf-margin,2025-11-02,ocf,ocf,2025-11-02,27537000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+fcf-margin,2025-11-02,capex,capex,2025-11-02,623000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+fcf-margin,2025-11-02,revenue,revenue,2025-11-02,63887000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+fcff,2025-11-02,ocf,ocf,2025-11-02,27537000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+fcff,2025-11-02,capex,capex,2025-11-02,623000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+fcff,2025-11-02,interest_expense,interest_expense,2025-11-02,3210000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+fcff,2025-11-02,tax_rate,tax_rate,2025-11-02,0,False,,False,Derived or model input; see parent calculation formula and model assumptions.,ratio (decimal)
+fcff,2025-11-02,sbc,sbc,2025-11-02,7568000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+fcfe,2025-11-02,net_income,net_income,2025-11-02,23126000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+fcfe,2025-11-02,d_and_a,d_and_a,2025-11-02,8636000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+fcfe,2025-11-02,capex,capex,2025-11-02,623000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+fcfe,2025-11-02,change_in_owc,change_in_owc,2025-11-02,3341000000,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+fcfe,2025-11-02,debt_issued,debt_issued,2025-11-02,15666000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+fcfe,2025-11-02,debt_repaid,debt_repaid,2025-11-02,18478000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+owner-earnings,2025-11-02,net_income,net_income,2025-11-02,23126000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+owner-earnings,2025-11-02,d_and_a,d_and_a,2025-11-02,8636000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+owner-earnings,2025-11-02,change_in_owc,change_in_owc,2025-11-02,3341000000,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+earnings-quality,2025-11-02,ocf,ocf,2025-11-02,27537000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+earnings-quality,2025-11-02,net_income,net_income,2025-11-02,23126000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+ebitda,2025-11-02,operating_income,operating_income,2025-11-02,25484000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+ebitda,2025-11-02,d_and_a,d_and_a,2025-11-02,8636000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+nopat,2025-11-02,operating_income,operating_income,2025-11-02,25484000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+nopat,2025-11-02,tax_rate,tax_rate,2025-11-02,0,False,,False,Derived or model input; see parent calculation formula and model assumptions.,ratio (decimal)
+invested-capital,2025-11-02,equity,equity,2025-11-02,81292000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+invested-capital,2025-11-02,debt,debt,2025-11-02,65136000000,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+invested-capital,2025-11-02,cash_sti,cash_sti,2025-11-02,16178000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+roic,2025-11-02,operating_income,operating_income,2025-11-02,25484000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+roic,2025-11-02,tax_rate,tax_rate,2025-11-02,0,False,,False,Derived or model input; see parent calculation formula and model assumptions.,ratio (decimal)
+roic,2025-11-02,average_invested_capital,average_invested_capital,2025-11-02,128060000000,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+net-debt,2025-11-02,debt,debt,2025-11-02,65136000000,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+net-debt,2025-11-02,cash_sti,cash_sti,2025-11-02,16178000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+debt-ebitda,2025-11-02,debt,debt,2025-11-02,65136000000,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+debt-ebitda,2025-11-02,ebitda,ebitda,2025-11-02,34120000000,False,,False,Derived: ebitda @ 2025-11-02; see Calculations and Calc inputs.,USD
+interest-coverage,2025-11-02,operating_income,operating_income,2025-11-02,25484000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+interest-coverage,2025-11-02,interest_expense,interest_expense,2025-11-02,3210000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+current-ratio,2025-11-02,current_assets,current_assets,2025-11-02,31573000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+current-ratio,2025-11-02,current_liabilities,current_liabilities,2025-11-02,18514000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+tangible-book-value,2025-11-02,equity,equity,2025-11-02,81292000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+tangible-book-value,2025-11-02,preferred,preferred,2025-11-02,0,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+tangible-book-value,2025-11-02,goodwill,goodwill,2025-11-02,97801000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+tangible-book-value,2025-11-02,intangibles,intangibles,2025-11-02,32273000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+ncav,2025-11-02,current_assets,current_assets,2025-11-02,31573000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+ncav,2025-11-02,total_liabilities,total_liabilities,2025-11-02,89800000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+ncav,2025-11-02,preferred,preferred,2025-11-02,0,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+dilution,2025-11-02,diluted_avg_shares,diluted_avg_shares,2025-11-02,4853000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,shares
+dilution,2025-11-02,previous_shares,diluted_avg_shares,2024-11-03,4778000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,shares
+sbc-to-revenue,2025-11-02,sbc,sbc,2025-11-02,7568000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+sbc-to-revenue,2025-11-02,revenue,revenue,2025-11-02,63887000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+eps,2025-11-02,eps_diluted,eps_diluted,2025-11-02,4.77,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD per share
+debt-due-3y,2025-11-02,maturity_y1,maturity_y1,2025-11-02,3152000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+debt-due-3y,2025-11-02,maturity_y2,maturity_y2,2025-11-02,2500000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+debt-due-3y,2025-11-02,maturity_y3,maturity_y3,2025-11-02,7120000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+revenue-cagr-5,2025-11-02,revenue,revenue,2025-11-02,63887000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+revenue-cagr-5,2025-11-02,first_revenue,revenue,2020-11-01,23888000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016822000118/0001730168-22-000118-index.html,USD
+revenue-cagr-9,2025-11-02,revenue,revenue,2025-11-02,63887000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+revenue-cagr-9,2025-11-02,first_revenue,revenue,2016-10-30,13240000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,USD
+diluted-shares-change,2025-11-02,diluted_avg_shares,diluted_avg_shares,2025-11-02,4853000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,shares
+diluted-shares-change,2025-11-02,first_shares,diluted_avg_shares,2016-10-30,3830000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016818000084/0001730168-18-000084-index.html,shares
+incremental-roic-5,2025-11-02,nopat,nopat,2025-11-02,25484000000,False,,False,Derived: nopat @ 2025-11-02; see Calculations and Calc inputs.,USD
+incremental-roic-5,2025-11-02,first_nopat,nopat,2020-11-01,4014000000,False,,False,Derived: nopat @ 2020-11-01; see Calculations and Calc inputs.,USD
+incremental-roic-5,2025-11-02,invested_capital,invested-capital,2025-11-02,130250000000,False,,False,Derived: invested-capital @ 2025-11-02; see Calculations and Calc inputs.,USD
+incremental-roic-5,2025-11-02,first_invested_capital,invested-capital,2020-11-01,57318000000,False,,False,Derived: invested-capital @ 2020-11-01; see Calculations and Calc inputs.,USD
+roic-years-above-wacc,2025-11-02,roic,roic,2017-10-29,0.08733068335736556,False,,False,Derived: roic @ 2017-10-29; see Calculations and Calc inputs.,ratio (decimal)
+roic-years-above-wacc,2025-11-02,roic,roic,2018-11-04,0.15446628664250153,False,,False,Derived: roic @ 2018-11-04; see Calculations and Calc inputs.,ratio (decimal)
+roic-years-above-wacc,2025-11-02,roic,roic,2019-11-03,0.074431069136176,False,,False,Derived: roic @ 2019-11-03; see Calculations and Calc inputs.,ratio (decimal)
+roic-years-above-wacc,2025-11-02,roic,roic,2020-11-01,0.0729804912637952,False,,False,Derived: roic @ 2020-11-01; see Calculations and Calc inputs.,ratio (decimal)
+roic-years-above-wacc,2025-11-02,roic,roic,2021-10-31,0.15447830570061624,False,,False,Derived: roic @ 2021-10-31; see Calculations and Calc inputs.,ratio (decimal)
+roic-years-above-wacc,2025-11-02,roic,roic,2022-10-30,0.25716694249869126,False,,False,Derived: roic @ 2022-10-30; see Calculations and Calc inputs.,ratio (decimal)
+roic-years-above-wacc,2025-11-02,roic,roic,2023-10-29,0.3061622332377607,False,,False,Derived: roic @ 2023-10-29; see Calculations and Calc inputs.,ratio (decimal)
+roic-years-above-wacc,2025-11-02,roic,roic,2024-11-03,0.10009493688984461,False,,False,Derived: roic @ 2024-11-03; see Calculations and Calc inputs.,ratio (decimal)
+roic-years-above-wacc,2025-11-02,roic,roic,2025-11-02,0.1990004685303764,False,,False,Derived: roic @ 2025-11-02; see Calculations and Calc inputs.,ratio (decimal)
+normalized-net-income,2025-11-02,net_income_1,net_income,2021-10-31,6736000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016823000096/0001730168-23-000096-index.html,USD
+normalized-net-income,2025-11-02,net_income_2,net_income,2022-10-30,11495000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016824000139/0001730168-24-000139-index.html,USD
+normalized-net-income,2025-11-02,net_income_3,net_income,2023-10-29,14082000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016824000139/0001730168-24-000139-index.html,USD
+normalized-net-income,2025-11-02,net_income_4,net_income,2024-11-03,5895000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016824000139/0001730168-24-000139-index.html,USD
+normalized-net-income,2025-11-02,net_income_5,net_income,2025-11-02,23126000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+market-cap,2025-11-02,price,price,2026-10-09,361.54,False,,False,"User-supplied price, 2026-10-09",USD/share
+market-cap,2025-11-02,shares_outstanding,cover_shares_outstanding,2026-08-28,4773629865,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/0001730168-26-000080-index.html,shares
+enterprise-value,2025-11-02,market_cap,market_cap,2026-08-02,1725858141392.1,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+enterprise-value,2025-11-02,debt,debt,2026-08-02,59419000000,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+enterprise-value,2025-11-02,cash_sti,cash_sti,2026-08-02,23975000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/0001730168-26-000080-index.html,USD
+enterprise-value,2025-11-02,minority_interest,minority_interest,2026-08-02,0,True,,False,"
+Transformed calculation input: differs from the raw filing value; see formula and flags.",USD
+enterprise-value,2025-11-02,preferred,preferred,2026-08-02,0,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/0001730168-26-000080-index.html,USD
+pe,2025-11-02,market_cap,market_cap,2026-08-02,1725858141392.1,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+pe,2025-11-02,net_income,net_income,2025-11-02,23126000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+ev-ebitda,2025-11-02,market_cap,market_cap,2026-08-02,1725858141392.1,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+ev-ebitda,2025-11-02,debt,debt,2026-08-02,59419000000,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+ev-ebitda,2025-11-02,cash_sti,cash_sti,2026-08-02,23975000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/0001730168-26-000080-index.html,USD
+ev-ebitda,2025-11-02,ebitda,ebitda,2025-11-02,34120000000,False,,False,Derived: ebitda @ 2025-11-02; see Calculations and Calc inputs.,USD
+fcf-yield,2025-11-02,fcf,fcf,2025-11-02,26914000000,False,,False,Derived: fcf @ 2025-11-02; see Calculations and Calc inputs.,USD
+fcf-yield,2025-11-02,market_cap,market_cap,2026-08-02,1725858141392.1,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+dcf-value-bear,2025-11-02,fcff0,fcff0,2025-11-02,18591133285.862534,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+dcf-value-bear,2025-11-02,growth,growth,2025-11-02,0.05,False,,False,Derived or model input; see parent calculation formula and model assumptions.,ratio (decimal)
+dcf-value-bear,2025-11-02,debt_and_other_claims,debt_and_other_claims,2026-08-02,59419000000,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+dcf-value-bear,2025-11-02,cash_sti,cash_sti,2026-08-02,23975000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/0001730168-26-000080-index.html,USD
+dcf-value-bear,2025-11-02,shares_outstanding,cover_shares_outstanding,2026-08-28,4773629865,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/0001730168-26-000080-index.html,shares
+dcf-value-base,2025-11-02,fcff0,fcff0,2025-11-02,18591133285.862534,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+dcf-value-base,2025-11-02,growth,growth,2025-11-02,0.1,False,,False,Derived or model input; see parent calculation formula and model assumptions.,ratio (decimal)
+dcf-value-base,2025-11-02,debt_and_other_claims,debt_and_other_claims,2026-08-02,59419000000,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+dcf-value-base,2025-11-02,cash_sti,cash_sti,2026-08-02,23975000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/0001730168-26-000080-index.html,USD
+dcf-value-base,2025-11-02,shares_outstanding,cover_shares_outstanding,2026-08-28,4773629865,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/0001730168-26-000080-index.html,shares
+dcf-value-bull,2025-11-02,fcff0,fcff0,2025-11-02,18591133285.862534,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+dcf-value-bull,2025-11-02,growth,growth,2025-11-02,0.13,False,,False,Derived or model input; see parent calculation formula and model assumptions.,ratio (decimal)
+dcf-value-bull,2025-11-02,debt_and_other_claims,debt_and_other_claims,2026-08-02,59419000000,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+dcf-value-bull,2025-11-02,cash_sti,cash_sti,2026-08-02,23975000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/0001730168-26-000080-index.html,USD
+dcf-value-bull,2025-11-02,shares_outstanding,cover_shares_outstanding,2026-08-28,4773629865,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/0001730168-26-000080-index.html,shares
+reverse-dcf-growth,2025-11-02,price,price,2026-10-09,361.54,False,,False,"User-supplied price, 2026-10-09",USD/share
+reverse-dcf-growth,2025-11-02,fcff0,fcff0,2025-11-02,18591133285.862534,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+reverse-dcf-growth,2025-11-02,debt_and_other_claims,debt_and_other_claims,2026-08-02,59419000000,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+reverse-dcf-growth,2025-11-02,cash_sti,cash_sti,2026-08-02,23975000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/0001730168-26-000080-index.html,USD
+reverse-dcf-growth,2025-11-02,shares_outstanding,cover_shares_outstanding,2026-08-28,4773629865,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/0001730168-26-000080-index.html,shares
+reverse-dcf-revenue,2025-11-02,price,price,2026-10-09,361.54,False,,False,"User-supplied price, 2026-10-09",USD/share
+reverse-dcf-revenue,2025-11-02,base_revenue,revenue,2025-11-02,63887000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+reverse-dcf-revenue,2025-11-02,current_fcf_margin,fcf-margin,2025-11-02,0.4212750637844945,False,,False,Derived: fcf-margin @ 2025-11-02; see Calculations and Calc inputs.,USD
+reverse-dcf-revenue,2025-11-02,debt_and_other_claims,debt_and_other_claims,2026-08-02,59419000000,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+reverse-dcf-revenue,2025-11-02,cash_sti,cash_sti,2026-08-02,23975000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/0001730168-26-000080-index.html,USD
+reverse-dcf-revenue,2025-11-02,shares_outstanding,cover_shares_outstanding,2026-08-28,4773629865,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/0001730168-26-000080-index.html,shares
+earnings-value-per-share,2025-11-02,normalized_net_income,normalized-net-income,2025-11-02,12266800000,False,,False,Derived: normalized-net-income @ 2025-11-02; see Calculations and Calc inputs.,USD
+earnings-value-per-share,2025-11-02,shares_outstanding,cover_shares_outstanding,2026-08-28,4773629865,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/0001730168-26-000080-index.html,shares
+tbv-per-share,2025-11-02,tangible_book_value,tangible-book-value,2025-11-02,-48782000000,False,,False,Derived: tangible-book-value @ 2025-11-02; see Calculations and Calc inputs.,USD
+tbv-per-share,2025-11-02,shares_outstanding,cover_shares_outstanding,2026-08-28,4773629865,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/0001730168-26-000080-index.html,shares
+ncav-per-share,2025-11-02,ncav,ncav,2025-11-02,-58227000000,False,,False,Derived: ncav @ 2025-11-02; see Calculations and Calc inputs.,USD
+ncav-per-share,2025-11-02,shares_outstanding,cover_shares_outstanding,2026-08-28,4773629865,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/0001730168-26-000080-index.html,shares
+margin-of-safety-base,2025-11-02,value,dcf-value-base,2025-11-02,100.82750112825528,False,,False,Derived: dcf-value-base @ 2025-11-02; see Calculations and Calc inputs.,USD
+margin-of-safety-base,2025-11-02,price,price,2026-10-09,361.54,False,,False,"User-supplied price, 2026-10-09",USD/share
+margin-of-safety-bear,2025-11-02,value,dcf-value-bear,2025-11-02,63.511949049484585,False,,False,Derived: dcf-value-bear @ 2025-11-02; see Calculations and Calc inputs.,USD
+margin-of-safety-bear,2025-11-02,price,price,2026-10-09,361.54,False,,False,"User-supplied price, 2026-10-09",USD/share
+reported-tax-rate-annual,2025-11-02,income_tax,income_tax,2025-11-02,-397000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+reported-tax-rate-annual,2025-11-02,pretax_income,pretax_income,2025-11-02,22729000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+normalized-tax-rate-annual,2025-11-02,normalized_tax_rate,normalized_tax_rate,2025-11-02,0.21,False,Illustrative normalized cash-tax estimate for comparison; sustainable company tax rate is not established.,False,"Analyst assumption, 2026-10-11",ratio (decimal)
+normalized-nopat-annual,2025-11-02,operating_income,operating_income,2025-11-02,25484000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+normalized-nopat-annual,2025-11-02,tax,normalized_tax_rate,2025-11-02,0.21,False,Illustrative normalized cash-tax estimate for comparison; sustainable company tax rate is not established.,False,"Analyst assumption, 2026-10-11",ratio (decimal)
+normalized-roic-annual,2025-11-02,operating_income,operating_income,2025-11-02,25484000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+normalized-roic-annual,2025-11-02,tax,normalized_tax_rate,2025-11-02,0.21,False,Illustrative normalized cash-tax estimate for comparison; sustainable company tax rate is not established.,False,"Analyst assumption, 2026-10-11",ratio (decimal)
+normalized-roic-annual,2025-11-02,average_invested_capital,average_invested_capital,2025-11-02,128060000000,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+normalized-fcff-annual,2025-11-02,operating_income,operating_income,2025-11-02,25484000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+normalized-fcff-annual,2025-11-02,tax,normalized_tax_rate,2025-11-02,0.21,False,Illustrative normalized cash-tax estimate for comparison; sustainable company tax rate is not established.,False,"Analyst assumption, 2026-10-11",ratio (decimal)
+normalized-fcff-annual,2025-11-02,d_and_a,d_and_a,2025-11-02,8636000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+normalized-fcff-annual,2025-11-02,capex,capex,2025-11-02,623000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+normalized-fcff-annual,2025-11-02,change_in_owc,change_in_owc,2025-11-02,3341000000,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+normalized-owner-earnings-annual,2025-11-02,net_income,net_income,2025-11-02,23126000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+normalized-owner-earnings-annual,2025-11-02,reported_tax,income_tax,2025-11-02,-397000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+normalized-owner-earnings-annual,2025-11-02,pretax_income,pretax_income,2025-11-02,22729000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+normalized-owner-earnings-annual,2025-11-02,tax,normalized_tax_rate,2025-11-02,0.21,False,Illustrative normalized cash-tax estimate for comparison; sustainable company tax rate is not established.,False,"Analyst assumption, 2026-10-11",ratio (decimal)
+normalized-owner-earnings-annual,2025-11-02,d_and_a,d_and_a,2025-11-02,8636000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+normalized-owner-earnings-annual,2025-11-02,maintenance_capex,depreciation,2025-11-02,574000000,False,,False,https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html,USD
+normalized-owner-earnings-annual,2025-11-02,change_in_owc,change_in_owc,2025-11-02,3341000000,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+reported-tax-rate-ttm,2026-08-02,income_tax,income_tax,2026-08-02,2204000000,False,,False,"https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html
+https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/0001730168-26-000080-index.html",USD
+reported-tax-rate-ttm,2026-08-02,pretax_income,pretax_income,2026-08-02,40469000000,False,,False,"https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html
+https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/0001730168-26-000080-index.html",USD
+ttm-revenue,2026-08-02,revenue,revenue,2026-08-02,89104000000,False,,False,"https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html
+https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/0001730168-26-000080-index.html",USD
+ttm-net-income,2026-08-02,net_income,net_income,2026-08-02,38265000000,False,,False,"https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html
+https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/0001730168-26-000080-index.html",USD
+ttm-fcf,2026-08-02,ocf,ocf,2026-08-02,40653000000,False,,False,"https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html
+https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/0001730168-26-000080-index.html",USD
+ttm-fcf,2026-08-02,capex,capex,2026-08-02,1250000000,False,,False,"https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html
+https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/0001730168-26-000080-index.html",USD
+ttm-fcff,2026-08-02,ocf,ocf,2026-08-02,40653000000,False,,False,"https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html
+https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/0001730168-26-000080-index.html",USD
+ttm-fcff,2026-08-02,interest,interest_expense,2026-08-02,3116000000,False,,False,"https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html
+https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/0001730168-26-000080-index.html",USD
+ttm-fcff,2026-08-02,tax,tax_rate,2026-08-02,0.05446143962045022,False,"Legacy cash-flow tax shield proxy, clipped to 0–35%; not normalized cash taxes",False,Derived or model input; see parent calculation formula and model assumptions.,ratio (decimal)
+ttm-fcff,2026-08-02,capex,capex,2026-08-02,1250000000,False,,False,"https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html
+https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/0001730168-26-000080-index.html",USD
+ttm-fcff,2026-08-02,sbc,sbc,2026-08-02,8482000000,False,,False,"https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html
+https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/0001730168-26-000080-index.html",USD
+ttm-ebitda,2026-08-02,operating_income,operating_income,2026-08-02,42814000000,False,,False,"https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html
+https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/0001730168-26-000080-index.html",USD
+ttm-ebitda,2026-08-02,d_and_a,d_and_a,2026-08-02,8626000000,False,,False,"https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html
+https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/0001730168-26-000080-index.html",USD
+ttm-pe,2026-08-02,market_cap,market-cap,2026-10-09,1725858141392.1,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+ttm-pe,2026-08-02,net_income,net_income,2026-08-02,38265000000,False,,False,"https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html
+https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/0001730168-26-000080-index.html",USD
+ttm-fcf-margin,2026-08-02,fcf,ttm-fcf,2026-08-02,39403000000,False,,False,Derived: ttm-fcf @ 2026-08-02; see Calculations and Calc inputs.,USD
+ttm-fcf-margin,2026-08-02,revenue,ttm-revenue,2026-08-02,89104000000,False,,False,Derived: ttm-revenue @ 2026-08-02; see Calculations and Calc inputs.,USD
+ttm-fcf-yield,2026-08-02,fcf,ttm-fcf,2026-08-02,39403000000,False,,False,Derived: ttm-fcf @ 2026-08-02; see Calculations and Calc inputs.,USD
+ttm-fcf-yield,2026-08-02,market_cap,market-cap,2026-10-09,1725858141392.1,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+ttm-ev-ebitda,2026-08-02,ev,enterprise-value,2025-11-02,1761302141392.1,False,,False,Derived: enterprise-value @ 2025-11-02; see Calculations and Calc inputs.,USD
+ttm-ev-ebitda,2026-08-02,ebitda,ttm-ebitda,2026-08-02,51440000000,False,,False,Derived: ttm-ebitda @ 2026-08-02; see Calculations and Calc inputs.,USD
+normalized-tax-rate-ttm,2026-08-02,normalized_tax_rate,normalized_tax_rate,2026-08-02,0.21,False,Illustrative normalized cash-tax estimate for comparison; sustainable company tax rate is not established.,False,"Analyst assumption, 2026-10-11",ratio (decimal)
+normalized-nopat-ttm,2026-08-02,operating_income,operating_income,2026-08-02,42814000000,False,,False,"https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html
+https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/0001730168-26-000080-index.html",USD
+normalized-nopat-ttm,2026-08-02,tax,normalized_tax_rate,2026-08-02,0.21,False,Illustrative normalized cash-tax estimate for comparison; sustainable company tax rate is not established.,False,"Analyst assumption, 2026-10-11",ratio (decimal)
+normalized-roic-ttm,2026-08-02,operating_income,operating_income,2026-08-02,42814000000,False,,False,"https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html
+https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/0001730168-26-000080-index.html",USD
+normalized-roic-ttm,2026-08-02,tax,normalized_tax_rate,2026-08-02,0.21,False,Illustrative normalized cash-tax estimate for comparison; sustainable company tax rate is not established.,False,"Analyst assumption, 2026-10-11",ratio (decimal)
+normalized-roic-ttm,2026-08-02,average_invested_capital,average_invested_capital,2026-08-02,130961000000,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+normalized-fcff-ttm,2026-08-02,operating_income,operating_income,2026-08-02,42814000000,False,,False,"https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html
+https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/0001730168-26-000080-index.html",USD
+normalized-fcff-ttm,2026-08-02,tax,normalized_tax_rate,2026-08-02,0.21,False,Illustrative normalized cash-tax estimate for comparison; sustainable company tax rate is not established.,False,"Analyst assumption, 2026-10-11",ratio (decimal)
+normalized-fcff-ttm,2026-08-02,d_and_a,d_and_a,2026-08-02,8626000000,False,,False,"https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html
+https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/0001730168-26-000080-index.html",USD
+normalized-fcff-ttm,2026-08-02,capex,capex,2026-08-02,1250000000,False,,False,"https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html
+https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/0001730168-26-000080-index.html",USD
+normalized-fcff-ttm,2026-08-02,change_in_owc,change_in_owc,2026-08-02,6988000000,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD
+normalized-owner-earnings-ttm,2026-08-02,net_income,net_income,2026-08-02,38265000000,False,,False,"https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html
+https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/0001730168-26-000080-index.html",USD
+normalized-owner-earnings-ttm,2026-08-02,reported_tax,income_tax,2026-08-02,2204000000,False,,False,"https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html
+https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/0001730168-26-000080-index.html",USD
+normalized-owner-earnings-ttm,2026-08-02,pretax_income,pretax_income,2026-08-02,40469000000,False,,False,"https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html
+https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/0001730168-26-000080-index.html",USD
+normalized-owner-earnings-ttm,2026-08-02,tax,normalized_tax_rate,2026-08-02,0.21,False,Illustrative normalized cash-tax estimate for comparison; sustainable company tax rate is not established.,False,"Analyst assumption, 2026-10-11",ratio (decimal)
+normalized-owner-earnings-ttm,2026-08-02,d_and_a,d_and_a,2026-08-02,8626000000,False,,False,"https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html
+https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/0001730168-26-000080-index.html",USD
+normalized-owner-earnings-ttm,2026-08-02,maintenance_capex,depreciation,2026-08-02,632000000,False,,False,"https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/0001730168-25-000121-index.html
+https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/0001730168-26-000080-index.html",USD
+normalized-owner-earnings-ttm,2026-08-02,change_in_owc,change_in_owc,2026-08-02,6988000000,False,,False,Derived or model input; see parent calculation formula and model assumptions.,USD

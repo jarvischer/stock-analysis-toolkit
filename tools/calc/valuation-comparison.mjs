@@ -1,3 +1,5 @@
+import { operatingExpectations, selectCentralModel } from './expectations.mjs';
+import { businessReview } from './business-review.mjs';
 import { createRequire } from 'node:module';
 import { validateForward, baseRevenue, forecastScenario, priceForecast } from './forward.mjs';
 const F = createRequire(import.meta.url)('../../src/finance/core.js').fin;
@@ -78,11 +80,15 @@ export function valuationComparison(facts, A, metrics, price) {
     const valuation = unsuitable ? null : priceForecast(forecastScenario(s, growth_delta), { ...s, wacc, terminal_growth }, capital);
     forwardSensitivity.push({ scenario: s.id, wacc, growth_delta, terminal_growth, value_per_share: valuation?.value_per_share ?? null, status: valuation ? 'ok' : 'not_available' });
   }
-  return { extraMetrics, comparison: { version: 1, price, capital, profile: {
+  const comparison = { version: 1, price, capital, profile: {
     model_fit: facts.company.model_fit, evidence_years: facts.periods.length, ttm_available: !!facts.ttm,
     revenue_growth_above_policy_cap: good(metric(metrics, 'revenue-cagr-5')) > D.growth_cap,
     unusual_latest_tax_rate: (() => { const v = good(metric(metrics, 'reported-tax-rate-annual')); return v != null && (v <= 0 || v > 0.35); })(),
     limitations: ['Investment styles label documented scenarios; they do not change the conservative policy verdict.', 'Forward margins must include stock compensation and all unallocated corporate costs.', 'Normalization is an estimate and remains separate from reported and adjusted metrics.'] },
     normalization: A.normalization ?? null, cash_flow_bases: bases, comparisons, forward, sensitivity, forward_sensitivity: forwardSensitivity,
-    sensitivity_note: 'Historical sensitivity varies constant FCFF growth. Forward sensitivity shifts every segment annual revenue growth by -2, 0 or +2 percentage points while recalculating reinvestment.' } };
+    sensitivity_note: 'Historical sensitivity varies constant FCFF growth. Forward sensitivity shifts every segment annual revenue growth by -2, 0 or +2 percentage points while recalculating reinvestment.' };
+  comparison.central_model = selectCentralModel(A, comparison);
+  comparison.operating_expectations = operatingExpectations(A, comparison, price);
+  comparison.business_review = businessReview(facts, A, metrics);
+  return { extraMetrics, comparison };
 }

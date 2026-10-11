@@ -9,6 +9,8 @@
   const isStep = (s) => s && typeof s === 'object' && ['facts', 'calculations', 'drivers', 'open_questions', 'cards'].every((k) => Array.isArray(s[k]));
   const objects = a => Array.isArray(a) && a.every(v => v && typeof v === 'object' && !Array.isArray(v));
   const isValuation = v => v == null || (typeof v === 'object' && objects(v.comparisons) && objects(v.cash_flow_bases) &&
+    (v.operating_expectations == null || objects(v.operating_expectations.cases) && v.operating_expectations.cases.every(c => objects(c.milestones))) &&
+    (v.business_review == null || objects(v.business_review.evidence) && (v.business_review.calculations == null || objects(v.business_review.calculations))) &&
     ['sensitivity', 'forward_sensitivity'].every(k => v[k] == null || objects(v[k])) &&
     (v.forward == null || objects(v.forward) && v.forward.every(s => objects(s.rows))));
   const isAnalysis = (a) => a && typeof a === 'object' && Array.isArray(a.steps) && a.steps.every(isStep) && a.result && typeof a.result.status === 'string' && isValuation(a.valuation);
@@ -42,6 +44,15 @@
     </article>`;
   }
 
+  function operatingReview(v) {
+    const c = v.central_model, w = v.operating_expectations, b = v.business_review;
+    if (!c?.central_scenario_id) return '';
+    const milestones = (w?.cases || []).flatMap(s => (s.milestones || []).map(r => `<tr><td>${E(pct(s.assumed_segment_operating_margin))}</td><td>${E(pct(s.required_revenue_cagr))}</td><td>${E(r.period_end)}</td><td>${E(num(r.revenue))}</td><td>${E(pct(r.operating_margin))}</td><td>${E(num(r.fcff))}</td></tr>`)).join('');
+    const calculations = (b?.calculations || []).map(r => `<li><code>${E(r.key)}</code>: <b>${E(/-share|-to-fcf|-cagr-/.test(r.key) ? pct(r.value) : num(r.value))}</b> — ${E(r.formula)}</li>`).join('');
+    const evidence = (b?.evidence || []).map(e => `<li><code>${E(e.id)}</code>: ${E(num(e.value))} — ${E(e.kind)}, ${E(e.as_of)}. ${E(e.note)} <small>${E(e.source)}</small></li>`).join('');
+    return `<section data-operating-review data-no-translate><h3>Central valuation and business classification</h3><p>${E(c.business_profile)}</p><p>${E(c.investment_lens)}</p><p><b>${E(num(c.value_per_share))} USD/share — ${E(c.status)}</b></p><p>${E(c.reason)}</p><p>${E(c.distinction)}</p><h3>What Must Be True?</h3><p>${E(w?.definition)}</p><p>${E(w?.period_note)}</p><div class="table-wrap"><table class="t"><thead><tr><th>Assumed margin</th><th>Required revenue growth</th><th>Period end</th><th>Revenue</th><th>Operating margin</th><th>FCFF</th></tr></thead><tbody>${milestones}</tbody></table></div><h3>AI, capital allocation and external evidence</h3><ul>${calculations}</ul><p>${E(b?.capital_allocation_conclusion)}</p><p>${E(b?.acquisition_return?.reason)}</p><p>${E(b?.analyst_coverage)}</p><p>${E(b?.management_coverage)}</p><p>${E(b?.competition)}</p><details><summary>Research sources and assumptions</summary><ul>${evidence}</ul></details></section>`;
+  }
+
   function valuation(v) {
     if (!v || !Array.isArray(v.comparisons) || !Array.isArray(v.cash_flow_bases)) return '';
     const money = n => Number.isFinite(n) ? SAT.fmt.price(n) : '—';
@@ -49,7 +60,7 @@
     const bases = v.cash_flow_bases.map(b => `<tr><td data-no-translate>${E(b.label)}</td><td data-no-translate>${E(b.period_end || '')}</td><td>${E(num(b.value))}</td><td>${E(pct(b.required_growth))}</td></tr>`).join('');
     const forecasts = (v.forward || []).map(s => `<details><summary data-no-translate>${E(s.label)}</summary><p data-no-translate>${E(s.assumptions?.reason || '')}</p><p data-no-translate>${E(s.assumptions?.source || '')}</p><p data-no-translate>${E(s.explanation)}</p><div class="table-wrap"><table class="t"><thead><tr><th>Year</th><th>Revenue</th><th>Operating income</th><th>Taxes</th><th>Reinvestment</th><th>FCFF</th></tr></thead><tbody>${(s.rows || []).map(r => `<tr><td>${E(r.year)}</td>${['revenue', 'operating_income', 'taxes', 'reinvestment', 'fcff'].map(k => `<td>${E(num(r[k]))}</td>`).join('')}</tr>`).join('')}</tbody></table></div></details>`).join('');
     const sensitivity = [...(v.sensitivity || []), ...(v.forward_sensitivity || [])].map(s => `<tr><td data-no-translate>${E(s.basis || s.scenario)}</td><td>${E(pct(s.wacc))}</td><td>${E(pct(s.growth ?? s.growth_delta))}</td><td>${E(pct(s.terminal_growth))}</td><td>${E(money(s.value_per_share))}</td></tr>`).join('');
-    return `<section class="card" data-valuation-comparison><h3>Valuation comparison</h3><p>These estimates use different assumptions. The conservative policy verdict remains separate.</p>
+    return `<section class="card" data-valuation-comparison>${operatingReview(v)}<h3>Valuation comparison</h3><p>These estimates use different assumptions. The conservative policy verdict remains separate.</p>
       <div class="table-wrap"><table class="t"><thead><tr><th>Model</th><th>Status</th><th>Value per share</th><th>Price / value</th><th>Value gap versus price</th><th>Margin of safety</th></tr></thead><tbody>${rows}</tbody></table></div>
       <p>Value gap uses price as the denominator. Margin of safety uses estimated value. Neither is a predicted return.</p>
       <h4>Cash flow starting points</h4><div class="table-wrap"><table class="t"><thead><tr><th>Basis</th><th>Date</th><th>FCFF</th><th>Conditional required growth</th></tr></thead><tbody>${bases}</tbody></table></div>

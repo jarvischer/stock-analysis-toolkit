@@ -1,0 +1,20 @@
+{
+  "status": "provisional_estimate",
+  "business_profile": "AI-led semiconductor growth with a recurring infrastructure-software cash-flow business",
+  "investment_lens": "Quality-growth analysis with GARP price discipline; quality constrained by customer concentration and acquisition accounting",
+  "central_scenario_id": "operating-central",
+  "reason": "An explicit AI/non-AI/software FCFF model represents the changing mix better than the historical-average policy screen. Selection follows business economics, not whichever style label gives the highest value. Central assumptions remain provisional because long-run AI margins and cash taxes are not independently established.",
+  "evidence": [
+    {
+      "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial",
+      "finding": "AI growth and near-term guidance require a distinct AI operating forecast."
+    },
+    {
+      "source": "https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/",
+      "finding": "Software profitability and rising end-customer concentration require separate treatment of margins and execution risk."
+    }
+  ],
+  "value_per_share": 318.730873322425,
+  "method": "Explicit segment FCFF DCF",
+  "distinction": "Business profile determines model suitability. Investment lens does not set growth or margins. Valuation is conditional on the explicit operating forecast; the policy result is a separate investment screen. GARP is a price discipline, not an intrinsic company category."
+}

@@ -11,3 +11,9 @@ test('readable report distinguishes missing styles, reverse assumptions and perc
  assert.match(text,/not a direct measure of what the market expects/);assert.match(text,/Not available/);
  assert.doesNotMatch(text,/NaN|undefined|Infinity/);
 });
+
+test('operating report separates central estimate, policy screen and unavailable consensus',async()=>{
+ const {renderOperatingReview}=await import('../operating-report.mjs');
+ const s=renderOperatingReview({central_model:{central_scenario_id:'central',business_profile:'AI growth',investment_lens:'Quality',reason:'Evidence',status:'provisional_estimate',value_per_share:100,method:'Segment DCF',distinction:'Separate policy',evidence:[]},operating_expectations:{definition:'Conditional paths',period_note:'Rolling periods',cases:[],assumptions:{wacc:.09,tax_rate:.21,terminal_growth:.025,terminal_roic:.15}},business_review:null});
+ assert.match(s,/What Must Be True/);assert.match(s,/provisional_estimate/);assert.match(s,/Policy decision/);assert.doesNotMatch(s,/undefined|NaN/);
+});

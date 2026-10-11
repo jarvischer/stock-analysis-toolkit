@@ -82,6 +82,12 @@ Run `npm run sat -- calc <T> --adjust data/<T>/adjustments.json` (with the same 
 
 ### Valuation comparison
 
+Classify business economics before selecting a central model: document revenue mix, cyclicality, growth drivers, capital intensity and concentration with sources. Set an explicit central scenario; a style label must never select a higher value automatically. Keep the central valuation, price-implied operating outcomes and policy investment screen as three separate conclusions.
+
+For AI-sensitive businesses, quantify AI revenue and growth, identify whether figures are audited segments or supplemental management measures, test slower growth and margin compression, and assess end-customer concentration. Compare operating expectations for requested milestone years against dated management guidance, identifiable analyst estimates, history, market scope and competition. Never describe one analyst as consensus or substitute a broad TAM for company revenue. Mark missing long-run benchmarks unavailable. Use `operating_expectations` for calculator-generated revenue/margin/FCFF combinations; state that one price cannot uniquely determine all three.
+
+For capital allocation, examine acquisition consideration including shares, acquisition-specific return evidence, payout coverage, net dilution and per-share outcomes. Consolidated ROIC does not establish a deal IRR. See `docs/valuation-models.md` for input contracts and report outputs.
+
 Keep the conservative policy result. Also assess the latest matched TTM periods in `facts.json → ttm`; never combine unmatched quarterly durations or replace a missing value with zero. Cite TTM component sources and dates. Missing historical amortization makes complete D&A unavailable.
 
 Use explicit `assumptions.normalization` for a sustainable tax estimate and maintenance-capital proxy. Show the unclipped reported tax rate alongside normalized NOPAT, ROIC and FCFF. A tax benefit is not evidence for a zero long-run tax rate. Do not automatically use acquisition amortization as maintenance spending. Keep `metric_sets.reported`, `adjusted`, `normalized` and `ttm` distinct.

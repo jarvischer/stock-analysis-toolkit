@@ -2,7 +2,7 @@
 import { spawnSync } from 'node:child_process';
 
 const [command, ...rest] = process.argv.slice(2);
-const usage = 'Usage: npm run sat -- extract TICKER | calc TICKER [--price N --price-date YYYY-MM-DD] [--adjust file] | compare TICKER [--out report.md] | validate FILE';
+const usage = 'Usage: npm run sat -- extract TICKER | calc TICKER [--price N --price-date YYYY-MM-DD] [--adjust file] | compare TICKER [--out report.md] [--export-dir directory] | validate FILE';
 
 if (command === 'extract') {
   const r = spawnSync('uv', ['run', '--project', 'tools/extract', 'python', '-m', 'sat_extract', ...rest], { stdio: 'inherit' });
