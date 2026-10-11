@@ -1,0 +1,21 @@
+[project]
+name = "sat-extract"
+version = "0.1.0"
+description = "Stage 1 of the value analyst agent: SEC EDGAR facts and 10-K sections"
+requires-python = ">=3.11"
+dependencies = ["edgartools==5.61.1"]
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["sat_extract"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["live: needs network access and EDGAR_NAME / EDGAR_EMAIL"]
+addopts = "-m 'not live'"
