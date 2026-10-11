@@ -1010,5 +1010,6 @@
   "FCFF (DCF input)": "FCFF (DCF input)",
   "Current FCFF (last 12 months)": "Current FCFF (last 12 months)",
   "Free cash flow to the firm: OCF + after-tax interest − CapEx − SBC. Discount it at WACC.": "Free cash flow to the firm: OCF + after-tax interest − CapEx − SBC. Discount it at WACC.",
-  "FCFF / Revenue today. Discounted at WACC, so use cash flow to the firm": "FCFF / Revenue today. Discounted at WACC, so use cash flow to the firm"
+  "FCFF / Revenue today. Discounted at WACC, so use cash flow to the firm": "FCFF / Revenue today. Discounted at WACC, so use cash flow to the firm",
+  "Cost of Equity (CAPM)": "Cost of Equity (CAPM)"
 }

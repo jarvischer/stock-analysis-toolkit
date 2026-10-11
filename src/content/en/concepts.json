@@ -2064,6 +2064,7 @@
     "where": "Estimated by you (not reported).",
     "related": [
       "roic",
+      "cost-of-equity",
       "discount-rate",
       "incremental-roic",
       "profitable-growth",
@@ -2075,6 +2076,72 @@
     ],
     "section": "efficiency",
     "body": "<ol class=\"concept-flow\"><li>Future FCFF</li><li>Discount using WACC</li><li>Present Value of FCFF</li><li>Enterprise Value (including discounted Terminal Value)</li></ol><p>For positive future cash flows, all else equal: Higher WACC → Lower Enterprise Value; Lower WACC → Higher Enterprise Value.</p><table class=\"exm\"><tr><th>$100 in 10 years</th><th>PV</th></tr><tr><td>7%</td><td>$50.83</td></tr><tr><td>12%</td><td>$32.20</td></tr></table><p>The cash flow is unchanged; only the required return changed.</p><a href=\"#tool-sensitivity\">Explore DCF sensitivity</a>"
+  },
+  "cost-of-equity": {
+    "id": "cost-of-equity",
+    "title": "Cost of Equity",
+    "aka": [
+      "Required return on equity",
+      "Ke"
+    ],
+    "short": "The return shareholders require to own the stock. It is the discount rate for FCFE and an input to WACC.",
+    "what": "The cost of equity is the expected return that investors require to hold the company’s shares. Shareholders are paid last and carry the most risk, so the cost of equity is higher than the cost of debt. Most analysts estimate it with the Capital Asset Pricing Model (CAPM).",
+    "he": "עלות ההון העצמי — התשואה שבעלי המניות דורשים. לפי CAPM: ריבית חסרת סיכון + בטא × פרמיית סיכון.",
+    "example": [
+      [
+        "Risk-free rate (10-year government bond)",
+        "4.0%"
+      ],
+      [
+        "Beta",
+        "1.2"
+      ],
+      [
+        "Equity risk premium",
+        "5.0%"
+      ],
+      [
+        "Beta × equity risk premium",
+        "6.0%"
+      ],
+      [
+        "Cost of Equity",
+        "10.0%",
+        "res"
+      ]
+    ],
+    "interp": "Risk-free rate: the yield on a long-term government bond in the same currency as the cash flows. Beta: how much the stock moved with the market in the past; a beta of 1.0 means average market risk. Equity risk premium: the extra return investors require from stocks over government bonds, commonly 4–6% for the US market.",
+    "better": [
+      "lower",
+      "For the company, a lower cost of equity raises value; for the analyst, what matters is a realistic estimate."
+    ],
+    "compare": [
+      "WACC",
+      "Cost of debt"
+    ],
+    "watch": "Beta comes from past prices and changes with the period and index you choose. A single stock’s beta is noisy, so many analysts use the average beta of similar companies, adjusted for debt. CAPM ignores risks specific to the company, such as small size or customer concentration. Small input changes move a DCF value a lot, so check the sensitivity table. Match the currency and inflation of the risk-free rate to the cash flows.",
+    "where": "Estimated by you (not reported). Risk-free rate: government bond yields. Beta: data providers or your own regression. Equity risk premium: published surveys and estimates (for example, Aswath Damodaran).",
+    "body": "<ol class=\"concept-flow\"><li>Risk-free Rate</li><li>+ Beta × Equity Risk Premium</li><li>Cost of Equity</li><li>Discount rate for FCFE, or an input to WACC for FCFF</li></ol>",
+    "stmt": "model",
+    "tags": [
+      "CAPM",
+      "beta",
+      "risk-free rate",
+      "equity risk premium",
+      "ERP",
+      "cost of capital",
+      "Ke"
+    ],
+    "formula": "Cost of Equity = Risk-free Rate + Beta × Equity Risk Premium",
+    "section": "efficiency",
+    "related": [
+      "wacc",
+      "discount-rate",
+      "required-return",
+      "fcfe",
+      "opportunity-cost",
+      "sensitivity"
+    ]
   },
   "shares-outstanding": {
     "id": "shares-outstanding",
@@ -2772,6 +2839,7 @@
     "watch": "Small changes in the rate can materially change DCF value. Match the rate to cash-flow risk, currency and inflation assumptions.",
     "where": "Your assumption.",
     "related": [
+      "cost-of-equity",
       "wacc",
       "present-value",
       "sensitivity",
@@ -3693,6 +3761,7 @@
     "watch": "Match cash flows and discount rates. Adjust separately for omitted non-operating assets and other claims; avoid counting them twice.",
     "where": "Equity cash-flow forecasts and financing schedules.",
     "related": [
+      "cost-of-equity",
       "fcff",
       "discount-rate",
       "capital-allocation",
