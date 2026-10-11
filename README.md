@@ -30,6 +30,7 @@ src/
   finance/               Shared math, storage, and calculator definitions
   learning/              Exercise validation, lesson navigation, case behavior
   styles/                Themes, responsive layout, and RTL rules
+  fonts/                 Self-hosted Inter, JetBrains Mono and Heebo (Hebrew) with their OFL licenses
 scripts/                 Validation, deterministic static build, preview server
 tests/                  Financial and browser regression checks
 ```

@@ -1,4 +1,4 @@
-import { readFile, writeFile, mkdir, rm, copyFile } from 'node:fs/promises';
+import { readFile, writeFile, mkdir, rm, copyFile, readdir } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import './validate.mjs';
 const read = p => readFile(p, 'utf8');
@@ -15,5 +15,7 @@ const jsFile = `app.${hash(js)}.js`, cssFile = `app.${hash(css)}.css`;
 await rm('dist', {recursive:true, force:true}); await mkdir('dist/assets',{recursive:true});
 await writeFile('dist/assets/'+jsFile, js); await writeFile('dist/assets/'+cssFile,css);
 await writeFile('dist/index.html',(await read('src/index.html')).replace('<!-- APP_SCRIPT -->',`<script src="assets/${jsFile}"></script>`).replace('<!-- APP_STYLE -->',`<link rel="stylesheet" href="assets/${cssFile}">`));
+await mkdir('dist/assets/fonts');
+for (const f of await readdir('src/fonts')) await copyFile('src/fonts/'+f, 'dist/assets/fonts/'+f);
 await writeFile('dist/.nojekyll','');
 console.log(`Built dist: ${jsFile}, ${cssFile}`);
