@@ -1,3 +1,4 @@
+import { renderAssessment } from './assessment-report.mjs';
 // Readable valuation output generated from metrics.json; no new finance arithmetic here.
 import { exportExpectations } from './export-expectations.mjs';
 import { renderOperatingReview } from './operating-report.mjs';
@@ -8,10 +9,11 @@ const money = n => Number.isFinite(n) ? new Intl.NumberFormat('en-US', { style: 
 const pct = n => Number.isFinite(n) ? new Intl.NumberFormat('en-US', { style: 'percent', maximumFractionDigits: 2 }).format(n) : 'Not available';
 const esc = v => String(v ?? '').replace(/\|/g, '\\|').replace(/\n/g, ' ');
 const table = (headers, rows) => ['| ' + headers.join(' | ') + ' |', '| ' + headers.map(() => '---').join(' | ') + ' |', ...rows.map(row => '| ' + row.map(esc).join(' | ') + ' |')].join('\n') + '\n\n';
-export function renderComparison(metrics) {
+export function renderComparison(metrics, analysis = {}) {
   const v = metrics.valuation;
   if (!v) throw new Error('Run sat calc first to produce a valuation comparison');
   let text = `# ${metrics.company.ticker}: valuation comparison\n\nPrice: ${money(metrics.price?.value)} on ${metrics.price?.date ?? 'not supplied'}.\n\nThese are conditional model estimates, not price targets. The conservative policy verdict is separate from the forward scenarios. Missing models are not assigned an invented value.\n\n`;
+  text += renderAssessment(v, analysis.result);
   text += renderOperatingReview(v);
   text += '## Models side by side\n\n' + table(['Model', 'Style', 'Status', 'Value/share', 'Price/value', 'Value gap / price', 'Margin of safety'], v.comparisons.map(c => [c.label, c.style, c.status, money(c.value_per_share), Number.isFinite(c.price_to_value) ? c.price_to_value.toFixed(2) + '×' : '—', pct(c.gap_to_price), pct(c.margin_of_safety)]));
   text += 'Value gap uses price as the denominator; margin of safety uses model value. Neither percentage predicts an investment return.\n\n';
@@ -36,10 +38,10 @@ export function renderComparison(metrics) {
   return text;
 }
 export function main(argv) {
-  const { values, positionals } = parseArgs({ args: argv, allowPositionals: true, options: { data: { type: 'string', default: 'data' }, out: { type: 'string' }, 'export-dir': { type: 'string' } } });
+  const { values, positionals } = parseArgs({ args: argv, allowPositionals: true, options: { data: { type: 'string', default: 'data' }, out: { type: 'string' }, 'export-dir': { type: 'string' }, analysis: { type: 'string' } } });
   if (!positionals[0]) { console.error('Usage: sat compare TICKER [--data data] [--out report.md]'); return 1; }
   const ticker = positionals[0].toUpperCase(), metrics = JSON.parse(readFileSync(join(values.data, ticker, 'metrics.json')));
-  const path = values.out || join('analyses', `${ticker}-valuation.md`); mkdirSync(dirname(path), { recursive: true }); writeFileSync(path, renderComparison(metrics));
+  const path = values.out || join('analyses', `${ticker}-valuation.md`); mkdirSync(dirname(path), { recursive: true }); writeFileSync(path, renderComparison(metrics, values.analysis ? JSON.parse(readFileSync(values.analysis)) : {}));
   if (values['export-dir']) exportExpectations(metrics, values['export-dir']);
   console.log(`Valuation comparison → ${path}`); return 0;
 }

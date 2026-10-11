@@ -15,5 +15,11 @@ test('readable report distinguishes missing styles, reverse assumptions and perc
 test('operating report separates central estimate, policy screen and unavailable consensus',async()=>{
  const {renderOperatingReview}=await import('../operating-report.mjs');
  const s=renderOperatingReview({central_model:{central_scenario_id:'central',business_profile:'AI growth',investment_lens:'Quality',reason:'Evidence',status:'provisional_estimate',value_per_share:100,method:'Segment DCF',distinction:'Separate policy',evidence:[]},operating_expectations:{definition:'Conditional paths',period_note:'Rolling periods',cases:[],assumptions:{wacc:.09,tax_rate:.21,terminal_growth:.025,terminal_roic:.15}},business_review:null});
- assert.match(s,/What Must Be True/);assert.match(s,/provisional_estimate/);assert.match(s,/Policy decision/);assert.doesNotMatch(s,/undefined|NaN/);
+ assert.match(s,/What Must Be True/);assert.match(s,/provisional_estimate/);assert.match(s,/Separate policy/);assert.doesNotMatch(s,/undefined|NaN/);
+});
+
+test('snapshot keeps probabilities unassigned and rounds conclusions',async()=>{
+ const {renderAssessment}=await import('../assessment-report.mjs');
+ const s=renderAssessment({central_model:{business_profile:'example'},assessment:{central_value:318.73,confidence:'Low',wide_dispersion:true,reason:'Evidence limited',probabilities:{reason:'Insufficient evidence',sensitivity:[]}},forward:[]},{quality_score:3,required_margin_of_safety:.4});
+ assert.match(s,/about \$320/);assert.match(s,/valuation uncertainty is high/);assert.match(s,/Not assigned/);assert.match(s,/Business Quality/);assert.match(s,/Investment Decision/);assert.doesNotMatch(s,/318.73|undefined|NaN/);
 });

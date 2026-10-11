@@ -589,3 +589,7 @@ input[data-u="text"], textarea { unicode-bidi: plaintext; }
 .reverse-reserved{border-style:dashed}.exm th{text-align:start;padding:8px;font-weight:600}
 
 [data-operating-review] { overflow-wrap: anywhere; }
+
+[data-investment-snapshot] { min-width: 0; overflow-wrap: anywhere; }
+[data-investment-snapshot] pre { max-width: 100%; overflow-x: auto; }
+[data-analysis-out] { min-width: 0; overflow-wrap: anywhere; }

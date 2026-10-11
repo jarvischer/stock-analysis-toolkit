@@ -108,3 +108,13 @@ Then run `npm run sat -- validate analyses/<T>-<analysis_date>.json`. Fix every 
 ## Interactive checkpoints
 
 When the user is present, stop after steps 1, 2 and 4. Show a short result for the step and ask whether to continue or to change an assumption.
+
+### Investment Snapshot, uncertainty and per-share economics
+
+Preserve the architecture above and add the confidence/probability/shareholder layer described in `docs/valuation-models.md`. Near the top include Investment Snapshot: classification, dated price, rounded central valuation, reasonable range, confidence, bear/upside, defensible weighted value (or unavailable), price comparisons, required MOS, quality score, primary driver/risk and measurable thesis-break condition. Keep exact values in detailed calculations.
+
+Assess all documented uncertainty factors; wide scenario dispersion must explicitly mean high uncertainty. Missing evidence must not imply high confidence. Assign subjective scenario probabilities only with documented reasons, source and date; otherwise explain why they cannot responsibly be assigned and provide hypothetical weight sensitivity. Never fabricate consensus or confuse weighted intrinsic value with expected shareholder return.
+
+Present historical and forecast revenue/FCF/FCFF per diluted share, EPS, shares, share growth, SBC/share and revenue ratio, repurchases, actual net dilution, and comparable 3Y/5Y growth when available. Missing forecast bridges are limitations, not permission to treat FCFF as FCF or adjusted earnings as reported EPS. Explain material company/per-share growth gaps using observed shares, not repurchase expenditure. Show every metric's formula, dated inputs and basis.
+
+Explicitly separate Business Quality, Intrinsic Value, Market Expectations and Investment Decision. A strong business score does not establish intrinsic value. Preserve the policy verdict but do not generalize a conservative historical DCF shortfall into a universal conclusion. Evaluate operating outcomes embedded in price, their plausibility and shareholder returns under alternatives; identify missing holding-period/distribution/exit assumptions instead of claiming a present-value gap is an expected return.

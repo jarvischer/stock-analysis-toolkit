@@ -6,8 +6,7 @@ const table = (h,r) => ['| '+h.join(' | ')+' |','| '+h.map(()=>'---').join(' | '
 export function renderOperatingReview(v) {
   const c=v.central_model,w=v.operating_expectations,b=v.business_review;
   if(!c?.central_scenario_id) return '';
-  let out='## Business classification and central valuation\n\n'+c.business_profile+'. '+c.investment_lens+'.\n\n'+c.reason+'\n\n**Central conditional estimate: '+price(c.value_per_share)+'** ('+c.status+'). Method: '+c.method+'. '+c.distinction+'\n\n';
-  out+=table(['Layer','Question answered'],[['Business classification','Which operating model fits the revenue mix and economics?'],['Valuation','What are the explicit operating cash flows worth under these estimates?'],['Price-implied outcomes','Which operating paths would support the supplied price?'],['Policy decision','Does the company at this price meet the user’s quality and margin-of-safety rules?']]);
+  let out='## Business classification and central valuation\n\n'+c.business_profile+'. '+c.investment_lens+'.\n\n'+c.reason+'\n\n**Central conditional estimate: '+(Number.isFinite(c.value_per_share)?'about $'+Math.round(c.value_per_share/5)*5:'Not available')+'; confidence '+(v.assessment?.confidence||'not assessed')+'** ('+c.status+'). Method: '+c.method+'. '+c.distinction+'\n\n';
   for(const e of c.evidence)out+='- '+e.finding+' [Source]('+e.source+')\n';
   out+='\n## What Must Be True?\n\n'+w.definition+'\n\n'+w.period_note+' All monetary amounts below are full-company USD billions; margins include SBC. Shares and net financial claims are held fixed. This is a conditional expectations test, not a prediction.\n\n';
   out+=table(['Assumed margin','Required annual revenue growth','Milestone period','Required revenue','Operating margin','Required FCFF'],w.cases.flatMap(c=>c.milestones.map(r=>[pct(c.assumed_segment_operating_margin),pct(c.required_revenue_cagr),r.period_end,money(r.revenue),pct(r.operating_margin),money(r.fcff)])));

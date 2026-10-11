@@ -1,10 +1,217 @@
 # AVGO: valuation comparison
 
-[Full investment report](AVGO-2026-10-11.md) · [All data and cards](AVGO-2026-10-11-v3-data/README.md) · [Excel workbook](../output/spreadsheet/AVGO-2026-10-11-v3.xlsx)
+[Full investment report](AVGO-2026-10-11.md) · [All data and cards](AVGO-2026-10-11-v4-data/README.md) · [Excel workbook](../output/spreadsheet/AVGO-2026-10-11-v4.xlsx)
 
 Price: $361.54 on 2026-10-09.
 
 These are conditional model estimates, not price targets. The conservative policy verdict is separate from the forward scenarios. Missing models are not assigned an invented value.
+
+## Investment Snapshot
+
+| Item | Assessment |
+| --- | --- |
+| Business classification | AI-led semiconductor growth with a recurring infrastructure-software cash-flow business |
+| Current price | $361.54; 2026-10-09 |
+| Central valuation | about $320 |
+| Reasonable valuation range | about $125 to about $540 — scenario-supported, not statistical |
+| Valuation confidence | Low |
+| Slowdown / Bear | about $125 |
+| Upside | about $540 |
+| Scenario-weighted expected value | Not assigned — insufficient evidence |
+| Current price / central value | 1.13×; central value gap / price -11.84% |
+| Current price / expected value | Not available |
+| Required Margin of Safety | 40.00% |
+| Business quality score | 3/5 |
+| Primary valuation driver | AI revenue growth translated into after-SBC margins and FCFF. |
+| Most sensitive variables | wacc, revenue_growth, tax_rate |
+| Primary risk | Customer concentration and AI execution or margin shortfalls. |
+| Primary thesis-break condition | Reassess the central thesis if annual AI revenue growth falls below 20% during the first two forecast years, or consolidated after-SBC operating margin falls below 35%. Analyst monitoring thresholds, not management guidance. |
+
+### Four separate questions
+
+| Question | Interpretation |
+| --- | --- |
+| Business Quality | Is this a good business? Assess durability, returns on capital and stewardship; quality does not set its price. |
+| Intrinsic Value | What are future cash flows reasonably worth? Use explicit operating assumptions and the confidence range. |
+| Market Expectations | What must the company achieve to justify today's price? Read the conditional What Must Be True operating paths and compare their plausibility with sourced evidence. |
+| Investment Decision | Consider quality, valuation, uncertainty, returns, required Margin of Safety and thesis risks together. The historical policy screen is one constraint; its failure alone is not a universal judgment about attractiveness. |
+
+Expected value here is a probability-weighted present valuation, not an annualized or realized investment return. Estimating investor returns additionally requires a holding period, distributions, exit valuation and a consistent future share count.
+
+## Valuation confidence and uncertainty
+
+Conservative evidence rubric: any high or unknown risk => Low; at least two medium risks => Medium; otherwise High. This is an analyst evidence assessment, not a statistical probability.
+
+**Scenario values are widely dispersed; valuation uncertainty is high.**
+
+The slowdown and execution-upside operating paths bound a working range for the explicitly modeled AI outcomes. They are not exhaustive tail outcomes. Scenario-supported working valuation range, not a statistical confidence interval or exhaustive bound.
+
+| Evidence factor | Risk | Reason | Source |
+| --- | --- | --- | --- |
+| forecast_visibility | high | Quarterly guidance supports near-term growth, but does not establish a ten-year path. | https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial |
+| revenue_concentration | high | AI is a large and fast-changing portion of consolidated revenue; mix and economics can change quickly. | https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial |
+| cyclicality | high | Hyperscaler spending and semiconductor demand can slow; slowdown scenario reduces growth and margins. | https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial |
+| margin_uncertainty | high | Non-GAAP guidance is not the model margin after SBC. Future systems mix and customer bargaining can compress margins. | https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial |
+| reinvestment_uncertainty | high | Working-capital and capital-intensity paths are analyst assumptions, with limited visibility into future systems delivery. | assumptions.forward_scenarios.operating-central |
+| tax_uncertainty | medium | 21% is an explicit normalized estimate; historical tax benefits do not establish a sustainable rate. | assumptions.normalization |
+| customer_concentration | high | Five end customers represent 55% of latest-quarter revenue; distributor exposure overlaps and must not be added. | https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/ |
+| technological_disruption | high | Customer internal design and alternative accelerator ecosystems threaten both volume and margins. | https://ir.amd.com/financial-information/sec-filings/content/0001193125-26-129106/0001193125-26-129106.pdf |
+| terminal_value_dependence | medium | PV terminal value / enterprise value; above 75% is high, above 50% medium (framework judgment thresholds) | valuation.forward.operating-central.valuation |
+| scenario_dispersion | high | Scenario values are widely dispersed: valuation uncertainty is high. | selected scenario DCFs |
+
+### Central valuation sensitivity
+
+One assumption changes at a time; rankings depend on these stated perturbations, not a universal measure of importance.
+
+| Variable | Shift (percentage points) | Lower input value/share | Higher input value/share |
+| --- | --- | --- | --- |
+| wacc | ±1.0 | $382.95 | $271.71 |
+| revenue_growth | ±2.0 | $278.2 | $365.18 |
+| tax_rate | ±5.0 | $340.33 | $297.13 |
+| operating_margin | ±2.0 | $302.04 | $335.43 |
+| terminal_growth | ±0.5 | $311.26 | $327.36 |
+| terminal_roic | ±3.0 | $309.15 | $325.12 |
+| capex_to_revenue | ±1.0 | $323.36 | $314.1 |
+
+## Scenario probabilities and expected value
+
+Analyst-assigned subjective probabilities — not market-implied probabilities.
+
+Probabilities cannot be responsibly assigned: the evidence supports possible operating paths but does not establish defensible relative likelihoods over ten years.
+
+| Scenario | Value/share | Probability | Contribution |
+| --- | --- | --- | --- |
+| ai-slowdown | $125.83 | Not assigned | Not assigned |
+| operating-central | $318.73 | Not assigned | Not assigned |
+| ai-execution-upside | $541.44 | Not assigned | Not assigned |
+
+Hypothetical probability combinations for sensitivity only; not assigned probabilities or measured likelihoods.
+
+| Combination | Scenario probabilities | Weighted valuation |
+| --- | --- | --- |
+| Slowdown-heavy (illustrative only) | ai-slowdown: 50.00%; operating-central: 35.00%; ai-execution-upside: 15.00% | $255.69 |
+| Central-heavy (illustrative only) | ai-slowdown: 25.00%; operating-central: 50.00%; ai-execution-upside: 25.00% | $326.18 |
+| Upside-heavy (illustrative only) | ai-slowdown: 15.00%; operating-central: 35.00%; ai-execution-upside: 50.00% | $401.15 |
+
+## Per-share economics
+
+Historical flows use matching split-adjusted weighted-average diluted shares, not point-in-time shares outstanding. Observed diluted share changes include repurchases, issuance and dilution-accounting effects; they do not identify gross issuance separately.
+
+Forecast share paths are explicit analyst diagnostics; they do not reprice the existing enterprise DCF. Its current-share denominator and expensed SBC remain unchanged. Forecast EPS is an adjusted operating proxy when scenario margins exclude acquisition amortization. Missing bridge inputs make FCF/EPS unavailable.
+
+### Reported historical periods
+
+| Period end | Revenue/share | FCF/share | FCFF/share | EPS | SBC/share | Diluted average shares | Share growth | SBC/revenue | Repurchases USD | Net dilution |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 2016-10-30 | $3.46 | $0.7 | $0.65 | $-0.49 | $0.18 | 3,830,000,000 | Not available | 5.13% | $0 | Not available |
+| 2017-10-29 | $4.19 | $1.3 | $1.19 | $0.4 | $0.22 | 4,210,000,000 | 9.92% | 5.22% | $0 | 9.92% |
+| 2018-11-04 | $4.84 | $1.91 | $1.77 | $2.84 | $0.28 | 4,310,000,000 | 2.38% | 5.89% | $7,258,000,000 | 2.38% |
+| 2019-11-03 | $5.39 | $2.21 | $2.03 | $0.64 | $0.52 | 4,190,000,000 | -2.78% | 9.67% | $5,435,000,000 | -2.78% |
+| 2020-11-01 | $5.67 | $2.75 | $2.71 | $0.63 | $0.47 | 4,210,000,000 | 0.48% | 8.27% | $0 | 0.48% |
+| 2021-10-31 | $6.4 | $3.11 | $3.15 | $1.5 | $0.4 | 4,290,000,000 | 1.90% | 6.21% | $0 | 1.90% |
+| 2022-10-30 | $7.85 | $3.85 | $3.87 | $2.65 | $0.36 | 4,232,000,000 | -1.35% | 4.62% | $7,000,000,000 | -1.35% |
+| 2023-10-29 | $8.38 | $4.13 | $3.97 | $3.3 | $0.51 | 4,272,000,000 | 0.95% | 6.06% | $5,824,000,000 | 0.95% |
+| 2024-11-03 | $10.79 | $4.06 | $3.4 | $1.23 | $1.2 | 4,778,000,000 | 11.84% | 11.13% | $7,176,000,000 | 11.84% |
+| 2025-11-02 | $13.16 | $5.55 | $4.65 | $4.77 | $1.56 | 4,853,000,000 | 1.57% | 11.85% | $2,450,000,000 | 1.57% |
+
+| Measure | Years | Company CAGR | Per-share CAGR | Difference (pp) | Interpretation |
+| --- | --- | --- | --- | --- | --- |
+| revenue | 3 | 24.38% | 18.83% | 5.55 | Material growth gap (at least 2 percentage points): the observed diluted share-count change altered shareholder growth. Acquisitions, SBC and other issuance may all contribute. |
+| fcf | 3 | 18.17% | 12.89% | 5.27 | Material growth gap (at least 2 percentage points): the observed diluted share-count change altered shareholder growth. Acquisitions, SBC and other issuance may all contribute. |
+| revenue | 5 | 21.74% | 18.33% | 3.41 | Material growth gap (at least 2 percentage points): the observed diluted share-count change altered shareholder growth. Acquisitions, SBC and other issuance may all contribute. |
+| fcf | 5 | 18.34% | 15.02% | 3.32 | Material growth gap (at least 2 percentage points): the observed diluted share-count change altered shareholder growth. Acquisitions, SBC and other issuance may all contribute. |
+
+### Per-share forecast: illustrative-growth
+
+No sourced diluted-share forecast. Per-share forecasts cannot be responsibly filled with a silent constant-share assumption.
+
+### Per-share forecast: illustrative-garp
+
+No sourced diluted-share forecast. Per-share forecasts cannot be responsibly filled with a silent constant-share assumption.
+
+### Per-share forecast: illustrative-quality
+
+No sourced diluted-share forecast. Per-share forecasts cannot be responsibly filled with a silent constant-share assumption.
+
+### Per-share forecast: operating-central
+
+Illustrative shareholder diagnostic: last annual diluted average shares are used as a starting proxy, not observed TTM diluted shares. Assume 1.5% annual net dilution, 8% SBC/revenue and $2.45B annual repurchases. These are not guidance. No FCF or EPS bridge is supplied because a reliable future interest/nonoperating bridge is unavailable.
+
+EPS below is an adjusted model proxy, not GAAP guidance.
+
+| Period end | Revenue/share | FCF/share | FCFF/share | EPS | SBC/share | Diluted average shares | Share growth | SBC/revenue | Repurchases USD | Net dilution |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 2027-08-02 | $31.83 | Not available | $7.79 | Not available | $2.55 | 4,925,795,000 | 1.50% | 8.00% | $2,450,000,000 | 1.50% |
+| 2028-08-02 | $44.85 | Not available | $11.85 | Not available | $3.59 | 4,999,681,925 | 1.50% | 8.00% | $2,450,000,000 | 1.50% |
+| 2029-08-02 | $56.57 | Not available | $15.66 | Not available | $4.53 | 5,074,677,154 | 1.50% | 8.00% | $2,450,000,000 | 1.50% |
+| 2030-08-02 | $65.26 | Not available | $18.87 | Not available | $5.22 | 5,150,797,311 | 1.50% | 8.00% | $2,450,000,000 | 1.50% |
+| 2031-08-02 | $72.78 | Not available | $21.38 | Not available | $5.82 | 5,228,059,271 | 1.50% | 8.00% | $2,450,000,000 | 1.50% |
+| 2032-08-02 | $78.19 | Not available | $23.41 | Not available | $6.26 | 5,306,480,160 | 1.50% | 8.00% | $2,450,000,000 | 1.50% |
+| 2033-08-02 | $82.66 | Not available | $24.94 | Not available | $6.61 | 5,386,077,362 | 1.50% | 8.00% | $2,450,000,000 | 1.50% |
+| 2034-08-02 | $85.94 | Not available | $26.14 | Not available | $6.88 | 5,466,868,523 | 1.50% | 8.00% | $2,450,000,000 | 1.50% |
+| 2035-08-02 | $88.65 | Not available | $27.07 | Not available | $7.09 | 5,548,871,551 | 1.50% | 8.00% | $2,450,000,000 | 1.50% |
+| 2036-08-02 | $90.7 | Not available | $27.82 | Not available | $7.26 | 5,632,104,624 | 1.50% | 8.00% | $2,450,000,000 | 1.50% |
+
+| Forecast measure | Years | Start | End | Company CAGR | Per-share CAGR |
+| --- | --- | --- | --- | --- | --- |
+| revenue | 3 | 2027-08-02 | 2030-08-02 | 28.95% | 27.05% |
+| fcf | 3 | 2027-08-02 | 2030-08-02 | Not available | Not available |
+| revenue | 5 | 2027-08-02 | 2032-08-02 | 21.49% | 19.69% |
+| fcf | 5 | 2027-08-02 | 2032-08-02 | Not available | Not available |
+
+### Per-share forecast: ai-slowdown
+
+Illustrative shareholder diagnostic: last annual diluted average shares are used as a starting proxy, not observed TTM diluted shares. Assume 1.5% annual net dilution, 8% SBC/revenue and $2.45B annual repurchases. These are not guidance. No FCF or EPS bridge is supplied because a reliable future interest/nonoperating bridge is unavailable.
+
+EPS below is an adjusted model proxy, not GAAP guidance.
+
+| Period end | Revenue/share | FCF/share | FCFF/share | EPS | SBC/share | Diluted average shares | Share growth | SBC/revenue | Repurchases USD | Net dilution |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 2027-08-02 | $25.8 | Not available | $6.05 | Not available | $2.06 | 4,925,795,000 | 1.50% | 8.00% | $2,450,000,000 | 1.50% |
+| 2028-08-02 | $30.01 | Not available | $7.71 | Not available | $2.4 | 4,999,681,925 | 1.50% | 8.00% | $2,450,000,000 | 1.50% |
+| 2029-08-02 | $32.13 | Not available | $8.65 | Not available | $2.57 | 5,074,677,154 | 1.50% | 8.00% | $2,450,000,000 | 1.50% |
+| 2030-08-02 | $33.32 | Not available | $9.15 | Not available | $2.67 | 5,150,797,311 | 1.50% | 8.00% | $2,450,000,000 | 1.50% |
+| 2031-08-02 | $34.26 | Not available | $9.47 | Not available | $2.74 | 5,228,059,271 | 1.50% | 8.00% | $2,450,000,000 | 1.50% |
+| 2032-08-02 | $34.94 | Not available | $9.72 | Not available | $2.79 | 5,306,480,160 | 1.50% | 8.00% | $2,450,000,000 | 1.50% |
+| 2033-08-02 | $35.54 | Not available | $9.9 | Not available | $2.84 | 5,386,077,362 | 1.50% | 8.00% | $2,450,000,000 | 1.50% |
+| 2034-08-02 | $36.06 | Not available | $10.05 | Not available | $2.89 | 5,466,868,523 | 1.50% | 8.00% | $2,450,000,000 | 1.50% |
+| 2035-08-02 | $36.6 | Not available | $10.2 | Not available | $2.93 | 5,548,871,551 | 1.50% | 8.00% | $2,450,000,000 | 1.50% |
+| 2036-08-02 | $37.14 | Not available | $10.35 | Not available | $2.97 | 5,632,104,624 | 1.50% | 8.00% | $2,450,000,000 | 1.50% |
+
+| Forecast measure | Years | Start | End | Company CAGR | Per-share CAGR |
+| --- | --- | --- | --- | --- | --- |
+| revenue | 3 | 2027-08-02 | 2030-08-02 | 10.53% | 8.89% |
+| fcf | 3 | 2027-08-02 | 2030-08-02 | Not available | Not available |
+| revenue | 5 | 2027-08-02 | 2032-08-02 | 7.84% | 6.25% |
+| fcf | 5 | 2027-08-02 | 2032-08-02 | Not available | Not available |
+
+### Per-share forecast: ai-execution-upside
+
+Illustrative shareholder diagnostic: last annual diluted average shares are used as a starting proxy, not observed TTM diluted shares. Assume 1.5% annual net dilution, 8% SBC/revenue and $2.45B annual repurchases. These are not guidance. No FCF or EPS bridge is supplied because a reliable future interest/nonoperating bridge is unavailable.
+
+EPS below is an adjusted model proxy, not GAAP guidance.
+
+| Period end | Revenue/share | FCF/share | FCFF/share | EPS | SBC/share | Diluted average shares | Share growth | SBC/revenue | Repurchases USD | Net dilution |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 2027-08-02 | $34.41 | Not available | $8.87 | Not available | $2.75 | 4,925,795,000 | 1.50% | 8.00% | $2,450,000,000 | 1.50% |
+| 2028-08-02 | $58.42 | Not available | $15.52 | Not available | $4.67 | 4,999,681,925 | 1.50% | 8.00% | $2,450,000,000 | 1.50% |
+| 2029-08-02 | $76.95 | Not available | $22.71 | Not available | $6.16 | 5,074,677,154 | 1.50% | 8.00% | $2,450,000,000 | 1.50% |
+| 2030-08-02 | $92.59 | Not available | $28.47 | Not available | $7.41 | 5,150,797,311 | 1.50% | 8.00% | $2,450,000,000 | 1.50% |
+| 2031-08-02 | $107.72 | Not available | $33.64 | Not available | $8.62 | 5,228,059,271 | 1.50% | 8.00% | $2,450,000,000 | 1.50% |
+| 2032-08-02 | $120.75 | Not available | $38.38 | Not available | $9.66 | 5,306,480,160 | 1.50% | 8.00% | $2,450,000,000 | 1.50% |
+| 2033-08-02 | $130.08 | Not available | $42.16 | Not available | $10.41 | 5,386,077,362 | 1.50% | 8.00% | $2,450,000,000 | 1.50% |
+| 2034-08-02 | $137.77 | Not available | $45.02 | Not available | $11.02 | 5,466,868,523 | 1.50% | 8.00% | $2,450,000,000 | 1.50% |
+| 2035-08-02 | $143.49 | Not available | $47.29 | Not available | $11.48 | 5,548,871,551 | 1.50% | 8.00% | $2,450,000,000 | 1.50% |
+| 2036-08-02 | $146.89 | Not available | $48.84 | Not available | $11.75 | 5,632,104,624 | 1.50% | 8.00% | $2,450,000,000 | 1.50% |
+
+| Forecast measure | Years | Start | End | Company CAGR | Per-share CAGR |
+| --- | --- | --- | --- | --- | --- |
+| revenue | 3 | 2027-08-02 | 2030-08-02 | 41.18% | 39.09% |
+| fcf | 3 | 2027-08-02 | 2030-08-02 | Not available | Not available |
+| revenue | 5 | 2027-08-02 | 2032-08-02 | 30.47% | 28.54% |
+| fcf | 5 | 2027-08-02 | 2032-08-02 | Not available | Not available |
+
+All formulas, dated source inputs and reported/estimated bases are retained in per-share-economics.json and per-share-metrics.csv. Repurchase spending does not prove dilution was offset.
 
 ## Business classification and central valuation
 
@@ -12,14 +219,7 @@ AI-led semiconductor growth with a recurring infrastructure-software cash-flow b
 
 An explicit AI/non-AI/software FCFF model represents the changing mix better than the historical-average policy screen. Selection follows business economics, not whichever style label gives the highest value. Central assumptions remain provisional because long-run AI margins and cash taxes are not independently established.
 
-**Central conditional estimate: $318.73** (provisional_estimate). Method: Explicit segment FCFF DCF. Business profile determines model suitability. Investment lens does not set growth or margins. Valuation is conditional on the explicit operating forecast; the policy result is a separate investment screen. GARP is a price discipline, not an intrinsic company category.
-
-| Layer | Question answered |
-| --- | --- |
-| Business classification | Which operating model fits the revenue mix and economics? |
-| Valuation | What are the explicit operating cash flows worth under these estimates? |
-| Price-implied outcomes | Which operating paths would support the supplied price? |
-| Policy decision | Does the company at this price meet the user’s quality and margin-of-safety rules? |
+**Central conditional estimate: about $320; confidence Low** (provisional_estimate). Method: Explicit segment FCFF DCF. Business profile determines model suitability. Investment lens does not set growth or margins. Valuation is conditional on the explicit operating forecast; the policy result is a separate investment screen. GARP is a price discipline, not an intrinsic company category.
 
 - AI growth and near-term guidance require a distinct AI operating forecast. [Source](https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial)
 - Software profitability and rising end-customer concentration require separate treatment of margins and execution risk. [Source](https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/)
@@ -2335,4 +2535,3 @@ Historical sensitivity varies constant FCFF growth. Forward sensitivity shifts e
 - Missing D&A is not treated as zero. Missing TTM comparison periods prevent a trailing value.
 - A forecast requires segment bases that reconcile to consolidated revenue. Segment names must not overlap (for example, AI cannot be added to semiconductor revenue that already includes AI).
 - Forecast losses do not create an assumed tax refund. Terminal growth requires continued reinvestment.
-

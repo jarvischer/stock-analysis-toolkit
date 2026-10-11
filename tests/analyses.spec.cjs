@@ -76,8 +76,21 @@ test('operating expectations and central value remain separate from the policy v
  a.valuation={comparisons:[],cash_flow_bases:[],forward:[],sensitivity:[],forward_sensitivity:[],central_model:{central_scenario_id:'central',value_per_share:319,status:'provisional_estimate',business_profile:'AI and software',reason:'Explicit operations',distinction:'Policy screen remains separate'},operating_expectations:{cases:[{assumed_segment_operating_margin:.45,required_revenue_cagr:.21,milestones:[{period_end:'2030-08-02',revenue:193e9,operating_margin:.45,fcff:62e9}]}],definition:'Conditional path',period_note:'Rolling periods, not fiscal-year guidance'},business_review:{evidence:[],calculations:[],capital_allocation_conclusion:'Mixed evidence'}};
  await page.goto('/?lang=en#tool-analyses');
  await page.locator('[data-analysis-file]').setInputFiles({name:'expectations.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(a))});
- await expect(page.locator('[data-operating-review]')).toContainText('319');
+ await expect(page.locator('[data-operating-review]')).toContainText('about $320');
  await expect(page.locator('[data-operating-review]')).toContainText('2030-08-02');
  await expect(page.locator('[data-operating-review]')).toContainText('What Must Be True?');
  await expect(page.locator('[data-analysis-status]')).toHaveAttribute('data-status','meets_rules');
+});
+
+test('investment snapshot shows uncertainty, unassigned probabilities and per-share data',async({page})=>{
+ const fs=require('node:fs');
+ const a=JSON.parse(fs.readFileSync('analyses/AVGO-2026-10-11-v4.json','utf8'));
+ await page.setViewportSize({width:390,height:844});await page.goto('/?lang=en#tool-analyses');
+ await page.locator('[data-analysis-file]').setInputFiles({name:'avgo.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(a))});
+ const snapshot=page.locator('[data-investment-snapshot]');
+ await expect(snapshot).toContainText('about $320');await expect(snapshot).toContainText('valuation uncertainty is high');
+ await expect(snapshot).toContainText('Not assigned');await expect(snapshot).toContainText('Per-share economics');
+ await expect(snapshot).toContainText('Company CAGR');
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
+ await page.reload();await expect(page.locator('[data-investment-snapshot]')).toContainText('about $320');
 });

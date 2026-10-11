@@ -1,3 +1,5 @@
+import { assessValuation } from './valuation-assessment.mjs';
+import { perShareEconomics } from './per-share.mjs';
 import { operatingExpectations, selectCentralModel } from './expectations.mjs';
 import { businessReview } from './business-review.mjs';
 import { createRequire } from 'node:module';
@@ -90,5 +92,7 @@ export function valuationComparison(facts, A, metrics, price) {
   comparison.central_model = selectCentralModel(A, comparison);
   comparison.operating_expectations = operatingExpectations(A, comparison, price);
   comparison.business_review = businessReview(facts, A, metrics);
+  comparison.assessment = assessValuation(A, comparison);
+  comparison.per_share_economics = perShareEconomics(facts, A, metrics, forward);
   return { extraMetrics, comparison };
 }

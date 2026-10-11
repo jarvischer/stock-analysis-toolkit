@@ -10,6 +10,8 @@
   const objects = a => Array.isArray(a) && a.every(v => v && typeof v === 'object' && !Array.isArray(v));
   const isValuation = v => v == null || (typeof v === 'object' && objects(v.comparisons) && objects(v.cash_flow_bases) &&
     (v.operating_expectations == null || objects(v.operating_expectations.cases) && v.operating_expectations.cases.every(c => objects(c.milestones))) &&
+    (v.assessment == null || typeof v.assessment === 'object' && ['factors','sensitivity','scenarios'].every(k=>v.assessment[k]==null||objects(v.assessment[k])) && (v.assessment.sensitivity||[]).every(s=>objects(s.values)&&s.values.length===2) && (v.assessment.probabilities==null || (v.assessment.probabilities.sensitivity==null||objects(v.assessment.probabilities.sensitivity)&&v.assessment.probabilities.sensitivity.every(s=>objects(s.contributions))) && (v.assessment.probabilities.expected==null||objects(v.assessment.probabilities.expected.contributions)))) &&
+    (v.per_share_economics == null || objects(v.per_share_economics.historical)&&v.per_share_economics.historical.every(r=>objects(r.metrics))&&objects(v.per_share_economics.growth)&&objects(v.per_share_economics.forecasts)&&v.per_share_economics.forecasts.every(f=>objects(f.rows)&&f.rows.every(r=>objects(r.metrics)))) &&
     (v.business_review == null || objects(v.business_review.evidence) && (v.business_review.calculations == null || objects(v.business_review.calculations))) &&
     ['sensitivity', 'forward_sensitivity'].every(k => v[k] == null || objects(v[k])) &&
     (v.forward == null || objects(v.forward) && v.forward.every(s => objects(s.rows))));
@@ -44,13 +46,40 @@
     </article>`;
   }
 
+  function investmentSnapshot(v, result) {
+    const a=v?.assessment, p=a?.probabilities, ps=v?.per_share_economics;
+    if(!a)return '';
+    const round=n=>Number.isFinite(n)?'about $'+(Math.round(n/5)*5).toLocaleString('en-US'):'Not available';
+    const table=(headers,rows)=>`<div class="table-wrap"><table class="t"><thead><tr>${headers.map(x=>`<th>${E(x)}</th>`).join('')}</tr></thead><tbody>${rows.map(r=>`<tr>${r.map(x=>`<td>${E(x)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+    const central=v.forward?.find(s=>s.id===v.central_model?.central_scenario_id);
+    const context=a.snapshot_context||{};
+    let out=`<section class="card" data-investment-snapshot data-no-translate><h3>Investment Snapshot</h3>`+table(['Item','Assessment'],[
+      ['Business classification',v.central_model?.business_profile],['Current price',SAT.fmt.price(v.price?.value)+'; '+v.price?.date],['Central valuation',round(a.central_value)],['Reasonable valuation range',a.range?round(a.range.low)+' to '+round(a.range.high):'Not available'],['Valuation confidence',a.confidence],['Slowdown / Bear',round(a.scenarios?.[0]?.value)],['Upside',round(a.scenarios?.[2]?.value)],['Scenario-weighted expected value',p?.expected?round(p.expected.value):'Not assigned — insufficient evidence'],['Current price / central value',num(central?.price_to_value)+'×'],['Current price / expected value',p?.expected?num(p.expected.price_to_expected_value)+'×':'Not available'],['Required Margin of Safety',pct(result.required_margin_of_safety)],['Business quality score',num(result.quality_score)+'/5'],['Primary valuation driver',context.driver||'Not documented'],['Primary risk',context.risk||'Not documented'],['Primary thesis-break condition',context.thesis_break||'Not documented']]);
+    out+='<h4>Four separate questions</h4><p><b>Business Quality:</b> Is this a good business? <b>Intrinsic Value:</b> What are its future cash flows reasonably worth? <b>Market Expectations:</b> What outcomes justify today’s price? <b>Investment Decision:</b> Is the investment attractive given quality, uncertainty, returns, Margin of Safety and risks?</p><p>Quality does not determine value. Failure of a conservative historical policy screen alone is not a universal investment conclusion. A weighted present valuation is not an expected annual investment return.</p>';
+    out+=`<h4>Valuation confidence: ${E(a.confidence)}</h4><p>${E(a.confidence_method||a.reason)}</p><p>${E(a.range?.definition)}</p>${a.wide_dispersion?'<p><b>Scenario values are widely dispersed; valuation uncertainty is high.</b></p>':''}`;
+    out+=table(['Factor','Risk','Evidence','Source'],(a.factors||[]).map(f=>[f.key,f.risk,f.reason,f.source]));
+    out+=table(['Sensitivity variable','Input shift (pp)','Lower input value/share','Higher input value/share'],(a.sensitivity||[]).map(s=>[s.variable,'±'+s.step*100,num(s.values[0].value_per_share),num(s.values[1].value_per_share)]));
+    out+=`<h4>Scenario probabilities and expected value</h4><p>${E(p?.label)}</p><p>${E(p?.reason)}</p>`;
+    out+=table(['Scenario','Value/share','Probability','Contribution'],(a.scenarios||[]).map(s=>{const r=p?.expected?.contributions?.find(r=>r.id===s.id);return[s.id,num(s.value),r?pct(r.probability):'Not assigned',r?num(r.contribution):'Not assigned'];}));
+    out+=`<p>${E(p?.sensitivity_label)}</p>`+table(['Illustrative combination','Weights','Weighted valuation'],(p?.sensitivity||[]).map(s=>[s.reason,s.contributions.map(c=>c.id+': '+pct(c.probability)).join('; '),num(s.value)]));
+    if(ps){
+      out+=`<h4>Per-share economics</h4><p>${E(ps.definition)}</p><p>${E(ps.forecast_note)}</p>`;
+      const periods=(title,rows)=>`<details><summary>${E(title)}</summary>`+table(['Period','Metric','Value (USD/share, shares, USD or ratio)','Basis','Formula'],rows.flatMap(r=>r.metrics.map(m=>[r.period_end,m.key,m.value==null?'Not available':num(m.value),m.basis,m.formula])))+'</details>';
+      out+=periods('Historical per-share economics',ps.historical||[]);
+      out+=table(['Measure','Years','Company CAGR','Per-share CAGR','Interpretation'],(ps.growth||[]).map(g=>[g.key,g.years,pct(g.company.value),pct(g.per_share.value),g.interpretation]));
+      for(const f of ps.forecasts||[])out+=`<p>${E(f.reason||f.assumptions?.reason)}</p>`+periods('Forecast: '+f.id,f.rows||[]);
+    }
+    out+=`<details><summary>Full formulas, periods, source inputs and assumptions</summary><pre>${E(JSON.stringify({assessment:a,per_share_economics:ps},null,2))}</pre></details></section>`;
+    return out;
+  }
+
   function operatingReview(v) {
     const c = v.central_model, w = v.operating_expectations, b = v.business_review;
     if (!c?.central_scenario_id) return '';
     const milestones = (w?.cases || []).flatMap(s => (s.milestones || []).map(r => `<tr><td>${E(pct(s.assumed_segment_operating_margin))}</td><td>${E(pct(s.required_revenue_cagr))}</td><td>${E(r.period_end)}</td><td>${E(num(r.revenue))}</td><td>${E(pct(r.operating_margin))}</td><td>${E(num(r.fcff))}</td></tr>`)).join('');
     const calculations = (b?.calculations || []).map(r => `<li><code>${E(r.key)}</code>: <b>${E(/-share|-to-fcf|-cagr-/.test(r.key) ? pct(r.value) : num(r.value))}</b> — ${E(r.formula)}</li>`).join('');
     const evidence = (b?.evidence || []).map(e => `<li><code>${E(e.id)}</code>: ${E(num(e.value))} — ${E(e.kind)}, ${E(e.as_of)}. ${E(e.note)} <small>${E(e.source)}</small></li>`).join('');
-    return `<section data-operating-review data-no-translate><h3>Central valuation and business classification</h3><p>${E(c.business_profile)}</p><p>${E(c.investment_lens)}</p><p><b>${E(num(c.value_per_share))} USD/share — ${E(c.status)}</b></p><p>${E(c.reason)}</p><p>${E(c.distinction)}</p><h3>What Must Be True?</h3><p>${E(w?.definition)}</p><p>${E(w?.period_note)}</p><div class="table-wrap"><table class="t"><thead><tr><th>Assumed margin</th><th>Required revenue growth</th><th>Period end</th><th>Revenue</th><th>Operating margin</th><th>FCFF</th></tr></thead><tbody>${milestones}</tbody></table></div><h3>AI, capital allocation and external evidence</h3><ul>${calculations}</ul><p>${E(b?.capital_allocation_conclusion)}</p><p>${E(b?.acquisition_return?.reason)}</p><p>${E(b?.analyst_coverage)}</p><p>${E(b?.management_coverage)}</p><p>${E(b?.competition)}</p><details><summary>Research sources and assumptions</summary><ul>${evidence}</ul></details></section>`;
+    return `<section data-operating-review data-no-translate><h3>Central valuation and business classification</h3><p>${E(c.business_profile)}</p><p>${E(c.investment_lens)}</p><p><b>about $${E(Math.round(c.value_per_share/5)*5)} /share — confidence ${E(v.assessment?.confidence||'not assessed')}</b></p><p>${E(c.reason)}</p><p>${E(c.distinction)}</p><h3>What Must Be True?</h3><p>${E(w?.definition)}</p><p>${E(w?.period_note)}</p><div class="table-wrap"><table class="t"><thead><tr><th>Assumed margin</th><th>Required revenue growth</th><th>Period end</th><th>Revenue</th><th>Operating margin</th><th>FCFF</th></tr></thead><tbody>${milestones}</tbody></table></div><h3>AI, capital allocation and external evidence</h3><ul>${calculations}</ul><p>${E(b?.capital_allocation_conclusion)}</p><p>${E(b?.acquisition_return?.reason)}</p><p>${E(b?.analyst_coverage)}</p><p>${E(b?.management_coverage)}</p><p>${E(b?.competition)}</p><details><summary>Research sources and assumptions</summary><ul>${evidence}</ul></details></section>`;
   }
 
   function valuation(v) {
@@ -85,6 +114,7 @@
         </div>
         <p data-analysis-summary data-no-translate>${E(r.summary)}</p>
       </section>
+      ${investmentSnapshot(a.valuation, r)}
       ${valuation(a.valuation)}
       ${a.steps.map((s) => step(a, s)).join('')}`;
     view.querySelector('[data-analysis-empty]').hidden = true;

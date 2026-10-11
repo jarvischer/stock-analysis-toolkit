@@ -1,0 +1,3025 @@
+{
+  "status": "ok",
+  "central_value": 318.730873322425,
+  "confidence": "Low",
+  "confidence_method": "Conservative evidence rubric: any high or unknown risk => Low; at least two medium risks => Medium; otherwise High. This is an analyst evidence assessment, not a statistical probability.",
+  "factors": [
+    {
+      "key": "forecast_visibility",
+      "risk": "high",
+      "reason": "Quarterly guidance supports near-term growth, but does not establish a ten-year path.",
+      "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial"
+    },
+    {
+      "key": "revenue_concentration",
+      "risk": "high",
+      "reason": "AI is a large and fast-changing portion of consolidated revenue; mix and economics can change quickly.",
+      "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial"
+    },
+    {
+      "key": "cyclicality",
+      "risk": "high",
+      "reason": "Hyperscaler spending and semiconductor demand can slow; slowdown scenario reduces growth and margins.",
+      "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial"
+    },
+    {
+      "key": "margin_uncertainty",
+      "risk": "high",
+      "reason": "Non-GAAP guidance is not the model margin after SBC. Future systems mix and customer bargaining can compress margins.",
+      "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial"
+    },
+    {
+      "key": "reinvestment_uncertainty",
+      "risk": "high",
+      "reason": "Working-capital and capital-intensity paths are analyst assumptions, with limited visibility into future systems delivery.",
+      "source": "assumptions.forward_scenarios.operating-central"
+    },
+    {
+      "key": "tax_uncertainty",
+      "risk": "medium",
+      "reason": "21% is an explicit normalized estimate; historical tax benefits do not establish a sustainable rate.",
+      "source": "assumptions.normalization"
+    },
+    {
+      "key": "customer_concentration",
+      "risk": "high",
+      "reason": "Five end customers represent 55% of latest-quarter revenue; distributor exposure overlaps and must not be added.",
+      "source": "https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/"
+    },
+    {
+      "key": "technological_disruption",
+      "risk": "high",
+      "reason": "Customer internal design and alternative accelerator ecosystems threaten both volume and margins.",
+      "source": "https://ir.amd.com/financial-information/sec-filings/content/0001193125-26-129106/0001193125-26-129106.pdf"
+    },
+    {
+      "key": "terminal_value_dependence",
+      "risk": "medium",
+      "reason": "PV terminal value / enterprise value; above 75% is high, above 50% medium (framework judgment thresholds)",
+      "source": "valuation.forward.operating-central.valuation",
+      "thresholds": {
+        "high": 0.75,
+        "medium": 0.5
+      },
+      "value": 0.587317859793386,
+      "formula": "PV terminal value / enterprise value",
+      "inputs": {
+        "pv_terminal_value": 914422906588.7366,
+        "enterprise_value": 1556947215789.4597
+      },
+      "period_end": "2026-08-02",
+      "basis": "calculated"
+    },
+    {
+      "key": "scenario_dispersion",
+      "risk": "high",
+      "reason": "Scenario values are widely dispersed: valuation uncertainty is high.",
+      "source": "selected scenario DCFs",
+      "value": 1.303925150782411,
+      "formula": "(maximum scenario value - minimum scenario value) / central value; positive maximum/minimum ratio",
+      "inputs": {
+        "minimum": 125.83488662333782,
+        "maximum": 541.4360886792904,
+        "central": 318.730873322425,
+        "ratio": 4.302750240479603
+      },
+      "period_end": "2026-08-02",
+      "basis": "calculated"
+    }
+  ],
+  "primary_uncertainties": [
+    {
+      "key": "forecast_visibility",
+      "risk": "high",
+      "reason": "Quarterly guidance supports near-term growth, but does not establish a ten-year path.",
+      "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial"
+    },
+    {
+      "key": "revenue_concentration",
+      "risk": "high",
+      "reason": "AI is a large and fast-changing portion of consolidated revenue; mix and economics can change quickly.",
+      "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial"
+    },
+    {
+      "key": "cyclicality",
+      "risk": "high",
+      "reason": "Hyperscaler spending and semiconductor demand can slow; slowdown scenario reduces growth and margins.",
+      "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial"
+    },
+    {
+      "key": "margin_uncertainty",
+      "risk": "high",
+      "reason": "Non-GAAP guidance is not the model margin after SBC. Future systems mix and customer bargaining can compress margins.",
+      "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial"
+    },
+    {
+      "key": "reinvestment_uncertainty",
+      "risk": "high",
+      "reason": "Working-capital and capital-intensity paths are analyst assumptions, with limited visibility into future systems delivery.",
+      "source": "assumptions.forward_scenarios.operating-central"
+    },
+    {
+      "key": "tax_uncertainty",
+      "risk": "medium",
+      "reason": "21% is an explicit normalized estimate; historical tax benefits do not establish a sustainable rate.",
+      "source": "assumptions.normalization"
+    },
+    {
+      "key": "customer_concentration",
+      "risk": "high",
+      "reason": "Five end customers represent 55% of latest-quarter revenue; distributor exposure overlaps and must not be added.",
+      "source": "https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/"
+    },
+    {
+      "key": "technological_disruption",
+      "risk": "high",
+      "reason": "Customer internal design and alternative accelerator ecosystems threaten both volume and margins.",
+      "source": "https://ir.amd.com/financial-information/sec-filings/content/0001193125-26-129106/0001193125-26-129106.pdf"
+    },
+    {
+      "key": "terminal_value_dependence",
+      "risk": "medium",
+      "reason": "PV terminal value / enterprise value; above 75% is high, above 50% medium (framework judgment thresholds)",
+      "source": "valuation.forward.operating-central.valuation",
+      "thresholds": {
+        "high": 0.75,
+        "medium": 0.5
+      },
+      "value": 0.587317859793386,
+      "formula": "PV terminal value / enterprise value",
+      "inputs": {
+        "pv_terminal_value": 914422906588.7366,
+        "enterprise_value": 1556947215789.4597
+      },
+      "period_end": "2026-08-02",
+      "basis": "calculated"
+    },
+    {
+      "key": "scenario_dispersion",
+      "risk": "high",
+      "reason": "Scenario values are widely dispersed: valuation uncertainty is high.",
+      "source": "selected scenario DCFs",
+      "value": 1.303925150782411,
+      "formula": "(maximum scenario value - minimum scenario value) / central value; positive maximum/minimum ratio",
+      "inputs": {
+        "minimum": 125.83488662333782,
+        "maximum": 541.4360886792904,
+        "central": 318.730873322425,
+        "ratio": 4.302750240479603
+      },
+      "period_end": "2026-08-02",
+      "basis": "calculated"
+    }
+  ],
+  "wide_dispersion": true,
+  "range": {
+    "low": 125.83488662333782,
+    "high": 541.4360886792904,
+    "reason": "The slowdown and execution-upside operating paths bound a working range for the explicitly modeled AI outcomes. They are not exhaustive tail outcomes.",
+    "definition": "Scenario-supported working valuation range, not a statistical confidence interval or exhaustive bound.",
+    "formula": "Minimum and maximum of the three explicitly selected operating scenarios",
+    "inputs": {
+      "scenarios": [
+        {
+          "id": "ai-slowdown",
+          "value": 125.83488662333782
+        },
+        {
+          "id": "operating-central",
+          "value": 318.730873322425
+        },
+        {
+          "id": "ai-execution-upside",
+          "value": 541.4360886792904
+        }
+      ]
+    },
+    "period_end": "2026-08-02",
+    "basis": "scenario_estimate"
+  },
+  "display_values": {
+    "central": 320,
+    "low": 125,
+    "high": 540,
+    "formula": "Round exact scenario-derived USD/share values to nearest $5 for conclusions",
+    "inputs": {
+      "central": 318.730873322425,
+      "low": 125.83488662333782,
+      "high": 541.4360886792904
+    },
+    "period_end": "2026-08-02",
+    "basis": "presentation_only"
+  },
+  "sensitivity": [
+    {
+      "variable": "wacc",
+      "step": 0.01,
+      "values": [
+        {
+          "delta": -0.01,
+          "value_per_share": 382.947926337263,
+          "status": "ok"
+        },
+        {
+          "delta": 0.01,
+          "value_per_share": 271.7078762328907,
+          "status": "ok"
+        }
+      ],
+      "span": 111.2400501043723,
+      "formula": "Reprice unchanged central operating DCF with one assumption shifted in every forecast year; span = absolute difference between two values",
+      "inputs": {
+        "central_scenario": "operating-central",
+        "central_assumptions": {
+          "id": "operating-central",
+          "style": "growth",
+          "years": 10,
+          "tax_rate": 0.21,
+          "wacc": 0.09,
+          "terminal_growth": 0.025,
+          "terminal_roic": 0.15,
+          "sbc_treatment": "expensed_in_margins",
+          "corporate_costs": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "segments": [
+            {
+              "name": "AI semiconductors (custom accelerators and networking)",
+              "base_revenue": {
+                "period_end": "2026-08-02",
+                "components": [
+                  {
+                    "item": "ai_q4_2025",
+                    "value": 6500000000,
+                    "period_end": "2025-11-02",
+                    "source": "https://www.fool.com/earnings/call-transcripts/2025/12/12/broadcom-avgo-q4-2025-earnings-call-transcript/",
+                    "sign": 1
+                  },
+                  {
+                    "item": "ai_q1_2026",
+                    "value": 8400000000,
+                    "period_end": "2026-02-01",
+                    "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-first-quarter-fiscal-year-2026-financial",
+                    "sign": 1
+                  },
+                  {
+                    "item": "ai_q2_2026",
+                    "value": 10800000000,
+                    "period_end": "2026-05-03",
+                    "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-second-quarter-fiscal-year-2026-financial",
+                    "sign": 1
+                  },
+                  {
+                    "item": "ai_q3_2026",
+                    "value": 16700000000,
+                    "period_end": "2026-08-02",
+                    "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial",
+                    "sign": 1
+                  }
+                ]
+              },
+              "base_working_capital_ratio": 0.18,
+              "growth": [
+                1.5,
+                0.6,
+                0.35,
+                0.2,
+                0.15,
+                0.1,
+                0.08,
+                0.06,
+                0.05,
+                0.04
+              ],
+              "operating_margin": [
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4
+              ],
+              "depreciation_to_revenue": [
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015
+              ],
+              "capex_to_revenue": [
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025
+              ],
+              "working_capital_to_revenue": [
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18
+              ]
+            },
+            {
+              "name": "Non-AI semiconductors",
+              "base_revenue": {
+                "period_end": "2026-08-02",
+                "components": [
+                  {
+                    "item": "segment_revenue_semiconductor",
+                    "period_end": "2025-11-02",
+                    "value": 36858000000,
+                    "source": "10-K 0001730168-25-000121",
+                    "sign": 1
+                  },
+                  {
+                    "item": "segment_revenue_semiconductor",
+                    "period_end": "2026-08-02",
+                    "value": 48363000000,
+                    "source": "10-Q 0001730168-26-000080",
+                    "sign": 1
+                  },
+                  {
+                    "item": "segment_revenue_semiconductor",
+                    "period_end": "2025-08-03",
+                    "value": 25786000000,
+                    "source": "10-Q 0001730168-26-000080",
+                    "sign": -1
+                  },
+                  {
+                    "item": "ai_q4_2025",
+                    "value": 6500000000,
+                    "period_end": "2025-11-02",
+                    "source": "https://www.fool.com/earnings/call-transcripts/2025/12/12/broadcom-avgo-q4-2025-earnings-call-transcript/",
+                    "sign": -1
+                  },
+                  {
+                    "item": "ai_q1_2026",
+                    "value": 8400000000,
+                    "period_end": "2026-02-01",
+                    "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-first-quarter-fiscal-year-2026-financial",
+                    "sign": -1
+                  },
+                  {
+                    "item": "ai_q2_2026",
+                    "value": 10800000000,
+                    "period_end": "2026-05-03",
+                    "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-second-quarter-fiscal-year-2026-financial",
+                    "sign": -1
+                  },
+                  {
+                    "item": "ai_q3_2026",
+                    "value": 16700000000,
+                    "period_end": "2026-08-02",
+                    "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial",
+                    "sign": -1
+                  }
+                ]
+              },
+              "base_working_capital_ratio": 0.18,
+              "growth": [
+                0.03,
+                0.03,
+                0.03,
+                0.03,
+                0.03,
+                0.03,
+                0.03,
+                0.03,
+                0.03,
+                0.03
+              ],
+              "operating_margin": [
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35
+              ],
+              "depreciation_to_revenue": [
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015
+              ],
+              "capex_to_revenue": [
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025
+              ],
+              "working_capital_to_revenue": [
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18
+              ]
+            },
+            {
+              "name": "Infrastructure software (including VMware)",
+              "base_revenue": {
+                "period_end": "2026-08-02",
+                "components": [
+                  {
+                    "item": "segment_revenue_software",
+                    "period_end": "2025-11-02",
+                    "value": 27029000000,
+                    "source": "10-K 0001730168-25-000121",
+                    "sign": 1
+                  },
+                  {
+                    "item": "segment_revenue_software",
+                    "period_end": "2026-08-02",
+                    "value": 22726000000,
+                    "source": "10-Q 0001730168-26-000080",
+                    "sign": 1
+                  },
+                  {
+                    "item": "segment_revenue_software",
+                    "period_end": "2025-08-03",
+                    "value": 20086000000,
+                    "source": "10-Q 0001730168-26-000080",
+                    "sign": -1
+                  }
+                ]
+              },
+              "base_working_capital_ratio": 0.05,
+              "growth": [
+                0.12,
+                0.1,
+                0.08,
+                0.07,
+                0.06,
+                0.05,
+                0.04,
+                0.03,
+                0.03,
+                0.03
+              ],
+              "operating_margin": [
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5
+              ],
+              "depreciation_to_revenue": [
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005
+              ],
+              "capex_to_revenue": [
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01
+              ],
+              "working_capital_to_revenue": [
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05
+              ]
+            }
+          ],
+          "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial ; https://global.morningstar.com/en-gb/stocks/why-broadcom-stock-is-worth-usd-650 ; analyst estimates dated 2026-10-11",
+          "reason": "Analyst estimate: explicit AI adoption path with growth fading, non-AI semiconductors growing modestly and software compounding. Central AI growth is below the aggressive analyst-reported 2027/2028 outlook, reflecting delivery and concentration risk. Downside slows AI and compresses its margin; upside tests execution nearer that outlook. Margins include SBC and all allocated corporate costs, exclude acquisition amortization and include physical depreciation. No style premium or probability weighting. These are rolling TTM forecasts, not exact fiscal-year guidance."
+        },
+        "variable": "wacc",
+        "step": 0.01,
+        "capital": {
+          "shares": 4773629865,
+          "claims": 59419000000,
+          "cash": 23975000000,
+          "shares_date": "2026-08-28",
+          "balance_sheet_date": "2026-08-02"
+        }
+      },
+      "period_end": "2026-08-02",
+      "basis": "sensitivity_estimate"
+    },
+    {
+      "variable": "revenue_growth",
+      "step": 0.02,
+      "values": [
+        {
+          "delta": -0.02,
+          "value_per_share": 278.1986687442288,
+          "status": "ok"
+        },
+        {
+          "delta": 0.02,
+          "value_per_share": 365.1796194655775,
+          "status": "ok"
+        }
+      ],
+      "span": 86.98095072134868,
+      "formula": "Reprice unchanged central operating DCF with one assumption shifted in every forecast year; span = absolute difference between two values",
+      "inputs": {
+        "central_scenario": "operating-central",
+        "central_assumptions": {
+          "id": "operating-central",
+          "style": "growth",
+          "years": 10,
+          "tax_rate": 0.21,
+          "wacc": 0.09,
+          "terminal_growth": 0.025,
+          "terminal_roic": 0.15,
+          "sbc_treatment": "expensed_in_margins",
+          "corporate_costs": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "segments": [
+            {
+              "name": "AI semiconductors (custom accelerators and networking)",
+              "base_revenue": {
+                "period_end": "2026-08-02",
+                "components": [
+                  {
+                    "item": "ai_q4_2025",
+                    "value": 6500000000,
+                    "period_end": "2025-11-02",
+                    "source": "https://www.fool.com/earnings/call-transcripts/2025/12/12/broadcom-avgo-q4-2025-earnings-call-transcript/",
+                    "sign": 1
+                  },
+                  {
+                    "item": "ai_q1_2026",
+                    "value": 8400000000,
+                    "period_end": "2026-02-01",
+                    "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-first-quarter-fiscal-year-2026-financial",
+                    "sign": 1
+                  },
+                  {
+                    "item": "ai_q2_2026",
+                    "value": 10800000000,
+                    "period_end": "2026-05-03",
+                    "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-second-quarter-fiscal-year-2026-financial",
+                    "sign": 1
+                  },
+                  {
+                    "item": "ai_q3_2026",
+                    "value": 16700000000,
+                    "period_end": "2026-08-02",
+                    "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial",
+                    "sign": 1
+                  }
+                ]
+              },
+              "base_working_capital_ratio": 0.18,
+              "growth": [
+                1.5,
+                0.6,
+                0.35,
+                0.2,
+                0.15,
+                0.1,
+                0.08,
+                0.06,
+                0.05,
+                0.04
+              ],
+              "operating_margin": [
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4
+              ],
+              "depreciation_to_revenue": [
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015
+              ],
+              "capex_to_revenue": [
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025
+              ],
+              "working_capital_to_revenue": [
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18
+              ]
+            },
+            {
+              "name": "Non-AI semiconductors",
+              "base_revenue": {
+                "period_end": "2026-08-02",
+                "components": [
+                  {
+                    "item": "segment_revenue_semiconductor",
+                    "period_end": "2025-11-02",
+                    "value": 36858000000,
+                    "source": "10-K 0001730168-25-000121",
+                    "sign": 1
+                  },
+                  {
+                    "item": "segment_revenue_semiconductor",
+                    "period_end": "2026-08-02",
+                    "value": 48363000000,
+                    "source": "10-Q 0001730168-26-000080",
+                    "sign": 1
+                  },
+                  {
+                    "item": "segment_revenue_semiconductor",
+                    "period_end": "2025-08-03",
+                    "value": 25786000000,
+                    "source": "10-Q 0001730168-26-000080",
+                    "sign": -1
+                  },
+                  {
+                    "item": "ai_q4_2025",
+                    "value": 6500000000,
+                    "period_end": "2025-11-02",
+                    "source": "https://www.fool.com/earnings/call-transcripts/2025/12/12/broadcom-avgo-q4-2025-earnings-call-transcript/",
+                    "sign": -1
+                  },
+                  {
+                    "item": "ai_q1_2026",
+                    "value": 8400000000,
+                    "period_end": "2026-02-01",
+                    "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-first-quarter-fiscal-year-2026-financial",
+                    "sign": -1
+                  },
+                  {
+                    "item": "ai_q2_2026",
+                    "value": 10800000000,
+                    "period_end": "2026-05-03",
+                    "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-second-quarter-fiscal-year-2026-financial",
+                    "sign": -1
+                  },
+                  {
+                    "item": "ai_q3_2026",
+                    "value": 16700000000,
+                    "period_end": "2026-08-02",
+                    "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial",
+                    "sign": -1
+                  }
+                ]
+              },
+              "base_working_capital_ratio": 0.18,
+              "growth": [
+                0.03,
+                0.03,
+                0.03,
+                0.03,
+                0.03,
+                0.03,
+                0.03,
+                0.03,
+                0.03,
+                0.03
+              ],
+              "operating_margin": [
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35
+              ],
+              "depreciation_to_revenue": [
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015
+              ],
+              "capex_to_revenue": [
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025
+              ],
+              "working_capital_to_revenue": [
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18
+              ]
+            },
+            {
+              "name": "Infrastructure software (including VMware)",
+              "base_revenue": {
+                "period_end": "2026-08-02",
+                "components": [
+                  {
+                    "item": "segment_revenue_software",
+                    "period_end": "2025-11-02",
+                    "value": 27029000000,
+                    "source": "10-K 0001730168-25-000121",
+                    "sign": 1
+                  },
+                  {
+                    "item": "segment_revenue_software",
+                    "period_end": "2026-08-02",
+                    "value": 22726000000,
+                    "source": "10-Q 0001730168-26-000080",
+                    "sign": 1
+                  },
+                  {
+                    "item": "segment_revenue_software",
+                    "period_end": "2025-08-03",
+                    "value": 20086000000,
+                    "source": "10-Q 0001730168-26-000080",
+                    "sign": -1
+                  }
+                ]
+              },
+              "base_working_capital_ratio": 0.05,
+              "growth": [
+                0.12,
+                0.1,
+                0.08,
+                0.07,
+                0.06,
+                0.05,
+                0.04,
+                0.03,
+                0.03,
+                0.03
+              ],
+              "operating_margin": [
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5
+              ],
+              "depreciation_to_revenue": [
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005
+              ],
+              "capex_to_revenue": [
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01
+              ],
+              "working_capital_to_revenue": [
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05
+              ]
+            }
+          ],
+          "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial ; https://global.morningstar.com/en-gb/stocks/why-broadcom-stock-is-worth-usd-650 ; analyst estimates dated 2026-10-11",
+          "reason": "Analyst estimate: explicit AI adoption path with growth fading, non-AI semiconductors growing modestly and software compounding. Central AI growth is below the aggressive analyst-reported 2027/2028 outlook, reflecting delivery and concentration risk. Downside slows AI and compresses its margin; upside tests execution nearer that outlook. Margins include SBC and all allocated corporate costs, exclude acquisition amortization and include physical depreciation. No style premium or probability weighting. These are rolling TTM forecasts, not exact fiscal-year guidance."
+        },
+        "variable": "revenue_growth",
+        "step": 0.02,
+        "capital": {
+          "shares": 4773629865,
+          "claims": 59419000000,
+          "cash": 23975000000,
+          "shares_date": "2026-08-28",
+          "balance_sheet_date": "2026-08-02"
+        }
+      },
+      "period_end": "2026-08-02",
+      "basis": "sensitivity_estimate"
+    },
+    {
+      "variable": "tax_rate",
+      "step": 0.05,
+      "values": [
+        {
+          "delta": -0.05,
+          "value_per_share": 340.3324264766283,
+          "status": "ok"
+        },
+        {
+          "delta": 0.05,
+          "value_per_share": 297.12932016822157,
+          "status": "ok"
+        }
+      ],
+      "span": 43.203106308406745,
+      "formula": "Reprice unchanged central operating DCF with one assumption shifted in every forecast year; span = absolute difference between two values",
+      "inputs": {
+        "central_scenario": "operating-central",
+        "central_assumptions": {
+          "id": "operating-central",
+          "style": "growth",
+          "years": 10,
+          "tax_rate": 0.21,
+          "wacc": 0.09,
+          "terminal_growth": 0.025,
+          "terminal_roic": 0.15,
+          "sbc_treatment": "expensed_in_margins",
+          "corporate_costs": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "segments": [
+            {
+              "name": "AI semiconductors (custom accelerators and networking)",
+              "base_revenue": {
+                "period_end": "2026-08-02",
+                "components": [
+                  {
+                    "item": "ai_q4_2025",
+                    "value": 6500000000,
+                    "period_end": "2025-11-02",
+                    "source": "https://www.fool.com/earnings/call-transcripts/2025/12/12/broadcom-avgo-q4-2025-earnings-call-transcript/",
+                    "sign": 1
+                  },
+                  {
+                    "item": "ai_q1_2026",
+                    "value": 8400000000,
+                    "period_end": "2026-02-01",
+                    "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-first-quarter-fiscal-year-2026-financial",
+                    "sign": 1
+                  },
+                  {
+                    "item": "ai_q2_2026",
+                    "value": 10800000000,
+                    "period_end": "2026-05-03",
+                    "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-second-quarter-fiscal-year-2026-financial",
+                    "sign": 1
+                  },
+                  {
+                    "item": "ai_q3_2026",
+                    "value": 16700000000,
+                    "period_end": "2026-08-02",
+                    "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial",
+                    "sign": 1
+                  }
+                ]
+              },
+              "base_working_capital_ratio": 0.18,
+              "growth": [
+                1.5,
+                0.6,
+                0.35,
+                0.2,
+                0.15,
+                0.1,
+                0.08,
+                0.06,
+                0.05,
+                0.04
+              ],
+              "operating_margin": [
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4
+              ],
+              "depreciation_to_revenue": [
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015
+              ],
+              "capex_to_revenue": [
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025
+              ],
+              "working_capital_to_revenue": [
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18
+              ]
+            },
+            {
+              "name": "Non-AI semiconductors",
+              "base_revenue": {
+                "period_end": "2026-08-02",
+                "components": [
+                  {
+                    "item": "segment_revenue_semiconductor",
+                    "period_end": "2025-11-02",
+                    "value": 36858000000,
+                    "source": "10-K 0001730168-25-000121",
+                    "sign": 1
+                  },
+                  {
+                    "item": "segment_revenue_semiconductor",
+                    "period_end": "2026-08-02",
+                    "value": 48363000000,
+                    "source": "10-Q 0001730168-26-000080",
+                    "sign": 1
+                  },
+                  {
+                    "item": "segment_revenue_semiconductor",
+                    "period_end": "2025-08-03",
+                    "value": 25786000000,
+                    "source": "10-Q 0001730168-26-000080",
+                    "sign": -1
+                  },
+                  {
+                    "item": "ai_q4_2025",
+                    "value": 6500000000,
+                    "period_end": "2025-11-02",
+                    "source": "https://www.fool.com/earnings/call-transcripts/2025/12/12/broadcom-avgo-q4-2025-earnings-call-transcript/",
+                    "sign": -1
+                  },
+                  {
+                    "item": "ai_q1_2026",
+                    "value": 8400000000,
+                    "period_end": "2026-02-01",
+                    "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-first-quarter-fiscal-year-2026-financial",
+                    "sign": -1
+                  },
+                  {
+                    "item": "ai_q2_2026",
+                    "value": 10800000000,
+                    "period_end": "2026-05-03",
+                    "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-second-quarter-fiscal-year-2026-financial",
+                    "sign": -1
+                  },
+                  {
+                    "item": "ai_q3_2026",
+                    "value": 16700000000,
+                    "period_end": "2026-08-02",
+                    "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial",
+                    "sign": -1
+                  }
+                ]
+              },
+              "base_working_capital_ratio": 0.18,
+              "growth": [
+                0.03,
+                0.03,
+                0.03,
+                0.03,
+                0.03,
+                0.03,
+                0.03,
+                0.03,
+                0.03,
+                0.03
+              ],
+              "operating_margin": [
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35
+              ],
+              "depreciation_to_revenue": [
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015
+              ],
+              "capex_to_revenue": [
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025
+              ],
+              "working_capital_to_revenue": [
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18
+              ]
+            },
+            {
+              "name": "Infrastructure software (including VMware)",
+              "base_revenue": {
+                "period_end": "2026-08-02",
+                "components": [
+                  {
+                    "item": "segment_revenue_software",
+                    "period_end": "2025-11-02",
+                    "value": 27029000000,
+                    "source": "10-K 0001730168-25-000121",
+                    "sign": 1
+                  },
+                  {
+                    "item": "segment_revenue_software",
+                    "period_end": "2026-08-02",
+                    "value": 22726000000,
+                    "source": "10-Q 0001730168-26-000080",
+                    "sign": 1
+                  },
+                  {
+                    "item": "segment_revenue_software",
+                    "period_end": "2025-08-03",
+                    "value": 20086000000,
+                    "source": "10-Q 0001730168-26-000080",
+                    "sign": -1
+                  }
+                ]
+              },
+              "base_working_capital_ratio": 0.05,
+              "growth": [
+                0.12,
+                0.1,
+                0.08,
+                0.07,
+                0.06,
+                0.05,
+                0.04,
+                0.03,
+                0.03,
+                0.03
+              ],
+              "operating_margin": [
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5
+              ],
+              "depreciation_to_revenue": [
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005
+              ],
+              "capex_to_revenue": [
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01
+              ],
+              "working_capital_to_revenue": [
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05
+              ]
+            }
+          ],
+          "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial ; https://global.morningstar.com/en-gb/stocks/why-broadcom-stock-is-worth-usd-650 ; analyst estimates dated 2026-10-11",
+          "reason": "Analyst estimate: explicit AI adoption path with growth fading, non-AI semiconductors growing modestly and software compounding. Central AI growth is below the aggressive analyst-reported 2027/2028 outlook, reflecting delivery and concentration risk. Downside slows AI and compresses its margin; upside tests execution nearer that outlook. Margins include SBC and all allocated corporate costs, exclude acquisition amortization and include physical depreciation. No style premium or probability weighting. These are rolling TTM forecasts, not exact fiscal-year guidance."
+        },
+        "variable": "tax_rate",
+        "step": 0.05,
+        "capital": {
+          "shares": 4773629865,
+          "claims": 59419000000,
+          "cash": 23975000000,
+          "shares_date": "2026-08-28",
+          "balance_sheet_date": "2026-08-02"
+        }
+      },
+      "period_end": "2026-08-02",
+      "basis": "sensitivity_estimate"
+    },
+    {
+      "variable": "operating_margin",
+      "step": 0.02,
+      "values": [
+        {
+          "delta": -0.02,
+          "value_per_share": 302.035586678727,
+          "status": "ok"
+        },
+        {
+          "delta": 0.02,
+          "value_per_share": 335.4261599661229,
+          "status": "ok"
+        }
+      ],
+      "span": 33.39057328739591,
+      "formula": "Reprice unchanged central operating DCF with one assumption shifted in every forecast year; span = absolute difference between two values",
+      "inputs": {
+        "central_scenario": "operating-central",
+        "central_assumptions": {
+          "id": "operating-central",
+          "style": "growth",
+          "years": 10,
+          "tax_rate": 0.21,
+          "wacc": 0.09,
+          "terminal_growth": 0.025,
+          "terminal_roic": 0.15,
+          "sbc_treatment": "expensed_in_margins",
+          "corporate_costs": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "segments": [
+            {
+              "name": "AI semiconductors (custom accelerators and networking)",
+              "base_revenue": {
+                "period_end": "2026-08-02",
+                "components": [
+                  {
+                    "item": "ai_q4_2025",
+                    "value": 6500000000,
+                    "period_end": "2025-11-02",
+                    "source": "https://www.fool.com/earnings/call-transcripts/2025/12/12/broadcom-avgo-q4-2025-earnings-call-transcript/",
+                    "sign": 1
+                  },
+                  {
+                    "item": "ai_q1_2026",
+                    "value": 8400000000,
+                    "period_end": "2026-02-01",
+                    "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-first-quarter-fiscal-year-2026-financial",
+                    "sign": 1
+                  },
+                  {
+                    "item": "ai_q2_2026",
+                    "value": 10800000000,
+                    "period_end": "2026-05-03",
+                    "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-second-quarter-fiscal-year-2026-financial",
+                    "sign": 1
+                  },
+                  {
+                    "item": "ai_q3_2026",
+                    "value": 16700000000,
+                    "period_end": "2026-08-02",
+                    "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial",
+                    "sign": 1
+                  }
+                ]
+              },
+              "base_working_capital_ratio": 0.18,
+              "growth": [
+                1.5,
+                0.6,
+                0.35,
+                0.2,
+                0.15,
+                0.1,
+                0.08,
+                0.06,
+                0.05,
+                0.04
+              ],
+              "operating_margin": [
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4
+              ],
+              "depreciation_to_revenue": [
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015
+              ],
+              "capex_to_revenue": [
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025
+              ],
+              "working_capital_to_revenue": [
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18
+              ]
+            },
+            {
+              "name": "Non-AI semiconductors",
+              "base_revenue": {
+                "period_end": "2026-08-02",
+                "components": [
+                  {
+                    "item": "segment_revenue_semiconductor",
+                    "period_end": "2025-11-02",
+                    "value": 36858000000,
+                    "source": "10-K 0001730168-25-000121",
+                    "sign": 1
+                  },
+                  {
+                    "item": "segment_revenue_semiconductor",
+                    "period_end": "2026-08-02",
+                    "value": 48363000000,
+                    "source": "10-Q 0001730168-26-000080",
+                    "sign": 1
+                  },
+                  {
+                    "item": "segment_revenue_semiconductor",
+                    "period_end": "2025-08-03",
+                    "value": 25786000000,
+                    "source": "10-Q 0001730168-26-000080",
+                    "sign": -1
+                  },
+                  {
+                    "item": "ai_q4_2025",
+                    "value": 6500000000,
+                    "period_end": "2025-11-02",
+                    "source": "https://www.fool.com/earnings/call-transcripts/2025/12/12/broadcom-avgo-q4-2025-earnings-call-transcript/",
+                    "sign": -1
+                  },
+                  {
+                    "item": "ai_q1_2026",
+                    "value": 8400000000,
+                    "period_end": "2026-02-01",
+                    "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-first-quarter-fiscal-year-2026-financial",
+                    "sign": -1
+                  },
+                  {
+                    "item": "ai_q2_2026",
+                    "value": 10800000000,
+                    "period_end": "2026-05-03",
+                    "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-second-quarter-fiscal-year-2026-financial",
+                    "sign": -1
+                  },
+                  {
+                    "item": "ai_q3_2026",
+                    "value": 16700000000,
+                    "period_end": "2026-08-02",
+                    "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial",
+                    "sign": -1
+                  }
+                ]
+              },
+              "base_working_capital_ratio": 0.18,
+              "growth": [
+                0.03,
+                0.03,
+                0.03,
+                0.03,
+                0.03,
+                0.03,
+                0.03,
+                0.03,
+                0.03,
+                0.03
+              ],
+              "operating_margin": [
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35
+              ],
+              "depreciation_to_revenue": [
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015
+              ],
+              "capex_to_revenue": [
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025
+              ],
+              "working_capital_to_revenue": [
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18
+              ]
+            },
+            {
+              "name": "Infrastructure software (including VMware)",
+              "base_revenue": {
+                "period_end": "2026-08-02",
+                "components": [
+                  {
+                    "item": "segment_revenue_software",
+                    "period_end": "2025-11-02",
+                    "value": 27029000000,
+                    "source": "10-K 0001730168-25-000121",
+                    "sign": 1
+                  },
+                  {
+                    "item": "segment_revenue_software",
+                    "period_end": "2026-08-02",
+                    "value": 22726000000,
+                    "source": "10-Q 0001730168-26-000080",
+                    "sign": 1
+                  },
+                  {
+                    "item": "segment_revenue_software",
+                    "period_end": "2025-08-03",
+                    "value": 20086000000,
+                    "source": "10-Q 0001730168-26-000080",
+                    "sign": -1
+                  }
+                ]
+              },
+              "base_working_capital_ratio": 0.05,
+              "growth": [
+                0.12,
+                0.1,
+                0.08,
+                0.07,
+                0.06,
+                0.05,
+                0.04,
+                0.03,
+                0.03,
+                0.03
+              ],
+              "operating_margin": [
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5
+              ],
+              "depreciation_to_revenue": [
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005
+              ],
+              "capex_to_revenue": [
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01
+              ],
+              "working_capital_to_revenue": [
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05
+              ]
+            }
+          ],
+          "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial ; https://global.morningstar.com/en-gb/stocks/why-broadcom-stock-is-worth-usd-650 ; analyst estimates dated 2026-10-11",
+          "reason": "Analyst estimate: explicit AI adoption path with growth fading, non-AI semiconductors growing modestly and software compounding. Central AI growth is below the aggressive analyst-reported 2027/2028 outlook, reflecting delivery and concentration risk. Downside slows AI and compresses its margin; upside tests execution nearer that outlook. Margins include SBC and all allocated corporate costs, exclude acquisition amortization and include physical depreciation. No style premium or probability weighting. These are rolling TTM forecasts, not exact fiscal-year guidance."
+        },
+        "variable": "operating_margin",
+        "step": 0.02,
+        "capital": {
+          "shares": 4773629865,
+          "claims": 59419000000,
+          "cash": 23975000000,
+          "shares_date": "2026-08-28",
+          "balance_sheet_date": "2026-08-02"
+        }
+      },
+      "period_end": "2026-08-02",
+      "basis": "sensitivity_estimate"
+    },
+    {
+      "variable": "terminal_growth",
+      "step": 0.005,
+      "values": [
+        {
+          "delta": -0.005,
+          "value_per_share": 311.26081212729946,
+          "status": "ok"
+        },
+        {
+          "delta": 0.005,
+          "value_per_share": 327.3649612084279,
+          "status": "ok"
+        }
+      ],
+      "span": 16.10414908112847,
+      "formula": "Reprice unchanged central operating DCF with one assumption shifted in every forecast year; span = absolute difference between two values",
+      "inputs": {
+        "central_scenario": "operating-central",
+        "central_assumptions": {
+          "id": "operating-central",
+          "style": "growth",
+          "years": 10,
+          "tax_rate": 0.21,
+          "wacc": 0.09,
+          "terminal_growth": 0.025,
+          "terminal_roic": 0.15,
+          "sbc_treatment": "expensed_in_margins",
+          "corporate_costs": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "segments": [
+            {
+              "name": "AI semiconductors (custom accelerators and networking)",
+              "base_revenue": {
+                "period_end": "2026-08-02",
+                "components": [
+                  {
+                    "item": "ai_q4_2025",
+                    "value": 6500000000,
+                    "period_end": "2025-11-02",
+                    "source": "https://www.fool.com/earnings/call-transcripts/2025/12/12/broadcom-avgo-q4-2025-earnings-call-transcript/",
+                    "sign": 1
+                  },
+                  {
+                    "item": "ai_q1_2026",
+                    "value": 8400000000,
+                    "period_end": "2026-02-01",
+                    "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-first-quarter-fiscal-year-2026-financial",
+                    "sign": 1
+                  },
+                  {
+                    "item": "ai_q2_2026",
+                    "value": 10800000000,
+                    "period_end": "2026-05-03",
+                    "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-second-quarter-fiscal-year-2026-financial",
+                    "sign": 1
+                  },
+                  {
+                    "item": "ai_q3_2026",
+                    "value": 16700000000,
+                    "period_end": "2026-08-02",
+                    "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial",
+                    "sign": 1
+                  }
+                ]
+              },
+              "base_working_capital_ratio": 0.18,
+              "growth": [
+                1.5,
+                0.6,
+                0.35,
+                0.2,
+                0.15,
+                0.1,
+                0.08,
+                0.06,
+                0.05,
+                0.04
+              ],
+              "operating_margin": [
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4
+              ],
+              "depreciation_to_revenue": [
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015
+              ],
+              "capex_to_revenue": [
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025
+              ],
+              "working_capital_to_revenue": [
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18
+              ]
+            },
+            {
+              "name": "Non-AI semiconductors",
+              "base_revenue": {
+                "period_end": "2026-08-02",
+                "components": [
+                  {
+                    "item": "segment_revenue_semiconductor",
+                    "period_end": "2025-11-02",
+                    "value": 36858000000,
+                    "source": "10-K 0001730168-25-000121",
+                    "sign": 1
+                  },
+                  {
+                    "item": "segment_revenue_semiconductor",
+                    "period_end": "2026-08-02",
+                    "value": 48363000000,
+                    "source": "10-Q 0001730168-26-000080",
+                    "sign": 1
+                  },
+                  {
+                    "item": "segment_revenue_semiconductor",
+                    "period_end": "2025-08-03",
+                    "value": 25786000000,
+                    "source": "10-Q 0001730168-26-000080",
+                    "sign": -1
+                  },
+                  {
+                    "item": "ai_q4_2025",
+                    "value": 6500000000,
+                    "period_end": "2025-11-02",
+                    "source": "https://www.fool.com/earnings/call-transcripts/2025/12/12/broadcom-avgo-q4-2025-earnings-call-transcript/",
+                    "sign": -1
+                  },
+                  {
+                    "item": "ai_q1_2026",
+                    "value": 8400000000,
+                    "period_end": "2026-02-01",
+                    "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-first-quarter-fiscal-year-2026-financial",
+                    "sign": -1
+                  },
+                  {
+                    "item": "ai_q2_2026",
+                    "value": 10800000000,
+                    "period_end": "2026-05-03",
+                    "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-second-quarter-fiscal-year-2026-financial",
+                    "sign": -1
+                  },
+                  {
+                    "item": "ai_q3_2026",
+                    "value": 16700000000,
+                    "period_end": "2026-08-02",
+                    "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial",
+                    "sign": -1
+                  }
+                ]
+              },
+              "base_working_capital_ratio": 0.18,
+              "growth": [
+                0.03,
+                0.03,
+                0.03,
+                0.03,
+                0.03,
+                0.03,
+                0.03,
+                0.03,
+                0.03,
+                0.03
+              ],
+              "operating_margin": [
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35
+              ],
+              "depreciation_to_revenue": [
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015
+              ],
+              "capex_to_revenue": [
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025
+              ],
+              "working_capital_to_revenue": [
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18
+              ]
+            },
+            {
+              "name": "Infrastructure software (including VMware)",
+              "base_revenue": {
+                "period_end": "2026-08-02",
+                "components": [
+                  {
+                    "item": "segment_revenue_software",
+                    "period_end": "2025-11-02",
+                    "value": 27029000000,
+                    "source": "10-K 0001730168-25-000121",
+                    "sign": 1
+                  },
+                  {
+                    "item": "segment_revenue_software",
+                    "period_end": "2026-08-02",
+                    "value": 22726000000,
+                    "source": "10-Q 0001730168-26-000080",
+                    "sign": 1
+                  },
+                  {
+                    "item": "segment_revenue_software",
+                    "period_end": "2025-08-03",
+                    "value": 20086000000,
+                    "source": "10-Q 0001730168-26-000080",
+                    "sign": -1
+                  }
+                ]
+              },
+              "base_working_capital_ratio": 0.05,
+              "growth": [
+                0.12,
+                0.1,
+                0.08,
+                0.07,
+                0.06,
+                0.05,
+                0.04,
+                0.03,
+                0.03,
+                0.03
+              ],
+              "operating_margin": [
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5
+              ],
+              "depreciation_to_revenue": [
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005
+              ],
+              "capex_to_revenue": [
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01
+              ],
+              "working_capital_to_revenue": [
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05
+              ]
+            }
+          ],
+          "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial ; https://global.morningstar.com/en-gb/stocks/why-broadcom-stock-is-worth-usd-650 ; analyst estimates dated 2026-10-11",
+          "reason": "Analyst estimate: explicit AI adoption path with growth fading, non-AI semiconductors growing modestly and software compounding. Central AI growth is below the aggressive analyst-reported 2027/2028 outlook, reflecting delivery and concentration risk. Downside slows AI and compresses its margin; upside tests execution nearer that outlook. Margins include SBC and all allocated corporate costs, exclude acquisition amortization and include physical depreciation. No style premium or probability weighting. These are rolling TTM forecasts, not exact fiscal-year guidance."
+        },
+        "variable": "terminal_growth",
+        "step": 0.005,
+        "capital": {
+          "shares": 4773629865,
+          "claims": 59419000000,
+          "cash": 23975000000,
+          "shares_date": "2026-08-28",
+          "balance_sheet_date": "2026-08-02"
+        }
+      },
+      "period_end": "2026-08-02",
+      "basis": "sensitivity_estimate"
+    },
+    {
+      "variable": "terminal_roic",
+      "step": 0.03,
+      "values": [
+        {
+          "delta": -0.03,
+          "value_per_share": 309.1530160895755,
+          "status": "ok"
+        },
+        {
+          "delta": 0.03,
+          "value_per_share": 325.116111477658,
+          "status": "ok"
+        }
+      ],
+      "span": 15.963095388082536,
+      "formula": "Reprice unchanged central operating DCF with one assumption shifted in every forecast year; span = absolute difference between two values",
+      "inputs": {
+        "central_scenario": "operating-central",
+        "central_assumptions": {
+          "id": "operating-central",
+          "style": "growth",
+          "years": 10,
+          "tax_rate": 0.21,
+          "wacc": 0.09,
+          "terminal_growth": 0.025,
+          "terminal_roic": 0.15,
+          "sbc_treatment": "expensed_in_margins",
+          "corporate_costs": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "segments": [
+            {
+              "name": "AI semiconductors (custom accelerators and networking)",
+              "base_revenue": {
+                "period_end": "2026-08-02",
+                "components": [
+                  {
+                    "item": "ai_q4_2025",
+                    "value": 6500000000,
+                    "period_end": "2025-11-02",
+                    "source": "https://www.fool.com/earnings/call-transcripts/2025/12/12/broadcom-avgo-q4-2025-earnings-call-transcript/",
+                    "sign": 1
+                  },
+                  {
+                    "item": "ai_q1_2026",
+                    "value": 8400000000,
+                    "period_end": "2026-02-01",
+                    "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-first-quarter-fiscal-year-2026-financial",
+                    "sign": 1
+                  },
+                  {
+                    "item": "ai_q2_2026",
+                    "value": 10800000000,
+                    "period_end": "2026-05-03",
+                    "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-second-quarter-fiscal-year-2026-financial",
+                    "sign": 1
+                  },
+                  {
+                    "item": "ai_q3_2026",
+                    "value": 16700000000,
+                    "period_end": "2026-08-02",
+                    "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial",
+                    "sign": 1
+                  }
+                ]
+              },
+              "base_working_capital_ratio": 0.18,
+              "growth": [
+                1.5,
+                0.6,
+                0.35,
+                0.2,
+                0.15,
+                0.1,
+                0.08,
+                0.06,
+                0.05,
+                0.04
+              ],
+              "operating_margin": [
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4
+              ],
+              "depreciation_to_revenue": [
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015
+              ],
+              "capex_to_revenue": [
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025
+              ],
+              "working_capital_to_revenue": [
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18
+              ]
+            },
+            {
+              "name": "Non-AI semiconductors",
+              "base_revenue": {
+                "period_end": "2026-08-02",
+                "components": [
+                  {
+                    "item": "segment_revenue_semiconductor",
+                    "period_end": "2025-11-02",
+                    "value": 36858000000,
+                    "source": "10-K 0001730168-25-000121",
+                    "sign": 1
+                  },
+                  {
+                    "item": "segment_revenue_semiconductor",
+                    "period_end": "2026-08-02",
+                    "value": 48363000000,
+                    "source": "10-Q 0001730168-26-000080",
+                    "sign": 1
+                  },
+                  {
+                    "item": "segment_revenue_semiconductor",
+                    "period_end": "2025-08-03",
+                    "value": 25786000000,
+                    "source": "10-Q 0001730168-26-000080",
+                    "sign": -1
+                  },
+                  {
+                    "item": "ai_q4_2025",
+                    "value": 6500000000,
+                    "period_end": "2025-11-02",
+                    "source": "https://www.fool.com/earnings/call-transcripts/2025/12/12/broadcom-avgo-q4-2025-earnings-call-transcript/",
+                    "sign": -1
+                  },
+                  {
+                    "item": "ai_q1_2026",
+                    "value": 8400000000,
+                    "period_end": "2026-02-01",
+                    "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-first-quarter-fiscal-year-2026-financial",
+                    "sign": -1
+                  },
+                  {
+                    "item": "ai_q2_2026",
+                    "value": 10800000000,
+                    "period_end": "2026-05-03",
+                    "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-second-quarter-fiscal-year-2026-financial",
+                    "sign": -1
+                  },
+                  {
+                    "item": "ai_q3_2026",
+                    "value": 16700000000,
+                    "period_end": "2026-08-02",
+                    "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial",
+                    "sign": -1
+                  }
+                ]
+              },
+              "base_working_capital_ratio": 0.18,
+              "growth": [
+                0.03,
+                0.03,
+                0.03,
+                0.03,
+                0.03,
+                0.03,
+                0.03,
+                0.03,
+                0.03,
+                0.03
+              ],
+              "operating_margin": [
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35
+              ],
+              "depreciation_to_revenue": [
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015
+              ],
+              "capex_to_revenue": [
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025
+              ],
+              "working_capital_to_revenue": [
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18
+              ]
+            },
+            {
+              "name": "Infrastructure software (including VMware)",
+              "base_revenue": {
+                "period_end": "2026-08-02",
+                "components": [
+                  {
+                    "item": "segment_revenue_software",
+                    "period_end": "2025-11-02",
+                    "value": 27029000000,
+                    "source": "10-K 0001730168-25-000121",
+                    "sign": 1
+                  },
+                  {
+                    "item": "segment_revenue_software",
+                    "period_end": "2026-08-02",
+                    "value": 22726000000,
+                    "source": "10-Q 0001730168-26-000080",
+                    "sign": 1
+                  },
+                  {
+                    "item": "segment_revenue_software",
+                    "period_end": "2025-08-03",
+                    "value": 20086000000,
+                    "source": "10-Q 0001730168-26-000080",
+                    "sign": -1
+                  }
+                ]
+              },
+              "base_working_capital_ratio": 0.05,
+              "growth": [
+                0.12,
+                0.1,
+                0.08,
+                0.07,
+                0.06,
+                0.05,
+                0.04,
+                0.03,
+                0.03,
+                0.03
+              ],
+              "operating_margin": [
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5
+              ],
+              "depreciation_to_revenue": [
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005
+              ],
+              "capex_to_revenue": [
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01
+              ],
+              "working_capital_to_revenue": [
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05
+              ]
+            }
+          ],
+          "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial ; https://global.morningstar.com/en-gb/stocks/why-broadcom-stock-is-worth-usd-650 ; analyst estimates dated 2026-10-11",
+          "reason": "Analyst estimate: explicit AI adoption path with growth fading, non-AI semiconductors growing modestly and software compounding. Central AI growth is below the aggressive analyst-reported 2027/2028 outlook, reflecting delivery and concentration risk. Downside slows AI and compresses its margin; upside tests execution nearer that outlook. Margins include SBC and all allocated corporate costs, exclude acquisition amortization and include physical depreciation. No style premium or probability weighting. These are rolling TTM forecasts, not exact fiscal-year guidance."
+        },
+        "variable": "terminal_roic",
+        "step": 0.03,
+        "capital": {
+          "shares": 4773629865,
+          "claims": 59419000000,
+          "cash": 23975000000,
+          "shares_date": "2026-08-28",
+          "balance_sheet_date": "2026-08-02"
+        }
+      },
+      "period_end": "2026-08-02",
+      "basis": "sensitivity_estimate"
+    },
+    {
+      "variable": "capex_to_revenue",
+      "step": 0.01,
+      "values": [
+        {
+          "delta": -0.01,
+          "value_per_share": 323.3576150483504,
+          "status": "ok"
+        },
+        {
+          "delta": 0.01,
+          "value_per_share": 314.10413159649954,
+          "status": "ok"
+        }
+      ],
+      "span": 9.253483451850855,
+      "formula": "Reprice unchanged central operating DCF with one assumption shifted in every forecast year; span = absolute difference between two values",
+      "inputs": {
+        "central_scenario": "operating-central",
+        "central_assumptions": {
+          "id": "operating-central",
+          "style": "growth",
+          "years": 10,
+          "tax_rate": 0.21,
+          "wacc": 0.09,
+          "terminal_growth": 0.025,
+          "terminal_roic": 0.15,
+          "sbc_treatment": "expensed_in_margins",
+          "corporate_costs": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "segments": [
+            {
+              "name": "AI semiconductors (custom accelerators and networking)",
+              "base_revenue": {
+                "period_end": "2026-08-02",
+                "components": [
+                  {
+                    "item": "ai_q4_2025",
+                    "value": 6500000000,
+                    "period_end": "2025-11-02",
+                    "source": "https://www.fool.com/earnings/call-transcripts/2025/12/12/broadcom-avgo-q4-2025-earnings-call-transcript/",
+                    "sign": 1
+                  },
+                  {
+                    "item": "ai_q1_2026",
+                    "value": 8400000000,
+                    "period_end": "2026-02-01",
+                    "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-first-quarter-fiscal-year-2026-financial",
+                    "sign": 1
+                  },
+                  {
+                    "item": "ai_q2_2026",
+                    "value": 10800000000,
+                    "period_end": "2026-05-03",
+                    "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-second-quarter-fiscal-year-2026-financial",
+                    "sign": 1
+                  },
+                  {
+                    "item": "ai_q3_2026",
+                    "value": 16700000000,
+                    "period_end": "2026-08-02",
+                    "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial",
+                    "sign": 1
+                  }
+                ]
+              },
+              "base_working_capital_ratio": 0.18,
+              "growth": [
+                1.5,
+                0.6,
+                0.35,
+                0.2,
+                0.15,
+                0.1,
+                0.08,
+                0.06,
+                0.05,
+                0.04
+              ],
+              "operating_margin": [
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4,
+                0.4
+              ],
+              "depreciation_to_revenue": [
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015
+              ],
+              "capex_to_revenue": [
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025
+              ],
+              "working_capital_to_revenue": [
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18
+              ]
+            },
+            {
+              "name": "Non-AI semiconductors",
+              "base_revenue": {
+                "period_end": "2026-08-02",
+                "components": [
+                  {
+                    "item": "segment_revenue_semiconductor",
+                    "period_end": "2025-11-02",
+                    "value": 36858000000,
+                    "source": "10-K 0001730168-25-000121",
+                    "sign": 1
+                  },
+                  {
+                    "item": "segment_revenue_semiconductor",
+                    "period_end": "2026-08-02",
+                    "value": 48363000000,
+                    "source": "10-Q 0001730168-26-000080",
+                    "sign": 1
+                  },
+                  {
+                    "item": "segment_revenue_semiconductor",
+                    "period_end": "2025-08-03",
+                    "value": 25786000000,
+                    "source": "10-Q 0001730168-26-000080",
+                    "sign": -1
+                  },
+                  {
+                    "item": "ai_q4_2025",
+                    "value": 6500000000,
+                    "period_end": "2025-11-02",
+                    "source": "https://www.fool.com/earnings/call-transcripts/2025/12/12/broadcom-avgo-q4-2025-earnings-call-transcript/",
+                    "sign": -1
+                  },
+                  {
+                    "item": "ai_q1_2026",
+                    "value": 8400000000,
+                    "period_end": "2026-02-01",
+                    "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-first-quarter-fiscal-year-2026-financial",
+                    "sign": -1
+                  },
+                  {
+                    "item": "ai_q2_2026",
+                    "value": 10800000000,
+                    "period_end": "2026-05-03",
+                    "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-second-quarter-fiscal-year-2026-financial",
+                    "sign": -1
+                  },
+                  {
+                    "item": "ai_q3_2026",
+                    "value": 16700000000,
+                    "period_end": "2026-08-02",
+                    "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial",
+                    "sign": -1
+                  }
+                ]
+              },
+              "base_working_capital_ratio": 0.18,
+              "growth": [
+                0.03,
+                0.03,
+                0.03,
+                0.03,
+                0.03,
+                0.03,
+                0.03,
+                0.03,
+                0.03,
+                0.03
+              ],
+              "operating_margin": [
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35
+              ],
+              "depreciation_to_revenue": [
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015,
+                0.015
+              ],
+              "capex_to_revenue": [
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025,
+                0.025
+              ],
+              "working_capital_to_revenue": [
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18,
+                0.18
+              ]
+            },
+            {
+              "name": "Infrastructure software (including VMware)",
+              "base_revenue": {
+                "period_end": "2026-08-02",
+                "components": [
+                  {
+                    "item": "segment_revenue_software",
+                    "period_end": "2025-11-02",
+                    "value": 27029000000,
+                    "source": "10-K 0001730168-25-000121",
+                    "sign": 1
+                  },
+                  {
+                    "item": "segment_revenue_software",
+                    "period_end": "2026-08-02",
+                    "value": 22726000000,
+                    "source": "10-Q 0001730168-26-000080",
+                    "sign": 1
+                  },
+                  {
+                    "item": "segment_revenue_software",
+                    "period_end": "2025-08-03",
+                    "value": 20086000000,
+                    "source": "10-Q 0001730168-26-000080",
+                    "sign": -1
+                  }
+                ]
+              },
+              "base_working_capital_ratio": 0.05,
+              "growth": [
+                0.12,
+                0.1,
+                0.08,
+                0.07,
+                0.06,
+                0.05,
+                0.04,
+                0.03,
+                0.03,
+                0.03
+              ],
+              "operating_margin": [
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5
+              ],
+              "depreciation_to_revenue": [
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005,
+                0.005
+              ],
+              "capex_to_revenue": [
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01,
+                0.01
+              ],
+              "working_capital_to_revenue": [
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05
+              ]
+            }
+          ],
+          "source": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial ; https://global.morningstar.com/en-gb/stocks/why-broadcom-stock-is-worth-usd-650 ; analyst estimates dated 2026-10-11",
+          "reason": "Analyst estimate: explicit AI adoption path with growth fading, non-AI semiconductors growing modestly and software compounding. Central AI growth is below the aggressive analyst-reported 2027/2028 outlook, reflecting delivery and concentration risk. Downside slows AI and compresses its margin; upside tests execution nearer that outlook. Margins include SBC and all allocated corporate costs, exclude acquisition amortization and include physical depreciation. No style premium or probability weighting. These are rolling TTM forecasts, not exact fiscal-year guidance."
+        },
+        "variable": "capex_to_revenue",
+        "step": 0.01,
+        "capital": {
+          "shares": 4773629865,
+          "claims": 59419000000,
+          "cash": 23975000000,
+          "shares_date": "2026-08-28",
+          "balance_sheet_date": "2026-08-02"
+        }
+      },
+      "period_end": "2026-08-02",
+      "basis": "sensitivity_estimate"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "ai-slowdown",
+      "value": 125.83488662333782,
+      "status": "ok"
+    },
+    {
+      "id": "operating-central",
+      "value": 318.730873322425,
+      "status": "ok"
+    },
+    {
+      "id": "ai-execution-upside",
+      "value": 541.4360886792904,
+      "status": "ok"
+    }
+  ],
+  "probabilities": {
+    "label": "Analyst-assigned subjective probabilities — not market-implied probabilities.",
+    "status": "not_assigned",
+    "reason": "Probabilities cannot be responsibly assigned: the evidence supports possible operating paths but does not establish defensible relative likelihoods over ten years.",
+    "assignment": null,
+    "expected": null,
+    "sensitivity_label": "Hypothetical probability combinations for sensitivity only; not assigned probabilities or measured likelihoods.",
+    "sensitivity": [
+      {
+        "reason": "Slowdown-heavy (illustrative only)",
+        "status": "ok",
+        "value": 255.6886622764112,
+        "contributions": [
+          {
+            "id": "ai-slowdown",
+            "value_per_share": 125.83488662333782,
+            "status": "ok",
+            "probability": 0.5,
+            "contribution": 62.91744331166891,
+            "formula": "Scenario value per share × subjective probability",
+            "inputs": {
+              "scenario_value": 125.83488662333782,
+              "probability": 0.5
+            },
+            "period_end": "2026-08-02",
+            "basis": "model_assumption"
+          },
+          {
+            "id": "operating-central",
+            "value_per_share": 318.730873322425,
+            "status": "ok",
+            "probability": 0.35,
+            "contribution": 111.55580566284874,
+            "formula": "Scenario value per share × subjective probability",
+            "inputs": {
+              "scenario_value": 318.730873322425,
+              "probability": 0.35
+            },
+            "period_end": "2026-08-02",
+            "basis": "model_assumption"
+          },
+          {
+            "id": "ai-execution-upside",
+            "value_per_share": 541.4360886792904,
+            "status": "ok",
+            "probability": 0.15,
+            "contribution": 81.21541330189355,
+            "formula": "Scenario value per share × subjective probability",
+            "inputs": {
+              "scenario_value": 541.4360886792904,
+              "probability": 0.15
+            },
+            "period_end": "2026-08-02",
+            "basis": "model_assumption"
+          }
+        ],
+        "price_to_expected_value": 1.4139852615332573,
+        "gap_to_price": -0.2927790499629054,
+        "formula": "Σ(scenario value per share × probability); price/value and value/price - 1 are valuation comparisons, not expected returns",
+        "inputs": {
+          "weights": {
+            "ai-slowdown": 0.5,
+            "operating-central": 0.35,
+            "ai-execution-upside": 0.15
+          },
+          "scenario_values": [
+            {
+              "id": "ai-slowdown",
+              "value_per_share": 125.83488662333782,
+              "status": "ok"
+            },
+            {
+              "id": "operating-central",
+              "value_per_share": 318.730873322425,
+              "status": "ok"
+            },
+            {
+              "id": "ai-execution-upside",
+              "value_per_share": 541.4360886792904,
+              "status": "ok"
+            }
+          ],
+          "price": 361.54
+        },
+        "period_end": "2026-08-02",
+        "basis": "model_assumption"
+      },
+      {
+        "reason": "Central-heavy (illustrative only)",
+        "status": "ok",
+        "value": 326.18318048686956,
+        "contributions": [
+          {
+            "id": "ai-slowdown",
+            "value_per_share": 125.83488662333782,
+            "status": "ok",
+            "probability": 0.25,
+            "contribution": 31.458721655834456,
+            "formula": "Scenario value per share × subjective probability",
+            "inputs": {
+              "scenario_value": 125.83488662333782,
+              "probability": 0.25
+            },
+            "period_end": "2026-08-02",
+            "basis": "model_assumption"
+          },
+          {
+            "id": "operating-central",
+            "value_per_share": 318.730873322425,
+            "status": "ok",
+            "probability": 0.5,
+            "contribution": 159.3654366612125,
+            "formula": "Scenario value per share × subjective probability",
+            "inputs": {
+              "scenario_value": 318.730873322425,
+              "probability": 0.5
+            },
+            "period_end": "2026-08-02",
+            "basis": "model_assumption"
+          },
+          {
+            "id": "ai-execution-upside",
+            "value_per_share": 541.4360886792904,
+            "status": "ok",
+            "probability": 0.25,
+            "contribution": 135.3590221698226,
+            "formula": "Scenario value per share × subjective probability",
+            "inputs": {
+              "scenario_value": 541.4360886792904,
+              "probability": 0.25
+            },
+            "period_end": "2026-08-02",
+            "basis": "model_assumption"
+          }
+        ],
+        "price_to_expected_value": 1.1083955937285177,
+        "gap_to_price": -0.09779504207869238,
+        "formula": "Σ(scenario value per share × probability); price/value and value/price - 1 are valuation comparisons, not expected returns",
+        "inputs": {
+          "weights": {
+            "ai-slowdown": 0.25,
+            "operating-central": 0.5,
+            "ai-execution-upside": 0.25
+          },
+          "scenario_values": [
+            {
+              "id": "ai-slowdown",
+              "value_per_share": 125.83488662333782,
+              "status": "ok"
+            },
+            {
+              "id": "operating-central",
+              "value_per_share": 318.730873322425,
+              "status": "ok"
+            },
+            {
+              "id": "ai-execution-upside",
+              "value_per_share": 541.4360886792904,
+              "status": "ok"
+            }
+          ],
+          "price": 361.54
+        },
+        "period_end": "2026-08-02",
+        "basis": "model_assumption"
+      },
+      {
+        "reason": "Upside-heavy (illustrative only)",
+        "status": "ok",
+        "value": 401.1490829959946,
+        "contributions": [
+          {
+            "id": "ai-slowdown",
+            "value_per_share": 125.83488662333782,
+            "status": "ok",
+            "probability": 0.15,
+            "contribution": 18.875232993500674,
+            "formula": "Scenario value per share × subjective probability",
+            "inputs": {
+              "scenario_value": 125.83488662333782,
+              "probability": 0.15
+            },
+            "period_end": "2026-08-02",
+            "basis": "model_assumption"
+          },
+          {
+            "id": "operating-central",
+            "value_per_share": 318.730873322425,
+            "status": "ok",
+            "probability": 0.35,
+            "contribution": 111.55580566284874,
+            "formula": "Scenario value per share × subjective probability",
+            "inputs": {
+              "scenario_value": 318.730873322425,
+              "probability": 0.35
+            },
+            "period_end": "2026-08-02",
+            "basis": "model_assumption"
+          },
+          {
+            "id": "ai-execution-upside",
+            "value_per_share": 541.4360886792904,
+            "status": "ok",
+            "probability": 0.5,
+            "contribution": 270.7180443396452,
+            "formula": "Scenario value per share × subjective probability",
+            "inputs": {
+              "scenario_value": 541.4360886792904,
+              "probability": 0.5
+            },
+            "period_end": "2026-08-02",
+            "basis": "model_assumption"
+          }
+        ],
+        "price_to_expected_value": 0.9012609409445165,
+        "gap_to_price": 0.10955657187584933,
+        "formula": "Σ(scenario value per share × probability); price/value and value/price - 1 are valuation comparisons, not expected returns",
+        "inputs": {
+          "weights": {
+            "ai-slowdown": 0.15,
+            "operating-central": 0.35,
+            "ai-execution-upside": 0.5
+          },
+          "scenario_values": [
+            {
+              "id": "ai-slowdown",
+              "value_per_share": 125.83488662333782,
+              "status": "ok"
+            },
+            {
+              "id": "operating-central",
+              "value_per_share": 318.730873322425,
+              "status": "ok"
+            },
+            {
+              "id": "ai-execution-upside",
+              "value_per_share": 541.4360886792904,
+              "status": "ok"
+            }
+          ],
+          "price": 361.54
+        },
+        "period_end": "2026-08-02",
+        "basis": "model_assumption"
+      }
+    ]
+  },
+  "snapshot_context": {
+    "driver": "AI revenue growth translated into after-SBC margins and FCFF.",
+    "risk": "Customer concentration and AI execution or margin shortfalls.",
+    "thesis_break": "Reassess the central thesis if annual AI revenue growth falls below 20% during the first two forecast years, or consolidated after-SBC operating margin falls below 35%. Analyst monitoring thresholds, not management guidance."
+  }
+}
