@@ -34,7 +34,7 @@ A short history is less evidence, not a reason to stop. Start `result.summary` w
 
 - A rule metric with status `not_testable` is neither passed nor failed. Say which rule cannot be tested and why.
 - You may use a number from a section file as a **text fact**: copy the exact words from the file into `quote` (including the number), set `file` (for example `prospectus.txt`), and set `source` to the form and accession from the first line of the file. The validator checks the quote and the number. Note the unit stated in the text (for example "in millions").
-- For a young company, set `target_fcf_margin` in `adjustments.json` → `assumptions` (explain why), and read `reverse-dcf-revenue`: the revenue that the price requires in year 10. If there is no annual revenue in XBRL, also set `base_revenue` and `base_fcf_margin` with a `source` that names the text fact.
+- For a young company, set `target_fcf_margin` in `adjustments.json` → `assumptions` (explain why), and read `reverse-dcf-revenue`: the revenue that the price requires in year 10. If there is no annual revenue in XBRL, also set `base_revenue` and `base_fcf` (free cash flow, a number from a text fact, not a ratio) as `{ value, period_end, source }`. Stage 2 calculates the margin; the validator checks that each value equals a text fact in the analysis.
 - For a company with very different businesses, describe how a Sum of the Parts would value it (`card:capital-allocation` for segment decisions); the app has a SOTP tool.
 
 ## Limits

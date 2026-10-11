@@ -54,10 +54,11 @@ test('revenue reverse DCF without annual revenue uses a sourced base revenue ass
   const facts = { ...makeFacts({}, { ends: [] }), history_years: 0, interim: interim('2026-06-30', { shares_outstanding: 10, cash_sti: 40, long_term_debt: 0 }) };
   const base = { value: 100, period_end: '2025-12-31', source: '424B4 0001628280-26-042639, "Total revenues"' };
   const out = computeAll(facts, { policy, price: { value: 100, date: '2026-10-10' },
-    adjustments: { items: [], assumptions: { target_fcf_margin: 0.2, base_revenue: base, base_fcf_margin: { value: -0.05, period_end: '2025-12-31', source: 'estimate from prospectus' } } } });
+    adjustments: { items: [], assumptions: { target_fcf_margin: 0.2, base_revenue: base, base_fcf: { value: -5, period_end: '2025-12-31', source: '424B4 0001628280-26-042639, "Free cash flow"' } } } });
   const m = get(out, 'reverse-dcf-revenue');
   assert.equal(m.status, 'ok');
   assert.equal(m.inputs.find((i) => i.name === 'base_revenue').source, base.source);
+  assert.equal(m.inputs.find((i) => i.name === 'current_fcf_margin').value, -0.05);
 });
 
 test('revenue reverse DCF needs a target margin', () => {

@@ -82,7 +82,9 @@ export function valuationMetrics(facts, T, A, perYear, multi, price) {
 
   const sourced = (name, a) => (a && Number.isFinite(a.value) ? { item: name, period_end: a.period_end ?? null, value: a.value, source: a.source } : null);
   const rev0 = (lastAnnual && T.get('revenue', lastAnnual)) || sourced('base_revenue', A.base_revenue);
-  const margin0 = okMetric(year('fcf-margin')) || sourced('base_fcf_margin', A.base_fcf_margin);
+  // Without annual data, stage 2 calculates the current FCF margin from two sourced text facts.
+  const margin0 = okMetric(year('fcf-margin')) || (A.base_fcf && rev0 && Number.isFinite(A.base_fcf.value)
+    ? { item: 'base_fcf_margin', period_end: A.base_fcf.period_end ?? null, value: A.base_fcf.value / rev0.value, source: A.base_fcf.source } : null);
   const target = Number.isFinite(A.target_fcf_margin) ? { item: 'target_fcf_margin', period_end: last, value: A.target_fcf_margin, estimate: 'analyst assumption' } : null;
   const growthFor = (v) => impliedRevenueGrowth(v.price, v.base_revenue, v.current_fcf_margin, v.target_fcf_margin, A.wacc, D.terminal_growth.base, D.years,
     v.debt_and_other_claims, v.cash_sti, v.shares_outstanding);

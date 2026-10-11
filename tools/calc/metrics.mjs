@@ -18,6 +18,9 @@ export function calc(key, card, end, formula, named, fn) {
   return { key, card, period_end: end, value: ok(v) ? v : null, status: ok(v) ? 'ok' : 'not_meaningful', formula, inputs };
 }
 
+// Two period ends about one year apart. A changed fiscal year gives a shorter or longer gap.
+const annualGap = (a, b) => { const d = (Date.parse(b) - Date.parse(a)) / 864e5; return d >= 350 && d <= 380; };
+
 const derived = (item, end, value) => (ok(value) ? { item, period_end: end, value } : null);
 
 // Total debt. LongTermDebt (unlike LongTermDebtNoncurrent) already includes the current part.
@@ -55,19 +58,22 @@ export function yearMetrics(facts, T, A) {
   const out = [];
   facts.periods.forEach((end, i) => {
     const prev = i > 0 ? facts.periods[i - 1] : null;
+    const gapOk = !prev || annualGap(prev, end);
+    const gapNote = gapOk ? '' : ' — not meaningful: the periods are not one year apart (changed fiscal year)';
     const g = (item) => T.get(item, end), gp = (item) => (prev ? T.get(item, prev) : null);
     const rev = g('revenue'), ni = g('net_income'), oi = g('operating_income'), ocf = g('ocf'), capex = g('capex');
     const da = g('d_and_a'), tax = taxRate(T, end), debt = debtFact(T, end), cash = g('cash_sti');
     const long = rev?.flags.includes('long_year') || (prev && gp('revenue')?.flags.includes('long_year'));
     const grossProfit = g('gross_profit') ?? (rev && g('cost_of_revenue') ? derived('gross_profit', end, rev.value - g('cost_of_revenue').value) : null);
     const ebitda = oi && da ? derived('ebitda', end, oi.value + da.value) : null;
-    const dOwc = prev && owc(T, end) && owc(T, prev) ? derived('change_in_owc', end, owc(T, end).value - owc(T, prev).value) : null;
+    const dOwc = prev && gapOk && owc(T, end) && owc(T, prev) ? derived('change_in_owc', end, owc(T, end).value - owc(T, prev).value) : null;
     const ic = investedCapital(T, end), icPrev = prev ? investedCapital(T, prev) : null;
     const avgIc = ic && icPrev ? derived('average_invested_capital', end, (ic.value + icPrev.value) / 2) : ic;
+    const icNotPositive = (ic && ic.value <= 0) || (icPrev && icPrev.value <= 0); // an average across a sign change is not meaningful
 
     out.push(
-      calc('revenue-growth', 'revenue', end, 'Revenue / Previous revenue − 1' + (long ? ' (annualized: 53-week year scaled to 364 days)' : ''),
-        { revenue: annualized(rev), previous_revenue: prev ? annualized(gp('revenue')) : null }, (v) => v.revenue / v.previous_revenue - 1),
+      calc('revenue-growth', 'revenue', end, 'Revenue / Previous revenue − 1' + (long ? ' (annualized: 53-week year scaled to 364 days)' : '') + gapNote,
+        { revenue: annualized(rev), previous_revenue: prev ? annualized(gp('revenue')) : null }, (v) => (gapOk ? v.revenue / v.previous_revenue - 1 : NaN)),
       calc('gross-margin', 'gross-margin', end, 'Gross profit / Revenue', { gross_profit: grossProfit, revenue: rev }, (v) => v.gross_profit / v.revenue),
       calc('operating-margin', 'operating-margin', end, 'Operating income / Revenue', { operating_income: oi, revenue: rev }, (v) => v.operating_income / v.revenue),
       calc('net-margin', 'net-margin', end, 'Net income / Revenue', { net_income: ni, revenue: rev }, (v) => v.net_income / v.revenue),
@@ -86,7 +92,7 @@ export function yearMetrics(facts, T, A) {
       calc('nopat', 'nopat', end, 'Operating income × (1 − Tax rate)', { operating_income: oi, tax_rate: tax }, (v) => F.nopat(v.operating_income, v.tax_rate)),
       calc('invested-capital', 'invested-capital', end, 'Equity + Debt − Cash', { equity: g('equity'), debt, cash_sti: cash }, (v) => v.equity + v.debt - v.cash_sti),
       calc('roic', 'roic', end, 'NOPAT / Average invested capital (only when invested capital > 0)', { operating_income: oi, tax_rate: tax, average_invested_capital: avgIc },
-        (v) => (v.average_invested_capital > 0 ? F.nopat(v.operating_income, v.tax_rate) / v.average_invested_capital : NaN)),
+        (v) => (!icNotPositive && v.average_invested_capital > 0 ? F.nopat(v.operating_income, v.tax_rate) / v.average_invested_capital : NaN)),
       calc('net-debt', 'net-debt', end, 'Debt − Cash', { debt, cash_sti: cash }, (v) => v.debt - v.cash_sti),
       calc('debt-ebitda', 'debt-ebitda', end, 'Debt / EBITDA (only when EBITDA > 0)', { debt, ebitda }, (v) => (v.ebitda > 0 ? v.debt / v.ebitda : NaN)),
       calc('interest-coverage', 'interest-coverage', end, 'Operating income / Interest expense (only when interest > 0)', { operating_income: oi, interest_expense: g('interest_expense') },
@@ -97,8 +103,8 @@ export function yearMetrics(facts, T, A) {
         { equity: g('equity'), preferred: g('preferred'), goodwill: g('goodwill'), intangibles: g('intangibles') }, (v) => v.equity - v.preferred - v.goodwill - v.intangibles),
       calc('ncav', 'ncav', end, 'Current assets − Total liabilities − Preferred', { current_assets: g('current_assets'), total_liabilities: g('total_liabilities'), preferred: g('preferred') },
         (v) => v.current_assets - v.total_liabilities - v.preferred),
-      calc('dilution', 'dilution', end, 'Diluted shares / Previous diluted shares − 1', { diluted_avg_shares: g('diluted_avg_shares'), previous_shares: gp('diluted_avg_shares') },
-        (v) => v.diluted_avg_shares / v.previous_shares - 1),
+      calc('dilution', 'dilution', end, 'Diluted shares / Previous diluted shares − 1' + gapNote, { diluted_avg_shares: g('diluted_avg_shares'), previous_shares: gp('diluted_avg_shares') },
+        (v) => (gapOk ? v.diluted_avg_shares / v.previous_shares - 1 : NaN)),
       calc('sbc-to-revenue', 'dilution', end, 'SBC / Revenue', { sbc: g('sbc'), revenue: rev }, (v) => v.sbc / v.revenue),
       calc('eps', 'eps', end, 'Reported diluted EPS', { eps_diluted: g('eps_diluted') }, (v) => v.eps_diluted),
       calc('debt-due-3y', 'refinancing-risk', end, 'Debt maturities in years 1 + 2 + 3', { maturity_y1: g('maturity_y1'), maturity_y2: g('maturity_y2'), maturity_y3: g('maturity_y3') },
@@ -110,15 +116,21 @@ export function yearMetrics(facts, T, A) {
 
 export function multiYearMetrics(facts, T, A, perYear) {
   const ends = facts.periods, last = ends[ends.length - 1], out = [];
-  if (!ends.length) return out;
+  if (!ends.length) return [{ key: 'roic-years-above-wacc', card: 'roic', period_end: null, value: null, status: 'not_testable', years_available: 0,
+    formula: `Count of years with ROIC > WACC (${A.wacc}) in the last ${A.lookback_years} years`, inputs: [] }];
   const year = (key, end) => perYear.find((m) => m.key === key && m.period_end === end);
   // 5-year CAGR and the longest available span (with 3 periods: only 2 years; with 10 periods: 5 and 9 years).
   const spans = [...new Set([5, ends.length - 1].filter((n) => n >= 1 && n < ends.length))];
   for (const n of spans) {
     const first = ends[ends.length - 1 - n];
-    out.push(calc(`revenue-cagr-${n}`, 'revenue', last, `(Revenue / Revenue ${n} years earlier)^(1/${n}) − 1 (53-week years annualized)`,
+    // With a changed fiscal year in the span, compound over the real time between the period ends.
+    const window = ends.slice(ends.length - 1 - n), regular = window.every((e, k) => k === 0 || annualGap(window[k - 1], e));
+    const years = regular ? n : (Date.parse(last) - Date.parse(first)) / 864e5 / 365.25;
+    out.push(calc(`revenue-cagr-${n}`, 'revenue', last, regular
+      ? `(Revenue / Revenue ${n} years earlier)^(1/${n}) − 1 (53-week years annualized)`
+      : `(Revenue / Revenue at ${first})^(1/${years.toFixed(2)}) − 1 (real time between period ends; changed fiscal year)`,
       { revenue: annualized(T.get('revenue', last)), first_revenue: annualized(T.get('revenue', first)) },
-      (v) => (v.first_revenue > 0 && v.revenue > 0 ? (v.revenue / v.first_revenue) ** (1 / n) - 1 : NaN)));
+      (v) => (v.first_revenue > 0 && v.revenue > 0 ? (v.revenue / v.first_revenue) ** (1 / years) - 1 : NaN)));
   }
   const first = ends[0], span = ends.length - 1;
   if (span >= 1) out.push(calc('diluted-shares-change', 'dilution', last, `Diluted shares / Diluted shares ${span} years earlier − 1`,

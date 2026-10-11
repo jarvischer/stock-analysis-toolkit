@@ -2,7 +2,7 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { parseArgs } from 'node:util';
-import { factTable } from './facts-table.mjs';
+import { factTable, ZERO_IF_MISSING } from './facts-table.mjs';
 import { yearMetrics, multiYearMetrics } from './metrics.mjs';
 import { valuationMetrics } from './valuation.mjs';
 
@@ -47,6 +47,12 @@ export function main(argv) {
   if (bad.length) { console.error(`Each adjustment needs a numeric delta, a reason and a source: ${JSON.stringify(bad)}`); return 1; }
   const dir = join(values.data, ticker);
   const facts = JSON.parse(readFileSync(join(dir, 'facts.json'), 'utf8'));
+  // An adjustment must change a value that exists; otherwise it would be silently ignored.
+  const all = [...facts.facts, ...(facts.interim?.facts || [])];
+  const known = new Set(all.filter((f) => f.status !== 'not_available').map((f) => f.item + '|' + f.period_end));
+  const periods = new Set([...facts.periods, ...(facts.interim ? [facts.interim.period_end] : [])]);
+  const unknown = (adjustments.items || []).filter((a) => !known.has(a.item + '|' + a.period_end) && !(ZERO_IF_MISSING.includes(a.item) && periods.has(a.period_end)));
+  if (unknown.length) { console.error(`These adjustments match no reported value (item or period_end is wrong, or the value is not available): ${JSON.stringify(unknown)}`); return 1; }
   const policy = JSON.parse(readFileSync(values.policy, 'utf8'));
   const out = computeAll(facts, { policy, adjustments, price });
   writeFileSync(join(dir, 'metrics.json'), JSON.stringify(out, null, 2) + '\n');
