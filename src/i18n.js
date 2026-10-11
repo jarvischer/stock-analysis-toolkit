@@ -2,7 +2,8 @@
 (function () {
   const supported = ['en', 'he'];
   const query = new URL(location.href).searchParams.get('lang');
-  SAT.lang = supported.includes(query) ? query : SAT.store.get('language', 'en');
+  // The page loads one bundle per language; its language decides when it is set.
+  SAT.lang = window.SAT_BUNDLE_LANG || (supported.includes(query) ? query : SAT.store.get('language', 'en'));
   if (!supported.includes(SAT.lang)) SAT.lang = 'en';
   SAT.store.set('language', SAT.lang);
   SAT.content = window.SAT_CATALOGS[SAT.lang];

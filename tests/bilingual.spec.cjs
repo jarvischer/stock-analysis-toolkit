@@ -115,3 +115,17 @@ test('Hebrew pages show no untranslated English UI text', async ({page}) => {
   }
   expect([...found].map(([text, route]) => `${route}: ${text}`)).toEqual([]);
 });
+
+test('each language loads only its own bundle', async ({page}) => {
+  for (const lang of ['en','he']) {
+    const scripts = [];
+    page.on('request', r => { const m = r.url().match(/assets\/app\.(\w+)\.\w+\.js$/); if (m) scripts.push(m[1]); });
+    await page.goto('/?lang='+lang+'#glossary');
+    await expect(page.locator('html')).toHaveAttribute('lang', lang);
+    expect(scripts).toEqual([lang]);
+    page.removeAllListeners('request');
+  }
+  // Without ?lang the saved language decides which bundle loads.
+  await page.goto('/#learning');
+  await expect(page.locator('html')).toHaveAttribute('lang', 'he');
+});

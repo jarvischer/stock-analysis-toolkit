@@ -71,7 +71,7 @@ Validation checks required Hebrew explanations, matching catalog IDs, section me
 
 ## Build and deployment
 
-`npm run build` validates the catalogs and assembles `dist/` with content-hashed JavaScript and CSS. Relative asset URLs work at the repository’s existing GitHub Pages path. Source code and tests are not published.
+`npm run build` validates the catalogs and assembles `dist/` with content-hashed CSS and one content-hashed JavaScript bundle for each language. A small script in `index.html` loads the bundle for the active language. Each bundle also contains the concept titles of the other language for bilingual search. Relative asset URLs work at the repository’s existing GitHub Pages path. Source code and tests are not published.
 
 GitHub Actions runs validation, finance tests, the build, and browser tests for pull requests and pushes. Successful pushes to `main` publish the tested `dist/` artifact. GitHub Pages must use **GitHub Actions** as its publishing source. See [GitHub’s custom Pages workflow documentation](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).
 
