@@ -7,7 +7,7 @@ from pathlib import Path
 
 import pandas as pd
 
-from .select import ANNUAL_FORMS
+from .select import ANNUAL_FORMS, INTERIM_FORMS
 
 
 def require_identity(env: Mapping[str, str] = os.environ) -> str:
@@ -23,7 +23,7 @@ def _iso(value) -> str | None:
 
 
 def records_from_dataframe(df: pd.DataFrame) -> list[dict]:
-    keep = df[df["form_type"].isin(ANNUAL_FORMS) & df["numeric_value"].notna()]
+    keep = df[df["form_type"].isin(ANNUAL_FORMS | INTERIM_FORMS) & df["numeric_value"].notna()]
     return [{"concept": r.concept, "value": float(r.numeric_value), "unit": r.unit,
              "start": _iso(r.period_start), "end": _iso(r.period_end), "form": r.form_type,
              "accession": r.accession, "filed": _iso(r.filing_date)}

@@ -21,7 +21,7 @@ def main(argv: list[str] | None = None) -> int:
 
     import edgar
     from .fetch import fetch
-    from .sections import write_sections
+    from .sections import write_sections, write_short_history_sections
 
     out = Path(args.out) / args.ticker.upper()
     company, records, handle = fetch(args.ticker, Path(args.out) / ".edgar-cache")
@@ -32,8 +32,12 @@ def main(argv: list[str] | None = None) -> int:
     if args.save_records:
         (out / "records.json").write_text(json.dumps(records) + "\n")
     sections = write_sections(handle, out / "sections")
+    if facts["history_years"] < 3:
+        sections += write_short_history_sections(handle, out / "sections")
     missing = sum(1 for f in facts["facts"] if f["status"] == "not_available")
-    print(f"{company['name']} ({company['ticker']}), model fit: {facts['company']['model_fit']}")
+    print(f"{company['name']} ({company['ticker']}), model fit: {facts['company']['model_fit']}, "
+          f"history: {facts['history_years']} years"
+          + (f", interim balance sheet {facts['interim']['period_end']}" if facts["interim"] else ""))
     print(f"periods: {', '.join(facts['periods'])}")
     print(f"facts: {len(facts['facts'])} ({missing} not available) → {out / 'facts.json'}")
     print(f"sections: {', '.join(sections)} → {out / 'sections'}")

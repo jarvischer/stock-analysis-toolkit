@@ -10,6 +10,7 @@ from datetime import date
 from typing import Literal
 
 ANNUAL_FORMS = {"10-K", "10-K/A", "10-KT", "10-KT/A"}
+INTERIM_FORMS = {"10-Q", "10-Q/A"}
 MIN_DAYS, MAX_DAYS, LONG_YEAR_DAYS = 358, 380, 368
 CONFLICT_TOLERANCE = 0.005
 
@@ -18,8 +19,8 @@ def period_days(start: str, end: str) -> int:
     return (date.fromisoformat(end) - date.fromisoformat(start)).days + 1
 
 
-def _is_annual(rec: dict, kind: str) -> bool:
-    if rec["form"] not in ANNUAL_FORMS:
+def _is_annual(rec: dict, kind: str, forms: set[str]) -> bool:
+    if rec["form"] not in forms:
         return False
     if kind == "instant":
         return rec["start"] is None
@@ -29,10 +30,10 @@ def _is_annual(rec: dict, kind: str) -> bool:
 
 
 def annual_series(records: list[dict], tags: list[str], unit: str,
-                  kind: Literal["duration", "instant"]) -> dict[str, dict]:
+                  kind: Literal["duration", "instant"], forms: set[str] = ANNUAL_FORMS) -> dict[str, dict]:
     by_end: dict[str, list[dict]] = {}
     for rec in records:
-        if rec["concept"] in tags and rec["unit"] == unit and _is_annual(rec, kind):
+        if rec["concept"] in tags and rec["unit"] == unit and _is_annual(rec, kind, forms):
             by_end.setdefault(rec["end"], []).append(rec)
 
     out: dict[str, dict] = {}
