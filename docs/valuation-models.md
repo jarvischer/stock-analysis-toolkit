@@ -8,10 +8,10 @@ The policy DCF remains the Value screen. A failed policy screen is not a univers
 npm run sat -- extract AVGO --save-records
 npm run sat -- calc AVGO --price 361.54 --price-date 2026-10-09 --adjust data/AVGO/adjustments.json
 npm run sat -- compare AVGO --out analyses/AVGO-valuation.md
-npm run sat -- validate analyses/AVGO-2026-10-11-v2.json
+npm run sat -- validate analyses/AVGO-2026-10-11-v4.json
 ```
 
-`data/TICKER/metrics.json` contains every metric's value, status, formula and inputs, plus `metric_sets` and `valuation`. Copy `valuation` unchanged into an analysis JSON to display the comparison on Tools → Analyses. The Markdown comparison includes yearly forecasts, all assumptions, conditional reverse DCF and sensitivity tables. The AVGO v2 data directory provides a complete example, including CSV and Excel exports.
+`data/TICKER/metrics.json` contains every metric's value, status, formula and inputs, plus `metric_sets` and `valuation`. Copy `valuation` unchanged into an analysis JSON to display the comparison on Tools → Analyses. The Markdown comparison includes yearly forecasts, all assumptions, conditional reverse DCF and sensitivity tables. The AVGO v4 data directory provides a complete example, including CSV and Excel exports.
 
 ## Periods and accounting bases
 
