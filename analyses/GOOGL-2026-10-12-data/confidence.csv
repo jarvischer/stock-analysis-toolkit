@@ -1,0 +1,11 @@
+Factor,Risk,Reason,Source
+forecast_visibility,high,Near-term Cloud demand does not establish a decade of AI returns.,https://www.sec.gov/Archives/edgar/data/1652044/000165204426000071/goog-20260630.htm
+revenue_concentration,high,Services remains the principal business and depends heavily on advertising and Search.,https://www.sec.gov/Archives/edgar/data/1652044/000165204426000071/goog-20260630.htm
+cyclicality,medium,Advertising demand and enterprise spending are economically sensitive.,https://www.sec.gov/Archives/edgar/data/1652044/000165204426000071/goog-20260630.htm
+margin_uncertainty,high,"AI inference costs, competition and depreciation can alter monetization margins.",https://www.sec.gov/Archives/edgar/data/1652044/000165204426000071/goog-20260630.htm
+reinvestment_uncertainty,high,Large committed infrastructure spending and undisclosed segment asset allocation weaken visibility into cash conversion.,https://www.sec.gov/Archives/edgar/data/1652044/000165204426000071/goog-20260630.htm
+tax_uncertainty,medium,Investment gains distort reported effective taxes; normalized operating taxes are estimates.,https://www.sec.gov/Archives/edgar/data/1652044/000165204426000071/goog-20260630.htm
+customer_concentration,unknown,No comparable quantified customer-concentration series was established; advertiser diversity does not eliminate distribution dependence.,https://www.sec.gov/Archives/edgar/data/1652044/000165204426000071/goog-20260630.htm
+technological_disruption,high,AI answer products and competing platforms can alter search traffic and monetization.,https://www.sec.gov/Archives/edgar/data/1652044/000165204426000071/goog-20260630.htm
+terminal_value_dependence,high,"PV terminal value / enterprise value; above 75% is high, above 50% medium (framework judgment thresholds)",valuation.forward.operating-central.valuation
+scenario_dispersion,high,Scenario values are widely dispersed: valuation uncertainty is high.,selected scenario DCFs

@@ -1,0 +1,49 @@
+{
+  "metrics": 285,
+  "facts": 526,
+  "text_facts": 17,
+  "cards": 109,
+  "workbook_sheets": [
+    "Start here",
+    "Metrics",
+    "Facts",
+    "Text Facts",
+    "Calculation Inputs",
+    "Cards",
+    "Forward Forecasts",
+    "Valuation Models",
+    "Sensitivity",
+    "Per share metrics",
+    "Per share growth",
+    "Probability sensitivity",
+    "What Must Be True",
+    "Price implied years",
+    "Confidence"
+  ],
+  "status": "passed",
+  "checks": [
+    "Metric/card row counts",
+    "All scenario cash-flow identities",
+    "All probability weight sums and expected-value contributions",
+    "All three reverse operating paths independently reprice to the supplied close"
+  ],
+  "price": {
+    "ticker": "GOOGL",
+    "share_class": "Alphabet Class A",
+    "currency": "USD",
+    "value": 351.66,
+    "date": "2026-10-09",
+    "session": "regular-session close, 16:00 America/New_York",
+    "checked_on": "2026-10-12",
+    "sources": [
+      "https://finance.yahoo.com/quote/GOOGL/history/",
+      "https://stockanalysis.com/stocks/googl/history/"
+    ],
+    "note": "Use the Close column, not an overnight or after-hours quote. Class A quote is used as a proxy for all common classes in the framework equity bridge."
+  },
+  "independent_reverse_dcf_prices": [
+    351.66,
+    351.66000000000025,
+    351.6600000000004
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "ticker": "GOOGL",
+  "share_class": "Alphabet Class A",
+  "currency": "USD",
+  "value": 351.66,
+  "date": "2026-10-09",
+  "session": "regular-session close, 16:00 America/New_York",
+  "checked_on": "2026-10-12",
+  "sources": [
+    "https://finance.yahoo.com/quote/GOOGL/history/",
+    "https://stockanalysis.com/stocks/googl/history/"
+  ],
+  "note": "Use the Close column, not an overnight or after-hours quote. Class A quote is used as a proxy for all common classes in the framework equity bridge."
+}

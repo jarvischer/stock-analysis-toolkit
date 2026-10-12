@@ -1,0 +1,20 @@
+{
+  "status": "provisional_estimate",
+  "business_profile": "Advertising-led digital platform with rapidly growing Cloud and capital-intensive AI infrastructure",
+  "investment_lens": "Quality-growth business assessed with GARP valuation discipline",
+  "central_scenario_id": "operating-central",
+  "reason": "Estimate selected for distinct Services and Cloud economics, large AI reinvestment and central research costs. A style label does not set value. Forecasts remain provisional because future capital intensity, monetization and dilution are uncertain.",
+  "evidence": [
+    {
+      "source": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000071/goog-20260630.htm",
+      "finding": "Services and Cloud have separately reported revenue and operating results; shared AI costs sit outside segments."
+    },
+    {
+      "source": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000071/goog-20260630.htm",
+      "finding": "Recent common and mandatory-convertible preferred issuance changes shareholder economics despite historical repurchases."
+    }
+  ],
+  "value_per_share": 193.90079173138,
+  "method": "Explicit segment FCFF DCF",
+  "distinction": "Business profile determines model suitability. Investment lens does not set growth or margins. Valuation is conditional on the explicit operating forecast; the policy result is a separate investment screen. GARP is a price discipline, not an intrinsic company category."
+}

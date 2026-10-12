@@ -1,0 +1,2927 @@
+{
+  "status": "ok",
+  "central_value": 193.90079173138,
+  "confidence": "Low",
+  "confidence_method": "Conservative evidence rubric: any high or unknown risk => Low; at least two medium risks => Medium; otherwise High. This is an analyst evidence assessment, not a statistical probability.",
+  "factors": [
+    {
+      "key": "forecast_visibility",
+      "risk": "high",
+      "reason": "Near-term Cloud demand does not establish a decade of AI returns.",
+      "source": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000071/goog-20260630.htm"
+    },
+    {
+      "key": "revenue_concentration",
+      "risk": "high",
+      "reason": "Services remains the principal business and depends heavily on advertising and Search.",
+      "source": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000071/goog-20260630.htm"
+    },
+    {
+      "key": "cyclicality",
+      "risk": "medium",
+      "reason": "Advertising demand and enterprise spending are economically sensitive.",
+      "source": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000071/goog-20260630.htm"
+    },
+    {
+      "key": "margin_uncertainty",
+      "risk": "high",
+      "reason": "AI inference costs, competition and depreciation can alter monetization margins.",
+      "source": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000071/goog-20260630.htm"
+    },
+    {
+      "key": "reinvestment_uncertainty",
+      "risk": "high",
+      "reason": "Large committed infrastructure spending and undisclosed segment asset allocation weaken visibility into cash conversion.",
+      "source": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000071/goog-20260630.htm"
+    },
+    {
+      "key": "tax_uncertainty",
+      "risk": "medium",
+      "reason": "Investment gains distort reported effective taxes; normalized operating taxes are estimates.",
+      "source": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000071/goog-20260630.htm"
+    },
+    {
+      "key": "customer_concentration",
+      "risk": "unknown",
+      "reason": "No comparable quantified customer-concentration series was established; advertiser diversity does not eliminate distribution dependence.",
+      "source": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000071/goog-20260630.htm"
+    },
+    {
+      "key": "technological_disruption",
+      "risk": "high",
+      "reason": "AI answer products and competing platforms can alter search traffic and monetization.",
+      "source": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000071/goog-20260630.htm"
+    },
+    {
+      "key": "terminal_value_dependence",
+      "risk": "high",
+      "reason": "PV terminal value / enterprise value; above 75% is high, above 50% medium (framework judgment thresholds)",
+      "source": "valuation.forward.operating-central.valuation",
+      "thresholds": {
+        "high": 0.75,
+        "medium": 0.5
+      },
+      "value": 0.7944724955837921,
+      "formula": "PV terminal value / enterprise value",
+      "inputs": {
+        "pv_terminal_value": 1785274782328.984,
+        "enterprise_value": 2247119682874.7773
+      },
+      "period_end": "2026-06-30",
+      "basis": "calculated"
+    },
+    {
+      "key": "scenario_dispersion",
+      "risk": "high",
+      "reason": "Scenario values are widely dispersed: valuation uncertainty is high.",
+      "source": "selected scenario DCFs",
+      "value": 1.1005848675538852,
+      "formula": "(maximum scenario value - minimum scenario value) / central value; positive maximum/minimum ratio",
+      "inputs": {
+        "minimum": 83.94350499589497,
+        "maximum": 297.3477821821693,
+        "central": 193.90079173138,
+        "ratio": 3.5422369151336994
+      },
+      "period_end": "2026-06-30",
+      "basis": "calculated"
+    }
+  ],
+  "primary_uncertainties": [
+    {
+      "key": "forecast_visibility",
+      "risk": "high",
+      "reason": "Near-term Cloud demand does not establish a decade of AI returns.",
+      "source": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000071/goog-20260630.htm"
+    },
+    {
+      "key": "revenue_concentration",
+      "risk": "high",
+      "reason": "Services remains the principal business and depends heavily on advertising and Search.",
+      "source": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000071/goog-20260630.htm"
+    },
+    {
+      "key": "cyclicality",
+      "risk": "medium",
+      "reason": "Advertising demand and enterprise spending are economically sensitive.",
+      "source": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000071/goog-20260630.htm"
+    },
+    {
+      "key": "margin_uncertainty",
+      "risk": "high",
+      "reason": "AI inference costs, competition and depreciation can alter monetization margins.",
+      "source": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000071/goog-20260630.htm"
+    },
+    {
+      "key": "reinvestment_uncertainty",
+      "risk": "high",
+      "reason": "Large committed infrastructure spending and undisclosed segment asset allocation weaken visibility into cash conversion.",
+      "source": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000071/goog-20260630.htm"
+    },
+    {
+      "key": "tax_uncertainty",
+      "risk": "medium",
+      "reason": "Investment gains distort reported effective taxes; normalized operating taxes are estimates.",
+      "source": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000071/goog-20260630.htm"
+    },
+    {
+      "key": "customer_concentration",
+      "risk": "unknown",
+      "reason": "No comparable quantified customer-concentration series was established; advertiser diversity does not eliminate distribution dependence.",
+      "source": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000071/goog-20260630.htm"
+    },
+    {
+      "key": "technological_disruption",
+      "risk": "high",
+      "reason": "AI answer products and competing platforms can alter search traffic and monetization.",
+      "source": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000071/goog-20260630.htm"
+    },
+    {
+      "key": "terminal_value_dependence",
+      "risk": "high",
+      "reason": "PV terminal value / enterprise value; above 75% is high, above 50% medium (framework judgment thresholds)",
+      "source": "valuation.forward.operating-central.valuation",
+      "thresholds": {
+        "high": 0.75,
+        "medium": 0.5
+      },
+      "value": 0.7944724955837921,
+      "formula": "PV terminal value / enterprise value",
+      "inputs": {
+        "pv_terminal_value": 1785274782328.984,
+        "enterprise_value": 2247119682874.7773
+      },
+      "period_end": "2026-06-30",
+      "basis": "calculated"
+    },
+    {
+      "key": "scenario_dispersion",
+      "risk": "high",
+      "reason": "Scenario values are widely dispersed: valuation uncertainty is high.",
+      "source": "selected scenario DCFs",
+      "value": 1.1005848675538852,
+      "formula": "(maximum scenario value - minimum scenario value) / central value; positive maximum/minimum ratio",
+      "inputs": {
+        "minimum": 83.94350499589497,
+        "maximum": 297.3477821821693,
+        "central": 193.90079173138,
+        "ratio": 3.5422369151336994
+      },
+      "period_end": "2026-06-30",
+      "basis": "calculated"
+    }
+  ],
+  "wide_dispersion": true,
+  "range": {
+    "low": 83.94350499589497,
+    "high": 297.3477821821693,
+    "reason": "Estimate: range of explicit operating scenarios, not a statistical interval. Excludes unquantified tail risks and any separate option value for Other Bets.",
+    "definition": "Scenario-supported working valuation range, not a statistical confidence interval or exhaustive bound.",
+    "formula": "Minimum and maximum of the three explicitly selected operating scenarios",
+    "inputs": {
+      "scenarios": [
+        {
+          "id": "ai-slowdown",
+          "value": 83.94350499589497
+        },
+        {
+          "id": "operating-central",
+          "value": 193.90079173138
+        },
+        {
+          "id": "ai-execution-upside",
+          "value": 297.3477821821693
+        }
+      ]
+    },
+    "period_end": "2026-06-30",
+    "basis": "scenario_estimate"
+  },
+  "display_values": {
+    "central": 195,
+    "low": 85,
+    "high": 295,
+    "formula": "Round exact scenario-derived USD/share values to nearest $5 for conclusions",
+    "inputs": {
+      "central": 193.90079173138,
+      "low": 83.94350499589497,
+      "high": 297.3477821821693
+    },
+    "period_end": "2026-06-30",
+    "basis": "presentation_only"
+  },
+  "sensitivity": [
+    {
+      "variable": "wacc",
+      "step": 0.01,
+      "values": [
+        {
+          "delta": -0.01,
+          "value_per_share": 240.21461041518,
+          "status": "ok"
+        },
+        {
+          "delta": 0.01,
+          "value_per_share": 160.5332378038385,
+          "status": "ok"
+        }
+      ],
+      "span": 79.68137261134152,
+      "formula": "Reprice unchanged central operating DCF with one assumption shifted in every forecast year; span = absolute difference between two values",
+      "inputs": {
+        "central_scenario": "operating-central",
+        "central_assumptions": {
+          "id": "operating-central",
+          "style": "growth",
+          "years": 10,
+          "wacc": 0.09,
+          "tax_rate": 0.21,
+          "terminal_growth": 0.025,
+          "terminal_roic": 0.15,
+          "source": "SEC 10-K 0001652044-26-000018 and 10-Q 0001652044-26-000071; growth, margins, investment and tax paths are analyst estimates dated 2026-10-12, not guidance or consensus.",
+          "reason": "Estimate: explicit Services and Cloud growth with fading infrastructure investment. Segment margins include SBC and depreciation. Other Bets operating losses and unallocated AI/corporate expense are combined in a separately modeled cost path, starting at $36B and increasing by 5% annually. Residual revenue has zero operating margin before those costs. Depreciation and investment allocations are illustrative because segment asset data is not disclosed. The same capex ratios across cases isolate demand and margin risk; lower demand does not immediately remove capital commitments.",
+          "sbc_treatment": "expensed_in_margins",
+          "corporate_costs": [
+            36000000000,
+            37800000000,
+            39690000000,
+            41674500000.00001,
+            43758225000.00001,
+            45946136250.000015,
+            48243443062.500015,
+            50655615215.625015,
+            53188395976.406265,
+            55847815775.226585
+          ],
+          "segments": [
+            {
+              "name": "Google Services",
+              "base_revenue": {
+                "period_end": "2026-06-30",
+                "components": [
+                  {
+                    "item": "google_services_revenue",
+                    "value": 342721000000,
+                    "period_end": "2025-12-31",
+                    "source": "10-K 0001652044-26-000018",
+                    "sign": 1
+                  },
+                  {
+                    "item": "google_services_revenue",
+                    "value": 184177000000,
+                    "period_end": "2026-06-30",
+                    "source": "10-Q 0001652044-26-000071",
+                    "sign": 1
+                  },
+                  {
+                    "item": "google_services_revenue",
+                    "value": 159807000000,
+                    "period_end": "2025-06-30",
+                    "source": "10-Q 0001652044-26-000071",
+                    "sign": -1
+                  }
+                ]
+              },
+              "base_working_capital_ratio": 0.12,
+              "growth": [
+                0.12,
+                0.1,
+                0.09,
+                0.08,
+                0.07,
+                0.06,
+                0.05,
+                0.05,
+                0.04,
+                0.04
+              ],
+              "operating_margin": [
+                0.39,
+                0.39,
+                0.39,
+                0.39,
+                0.39,
+                0.39,
+                0.39,
+                0.39,
+                0.39,
+                0.39
+              ],
+              "depreciation_to_revenue": [
+                0.045,
+                0.045,
+                0.045,
+                0.045,
+                0.045,
+                0.045,
+                0.045,
+                0.045,
+                0.045,
+                0.045
+              ],
+              "capex_to_revenue": [
+                0.25,
+                0.23,
+                0.2,
+                0.17,
+                0.15,
+                0.13,
+                0.12,
+                0.11,
+                0.1,
+                0.1
+              ],
+              "working_capital_to_revenue": [
+                0.12,
+                0.12,
+                0.12,
+                0.12,
+                0.12,
+                0.12,
+                0.12,
+                0.12,
+                0.12,
+                0.12
+              ]
+            },
+            {
+              "name": "Google Cloud",
+              "base_revenue": {
+                "period_end": "2026-06-30",
+                "components": [
+                  {
+                    "item": "google_cloud_revenue",
+                    "value": 58705000000,
+                    "period_end": "2025-12-31",
+                    "source": "10-K 0001652044-26-000018",
+                    "sign": 1
+                  },
+                  {
+                    "item": "google_cloud_revenue",
+                    "value": 44796000000,
+                    "period_end": "2026-06-30",
+                    "source": "10-Q 0001652044-26-000071",
+                    "sign": 1
+                  },
+                  {
+                    "item": "google_cloud_revenue",
+                    "value": 25884000000,
+                    "period_end": "2025-06-30",
+                    "source": "10-Q 0001652044-26-000071",
+                    "sign": -1
+                  }
+                ]
+              },
+              "base_working_capital_ratio": 0.15,
+              "growth": [
+                0.5,
+                0.4,
+                0.3,
+                0.25,
+                0.2,
+                0.15,
+                0.12,
+                0.1,
+                0.08,
+                0.07
+              ],
+              "operating_margin": [
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35
+              ],
+              "depreciation_to_revenue": [
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15
+              ],
+              "capex_to_revenue": [
+                0.8,
+                0.7,
+                0.6,
+                0.5,
+                0.4,
+                0.35,
+                0.3,
+                0.25,
+                0.22,
+                0.2
+              ],
+              "working_capital_to_revenue": [
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15
+              ]
+            },
+            {
+              "name": "Other Bets and revenue hedging",
+              "base_revenue": {
+                "period_end": "2026-06-30",
+                "components": [
+                  {
+                    "item": "other_bets_revenue",
+                    "value": 1537000000,
+                    "period_end": "2025-12-31",
+                    "source": "10-K 0001652044-26-000018",
+                    "sign": 1
+                  },
+                  {
+                    "item": "other_bets_revenue",
+                    "value": 793000000,
+                    "period_end": "2026-06-30",
+                    "source": "10-Q 0001652044-26-000071",
+                    "sign": 1
+                  },
+                  {
+                    "item": "other_bets_revenue",
+                    "value": 823000000,
+                    "period_end": "2025-06-30",
+                    "source": "10-Q 0001652044-26-000071",
+                    "sign": -1
+                  },
+                  {
+                    "item": "revenue_hedging_loss",
+                    "value": 127000000,
+                    "period_end": "2025-12-31",
+                    "source": "10-K 0001652044-26-000018",
+                    "sign": -1
+                  },
+                  {
+                    "item": "revenue_hedging_loss",
+                    "value": 74000000,
+                    "period_end": "2026-06-30",
+                    "source": "10-Q 0001652044-26-000071",
+                    "sign": -1
+                  },
+                  {
+                    "item": "revenue_hedging_gain",
+                    "value": 148000000,
+                    "period_end": "2025-06-30",
+                    "source": "10-Q 0001652044-26-000071",
+                    "sign": -1
+                  }
+                ]
+              },
+              "base_working_capital_ratio": 0,
+              "growth": [
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05
+              ],
+              "operating_margin": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "depreciation_to_revenue": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "capex_to_revenue": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "working_capital_to_revenue": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          ]
+        },
+        "variable": "wacc",
+        "step": 0.01,
+        "capital": {
+          "shares": 12230000000,
+          "claims": 118187000000,
+          "cash": 242474000000,
+          "shares_date": "2026-07-15",
+          "balance_sheet_date": "2026-06-30"
+        }
+      },
+      "period_end": "2026-06-30",
+      "basis": "sensitivity_estimate"
+    },
+    {
+      "variable": "revenue_growth",
+      "step": 0.02,
+      "values": [
+        {
+          "delta": -0.02,
+          "value_per_share": 160.19979262296275,
+          "status": "ok"
+        },
+        {
+          "delta": 0.02,
+          "value_per_share": 233.18602559347894,
+          "status": "ok"
+        }
+      ],
+      "span": 72.9862329705162,
+      "formula": "Reprice unchanged central operating DCF with one assumption shifted in every forecast year; span = absolute difference between two values",
+      "inputs": {
+        "central_scenario": "operating-central",
+        "central_assumptions": {
+          "id": "operating-central",
+          "style": "growth",
+          "years": 10,
+          "wacc": 0.09,
+          "tax_rate": 0.21,
+          "terminal_growth": 0.025,
+          "terminal_roic": 0.15,
+          "source": "SEC 10-K 0001652044-26-000018 and 10-Q 0001652044-26-000071; growth, margins, investment and tax paths are analyst estimates dated 2026-10-12, not guidance or consensus.",
+          "reason": "Estimate: explicit Services and Cloud growth with fading infrastructure investment. Segment margins include SBC and depreciation. Other Bets operating losses and unallocated AI/corporate expense are combined in a separately modeled cost path, starting at $36B and increasing by 5% annually. Residual revenue has zero operating margin before those costs. Depreciation and investment allocations are illustrative because segment asset data is not disclosed. The same capex ratios across cases isolate demand and margin risk; lower demand does not immediately remove capital commitments.",
+          "sbc_treatment": "expensed_in_margins",
+          "corporate_costs": [
+            36000000000,
+            37800000000,
+            39690000000,
+            41674500000.00001,
+            43758225000.00001,
+            45946136250.000015,
+            48243443062.500015,
+            50655615215.625015,
+            53188395976.406265,
+            55847815775.226585
+          ],
+          "segments": [
+            {
+              "name": "Google Services",
+              "base_revenue": {
+                "period_end": "2026-06-30",
+                "components": [
+                  {
+                    "item": "google_services_revenue",
+                    "value": 342721000000,
+                    "period_end": "2025-12-31",
+                    "source": "10-K 0001652044-26-000018",
+                    "sign": 1
+                  },
+                  {
+                    "item": "google_services_revenue",
+                    "value": 184177000000,
+                    "period_end": "2026-06-30",
+                    "source": "10-Q 0001652044-26-000071",
+                    "sign": 1
+                  },
+                  {
+                    "item": "google_services_revenue",
+                    "value": 159807000000,
+                    "period_end": "2025-06-30",
+                    "source": "10-Q 0001652044-26-000071",
+                    "sign": -1
+                  }
+                ]
+              },
+              "base_working_capital_ratio": 0.12,
+              "growth": [
+                0.12,
+                0.1,
+                0.09,
+                0.08,
+                0.07,
+                0.06,
+                0.05,
+                0.05,
+                0.04,
+                0.04
+              ],
+              "operating_margin": [
+                0.39,
+                0.39,
+                0.39,
+                0.39,
+                0.39,
+                0.39,
+                0.39,
+                0.39,
+                0.39,
+                0.39
+              ],
+              "depreciation_to_revenue": [
+                0.045,
+                0.045,
+                0.045,
+                0.045,
+                0.045,
+                0.045,
+                0.045,
+                0.045,
+                0.045,
+                0.045
+              ],
+              "capex_to_revenue": [
+                0.25,
+                0.23,
+                0.2,
+                0.17,
+                0.15,
+                0.13,
+                0.12,
+                0.11,
+                0.1,
+                0.1
+              ],
+              "working_capital_to_revenue": [
+                0.12,
+                0.12,
+                0.12,
+                0.12,
+                0.12,
+                0.12,
+                0.12,
+                0.12,
+                0.12,
+                0.12
+              ]
+            },
+            {
+              "name": "Google Cloud",
+              "base_revenue": {
+                "period_end": "2026-06-30",
+                "components": [
+                  {
+                    "item": "google_cloud_revenue",
+                    "value": 58705000000,
+                    "period_end": "2025-12-31",
+                    "source": "10-K 0001652044-26-000018",
+                    "sign": 1
+                  },
+                  {
+                    "item": "google_cloud_revenue",
+                    "value": 44796000000,
+                    "period_end": "2026-06-30",
+                    "source": "10-Q 0001652044-26-000071",
+                    "sign": 1
+                  },
+                  {
+                    "item": "google_cloud_revenue",
+                    "value": 25884000000,
+                    "period_end": "2025-06-30",
+                    "source": "10-Q 0001652044-26-000071",
+                    "sign": -1
+                  }
+                ]
+              },
+              "base_working_capital_ratio": 0.15,
+              "growth": [
+                0.5,
+                0.4,
+                0.3,
+                0.25,
+                0.2,
+                0.15,
+                0.12,
+                0.1,
+                0.08,
+                0.07
+              ],
+              "operating_margin": [
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35
+              ],
+              "depreciation_to_revenue": [
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15
+              ],
+              "capex_to_revenue": [
+                0.8,
+                0.7,
+                0.6,
+                0.5,
+                0.4,
+                0.35,
+                0.3,
+                0.25,
+                0.22,
+                0.2
+              ],
+              "working_capital_to_revenue": [
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15
+              ]
+            },
+            {
+              "name": "Other Bets and revenue hedging",
+              "base_revenue": {
+                "period_end": "2026-06-30",
+                "components": [
+                  {
+                    "item": "other_bets_revenue",
+                    "value": 1537000000,
+                    "period_end": "2025-12-31",
+                    "source": "10-K 0001652044-26-000018",
+                    "sign": 1
+                  },
+                  {
+                    "item": "other_bets_revenue",
+                    "value": 793000000,
+                    "period_end": "2026-06-30",
+                    "source": "10-Q 0001652044-26-000071",
+                    "sign": 1
+                  },
+                  {
+                    "item": "other_bets_revenue",
+                    "value": 823000000,
+                    "period_end": "2025-06-30",
+                    "source": "10-Q 0001652044-26-000071",
+                    "sign": -1
+                  },
+                  {
+                    "item": "revenue_hedging_loss",
+                    "value": 127000000,
+                    "period_end": "2025-12-31",
+                    "source": "10-K 0001652044-26-000018",
+                    "sign": -1
+                  },
+                  {
+                    "item": "revenue_hedging_loss",
+                    "value": 74000000,
+                    "period_end": "2026-06-30",
+                    "source": "10-Q 0001652044-26-000071",
+                    "sign": -1
+                  },
+                  {
+                    "item": "revenue_hedging_gain",
+                    "value": 148000000,
+                    "period_end": "2025-06-30",
+                    "source": "10-Q 0001652044-26-000071",
+                    "sign": -1
+                  }
+                ]
+              },
+              "base_working_capital_ratio": 0,
+              "growth": [
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05
+              ],
+              "operating_margin": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "depreciation_to_revenue": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "capex_to_revenue": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "working_capital_to_revenue": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          ]
+        },
+        "variable": "revenue_growth",
+        "step": 0.02,
+        "capital": {
+          "shares": 12230000000,
+          "claims": 118187000000,
+          "cash": 242474000000,
+          "shares_date": "2026-07-15",
+          "balance_sheet_date": "2026-06-30"
+        }
+      },
+      "period_end": "2026-06-30",
+      "basis": "sensitivity_estimate"
+    },
+    {
+      "variable": "tax_rate",
+      "step": 0.05,
+      "values": [
+        {
+          "delta": -0.05,
+          "value_per_share": 210.3899904366899,
+          "status": "ok"
+        },
+        {
+          "delta": 0.05,
+          "value_per_share": 177.41159302607,
+          "status": "ok"
+        }
+      ],
+      "span": 32.97839741061992,
+      "formula": "Reprice unchanged central operating DCF with one assumption shifted in every forecast year; span = absolute difference between two values",
+      "inputs": {
+        "central_scenario": "operating-central",
+        "central_assumptions": {
+          "id": "operating-central",
+          "style": "growth",
+          "years": 10,
+          "wacc": 0.09,
+          "tax_rate": 0.21,
+          "terminal_growth": 0.025,
+          "terminal_roic": 0.15,
+          "source": "SEC 10-K 0001652044-26-000018 and 10-Q 0001652044-26-000071; growth, margins, investment and tax paths are analyst estimates dated 2026-10-12, not guidance or consensus.",
+          "reason": "Estimate: explicit Services and Cloud growth with fading infrastructure investment. Segment margins include SBC and depreciation. Other Bets operating losses and unallocated AI/corporate expense are combined in a separately modeled cost path, starting at $36B and increasing by 5% annually. Residual revenue has zero operating margin before those costs. Depreciation and investment allocations are illustrative because segment asset data is not disclosed. The same capex ratios across cases isolate demand and margin risk; lower demand does not immediately remove capital commitments.",
+          "sbc_treatment": "expensed_in_margins",
+          "corporate_costs": [
+            36000000000,
+            37800000000,
+            39690000000,
+            41674500000.00001,
+            43758225000.00001,
+            45946136250.000015,
+            48243443062.500015,
+            50655615215.625015,
+            53188395976.406265,
+            55847815775.226585
+          ],
+          "segments": [
+            {
+              "name": "Google Services",
+              "base_revenue": {
+                "period_end": "2026-06-30",
+                "components": [
+                  {
+                    "item": "google_services_revenue",
+                    "value": 342721000000,
+                    "period_end": "2025-12-31",
+                    "source": "10-K 0001652044-26-000018",
+                    "sign": 1
+                  },
+                  {
+                    "item": "google_services_revenue",
+                    "value": 184177000000,
+                    "period_end": "2026-06-30",
+                    "source": "10-Q 0001652044-26-000071",
+                    "sign": 1
+                  },
+                  {
+                    "item": "google_services_revenue",
+                    "value": 159807000000,
+                    "period_end": "2025-06-30",
+                    "source": "10-Q 0001652044-26-000071",
+                    "sign": -1
+                  }
+                ]
+              },
+              "base_working_capital_ratio": 0.12,
+              "growth": [
+                0.12,
+                0.1,
+                0.09,
+                0.08,
+                0.07,
+                0.06,
+                0.05,
+                0.05,
+                0.04,
+                0.04
+              ],
+              "operating_margin": [
+                0.39,
+                0.39,
+                0.39,
+                0.39,
+                0.39,
+                0.39,
+                0.39,
+                0.39,
+                0.39,
+                0.39
+              ],
+              "depreciation_to_revenue": [
+                0.045,
+                0.045,
+                0.045,
+                0.045,
+                0.045,
+                0.045,
+                0.045,
+                0.045,
+                0.045,
+                0.045
+              ],
+              "capex_to_revenue": [
+                0.25,
+                0.23,
+                0.2,
+                0.17,
+                0.15,
+                0.13,
+                0.12,
+                0.11,
+                0.1,
+                0.1
+              ],
+              "working_capital_to_revenue": [
+                0.12,
+                0.12,
+                0.12,
+                0.12,
+                0.12,
+                0.12,
+                0.12,
+                0.12,
+                0.12,
+                0.12
+              ]
+            },
+            {
+              "name": "Google Cloud",
+              "base_revenue": {
+                "period_end": "2026-06-30",
+                "components": [
+                  {
+                    "item": "google_cloud_revenue",
+                    "value": 58705000000,
+                    "period_end": "2025-12-31",
+                    "source": "10-K 0001652044-26-000018",
+                    "sign": 1
+                  },
+                  {
+                    "item": "google_cloud_revenue",
+                    "value": 44796000000,
+                    "period_end": "2026-06-30",
+                    "source": "10-Q 0001652044-26-000071",
+                    "sign": 1
+                  },
+                  {
+                    "item": "google_cloud_revenue",
+                    "value": 25884000000,
+                    "period_end": "2025-06-30",
+                    "source": "10-Q 0001652044-26-000071",
+                    "sign": -1
+                  }
+                ]
+              },
+              "base_working_capital_ratio": 0.15,
+              "growth": [
+                0.5,
+                0.4,
+                0.3,
+                0.25,
+                0.2,
+                0.15,
+                0.12,
+                0.1,
+                0.08,
+                0.07
+              ],
+              "operating_margin": [
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35
+              ],
+              "depreciation_to_revenue": [
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15
+              ],
+              "capex_to_revenue": [
+                0.8,
+                0.7,
+                0.6,
+                0.5,
+                0.4,
+                0.35,
+                0.3,
+                0.25,
+                0.22,
+                0.2
+              ],
+              "working_capital_to_revenue": [
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15
+              ]
+            },
+            {
+              "name": "Other Bets and revenue hedging",
+              "base_revenue": {
+                "period_end": "2026-06-30",
+                "components": [
+                  {
+                    "item": "other_bets_revenue",
+                    "value": 1537000000,
+                    "period_end": "2025-12-31",
+                    "source": "10-K 0001652044-26-000018",
+                    "sign": 1
+                  },
+                  {
+                    "item": "other_bets_revenue",
+                    "value": 793000000,
+                    "period_end": "2026-06-30",
+                    "source": "10-Q 0001652044-26-000071",
+                    "sign": 1
+                  },
+                  {
+                    "item": "other_bets_revenue",
+                    "value": 823000000,
+                    "period_end": "2025-06-30",
+                    "source": "10-Q 0001652044-26-000071",
+                    "sign": -1
+                  },
+                  {
+                    "item": "revenue_hedging_loss",
+                    "value": 127000000,
+                    "period_end": "2025-12-31",
+                    "source": "10-K 0001652044-26-000018",
+                    "sign": -1
+                  },
+                  {
+                    "item": "revenue_hedging_loss",
+                    "value": 74000000,
+                    "period_end": "2026-06-30",
+                    "source": "10-Q 0001652044-26-000071",
+                    "sign": -1
+                  },
+                  {
+                    "item": "revenue_hedging_gain",
+                    "value": 148000000,
+                    "period_end": "2025-06-30",
+                    "source": "10-Q 0001652044-26-000071",
+                    "sign": -1
+                  }
+                ]
+              },
+              "base_working_capital_ratio": 0,
+              "growth": [
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05
+              ],
+              "operating_margin": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "depreciation_to_revenue": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "capex_to_revenue": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "working_capital_to_revenue": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          ]
+        },
+        "variable": "tax_rate",
+        "step": 0.05,
+        "capital": {
+          "shares": 12230000000,
+          "claims": 118187000000,
+          "cash": 242474000000,
+          "shares_date": "2026-07-15",
+          "balance_sheet_date": "2026-06-30"
+        }
+      },
+      "period_end": "2026-06-30",
+      "basis": "sensitivity_estimate"
+    },
+    {
+      "variable": "operating_margin",
+      "step": 0.02,
+      "values": [
+        {
+          "delta": -0.02,
+          "value_per_share": 177.92133869990346,
+          "status": "ok"
+        },
+        {
+          "delta": 0.02,
+          "value_per_share": 209.88024476285645,
+          "status": "ok"
+        }
+      ],
+      "span": 31.95890606295299,
+      "formula": "Reprice unchanged central operating DCF with one assumption shifted in every forecast year; span = absolute difference between two values",
+      "inputs": {
+        "central_scenario": "operating-central",
+        "central_assumptions": {
+          "id": "operating-central",
+          "style": "growth",
+          "years": 10,
+          "wacc": 0.09,
+          "tax_rate": 0.21,
+          "terminal_growth": 0.025,
+          "terminal_roic": 0.15,
+          "source": "SEC 10-K 0001652044-26-000018 and 10-Q 0001652044-26-000071; growth, margins, investment and tax paths are analyst estimates dated 2026-10-12, not guidance or consensus.",
+          "reason": "Estimate: explicit Services and Cloud growth with fading infrastructure investment. Segment margins include SBC and depreciation. Other Bets operating losses and unallocated AI/corporate expense are combined in a separately modeled cost path, starting at $36B and increasing by 5% annually. Residual revenue has zero operating margin before those costs. Depreciation and investment allocations are illustrative because segment asset data is not disclosed. The same capex ratios across cases isolate demand and margin risk; lower demand does not immediately remove capital commitments.",
+          "sbc_treatment": "expensed_in_margins",
+          "corporate_costs": [
+            36000000000,
+            37800000000,
+            39690000000,
+            41674500000.00001,
+            43758225000.00001,
+            45946136250.000015,
+            48243443062.500015,
+            50655615215.625015,
+            53188395976.406265,
+            55847815775.226585
+          ],
+          "segments": [
+            {
+              "name": "Google Services",
+              "base_revenue": {
+                "period_end": "2026-06-30",
+                "components": [
+                  {
+                    "item": "google_services_revenue",
+                    "value": 342721000000,
+                    "period_end": "2025-12-31",
+                    "source": "10-K 0001652044-26-000018",
+                    "sign": 1
+                  },
+                  {
+                    "item": "google_services_revenue",
+                    "value": 184177000000,
+                    "period_end": "2026-06-30",
+                    "source": "10-Q 0001652044-26-000071",
+                    "sign": 1
+                  },
+                  {
+                    "item": "google_services_revenue",
+                    "value": 159807000000,
+                    "period_end": "2025-06-30",
+                    "source": "10-Q 0001652044-26-000071",
+                    "sign": -1
+                  }
+                ]
+              },
+              "base_working_capital_ratio": 0.12,
+              "growth": [
+                0.12,
+                0.1,
+                0.09,
+                0.08,
+                0.07,
+                0.06,
+                0.05,
+                0.05,
+                0.04,
+                0.04
+              ],
+              "operating_margin": [
+                0.39,
+                0.39,
+                0.39,
+                0.39,
+                0.39,
+                0.39,
+                0.39,
+                0.39,
+                0.39,
+                0.39
+              ],
+              "depreciation_to_revenue": [
+                0.045,
+                0.045,
+                0.045,
+                0.045,
+                0.045,
+                0.045,
+                0.045,
+                0.045,
+                0.045,
+                0.045
+              ],
+              "capex_to_revenue": [
+                0.25,
+                0.23,
+                0.2,
+                0.17,
+                0.15,
+                0.13,
+                0.12,
+                0.11,
+                0.1,
+                0.1
+              ],
+              "working_capital_to_revenue": [
+                0.12,
+                0.12,
+                0.12,
+                0.12,
+                0.12,
+                0.12,
+                0.12,
+                0.12,
+                0.12,
+                0.12
+              ]
+            },
+            {
+              "name": "Google Cloud",
+              "base_revenue": {
+                "period_end": "2026-06-30",
+                "components": [
+                  {
+                    "item": "google_cloud_revenue",
+                    "value": 58705000000,
+                    "period_end": "2025-12-31",
+                    "source": "10-K 0001652044-26-000018",
+                    "sign": 1
+                  },
+                  {
+                    "item": "google_cloud_revenue",
+                    "value": 44796000000,
+                    "period_end": "2026-06-30",
+                    "source": "10-Q 0001652044-26-000071",
+                    "sign": 1
+                  },
+                  {
+                    "item": "google_cloud_revenue",
+                    "value": 25884000000,
+                    "period_end": "2025-06-30",
+                    "source": "10-Q 0001652044-26-000071",
+                    "sign": -1
+                  }
+                ]
+              },
+              "base_working_capital_ratio": 0.15,
+              "growth": [
+                0.5,
+                0.4,
+                0.3,
+                0.25,
+                0.2,
+                0.15,
+                0.12,
+                0.1,
+                0.08,
+                0.07
+              ],
+              "operating_margin": [
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35
+              ],
+              "depreciation_to_revenue": [
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15
+              ],
+              "capex_to_revenue": [
+                0.8,
+                0.7,
+                0.6,
+                0.5,
+                0.4,
+                0.35,
+                0.3,
+                0.25,
+                0.22,
+                0.2
+              ],
+              "working_capital_to_revenue": [
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15
+              ]
+            },
+            {
+              "name": "Other Bets and revenue hedging",
+              "base_revenue": {
+                "period_end": "2026-06-30",
+                "components": [
+                  {
+                    "item": "other_bets_revenue",
+                    "value": 1537000000,
+                    "period_end": "2025-12-31",
+                    "source": "10-K 0001652044-26-000018",
+                    "sign": 1
+                  },
+                  {
+                    "item": "other_bets_revenue",
+                    "value": 793000000,
+                    "period_end": "2026-06-30",
+                    "source": "10-Q 0001652044-26-000071",
+                    "sign": 1
+                  },
+                  {
+                    "item": "other_bets_revenue",
+                    "value": 823000000,
+                    "period_end": "2025-06-30",
+                    "source": "10-Q 0001652044-26-000071",
+                    "sign": -1
+                  },
+                  {
+                    "item": "revenue_hedging_loss",
+                    "value": 127000000,
+                    "period_end": "2025-12-31",
+                    "source": "10-K 0001652044-26-000018",
+                    "sign": -1
+                  },
+                  {
+                    "item": "revenue_hedging_loss",
+                    "value": 74000000,
+                    "period_end": "2026-06-30",
+                    "source": "10-Q 0001652044-26-000071",
+                    "sign": -1
+                  },
+                  {
+                    "item": "revenue_hedging_gain",
+                    "value": 148000000,
+                    "period_end": "2025-06-30",
+                    "source": "10-Q 0001652044-26-000071",
+                    "sign": -1
+                  }
+                ]
+              },
+              "base_working_capital_ratio": 0,
+              "growth": [
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05
+              ],
+              "operating_margin": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "depreciation_to_revenue": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "capex_to_revenue": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "working_capital_to_revenue": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          ]
+        },
+        "variable": "operating_margin",
+        "step": 0.02,
+        "capital": {
+          "shares": 12230000000,
+          "claims": 118187000000,
+          "cash": 242474000000,
+          "shares_date": "2026-07-15",
+          "balance_sheet_date": "2026-06-30"
+        }
+      },
+      "period_end": "2026-06-30",
+      "basis": "sensitivity_estimate"
+    },
+    {
+      "variable": "terminal_growth",
+      "step": 0.005,
+      "values": [
+        {
+          "delta": -0.005,
+          "value_per_share": 188.20827365769193,
+          "status": "ok"
+        },
+        {
+          "delta": 0.005,
+          "value_per_share": 200.4803497908179,
+          "status": "ok"
+        }
+      ],
+      "span": 12.272076133125978,
+      "formula": "Reprice unchanged central operating DCF with one assumption shifted in every forecast year; span = absolute difference between two values",
+      "inputs": {
+        "central_scenario": "operating-central",
+        "central_assumptions": {
+          "id": "operating-central",
+          "style": "growth",
+          "years": 10,
+          "wacc": 0.09,
+          "tax_rate": 0.21,
+          "terminal_growth": 0.025,
+          "terminal_roic": 0.15,
+          "source": "SEC 10-K 0001652044-26-000018 and 10-Q 0001652044-26-000071; growth, margins, investment and tax paths are analyst estimates dated 2026-10-12, not guidance or consensus.",
+          "reason": "Estimate: explicit Services and Cloud growth with fading infrastructure investment. Segment margins include SBC and depreciation. Other Bets operating losses and unallocated AI/corporate expense are combined in a separately modeled cost path, starting at $36B and increasing by 5% annually. Residual revenue has zero operating margin before those costs. Depreciation and investment allocations are illustrative because segment asset data is not disclosed. The same capex ratios across cases isolate demand and margin risk; lower demand does not immediately remove capital commitments.",
+          "sbc_treatment": "expensed_in_margins",
+          "corporate_costs": [
+            36000000000,
+            37800000000,
+            39690000000,
+            41674500000.00001,
+            43758225000.00001,
+            45946136250.000015,
+            48243443062.500015,
+            50655615215.625015,
+            53188395976.406265,
+            55847815775.226585
+          ],
+          "segments": [
+            {
+              "name": "Google Services",
+              "base_revenue": {
+                "period_end": "2026-06-30",
+                "components": [
+                  {
+                    "item": "google_services_revenue",
+                    "value": 342721000000,
+                    "period_end": "2025-12-31",
+                    "source": "10-K 0001652044-26-000018",
+                    "sign": 1
+                  },
+                  {
+                    "item": "google_services_revenue",
+                    "value": 184177000000,
+                    "period_end": "2026-06-30",
+                    "source": "10-Q 0001652044-26-000071",
+                    "sign": 1
+                  },
+                  {
+                    "item": "google_services_revenue",
+                    "value": 159807000000,
+                    "period_end": "2025-06-30",
+                    "source": "10-Q 0001652044-26-000071",
+                    "sign": -1
+                  }
+                ]
+              },
+              "base_working_capital_ratio": 0.12,
+              "growth": [
+                0.12,
+                0.1,
+                0.09,
+                0.08,
+                0.07,
+                0.06,
+                0.05,
+                0.05,
+                0.04,
+                0.04
+              ],
+              "operating_margin": [
+                0.39,
+                0.39,
+                0.39,
+                0.39,
+                0.39,
+                0.39,
+                0.39,
+                0.39,
+                0.39,
+                0.39
+              ],
+              "depreciation_to_revenue": [
+                0.045,
+                0.045,
+                0.045,
+                0.045,
+                0.045,
+                0.045,
+                0.045,
+                0.045,
+                0.045,
+                0.045
+              ],
+              "capex_to_revenue": [
+                0.25,
+                0.23,
+                0.2,
+                0.17,
+                0.15,
+                0.13,
+                0.12,
+                0.11,
+                0.1,
+                0.1
+              ],
+              "working_capital_to_revenue": [
+                0.12,
+                0.12,
+                0.12,
+                0.12,
+                0.12,
+                0.12,
+                0.12,
+                0.12,
+                0.12,
+                0.12
+              ]
+            },
+            {
+              "name": "Google Cloud",
+              "base_revenue": {
+                "period_end": "2026-06-30",
+                "components": [
+                  {
+                    "item": "google_cloud_revenue",
+                    "value": 58705000000,
+                    "period_end": "2025-12-31",
+                    "source": "10-K 0001652044-26-000018",
+                    "sign": 1
+                  },
+                  {
+                    "item": "google_cloud_revenue",
+                    "value": 44796000000,
+                    "period_end": "2026-06-30",
+                    "source": "10-Q 0001652044-26-000071",
+                    "sign": 1
+                  },
+                  {
+                    "item": "google_cloud_revenue",
+                    "value": 25884000000,
+                    "period_end": "2025-06-30",
+                    "source": "10-Q 0001652044-26-000071",
+                    "sign": -1
+                  }
+                ]
+              },
+              "base_working_capital_ratio": 0.15,
+              "growth": [
+                0.5,
+                0.4,
+                0.3,
+                0.25,
+                0.2,
+                0.15,
+                0.12,
+                0.1,
+                0.08,
+                0.07
+              ],
+              "operating_margin": [
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35
+              ],
+              "depreciation_to_revenue": [
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15
+              ],
+              "capex_to_revenue": [
+                0.8,
+                0.7,
+                0.6,
+                0.5,
+                0.4,
+                0.35,
+                0.3,
+                0.25,
+                0.22,
+                0.2
+              ],
+              "working_capital_to_revenue": [
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15
+              ]
+            },
+            {
+              "name": "Other Bets and revenue hedging",
+              "base_revenue": {
+                "period_end": "2026-06-30",
+                "components": [
+                  {
+                    "item": "other_bets_revenue",
+                    "value": 1537000000,
+                    "period_end": "2025-12-31",
+                    "source": "10-K 0001652044-26-000018",
+                    "sign": 1
+                  },
+                  {
+                    "item": "other_bets_revenue",
+                    "value": 793000000,
+                    "period_end": "2026-06-30",
+                    "source": "10-Q 0001652044-26-000071",
+                    "sign": 1
+                  },
+                  {
+                    "item": "other_bets_revenue",
+                    "value": 823000000,
+                    "period_end": "2025-06-30",
+                    "source": "10-Q 0001652044-26-000071",
+                    "sign": -1
+                  },
+                  {
+                    "item": "revenue_hedging_loss",
+                    "value": 127000000,
+                    "period_end": "2025-12-31",
+                    "source": "10-K 0001652044-26-000018",
+                    "sign": -1
+                  },
+                  {
+                    "item": "revenue_hedging_loss",
+                    "value": 74000000,
+                    "period_end": "2026-06-30",
+                    "source": "10-Q 0001652044-26-000071",
+                    "sign": -1
+                  },
+                  {
+                    "item": "revenue_hedging_gain",
+                    "value": 148000000,
+                    "period_end": "2025-06-30",
+                    "source": "10-Q 0001652044-26-000071",
+                    "sign": -1
+                  }
+                ]
+              },
+              "base_working_capital_ratio": 0,
+              "growth": [
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05
+              ],
+              "operating_margin": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "depreciation_to_revenue": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "capex_to_revenue": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "working_capital_to_revenue": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          ]
+        },
+        "variable": "terminal_growth",
+        "step": 0.005,
+        "capital": {
+          "shares": 12230000000,
+          "claims": 118187000000,
+          "cash": 242474000000,
+          "shares_date": "2026-07-15",
+          "balance_sheet_date": "2026-06-30"
+        }
+      },
+      "period_end": "2026-06-30",
+      "basis": "sensitivity_estimate"
+    },
+    {
+      "variable": "terminal_roic",
+      "step": 0.03,
+      "values": [
+        {
+          "delta": -0.03,
+          "value_per_share": 186.60203955505546,
+          "status": "ok"
+        },
+        {
+          "delta": 0.03,
+          "value_per_share": 198.76662651559639,
+          "status": "ok"
+        }
+      ],
+      "span": 12.16458696054093,
+      "formula": "Reprice unchanged central operating DCF with one assumption shifted in every forecast year; span = absolute difference between two values",
+      "inputs": {
+        "central_scenario": "operating-central",
+        "central_assumptions": {
+          "id": "operating-central",
+          "style": "growth",
+          "years": 10,
+          "wacc": 0.09,
+          "tax_rate": 0.21,
+          "terminal_growth": 0.025,
+          "terminal_roic": 0.15,
+          "source": "SEC 10-K 0001652044-26-000018 and 10-Q 0001652044-26-000071; growth, margins, investment and tax paths are analyst estimates dated 2026-10-12, not guidance or consensus.",
+          "reason": "Estimate: explicit Services and Cloud growth with fading infrastructure investment. Segment margins include SBC and depreciation. Other Bets operating losses and unallocated AI/corporate expense are combined in a separately modeled cost path, starting at $36B and increasing by 5% annually. Residual revenue has zero operating margin before those costs. Depreciation and investment allocations are illustrative because segment asset data is not disclosed. The same capex ratios across cases isolate demand and margin risk; lower demand does not immediately remove capital commitments.",
+          "sbc_treatment": "expensed_in_margins",
+          "corporate_costs": [
+            36000000000,
+            37800000000,
+            39690000000,
+            41674500000.00001,
+            43758225000.00001,
+            45946136250.000015,
+            48243443062.500015,
+            50655615215.625015,
+            53188395976.406265,
+            55847815775.226585
+          ],
+          "segments": [
+            {
+              "name": "Google Services",
+              "base_revenue": {
+                "period_end": "2026-06-30",
+                "components": [
+                  {
+                    "item": "google_services_revenue",
+                    "value": 342721000000,
+                    "period_end": "2025-12-31",
+                    "source": "10-K 0001652044-26-000018",
+                    "sign": 1
+                  },
+                  {
+                    "item": "google_services_revenue",
+                    "value": 184177000000,
+                    "period_end": "2026-06-30",
+                    "source": "10-Q 0001652044-26-000071",
+                    "sign": 1
+                  },
+                  {
+                    "item": "google_services_revenue",
+                    "value": 159807000000,
+                    "period_end": "2025-06-30",
+                    "source": "10-Q 0001652044-26-000071",
+                    "sign": -1
+                  }
+                ]
+              },
+              "base_working_capital_ratio": 0.12,
+              "growth": [
+                0.12,
+                0.1,
+                0.09,
+                0.08,
+                0.07,
+                0.06,
+                0.05,
+                0.05,
+                0.04,
+                0.04
+              ],
+              "operating_margin": [
+                0.39,
+                0.39,
+                0.39,
+                0.39,
+                0.39,
+                0.39,
+                0.39,
+                0.39,
+                0.39,
+                0.39
+              ],
+              "depreciation_to_revenue": [
+                0.045,
+                0.045,
+                0.045,
+                0.045,
+                0.045,
+                0.045,
+                0.045,
+                0.045,
+                0.045,
+                0.045
+              ],
+              "capex_to_revenue": [
+                0.25,
+                0.23,
+                0.2,
+                0.17,
+                0.15,
+                0.13,
+                0.12,
+                0.11,
+                0.1,
+                0.1
+              ],
+              "working_capital_to_revenue": [
+                0.12,
+                0.12,
+                0.12,
+                0.12,
+                0.12,
+                0.12,
+                0.12,
+                0.12,
+                0.12,
+                0.12
+              ]
+            },
+            {
+              "name": "Google Cloud",
+              "base_revenue": {
+                "period_end": "2026-06-30",
+                "components": [
+                  {
+                    "item": "google_cloud_revenue",
+                    "value": 58705000000,
+                    "period_end": "2025-12-31",
+                    "source": "10-K 0001652044-26-000018",
+                    "sign": 1
+                  },
+                  {
+                    "item": "google_cloud_revenue",
+                    "value": 44796000000,
+                    "period_end": "2026-06-30",
+                    "source": "10-Q 0001652044-26-000071",
+                    "sign": 1
+                  },
+                  {
+                    "item": "google_cloud_revenue",
+                    "value": 25884000000,
+                    "period_end": "2025-06-30",
+                    "source": "10-Q 0001652044-26-000071",
+                    "sign": -1
+                  }
+                ]
+              },
+              "base_working_capital_ratio": 0.15,
+              "growth": [
+                0.5,
+                0.4,
+                0.3,
+                0.25,
+                0.2,
+                0.15,
+                0.12,
+                0.1,
+                0.08,
+                0.07
+              ],
+              "operating_margin": [
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35
+              ],
+              "depreciation_to_revenue": [
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15
+              ],
+              "capex_to_revenue": [
+                0.8,
+                0.7,
+                0.6,
+                0.5,
+                0.4,
+                0.35,
+                0.3,
+                0.25,
+                0.22,
+                0.2
+              ],
+              "working_capital_to_revenue": [
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15
+              ]
+            },
+            {
+              "name": "Other Bets and revenue hedging",
+              "base_revenue": {
+                "period_end": "2026-06-30",
+                "components": [
+                  {
+                    "item": "other_bets_revenue",
+                    "value": 1537000000,
+                    "period_end": "2025-12-31",
+                    "source": "10-K 0001652044-26-000018",
+                    "sign": 1
+                  },
+                  {
+                    "item": "other_bets_revenue",
+                    "value": 793000000,
+                    "period_end": "2026-06-30",
+                    "source": "10-Q 0001652044-26-000071",
+                    "sign": 1
+                  },
+                  {
+                    "item": "other_bets_revenue",
+                    "value": 823000000,
+                    "period_end": "2025-06-30",
+                    "source": "10-Q 0001652044-26-000071",
+                    "sign": -1
+                  },
+                  {
+                    "item": "revenue_hedging_loss",
+                    "value": 127000000,
+                    "period_end": "2025-12-31",
+                    "source": "10-K 0001652044-26-000018",
+                    "sign": -1
+                  },
+                  {
+                    "item": "revenue_hedging_loss",
+                    "value": 74000000,
+                    "period_end": "2026-06-30",
+                    "source": "10-Q 0001652044-26-000071",
+                    "sign": -1
+                  },
+                  {
+                    "item": "revenue_hedging_gain",
+                    "value": 148000000,
+                    "period_end": "2025-06-30",
+                    "source": "10-Q 0001652044-26-000071",
+                    "sign": -1
+                  }
+                ]
+              },
+              "base_working_capital_ratio": 0,
+              "growth": [
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05
+              ],
+              "operating_margin": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "depreciation_to_revenue": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "capex_to_revenue": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "working_capital_to_revenue": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          ]
+        },
+        "variable": "terminal_roic",
+        "step": 0.03,
+        "capital": {
+          "shares": 12230000000,
+          "claims": 118187000000,
+          "cash": 242474000000,
+          "shares_date": "2026-07-15",
+          "balance_sheet_date": "2026-06-30"
+        }
+      },
+      "period_end": "2026-06-30",
+      "basis": "sensitivity_estimate"
+    },
+    {
+      "variable": "capex_to_revenue",
+      "step": 0.01,
+      "values": [
+        {
+          "delta": -0.01,
+          "value_per_share": null,
+          "status": "not_available"
+        },
+        {
+          "delta": 0.01,
+          "value_per_share": 189.4258834527133,
+          "status": "ok"
+        }
+      ],
+      "span": null,
+      "formula": "Reprice unchanged central operating DCF with one assumption shifted in every forecast year; span = absolute difference between two values",
+      "inputs": {
+        "central_scenario": "operating-central",
+        "central_assumptions": {
+          "id": "operating-central",
+          "style": "growth",
+          "years": 10,
+          "wacc": 0.09,
+          "tax_rate": 0.21,
+          "terminal_growth": 0.025,
+          "terminal_roic": 0.15,
+          "source": "SEC 10-K 0001652044-26-000018 and 10-Q 0001652044-26-000071; growth, margins, investment and tax paths are analyst estimates dated 2026-10-12, not guidance or consensus.",
+          "reason": "Estimate: explicit Services and Cloud growth with fading infrastructure investment. Segment margins include SBC and depreciation. Other Bets operating losses and unallocated AI/corporate expense are combined in a separately modeled cost path, starting at $36B and increasing by 5% annually. Residual revenue has zero operating margin before those costs. Depreciation and investment allocations are illustrative because segment asset data is not disclosed. The same capex ratios across cases isolate demand and margin risk; lower demand does not immediately remove capital commitments.",
+          "sbc_treatment": "expensed_in_margins",
+          "corporate_costs": [
+            36000000000,
+            37800000000,
+            39690000000,
+            41674500000.00001,
+            43758225000.00001,
+            45946136250.000015,
+            48243443062.500015,
+            50655615215.625015,
+            53188395976.406265,
+            55847815775.226585
+          ],
+          "segments": [
+            {
+              "name": "Google Services",
+              "base_revenue": {
+                "period_end": "2026-06-30",
+                "components": [
+                  {
+                    "item": "google_services_revenue",
+                    "value": 342721000000,
+                    "period_end": "2025-12-31",
+                    "source": "10-K 0001652044-26-000018",
+                    "sign": 1
+                  },
+                  {
+                    "item": "google_services_revenue",
+                    "value": 184177000000,
+                    "period_end": "2026-06-30",
+                    "source": "10-Q 0001652044-26-000071",
+                    "sign": 1
+                  },
+                  {
+                    "item": "google_services_revenue",
+                    "value": 159807000000,
+                    "period_end": "2025-06-30",
+                    "source": "10-Q 0001652044-26-000071",
+                    "sign": -1
+                  }
+                ]
+              },
+              "base_working_capital_ratio": 0.12,
+              "growth": [
+                0.12,
+                0.1,
+                0.09,
+                0.08,
+                0.07,
+                0.06,
+                0.05,
+                0.05,
+                0.04,
+                0.04
+              ],
+              "operating_margin": [
+                0.39,
+                0.39,
+                0.39,
+                0.39,
+                0.39,
+                0.39,
+                0.39,
+                0.39,
+                0.39,
+                0.39
+              ],
+              "depreciation_to_revenue": [
+                0.045,
+                0.045,
+                0.045,
+                0.045,
+                0.045,
+                0.045,
+                0.045,
+                0.045,
+                0.045,
+                0.045
+              ],
+              "capex_to_revenue": [
+                0.25,
+                0.23,
+                0.2,
+                0.17,
+                0.15,
+                0.13,
+                0.12,
+                0.11,
+                0.1,
+                0.1
+              ],
+              "working_capital_to_revenue": [
+                0.12,
+                0.12,
+                0.12,
+                0.12,
+                0.12,
+                0.12,
+                0.12,
+                0.12,
+                0.12,
+                0.12
+              ]
+            },
+            {
+              "name": "Google Cloud",
+              "base_revenue": {
+                "period_end": "2026-06-30",
+                "components": [
+                  {
+                    "item": "google_cloud_revenue",
+                    "value": 58705000000,
+                    "period_end": "2025-12-31",
+                    "source": "10-K 0001652044-26-000018",
+                    "sign": 1
+                  },
+                  {
+                    "item": "google_cloud_revenue",
+                    "value": 44796000000,
+                    "period_end": "2026-06-30",
+                    "source": "10-Q 0001652044-26-000071",
+                    "sign": 1
+                  },
+                  {
+                    "item": "google_cloud_revenue",
+                    "value": 25884000000,
+                    "period_end": "2025-06-30",
+                    "source": "10-Q 0001652044-26-000071",
+                    "sign": -1
+                  }
+                ]
+              },
+              "base_working_capital_ratio": 0.15,
+              "growth": [
+                0.5,
+                0.4,
+                0.3,
+                0.25,
+                0.2,
+                0.15,
+                0.12,
+                0.1,
+                0.08,
+                0.07
+              ],
+              "operating_margin": [
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35,
+                0.35
+              ],
+              "depreciation_to_revenue": [
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15
+              ],
+              "capex_to_revenue": [
+                0.8,
+                0.7,
+                0.6,
+                0.5,
+                0.4,
+                0.35,
+                0.3,
+                0.25,
+                0.22,
+                0.2
+              ],
+              "working_capital_to_revenue": [
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15,
+                0.15
+              ]
+            },
+            {
+              "name": "Other Bets and revenue hedging",
+              "base_revenue": {
+                "period_end": "2026-06-30",
+                "components": [
+                  {
+                    "item": "other_bets_revenue",
+                    "value": 1537000000,
+                    "period_end": "2025-12-31",
+                    "source": "10-K 0001652044-26-000018",
+                    "sign": 1
+                  },
+                  {
+                    "item": "other_bets_revenue",
+                    "value": 793000000,
+                    "period_end": "2026-06-30",
+                    "source": "10-Q 0001652044-26-000071",
+                    "sign": 1
+                  },
+                  {
+                    "item": "other_bets_revenue",
+                    "value": 823000000,
+                    "period_end": "2025-06-30",
+                    "source": "10-Q 0001652044-26-000071",
+                    "sign": -1
+                  },
+                  {
+                    "item": "revenue_hedging_loss",
+                    "value": 127000000,
+                    "period_end": "2025-12-31",
+                    "source": "10-K 0001652044-26-000018",
+                    "sign": -1
+                  },
+                  {
+                    "item": "revenue_hedging_loss",
+                    "value": 74000000,
+                    "period_end": "2026-06-30",
+                    "source": "10-Q 0001652044-26-000071",
+                    "sign": -1
+                  },
+                  {
+                    "item": "revenue_hedging_gain",
+                    "value": 148000000,
+                    "period_end": "2025-06-30",
+                    "source": "10-Q 0001652044-26-000071",
+                    "sign": -1
+                  }
+                ]
+              },
+              "base_working_capital_ratio": 0,
+              "growth": [
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05,
+                0.05
+              ],
+              "operating_margin": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "depreciation_to_revenue": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "capex_to_revenue": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "working_capital_to_revenue": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          ]
+        },
+        "variable": "capex_to_revenue",
+        "step": 0.01,
+        "capital": {
+          "shares": 12230000000,
+          "claims": 118187000000,
+          "cash": 242474000000,
+          "shares_date": "2026-07-15",
+          "balance_sheet_date": "2026-06-30"
+        }
+      },
+      "period_end": "2026-06-30",
+      "basis": "sensitivity_estimate"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "ai-slowdown",
+      "value": 83.94350499589497,
+      "status": "ok"
+    },
+    {
+      "id": "operating-central",
+      "value": 193.90079173138,
+      "status": "ok"
+    },
+    {
+      "id": "ai-execution-upside",
+      "value": 297.3477821821693,
+      "status": "ok"
+    }
+  ],
+  "probabilities": {
+    "label": "Analyst-assigned subjective probabilities — not market-implied probabilities.",
+    "status": "not_assigned",
+    "reason": "Probabilities cannot be responsibly assigned from the reviewed evidence. Alternative operating paths are explicit estimates; no defensible relative likelihoods or comparable long-range consensus were established.",
+    "assignment": null,
+    "expected": null,
+    "sensitivity_label": "Hypothetical probability combinations for sensitivity only; not assigned probabilities or measured likelihoods.",
+    "sensitivity": [
+      {
+        "reason": "Downside-heavy illustrative sensitivity, not assigned beliefs",
+        "status": "ok",
+        "value": 154.43919693125588,
+        "contributions": [
+          {
+            "id": "ai-slowdown",
+            "value_per_share": 83.94350499589497,
+            "status": "ok",
+            "probability": 0.5,
+            "contribution": 41.971752497947485,
+            "formula": "Scenario value per share × subjective probability",
+            "inputs": {
+              "scenario_value": 83.94350499589497,
+              "probability": 0.5
+            },
+            "period_end": "2026-06-30",
+            "basis": "model_assumption"
+          },
+          {
+            "id": "operating-central",
+            "value_per_share": 193.90079173138,
+            "status": "ok",
+            "probability": 0.35,
+            "contribution": 67.865277105983,
+            "formula": "Scenario value per share × subjective probability",
+            "inputs": {
+              "scenario_value": 193.90079173138,
+              "probability": 0.35
+            },
+            "period_end": "2026-06-30",
+            "basis": "model_assumption"
+          },
+          {
+            "id": "ai-execution-upside",
+            "value_per_share": 297.3477821821693,
+            "status": "ok",
+            "probability": 0.15,
+            "contribution": 44.60216732732539,
+            "formula": "Scenario value per share × subjective probability",
+            "inputs": {
+              "scenario_value": 297.3477821821693,
+              "probability": 0.15
+            },
+            "period_end": "2026-06-30",
+            "basis": "model_assumption"
+          }
+        ],
+        "price_to_expected_value": 2.2770126171824843,
+        "gap_to_price": -0.5608280812965482,
+        "formula": "Σ(scenario value per share × probability); price/value and value/price - 1 are valuation comparisons, not expected returns",
+        "inputs": {
+          "weights": {
+            "ai-slowdown": 0.5,
+            "operating-central": 0.35,
+            "ai-execution-upside": 0.15
+          },
+          "scenario_values": [
+            {
+              "id": "ai-slowdown",
+              "value_per_share": 83.94350499589497,
+              "status": "ok"
+            },
+            {
+              "id": "operating-central",
+              "value_per_share": 193.90079173138,
+              "status": "ok"
+            },
+            {
+              "id": "ai-execution-upside",
+              "value_per_share": 297.3477821821693,
+              "status": "ok"
+            }
+          ],
+          "price": 351.66
+        },
+        "period_end": "2026-06-30",
+        "basis": "model_assumption"
+      },
+      {
+        "reason": "Central-heavy illustrative sensitivity, not assigned beliefs",
+        "status": "ok",
+        "value": 192.27321766020606,
+        "contributions": [
+          {
+            "id": "ai-slowdown",
+            "value_per_share": 83.94350499589497,
+            "status": "ok",
+            "probability": 0.25,
+            "contribution": 20.985876248973742,
+            "formula": "Scenario value per share × subjective probability",
+            "inputs": {
+              "scenario_value": 83.94350499589497,
+              "probability": 0.25
+            },
+            "period_end": "2026-06-30",
+            "basis": "model_assumption"
+          },
+          {
+            "id": "operating-central",
+            "value_per_share": 193.90079173138,
+            "status": "ok",
+            "probability": 0.5,
+            "contribution": 96.95039586569,
+            "formula": "Scenario value per share × subjective probability",
+            "inputs": {
+              "scenario_value": 193.90079173138,
+              "probability": 0.5
+            },
+            "period_end": "2026-06-30",
+            "basis": "model_assumption"
+          },
+          {
+            "id": "ai-execution-upside",
+            "value_per_share": 297.3477821821693,
+            "status": "ok",
+            "probability": 0.25,
+            "contribution": 74.33694554554232,
+            "formula": "Scenario value per share × subjective probability",
+            "inputs": {
+              "scenario_value": 297.3477821821693,
+              "probability": 0.25
+            },
+            "period_end": "2026-06-30",
+            "basis": "model_assumption"
+          }
+        ],
+        "price_to_expected_value": 1.8289598742840487,
+        "gap_to_price": -0.4532411486657395,
+        "formula": "Σ(scenario value per share × probability); price/value and value/price - 1 are valuation comparisons, not expected returns",
+        "inputs": {
+          "weights": {
+            "ai-slowdown": 0.25,
+            "operating-central": 0.5,
+            "ai-execution-upside": 0.25
+          },
+          "scenario_values": [
+            {
+              "id": "ai-slowdown",
+              "value_per_share": 83.94350499589497,
+              "status": "ok"
+            },
+            {
+              "id": "operating-central",
+              "value_per_share": 193.90079173138,
+              "status": "ok"
+            },
+            {
+              "id": "ai-execution-upside",
+              "value_per_share": 297.3477821821693,
+              "status": "ok"
+            }
+          ],
+          "price": 351.66
+        },
+        "period_end": "2026-06-30",
+        "basis": "model_assumption"
+      },
+      {
+        "reason": "Upside-heavy illustrative sensitivity, not assigned beliefs",
+        "status": "ok",
+        "value": 229.13069394645188,
+        "contributions": [
+          {
+            "id": "ai-slowdown",
+            "value_per_share": 83.94350499589497,
+            "status": "ok",
+            "probability": 0.15,
+            "contribution": 12.591525749384244,
+            "formula": "Scenario value per share × subjective probability",
+            "inputs": {
+              "scenario_value": 83.94350499589497,
+              "probability": 0.15
+            },
+            "period_end": "2026-06-30",
+            "basis": "model_assumption"
+          },
+          {
+            "id": "operating-central",
+            "value_per_share": 193.90079173138,
+            "status": "ok",
+            "probability": 0.35,
+            "contribution": 67.865277105983,
+            "formula": "Scenario value per share × subjective probability",
+            "inputs": {
+              "scenario_value": 193.90079173138,
+              "probability": 0.35
+            },
+            "period_end": "2026-06-30",
+            "basis": "model_assumption"
+          },
+          {
+            "id": "ai-execution-upside",
+            "value_per_share": 297.3477821821693,
+            "status": "ok",
+            "probability": 0.5,
+            "contribution": 148.67389109108464,
+            "formula": "Scenario value per share × subjective probability",
+            "inputs": {
+              "scenario_value": 297.3477821821693,
+              "probability": 0.5
+            },
+            "period_end": "2026-06-30",
+            "basis": "model_assumption"
+          }
+        ],
+        "price_to_expected_value": 1.5347572773562297,
+        "gap_to_price": -0.3484311723071948,
+        "formula": "Σ(scenario value per share × probability); price/value and value/price - 1 are valuation comparisons, not expected returns",
+        "inputs": {
+          "weights": {
+            "ai-slowdown": 0.15,
+            "operating-central": 0.35,
+            "ai-execution-upside": 0.5
+          },
+          "scenario_values": [
+            {
+              "id": "ai-slowdown",
+              "value_per_share": 83.94350499589497,
+              "status": "ok"
+            },
+            {
+              "id": "operating-central",
+              "value_per_share": 193.90079173138,
+              "status": "ok"
+            },
+            {
+              "id": "ai-execution-upside",
+              "value_per_share": 297.3477821821693,
+              "status": "ok"
+            }
+          ],
+          "price": 351.66
+        },
+        "period_end": "2026-06-30",
+        "basis": "model_assumption"
+      }
+    ]
+  },
+  "snapshot_context": {
+    "driver": "Cloud and Services revenue growth after AI capital investment and shared research costs.",
+    "risk": "AI infrastructure commitments outpace sustainable cash generation; competition and regulation impair Search economics.",
+    "thesis_break": "Analyst monitoring thresholds: reassess if Cloud annual growth stays below 20% for two reporting periods, consolidated operating margin falls below 25%, or FCF is nonpositive for a full year."
+  }
+}
