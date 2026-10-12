@@ -1,0 +1,1621 @@
+{
+  "schema_version": 1,
+  "ticker": "NBIS",
+  "company": "Nebius Group N.V.",
+  "cik": "0001513845",
+  "analysis_date": "2026-10-12",
+  "data_as_of": "2026-05-22",
+  "price": {
+    "value": 221.07,
+    "date": "2026-10-09"
+  },
+  "runner": "claude-code",
+  "evidence": {
+    "history_years": 0,
+    "level": "low"
+  },
+  "result": {
+    "status": "stopped",
+    "stopped_at_step": 0,
+    "quality_score": null,
+    "required_margin_of_safety": null,
+    "margin_of_safety": null,
+    "summary": "Low evidence: 0 years of data. NBIS stopped at step 0: Nebius Group N.V. files Form 20-F, and the extraction tool reads only Form 10-K and 10-Q data, so the data has no financial statements. No stop rule, quality score or margin of safety is available at $221.07 (close on 2026-10-09). The result changes when the tool can read Form 20-F data."
+  },
+  "steps": [
+    {
+      "n": 0,
+      "title": "Model fit",
+      "facts": [],
+      "calculations": [],
+      "score": null,
+      "reason": "Nebius Group N.V. (CIK 0001513845) is incorporated in the Netherlands and files annual reports on Form 20-F and interim reports on Form 6-K, not on Forms 10-K and 10-Q; the latest annual report is the 20-F/A 0001104659-26-065681 filed 2026-05-22. The extraction tool reads only 10-K and 10-Q XBRL data and 10-K sections, so facts.json has 0 periods and 0 facts, and every section file says that no 10-K was filed. Without revenue, cash flow, debt or share data, no stop rule, quality score or value metric can be calculated. The price is $221.07, the regular-session close on 2026-10-09 (sources: finance.yahoo.com/quote/NBIS/history and stockanalysis.com/stocks/nbis/history; both show the same close).",
+      "drivers": [
+        {
+          "text": "The data has no financial statements, because the company files Form 20-F.",
+          "reversing_change": "Support for Form 20-F data in the extraction tool would make the analysis possible."
+        }
+      ],
+      "open_questions": [
+        "Do you want the extraction tool to support Form 20-F filers?"
+      ],
+      "cards": [
+        "business-model"
+      ]
+    },
+    {
+      "n": 1,
+      "title": "Stop rules",
+      "facts": [],
+      "calculations": [],
+      "score": null,
+      "reason": "Not done: the analysis stopped at step 0 because the data has no financial statements.",
+      "drivers": [],
+      "open_questions": [],
+      "cards": []
+    },
+    {
+      "n": 2,
+      "title": "Business quality",
+      "facts": [],
+      "calculations": [],
+      "score": null,
+      "reason": "Not done: the analysis stopped at step 0 because the data has no financial statements.",
+      "drivers": [],
+      "open_questions": [],
+      "cards": []
+    },
+    {
+      "n": 3,
+      "title": "Management",
+      "facts": [],
+      "calculations": [],
+      "score": null,
+      "reason": "Not done: the analysis stopped at step 0 because the data has no financial statements.",
+      "drivers": [],
+      "open_questions": [],
+      "cards": []
+    },
+    {
+      "n": 4,
+      "title": "Value",
+      "facts": [],
+      "calculations": [],
+      "score": null,
+      "reason": "Not done: the analysis stopped at step 0 because the data has no financial statements.",
+      "drivers": [],
+      "open_questions": [],
+      "cards": []
+    },
+    {
+      "n": 5,
+      "title": "Decision",
+      "facts": [],
+      "calculations": [],
+      "score": null,
+      "reason": "Not done: the analysis stopped at step 0 because the data has no financial statements.",
+      "drivers": [],
+      "open_questions": [],
+      "cards": []
+    },
+    {
+      "n": 6,
+      "title": "Commitment",
+      "facts": [],
+      "calculations": [],
+      "score": null,
+      "reason": "Not done: the analysis stopped at step 0 because the data has no financial statements.",
+      "drivers": [],
+      "open_questions": [],
+      "cards": []
+    }
+  ],
+  "adjustments": [],
+  "valuation": {
+    "version": 1,
+    "price": {
+      "value": 221.07,
+      "date": "2026-10-09"
+    },
+    "capital": null,
+    "profile": {
+      "model_fit": "suitable",
+      "evidence_years": 0,
+      "ttm_available": false,
+      "revenue_growth_above_policy_cap": false,
+      "unusual_latest_tax_rate": false,
+      "limitations": [
+        "Investment styles label documented scenarios; they do not change the conservative policy verdict.",
+        "Forward margins must include stock compensation and all unallocated corporate costs.",
+        "Normalization is an estimate and remains separate from reported and adjusted metrics."
+      ]
+    },
+    "normalization": null,
+    "cash_flow_bases": [
+      {
+        "id": "historical-average",
+        "label": "Historical three-year FCFF average (policy)",
+        "value": null,
+        "basis": "historical_average",
+        "definition": "Legacy cash-flow FCFF averaged over available last three annual periods; not tax-normalized",
+        "required_growth": null,
+        "status": "not_available",
+        "reverse_dcf_note": "Conditional on this starting cash flow, discount rate, terminal growth, forecast horizon and capital claims; not a direct observation of market expectations."
+      },
+      {
+        "id": "latest-annual",
+        "label": "Latest annual FCFF",
+        "value": null,
+        "basis": "reported",
+        "definition": "OCF + after-tax interest - CapEx - SBC (legacy cash-flow definition); uses documented adjustments when configured",
+        "required_growth": null,
+        "status": "not_available",
+        "reverse_dcf_note": "Conditional on this starting cash flow, discount rate, terminal growth, forecast horizon and capital claims; not a direct observation of market expectations."
+      },
+      {
+        "id": "ttm-fcff",
+        "label": "ttm-fcff",
+        "value": null,
+        "period_end": null,
+        "basis": "reported",
+        "definition": "Unavailable: missing matched trailing periods or explicit normalization assumptions",
+        "required_growth": null,
+        "status": "not_available",
+        "reverse_dcf_note": "Conditional on this starting cash flow, discount rate, terminal growth, forecast horizon and capital claims; not a direct observation of market expectations."
+      },
+      {
+        "id": "normalized-fcff-annual",
+        "label": "normalized-fcff-annual",
+        "value": null,
+        "period_end": null,
+        "basis": "normalized",
+        "definition": "Unavailable: missing matched trailing periods or explicit normalization assumptions",
+        "required_growth": null,
+        "status": "not_available",
+        "reverse_dcf_note": "Conditional on this starting cash flow, discount rate, terminal growth, forecast horizon and capital claims; not a direct observation of market expectations."
+      },
+      {
+        "id": "normalized-fcff-ttm",
+        "label": "normalized-fcff-ttm",
+        "value": null,
+        "period_end": null,
+        "basis": "normalized",
+        "definition": "Unavailable: missing matched trailing periods or explicit normalization assumptions",
+        "required_growth": null,
+        "status": "not_available",
+        "reverse_dcf_note": "Conditional on this starting cash flow, discount rate, terminal growth, forecast horizon and capital claims; not a direct observation of market expectations."
+      }
+    ],
+    "comparisons": [
+      {
+        "id": "policy",
+        "style": "value",
+        "status": "not_available",
+        "label": "Conservative policy model",
+        "starting_basis": "historical-average",
+        "value_per_share": null,
+        "margin_of_safety": null,
+        "price_to_value": null,
+        "gap_to_price": null,
+        "assumptions": {
+          "wacc": 0.09,
+          "years": 10,
+          "growth": null,
+          "terminal_growth": 0.025
+        }
+      },
+      {
+        "id": "growth",
+        "style": "growth",
+        "status": "not_configured",
+        "label": "growth",
+        "value_per_share": null,
+        "margin_of_safety": null,
+        "price_to_value": null,
+        "gap_to_price": null,
+        "reason": "Requires sourced segment bases and explicit growth, operating margin, tax and reinvestment assumptions; no style premium is generated automatically."
+      },
+      {
+        "id": "garp",
+        "style": "garp",
+        "status": "not_configured",
+        "label": "garp",
+        "value_per_share": null,
+        "margin_of_safety": null,
+        "price_to_value": null,
+        "gap_to_price": null,
+        "reason": "Requires sourced segment bases and explicit growth, operating margin, tax and reinvestment assumptions; no style premium is generated automatically."
+      },
+      {
+        "id": "quality",
+        "style": "quality",
+        "status": "not_configured",
+        "label": "quality",
+        "value_per_share": null,
+        "margin_of_safety": null,
+        "price_to_value": null,
+        "gap_to_price": null,
+        "reason": "Requires sourced segment bases and explicit growth, operating margin, tax and reinvestment assumptions; no style premium is generated automatically."
+      }
+    ],
+    "forward": [],
+    "sensitivity": [
+      {
+        "basis": "historical-average",
+        "wacc": 0.06999999999999999,
+        "growth": 0.05,
+        "terminal_growth": 0.02,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "historical-average",
+        "wacc": 0.06999999999999999,
+        "growth": 0.05,
+        "terminal_growth": 0.025,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "historical-average",
+        "wacc": 0.06999999999999999,
+        "growth": 0.05,
+        "terminal_growth": 0.03,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "historical-average",
+        "wacc": 0.06999999999999999,
+        "growth": 0.1,
+        "terminal_growth": 0.02,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "historical-average",
+        "wacc": 0.06999999999999999,
+        "growth": 0.1,
+        "terminal_growth": 0.025,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "historical-average",
+        "wacc": 0.06999999999999999,
+        "growth": 0.1,
+        "terminal_growth": 0.03,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "historical-average",
+        "wacc": 0.06999999999999999,
+        "growth": 0.15,
+        "terminal_growth": 0.02,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "historical-average",
+        "wacc": 0.06999999999999999,
+        "growth": 0.15,
+        "terminal_growth": 0.025,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "historical-average",
+        "wacc": 0.06999999999999999,
+        "growth": 0.15,
+        "terminal_growth": 0.03,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "historical-average",
+        "wacc": 0.09,
+        "growth": 0.05,
+        "terminal_growth": 0.02,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "historical-average",
+        "wacc": 0.09,
+        "growth": 0.05,
+        "terminal_growth": 0.025,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "historical-average",
+        "wacc": 0.09,
+        "growth": 0.05,
+        "terminal_growth": 0.03,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "historical-average",
+        "wacc": 0.09,
+        "growth": 0.1,
+        "terminal_growth": 0.02,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "historical-average",
+        "wacc": 0.09,
+        "growth": 0.1,
+        "terminal_growth": 0.025,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "historical-average",
+        "wacc": 0.09,
+        "growth": 0.1,
+        "terminal_growth": 0.03,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "historical-average",
+        "wacc": 0.09,
+        "growth": 0.15,
+        "terminal_growth": 0.02,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "historical-average",
+        "wacc": 0.09,
+        "growth": 0.15,
+        "terminal_growth": 0.025,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "historical-average",
+        "wacc": 0.09,
+        "growth": 0.15,
+        "terminal_growth": 0.03,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "historical-average",
+        "wacc": 0.11,
+        "growth": 0.05,
+        "terminal_growth": 0.02,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "historical-average",
+        "wacc": 0.11,
+        "growth": 0.05,
+        "terminal_growth": 0.025,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "historical-average",
+        "wacc": 0.11,
+        "growth": 0.05,
+        "terminal_growth": 0.03,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "historical-average",
+        "wacc": 0.11,
+        "growth": 0.1,
+        "terminal_growth": 0.02,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "historical-average",
+        "wacc": 0.11,
+        "growth": 0.1,
+        "terminal_growth": 0.025,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "historical-average",
+        "wacc": 0.11,
+        "growth": 0.1,
+        "terminal_growth": 0.03,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "historical-average",
+        "wacc": 0.11,
+        "growth": 0.15,
+        "terminal_growth": 0.02,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "historical-average",
+        "wacc": 0.11,
+        "growth": 0.15,
+        "terminal_growth": 0.025,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "historical-average",
+        "wacc": 0.11,
+        "growth": 0.15,
+        "terminal_growth": 0.03,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "latest-annual",
+        "wacc": 0.06999999999999999,
+        "growth": 0.05,
+        "terminal_growth": 0.02,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "latest-annual",
+        "wacc": 0.06999999999999999,
+        "growth": 0.05,
+        "terminal_growth": 0.025,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "latest-annual",
+        "wacc": 0.06999999999999999,
+        "growth": 0.05,
+        "terminal_growth": 0.03,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "latest-annual",
+        "wacc": 0.06999999999999999,
+        "growth": 0.1,
+        "terminal_growth": 0.02,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "latest-annual",
+        "wacc": 0.06999999999999999,
+        "growth": 0.1,
+        "terminal_growth": 0.025,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "latest-annual",
+        "wacc": 0.06999999999999999,
+        "growth": 0.1,
+        "terminal_growth": 0.03,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "latest-annual",
+        "wacc": 0.06999999999999999,
+        "growth": 0.15,
+        "terminal_growth": 0.02,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "latest-annual",
+        "wacc": 0.06999999999999999,
+        "growth": 0.15,
+        "terminal_growth": 0.025,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "latest-annual",
+        "wacc": 0.06999999999999999,
+        "growth": 0.15,
+        "terminal_growth": 0.03,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "latest-annual",
+        "wacc": 0.09,
+        "growth": 0.05,
+        "terminal_growth": 0.02,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "latest-annual",
+        "wacc": 0.09,
+        "growth": 0.05,
+        "terminal_growth": 0.025,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "latest-annual",
+        "wacc": 0.09,
+        "growth": 0.05,
+        "terminal_growth": 0.03,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "latest-annual",
+        "wacc": 0.09,
+        "growth": 0.1,
+        "terminal_growth": 0.02,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "latest-annual",
+        "wacc": 0.09,
+        "growth": 0.1,
+        "terminal_growth": 0.025,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "latest-annual",
+        "wacc": 0.09,
+        "growth": 0.1,
+        "terminal_growth": 0.03,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "latest-annual",
+        "wacc": 0.09,
+        "growth": 0.15,
+        "terminal_growth": 0.02,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "latest-annual",
+        "wacc": 0.09,
+        "growth": 0.15,
+        "terminal_growth": 0.025,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "latest-annual",
+        "wacc": 0.09,
+        "growth": 0.15,
+        "terminal_growth": 0.03,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "latest-annual",
+        "wacc": 0.11,
+        "growth": 0.05,
+        "terminal_growth": 0.02,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "latest-annual",
+        "wacc": 0.11,
+        "growth": 0.05,
+        "terminal_growth": 0.025,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "latest-annual",
+        "wacc": 0.11,
+        "growth": 0.05,
+        "terminal_growth": 0.03,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "latest-annual",
+        "wacc": 0.11,
+        "growth": 0.1,
+        "terminal_growth": 0.02,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "latest-annual",
+        "wacc": 0.11,
+        "growth": 0.1,
+        "terminal_growth": 0.025,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "latest-annual",
+        "wacc": 0.11,
+        "growth": 0.1,
+        "terminal_growth": 0.03,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "latest-annual",
+        "wacc": 0.11,
+        "growth": 0.15,
+        "terminal_growth": 0.02,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "latest-annual",
+        "wacc": 0.11,
+        "growth": 0.15,
+        "terminal_growth": 0.025,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "latest-annual",
+        "wacc": 0.11,
+        "growth": 0.15,
+        "terminal_growth": 0.03,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "ttm-fcff",
+        "wacc": 0.06999999999999999,
+        "growth": 0.05,
+        "terminal_growth": 0.02,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "ttm-fcff",
+        "wacc": 0.06999999999999999,
+        "growth": 0.05,
+        "terminal_growth": 0.025,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "ttm-fcff",
+        "wacc": 0.06999999999999999,
+        "growth": 0.05,
+        "terminal_growth": 0.03,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "ttm-fcff",
+        "wacc": 0.06999999999999999,
+        "growth": 0.1,
+        "terminal_growth": 0.02,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "ttm-fcff",
+        "wacc": 0.06999999999999999,
+        "growth": 0.1,
+        "terminal_growth": 0.025,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "ttm-fcff",
+        "wacc": 0.06999999999999999,
+        "growth": 0.1,
+        "terminal_growth": 0.03,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "ttm-fcff",
+        "wacc": 0.06999999999999999,
+        "growth": 0.15,
+        "terminal_growth": 0.02,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "ttm-fcff",
+        "wacc": 0.06999999999999999,
+        "growth": 0.15,
+        "terminal_growth": 0.025,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "ttm-fcff",
+        "wacc": 0.06999999999999999,
+        "growth": 0.15,
+        "terminal_growth": 0.03,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "ttm-fcff",
+        "wacc": 0.09,
+        "growth": 0.05,
+        "terminal_growth": 0.02,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "ttm-fcff",
+        "wacc": 0.09,
+        "growth": 0.05,
+        "terminal_growth": 0.025,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "ttm-fcff",
+        "wacc": 0.09,
+        "growth": 0.05,
+        "terminal_growth": 0.03,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "ttm-fcff",
+        "wacc": 0.09,
+        "growth": 0.1,
+        "terminal_growth": 0.02,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "ttm-fcff",
+        "wacc": 0.09,
+        "growth": 0.1,
+        "terminal_growth": 0.025,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "ttm-fcff",
+        "wacc": 0.09,
+        "growth": 0.1,
+        "terminal_growth": 0.03,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "ttm-fcff",
+        "wacc": 0.09,
+        "growth": 0.15,
+        "terminal_growth": 0.02,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "ttm-fcff",
+        "wacc": 0.09,
+        "growth": 0.15,
+        "terminal_growth": 0.025,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "ttm-fcff",
+        "wacc": 0.09,
+        "growth": 0.15,
+        "terminal_growth": 0.03,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "ttm-fcff",
+        "wacc": 0.11,
+        "growth": 0.05,
+        "terminal_growth": 0.02,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "ttm-fcff",
+        "wacc": 0.11,
+        "growth": 0.05,
+        "terminal_growth": 0.025,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "ttm-fcff",
+        "wacc": 0.11,
+        "growth": 0.05,
+        "terminal_growth": 0.03,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "ttm-fcff",
+        "wacc": 0.11,
+        "growth": 0.1,
+        "terminal_growth": 0.02,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "ttm-fcff",
+        "wacc": 0.11,
+        "growth": 0.1,
+        "terminal_growth": 0.025,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "ttm-fcff",
+        "wacc": 0.11,
+        "growth": 0.1,
+        "terminal_growth": 0.03,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "ttm-fcff",
+        "wacc": 0.11,
+        "growth": 0.15,
+        "terminal_growth": 0.02,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "ttm-fcff",
+        "wacc": 0.11,
+        "growth": 0.15,
+        "terminal_growth": 0.025,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "ttm-fcff",
+        "wacc": 0.11,
+        "growth": 0.15,
+        "terminal_growth": 0.03,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "normalized-fcff-annual",
+        "wacc": 0.06999999999999999,
+        "growth": 0.05,
+        "terminal_growth": 0.02,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "normalized-fcff-annual",
+        "wacc": 0.06999999999999999,
+        "growth": 0.05,
+        "terminal_growth": 0.025,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "normalized-fcff-annual",
+        "wacc": 0.06999999999999999,
+        "growth": 0.05,
+        "terminal_growth": 0.03,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "normalized-fcff-annual",
+        "wacc": 0.06999999999999999,
+        "growth": 0.1,
+        "terminal_growth": 0.02,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "normalized-fcff-annual",
+        "wacc": 0.06999999999999999,
+        "growth": 0.1,
+        "terminal_growth": 0.025,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "normalized-fcff-annual",
+        "wacc": 0.06999999999999999,
+        "growth": 0.1,
+        "terminal_growth": 0.03,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "normalized-fcff-annual",
+        "wacc": 0.06999999999999999,
+        "growth": 0.15,
+        "terminal_growth": 0.02,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "normalized-fcff-annual",
+        "wacc": 0.06999999999999999,
+        "growth": 0.15,
+        "terminal_growth": 0.025,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "normalized-fcff-annual",
+        "wacc": 0.06999999999999999,
+        "growth": 0.15,
+        "terminal_growth": 0.03,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "normalized-fcff-annual",
+        "wacc": 0.09,
+        "growth": 0.05,
+        "terminal_growth": 0.02,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "normalized-fcff-annual",
+        "wacc": 0.09,
+        "growth": 0.05,
+        "terminal_growth": 0.025,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "normalized-fcff-annual",
+        "wacc": 0.09,
+        "growth": 0.05,
+        "terminal_growth": 0.03,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "normalized-fcff-annual",
+        "wacc": 0.09,
+        "growth": 0.1,
+        "terminal_growth": 0.02,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "normalized-fcff-annual",
+        "wacc": 0.09,
+        "growth": 0.1,
+        "terminal_growth": 0.025,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "normalized-fcff-annual",
+        "wacc": 0.09,
+        "growth": 0.1,
+        "terminal_growth": 0.03,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "normalized-fcff-annual",
+        "wacc": 0.09,
+        "growth": 0.15,
+        "terminal_growth": 0.02,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "normalized-fcff-annual",
+        "wacc": 0.09,
+        "growth": 0.15,
+        "terminal_growth": 0.025,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "normalized-fcff-annual",
+        "wacc": 0.09,
+        "growth": 0.15,
+        "terminal_growth": 0.03,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "normalized-fcff-annual",
+        "wacc": 0.11,
+        "growth": 0.05,
+        "terminal_growth": 0.02,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "normalized-fcff-annual",
+        "wacc": 0.11,
+        "growth": 0.05,
+        "terminal_growth": 0.025,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "normalized-fcff-annual",
+        "wacc": 0.11,
+        "growth": 0.05,
+        "terminal_growth": 0.03,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "normalized-fcff-annual",
+        "wacc": 0.11,
+        "growth": 0.1,
+        "terminal_growth": 0.02,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "normalized-fcff-annual",
+        "wacc": 0.11,
+        "growth": 0.1,
+        "terminal_growth": 0.025,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "normalized-fcff-annual",
+        "wacc": 0.11,
+        "growth": 0.1,
+        "terminal_growth": 0.03,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "normalized-fcff-annual",
+        "wacc": 0.11,
+        "growth": 0.15,
+        "terminal_growth": 0.02,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "normalized-fcff-annual",
+        "wacc": 0.11,
+        "growth": 0.15,
+        "terminal_growth": 0.025,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "normalized-fcff-annual",
+        "wacc": 0.11,
+        "growth": 0.15,
+        "terminal_growth": 0.03,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "normalized-fcff-ttm",
+        "wacc": 0.06999999999999999,
+        "growth": 0.05,
+        "terminal_growth": 0.02,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "normalized-fcff-ttm",
+        "wacc": 0.06999999999999999,
+        "growth": 0.05,
+        "terminal_growth": 0.025,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "normalized-fcff-ttm",
+        "wacc": 0.06999999999999999,
+        "growth": 0.05,
+        "terminal_growth": 0.03,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "normalized-fcff-ttm",
+        "wacc": 0.06999999999999999,
+        "growth": 0.1,
+        "terminal_growth": 0.02,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "normalized-fcff-ttm",
+        "wacc": 0.06999999999999999,
+        "growth": 0.1,
+        "terminal_growth": 0.025,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "normalized-fcff-ttm",
+        "wacc": 0.06999999999999999,
+        "growth": 0.1,
+        "terminal_growth": 0.03,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "normalized-fcff-ttm",
+        "wacc": 0.06999999999999999,
+        "growth": 0.15,
+        "terminal_growth": 0.02,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "normalized-fcff-ttm",
+        "wacc": 0.06999999999999999,
+        "growth": 0.15,
+        "terminal_growth": 0.025,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "normalized-fcff-ttm",
+        "wacc": 0.06999999999999999,
+        "growth": 0.15,
+        "terminal_growth": 0.03,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "normalized-fcff-ttm",
+        "wacc": 0.09,
+        "growth": 0.05,
+        "terminal_growth": 0.02,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "normalized-fcff-ttm",
+        "wacc": 0.09,
+        "growth": 0.05,
+        "terminal_growth": 0.025,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "normalized-fcff-ttm",
+        "wacc": 0.09,
+        "growth": 0.05,
+        "terminal_growth": 0.03,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "normalized-fcff-ttm",
+        "wacc": 0.09,
+        "growth": 0.1,
+        "terminal_growth": 0.02,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "normalized-fcff-ttm",
+        "wacc": 0.09,
+        "growth": 0.1,
+        "terminal_growth": 0.025,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "normalized-fcff-ttm",
+        "wacc": 0.09,
+        "growth": 0.1,
+        "terminal_growth": 0.03,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "normalized-fcff-ttm",
+        "wacc": 0.09,
+        "growth": 0.15,
+        "terminal_growth": 0.02,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "normalized-fcff-ttm",
+        "wacc": 0.09,
+        "growth": 0.15,
+        "terminal_growth": 0.025,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "normalized-fcff-ttm",
+        "wacc": 0.09,
+        "growth": 0.15,
+        "terminal_growth": 0.03,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "normalized-fcff-ttm",
+        "wacc": 0.11,
+        "growth": 0.05,
+        "terminal_growth": 0.02,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "normalized-fcff-ttm",
+        "wacc": 0.11,
+        "growth": 0.05,
+        "terminal_growth": 0.025,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "normalized-fcff-ttm",
+        "wacc": 0.11,
+        "growth": 0.05,
+        "terminal_growth": 0.03,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "normalized-fcff-ttm",
+        "wacc": 0.11,
+        "growth": 0.1,
+        "terminal_growth": 0.02,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "normalized-fcff-ttm",
+        "wacc": 0.11,
+        "growth": 0.1,
+        "terminal_growth": 0.025,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "normalized-fcff-ttm",
+        "wacc": 0.11,
+        "growth": 0.1,
+        "terminal_growth": 0.03,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "normalized-fcff-ttm",
+        "wacc": 0.11,
+        "growth": 0.15,
+        "terminal_growth": 0.02,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "normalized-fcff-ttm",
+        "wacc": 0.11,
+        "growth": 0.15,
+        "terminal_growth": 0.025,
+        "value_per_share": null,
+        "status": "not_available"
+      },
+      {
+        "basis": "normalized-fcff-ttm",
+        "wacc": 0.11,
+        "growth": 0.15,
+        "terminal_growth": 0.03,
+        "value_per_share": null,
+        "status": "not_available"
+      }
+    ],
+    "forward_sensitivity": [],
+    "sensitivity_note": "Historical sensitivity varies constant FCFF growth. Forward sensitivity shifts every segment annual revenue growth by -2, 0 or +2 percentage points while recalculating reinvestment.",
+    "central_model": {
+      "status": "not_classified",
+      "value_per_share": null,
+      "reason": "Business classification and an explicit model selection are required; style labels alone do not select a valuation."
+    },
+    "operating_expectations": {
+      "status": "not_configured",
+      "cases": []
+    },
+    "business_review": null,
+    "assessment": {
+      "status": "not_configured",
+      "confidence": "Low",
+      "reason": "No documented confidence assessment; absence of evidence is not high confidence.",
+      "range": null,
+      "sensitivity": [],
+      "probabilities": {
+        "status": "not_assigned",
+        "expected": null,
+        "sensitivity": []
+      }
+    },
+    "per_share_economics": {
+      "definition": "Historical flows use matching split-adjusted weighted-average diluted shares, not point-in-time shares outstanding. Observed diluted share changes include repurchases, issuance and dilution-accounting effects; they do not identify gross issuance separately.",
+      "forecast_note": "Forecast share paths are explicit analyst diagnostics; they do not reprice the existing enterprise DCF. Its current-share denominator and expensed SBC remain unchanged. Forecast EPS is an adjusted operating proxy when scenario margins exclude acquisition amortization. Missing bridge inputs make FCF/EPS unavailable.",
+      "historical": [],
+      "growth": [
+        {
+          "key": "revenue",
+          "years": 3,
+          "company": {
+            "key": "revenue_cagr_3",
+            "formula": "(annualized ending revenue / annualized starting revenue)^(1/3) - 1",
+            "inputs": {
+              "start": null,
+              "end": null
+            },
+            "basis": "reported-derived",
+            "unit": "ratio",
+            "value": null,
+            "status": "not_available"
+          },
+          "per_share": {
+            "key": "revenue_per_share_cagr_3",
+            "formula": "((annualized ending revenue/ending shares)/(annualized starting revenue/starting shares))^(1/3)-1",
+            "inputs": {
+              "start": null,
+              "end": null,
+              "start_shares": null
+            },
+            "basis": "reported-derived",
+            "unit": "USD/share",
+            "value": null,
+            "status": "not_available"
+          },
+          "difference": {
+            "key": "company_minus_per_share_growth",
+            "formula": "Company CAGR - per-share CAGR",
+            "inputs": {
+              "company": {
+                "key": "revenue_cagr_3",
+                "formula": "(annualized ending revenue / annualized starting revenue)^(1/3) - 1",
+                "inputs": {
+                  "start": null,
+                  "end": null
+                },
+                "basis": "reported-derived",
+                "unit": "ratio",
+                "value": null,
+                "status": "not_available"
+              },
+              "per_share": {
+                "key": "revenue_per_share_cagr_3",
+                "formula": "((annualized ending revenue/ending shares)/(annualized starting revenue/starting shares))^(1/3)-1",
+                "inputs": {
+                  "start": null,
+                  "end": null,
+                  "start_shares": null
+                },
+                "basis": "reported-derived",
+                "unit": "USD/share",
+                "value": null,
+                "status": "not_available"
+              }
+            },
+            "basis": "reported-derived",
+            "unit": "USD/share",
+            "value": null,
+            "status": "not_available"
+          },
+          "material": false,
+          "interpretation": "Insufficient comparable positive endpoints."
+        },
+        {
+          "key": "fcf",
+          "years": 3,
+          "company": {
+            "key": "fcf_cagr_3",
+            "formula": "(annualized ending fcf / annualized starting fcf)^(1/3) - 1",
+            "inputs": {
+              "start": null,
+              "end": null
+            },
+            "basis": "reported-derived",
+            "unit": "ratio",
+            "value": null,
+            "status": "not_available"
+          },
+          "per_share": {
+            "key": "fcf_per_share_cagr_3",
+            "formula": "((annualized ending fcf/ending shares)/(annualized starting fcf/starting shares))^(1/3)-1",
+            "inputs": {
+              "start": null,
+              "end": null,
+              "start_shares": null
+            },
+            "basis": "reported-derived",
+            "unit": "USD/share",
+            "value": null,
+            "status": "not_available"
+          },
+          "difference": {
+            "key": "company_minus_per_share_growth",
+            "formula": "Company CAGR - per-share CAGR",
+            "inputs": {
+              "company": {
+                "key": "fcf_cagr_3",
+                "formula": "(annualized ending fcf / annualized starting fcf)^(1/3) - 1",
+                "inputs": {
+                  "start": null,
+                  "end": null
+                },
+                "basis": "reported-derived",
+                "unit": "ratio",
+                "value": null,
+                "status": "not_available"
+              },
+              "per_share": {
+                "key": "fcf_per_share_cagr_3",
+                "formula": "((annualized ending fcf/ending shares)/(annualized starting fcf/starting shares))^(1/3)-1",
+                "inputs": {
+                  "start": null,
+                  "end": null,
+                  "start_shares": null
+                },
+                "basis": "reported-derived",
+                "unit": "USD/share",
+                "value": null,
+                "status": "not_available"
+              }
+            },
+            "basis": "reported-derived",
+            "unit": "USD/share",
+            "value": null,
+            "status": "not_available"
+          },
+          "material": false,
+          "interpretation": "Insufficient comparable positive endpoints."
+        },
+        {
+          "key": "revenue",
+          "years": 5,
+          "company": {
+            "key": "revenue_cagr_5",
+            "formula": "(annualized ending revenue / annualized starting revenue)^(1/5) - 1",
+            "inputs": {
+              "start": null,
+              "end": null
+            },
+            "basis": "reported-derived",
+            "unit": "ratio",
+            "value": null,
+            "status": "not_available"
+          },
+          "per_share": {
+            "key": "revenue_per_share_cagr_5",
+            "formula": "((annualized ending revenue/ending shares)/(annualized starting revenue/starting shares))^(1/5)-1",
+            "inputs": {
+              "start": null,
+              "end": null,
+              "start_shares": null
+            },
+            "basis": "reported-derived",
+            "unit": "USD/share",
+            "value": null,
+            "status": "not_available"
+          },
+          "difference": {
+            "key": "company_minus_per_share_growth",
+            "formula": "Company CAGR - per-share CAGR",
+            "inputs": {
+              "company": {
+                "key": "revenue_cagr_5",
+                "formula": "(annualized ending revenue / annualized starting revenue)^(1/5) - 1",
+                "inputs": {
+                  "start": null,
+                  "end": null
+                },
+                "basis": "reported-derived",
+                "unit": "ratio",
+                "value": null,
+                "status": "not_available"
+              },
+              "per_share": {
+                "key": "revenue_per_share_cagr_5",
+                "formula": "((annualized ending revenue/ending shares)/(annualized starting revenue/starting shares))^(1/5)-1",
+                "inputs": {
+                  "start": null,
+                  "end": null,
+                  "start_shares": null
+                },
+                "basis": "reported-derived",
+                "unit": "USD/share",
+                "value": null,
+                "status": "not_available"
+              }
+            },
+            "basis": "reported-derived",
+            "unit": "USD/share",
+            "value": null,
+            "status": "not_available"
+          },
+          "material": false,
+          "interpretation": "Insufficient comparable positive endpoints."
+        },
+        {
+          "key": "fcf",
+          "years": 5,
+          "company": {
+            "key": "fcf_cagr_5",
+            "formula": "(annualized ending fcf / annualized starting fcf)^(1/5) - 1",
+            "inputs": {
+              "start": null,
+              "end": null
+            },
+            "basis": "reported-derived",
+            "unit": "ratio",
+            "value": null,
+            "status": "not_available"
+          },
+          "per_share": {
+            "key": "fcf_per_share_cagr_5",
+            "formula": "((annualized ending fcf/ending shares)/(annualized starting fcf/starting shares))^(1/5)-1",
+            "inputs": {
+              "start": null,
+              "end": null,
+              "start_shares": null
+            },
+            "basis": "reported-derived",
+            "unit": "USD/share",
+            "value": null,
+            "status": "not_available"
+          },
+          "difference": {
+            "key": "company_minus_per_share_growth",
+            "formula": "Company CAGR - per-share CAGR",
+            "inputs": {
+              "company": {
+                "key": "fcf_cagr_5",
+                "formula": "(annualized ending fcf / annualized starting fcf)^(1/5) - 1",
+                "inputs": {
+                  "start": null,
+                  "end": null
+                },
+                "basis": "reported-derived",
+                "unit": "ratio",
+                "value": null,
+                "status": "not_available"
+              },
+              "per_share": {
+                "key": "fcf_per_share_cagr_5",
+                "formula": "((annualized ending fcf/ending shares)/(annualized starting fcf/starting shares))^(1/5)-1",
+                "inputs": {
+                  "start": null,
+                  "end": null,
+                  "start_shares": null
+                },
+                "basis": "reported-derived",
+                "unit": "USD/share",
+                "value": null,
+                "status": "not_available"
+              }
+            },
+            "basis": "reported-derived",
+            "unit": "USD/share",
+            "value": null,
+            "status": "not_available"
+          },
+          "material": false,
+          "interpretation": "Insufficient comparable positive endpoints."
+        }
+      ],
+      "forecasts": []
+    }
+  }
+}
